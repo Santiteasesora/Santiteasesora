@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santi te asesora | Asesoría Financiera para Médicos y Cirujanos</title>
+    
+    <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#FFF5E3',      /* Fondo crema */
+                        brandPrimary: '#145C52', /* Verde pino */
+                        brandAccent: '#D9A441',  /* Dorado cálido */
+                        brandText: '#292C2B',    /* Texto carbón */
+                        brandSoft: '#A8C4B5',    /* Verde menta suave */
+                        brandSoftLight: '#E3EFE9'
+                    },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GOOGLE ADS TRACKING SCRIPT -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-123456789');
+    </script>
+
+    <!-- META ADS TRACKING SCRIPT -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)n._fbq=n;n.next=n;n.lh=1;n.price=n;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '123456789012345');
+      fbq('track', 'PageView');
+    </script>
+
+    <!-- EVENTO DE REGISTRO DE INTENCIÓN DE CONVERSIÓN -->
+    <script>
+      function trackConversion(e) {
+        if (typeof fbq === 'function') {
+          fbq('track', 'FindLocation', { content_name: 'Intencion Agendar Medicos' });
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion_intent', { 'send_to': 'AW-123456789' });
+        }
+      }
+    </script>
+</head>
+<body class="bg-brandBg text-brandText font-body antialiased flex flex-col min-h-screen pb-28 md:pb-32">
+
+    <!-- NAVBAR SIMPLIFICADA -->
+    <nav class="sticky top-0 bg-brandBg/95 backdrop-blur-md z-40 border-b border-brandSoft/30 py-3 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/d/1WETN3unU7p0ikNDZiJRKk8caH8QxRnfH" alt="Santi te asesora logo" class="h-12 md:h-16 w-auto object-contain">
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/525571208740" 
+                   target="_blank"
+                   class="bg-emerald-600 hover:bg-emerald-700 text-white font-heading text-xs md:text-sm px-4 py-2.5 rounded-2xl shadow-sm transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="hidden md:inline">WhatsApp Directo</span>
+                </a>
+
+                <a href="#agendar" 
+                   onclick="trackConversion()"
+                   class="bg-brandPrimary hover:bg-[#0E423B] text-brandBg font-heading font-semibold text-xs md:text-sm px-4 md:px-5 py-2.5 rounded-2xl shadow-md transition transform active:scale-95 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check text-brandAccent"></i>
+                    <span>Agendar Cita</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION CON IMAGEN DE CENTRO MÉDICO ABC CAMPUS SANTA FE -->
+    <section class="relative bg-cover bg-center bg-no-repeat py-16 md:py-24 px-6 border-b border-brandSoft/30" 
+             style="background-image: url('https://lh3.googleusercontent.com/d/1t72HQupBewz4vM5ft_aEgHKvCBqT0tUK');">
+        
+        <!-- OVERLAY PARA GARANTIZAR LEGIBILIDAD Y ARMONÍA DE COLOR -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brandPrimary/90 via-brandPrimary/80 to-brandPrimary/95 backdrop-blur-[2px]"></div>
+
+        <div class="relative max-w-6xl mx-auto flex flex-col justify-center items-center text-center z-10">
+
+            <!-- CTA BADGE SUPERIOR SUBLIMINAL -->
+            <span class="inline-flex items-center gap-2 bg-brandBg/10 border border-brandAccent/40 text-brandBg font-heading text-xs md:text-sm font-semibold px-4 py-2 rounded-full mb-6 shadow-md backdrop-blur-md">
+                <i class="fa-solid fa-bolt text-brandAccent"></i>
+                Años de esfuerzo merecen un patrimonio que trabaje al mismo nivel que tú
+            </span>
+
+            <!-- TÍTULO Y SUBTÍTULO -->
+            <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl drop-shadow-md">
+                Maximiza tu libertad financiera con la misma precisión con la que ejecutas tu día.
+            </h1>
+
+            <p class="text-base md:text-xl text-brandBg/90 mb-8 max-w-2xl leading-relaxed drop-shadow">
+                Te ayudo a blindar tus manos, asegurar tu retiro y deducir impuestos con una asesoría 1:1 hecha a la medida de tu consulta o especialidad.
+            </p>
+
+            <!-- PRUEBA SOCIAL / METRICA DE IMPACTO -->
+            <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2.5 rounded-2xl text-white text-xs md:text-sm font-medium mb-10 shadow-lg">
+                <div class="flex -space-x-2 overflow-hidden">
+                    <span class="inline-block h-7 w-7 rounded-full ring-2 ring-brandAccent bg-brandPrimary text-white flex items-center justify-center font-bold text-[10px]"><i class="fa-solid fa-user-doctor"></i></span>
+                    <span class="inline-block h-7 w-7 rounded-full ring-2 ring-brandAccent bg-brandAccent text-brandPrimary flex items-center justify-center font-bold text-[10px]"><i class="fa-solid fa-stethoscope"></i></span>
+                    <span class="inline-block h-7 w-7 rounded-full ring-2 ring-brandAccent bg-white text-brandPrimary flex items-center justify-center font-bold text-[10px]"><i class="fa-solid fa-hospital-user"></i></span>
+                </div>
+                <span><strong class="text-brandAccent font-heading font-bold text-sm md:text-base">+150</strong> Médicos y Cirujanos asesorados</span>
+            </div>
+
+            <!-- TARJETA CON IMAGEN DE STAR MÉDICA SANTA FE -->
+            <div class="w-full bg-white/95 backdrop-blur-md border border-brandSoft/40 rounded-3xl p-6 md:p-8 shadow-2xl grid md:grid-cols-2 gap-8 items-center text-left text-brandText">
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-brandSoft/30">
+                    <img src="https://lh3.googleusercontent.com/d/1oXtlITuXCqz1yFJ63RSkWylexVoOLM06" alt="Hospital Star Médica Santa Fe" class="w-full h-56 md:h-72 object-cover">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brandPrimary/90 to-transparent p-4 text-white">
+                        <p class="font-heading text-xs md:text-sm font-semibold text-brandAccent">Star Médica Santa Fe</p>
+                        <p class="text-[11px] text-slate-200">Atención personalizada a la altura de tu práctica profesional.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xs font-heading font-bold text-brandAccent uppercase tracking-widest">Diseñado para tu Agenda</span>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-brandPrimary mt-1 mb-3">
+                        Asesoría adaptada a tus tiempos
+                    </h2>
+                    <p class="text-xs md:text-sm text-brandText/80 leading-relaxed mb-6">
+                        Sé que entre cirugías, guardias y consultas tu tiempo es escaso. Mis sesiones duran 30 minutos, son 100% digitales y están preparadas para ir directo al punto estratégico que necesitas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="#agendar" 
+                           onclick="trackConversion()"
+                           class="inline-flex items-center justify-center gap-2 bg-brandAccent hover:bg-[#C08F35] text-brandBg font-heading font-bold py-3 px-6 rounded-xl transition shadow-md text-sm">
+                            <span>Elegir Horario Disponible</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="https://wa.me/525571208740" 
+                           target="_blank"
+                           class="inline-flex items-center justify-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-heading font-semibold py-3 px-5 rounded-xl transition text-sm">
+                            <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+                            <span>Coordinar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PILARES DE VALOR PARA MÉDICOS -->
+    <section class="py-12 md:py-16 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 w-full text-left">
+            <div class="bg-white/80 border border-brandSoft/40 p-6 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 bg-brandSoftLight text-brandPrimary rounded-2xl flex items-center justify-center text-lg font-bold mb-4">
+                    <i class="fa-solid fa-user-doctor text-brandAccent"></i>
+                </div>
+                <h3 class="font-heading text-lg font-bold text-brandPrimary mb-2">Incapacidad Quirúrgica</h3>
+                <p class="text-xs md:text-sm text-brandText/80 leading-relaxed">
+                    Protección financiera especializada ante eventos que comprometan tu capacidad de ejercer consulta o cirugía.
+                </p>
+            </div>
+
+            <div class="bg-white/80 border border-brandSoft/40 p-6 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 bg-brandSoftLight text-brandPrimary rounded-2xl flex items-center justify-center text-lg font-bold mb-4">
+                    <i class="fa-solid fa-receipt text-brandAccent"></i>
+                </div>
+                <h3 class="font-heading text-lg font-bold text-brandPrimary mb-2">Estrategia y Deducción</h3>
+                <p class="text-xs md:text-sm text-brandText/80 leading-relaxed">
+                    Estructuración legal de planes personales de retiro (PPR) 100% deducibles bajo el Art. 151 del ISR.
+                </p>
+            </div>
+
+            <div class="bg-white/80 border border-brandSoft/40 p-6 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 bg-brandSoftLight text-brandPrimary rounded-2xl flex items-center justify-center text-lg font-bold mb-4">
+                    <i class="fa-solid fa-shield-halved text-brandAccent"></i>
+                </div>
+                <h3 class="font-heading text-lg font-bold text-brandPrimary mb-2">Retiro Garantizado</h3>
+                <p class="text-xs md:text-sm text-brandText/80 leading-relaxed">
+                    Proyección patrimonial segura para conservar tu nivel de vida sin depender exclusivamente de tu práctica médica.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE AGENDAMIENTO EMBEBIDA (GOOGLE CALENDAR IFRAME) -->
+    <section id="agendar" class="py-12 md:py-16 px-6 max-w-5xl mx-auto scroll-mt-20">
+        <div class="bg-white border border-brandSoft/40 rounded-3xl p-6 md:p-8 shadow-xl text-center">
+            <span class="inline-block bg-brandSoftLight text-brandPrimary font-heading font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-3">
+                Sesión 1:1 de 30 Minutos
+            </span>
+            <h2 class="font-heading text-2xl md:text-4xl font-bold text-brandPrimary mb-3">
+                Selecciona la fecha y hora de tu asesoría
+            </h2>
+            <p class="text-xs md:text-sm text-brandText/70 mb-6 max-w-xl mx-auto leading-relaxed">
+                Elige el momento que mejor se adapte a tu agenda. La confirmación y el enlace de la reunión virtual te llegarán de inmediato a tu correo electrónico.
+            </p>
+
+            <!-- OPCIÓN WHATSAPP SECUNDARIA -->
+            <div class="mb-8 p-3 bg-emerald-50 border border-emerald-200 rounded-2xl inline-flex items-center gap-3 text-xs md:text-sm text-emerald-900">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                <span>¿Prefieres agendar de forma más rápida por WhatsApp?</span>
+                <a href="https://wa.me/525571208740" target="_blank" class="font-heading font-bold underline hover:text-emerald-700">
+                    Escríbeme directamente aquí
+                </a>
+            </div>
+
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <div class="w-full overflow-hidden rounded-2xl border border-brandSoft/30 bg-slate-50 min-h-[600px] shadow-inner">
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0gmJXF-LYIVR14XD15BMTLl4Dn1iykZPKVqqVI5uxhu6lumGW2wwk3O7OraitcHRog4A9ZobrR?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            </div>
+            <!-- end Google Calendar Appointment Scheduling -->
+        </div>
+    </section>
+
+    <!-- ENTES REGULADORES DE CONFIANZA -->
+    <section class="py-12 px-6 max-w-4xl mx-auto text-center border-t border-brandSoft/30">
+        <p class="font-heading text-xs font-bold text-brandAccent tracking-widest uppercase mb-6">
+            Certificación y Registro Legal en México
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+            <div class="bg-white/80 border border-brandSoft/40 p-4 rounded-2xl shadow-sm text-center">
+                <p class="font-heading font-bold text-lg text-brandPrimary">SHCP</p>
+                <p class="text-[10px] text-brandText/60">Secretaría de Hacienda</p>
+            </div>
+            <div class="bg-white/80 border border-brandSoft/40 p-4 rounded-2xl shadow-sm text-center">
+                <p class="font-heading font-bold text-lg text-brandPrimary">CNSF</p>
+                <p class="text-[10px] text-brandText/60">Comisión Nacional de Seguros</p>
+            </div>
+            <div class="bg-white/80 border border-brandSoft/40 p-4 rounded-2xl shadow-sm text-center">
+                <p class="font-heading font-bold text-lg text-brandPrimary">AMIS</p>
+                <p class="text-[10px] text-brandText/60">Asociación de Aseguradoras</p>
+            </div>
+            <div class="bg-white/80 border border-brandSoft/40 p-4 rounded-2xl shadow-sm text-center">
+                <p class="font-heading font-bold text-lg text-brandPrimary">CONDUSEF</p>
+                <p class="text-[10px] text-brandText/60">Protección al Usuario</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y PRIVACIDAD -->
+    <footer class="bg-brandPrimary text-brandBg py-8 px-6 mt-auto border-t border-brandSoft/20">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/d/1WETN3unU7p0ikNDZiJRKk8caH8QxRnfH" alt="Santi te asesora logo" class="h-12 w-auto object-contain bg-white/10 p-1 rounded-lg">
+            </div>
+            
+            <div class="text-xs text-brandBg/80 flex items-center gap-4">
+                <button onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline hover:text-brandAccent transition">
+                    Aviso de Privacidad
+                </button>
+                <a href="gracias.html" class="hover:text-brandAccent transition opacity-60 text-[10px]">Página de Confirmación</a>
+            </div>
+
+            <p class="text-xs text-brandBg/60">
+                © 2026 Santi te asesora. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- BARRA Y BOTÓN FLOTANTE ESTÁTICO DUAL (CALENDARIO Y WHATSAPP) -->
+    <div class="fixed bottom-4 inset-x-4 z-50 max-w-lg mx-auto flex items-center justify-center gap-3">
+        <!-- BOTÓN PRINCIPAL AGENDAR CALENDARIO -->
+        <a href="#agendar" 
+           onclick="trackConversion()"
+           class="flex-1 flex items-center justify-center gap-2 bg-brandPrimary hover:bg-[#0E423B] text-brandBg font-heading text-xs md:text-sm font-bold py-3.5 px-4 rounded-full shadow-2xl border-2 border-brandAccent transition transform active:scale-95 text-center">
+            <i class="fa-regular fa-calendar-check text-brandAccent text-base"></i>
+            <span>Agendar Cita (30 min)</span>
+        </a>
+
+        <!-- BOTÓN SECUNDARIO WHATSAPP -->
+        <a href="https://wa.me/525571208740" 
+           target="_blank"
+           title="Enviar WhatsApp directamente"
+           class="bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl border-2 border-emerald-300 transition transform active:scale-95 flex items-center justify-center">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- MODAL AVISO DE PRIVACIDAD -->
+    <div id="privacyModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white text-brandText p-6 rounded-3xl max-w-lg w-full max-h-[80vh] overflow-y-auto shadow-2xl relative">
+            <button onclick="document.getElementById('privacyModal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold text-lg">✕</button>
+            <h3 class="font-heading text-lg font-bold text-brandPrimary mb-3">Aviso de Privacidad Simplificado</h3>
+            <p class="text-xs leading-relaxed text-slate-600 space-y-2">
+                "Santi te asesora" utiliza los datos de agendamiento recabados mediante esta plataforma únicamente para la programación de sesiones individuales de asesoría financiera e intermediación en materia de seguros, de conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP). Tus datos no serán vendidos ni compartidos con terceros sin tu consentimiento explícito.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
