@@ -68,7 +68,7 @@
       }
     </script>
 </head>
-<body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark">
+<body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark relative">
 
     <!-- Navbar Header -->
     <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-santiCream shadow-sm transition-all duration-300">
@@ -332,7 +332,7 @@
         </div>
     </section>
 
-    <!-- Footer con Logo en Contenedor Blanco -->
+    <!-- Footer con Logo en Contenedor Blanco y Aviso de Privacidad Emergente -->
     <footer class="bg-santiDark text-santiCream/80 py-12 border-t border-santiDark text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -358,11 +358,76 @@
                 <div class="flex items-center gap-4">
                     <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">Cédula Oficial PDF</a>
                     <span>•</span>
+                    <button onclick="toggleModal()" class="hover:text-santiGold transition-colors focus:outline-none cursor-pointer">Aviso de Privacidad</button>
+                    <span>•</span>
                     <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">WhatsApp</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- VENTANA EMERGENTE (MODAL AVISO DE PRIVACIDAD) -->
+    <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-santiCream relative max-h-[85vh] flex flex-col text-santiDark">
+            <!-- Header Modal -->
+            <div class="flex items-center justify-between pb-4 border-b border-santiCream">
+                <h3 class="font-heading text-2xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
+                <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl p-1 transition-colors focus:outline-none">&times;</button>
+            </div>
+            <!-- Cuerpo con Scroll -->
+            <div class="overflow-y-auto my-4 pr-2 space-y-4 text-sm text-santiDark/80 leading-relaxed">
+                <p>
+                    <strong>Santi te asesora</strong>, con cédula de Agente Autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF) No. <strong>C412676</strong>, pone a su disposición el presente Aviso de Privacidad en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+                </p>
+                <p>
+                    <strong>1. Datos Recabados:</strong> Los datos personales y financieros recopilados a través de este sitio, el agendamiento de citas o vía WhatsApp (tales como nombre, teléfono, correo electrónico y especialidad médica) serán tratados de forma estrictamente confidencial.
+                </p>
+                <p>
+                    <strong>2. Finalidad del Tratamiento:</strong> Sus datos serán utilizados exclusivamente para:
+                </p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Agendar y confirmar sesiones de diagnóstico financiero y patrimonial 1 a 1.</li>
+                    <li>Elaborar análisis de protección por incapacidad quirúrgica y retiro (PPR / Art. 151 ISR).</li>
+                    <li>Enviar información relativa a sus consultas o requerimientos específicos.</li>
+                </ul>
+                <p>
+                    <strong>3. Protección y Transferencia:</strong> Sus datos personales no serán vendidos, alquilados ni transferidos a terceros no autorizados sin su consentimiento previo.
+                </p>
+                <p>
+                    <strong>4. Derechos ARCO:</strong> Para ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición, puede enviar una solicitud directa a través del botón oficial de WhatsApp o medios de contacto de Santi te asesora.
+                </p>
+            </div>
+            <!-- Footer Modal -->
+            <div class="pt-4 border-t border-santiCream text-right">
+                <button onclick="toggleModal()" class="px-6 py-2.5 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase tracking-wider hover:bg-santiDark transition-all shadow-md">
+                    Entendido y Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE CONTROL PARA EL MODAL -->
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Cerrar al hacer clic fuera del cuadro blanco
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Cerrar al presionar la tecla Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('privacyModal').classList.add('hidden');
+            }
+        });
+    </script>
 
     <!-- Floating Action Buttons -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
