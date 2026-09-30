@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cita Confirmada | Santi te asesora</title>
     <meta name="description" content="Recomendaciones e instrucciones previas para tu sesión estratégica patrimonial con Santi te asesora.">
+    
     <!-- Favicon / Ícono de la pestaña -->
-<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
-<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -40,15 +42,15 @@
 </head>
 <body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark">
 
-    <!-- Header Navbar con Logo Oficial -->
+    <!-- Header Navbar Limpio (Sin enlace a la landing page) -->
     <header class="w-full bg-white border-b border-santiCream shadow-sm py-4">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-            <a href="https://santiteasesora.com" class="flex items-center gap-3">
+            <div class="flex items-center gap-3">
                 <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
                      alt="Santi te asesora Logo" 
                      class="h-10 w-auto object-contain"
                      onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
-            </a>
+            </div>
             <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold bg-santiCream text-santiEmerald px-3.5 py-2 rounded-xl border border-santiMint/40 hover:bg-santiMint/20 transition-colors">
                 <i class="fa-brands fa-whatsapp text-santiEmerald text-sm"></i>
                 <span>Contacto Directo</span>
@@ -60,7 +62,7 @@
     <main class="py-12 md:py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
 
-            <!-- Banner de Éxito y Título -->
+            <!-- Banner de Éxito y Foto de Santi -->
             <div class="text-center space-y-4">
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-santiEmerald mb-2 shadow-sm border border-emerald-200">
                     <i class="fa-solid fa-check text-2xl"></i>
@@ -70,8 +72,34 @@
                     ¡Tu cita ha sido confirmada con éxito!
                 </h1>
                 <p class="text-base text-santiDark/80 max-w-2xl mx-auto leading-relaxed">
-                    Te enviamos un correo con los detalles de acceso. Para aprovechar al máximo nuestros 30 minutos, te comparto estas recomendaciones previas a nuestra sesión:
+                    Te enviamos un correo con los detalles de acceso a la videollamada. Para aprovechar al máximo nuestros 30 minutos, te comparto estas recomendaciones previas a nuestra sesión:
                 </p>
+            </div>
+
+            <!-- Módulo "Agregar al Calendario" para evitar faltas -->
+            <div class="bg-santiCream/60 border border-santiGold/40 rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-sm max-w-2xl mx-auto">
+                <div class="inline-flex items-center gap-2 text-santiEmerald font-bold text-xs uppercase tracking-wider">
+                    <i class="fa-regular fa-calendar-plus text-base text-santiGold"></i>
+                    <span>¡No olvides agendar tu recordatorio!</span>
+                </div>
+                <h2 class="font-heading text-lg font-bold text-santiDark">Agrega la sesión a tu calendario personal</h2>
+                <p class="text-xs text-santiDark/80 max-w-md mx-auto">
+                    Asegúrate de reservar el espacio en tu agenda para recibir el enlace de acceso puntualmente.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                    <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-santiCream text-santiDark px-4 py-2.5 rounded-xl border border-santiCream text-xs font-bold shadow-xs transition-all">
+                        <i class="fa-brands fa-google text-red-500"></i>
+                        <span>Google Calendar</span>
+                    </a>
+                    <a href="https://outlook.live.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-santiCream text-santiDark px-4 py-2.5 rounded-xl border border-santiCream text-xs font-bold shadow-xs transition-all">
+                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i>
+                        <span>Outlook</span>
+                    </a>
+                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20quisiera%20confirmar%20el%20enlace%20de%20mi%20cita." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-santiEmerald hover:bg-santiDark text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-xs transition-all">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Confirmar por WhatsApp</span>
+                    </a>
+                </div>
             </div>
 
             <!-- Bloque de Recomendaciones Previas -->
@@ -120,7 +148,7 @@
                 </div>
             </div>
 
-            <!-- Estructura de los 30 Minutos (Texto actualizado) -->
+            <!-- Estructura de los 30 Minutos -->
             <div class="bg-santiEmerald text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden space-y-6">
                 
                 <div class="relative z-10 space-y-2">
@@ -161,7 +189,7 @@
                 <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-santiGold/20 rounded-full blur-3xl pointer-events-none"></div>
             </div>
 
-            <!-- Modificación de Cita (Neutro para imprevistos) -->
+            <!-- Modificación de Cita (Aviso por WhatsApp) -->
             <div class="bg-santiCream/60 border border-santiGold/40 rounded-2xl p-6 text-center space-y-3 max-w-xl mx-auto shadow-sm">
                 <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-santiEmerald shadow-xs">
                     <i class="fa-solid fa-calendar-xmark text-lg"></i>
@@ -187,7 +215,7 @@
         </div>
     </main>
 
-    <!-- Footer con Logo Oficial en Contenedor Blanco -->
+    <!-- Footer Limpio con Modal de Aviso de Privacidad -->
     <footer class="bg-santiDark text-santiCream/80 py-10 text-center text-xs border-t border-santiDark">
         <div class="max-w-5xl mx-auto px-4 space-y-4">
             <div class="flex justify-center">
@@ -198,9 +226,62 @@
                          onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
                 </div>
             </div>
-            <p>© 2026 Santi te asesora. Todos los derechos reservados. <a href="https://santiteasesora.com" class="text-santiGold underline ml-1 hover:text-white transition-colors">Volver al sitio principal</a></p>
+            <p>© 2026 Santi te asesora. Todos los derechos reservados. | <button onclick="toggleModal()" class="text-santiGold underline hover:text-white transition-colors focus:outline-none cursor-pointer">Aviso de Privacidad</button></p>
         </div>
     </footer>
+
+    <!-- VENTANA EMERGENTE (MODAL AVISO DE PRIVACIDAD) -->
+    <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-santiCream relative max-h-[85vh] flex flex-col text-santiDark text-left">
+            <!-- Header Modal -->
+            <div class="flex items-center justify-between pb-4 border-b border-santiCream">
+                <h3 class="font-heading text-2xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
+                <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl p-1 transition-colors focus:outline-none">&times;</button>
+            </div>
+            <!-- Cuerpo con Scroll -->
+            <div class="overflow-y-auto my-4 pr-2 space-y-4 text-sm text-santiDark/80 leading-relaxed">
+                <p>
+                    <strong>Santi te asesora</strong>, con cédula de Agente Autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF) No. <strong>C412676</strong>, pone a su disposición el presente Aviso de Privacidad en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+                </p>
+                <p>
+                    <strong>1. Datos Recabados:</strong> Los datos personales y financieros recopilados a través de este sitio, el agendamiento de citas o vía WhatsApp serán tratados de forma estrictamente confidencial.
+                </p>
+                <p>
+                    <strong>2. Finalidad del Tratamiento:</strong> Sus datos serán utilizados exclusivamente para agendar, confirmar y llevar a cabo la sesión de asesoría patrimonial, así como para enviar información relativa a sus requerimientos específicos.
+                </p>
+                <p>
+                    <strong>3. Protección y Transferencia:</strong> Sus datos personales no serán vendidos, alquilados ni transferidos a terceros no autorizados sin su consentimiento previo.
+                </p>
+            </div>
+            <!-- Footer Modal -->
+            <div class="pt-4 border-t border-santiCream text-right">
+                <button onclick="toggleModal()" class="px-6 py-2.5 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase tracking-wider hover:bg-santiDark transition-all shadow-md">
+                    Entendido y Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE CONTROL PARA EL MODAL -->
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.toggle('hidden');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('privacyModal').classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 </html>
