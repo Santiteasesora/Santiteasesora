@@ -312,12 +312,12 @@
                 </span>
                 <h2 class="font-heading text-2xl sm:text-3xl font-bold text-santiDark mt-3">Agenda tu sesión estratégica de 30 minutos</h2>
                 <p class="text-xs sm:text-sm text-santiDark/70 mt-2">
-                    Selecciona el día y la hora directamente en la agenda o llena el formulario para confirmarlo por WhatsApp.
+                    Selecciona el día y la hora directamente en el calendario interactivo.
                 </p>
             </div>
 
             <!-- Google Calendar Iframe & Botón Directo -->
-            <div class="bg-[#FAF8F5] p-2 sm:p-6 rounded-3xl border border-santiCream shadow-xl overflow-hidden mb-8">
+            <div class="bg-[#FAF8F5] p-2 sm:p-6 rounded-3xl border border-santiCream shadow-xl overflow-hidden">
                 <!-- Botón de apertura directa -->
                 <div class="mb-4 text-center">
                     <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-santiEmerald text-white px-5 py-2.5 rounded-xl font-bold text-xs hover:bg-santiDark transition-all shadow-md">
@@ -329,33 +329,6 @@
                 <!-- Google Calendar Appointment Scheduling begin -->
                 <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
                 <!-- end Google Calendar Appointment Scheduling -->
-            </div>
-
-            <!-- Formulario de Agendamiento Directo por WhatsApp -->
-            <div class="bg-santiCream/40 border border-santiGold/30 rounded-3xl p-6 sm:p-8 max-w-xl mx-auto shadow-md">
-                <h3 class="font-heading font-bold text-lg text-santiDark text-center mb-2">¿Prefieres agendar de forma rápida por WhatsApp?</h3>
-                <p class="text-xs text-santiDark/70 text-center mb-6">Ingresa tus datos y te redirigiremos inmediatamente con el mensaje redactado.</p>
-                
-                <form id="whatsappForm" onsubmit="sendWhatsAppAppointment(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold text-santiDark mb-1">Nombre Completo *</label>
-                        <input type="text" id="app_name" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-2.5 rounded-xl border border-santiMint/50 focus:ring-2 focus:ring-santiEmerald focus:outline-none text-xs">
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-santiDark mb-1">Fecha Sugerida *</label>
-                            <input type="date" id="app_date" required class="w-full px-4 py-2.5 rounded-xl border border-santiMint/50 focus:ring-2 focus:ring-santiEmerald focus:outline-none text-xs bg-white">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-santiDark mb-1">Hora Preferida *</label>
-                            <input type="time" id="app_time" required class="w-full px-4 py-2.5 rounded-xl border border-santiMint/50 focus:ring-2 focus:ring-santiEmerald focus:outline-none text-xs bg-white">
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>Confirmar Cita por WhatsApp</span>
-                    </button>
-                </form>
             </div>
 
         </div>
@@ -456,20 +429,6 @@
                 document.getElementById('privacyModal').classList.add('hidden');
             }
         });
-
-        // Enviar citas por WhatsApp con formato
-        function sendWhatsAppAppointment(e) {
-            e.preventDefault();
-            const name = document.getElementById('app_name').value;
-            const date = document.getElementById('app_date').value;
-            const time = document.getElementById('app_time').value;
-
-            trackConversion();
-
-            const text = `Hola Santi, me gustaría agendar una Sesión Estratégica.%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*Fecha solicitada:* ${encodeURIComponent(date)}%0A*Hora preferida:* ${encodeURIComponent(time)}`;
-            const url = `https://wa.me/525571208740?text=${text}`;
-            window.open(url, '_blank');
-        }
     </script>
 
     <!-- Floating Action Buttons -->
