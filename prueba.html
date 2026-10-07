@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santi te asesora | Estrategia Financiera y Patrimonial para Profesionistas Independientes</title>
+    <title>Santi te asesora | Optimización Fiscal y Patrimonial para Profesionistas</title>
 
-    <!-- Favicon / Ícono de la pestaña -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
     <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
 
@@ -20,7 +20,8 @@
                         santiGold: '#D9A441',
                         santiCream: '#FFF5E3',
                         santiDark: '#292C2B',
-                        santiMint: '#A8C4B5'
+                        santiMint: '#A8C4B5',
+                        santiNavy: '#0F2942'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -39,7 +40,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Meta Pixel Code Base -->
+    <!-- Meta Pixel Base -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -53,171 +54,137 @@
       fbq('track', 'PageView');
     </script>
 
-    <!-- Google Tag Manager (Carga optimizada desde GTM-PT9ZTHZN sin código residual en duro) -->
+    <!-- Tracking helper -->
     <script>
-      function trackConversion() {
+      function trackConversion(eventLabel) {
         if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead');
+          fbq('track', 'Lead', {content_name: eventLabel || 'Lead_Click'});
         }
       }
     </script>
 </head>
 <body class="bg-[#FAF8F5] text-santiDark font-sans antialiased selection:bg-santiGold selection:text-santiDark">
 
-<!-- Navbar Header -->
-<header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-santiCream shadow-sm transition-all duration-300">
+<!-- Header / Navbar Minimalista -->
+<header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-santiCream shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        <!-- Logo oficial -->
-        <a href="#" class="flex items-center gap-3 group">
+        <a href="#" class="flex items-center gap-3">
             <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
                  alt="Santi te asesora Logo" 
-                 class="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                 class="h-10 w-auto object-contain"
                  onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
         </a>
         
-        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-santiDark/80">
-            <a href="#beneficios" class="hover:text-santiEmerald transition-colors">Estrategia Fiscal</a>
-            <a href="#respaldo" class="hover:text-santiEmerald transition-colors">Respaldo Institucional</a>
-            <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Cita</a>
+        <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-santiDark/80">
+            <a href="#pilares" class="hover:text-santiEmerald transition-colors">Estrategia Fiscal</a>
+            <a href="#testimonios" class="hover:text-santiEmerald transition-colors">Casos de Éxito</a>
+            <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Sesión</a>
         </div>
 
         <div class="flex items-center gap-3">
-            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20sitio%20web%20y%20quiero%20calcular%20mi%20tope%20de%20deducci%C3%B3n%20fiscal%20del%20Art.%20151%20como%20profesionista." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold bg-santiCream text-santiEmerald px-3.5 py-2.5 rounded-xl border border-santiMint/40 hover:bg-santiMint/20 transition-colors">
-                <i class="fa-brands fa-whatsapp text-santiEmerald text-base"></i>
-                <span>55 7120 8740</span>
+            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20tengo%20dudas%20r%C3%A1pidas%20sobre%20la%20Ses%C3%B3n%20Estrat%C3%A9gica." target="_blank" rel="noopener noreferrer" onclick="trackConversion('WhatsApp_Header')" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold bg-santiCream text-santiEmerald px-3.5 py-2.5 rounded-xl border border-santiGold/40 hover:bg-santiGold/20 transition-colors">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i>
+                <span>¿Dudas rápidas?</span>
             </a>
-            <a href="#agendar" onclick="trackConversion()" class="bg-santiEmerald hover:bg-santiDark text-white px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 border border-santiMint/30">
+            <a href="#agendar" onclick="trackConversion('Agendar_Header')" class="bg-santiEmerald hover:bg-santiNavy text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center gap-2 border border-santiMint/30">
                 <i class="fa-regular fa-calendar-check text-santiGold"></i>
-                <span>Agendar Cita</span>
+                <span>Reservar Cita</span>
             </a>
         </div>
     </div>
 </header>
 
-<!-- Hero Section (Optimizado CRO para Profesionistas Independientes) -->
-<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-santiCream/60 via-white to-[#FAF8F5]">
-    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#145C52_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
+<!-- SECCIÓN HERO (CABECERA PRINCIPAL DE ALTA CONVERSIÓN) -->
+<section class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-santiCream/70 via-white to-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
             
-            <!-- Hero Left Content -->
+            <!-- Hero Left: Copy Direct Response -->
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                 
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-santiCream border border-santiGold/40 text-santiEmerald text-xs font-bold shadow-sm">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-santiCream border border-santiGold/50 text-santiEmerald text-xs font-bold shadow-sm">
                     <span class="flex h-2 w-2 rounded-full bg-santiGold animate-pulse"></span>
-                    <span>Optimización Fiscal y Retiro para Profesionistas Independientes</span>
+                    <span>Para Administradores, Contadores, Analistas y Profesionistas Independientes</span>
                 </div>
 
-                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-santiDark leading-tight">
-                    Haz que tus impuestos <span class="text-santiEmerald">construyan tu patrimonio</span> en lugar de regalar dinero al SAT.
+                <!-- H1 Solicitado Exacto -->
+                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-santiNavy leading-tight tracking-tight">
+                    Optimiza tus Impuestos y Protege tu Ingreso <span class="text-santiEmerald underline decoration-santiGold decoration-4">sin Amarrar tu Dinero por Décadas</span>
                 </h1>
 
+                <!-- Subtítulo Solicitado Exacto -->
                 <p class="text-base sm:text-lg text-santiDark/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                    Si facturas por honorarios, actividad empresarial o sueldos altos, aprovecha el <strong>Artículo 151 de la LISR</strong> para deducir hasta el 10% de tus ingresos, blindar tu capacidad de generar dinero y crear un retiro privado garantizado.
+                    Estrategias de Retiro Deducible y Blindaje Patrimonial diseñadas a la medida de tu régimen fiscal y proyectos de vida.
                 </p>
 
-                <!-- Imagen Hero Zone -->
-                <div class="my-4 rounded-2xl overflow-hidden shadow-md border border-santiCream max-w-lg mx-auto lg:mx-0 bg-white">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Profesional independiente analizando estrategia fiscal y financiera" 
-                         class="w-full h-52 sm:h-60 object-cover object-center">
-                </div>
-
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2 text-xs font-semibold text-santiDark">
-                    <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-santiCream shadow-sm">
-                        <i class="fa-solid fa-calculator text-santiGold"></i>
-                        <span>Cálculo de Deducción ISR</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-santiCream shadow-sm">
-                        <i class="fa-solid fa-laptop text-santiEmerald"></i>
-                        <span>Sesión Virtual (30 min)</span>
-                    </div>
-                </div>
-
-                <!-- CTAs Optimización de Conversión -->
-                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20sitio%20web%20y%20quiero%20calcular%20mi%20tope%20de%20deducci%C3%B3n%20fiscal%20del%20Art.%20151%20como%20profesionista." target="_blank" rel="noopener noreferrer" onclick="trackConversion()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white px-8 py-4 rounded-xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 group border border-santiGold/50">
-                        <i class="fa-brands fa-whatsapp text-xl text-santiDark group-hover:text-white"></i>
-                        <span>Calcular mi Deducción en WhatsApp</span>
+                <!-- Botones CTAs Solicitados -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#agendar" onclick="trackConversion('CTA_Hero_Primary')" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white px-8 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 group border border-santiGold/60 transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-calendar-check text-lg text-santiDark group-hover:text-white"></i>
+                        <span>Reservar Sesión Estratégica (30 min)</span>
                     </a>
-                    <a href="#agendar" class="w-full sm:w-auto bg-white hover:bg-santiCream text-santiDark px-6 py-4 rounded-xl font-semibold text-sm border border-santiMint/50 transition-all duration-300 flex items-center justify-center gap-3 shadow-sm">
-                        <i class="fa-regular fa-calendar-check text-santiEmerald text-lg"></i>
-                        <span>Agendar Sesión Privada</span>
+                    
+                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20tengo%20dudas%20r%C3%A1pidas%20sobre%20la%20Ses%C3%B3n%20Estrat%C3%A9gica." target="_blank" rel="noopener noreferrer" onclick="trackConversion('WhatsApp_Hero_Secondary')" class="w-full sm:w-auto bg-white hover:bg-santiCream text-santiDark px-6 py-4 rounded-xl font-semibold text-xs border border-santiMint/60 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:border-santiEmerald">
+                        <span>💬 ¿Dudas rápidas? Escríbeme por WhatsApp</span>
                     </a>
                 </div>
 
-                <!-- Trust Bar -->
-                <div class="pt-6 border-t border-santiCream flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-santiDark/70">
-                    <div class="flex items-center gap-1.5">
+                <!-- Garantías de Certeza -->
+                <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-santiDark/70 border-t border-santiCream">
+                    <div class="flex items-center gap-1.5 font-medium">
                         <i class="fa-solid fa-shield-halved text-santiEmerald"></i>
-                        <span>Agente Autorizado CNSF</span>
+                        <span>Cédula CNSF: <strong>C412676</strong></span>
                     </div>
-                    <div class="flex items-center gap-1.5">
+                    <div class="flex items-center gap-1.5 font-medium">
                         <i class="fa-solid fa-building text-santiEmerald"></i>
                         <span>Seguros Monterrey NY Life</span>
                     </div>
-                    <div class="flex items-center gap-1.5">
-                        <i class="fa-solid fa-id-card text-santiGold"></i>
-                        <span>Cédula A1: <strong>C412676</strong></span>
-                        <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-santiEmerald underline font-bold hover:text-santiGold transition-colors">
-                            (Ver Cédula)
-                        </a>
+                    <div class="flex items-center gap-1.5 font-medium">
+                        <i class="fa-solid fa-lock text-santiGold"></i>
+                        <span>Sesión 100% Confidencial</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Hero Right Card -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Hero Right: Contenedor de Video 16:9 Placeholder -->
+            <div class="lg:col-span-5">
+                <div class="bg-white p-3 sm:p-4 rounded-3xl shadow-2xl border border-santiCream relative">
                     
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-santiCream relative z-10 space-y-6">
+                    <div class="flex items-center justify-between pb-3 px-2 border-b border-santiCream/60 mb-3">
+                        <span class="text-xs font-bold text-santiNavy flex items-center gap-2">
+                            <i class="fa-solid fa-circle-play text-santiGold text-base"></i>
+                            Conoce a tu asesor en 40 segundos
+                        </span>
+                        <span class="text-[10px] bg-santiCream text-santiEmerald font-extrabold px-2 py-0.5 rounded">30-45 Seg</span>
+                    </div>
+
+                    <!-- Placeholder Video 16:9 Aspect Ratio -->
+                    <div class="relative w-full aspect-video bg-santiDark rounded-2xl overflow-hidden shadow-inner group border border-santiDark/20 flex items-center justify-center">
                         
-                        <!-- Imagen de Santiago -->
-                        <div class="rounded-2xl overflow-hidden border border-santiCream/60 bg-[#FAF8F5] flex items-center justify-center">
-                            <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" 
-                                 alt="Santiago - Asesor Patrimonial" 
-                                 class="w-full h-auto max-h-96 object-contain"
-                                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt&sz=w1000';">
-                        </div>
+                        <!-- Imagen de fondo/poster para el placeholder -->
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Santiago - Asesor Patrimonial" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-santiNavy/90 via-santiNavy/40 to-transparent"></div>
 
-                        <div class="flex items-center justify-between border-b border-santiCream pb-3">
-                            <span class="text-xs font-bold text-santiDark">Santiago (Santi)</span>
-                            <span class="text-[10px] uppercase tracking-wider font-bold bg-santiCream text-santiEmerald px-2.5 py-1 rounded-md border border-santiGold/30">
-                                Cédula CNSF C412676
+                        <!-- Botón Play Interactuable -->
+                        <a href="#agendar" class="relative z-10 flex flex-col items-center gap-3 text-center p-4">
+                            <div class="w-16 h-16 bg-santiGold text-santiDark rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-santiEmerald group-hover:text-white transition-all duration-300 border-2 border-white">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                            <span class="text-xs font-bold text-white tracking-wide drop-shadow-md">
+                                Ver presentación personal de Santi
                             </span>
-                        </div>
-
-                        <blockquote class="text-xs sm:text-sm text-santiDark/80 italic border-l-2 border-santiGold pl-3 py-1">
-                            "Como profesionista independiente, tu capacidad de generar ingresos es tu activo más valioso. Mi meta es que no regales dinero en impuestos y tengas un retiro garantizado."
-                        </blockquote>
-
-                        <div class="space-y-3 pt-1">
-                            <div class="flex items-start gap-3 text-xs text-santiDark">
-                                <i class="fa-solid fa-circle-check text-santiEmerald mt-0.5"></i>
-                                <span><strong>Deducción Fiscal ISR:</strong> Aprovecha el PPR (Art. 151 LISR) para recuperar saldo a favor en tu declaración anual.</span>
-                            </div>
-                            <div class="flex items-start gap-3 text-xs text-santiDark">
-                                <i class="fa-solid fa-circle-check text-santiEmerald mt-0.5"></i>
-                                <span><strong>Blindaje de Ingresos:</strong> Respaldo económico inmediato ante enfermedad o accidente incapacitante.</span>
-                            </div>
-                            <div class="flex items-start gap-3 text-xs text-santiDark">
-                                <i class="fa-solid fa-circle-check text-santiEmerald mt-0.5"></i>
-                                <span><strong>Fondo Garantizado:</strong> Capital protegido contra la inflación en UDIs o Dólares respaldado por Seguros Monterrey.</span>
-                            </div>
-                        </div>
-
-                        <a href="#agendar" class="block w-full text-center bg-santiEmerald hover:bg-santiDark text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md">
-                            Reservar Cita Privada (30 min)
                         </a>
 
                     </div>
 
-                    <!-- Backdrop Glow -->
-                    <div class="absolute -top-4 -right-4 w-72 h-72 bg-santiGold/15 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-                    <div class="absolute -bottom-4 -left-4 w-72 h-72 bg-santiEmerald/15 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+                    <p class="text-[11px] text-center text-santiDark/70 mt-3 font-medium">
+                        Santiago • Asesor Patrimonial Autorizado ante la CNSF
+                    </p>
 
                 </div>
             </div>
@@ -226,206 +193,237 @@
     </div>
 </section>
 
-<!-- Beneficios para Profesionistas Independientes -->
-<section id="beneficios" class="py-20 bg-white">
+<!-- SECCIÓN DE VALOR / PILARES FINANCIEROS (3 TARJETAS RESPONSIVAS) -->
+<section id="pilares" class="py-20 bg-white border-y border-santiCream/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-santiDark">Estrategias patrimoniales para quien administra su propio negocio o práctica</h2>
-            <p class="text-xs sm:text-sm text-santiDark/70 mt-3">Soluciones financieras sólidas para optimizar impuestos y garantizar tu tranquilidad futura.</p>
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-santiEmerald bg-santiCream px-3.5 py-1 rounded-full border border-santiGold/30">
+                Estrategia Integral para Profesionistas
+            </span>
+            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
+                Los 3 Pilares para Construir Patrimonio sin Asfixiar tu Flujo de Efectivo
+            </h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
             
-            <!-- Tarjeta 1 -->
-            <div class="bg-santiCream/30 p-8 rounded-2xl border border-santiCream hover:shadow-xl transition-all duration-300 group">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-santiEmerald text-xl shadow-md group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors mb-6 border border-santiMint/30">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
+            <!-- Tarjeta 1: Deducción Fiscal ISR -->
+            <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-santiCream hover:border-santiGold/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-santiCream rounded-xl flex items-center justify-center text-santiEmerald text-xl font-bold shadow-sm group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-santiNavy">
+                        Deducción Fiscal ISR
+                    </h3>
+                    <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
+                        Aprovecha los beneficios de ley en tu declaración anual sin complicaciones. Reduce la carga de impuestos del SAT deduciendo tus aportaciones y recupera saldo a favor.
+                    </p>
                 </div>
-                <h3 class="font-heading font-bold text-lg text-santiDark mb-3">Estrategia de Deducción ISR (PPR)</h3>
-                <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
-                    Si tributas por Actividad Empresarial o Honorarios, aporta a un Plan Personal de Retiro (Art. 151 LISR). Reduce la base gravable de tu declaración anual y convierte tus impuestos en ahorro propio.
-                </p>
+                <div class="pt-6 mt-6 border-t border-santiCream/80 text-[11px] font-semibold text-santiEmerald flex items-center gap-1.5">
+                    <i class="fa-solid fa-check text-santiGold"></i>
+                    <span>Aplica Art. 151 LISR / Honorarios y PFAEC</span>
+                </div>
             </div>
 
-            <!-- Tarjeta 2 -->
-            <div class="bg-santiCream/30 p-8 rounded-2xl border border-santiCream hover:shadow-xl transition-all duration-300 group">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-santiEmerald text-xl shadow-md group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors mb-6 border border-santiMint/30">
-                    <i class="fa-solid fa-user-shield"></i>
+            <!-- Tarjeta 2: Blindaje de Ingresos por Invalidez -->
+            <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-santiCream hover:border-santiGold/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-santiCream rounded-xl flex items-center justify-center text-santiEmerald text-xl font-bold shadow-sm group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-santiNavy">
+                        Blindaje de Ingresos por Invalidez
+                    </h3>
+                    <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
+                        Garantiza tu estabilidad económica ante cualquier accidente o enfermedad. Como profesionista independiente, mantén una suma asegurada directa si no puedes trabajar.
+                    </p>
                 </div>
-                <h3 class="font-heading font-bold text-lg text-santiDark mb-3">Protección de Ingresos por Invalidez</h3>
-                <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
-                    Si te detienes tú, se detiene tu facturación. Contarás con una suma asegurada garantizada que sustituye tus ingresos si una enfermedad o accidente te impide ejercer tu actividad profesional.
-                </p>
+                <div class="pt-6 mt-6 border-t border-santiCream/80 text-[11px] font-semibold text-santiEmerald flex items-center gap-1.5">
+                    <i class="fa-solid fa-check text-santiGold"></i>
+                    <span>Protección continua de tu facturación</span>
+                </div>
             </div>
 
-            <!-- Tarjeta 3 -->
-            <div class="bg-santiCream/30 p-8 rounded-2xl border border-santiCream hover:shadow-xl transition-all duration-300 group">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-santiEmerald text-xl font-extrabold shadow-md group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors mb-6 border border-santiMint/30">
-                    <i class="fa-solid fa-chart-line"></i>
+            <!-- Tarjeta 3: Flexibilidad y Protección Anti-Inflación -->
+            <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-santiCream hover:border-santiGold/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-santiCream rounded-xl flex items-center justify-center text-santiEmerald text-xl font-bold shadow-sm group-hover:bg-santiEmerald group-hover:text-santiGold transition-colors">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-santiNavy">
+                        Flexibilidad y Protección Anti-Inflación
+                    </h3>
+                    <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
+                        Estrategias en UDIs y ahorro adicional adaptado a tus metas a mediano y largo plazo, sin letras chiquitas. Diseña plazos flexibles para tus proyectos reales.
+                    </p>
                 </div>
-                <h3 class="font-heading font-bold text-lg text-santiDark mb-3">Pensión Privada Garantizada</h3>
-                <p class="text-xs sm:text-sm text-santiDark/80 leading-relaxed">
-                    Construye un capital independiente del gobierno. Fondo protegido legalmente contra devaluación e inflación (en UDIs o Dólares) respaldado por Seguros Monterrey New York Life.
-                </p>
+                <div class="pt-6 mt-6 border-t border-santiCream/80 text-[11px] font-semibold text-santiEmerald flex items-center gap-1.5">
+                    <i class="fa-solid fa-check text-santiGold"></i>
+                    <span>Blindaje en moneda fuerte garantizada</span>
+                </div>
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- Respaldo Institucional -->
-<section id="respaldo" class="py-16 bg-santiEmerald text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
-                <span class="text-xs font-bold uppercase tracking-widest text-santiGold">Certidumbre Jurídica</span>
-                <h2 class="font-heading text-2xl sm:text-3xl font-bold">Solidez Institucional y Regulación Oficial</h2>
-                <p class="text-xs sm:text-sm text-santiCream/90 max-w-2xl">
-                    Más de 80 años de trayectoria protegiendo el patrimonio en México. Todos los instrumentos financieros cuentan con registro ante la CNSF y cumplimiento normativo del SAT.
-                </p>
-            </div>
-            <div class="lg:col-span-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-center space-y-3">
-                <i class="fa-solid fa-award text-santiGold text-4xl mb-1"></i>
-                <h4 class="font-heading font-bold text-base">Cédula Oficial CNSF</h4>
-                <p class="text-xs text-santiCream">Cédula Autorizada: <strong class="text-white">C412676</strong></p>
-                <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-bold text-santiGold hover:underline pt-1">
-                    Ver Documento PDF Oficial &rarr;
-                </a>
+<!-- SECCIÓN DE PRUEBA SOCIAL / TESTIMONIO REAL (NUEVO BLOQUE) -->
+<section id="testimonios" class="py-20 bg-gradient-to-b from-[#FAF8F5] to-santiCream/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-santiNavy bg-santiGold/30 px-4 py-1.5 rounded-full border border-santiGold">
+                Casos Reales de Éxito
+            </span>
+        </div>
+
+        <!-- Tarjeta Destacada Testimonio Itzel C. -->
+        <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-santiCream relative overflow-hidden">
+            
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-santiGold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Foto de la cliente -->
+                <div class="md:col-span-4 flex flex-col items-center text-center">
+                    <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-santiGold shadow-lg mb-4 bg-santiCream">
+                        <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" 
+                             alt="Itzel C. - Administradora de Marketing" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6&sz=w500';">
+                    </div>
+                    <h4 class="font-heading font-bold text-base text-santiNavy">Itzel C.</h4>
+                    <p class="text-xs text-santiDark/70 font-medium">Administradora de Marketing</p>
+                </div>
+
+                <!-- Contenido del Testimonio Solicitado Exacto -->
+                <div class="md:col-span-8 space-y-4">
+                    
+                    <div class="inline-flex items-center gap-2 bg-santiCream text-santiEmerald px-3 py-1 rounded-lg text-xs font-extrabold border border-santiGold/40">
+                        <span>✔ Caso Real: Ahorro con Flexibilidad para Proyecto a 3 Años</span>
+                    </div>
+
+                    <blockquote class="text-xs sm:text-sm text-santiDark/90 italic leading-relaxed font-normal border-l-4 border-santiGold pl-4 py-1">
+                        "Tenía un ahorro para construir un negocio en 3 años, pero me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y deducción de impuestos."
+                    </blockquote>
+
+                    <div class="flex items-center gap-1 text-santiGold text-xs">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="text-santiDark/60 text-[11px] font-semibold ml-2">Estrategia Personalizada 100% Ejecutada</span>
+                    </div>
+
+                </div>
+
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- Calendar Booking Section -->
+<!-- SECCIÓN DE AGENDAMIENTO (GOOGLE CALENDAR INTEGRADO) -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
             <span class="text-xs font-bold uppercase tracking-widest text-santiEmerald bg-santiCream px-3.5 py-1.5 rounded-full border border-santiGold/30">
-                Reserva Digital Directa
+                Paso Final
             </span>
-            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-santiDark mt-3">Agenda tu sesión estratégica de 30 minutos</h2>
-            <p class="text-xs sm:text-sm text-santiDark/70 mt-2">
-                Selecciona el día y horario en el calendario virtual para estructurar tu diagnóstico fiscal y patrimonial personalizado.
+            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
+                Elige el día y la hora para tu Sesión Estratégica de 30 min
+            </h2>
+            <p class="text-xs sm:text-sm text-santiDark/80">
+                Analizaremos tu régimen fiscal y tus metas de ahorro. Sesión 100% digital y confidencial.
             </p>
         </div>
 
-        <!-- Google Calendar Iframe intacto -->
-        <div class="bg-[#FAF8F5] p-2 sm:p-6 rounded-3xl border border-santiCream shadow-xl overflow-hidden">
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+        <!-- Contenedor Iframe Responsivo Google Calendar -->
+        <div class="bg-[#FAF8F5] p-2 sm:p-6 rounded-3xl border border-santiCream shadow-2xl overflow-hidden">
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" style="border: 0" width="100%" height="620" frameborder="0"></iframe>
         </div>
 
-        <div class="mt-8 text-center bg-santiCream/60 border border-santiGold/30 rounded-2xl p-4 max-w-md mx-auto">
-            <p class="text-xs text-santiDark font-medium">
-                ¿Prefieres resolver tus dudas de forma inmediata antes de agendar?
+        <!-- Nota de Privacidad y Simplificación de Campos -->
+        <div class="mt-6 text-center max-w-xl mx-auto space-y-2">
+            <p class="text-xs text-santiDark/70 bg-santiCream/60 py-2.5 px-4 rounded-xl border border-santiGold/30">
+                <i class="fa-solid fa-shield text-santiEmerald mr-1"></i>
+                Para personalizar tu llamada y enviarte la liga de Google Meet, solo requerimos tu <strong>Nombre, WhatsApp y Régimen Fiscal</strong>. Sin cuestionarios largos ni datos bancarios.
             </p>
-            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20sitio%20web%20y%20quiero%20calcular%20mi%20tope%20de%20deducci%C3%B3n%20fiscal%20del%20Art.%20151%20como%20profesionista." target="_blank" rel="noopener noreferrer" onclick="trackConversion()" class="inline-flex items-center gap-2 text-xs font-bold text-santiEmerald hover:text-santiDark mt-2">
-                <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
-                <span>Enviar mensaje directo por WhatsApp</span>
-            </a>
         </div>
 
     </div>
 </section>
 
-<!-- Footer -->
+<!-- PIE DE PÁGINA (FOOTER REGLAMENTARIO Y LEGAL) -->
 <footer class="bg-santiDark text-santiCream/80 py-12 border-t border-santiDark text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-santiCream/20 inline-flex items-center">
+                <div class="bg-white p-2 rounded-xl shadow-sm inline-flex items-center">
                     <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
-                         alt="Logo Santi te asesora Footer" 
+                         alt="Logo Footer" 
                          class="h-8 w-auto object-contain"
                          onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
                 </div>
             </div>
-            <div class="flex flex-wrap items-center gap-4 text-santiCream/80">
-                <span>Asesor Patrimonial</span>
+            
+            <div class="flex flex-wrap items-center justify-center gap-3 text-santiCream/80 text-[11px]">
+                <span>Asesoría Patrimonial Regulada</span>
+                <span>•</span>
+                <span>Cédula CNSF A1: <strong>C412676</strong></span>
                 <span>•</span>
                 <span>Seguros Monterrey New York Life</span>
-                <span>•</span>
-                <span>Cédula CNSF A1: C412676</span>
             </div>
         </div>
         
         <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-santiCream/60">
-            <p>© 2026 Santi te asesora. Todos los derechos reservados. Servicios respaldados por Seguros Monterrey New York Life, S.A. de C.V.</p>
-            <div class="flex items-center gap-4">
-                <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">Cédula Oficial PDF</a>
+            <p>© 2026 Santi te asesora. Todos los derechos reservados. Instrumentos autorizados ante la Comisión Nacional de Seguros y Fianzas (CNSF).</p>
+            
+            <div class="flex items-center gap-4 font-semibold">
+                <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">Ver Cédula Oficial PDF</a>
                 <span>•</span>
-                <button onclick="toggleModal()" class="hover:text-santiGold transition-colors focus:outline-none cursor-pointer">Aviso de Privacidad</button>
+                <button onclick="toggleModal()" class="hover:text-santiGold transition-colors cursor-pointer focus:outline-none">Aviso de Privacidad</button>
                 <span>•</span>
-                <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">WhatsApp</a>
+                <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">Contacto Directo</a>
             </div>
         </div>
+
     </div>
 </footer>
 
 <!-- MODAL AVISO DE PRIVACIDAD -->
-<div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/75 backdrop-blur-sm flex items-center justify-center p-4">
+<div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-santiCream relative max-h-[85vh] flex flex-col text-santiDark">
         <div class="flex items-center justify-between pb-4 border-b border-santiCream">
-            <h3 class="font-heading text-2xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
-            <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl p-1 transition-colors focus:outline-none">&times;</button>
+            <h3 class="font-heading text-xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
+            <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl focus:outline-none">&times;</button>
         </div>
-        <div class="overflow-y-auto my-4 pr-2 space-y-4 text-sm text-santiDark/80 leading-relaxed">
-            <p>
-                <strong>Santi te asesora</strong>, con cédula de Agente Autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF) No. <strong>C412676</strong>, pone a su disposición el presente Aviso de Privacidad en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
-            </p>
-            <p>
-                <strong>1. Datos Recabados:</strong> Los datos personales y financieros recopilados a través de este sitio, el agendamiento de citas o vía WhatsApp (tales como nombre, teléfono, correo electrónico y actividad profesional) serán tratados de forma estrictamente confidencial.
-            </p>
-            <p>
-                <strong>2. Finalidad del Tratamiento:</strong> Sus datos serán utilizados exclusivamente para:
-            </p>
-            <ul class="list-disc pl-5 space-y-1">
-                <li>Agendar y confirmar sesiones de diagnóstico financiero y patrimonial 1 a 1.</li>
-                <li>Elaborar análisis de protección por invalidez, ahorro con beneficios fiscales y retiro.</li>
-                <li>Enviar información relativa a sus consultas o requerimientos específicos.</li>
-            </ul>
-            <p>
-                <strong>3. Protección y Transferencia:</strong> Sus datos personales no serán vendidos, alquilados ni transferidos a terceros no autorizados sin su consentimiento previo.
-            </p>
-            <p>
-                <strong>4. Derechos ARCO:</strong> Para ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición, puede enviar una solicitud directa a través del botón oficial de WhatsApp o medios de contacto de Santi te asesora.
-            </p>
+        <div class="overflow-y-auto my-4 pr-2 space-y-3 text-xs text-santiDark/80 leading-relaxed">
+            <p><strong>Santi te asesora</strong> (Cédula CNSF No. <strong>C412676</strong>) resguarda tus datos bajo la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+            <p><strong>Uso de Datos:</strong> Exclusivamente para agendar la Sesión Estratégica, enviar la liga de Google Meet y elaborar proyecciones fiscales/patrimoniales privadas.</p>
+            <p>Tus datos nunca serán vendidos o transferidos a terceros.</p>
         </div>
         <div class="pt-4 border-t border-santiCream text-right">
-            <button onclick="toggleModal(); trackConversion();" class="px-6 py-2.5 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase tracking-wider hover:bg-santiDark transition-all shadow-md">
-                Entendido y Cerrar
-            </button>
+            <button onclick="toggleModal()" class="px-5 py-2 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase hover:bg-santiDark transition-all">Entendido</button>
         </div>
     </div>
 </div>
 
 <script>
     function toggleModal() {
-        const modal = document.getElementById('privacyModal');
-        modal.classList.toggle('hidden');
+        document.getElementById('privacyModal').classList.toggle('hidden');
     }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('privacyModal');
-        if (event.target === modal) {
-            modal.classList.add('hidden');
-        }
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.getElementById('privacyModal').classList.add('hidden');
-        }
-    });
 </script>
 
-<!-- Floating Action Buttons -->
-<div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
-    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20sitio%20web%20y%20quiero%20calcular%20mi%20tope%20de%20deducci%C3%B3n%20fiscal%20del%20Art.%20151%20como%20profesionista." target="_blank" rel="noopener noreferrer" onclick="trackConversion()" class="bg-emerald-600 hover:bg-emerald-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110" title="Contactar por WhatsApp">
+<!-- Widget Flotante de WhatsApp -->
+<div class="fixed bottom-6 right-6 z-40">
+    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20tengo%20dudas%20r%C3%A1pidas%20sobre%20la%20Ses%C3%B3n%20Estrat%C3%A9gica." target="_blank" rel="noopener noreferrer" onclick="trackConversion('WhatsApp_Floating')" class="bg-emerald-600 hover:bg-emerald-700 text-white w-13 h-13 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-white" title="Dudas por WhatsApp">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
-    </a>
-    <a href="#agendar" class="bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 border border-santiGold/50 hover:scale-105 transition-all duration-300 text-xs font-bold">
-        <i class="fa-regular fa-calendar-check text-santiDark text-sm"></i>
-        <span class="hidden sm:inline">Agendar Cita</span>
     </a>
 </div>
 
