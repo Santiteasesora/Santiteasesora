@@ -79,7 +79,7 @@
             <a href="#calculadora" class="hover:text-santiEmerald transition-colors">Calculadora ISR</a>
             <a href="#pilares" class="hover:text-santiEmerald transition-colors">Estrategia PPR</a>
             <a href="#testimonios" class="hover:text-santiEmerald transition-colors">Casos Reales</a>
-            <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Sesión</a>
+            <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Cita</a>
         </div>
 
         <div class="flex items-center gap-3">
@@ -97,7 +97,7 @@
     </div>
 </header>
 
-<!-- SECCIÓN HERO (AJUSTADA A ENFOQUE PPR + LISR) -->
+<!-- SECCIÓN HERO (CON ÉNFASIS TIPOGRÁFICO DE ALTA ESCANEO) -->
 <section class="relative pt-28 pb-12 md:pt-36 md:pb-20 overflow-hidden bg-gradient-to-b from-santiCream/70 via-white to-[#FAF8F5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -110,12 +110,13 @@
                     <span>Para Administradores, Contadores, Analistas y Profesionistas Independientes</span>
                 </div>
 
+                <!-- H1 con jerarquía visual y contraste de énfasis -->
                 <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-santiNavy leading-tight tracking-tight">
-                    Optimiza tus Impuestos ante el SAT y Construye tu Retiro <span class="text-santiEmerald underline decoration-santiGold decoration-4">sin Amarrar tu Liquidez</span>
+                    Optimiza tus Impuestos ante el SAT y Construye tu Retiro <span class="text-santiEmerald underline decoration-santiGold decoration-4 underline-offset-4">sin Amarrar tu Liquidez</span>
                 </h1>
 
                 <p class="text-base sm:text-lg text-santiDark/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                    Estructura tu <strong>Plan Personal de Retiro (PPR) Deducible bajo el Art. 151 de la LISR</strong> y recibe protección de ingresos por invalidez integrada en la misma estrategia.
+                    Estructura tu <strong class="text-santiNavy font-bold">Plan Personal de Retiro (PPR) Deducible bajo el Art. 151 de la LISR</strong> y recibe protección de ingresos por invalidez integrada en la misma estrategia.
                 </p>
 
                 <!-- CTAs -->
@@ -184,7 +185,7 @@
     </div>
 </section>
 
-<!-- SECCIÓN 3: CALCULADORA DE DEDUCCIÓN FISCAL (LISR VIGENTE MÉXICO) -->
+<!-- SECCIÓN 3: CALCULADORA ISR (AJUSTE TEXTO "DEVOLUCIÓN ESTIMADA DE HASTA") -->
 <section id="calculadora" class="py-16 bg-santiNavy text-white relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -203,7 +204,6 @@
         <!-- Tarjeta de la Calculadora -->
         <div class="bg-white text-santiDark rounded-3xl p-6 sm:p-10 shadow-2xl border border-santiGold/40 space-y-8">
             
-            <!-- Entrada de Ingreso -->
             <div class="space-y-4">
                 <div class="flex justify-between items-center flex-wrap gap-2">
                     <label class="text-xs font-extrabold text-santiNavy uppercase tracking-wider">
@@ -225,7 +225,6 @@
                 </div>
             </div>
 
-            <!-- Resultados Proyectados -->
             <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-santiCream">
                 
                 <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-santiCream space-y-1">
@@ -234,17 +233,17 @@
                     <p class="text-[10px] text-santiDark/60">Monto máximo legal asignado a tu retiro según la ley.</p>
                 </div>
 
+                <!-- Texto Solicitado Ajustado: "Devolución estimada de hasta" -->
                 <div class="bg-santiCream/80 p-5 rounded-2xl border border-santiGold/50 space-y-1">
-                    <span class="text-[11px] font-bold text-santiEmerald uppercase">Estimado de Saldo a Favor (SAT)</span>
+                    <span class="text-[11px] font-bold text-santiEmerald uppercase">Devolución estimada de hasta</span>
                     <div id="refundOutput" class="text-2xl font-extrabold text-santiEmerald">\$16,200 MXN</div>
-                    <p class="text-[10px] text-santiDark/70 font-medium">Dinero estimado que el SAT te devuelve en abril.</p>
+                    <p class="text-[10px] text-santiDark/70 font-medium">Monto estimado de saldo a favor que el SAT te devuelve en abril.</p>
                 </div>
 
             </div>
 
-            <!-- CTA de Aplicación Directa -->
             <div class="text-center pt-2">
-                <button onclick="applyCalcToForm()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md">
+                <button onclick="applyCalcToForm()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md border border-santiGold">
                     Aplicar este cálculo e iniciar Diagnóstico (30 min) &rarr;
                 </button>
             </div>
@@ -272,7 +271,6 @@
 
         <div class="grid md:grid-cols-3 gap-8">
             
-            <!-- Pilar Base: PPR Deducible -->
             <div class="bg-[#FAF8F5] p-8 rounded-3xl border-2 border-santiEmerald shadow-lg flex flex-col justify-between relative">
                 <div class="absolute -top-3.5 left-6 bg-santiEmerald text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">
                     Eje Principal
@@ -293,7 +291,6 @@
                 </div>
             </div>
 
-            <!-- Plus Integrado 1: Blindaje por Invalidez -->
             <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-santiCream hover:border-santiGold/60 transition-all flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="w-12 h-12 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
@@ -311,7 +308,6 @@
                 </div>
             </div>
 
-            <!-- Plus Integrado 2: Ahorro Flexible Anti-Inflación -->
             <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-santiCream hover:border-santiGold/60 transition-all flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="w-12 h-12 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
@@ -333,7 +329,7 @@
     </div>
 </section>
 
-<!-- SECCIÓN TESTIMONIO REAL (ITZEL C.) -->
+<!-- SECCIÓN TESTIMONIO REAL -->
 <section id="testimonios" class="py-16 bg-santiCream/40 border-y border-santiCream">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-santiCream">
@@ -361,7 +357,7 @@
     </div>
 </section>
 
-<!-- SECCIÓN FORMULARIO DE 3 PREGUNTAS Y CONEXIÓN GOOGLE SHEETS -->
+<!-- FORMULARIO DE 3 PREGUNTAS (CON TRASLADO DINÁMICO DEL CÁLCULO) -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -379,6 +375,12 @@
 
         <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-santiCream shadow-2xl relative">
             
+            <!-- Badge Dinámico del Cálculo Trasladado -->
+            <div id="calcAppliedBadge" class="hidden mb-6 p-3.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
+                <span><i class="fa-solid fa-calculator mr-2"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
+                <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase">Inyectado</span>
+            </div>
+
             <form id="leadForm" onsubmit="submitToGoogleSheets(event)" class="space-y-6">
                 
                 <!-- PREGUNTA 1: Régimen Fiscal -->
@@ -427,7 +429,7 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 3: Datos de Contacto (SIN PATTERN RÍGIDO) -->
+                <!-- PREGUNTA 3: Datos de Contacto (SIN ATRIBUTO PATTERN) -->
                 <div class="space-y-4 pt-2 border-t border-santiCream/80">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
                         3. Datos para enviar tu propuesta y abrir la agenda
@@ -438,14 +440,13 @@
                             <input type="text" name="nombre" id="formNombre" placeholder="Tu Nombre Completo *" required class="w-full bg-white text-xs text-santiDark p-3.5 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
                         </div>
                         <div>
-                            <!-- SIN ATRIBUTO PATTERN PARA CERO FRICCIÓN -->
                             <input type="tel" name="whatsapp" id="formWhatsApp" placeholder="WhatsApp (10 dígitos) *" required class="w-full bg-white text-xs text-santiDark p-3.5 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
                         </div>
                     </div>
                 </div>
 
-                <!-- Campo oculto para llevar la cifra calculada -->
-                <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado">
+                <!-- Campo oculto del cálculo trasladado -->
+                <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                 <!-- Botón de Envío -->
                 <div class="pt-2 text-center space-y-3">
@@ -453,6 +454,7 @@
                         <span>Continuar a Seleccionar Horario en Agenda</span>
                         <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
+                    
                     <p class="text-[11px] text-santiDark/60">
                         <i class="fa-solid fa-lock text-santiEmerald mr-1"></i>
                         Tus datos se resguardan bajo estricta confidencialidad. Cero spam.
@@ -493,7 +495,7 @@
     </div>
 </footer>
 
-<!-- MULTIPLICADOR #1: BARRA FLOTANTE MÓVIL PERSISTENTE (MOBILE STICKY CTA) -->
+<!-- MULTIPLICADOR #1: BARRA FLOTANTE MÓVIL PERSISTENTE -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-santiCream p-3 z-50 shadow-2xl flex items-center justify-between gap-3">
     <div class="text-[11px] font-bold text-santiNavy leading-tight">
         <span>Deducción ISR 2026</span>
@@ -504,33 +506,39 @@
     </a>
 </div>
 
-<!-- SCRIPTS DE CALCULADORA Y CONEXIÓN GOOGLE SHEETS -->
+<!-- SCRIPTS DE CALCULADORA Y ENVÍO A GOOGLE SHEETS -->
 <script>
-// 1. LÓGICA DE LA CALCULADORA ISR (ART. 151 LISR)
+let currentCalculatedRefund = '\$16,200 MXN';
+
 function updateCalculator(monthlyIncome) {
     const formattedIncome = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(monthlyIncome);
     document.getElementById('incomeDisplay').innerText = formattedIncome + ' MXN';
 
     const annualIncome = monthlyIncome * 12;
-    // Art. 151 LISR: 10% del ingreso anual, con tope legal de 5 UMAs anuales (~\$206,480 MXN en 2026)
-    const umaCap = 206480;
+    const umaCap = 206480; // 5 UMAs Anuales
     const rawDeductible = annualIncome * 0.10;
     const finalDeductible = Math.min(rawDeductible, umaCap);
-    
-    // Estimado de devolución del SAT (~30% de tasa marginal promedio en sueldos/honorarios)
-    const estimatedRefund = finalDeductible * 0.30;
+    const estimatedRefund = finalDeductible * 0.30; // 30% Tasa Marginal Promedio
 
-    document.getElementById('deductibleOutput').innerText = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
-    document.getElementById('refundOutput').innerText = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(estimatedRefund) + ' MXN';
+    const formattedDeductible = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
+    currentCalculatedRefund = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(estimatedRefund) + ' MXN';
 
-    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Deducción: $${finalDeductible} | Devolución: $${estimatedRefund}`;
+    document.getElementById('deductibleOutput').innerText = formattedDeductible;
+    document.getElementById('refundOutput').innerText = currentCalculatedRefund;
+
+    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${formattedDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
 }
 
 function applyCalcToForm() {
+    const badge = document.getElementById('calcAppliedBadge');
+    const badgeText = document.getElementById('calcAppliedText');
+    
+    badgeText.innerText = `Cálculo Aplicado: Devolución estimada de hasta ${currentCalculatedRefund}`;
+    badge.classList.remove('hidden');
+
     document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
 }
 
-// 2. ENVÍO DEL FORMULARIO Y CONEXIÓN A GOOGLE SHEETS (WEBHOOK / APPS SCRIPT)
 function submitToGoogleSheets(event) {
     event.preventDefault();
     
@@ -540,7 +548,7 @@ function submitToGoogleSheets(event) {
 
     const formData = new FormData(event.target);
     const leadData = {
-        timestamp: new Date().toLocaleString('es-MX'),
+        fecha: new Date().toLocaleString('es-MX'),
         regimen: formData.get('regimen'),
         objetivo: formData.get('objetivo'),
         nombre: formData.get('nombre'),
@@ -548,32 +556,28 @@ function submitToGoogleSheets(event) {
         calculo: formData.get('calculo_estimado')
     };
 
-    // Reemplazar la siguiente URL por la URL desplegada de tu Google Apps Script de "Respuestas de formulario"
-    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx_REEMPLAZAR_POR_TU_ID/exec';
+    // Pegar la URL desplegada del Google Apps Script (Instrucciones abajo)
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/TU_SCRIPT_ID_DESPLEGADO/exec';
 
-    // Disparo asíncrono para enviar a Google Sheets
     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(leadData)
-    }).catch(err => console.log('Notificación de envío local respaldada'));
+    }).catch(err => console.log('Resguardo local procesado'));
 
-    // Resguardo secundario local
     localStorage.setItem('santi_lead_backup', JSON.stringify(leadData));
 
-    // Eventos de conversión
     if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead', {content_name: leadData.objetivo});
     }
 
-    // Redirección inmediata a gracias.html
     setTimeout(() => {
         window.location.href = `gracias.html?nombre=${encodeURIComponent(leadData.nombre)}&wa=${encodeURIComponent(leadData.whatsapp)}`;
     }, 500);
 }
 
-// Inicializar la calculadora con el valor por defecto (\$45,000 MXN)
+// Inicializar calculadora en \$45,000 MXN
 updateCalculator(45000);
 </script>
 
