@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cita Confirmada | Santi te asesora</title>
-    <meta name="description" content="Recomendaciones e instrucciones previas para tu sesión estratégica patrimonial con Santi te asesora.">
-    
-    <!-- Favicon / Ícono de la pestaña -->
+    <title>Selecciona tu Horario | Santi te asesora</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
     <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,19 +29,17 @@
             }
         }
     </script>
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark">
+<body class="bg-slate-50 text-santiDark font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar Limpio (Sin enlace a la landing page) -->
-    <header class="w-full bg-white border-b border-santiCream shadow-sm py-4">
+    <!-- Header Navbar Limpio -->
+    <header class="w-full bg-white border-b border-santiCream shadow-sm py-4 sticky top-0 z-40">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
@@ -51,67 +47,84 @@
                      class="h-10 w-auto object-contain"
                      onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
             </div>
-            <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold bg-santiCream text-santiEmerald px-3.5 py-2 rounded-xl border border-santiMint/40 hover:bg-santiMint/20 transition-colors">
+            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20necesito%20ayuda%20para%20agendar%20mi%20cita." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold bg-santiCream text-santiEmerald px-3.5 py-2 rounded-xl border border-santiMint/40 hover:bg-santiMint/20 transition-colors">
                 <i class="fa-brands fa-whatsapp text-santiEmerald text-sm"></i>
-                <span>Contacto Directo</span>
+                <span>Soporte por WhatsApp</span>
             </a>
         </div>
     </header>
 
-    <!-- Main Section: Confirmación + Recomendaciones -->
-    <main class="py-12 md:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+    <!-- Main Section: Confirmación + Agenda Google + Recomendaciones -->
+    <main class="py-8 sm:py-12 flex-grow">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10">
 
-            <!-- Banner de Éxito y Foto de Santi -->
+            <!-- Status Indicator & Header Headline -->
             <div class="text-center space-y-4">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-santiEmerald mb-2 shadow-sm border border-emerald-200">
-                    <i class="fa-solid fa-check text-2xl"></i>
+                <div class="inline-flex items-center gap-2 bg-santiCream text-santiEmerald font-bold text-xs uppercase px-4 py-2 rounded-full border border-santiGold/30 shadow-xs">
+                    <span class="text-emerald-600 font-extrabold"><i class="fa-solid fa-circle-check"></i> Paso 1 Recibido</span>
+                    <span class="text-santiDark/30">•</span>
+                    <span class="text-santiGold font-extrabold animate-pulse"><i class="fa-regular fa-clock"></i> Paso 2: Elige tu Horario</span>
                 </div>
-                <span class="block text-xs font-bold uppercase tracking-widest text-santiGold">Paso 1 Completado</span>
-                <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-santiDark">
-                    ¡Tu cita ha sido confirmada con éxito!
+                
+                <h1 class="font-heading text-2xl sm:text-4xl font-extrabold text-santiDark leading-tight">
+                    ¡Tus datos fueron registrados! <br class="hidden sm:inline">
+                    <span class="text-santiEmerald">Selecciona el día y hora para tu Diagnóstico Fiscal</span>
                 </h1>
-                <p class="text-base text-santiDark/80 max-w-2xl mx-auto leading-relaxed">
-                    Te enviamos un correo con los detalles de acceso a la videollamada. Para aprovechar al máximo nuestros 30 minutos, te comparto estas recomendaciones previas a nuestra sesión:
+                
+                <p class="text-sm sm:text-base text-santiDark/80 max-w-2xl mx-auto leading-relaxed">
+                    Elige el espacio que mejor se adapte a tu agenda en el calendario interactivo oficial de abajo para confirmar inmediatamente tu videollamada de 30 minutos.
                 </p>
             </div>
 
-            <!-- Módulo "Agregar al Calendario" para evitar faltas -->
-            <div class="bg-santiCream/60 border border-santiGold/40 rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-sm max-w-2xl mx-auto">
-                <div class="inline-flex items-center gap-2 text-santiEmerald font-bold text-xs uppercase tracking-wider">
-                    <i class="fa-regular fa-calendar-plus text-base text-santiGold"></i>
-                    <span>¡No olvides agendar tu recordatorio!</span>
+            <!-- MÓDULO PRINCIPAL: WIDGET INTERACTIVO DE GOOGLE CALENDAR -->
+            <div id="agendar" class="bg-white rounded-3xl p-3 sm:p-6 shadow-xl border border-santiCream space-y-4">
+                <div class="flex items-center justify-between border-b border-santiCream pb-3 px-2">
+                    <div class="flex items-center gap-2 text-santiEmerald font-bold text-xs sm:text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-calendar-days text-santiGold text-base"></i>
+                        <span>Agenda Oficial de Santi</span>
+                    </div>
+                    <span class="text-[11px] text-santiDark/60 font-medium hidden sm:inline"><i class="fa-solid fa-lock text-emerald-600"></i> Reserva en tiempo real</span>
                 </div>
-                <h2 class="font-heading text-lg font-bold text-santiDark">Agrega la sesión a tu calendario personal</h2>
-                <p class="text-xs text-santiDark/80 max-w-md mx-auto">
-                    Asegúrate de reservar el espacio en tu agenda para recibir el enlace de acceso puntualmente.
+
+                <!-- Google Calendar Appointment Scheduling iFrame Embed -->
+                <div class="w-full bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 min-h-[600px] sm:min-h-[650px] shadow-inner">
+                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" 
+                            style="border: 0" 
+                            width="100%" 
+                            height="650" 
+                            frameborder="0"
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- CONTINGENCIA Y FUGA FINANCIERA: Si no agendan en el widget -->
+            <div class="bg-santiCream/80 border border-santiGold/50 rounded-2xl p-5 sm:p-6 text-center space-y-3 max-w-2xl mx-auto shadow-sm">
+                <div class="inline-flex items-center gap-2 text-santiEmerald font-bold text-xs uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                    <span>¿Prefieres agendar directamente por mensaje?</span>
+                </div>
+                <p class="text-xs sm:text-sm text-santiDark/90 leading-relaxed">
+                    Si no encuentras un horario disponible en el calendario o estás desde tu celular con poco tiempo, escríbeme para coordinar tu espacio manualmente.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                    <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-santiCream text-santiDark px-4 py-2.5 rounded-xl border border-santiCream text-xs font-bold shadow-xs transition-all">
-                        <i class="fa-brands fa-google text-red-500"></i>
-                        <span>Google Calendar</span>
-                    </a>
-                    <a href="https://outlook.live.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-santiCream text-santiDark px-4 py-2.5 rounded-xl border border-santiCream text-xs font-bold shadow-xs transition-all">
-                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i>
-                        <span>Outlook</span>
-                    </a>
-                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20quisiera%20confirmar%20el%20enlace%20de%20mi%20cita." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-santiEmerald hover:bg-santiDark text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-xs transition-all">
-                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-                        <span>Confirmar por WhatsApp</span>
+                <div class="pt-1">
+                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20acabo%20de%20dejar%20mis%20datos%20en%20el%20formulario%20y%20quiero%20coordinar%20mi%20horario%20de%20diagn%C3%B3stico." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center gap-2 bg-santiEmerald hover:bg-santiDark text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <span>Confirmar Horario por WhatsApp (+52 55 7120 8740)</span>
                     </a>
                 </div>
             </div>
 
             <!-- Bloque de Recomendaciones Previas -->
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-santiCream space-y-8">
-                
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-santiCream space-y-8">
                 <h2 class="font-heading text-xl font-bold text-santiDark border-b border-santiCream pb-4 flex items-center gap-3">
                     <i class="fa-solid fa-list-check text-santiGold"></i>
-                    <span>Recomendaciones previas a la sesión</span>
+                    <span>Recomendaciones previas a tu sesión</span>
                 </h2>
 
                 <div class="grid md:grid-cols-3 gap-6">
-                    
                     <!-- Recomendación 1 -->
                     <div class="bg-santiCream/30 p-6 rounded-2xl border border-santiCream space-y-3 relative">
                         <div class="w-8 h-8 rounded-lg bg-santiEmerald text-santiGold font-bold text-xs flex items-center justify-center">
@@ -144,13 +157,11 @@
                             Conéctate preferentemente desde una computadora en un espacio tranquilo, ya que proyectaremos cifras y escenarios financieros en tiempo real.
                         </p>
                     </div>
-
                 </div>
             </div>
 
-            <!-- Estructura de los 30 Minutos -->
+            <!-- Estructura Transparente de los 30 Minutos -->
             <div class="bg-santiEmerald text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden space-y-6">
-                
                 <div class="relative z-10 space-y-2">
                     <span class="text-xs font-bold uppercase tracking-widest text-santiGold">Estructura Transparente</span>
                     <h2 class="font-heading text-2xl font-bold">¿Qué pasará durante nuestra sesión de 30 minutos?</h2>
@@ -160,7 +171,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6 relative z-10 pt-2">
-                    
                     <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 space-y-2">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-bold text-santiGold uppercase tracking-wider">Minutos 0 - 20</span>
@@ -182,32 +192,13 @@
                             Atenderemos preguntas específicas y definiremos juntos la ruta más óptima en caso de que decidas implementar la estrategia propuesta.
                         </p>
                     </div>
-
                 </div>
 
-                <!-- Glow traslúcido decorativo -->
                 <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-santiGold/20 rounded-full blur-3xl pointer-events-none"></div>
             </div>
 
-            <!-- Modificación de Cita (Aviso por WhatsApp) -->
-            <div class="bg-santiCream/60 border border-santiGold/40 rounded-2xl p-6 text-center space-y-3 max-w-xl mx-auto shadow-sm">
-                <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-santiEmerald shadow-xs">
-                    <i class="fa-solid fa-calendar-xmark text-lg"></i>
-                </div>
-                <h3 class="font-heading font-bold text-base text-santiDark">¿Surgió un imprevisto en tu agenda?</h3>
-                <p class="text-xs text-santiDark/80 leading-relaxed">
-                    Si necesitas reagendar o ajustar el horario por cualquier eventualidad, avísame con anticipación para reubicar la sesión sin contratiempos.
-                </p>
-                <div class="pt-2">
-                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20surgi%C3%B3%20un%20imprevisto%20con%20mi%20cita%20y%20me%20gustar%C3%ADa%20reagendar." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-santiEmerald hover:bg-santiDark text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                        <span>Avisar por WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-
             <!-- Certificación e Identidad Legal -->
-            <div class="text-center text-xs text-santiDark/60 pt-4 space-y-1">
+            <div class="text-center text-xs text-santiDark/70 pt-2 space-y-1">
                 <p class="font-semibold text-santiDark">Santiago (Santi) | Asesor Financiero Patrimonial</p>
                 <p>Cédula CNSF A1: <strong>C412676</strong> • Respaldado por Seguros Monterrey New York Life</p>
             </div>
@@ -216,7 +207,7 @@
     </main>
 
     <!-- Footer Limpio con Modal de Aviso de Privacidad -->
-    <footer class="bg-santiDark text-santiCream/80 py-10 text-center text-xs border-t border-santiDark">
+    <footer class="bg-santiDark text-santiCream/80 py-8 text-center text-xs border-t border-santiDark">
         <div class="max-w-5xl mx-auto px-4 space-y-4">
             <div class="flex justify-center">
                 <div class="bg-white p-2 rounded-xl shadow-sm border border-santiCream/20 inline-flex items-center">
@@ -233,12 +224,10 @@
     <!-- VENTANA EMERGENTE (MODAL AVISO DE PRIVACIDAD) -->
     <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/75 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-santiCream relative max-h-[85vh] flex flex-col text-santiDark text-left">
-            <!-- Header Modal -->
             <div class="flex items-center justify-between pb-4 border-b border-santiCream">
                 <h3 class="font-heading text-2xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
                 <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl p-1 transition-colors focus:outline-none">&times;</button>
             </div>
-            <!-- Cuerpo con Scroll -->
             <div class="overflow-y-auto my-4 pr-2 space-y-4 text-sm text-santiDark/80 leading-relaxed">
                 <p>
                     <strong>Santi te asesora</strong>, con cédula de Agente Autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF) No. <strong>C412676</strong>, pone a su disposición el presente Aviso de Privacidad en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
@@ -253,7 +242,6 @@
                     <strong>3. Protección y Transferencia:</strong> Sus datos personales no serán vendidos, alquilados ni transferidos a terceros no autorizados sin su consentimiento previo.
                 </p>
             </div>
-            <!-- Footer Modal -->
             <div class="pt-4 border-t border-santiCream text-right">
                 <button onclick="toggleModal()" class="px-6 py-2.5 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase tracking-wider hover:bg-santiDark transition-all shadow-md">
                     Entendido y Cerrar
@@ -282,6 +270,5 @@
             }
         });
     </script>
-
 </body>
 </html>
