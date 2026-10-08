@@ -110,7 +110,6 @@
                     <span>Para Administradores, Contadores, Analistas y Profesionistas Independientes</span>
                 </div>
 
-                <!-- H1 con jerarquía visual y contraste de énfasis -->
                 <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-santiNavy leading-tight tracking-tight">
                     Optimiza tus Impuestos ante el SAT y Construye tu Retiro <span class="text-santiEmerald underline decoration-santiGold decoration-4 underline-offset-4">sin Amarrar tu Liquidez</span>
                 </h1>
@@ -185,7 +184,7 @@
     </div>
 </section>
 
-<!-- SECCIÓN 3: CALCULADORA ISR (AJUSTE TEXTO "DEVOLUCIÓN ESTIMADA DE HASTA") -->
+<!-- SECCIÓN 3: CALCULADORA ISR -->
 <section id="calculadora" class="py-16 bg-santiNavy text-white relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -233,7 +232,6 @@
                     <p class="text-[10px] text-santiDark/60">Monto máximo legal asignado a tu retiro según la ley.</p>
                 </div>
 
-                <!-- Texto Solicitado Ajustado: "Devolución estimada de hasta" -->
                 <div class="bg-santiCream/80 p-5 rounded-2xl border border-santiGold/50 space-y-1">
                     <span class="text-[11px] font-bold text-santiEmerald uppercase">Devolución estimada de hasta</span>
                     <div id="refundOutput" class="text-2xl font-extrabold text-santiEmerald">\$16,200 MXN</div>
@@ -357,7 +355,7 @@
     </div>
 </section>
 
-<!-- FORMULARIO DE 3 PREGUNTAS (CON TRASLADO DINÁMICO DEL CÁLCULO) -->
+<!-- FORMULARIO DE 3 PREGUNTAS (TEXTO SUBTÍTULO ACTUALIZADO SEGÚN OPCIÓN C) -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -368,8 +366,9 @@
             <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
                 Inicia tu Diagnóstico Fiscal y Reserva tu Cita
             </h2>
+            <!-- PÁRRAFO AJUSTADO SEGÚN SOLICITUD DE OPCIÓN C -->
             <p class="text-xs sm:text-sm text-santiDark/80">
-                Completa estos datos para enviarte la propuesta personalizada y abrir la agenda de Google Calendar.
+                Completa tus datos para personalizar tu sesión y elegir fecha en la agenda.
             </p>
         </div>
 
@@ -429,7 +428,7 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 3: Datos de Contacto (SIN ATRIBUTO PATTERN) -->
+                <!-- PREGUNTA 3: Datos de Contacto (SIN PATTERN RÍGIDO) -->
                 <div class="space-y-4 pt-2 border-t border-santiCream/80">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
                         3. Datos para enviar tu propuesta y abrir la agenda
@@ -556,8 +555,7 @@ function submitToGoogleSheets(event) {
         calculo: formData.get('calculo_estimado')
     };
 
-    // Pegar la URL desplegada del Google Apps Script (Instrucciones abajo)
-    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/TU_SCRIPT_ID_DESPLEGADO/exec';
 
     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
         method: 'POST',
