@@ -557,13 +557,15 @@ function submitToGoogleSheets(event) {
 
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
+    // Se usa 'text/plain;charset=utf-8' para evitar el bloqueo CORS del navegador
     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(leadData)
     }).catch(err => console.log('Resguardo local procesado'));
 
+    // Resguardo de seguridad en el celular/navegador del cliente
     localStorage.setItem('santi_lead_backup', JSON.stringify(leadData));
 
     if (typeof fbq !== 'undefined') {
@@ -574,10 +576,3 @@ function submitToGoogleSheets(event) {
         window.location.href = `gracias.html?nombre=${encodeURIComponent(leadData.nombre)}&wa=${encodeURIComponent(leadData.whatsapp)}`;
     }, 500);
 }
-
-// Inicializar calculadora en \$45,000 MXN
-updateCalculator(45000);
-</script>
-
-</body>
-</html>
