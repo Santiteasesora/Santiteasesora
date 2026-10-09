@@ -214,7 +214,7 @@
                 
                 <input type="range" id="incomeSlider" min="15000" max="250000" step="5000" value="45000" 
                        class="w-full h-3 bg-santiCream rounded-lg appearance-none cursor-pointer accent-santiEmerald"
-                       oninput="updateCalculator(this.value)">
+                       oninput="onSliderChange(this.value)">
                 
                 <div class="flex justify-between text-[11px] text-santiDark/60 font-medium">
                     <span>\$15,000/mes</span>
@@ -354,7 +354,7 @@
     </div>
 </section>
 
-<!-- FORMULARIO OPTIMIZADO (REDUCIDO A 2 PASOS) -->
+<!-- FORMULARIO OPTIMIZADO CON CAMPOS OCULTOS DE TRAZABILIDAD Y CÁLCULO NEUTRO -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -405,7 +405,7 @@
                     </div>
                 </div>
 
-                <!-- PASO 2: Datos de Contacto (Directo sin preguntas intermedias) -->
+                <!-- PASO 2: Datos de Contacto -->
                 <div class="space-y-4 pt-4 border-t border-santiCream/80">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
                         2. Datos para personalizar tu sesión y abrir la agenda *
@@ -421,7 +421,10 @@
                     </div>
                 </div>
 
-                <!-- Campo oculto para llevar la cifra calculada -->
+                <!-- CAMPO OCULTO #1: ORIGEN DE LA LANDING PAGE -->
+                <input type="hidden" name="origen" value="Landing Profesionistas">
+
+                <!-- CAMPO OCULTO #2: CÁLCULO ESTIMADO (VALOR NEUTRO POR DEFECTO) -->
                 <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                 <!-- Botón de Envío -->
@@ -482,7 +485,7 @@
     </a>
 </div>
 
-<!-- SCRIPTS UNIFICADOS -->
+<!-- SCRIPTS UNIFICADOS SIN SESGO DE CÁLCULO PREVIO -->
 <script>
 let currentCalculatedRefund = '\$16,200 MXN';
 let currentMonthlyIncome = 45000;
@@ -504,10 +507,15 @@ function updateCalculator(monthlyIncome) {
 
     document.getElementById('deductibleOutput').innerText = currentDeductible;
     document.getElementById('refundOutput').innerText = currentCalculatedRefund;
+}
 
+// Se activa únicamente cuando el usuario desplaza el deslizador de la calculadora
+function onSliderChange(monthlyIncome) {
+    updateCalculator(monthlyIncome);
     document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
 }
 
+// Se activa únicamente cuando el usuario hace clic en el botón de aplicar cálculo
 function applyCalcToForm() {
     const badge = document.getElementById('calcAppliedBadge');
     const badgeText = document.getElementById('calcAppliedText');
@@ -530,10 +538,11 @@ function submitToGoogleSheets(event) {
     const formData = new FormData(event.target);
     const leadData = {
         fecha: new Date().toLocaleString('es-MX'),
-        regimen: formData.get('regimen'),
-        objetivo: 'Deducción ISR Art 151 (Búsqueda Google)', // Se envía este valor automático a Google Sheets
+        origen: formData.get('origen') || 'Landing Profesionistas',
         nombre: formData.get('nombre'),
         whatsapp: formData.get('whatsapp'),
+        regimen: formData.get('regimen'),
+        objetivo: 'Deducción ISR Art 151 (Google Search)',
         calculo: formData.get('calculo_estimado')
     };
 
@@ -557,6 +566,7 @@ function submitToGoogleSheets(event) {
     }, 500);
 }
 
+// Inicializa visualmente la tarjeta de la calculadora sin alterar el valor por defecto "No calculado previamente"
 window.addEventListener('DOMContentLoaded', () => {
     updateCalculator(45000);
 });
