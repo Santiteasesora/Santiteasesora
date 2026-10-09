@@ -208,7 +208,7 @@
                         Tu Ingreso Bruto Mensual (Aproximado):
                     </label>
                     <span id="incomeDisplay" class="text-xl font-extrabold text-santiEmerald bg-santiCream px-4 py-1 rounded-xl border border-santiGold/40">
-                        $45,000 MXN
+                        \$45,000 MXN
                     </span>
                 </div>
                 
@@ -354,7 +354,7 @@
     </div>
 </section>
 
-<!-- FORMULARIO DE 3 PREGUNTAS -->
+<!-- FORMULARIO OPTIMIZADO (REDUCIDO A 2 PASOS) -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -372,7 +372,7 @@
 
         <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-santiCream shadow-2xl relative">
             
-            <!-- BADGE DE CÁLCULO INYECTADO -->
+            <!-- Badge Dinámico del Cálculo -->
             <div id="calcAppliedBadge" class="hidden mb-6 p-3.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
                 <span><i class="fa-solid fa-calculator mr-2 text-santiGold"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
                 <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase tracking-wider font-extrabold">Inyectado</span>
@@ -380,7 +380,7 @@
 
             <form id="leadForm" onsubmit="submitToGoogleSheets(event)" class="space-y-6">
                 
-                <!-- PREGUNTA 1: Régimen Fiscal -->
+                <!-- PASO 1: Régimen Fiscal -->
                 <div class="space-y-2">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
                         1. ¿Bajo qué régimen fiscal facturas o tributas ante el SAT? *
@@ -405,31 +405,10 @@
                     </div>
                 </div>
 
-                <!-- PREGUNTA 2: Prioridad Financiera -->
-                <div class="space-y-2 pt-2">
+                <!-- PASO 2: Datos de Contacto (Directo sin preguntas intermedias) -->
+                <div class="space-y-4 pt-4 border-t border-santiCream/80">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        2. ¿Cuál es tu objetivo prioritario? *
-                    </label>
-                    <div class="space-y-2">
-                        <label class="flex items-center gap-3 bg-white p-3 rounded-xl border border-santiCream cursor-pointer">
-                            <input type="radio" name="objetivo" value="Deduccion ISR Art 151" required class="accent-santiEmerald">
-                            <span class="text-xs text-santiDark font-medium">Recuperar impuestos en mi declaración anual (Art. 151 LISR)</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white p-3 rounded-xl border border-santiCream cursor-pointer">
-                            <input type="radio" name="objetivo" value="Blindaje de Invalidez" class="accent-santiEmerald">
-                            <span class="text-xs text-santiDark font-medium">Proteger mi sueldo e ingresos si llego a enfermar o accidentarme</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white p-3 rounded-xl border border-santiCream cursor-pointer">
-                            <input type="radio" name="objetivo" value="Fondo Retiro con Liquidez" class="accent-santiEmerald">
-                            <span class="text-xs text-santiDark font-medium">Crear un fondo de retiro o proyectos con metas flexibles</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- PREGUNTA 3: Datos de Contacto (SIN PATTERN RÍGIDO) -->
-                <div class="space-y-4 pt-2 border-t border-santiCream/80">
-                    <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        3. Datos para personalizar tu sesión y abrir la agenda
+                        2. Datos para personalizar tu sesión y abrir la agenda *
                     </label>
                     
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -442,7 +421,7 @@
                     </div>
                 </div>
 
-                <!-- CAMPO OCULTO DEL CÁLCULO TRASLADADO -->
+                <!-- Campo oculto para llevar la cifra calculada -->
                 <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                 <!-- Botón de Envío -->
@@ -503,7 +482,7 @@
     </a>
 </div>
 
-<!-- SCRIPTS UNIFICADOS DE CALCULADORA Y ENVÍO -->
+<!-- SCRIPTS UNIFICADOS -->
 <script>
 let currentCalculatedRefund = '\$16,200 MXN';
 let currentMonthlyIncome = 45000;
@@ -515,10 +494,10 @@ function updateCalculator(monthlyIncome) {
     document.getElementById('incomeDisplay').innerText = formattedIncome + ' MXN';
 
     const annualIncome = monthlyIncome * 12;
-    const umaCap = 206480; // 5 UMAs Anuales
+    const umaCap = 206480;
     const rawDeductible = annualIncome * 0.10;
     const finalDeductible = Math.min(rawDeductible, umaCap);
-    const estimatedRefund = finalDeductible * 0.30; // Tasa Marginal Promedio
+    const estimatedRefund = finalDeductible * 0.30;
 
     currentDeductible = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
     currentCalculatedRefund = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(estimatedRefund) + ' MXN';
@@ -526,22 +505,18 @@ function updateCalculator(monthlyIncome) {
     document.getElementById('deductibleOutput').innerText = currentDeductible;
     document.getElementById('refundOutput').innerText = currentCalculatedRefund;
 
-    // Actualiza el campo oculto en segundo plano
     document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
 }
 
 function applyCalcToForm() {
-    // 1. Mostrar la insignia visual en el formulario
     const badge = document.getElementById('calcAppliedBadge');
     const badgeText = document.getElementById('calcAppliedText');
     
     badgeText.innerText = `Cálculo Aplicado: Devolución estimada de hasta ${currentCalculatedRefund}`;
     badge.classList.remove('hidden');
 
-    // 2. Asegurar que el valor del campo oculto esté actualizado
     document.getElementById('calcEstimadoHidden').value = `Ingreso: $${currentMonthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
 
-    // 3. Desplazar suavemente la pantalla hacia el formulario
     document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -556,16 +531,14 @@ function submitToGoogleSheets(event) {
     const leadData = {
         fecha: new Date().toLocaleString('es-MX'),
         regimen: formData.get('regimen'),
-        objetivo: formData.get('objetivo'),
+        objetivo: 'Deducción ISR Art 151 (Búsqueda Google)', // Se envía este valor automático a Google Sheets
         nombre: formData.get('nombre'),
         whatsapp: formData.get('whatsapp'),
         calculo: formData.get('calculo_estimado')
     };
 
-    // URL REAL DE TU WEB APP GOOGLE APPS SCRIPT
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
-    // Envío con encabezado 'text/plain;charset=utf-8' para evitar el bloqueo CORS del navegador
     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -573,20 +546,17 @@ function submitToGoogleSheets(event) {
         body: JSON.stringify(leadData)
     }).catch(err => console.log('Resguardo local procesado'));
 
-    // Resguardo local de respaldo
     localStorage.setItem('santi_lead_backup', JSON.stringify(leadData));
 
     if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {content_name: leadData.objetivo});
+        fbq('track', 'Lead', {content_name: 'Deducción ISR Art 151'});
     }
 
-    // Redirección a gracias.html
     setTimeout(() => {
         window.location.href = `gracias.html?nombre=${encodeURIComponent(leadData.nombre)}&wa=${encodeURIComponent(leadData.whatsapp)}`;
     }, 500);
 }
 
-// Inicializar la calculadora con \$45,000 MXN al cargar la página
 window.addEventListener('DOMContentLoaded', () => {
     updateCalculator(45000);
 });
