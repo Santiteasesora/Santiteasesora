@@ -97,7 +97,7 @@
     </div>
 </header>
 
-<!-- SECCIÓN HERO (CON ÉNFASIS TIPOGRÁFICO DE ALTA ESCANEO) -->
+<!-- SECCIÓN HERO -->
 <section class="relative pt-28 pb-12 md:pt-36 md:pb-20 overflow-hidden bg-gradient-to-b from-santiCream/70 via-white to-[#FAF8F5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -151,7 +151,7 @@
 
             </div>
 
-            <!-- Hero Right: Presentación de Santiago -->
+            <!-- Hero Right -->
             <div class="lg:col-span-5">
                 <div class="bg-white p-4 rounded-3xl shadow-2xl border border-santiCream relative">
                     <div class="flex items-center justify-between pb-3 px-2 border-b border-santiCream/60 mb-3">
@@ -200,7 +200,6 @@
             </p>
         </div>
 
-        <!-- Tarjeta de la Calculadora -->
         <div class="bg-white text-santiDark rounded-3xl p-6 sm:p-10 shadow-2xl border border-santiGold/40 space-y-8">
             
             <div class="space-y-4">
@@ -241,7 +240,7 @@
             </div>
 
             <div class="text-center pt-2">
-                <button onclick="applyCalcToForm()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md border border-santiGold">
+                <button type="button" onclick="applyCalcToForm()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md border border-santiGold cursor-pointer">
                     Aplicar este cálculo e iniciar Diagnóstico (30 min) &rarr;
                 </button>
             </div>
@@ -251,7 +250,7 @@
     </div>
 </section>
 
-<!-- SECCIÓN PILARES: PPR COMO BASE Y COBERTURAS COMO PLUS INTEGRADO -->
+<!-- SECCIÓN PILARES -->
 <section id="pilares" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -355,7 +354,7 @@
     </div>
 </section>
 
-<!-- FORMULARIO DE 3 PREGUNTAS (TEXTO SUBTÍTULO ACTUALIZADO SEGÚN OPCIÓN C) -->
+<!-- FORMULARIO DE 3 PREGUNTAS -->
 <section id="agendar" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -366,7 +365,6 @@
             <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
                 Inicia tu Diagnóstico Fiscal y Reserva tu Cita
             </h2>
-            <!-- PÁRRAFO AJUSTADO SEGÚN SOLICITUD DE OPCIÓN C -->
             <p class="text-xs sm:text-sm text-santiDark/80">
                 Completa tus datos para personalizar tu sesión y elegir fecha en la agenda.
             </p>
@@ -374,10 +372,10 @@
 
         <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-santiCream shadow-2xl relative">
             
-            <!-- Badge Dinámico del Cálculo Trasladado -->
+            <!-- BADGE DE CÁLCULO INYECTADO -->
             <div id="calcAppliedBadge" class="hidden mb-6 p-3.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
-                <span><i class="fa-solid fa-calculator mr-2"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
-                <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase">Inyectado</span>
+                <span><i class="fa-solid fa-calculator mr-2 text-santiGold"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
+                <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase tracking-wider font-extrabold">Inyectado</span>
             </div>
 
             <form id="leadForm" onsubmit="submitToGoogleSheets(event)" class="space-y-6">
@@ -431,7 +429,7 @@
                 <!-- PREGUNTA 3: Datos de Contacto (SIN PATTERN RÍGIDO) -->
                 <div class="space-y-4 pt-2 border-t border-santiCream/80">
                     <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        3. Datos para enviar tu propuesta y abrir la agenda
+                        3. Datos para personalizar tu sesión y abrir la agenda
                     </label>
                     
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -444,7 +442,7 @@
                     </div>
                 </div>
 
-                <!-- Campo oculto del cálculo trasladado -->
+                <!-- CAMPO OCULTO DEL CÁLCULO TRASLADADO -->
                 <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                 <!-- Botón de Envío -->
@@ -505,11 +503,14 @@
     </a>
 </div>
 
-<!-- SCRIPTS DE CALCULADORA Y ENVÍO A GOOGLE SHEETS -->
+<!-- SCRIPTS UNIFICADOS DE CALCULADORA Y ENVÍO -->
 <script>
 let currentCalculatedRefund = '\$16,200 MXN';
+let currentMonthlyIncome = 45000;
+let currentDeductible = '\$54,000 MXN';
 
 function updateCalculator(monthlyIncome) {
+    currentMonthlyIncome = monthlyIncome;
     const formattedIncome = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(monthlyIncome);
     document.getElementById('incomeDisplay').innerText = formattedIncome + ' MXN';
 
@@ -517,24 +518,30 @@ function updateCalculator(monthlyIncome) {
     const umaCap = 206480; // 5 UMAs Anuales
     const rawDeductible = annualIncome * 0.10;
     const finalDeductible = Math.min(rawDeductible, umaCap);
-    const estimatedRefund = finalDeductible * 0.30; // 30% Tasa Marginal Promedio
+    const estimatedRefund = finalDeductible * 0.30; // Tasa Marginal Promedio
 
-    const formattedDeductible = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
+    currentDeductible = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
     currentCalculatedRefund = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(estimatedRefund) + ' MXN';
 
-    document.getElementById('deductibleOutput').innerText = formattedDeductible;
+    document.getElementById('deductibleOutput').innerText = currentDeductible;
     document.getElementById('refundOutput').innerText = currentCalculatedRefund;
 
-    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${formattedDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
+    // Actualiza el campo oculto en segundo plano
+    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
 }
 
 function applyCalcToForm() {
+    // 1. Mostrar la insignia visual en el formulario
     const badge = document.getElementById('calcAppliedBadge');
     const badgeText = document.getElementById('calcAppliedText');
     
     badgeText.innerText = `Cálculo Aplicado: Devolución estimada de hasta ${currentCalculatedRefund}`;
     badge.classList.remove('hidden');
 
+    // 2. Asegurar que el valor del campo oculto esté actualizado
+    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${currentMonthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
+
+    // 3. Desplazar suavemente la pantalla hacia el formulario
     document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -555,9 +562,10 @@ function submitToGoogleSheets(event) {
         calculo: formData.get('calculo_estimado')
     };
 
+    // URL REAL DE TU WEB APP GOOGLE APPS SCRIPT
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
-    // Se usa 'text/plain;charset=utf-8' para evitar el bloqueo CORS del navegador
+    // Envío con encabezado 'text/plain;charset=utf-8' para evitar el bloqueo CORS del navegador
     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -565,14 +573,24 @@ function submitToGoogleSheets(event) {
         body: JSON.stringify(leadData)
     }).catch(err => console.log('Resguardo local procesado'));
 
-    // Resguardo de seguridad en el celular/navegador del cliente
+    // Resguardo local de respaldo
     localStorage.setItem('santi_lead_backup', JSON.stringify(leadData));
 
     if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead', {content_name: leadData.objetivo});
     }
 
+    // Redirección a gracias.html
     setTimeout(() => {
         window.location.href = `gracias.html?nombre=${encodeURIComponent(leadData.nombre)}&wa=${encodeURIComponent(leadData.whatsapp)}`;
     }, 500);
 }
+
+// Inicializar la calculadora con \$45,000 MXN al cargar la página
+window.addEventListener('DOMContentLoaded', () => {
+    updateCalculator(45000);
+});
+</script>
+
+</body>
+</html>
