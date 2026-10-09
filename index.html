@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santi te asesora | Estrategia Financiera y Patrimonial</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
     <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
@@ -72,8 +72,7 @@
       }
     </script>
 </head>
-
-<body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark">
+<body class="font-sans text-santiDark bg-white antialiased selection:bg-santiGold selection:text-santiDark">
 
     <!-- Header Navigation -->
     <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-santiCream shadow-sm transition-all duration-300">
@@ -92,7 +91,7 @@
                 <a href="#calculadora" class="hover:text-santiEmerald transition-colors">Calculadora ISR</a>
                 <a href="#sobre-santi" class="hover:text-santiEmerald transition-colors">Sobre Mí</a>
                 <a href="#respaldo" class="hover:text-santiEmerald transition-colors">Respaldo</a>
-                <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Cita</a>
+                <a href="#diagnostico" class="hover:text-santiEmerald transition-colors">Iniciar Diagnóstico</a>
             </nav>
 
             <div class="flex items-center gap-3">
@@ -104,7 +103,7 @@
                 </a>
                 <a href="#diagnostico" onclick="trackConversion('Header_CTA')" class="bg-santiEmerald hover:bg-santiNavy text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 border border-santiMint/30">
                     <i class="fa-regular fa-calendar-check text-santiGold"></i>
-                    <span>Agendar Cita</span>
+                    <span>Iniciar Diagnóstico</span>
                 </a>
             </div>
         </div>
@@ -303,19 +302,23 @@
         </div>
     </section>
 
-    <!-- Formulario -->
+    <!-- Formulario de Diagnóstico -->
     <section id="diagnostico" class="py-20 bg-[#FAF8F5]">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 space-y-2">
                 <span class="text-xs font-extrabold uppercase tracking-widest text-santiEmerald bg-santiCream px-4 py-1.5 rounded-full border border-santiGold/40">
-                    Paso 1 de 2: Diagnóstico Rápido
+                    Paso Único: Diagnóstico Rápido
                 </span>
                 <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
-                    Inicia tu Diagnóstico y Accede a la Agenda
+                    Inicia tu Diagnóstico Patrimonial
                 </h2>
+                <p class="text-xs sm:text-sm text-santiDark/70">
+                    Completa tus datos para enviarte tu propuesta personalizada y acceder a la agenda.
+                </p>
             </div>
 
             <div class="bg-white rounded-3xl p-6 sm:p-10 border border-santiCream shadow-2xl relative">
+                
                 <div id="calcAppliedBadge" class="hidden mb-6 p-3.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
                     <span><i class="fa-solid fa-calculator mr-2 text-santiGold"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
                     <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase tracking-wider font-extrabold">Inyectado</span>
@@ -348,7 +351,7 @@
 
                     <div class="space-y-4 pt-2 border-t border-santiCream/80">
                         <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                            2. Datos para confirmar tu cita
+                            2. Datos de contacto *
                         </label>
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div>
@@ -360,41 +363,58 @@
                         </div>
                     </div>
 
-                    <input type="hidden" name="objetivo" value="Deducción ISR / Retiro PPR (Página Principal)">
-                    <input type="hidden" name="origen" value="Página Principal / Index">
-                    <input type="hidden" name="calculo" id="calcHidden" value="No calculado previamente">
-                    <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
+                    <!-- CAMPOS OCULTOS DE CONTROL -->
+                    <input type="hidden" name="origen" id="formOrigen" value="Página Principal / Index">
+                    <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculated previamente">
 
                     <div class="pt-2 text-center space-y-3">
                         <button type="submit" id="formSubmitBtn" class="w-full bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-4 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-xl flex items-center justify-center gap-2 border border-santiGold cursor-pointer">
-                            <span>Continuar a Seleccionar Horario en Agenda</span>
+                            <span>Enviar Diagnóstico y Seleccionar Horario</span>
                             <i class="fa-solid fa-arrow-right text-sm"></i>
                         </button>
+                        <p class="text-[11px] text-santiDark/60">
+                            <i class="fa-solid fa-lock text-santiEmerald mr-1"></i>
+                            Tus datos se resguardan bajo estricta confidencialidad. Cero spam.
+                        </p>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Agendamiento -->
-    <section id="agendar" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-santiEmerald bg-santiCream px-3.5 py-1.5 rounded-full border border-santiGold/30">
-                    Paso 2 de 2: Reserva Digital Directa
-                </span>
-                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-santiNavy mt-3">
-                    Selecciona Fecha y Hora en la Agenda
-                </h2>
+    <!-- Footer -->
+    <footer class="bg-santiDark text-santiCream/80 py-12 border-t border-santiDark text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white p-2 rounded-xl shadow-sm border border-santiCream/20 inline-flex items-center">
+                        <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
+                             alt="Logo Santi te asesora Footer" 
+                             class="h-8 w-auto object-contain"
+                             onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 text-santiCream/80">
+                    <span>Asesor Patrimonial</span>
+                    <span>•</span>
+                    <span>Seguros Monterrey New York Life</span>
+                    <span>•</span>
+                    <span>Cédula CNSF A1: C412676</span>
+                </div>
             </div>
-
-            <div class="bg-[#FAF8F5] p-2 sm:p-6 rounded-3xl border border-santiCream shadow-xl overflow-hidden">
-                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-santiCream/60">
+                <p>© 2026 Santi te asesora. Todos los derechos reservados. Servicios respaldados por Seguros Monterrey New York Life, S.A. de C.V.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">Cédula Oficial PDF</a>
+                    <span>•</span>
+                    <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold transition-colors">WhatsApp</a>
+                </div>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Script JavaScript -->
+    <!-- Script JavaScript Completo -->
     <script>
         function updateCalculator(val) {
             const income = parseFloat(val);
@@ -413,10 +433,15 @@
             const refund = document.getElementById('refundOutput').innerText;
             const text = `Ingreso: ${income}/mes | Devolución est: ${refund}`;
             
-            if (document.getElementById('calcHidden')) document.getElementById('calcHidden').value = text;
-            if (document.getElementById('calcEstimadoHidden')) document.getElementById('calcEstimadoHidden').value = text;
-            if (document.getElementById('calcAppliedText')) document.getElementById('calcAppliedText').innerText = text;
-            if (document.getElementById('calcAppliedBadge')) document.getElementById('calcAppliedBadge').classList.remove('hidden');
+            if (document.getElementById('calcEstimadoHidden')) {
+                document.getElementById('calcEstimadoHidden').value = text;
+            }
+            if (document.getElementById('calcAppliedText')) {
+                document.getElementById('calcAppliedText').innerText = text;
+            }
+            if (document.getElementById('calcAppliedBadge')) {
+                document.getElementById('calcAppliedBadge').classList.remove('hidden');
+            }
             
             if (typeof trackConversion === 'function') {
                 trackConversion('Calc_Applied_To_Form');
@@ -425,60 +450,68 @@
         }
 
         function submitToGoogleSheets(e) {
-    e.preventDefault();
-    const btn = document.getElementById('formSubmitBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
-    
-    if (typeof trackConversion === 'function') {
-        trackConversion('Lead_Form_Submit');
-    }
+            e.preventDefault();
+            const btn = document.getElementById('formSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> Guardando datos...';
 
-    const regimenElem = document.querySelector('input[name="regimen"]:checked');
-    const regimenVal = regimenElem ? regimenElem.value : 'No especificado';
+            if (typeof trackConversion === 'function') {
+                trackConversion('Lead_Form_Submit');
+            }
 
-    const nombreElem = document.getElementById('formNombre');
-    const nombreVal = nombreElem ? nombreElem.value : 'Sin nombre';
+            const regimenElem = document.querySelector('input[name="regimen"]:checked');
+            const regimenVal = regimenElem ? regimenElem.value : 'No especificado';
 
-    const whatsappElem = document.getElementById('formWhatsApp');
-    const whatsappVal = whatsappElem ? whatsappElem.value : 'Sin WhatsApp';
+            const nombreElem = document.getElementById('formNombre');
+            const nombreVal = nombreElem ? nombreElem.value : 'Sin nombre';
 
-    const calculoElem = document.getElementById('calcEstimadoHidden') || document.getElementById('calcHidden');
-    const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
+            const whatsappElem = document.getElementById('formWhatsApp');
+            const whatsappVal = whatsappElem ? whatsappElem.value : 'Sin WhatsApp';
 
-    const payload = {
-        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
-        nombre: nombreVal,
-        whatsapp: whatsappVal,
-        regimen: regimenVal,
-        origen: 'Página Principal / Index',
-        objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
-        calculo: calculoVal
-    };
+            const calculoElem = document.getElementById('calcEstimadoHidden');
+            const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+            // Detección de Origen: Toma el campo oculto o la ruta de la ventana activa (ej. /profesionistas.html)
+            const origenElem = document.getElementById('formOrigen');
+            const origenVal = (origenElem && origenElem.value) ? origenElem.value : (window.location.pathname || 'Página Principal / Index');
 
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-    })
-    .catch(error => {
-        console.error('Error al guardar datos:', error);
-        btn.disabled = false;
-        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-    });
-}
+            const payload = {
+                fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+                nombre: nombreVal,
+                whatsapp: whatsappVal,
+                regimen: regimenVal,
+                origen: origenVal,
+                calculo_estimado: calculoVal
+            };
 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+
+            // Redirección directa a la página de gracias
+            const executeRedirect = () => {
+                window.location.href = 'gracias.html';
+            };
+
+            // Timeout de seguridad a los 3.5 segundos para no retener al usuario si la red es lenta
+            const fallbackTimeout = setTimeout(executeRedirect, 3500);
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                clearTimeout(fallbackTimeout);
+                executeRedirect();
+            })
+            .catch(error => {
+                console.error('Error al guardar datos:', error);
+                clearTimeout(fallbackTimeout);
+                executeRedirect();
+            });
+        }
     </script>
 </body>
 </html>
