@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santi te asesora | Optimización Fiscal y Patrimonial para Profesionistas</title>
+    <title>Santi te asesora | Estrategia de Devolución SAT y Retiro Privado</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
@@ -20,8 +20,8 @@
                         santiGold: '#D9A441',
                         santiCream: '#FFF5E3',
                         santiDark: '#292C2B',
-                        santiMint: '#A8C4B5',
-                        santiNavy: '#0F2942'
+                        santiNavy: '#0F2942',
+                        santiMint: '#A8C4B5'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -54,523 +54,409 @@
       fbq('track', 'PageView');
     </script>
 
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-123456789');
+
       function trackConversion(eventLabel) {
         if (typeof fbq !== 'undefined') {
           fbq('track', 'Lead', {content_name: eventLabel || 'Lead_Click'});
         }
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {'send_to': 'AW-123456789/conversion_label', 'event_category': eventLabel});
+        }
       }
     </script>
 </head>
-<body class="bg-[#FAF8F5] text-santiDark font-sans antialiased selection:bg-santiGold selection:text-santiDark pb-20 md:pb-0">
+<body class="font-sans text-santiDark bg-[#FAF8F5] antialiased selection:bg-santiGold selection:text-santiDark">
 
-<!-- Header / Navbar -->
-<header class="fixed w-full bg-white/95 backdrop-blur-md z-40 border-b border-santiCream shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        
-        <a href="#" class="flex items-center gap-3">
-            <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
-                 alt="Santi te asesora Logo" 
-                 class="h-10 w-auto object-contain"
-                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
-        </a>
-        
-        <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-santiDark/80">
-            <a href="#calculadora" class="hover:text-santiEmerald transition-colors">Calculadora ISR</a>
-            <a href="#pilares" class="hover:text-santiEmerald transition-colors">Estrategia PPR</a>
-            <a href="#testimonios" class="hover:text-santiEmerald transition-colors">Casos Reales</a>
-            <a href="#agendar" class="hover:text-santiEmerald transition-colors">Agendar Cita</a>
-        </div>
-
-        <div class="flex items-center gap-3">
-            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20anuncio%20en%20Google%20y%20quiero%20ver%20si%20puedo%20deducir%20mi%20ahorro%20ante%20el%20SAT%20este%20a%C3%B1o." 
-               target="_blank" rel="noopener noreferrer" onclick="trackConversion('WhatsApp_Header')" 
-               class="hidden sm:inline-flex items-center gap-2 text-xs font-bold bg-santiCream text-santiEmerald px-3.5 py-2.5 rounded-xl border border-santiGold/40 hover:bg-santiGold/20 transition-colors">
-                <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i>
-                <span>¿Dudas por WhatsApp?</span>
+    <!-- HEADER DE FUGA CERO -->
+    <header class="w-full bg-white border-b border-santiCream py-3 px-4 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
+                     alt="Santi te asesora" 
+                     class="h-9 w-auto object-contain"
+                     onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
             </a>
-            <a href="#agendar" onclick="trackConversion('Agendar_Header')" class="bg-santiEmerald hover:bg-santiNavy text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center gap-2 border border-santiMint/30">
-                <i class="fa-regular fa-calendar-check text-santiGold"></i>
-                <span>Reservar Cita</span>
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- SECCIÓN HERO -->
-<section class="relative pt-28 pb-12 md:pt-36 md:pb-20 overflow-hidden bg-gradient-to-b from-santiCream/70 via-white to-[#FAF8F5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
             
-            <!-- Hero Left -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-santiCream border border-santiGold/50 text-santiEmerald text-xs font-bold shadow-sm">
-                    <span class="flex h-2 w-2 rounded-full bg-santiGold animate-pulse"></span>
-                    <span>Para Administradores, Contadores, Analistas y Profesionistas Independientes</span>
+            <div class="flex items-center gap-2 text-right">
+                <div class="text-[11px] font-bold text-santiNavy">
+                    <span class="block text-santiEmerald font-extrabold">Santi te asesora</span>
+                    <span class="text-santiDark/70 font-medium">Cédula CNSF: C412676</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION: Universal para Asalariados e Independientes -->
+    <section class="pt-6 pb-12 px-4 max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Columna Izquierda: Copy Universal de Alto Impacto -->
+            <div class="lg:col-span-7 space-y-5 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-santiCream border border-santiGold/40 text-santiEmerald text-xs font-bold">
+                    <i class="fa-solid fa-briefcase text-santiGold"></i>
+                    <span>Para Asalariados y Profesionistas Independientes</span>
                 </div>
 
-                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-santiNavy leading-tight tracking-tight">
-                    Optimiza tus Impuestos ante el SAT y Construye tu Retiro <span class="text-santiEmerald underline decoration-santiGold decoration-4 underline-offset-4">sin Amarrar tu Liquidez</span>
+                <h1 class="font-heading text-2xl sm:text-4xl font-extrabold text-santiNavy leading-snug">
+                    Paga menos ISR al SAT este año y convierte tus impuestos en <span class="text-santiEmerald underline decoration-santiGold decoration-4 underline-offset-2">un patrimonio privado</span>.
                 </h1>
 
-                <p class="text-base sm:text-lg text-santiDark/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                    Estructura tu <strong class="text-santiNavy font-bold">Plan Personal de Retiro (PPR) Deducible bajo el Art. 151 de la LISR</strong> y recibe protección de ingresos por invalidez integrada en la misma estrategia.
+                <p class="text-sm sm:text-base text-santiDark/80 leading-relaxed">
+                    Si eres asalariado de alto ingreso o facturas por tu cuenta, te ayudo a estructurar un plan donde <strong>el SAT te devuelve dinero cada año</strong> en tu declaración anual, sin congelar toda tu liquidez y con protección de ingresos ante invalidez o enfermedad.
                 </p>
 
-                <!-- CTAs -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="#calculadora" onclick="trackConversion('CTA_Hero_Calc')" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white px-8 py-4 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl flex items-center justify-center gap-3 border border-santiGold">
-                        <i class="fa-solid fa-calculator text-base"></i>
-                        <span>Calcular mi Saldo a Favor (SAT)</span>
-                    </a>
-                    
-                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20vi%20tu%20anuncio%20en%20Google%20y%20quiero%20ver%20si%20puedo%20deducir%20mi%20ahorro%20ante%20el%20SAT%20este%20a%C3%B1o." 
-                       target="_blank" rel="noopener noreferrer" onclick="trackConversion('WhatsApp_Hero')" 
-                       class="w-full sm:w-auto bg-white hover:bg-santiCream text-santiDark px-6 py-4 rounded-xl font-semibold text-xs border border-santiMint/60 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm">
-                        <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
-                        <span>Consulta Rápida por WhatsApp</span>
-                    </a>
-                </div>
-
-                <!-- Garantías -->
-                <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-santiDark/70 border-t border-santiCream">
-                    <div class="flex items-center gap-1.5 font-medium">
-                        <i class="fa-solid fa-shield-halved text-santiEmerald"></i>
-                        <span>Cédula CNSF: <strong>C412676</strong></span>
-                    </div>
-                    <div class="flex items-center gap-1.5 font-medium">
-                        <i class="fa-solid fa-building text-santiEmerald"></i>
-                        <span>Seguros Monterrey NY Life</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 font-medium">
-                        <i class="fa-solid fa-lock text-santiGold"></i>
-                        <span>Sesión 100% Confidencial</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Hero Right -->
-            <div class="lg:col-span-5">
-                <div class="bg-white p-4 rounded-3xl shadow-2xl border border-santiCream relative">
-                    <div class="flex items-center justify-between pb-3 px-2 border-b border-santiCream/60 mb-3">
-                        <span class="text-xs font-bold text-santiNavy flex items-center gap-2">
-                            <i class="fa-solid fa-circle-play text-santiGold text-base"></i>
-                            Conoce a tu asesor en 40 segundos
-                        </span>
-                        <span class="text-[10px] bg-santiCream text-santiEmerald font-extrabold px-2 py-0.5 rounded">30-45 Seg</span>
-                    </div>
-
-                    <div class="relative w-full aspect-video bg-santiDark rounded-2xl overflow-hidden shadow-inner group border border-santiDark/20 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" 
-                             alt="Santiago - Asesor Patrimonial" 
-                             class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-santiNavy/90 via-santiNavy/40 to-transparent"></div>
-                        <a href="#agendar" class="relative z-10 flex flex-col items-center gap-2 text-center p-4">
-                            <div class="w-14 h-14 bg-santiGold text-santiDark rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-santiEmerald group-hover:text-white transition-all border-2 border-white">
-                                <i class="fa-solid fa-play text-lg ml-1"></i>
+                <!-- Video Corto de Presentación -->
+                <div class="bg-white p-3.5 rounded-2xl border border-santiCream shadow-sm flex items-center gap-4">
+                    <div class="relative w-28 h-20 rounded-xl overflow-hidden bg-santiDark flex-shrink-0 border border-santiGold/30">
+                        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" alt="Santiago" class="w-full h-full object-cover opacity-85">
+                        <div class="absolute inset-0 bg-santiNavy/30 flex items-center justify-center">
+                            <div class="w-8 h-8 bg-santiGold text-santiNavy rounded-full flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
                             </div>
-                            <span class="text-xs font-bold text-white drop-shadow">Ver presentación personal</span>
-                        </a>
+                        </div>
                     </div>
-                    <p class="text-[11px] text-center text-santiDark/70 mt-2 font-medium">
-                        Santiago • Asesor Patrimonial Autorizado ante la CNSF
-                    </p>
+                    <div class="text-left space-y-0.5">
+                        <span class="text-[10px] font-extrabold text-santiEmerald uppercase bg-santiCream px-2 py-0.5 rounded">Video 40 seg</span>
+                        <h3 class="text-xs font-bold text-santiNavy">Conoce a Santiago (Santi te asesora)</h3>
+                        <p class="text-[11px] text-santiDark/70">Asesor patrimonial independiente en alianza con MASS Asociados y Seguros Monterrey NY Life.</p>
+                    </div>
+                </div>
+
+                <!-- Garantías de Confianza y Prueba Social -->
+                <div class="pt-1 flex flex-wrap gap-4 text-xs font-semibold text-santiDark/70">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-santiEmerald"></i> Cédula CNSF C412676</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-santiGold"></i> +1,000 Familias e Independientes Protegidos</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-building-columns text-santiEmerald"></i> Aliado MASS Asociados & SMNYL</span>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario Único Calificador -->
+            <div class="lg:col-span-5 w-full">
+                <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-santiEmerald/30 shadow-xl space-y-4">
+                    <div class="text-left space-y-1">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider bg-santiGold/20 text-santiEmerald px-2.5 py-0.5 rounded-full">
+                            Paso 1 de 2: Diagnóstico Inicial
+                        </span>
+                        <h2 class="font-heading text-lg font-bold text-santiNavy">
+                            Solicita tu Diagnóstico Gratuito
+                        </h2>
+                        <p class="text-xs text-santiDark/70">Ingresa tus datos para proyectar tu devolución y elegir horario.</p>
+                    </div>
+
+                    <div id="calcAppliedBadge" class="hidden p-2.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
+                        <span><i class="fa-solid fa-calculator mr-1.5 text-santiGold"></i><span id="calcAppliedText">Cálculo Aplicado</span></span>
+                        <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded font-extrabold">OK</span>
+                    </div>
+
+                    <form id="leadForm" onsubmit="submitToGoogleSheets(event)" class="space-y-3.5 text-left">
+                        <div>
+                            <label class="block text-[11px] font-bold text-santiNavy uppercase mb-1">
+                                ¿Cuál es tu esquema de ingresos actual? *
+                            </label>
+                            <select name="regimen" required class="w-full bg-[#FAF8F5] text-xs text-santiDark p-3 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald font-medium">
+                                <option value="" disabled selected>Selecciona tu situación...</option>
+                                <option value="Empleado Asalariado (Sueldos y Salarios)">Empleado / Nomina en Empresa (Sueldo alto)</option>
+                                <option value="Honorarios / Profesionista Independiente">Honorarios / Freelance / Facturo por mi cuenta</option>
+                                <option value="RESICO">RESICO (Simplificado)</option>
+                                <option value="Esquema Mixto (Sueldo + Factura)">Esquema Mixto (Sueldo + Facturación propia)</option>
+                                <option value="No estoy seguro (Santi me ayuda a revisarlo)">No estoy seguro (Santi me ayuda a revisarlo)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-santiNavy uppercase mb-1">
+                                Tu Nombre *
+                            </label>
+                            <input type="text" name="nombre" id="formNombre" placeholder="Escribe tu nombre" required class="w-full bg-[#FAF8F5] text-xs text-santiDark p-3 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-santiNavy uppercase mb-1">
+                                Tu WhatsApp (10 dígitos) *
+                            </label>
+                            <input type="tel" name="whatsapp" id="formWhatsApp" placeholder="Ej. 55 1234 5678" required class="w-full bg-[#FAF8F5] text-xs text-santiDark p-3 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
+                        </div>
+
+                        <!-- CAMPOS OCULTOS PARA APPS SCRIPT -->
+                        <input type="hidden" name="origen" id="formOrigen" value="Campaign Google Ads - Profesionistas">
+                        <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
+
+                        <button type="submit" id="formSubmitBtn" class="w-full bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2 border border-santiGold cursor-pointer">
+                            <span>Continuar a Selección de Horario</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+
+                        <p class="text-[10px] text-center text-santiDark/60 pt-1">
+                            <i class="fa-solid fa-lock text-santiEmerald"></i> Datos 100% protegidos. Consulta nuestro 
+                            <button type="button" onclick="openPrivacyModal()" class="underline hover:text-santiEmerald font-semibold text-santiNavy cursor-pointer">Aviso de Privacidad</button>.
+                        </p>
+                    </form>
                 </div>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SECCIÓN 3: CALCULADORA ISR -->
-<section id="calculadora" class="py-16 bg-santiNavy text-white relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-10 space-y-2">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-santiGold bg-white/10 px-4 py-1 rounded-full border border-santiGold/30">
-                Herramienta Interactiva Art. 151 LISR
-            </span>
-            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">
-                Calcula tu Estimado de Devolución de Impuestos (SAT)
-            </h2>
-            <p class="text-xs sm:text-sm text-santiCream/80 max-w-xl mx-auto">
-                Ingresa tu facturación o ingreso mensual estimado para proyectar tu tope deducible de retiro y el dinero que puedes recuperar en tu declaración anual.
-            </p>
-        </div>
-
-        <div class="bg-white text-santiDark rounded-3xl p-6 sm:p-10 shadow-2xl border border-santiGold/40 space-y-8">
-            
-            <div class="space-y-4">
-                <div class="flex justify-between items-center flex-wrap gap-2">
-                    <label class="text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        Tu Ingreso Bruto Mensual (Aproximado):
-                    </label>
-                    <span id="incomeDisplay" class="text-xl font-extrabold text-santiEmerald bg-santiCream px-4 py-1 rounded-xl border border-santiGold/40">
-                        \$45,000 MXN
-                    </span>
-                </div>
-                
-                <input type="range" id="incomeSlider" min="15000" max="250000" step="5000" value="45000" 
-                       class="w-full h-3 bg-santiCream rounded-lg appearance-none cursor-pointer accent-santiEmerald"
-                       oninput="onSliderChange(this.value)">
-                
-                <div class="flex justify-between text-[11px] text-santiDark/60 font-medium">
-                    <span>\$15,000/mes</span>
-                    <span>\$100,000/mes</span>
-                    <span>\$250,000+/mes</span>
-                </div>
+    <!-- CALCULADORA ESTIMATIVA -->
+    <section id="calculadora" class="py-12 bg-santiNavy text-white px-4">
+        <div class="max-w-3xl mx-auto space-y-6 text-center">
+            <div class="space-y-1">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-santiGold bg-white/10 px-3 py-1 rounded-full">
+                    Calculadora Estimativa
+                </span>
+                <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-white">
+                    Estima tu Devolución de Impuestos
+                </h2>
+                <p class="text-xs text-santiCream/80">
+                    Mueve la barra según tu ingreso mensual para ver la proyección de saldo a favor que puedes solicitar al SAT.
+                </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-santiCream">
-                
-                <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-santiCream space-y-1">
-                    <span class="text-[11px] font-bold text-santiDark/70 uppercase">Tope Anual Deducible (10% LISR)</span>
-                    <div id="deductibleOutput" class="text-2xl font-extrabold text-santiNavy">\$54,000 MXN</div>
-                    <p class="text-[10px] text-santiDark/60">Monto máximo legal asignado a tu retiro según la ley.</p>
+            <div class="bg-white text-santiDark rounded-2xl p-5 sm:p-7 shadow-xl space-y-5 text-left">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center flex-wrap gap-2">
+                        <span class="text-xs font-bold text-santiNavy">Ingreso Bruto Mensual:</span>
+                        <span id="incomeDisplay" class="text-lg font-extrabold text-santiEmerald bg-santiCream px-3 py-1 rounded-lg border border-santiGold/40">
+                            $45,000 MXN
+                        </span>
+                    </div>
+                    
+                    <input type="range" id="incomeSlider" min="15000" max="250000" step="5000" value="45000" 
+                           class="w-full h-2.5 bg-santiCream rounded-lg appearance-none cursor-pointer accent-santiEmerald"
+                           oninput="updateCalculator(this.value)">
                 </div>
 
-                <div class="bg-santiCream/80 p-5 rounded-2xl border border-santiGold/50 space-y-1">
-                    <span class="text-[11px] font-bold text-santiEmerald uppercase">Devolución estimada de hasta</span>
-                    <div id="refundOutput" class="text-2xl font-extrabold text-santiEmerald">\$16,200 MXN</div>
-                    <p class="text-[10px] text-santiDark/70 font-medium">Monto estimado de saldo a favor que el SAT te devuelve en abril.</p>
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-[#FAF8F5] p-4 rounded-xl border border-santiCream">
+                        <span class="text-[10px] font-bold text-santiDark/60 uppercase block">Monto máximo legal para deducir</span>
+                        <div id="deductibleOutput" class="text-xl font-extrabold text-santiNavy">$54,000 MXN / año</div>
+                    </div>
+
+                    <div class="bg-santiCream/80 p-4 rounded-xl border border-santiGold/50">
+                        <span class="text-[10px] font-bold text-santiEmerald uppercase block">Podrías recuperar hasta</span>
+                        <div id="refundOutput" class="text-xl font-extrabold text-santiEmerald">$16,200 MXN</div>
+                        <span class="text-[9px] text-santiDark/60 block mt-0.5">*Sujeto a la retención final en tu declaración anual ante el SAT.</span>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="text-center pt-2">
-                <button type="button" onclick="applyCalcToForm()" class="w-full sm:w-auto bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md border border-santiGold cursor-pointer">
-                    Aplicar este cálculo e iniciar Diagnóstico (30 min) &rarr;
+                <button type="button" onclick="applyCalcToForm()" class="w-full bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase transition-all shadow cursor-pointer text-center">
+                    Aplicar este monto a mi diagnóstico &rarr;
                 </button>
             </div>
-
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- SECCIÓN PILARES -->
-<section id="pilares" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-santiEmerald bg-santiCream px-3.5 py-1 rounded-full border border-santiGold/30">
-                Estructura de la Estrategia
-            </span>
-            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
-                Un solo Fondo de Retiro Deducible con Coberturas de Protección Incluidas
+    <!-- LOS 3 PILARES SIMPLIFICADOS -->
+    <section class="py-12 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-santiNavy">
+                ¿Qué incluye tu Estrategia Patrimonial?
             </h2>
-            <p class="text-xs sm:text-sm text-santiDark/70">
-                No contratas productos separados. Tu aportación al Plan Personal de Retiro activa por ley beneficios patrimoniales integrados.
-            </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            
-            <div class="bg-[#FAF8F5] p-8 rounded-3xl border-2 border-santiEmerald shadow-lg flex flex-col justify-between relative">
-                <div class="absolute -top-3.5 left-6 bg-santiEmerald text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">
-                    Eje Principal
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-santiCream shadow-sm space-y-2 text-left">
+                <div class="w-10 h-10 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
                 </div>
-                <div class="space-y-4 pt-2">
-                    <div class="w-12 h-12 bg-santiEmerald text-santiGold rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
-                        <i class="fa-solid fa-piggy-bank"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-santiNavy">
-                        Plan Personal de Retiro (Art. 151)
-                    </h3>
-                    <p class="text-xs text-santiDark/80 leading-relaxed">
-                        El motor de tu ahorro. Deduce hasta el 10% de tus ingresos anuales ante el SAT y recupera saldo a favor en tu declaración anual mientras construyes tu pensión privada.
-                    </p>
-                </div>
-                <div class="pt-6 mt-6 border-t border-santiCream text-[11px] font-bold text-santiEmerald">
-                    ✔ Recuperación directa de impuestos en abril
-                </div>
+                <h3 class="font-bold text-sm text-santiNavy">1. Recuperación de Impuestos</h3>
+                <p class="text-xs text-santiDark/70 leading-relaxed">
+                    Tu ahorro genera un beneficio fiscal legal para que el SAT te devuelva saldo a favor en cada declaración anual.
+                </p>
             </div>
 
-            <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-santiCream hover:border-santiGold/60 transition-all flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-santiNavy">
-                        Protección de Ingreso Integrada
-                    </h3>
-                    <p class="text-xs text-santiDark/80 leading-relaxed">
-                        <strong>Beneficio incluido:</strong> Si sufres un accidente o enfermedad que te impida ejercer tu profesión, recibes una suma de respaldo garantizada para mantener tus ingresos sin tocar tus ahorros.
-                    </p>
+            <div class="bg-white p-6 rounded-2xl border border-santiCream shadow-sm space-y-2 text-left">
+                <div class="w-10 h-10 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-shield-heart"></i>
                 </div>
-                <div class="pt-6 mt-6 border-t border-santiCream text-[11px] font-semibold text-santiDark/70">
-                    ✔ Cobertura automática sin pagos adicionales
-                </div>
+                <h3 class="font-bold text-sm text-santiNavy">2. Protección de Ingresos</h3>
+                <p class="text-xs text-santiDark/70 leading-relaxed">
+                    Si sufres una invalidez o enfermedad grave, recibes una suma de respaldo garantizada para ti y tu familia sin tocar tus ahorros.
+                </p>
             </div>
 
-            <div class="bg-[#FAF8F5] p-8 rounded-3xl border border-santiCream hover:border-santiGold/60 transition-all flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="w-12 h-12 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-santiNavy">
-                        Garantía Anti-Inflación (UDIs/Dólares)
-                    </h3>
-                    <p class="text-xs text-santiDark/80 leading-relaxed">
-                        <strong>Beneficio incluido:</strong> Tu capital se resguarda en moneda fuerte respaldada por Seguros Monterrey NY Life, asegurando que tu dinero conserve y aumente su poder adquisitivo real.
-                    </p>
+            <div class="bg-white p-6 rounded-2xl border border-santiCream shadow-sm space-y-2 text-left">
+                <div class="w-10 h-10 bg-santiCream text-santiEmerald rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-vault"></i>
                 </div>
-                <div class="pt-6 mt-6 border-t border-santiCream text-[11px] font-semibold text-santiDark/70">
-                    ✔ Respaldo institucional garantizado por ley
-                </div>
+                <h3 class="font-bold text-sm text-santiNavy">3. Ahorro para Proyectos</h3>
+                <p class="text-xs text-santiDark/70 leading-relaxed">
+                    Diseñamos un esquema flexible para que tengas capital disponible a 3 o 5 años sin dejar tu dinero estancado en el banco.
+                </p>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SECCIÓN TESTIMONIO REAL -->
-<section id="testimonios" class="py-16 bg-santiCream/40 border-y border-santiCream">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-santiCream">
-            <div class="grid md:grid-cols-12 gap-8 items-center">
-                <div class="md:col-span-4 flex flex-col items-center text-center">
-                    <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-santiGold shadow-lg mb-3 bg-santiCream">
-                        <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" 
-                             alt="Itzel C." class="w-full h-full object-cover"
-                             onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6&sz=w500';">
-                    </div>
-                    <h4 class="font-heading font-bold text-base text-santiNavy">Itzel C.</h4>
-                    <p class="text-xs text-santiDark/70 font-medium">Administradora de Marketing</p>
-                </div>
-
-                <div class="md:col-span-8 space-y-3">
-                    <span class="inline-block bg-santiCream text-santiEmerald px-3 py-1 rounded-lg text-xs font-extrabold border border-santiGold/40">
-                        ✔ Caso Real: Ahorro con Flexibilidad para Proyecto a 3 Años
-                    </span>
-                    <blockquote class="text-xs sm:text-sm text-santiDark/90 italic leading-relaxed border-l-4 border-santiGold pl-4 py-1">
-                        "Tenía un ahorro para construir un negocio en 3 años, pero me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y deducción de impuestos."
+    <!-- TESTIMONIO DE ITZEL -->
+    <section class="py-10 px-4 bg-white border-t border-santiCream">
+        <div class="max-w-3xl mx-auto bg-[#FAF8F5] p-6 rounded-2xl border border-santiCream shadow-sm">
+            <div class="flex flex-col sm:flex-row gap-4 items-center text-left">
+                <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" alt="Itzel C." class="w-16 h-16 rounded-full object-cover border-2 border-santiGold">
+                <div class="space-y-1.5">
+                    <blockquote class="text-xs text-santiDark/80 italic leading-relaxed">
+                        "Tenía un ahorro para construir un negocio en 3 años, pero me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y una parte conserva la deducción de impuestos para construir ahorro para el retiro."
                     </blockquote>
+                    <div class="text-[11px] font-bold text-santiNavy">
+                        Itzel C. <span class="font-normal text-santiDark/60">· Administradora de Marketing</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- FORMULARIO OPTIMIZADO CON CAMPOS OCULTOS DE TRAZABILIDAD Y CÁLCULO NEUTRO -->
-<section id="agendar" class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-10 space-y-2">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-santiEmerald bg-santiCream px-4 py-1.5 rounded-full border border-santiGold/40">
-                Paso 1 de 2: Registro de Diagnóstico
-            </span>
-            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-santiNavy">
-                Inicia tu Diagnóstico Fiscal y Reserva tu Cita
-            </h2>
-            <p class="text-xs sm:text-sm text-santiDark/80">
-                Completa tus datos para personalizar tu sesión y elegir fecha en la agenda.
+    <!-- FOOTER MÍNIMO -->
+    <footer class="bg-santiDark text-santiCream/70 py-6 px-4 text-[11px] text-center border-t border-santiDark">
+        <div class="max-w-4xl mx-auto space-y-2">
+            <p>© 2026 <strong>Santi te asesora</strong>. Todos los derechos reservados. Asesor patrimonial independiente en alianza estratégica con MASS Asociados y Seguros Monterrey New York Life.</p>
+            <p>
+                Cédula Profesional CNSF: <strong>C412676</strong> | 
+                <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" class="underline hover:text-santiGold">Ver Cédula Oficial PDF</a> | 
+                <button type="button" onclick="openPrivacyModal()" class="underline hover:text-santiGold cursor-pointer">Aviso de Privacidad</button>
             </p>
         </div>
+    </footer>
 
-        <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-santiCream shadow-2xl relative">
+    <!-- MODAL INTEGRADO DE AVISO DE PRIVACIDAD -->
+    <div id="privacyModal" class="fixed inset-0 bg-santiDark/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-hidden flex flex-col shadow-2xl border border-santiCream">
+            <div class="p-5 bg-santiNavy text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-santiGold"></i>
+                    <h3 class="font-bold text-sm">Aviso de Privacidad Simplificado</h3>
+                </div>
+                <button type="button" onclick="closePrivacyModal()" class="text-white/80 hover:text-white text-lg font-bold">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto text-xs text-santiDark/80 space-y-3 leading-relaxed text-left">
+                <p><strong>Santi te asesora</strong> (Santiago, Asesor Patrimonial Autorizado con Cédula CNSF C412676) es responsable del tratamiento y resguardo de los datos personales recopilados en este sitio web.</p>
+                <p><strong>Finalidad del tratamiento de datos:</strong> Sus datos personales (Nombre, WhatsApp, Régimen Fiscal e Ingresos Estimados) serán utilizados exclusivamente para:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Realizar la proyección personalizada de devolución de impuestos ante el SAT.</li>
+                    <li>Contactarle vía WhatsApp o teléfono para agendar y llevar a cabo la sesión de diagnóstico patrimonial.</li>
+                    <li>Estructurar propuestas financieras a su medida respaldadas por MASS Asociados y Seguros Monterrey New York Life.</li>
+                </ul>
+                <p><strong>Protección y confidencialidad:</strong> Sus datos se conservarán bajo estricta confidencialidad y no serán vendidos, cedidos ni compartidos con terceros ajenos a los fines de la asesoría patrimonial regulada.</p>
+                <p><strong>Derechos ARCO:</strong> En cualquier momento podrá ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición enviando un mensaje directo a nuestro WhatsApp de atención.</p>
+            </div>
+            <div class="p-4 bg-[#FAF8F5] border-t border-santiCream text-right">
+                <button type="button" onclick="closePrivacyModal()" class="bg-santiEmerald text-white font-bold px-5 py-2 rounded-xl text-xs uppercase tracking-wider hover:bg-santiNavy transition-colors">
+                    Entendido y Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE INTERACCIÓN Y CONEXIÓN CON GOOGLE SHEETS -->
+    <script>
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('hidden');
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.add('hidden');
+        }
+
+        function updateCalculator(val) {
+            const income = parseFloat(val);
+            document.getElementById('incomeDisplay').innerText = '$' + income.toLocaleString('es-MX') + ' MXN';
             
-            <!-- Badge Dinámico del Cálculo -->
-            <div id="calcAppliedBadge" class="hidden mb-6 p-3.5 bg-santiCream rounded-xl border border-santiGold/50 text-xs text-santiEmerald font-bold flex items-center justify-between">
-                <span><i class="fa-solid fa-calculator mr-2 text-santiGold"></i><span id="calcAppliedText">Cálculo Seleccionado</span></span>
-                <span class="text-[10px] bg-santiEmerald text-white px-2 py-0.5 rounded uppercase tracking-wider font-extrabold">Inyectado</span>
-            </div>
+            const annualIncome = income * 12;
+            const maxDeductible = annualIncome * 0.10;
+            const estimatedRefund = maxDeductible * 0.30;
+            
+            document.getElementById('deductibleOutput').innerText = '$' + Math.round(maxDeductible).toLocaleString('es-MX') + ' MXN / año';
+            document.getElementById('refundOutput').innerText = '$' + Math.round(estimatedRefund).toLocaleString('es-MX') + ' MXN';
+        }
 
-            <form id="leadForm" onsubmit="submitToGoogleSheets(event)" class="space-y-6">
-                
-                <!-- PASO 1: Régimen Fiscal -->
-                <div class="space-y-2">
-                    <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        1. ¿Bajo qué régimen fiscal facturas o tributas ante el SAT? *
-                    </label>
-                    <div class="grid sm:grid-cols-2 gap-3">
-                        <label class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-santiCream hover:border-santiEmerald cursor-pointer transition-all">
-                            <input type="radio" name="regimen" value="Actividad Empresarial / Honorarios" required class="accent-santiEmerald">
-                            <span class="text-xs font-semibold text-santiDark">Actividad Empresarial / Honorarios</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-santiCream hover:border-santiEmerald cursor-pointer transition-all">
-                            <input type="radio" name="regimen" value="Sueldos y Salarios (Altos Ingresos)" class="accent-santiEmerald">
-                            <span class="text-xs font-semibold text-santiDark">Sueldos y Salarios (Altos Ingresos)</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-santiCream hover:border-santiEmerald cursor-pointer transition-all">
-                            <input type="radio" name="regimen" value="RESICO" class="accent-santiEmerald">
-                            <span class="text-xs font-semibold text-santiDark">RESICO (Simplificado)</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-santiCream hover:border-santiEmerald cursor-pointer transition-all">
-                            <input type="radio" name="regimen" value="Otro / Por definir" class="accent-santiEmerald">
-                            <span class="text-xs font-semibold text-santiDark">Otro / No estoy seguro</span>
-                        </label>
-                    </div>
-                </div>
+        function applyCalcToForm() {
+            const income = document.getElementById('incomeDisplay').innerText;
+            const refund = document.getElementById('refundOutput').innerText;
+            const text = `Ingreso: ${income}/mes | Devolución est: ${refund}`;
+            
+            if (document.getElementById('calcEstimadoHidden')) {
+                document.getElementById('calcEstimadoHidden').value = text;
+            }
+            if (document.getElementById('calcAppliedText')) {
+                document.getElementById('calcAppliedText').innerText = text;
+            }
+            if (document.getElementById('calcAppliedBadge')) {
+                document.getElementById('calcAppliedBadge').classList.remove('hidden');
+            }
+            
+            if (typeof trackConversion === 'function') {
+                trackConversion('Calc_Applied_To_Form');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-                <!-- PASO 2: Datos de Contacto -->
-                <div class="space-y-4 pt-4 border-t border-santiCream/80">
-                    <label class="block text-xs font-extrabold text-santiNavy uppercase tracking-wider">
-                        2. Datos para personalizar tu sesión y abrir la agenda *
-                    </label>
-                    
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <input type="text" name="nombre" id="formNombre" placeholder="Tu Nombre Completo *" required class="w-full bg-white text-xs text-santiDark p-3.5 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
-                        </div>
-                        <div>
-                            <input type="tel" name="whatsapp" id="formWhatsApp" placeholder="WhatsApp (10 dígitos) *" required class="w-full bg-white text-xs text-santiDark p-3.5 rounded-xl border border-santiCream focus:outline-none focus:border-santiEmerald">
-                        </div>
-                    </div>
-                </div>
+        function submitToGoogleSheets(e) {
+            e.preventDefault();
+            const btn = document.getElementById('formSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> Procesando datos...';
 
-                <!-- CAMPO OCULTO #1: ORIGEN DE LA LANDING PAGE -->
-                <input type="hidden" name="origen" value="Landing Profesionistas">
+            if (typeof trackConversion === 'function') {
+                trackConversion('Lead_Form_Submit');
+            }
 
-                <!-- CAMPO OCULTO #2: CÁLCULO ESTIMADO (VALOR NEUTRO POR DEFECTO) -->
-                <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
+            const regimenElem = document.querySelector('select[name="regimen"]');
+            const regimenVal = regimenElem ? regimenElem.value : 'No especificado';
 
-                <!-- Botón de Envío -->
-                <div class="pt-2 text-center space-y-3">
-                    <button type="submit" id="formSubmitBtn" class="w-full bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-4 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-xl flex items-center justify-center gap-2 border border-santiGold cursor-pointer">
-                        <span>Continuar a Seleccionar Horario en Agenda</span>
-                        <i class="fa-solid fa-arrow-right text-sm"></i>
-                    </button>
-                    
-                    <p class="text-[11px] text-santiDark/60">
-                        <i class="fa-solid fa-lock text-santiEmerald mr-1"></i>
-                        Tus datos se resguardan bajo estricta confidencialidad. Cero spam.
-                    </p>
-                </div>
+            const nombreElem = document.getElementById('formNombre');
+            const nombreVal = nombreElem ? nombreElem.value : 'Sin nombre';
 
-            </form>
+            const whatsappElem = document.getElementById('formWhatsApp');
+            const whatsappVal = whatsappElem ? whatsappElem.value : 'Sin WhatsApp';
 
-        </div>
-    </div>
-</section>
+            const calculoElem = document.getElementById('calcEstimadoHidden');
+            const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
 
-<!-- FOOTER REGULADO -->
-<footer class="bg-santiDark text-santiCream/80 py-12 border-t border-santiDark text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <div class="bg-white p-2 rounded-xl shadow-sm inline-flex items-center">
-                    <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" alt="Logo Footer" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
-                </div>
-            </div>
-            <div class="flex flex-wrap items-center justify-center gap-3 text-santiCream/80 text-[11px]">
-                <span>Asesoría Patrimonial Regulada</span>
-                <span>•</span>
-                <span>Cédula CNSF A1: <strong>C412676</strong></span>
-                <span>•</span>
-                <span>Seguros Monterrey New York Life</span>
-            </div>
-        </div>
-        <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-santiCream/60">
-            <p>© 2026 Santi te asesora. Todos los derechos reservados. Instrumentos autorizados por la CNSF.</p>
-            <div class="flex items-center gap-4 font-semibold">
-                <a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold">Ver Cédula Oficial PDF</a>
-                <span>•</span>
-                <a href="https://wa.me/525571208740" target="_blank" rel="noopener noreferrer" class="hover:text-santiGold">Contacto Directo</a>
-            </div>
-        </div>
-    </div>
-</footer>
+            const origenElem = document.getElementById('formOrigen');
+            const origenVal = (origenElem && origenElem.value) ? origenElem.value : 'Campaign Google Ads - Profesionistas';
 
-<!-- MULTIPLICADOR #1: BARRA FLOTANTE MÓVIL PERSISTENTE -->
-<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-santiCream p-3 z-50 shadow-2xl flex items-center justify-between gap-3">
-    <div class="text-[11px] font-bold text-santiNavy leading-tight">
-        <span>Deducción ISR 2026</span>
-        <span class="block text-[9px] text-santiEmerald font-normal">Calcula tu saldo a favor</span>
-    </div>
-    <a href="#agendar" class="bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white px-4 py-2.5 rounded-xl font-extrabold text-[11px] uppercase tracking-wider transition-all shadow-md">
-        Agendar Cita (30 min)
-    </a>
-</div>
+            const payload = {
+                fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+                nombre: nombreVal,
+                whatsapp: whatsappVal,
+                regimen: regimenVal,
+                origen: origenVal,
+                calculo_estimado: calculoVal
+            };
 
-<!-- SCRIPTS UNIFICADOS SIN SESGO DE CÁLCULO PREVIO -->
-<script>
-let currentCalculatedRefund = '\$16,200 MXN';
-let currentMonthlyIncome = 45000;
-let currentDeductible = '\$54,000 MXN';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
-function updateCalculator(monthlyIncome) {
-    currentMonthlyIncome = monthlyIncome;
-    const formattedIncome = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(monthlyIncome);
-    document.getElementById('incomeDisplay').innerText = formattedIncome + ' MXN';
+            const executeRedirect = () => {
+                window.location.href = `gracias.html?nombre=${encodeURIComponent(payload.nombre)}&wa=${encodeURIComponent(payload.whatsapp)}`;
+            };
 
-    const annualIncome = monthlyIncome * 12;
-    const umaCap = 206480;
-    const rawDeductible = annualIncome * 0.10;
-    const finalDeductible = Math.min(rawDeductible, umaCap);
-    const estimatedRefund = finalDeductible * 0.30;
+            const fallbackTimeout = setTimeout(executeRedirect, 3500);
 
-    currentDeductible = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(finalDeductible) + ' MXN';
-    currentCalculatedRefund = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(estimatedRefund) + ' MXN';
-
-    document.getElementById('deductibleOutput').innerText = currentDeductible;
-    document.getElementById('refundOutput').innerText = currentCalculatedRefund;
-}
-
-// Se activa únicamente cuando el usuario desplaza el deslizador de la calculadora
-function onSliderChange(monthlyIncome) {
-    updateCalculator(monthlyIncome);
-    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${monthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
-}
-
-// Se activa únicamente cuando el usuario hace clic en el botón de aplicar cálculo
-function applyCalcToForm() {
-    const badge = document.getElementById('calcAppliedBadge');
-    const badgeText = document.getElementById('calcAppliedText');
-    
-    badgeText.innerText = `Cálculo Aplicado: Devolución estimada de hasta ${currentCalculatedRefund}`;
-    badge.classList.remove('hidden');
-
-    document.getElementById('calcEstimadoHidden').value = `Ingreso: $${currentMonthlyIncome}/mes | Tope Deducible: ${currentDeductible} | Devolución Estimada de Hasta: ${currentCalculatedRefund}`;
-
-    document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-}
-
-function submitToGoogleSheets(event) {
-    event.preventDefault();
-    
-    const submitBtn = document.getElementById('formSubmitBtn');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando y abriendo agenda...';
-
-    const formData = new FormData(event.target);
-    const leadData = {
-        fecha: new Date().toLocaleString('es-MX'),
-        origen: formData.get('origen') || 'Landing Profesionistas',
-        nombre: formData.get('nombre'),
-        whatsapp: formData.get('whatsapp'),
-        regimen: formData.get('regimen'),
-        objetivo: 'Deducción ISR Art 151 (Google Search)',
-        calculo: formData.get('calculo_estimado')
-    };
-
-    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
-
-    fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(leadData)
-    }).catch(err => console.log('Resguardo local procesado'));
-
-    localStorage.setItem('santi_lead_backup', JSON.stringify(leadData));
-
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {content_name: 'Deducción ISR Art 151'});
-    }
-
-    setTimeout(() => {
-        window.location.href = `gracias.html?nombre=${encodeURIComponent(leadData.nombre)}&wa=${encodeURIComponent(leadData.whatsapp)}`;
-    }, 500);
-}
-
-// Inicializa visualmente la tarjeta de la calculadora sin alterar el valor por defecto "No calculado previamente"
-window.addEventListener('DOMContentLoaded', () => {
-    updateCalculator(45000);
-});
-</script>
-
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                clearTimeout(fallbackTimeout);
+                executeRedirect();
+            })
+            .catch(error => {
+                console.error('Error al guardar datos:', error);
+                clearTimeout(fallbackTimeout);
+                executeRedirect();
+            });
+        }
+    </script>
 </body>
 </html>
