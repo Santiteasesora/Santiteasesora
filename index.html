@@ -774,35 +774,3 @@
 
 </body>
 </html>
-Recomendación Adicional para tu Google Apps Script (Blindaje Antibalas)
-Si en algún momento deseas asegurarte de que tu script en Google Sheets nunca falle, sin importar desde qué dispositivo o formato envíen datos, te recomiendo actualizar la función doPost(e) en el editor de Google Apps Script con esta versión tolerante a errores:
-function doPost(e) {
-  try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets();
-    var data = {};
-
-    // Intenta leer como JSON, y si no es JSON utiliza los parámetros web de e.parameter
-    if (e.postData && e.postData.contents) {
-      try {
-        data = JSON.parse(e.postData.contents);
-      } catch (jsonError) {
-        data = e.parameter || {};
-      }
-    } else {
-      data = e.parameter || {};
-    }
-
-    var fecha = data.fecha || e.parameter.fecha || new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' });
-    var nombre = data.nombre || e.parameter.nombre || 'Sin nombre';
-    var whatsapp = data.whatsapp || e.parameter.whatsapp || 'Sin WhatsApp';
-    var regimen = data.regimen || e.parameter.regimen || 'Sin régimen';
-    var objetivo = data.objetivo || e.parameter.objetivo || 'Deducción ISR / Retiro PPR (Página Principal)';
-    var calculo = data.calculo || data.calculo_estimado || e.parameter.calculo || e.parameter.calculo_estimado || 'No calculado previamente';
-
-    sheet.appendRow([fecha, nombre, whatsapp, regimen, objetivo, calculo]);
-
-    return ContentService.createTextOutput("Éxito").setMimeType(ContentService.MimeType.TEXT);
-  } catch (error) {
-    return ContentService.createTextOutput("Error: " + error.toString()).setMimeType(ContentService.MimeType.TEXT);
-  }
-}
