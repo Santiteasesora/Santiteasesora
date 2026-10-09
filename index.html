@@ -687,51 +687,38 @@
         }
 
         function submitToGoogleSheets(e) {
-            e.preventDefault();
-            const btn = document.getElementById('formSubmitBtn');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
-            
-            trackConversion('Lead_Form_Submit');
+    e.preventDefault();
+    const btn = document.getElementById('formSubmitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
+    
+    trackConversion('Lead_Form_Submit');
 
-            const form = document.getElementById('leadForm');
-            const formData = new FormData(form);
+    const form = document.getElementById('leadForm');
+    const formData = new FormData(form);
 
-            // Preparación de parámetros en formato x-www-form-urlencoded
-            const params = new URLSearchParams();
-            for (const [key, value] of formData.entries()) {
-                params.append(key, value);
-            }
-            
-            // Garantizar la inclusión de fecha y valor por defecto de cálculo
-            params.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
-            
-            if (!params.has('calculo') || !params.get('calculo')) {
-                params.set('calculo', document.getElementById('calcHidden').value || 'No calculado previamente');
-            }
+    // Inyecta la fecha en tiempo real
+    formData.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: params.toString()
-            })
-            .then(() => {
-                btn.disabled = false;
-                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-            })
-            .catch(error => {
-                console.error('Error al guardar datos:', error);
-                btn.disabled = false;
-                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-            });
-        }
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    })
+    .then(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(error => {
+        console.error('Error al guardar datos:', error);
+        btn.disabled = false;
+        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+    });
+}
 
         function toggleModal() {
             const modal = document.getElementById('privacyModal');
