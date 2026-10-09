@@ -274,7 +274,7 @@
                             Tu Ingreso Bruto Mensual (Aproximado):
                         </label>
                         <span id="incomeDisplay" class="text-xl font-extrabold text-santiEmerald bg-santiCream px-4 py-1 rounded-xl border border-santiGold/40">
-                            \$45,000 MXN
+                            $45,000 MXN
                         </span>
                     </div>
                     
@@ -283,22 +283,22 @@
                            oninput="updateCalculator(this.value)">
                     
                     <div class="flex justify-between text-[11px] text-santiDark/60 font-medium">
-                        <span>\$15,000/mes</span>
-                        <span>\$100,000/mes</span>
-                        <span>\$250,000+/mes</span>
+                        <span>$15,000/mes</span>
+                        <span>$100,000/mes</span>
+                        <span>$250,000+/mes</span>
                     </div>
                 </div>
 
                 <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-santiCream">
                     <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-santiCream space-y-1">
                         <span class="text-[11px] font-bold text-santiDark/70 uppercase">Tope Anual Deducible (10% LISR)</span>
-                        <div id="deductibleOutput" class="text-2xl font-extrabold text-santiNavy">\$54,000 MXN</div>
+                        <div id="deductibleOutput" class="text-2xl font-extrabold text-santiNavy">$54,000 MXN</div>
                         <p class="text-[10px] text-santiDark/60">Monto máximo legal asignado a tu retiro según la ley.</p>
                     </div>
 
                     <div class="bg-santiCream/80 p-5 rounded-2xl border border-santiGold/50 space-y-1">
                         <span class="text-[11px] font-bold text-santiEmerald uppercase">Devolución estimada de hasta</span>
-                        <div id="refundOutput" class="text-2xl font-extrabold text-santiEmerald">\$16,200 MXN</div>
+                        <div id="refundOutput" class="text-2xl font-extrabold text-santiEmerald">$16,200 MXN</div>
                         <p class="text-[10px] text-santiDark/70 font-medium">Monto estimado de saldo a favor que el SAT te devuelve en abril.</p>
                     </div>
                 </div>
@@ -428,14 +428,14 @@
     <script>
         function updateCalculator(val) {
             const income = parseFloat(val);
-            document.getElementById('incomeDisplay').innerText = '\$' + income.toLocaleString('es-MX') + ' MXN';
+            document.getElementById('incomeDisplay').innerText = '$' + income.toLocaleString('es-MX') + ' MXN';
             
             const annualIncome = income * 12;
             const maxDeductible = annualIncome * 0.10;
             const estimatedRefund = maxDeductible * 0.30;
             
-            document.getElementById('deductibleOutput').innerText = '\$' + Math.round(maxDeductible).toLocaleString('es-MX') + ' MXN';
-            document.getElementById('refundOutput').innerText = '\$' + Math.round(estimatedRefund).toLocaleString('es-MX') + ' MXN';
+            document.getElementById('deductibleOutput').innerText = '$' + Math.round(maxDeductible).toLocaleString('es-MX') + ' MXN';
+            document.getElementById('refundOutput').innerText = '$' + Math.round(estimatedRefund).toLocaleString('es-MX') + ' MXN';
         }
 
         function applyCalcToForm() {
