@@ -542,11 +542,11 @@
                         </div>
                     </div>
 
-                    <!-- CAMPOS OCULTOS -->
+                    <!-- CAMPOS OCULTOS CON VALORES POR DEFECTO -->
                     <input type="hidden" name="objetivo" value="Deducción ISR / Retiro PPR (Página Principal)">
                     <input type="hidden" name="origen" value="Página Principal / Index">
                     <input type="hidden" name="calculo" id="calcHidden" value="No calculado previamente">
-                    <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculated previamente">
+                    <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                     <div class="pt-2 text-center space-y-3">
                         <button type="submit" id="formSubmitBtn" class="w-full bg-santiGold hover:bg-santiEmerald text-santiDark hover:text-white font-extrabold py-4 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-xl flex items-center justify-center gap-2 border border-santiGold cursor-pointer">
@@ -566,7 +566,7 @@
         </div>
     </section>
 
-    <!-- Agendamiento Directo -->
+    <!-- Módulo de Agendamiento Directo -->
     <section id="agendar" class="py-20 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -658,7 +658,7 @@
         </div>
     </div>
 
-    <!-- Script de Envío (Coincide con Landing Profesionistas) -->
+    <!-- Script de Envío con URLSearchParams (100% Compatible) -->
     <script>
         function updateCalculator(val) {
             const income = parseFloat(val);
@@ -697,15 +697,28 @@
             const form = document.getElementById('leadForm');
             const formData = new FormData(form);
 
-            // Inyecta la fecha en formato legible
-            formData.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
+            // Preparación de parámetros en formato x-www-form-urlencoded
+            const params = new URLSearchParams();
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            // Garantizar la inclusión de fecha y valor por defecto de cálculo
+            params.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
+            
+            if (!params.has('calculo') || !params.get('calculo')) {
+                params.set('calculo', document.getElementById('calcHidden').value || 'No calculado previamente');
+            }
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: params.toString()
             })
             .then(() => {
                 btn.disabled = false;
