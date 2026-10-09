@@ -542,7 +542,7 @@
                         </div>
                     </div>
 
-                    <!-- CAMPOS OCULTOS CON VALORES POR DEFECTO -->
+                    <!-- CAMPOS OCULTOS -->
                     <input type="hidden" name="objetivo" value="Deducción ISR / Retiro PPR (Página Principal)">
                     <input type="hidden" name="origen" value="Página Principal / Index">
                     <input type="hidden" name="calculo" id="calcHidden" value="No calculado previamente">
@@ -658,7 +658,7 @@
         </div>
     </div>
 
-    <!-- Script de Envío con URLSearchParams (100% Compatible) -->
+    <!-- Script de Lógica Interactiva y Envío a Google Sheets -->
     <script>
         function updateCalculator(val) {
             const income = parseFloat(val);
@@ -677,57 +677,61 @@
             const refund = document.getElementById('refundOutput').innerText;
             const text = `Ingreso: ${income}/mes | Devolución est: ${refund}`;
             
-            document.getElementById('calcHidden').value = text;
-            document.getElementById('calcEstimadoHidden').value = text;
-            document.getElementById('calcAppliedText').innerText = text;
-            document.getElementById('calcAppliedBadge').classList.remove('hidden');
+            if (document.getElementById('calcHidden')) document.getElementById('calcHidden').value = text;
+            if (document.getElementById('calcEstimadoHidden')) document.getElementById('calcEstimadoHidden').value = text;
+            if (document.getElementById('calcAppliedText')) document.getElementById('calcAppliedText').innerText = text;
+            if (document.getElementById('calcAppliedBadge')) document.getElementById('calcAppliedBadge').classList.remove('hidden');
             
-            trackConversion('Calc_Applied_To_Form');
+            if (typeof trackConversion === 'function') {
+                trackConversion('Calc_Applied_To_Form');
+            }
             document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
         }
 
         function submitToGoogleSheets(e) {
-    e.preventDefault();
-    const btn = document.getElementById('formSubmitBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
-    
-    trackConversion('Lead_Form_Submit');
+            e.preventDefault();
+            const btn = document.getElementById('formSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
+            
+            if (typeof trackConversion === 'function') {
+                trackConversion('Lead_Form_Submit');
+            }
 
-    const regimenSeleccionado = document.querySelector('input[name="regimen"]:checked');
+            const regimenSeleccionado = document.querySelector('input[name="regimen"]:checked');
+            const inputCalculo = document.getElementById('calcEstimadoHidden') || document.getElementById('calcHidden');
 
-    // Construye el objeto JSON alineado a la estructura de tu Apps Script
-    const payload = {
-        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
-        nombre: document.getElementById('formNombre').value || 'Sin nombre',
-        whatsapp: document.getElementById('formWhatsApp').value || 'Sin WhatsApp',
-        regimen: regimenSeleccionado ? regimenSeleccionado.value : 'No especificado',
-        objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
-        calculo: document.getElementById('calcEstimadoHidden').value || 'No calculado previamente'
-    };
+            const payload = {
+                fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+                nombre: document.getElementById('formNombre') ? document.getElementById('formNombre').value : 'Sin nombre',
+                whatsapp: document.getElementById('formWhatsApp') ? document.getElementById('formWhatsApp').value : 'Sin WhatsApp',
+                regimen: regimenSeleccionado ? regimenSeleccionado.value : 'No especificado',
+                objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
+                calculo: inputCalculo ? inputCalculo.value : 'No calculado previamente'
+            };
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-    })
-    .catch(error => {
-        console.error('Error al guardar datos:', error);
-        btn.disabled = false;
-        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-    });
-}
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                console.error('Error al guardar datos:', error);
+                btn.disabled = false;
+                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
 
         function toggleModal() {
             const modal = document.getElementById('privacyModal');
