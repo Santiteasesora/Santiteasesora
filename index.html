@@ -557,7 +557,10 @@
                         </div>
                     </div>
 
-                    <!-- CAMPO OCULTO DEL CÁLCULO TRASLADADO -->
+                    <!-- CAMPOS OCULTOS PARA COMPATIBILIDAD CON GOOGLE SHEETS -->
+                    <input type="hidden" name="objetivo" value="Deducción ISR / Retiro PPR (Página Principal)">
+                    <input type="hidden" name="origen" value="Página Principal / Index">
+                    <input type="hidden" name="calculo" id="calcHidden" value="No calculado previamente">
                     <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
 
                     <!-- Botón de Envío -->
@@ -672,7 +675,7 @@
         </div>
     </div>
 
-    <!-- Script Interactivo y Envío Corregido a Google Sheets -->
+    <!-- Script Interactivo y Envío por FormData (Alineado con Código Profesionistas) -->
     <script>
         // Lógica de Calculadora ISR Art. 151
         function updateCalculator(val) {
@@ -692,6 +695,7 @@
             const refund = document.getElementById('refundOutput').innerText;
             const text = `Ingreso: ${income}/mes | Devolución est: ${refund}`;
             
+            document.getElementById('calcHidden').value = text;
             document.getElementById('calcEstimadoHidden').value = text;
             document.getElementById('calcAppliedText').innerText = text;
             document.getElementById('calcAppliedBadge').classList.remove('hidden');
@@ -700,7 +704,7 @@
             document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Envío REAL alineado con el objeto JSON que exige Apps Script
+        // Envío por FormData (Estándar Web)
         function submitToGoogleSheets(e) {
             e.preventDefault();
             const btn = document.getElementById('formSubmitBtn');
@@ -709,27 +713,18 @@
             
             trackConversion('Lead_Form_Submit');
 
-            // Objeto de datos ajustado exactamente a la estructura requerida por Apps Script
-            const regimenSeleccionado = document.querySelector('input[name="regimen"]:checked');
-            
-            const payload = {
-                fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
-                nombre: document.getElementById('formNombre').value || 'Sin nombre',
-                whatsapp: document.getElementById('formWhatsApp').value || 'Sin WhatsApp',
-                regimen: regimenSeleccionado ? regimenSeleccionado.value : 'No especificado',
-                objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
-                calculo: document.getElementById('calcEstimadoHidden').value || 'No calculado previamente'
-            };
+            const form = document.getElementById('leadForm');
+            const formData = new FormData(form);
+
+            // Inyectamos la fecha formateada en tiempo real
+            formData.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify(payload)
+                body: formData
             })
             .then(() => {
                 btn.disabled = false;
@@ -779,3 +774,35 @@
 
 </body>
 </html>
+Recomendación Adicional para tu Google Apps Script (Blindaje Antibalas)
+Si en algún momento deseas asegurarte de que tu script en Google Sheets nunca falle, sin importar desde qué dispositivo o formato envíen datos, te recomiendo actualizar la función doPost(e) en el editor de Google Apps Script con esta versión tolerante a errores:
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets();
+    var data = {};
+
+    // Intenta leer como JSON, y si no es JSON utiliza los parámetros web de e.parameter
+    if (e.postData && e.postData.contents) {
+      try {
+        data = JSON.parse(e.postData.contents);
+      } catch (jsonError) {
+        data = e.parameter || {};
+      }
+    } else {
+      data = e.parameter || {};
+    }
+
+    var fecha = data.fecha || e.parameter.fecha || new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' });
+    var nombre = data.nombre || e.parameter.nombre || 'Sin nombre';
+    var whatsapp = data.whatsapp || e.parameter.whatsapp || 'Sin WhatsApp';
+    var regimen = data.regimen || e.parameter.regimen || 'Sin régimen';
+    var objetivo = data.objetivo || e.parameter.objetivo || 'Deducción ISR / Retiro PPR (Página Principal)';
+    var calculo = data.calculo || data.calculo_estimado || e.parameter.calculo || e.parameter.calculo_estimado || 'No calculado previamente';
+
+    sheet.appendRow([fecha, nombre, whatsapp, regimen, objetivo, calculo]);
+
+    return ContentService.createTextOutput("Éxito").setMimeType(ContentService.MimeType.TEXT);
+  } catch (error) {
+    return ContentService.createTextOutput("Error: " + error.toString()).setMimeType(ContentService.MimeType.TEXT);
+  }
+}
