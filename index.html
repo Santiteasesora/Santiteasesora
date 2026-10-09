@@ -425,57 +425,60 @@
         }
 
         function submitToGoogleSheets(e) {
-            e.preventDefault();
-            const btn = document.getElementById('formSubmitBtn');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
-            
-            if (typeof trackConversion === 'function') {
-                trackConversion('Lead_Form_Submit');
-            }
+    e.preventDefault();
+    const btn = document.getElementById('formSubmitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Guardando datos...';
+    
+    if (typeof trackConversion === 'function') {
+        trackConversion('Lead_Form_Submit');
+    }
 
-            const regimenElem = document.querySelector('input[name="regimen"]:checked');
-            const regimenVal = regimenElem ? regimenElem.value : 'No especificado';
+    const regimenElem = document.querySelector('input[name="regimen"]:checked');
+    const regimenVal = regimenElem ? regimenElem.value : 'No especificado';
 
-            const nombreElem = document.getElementById('formNombre');
-            const nombreVal = nombreElem ? nombreElem.value : 'Sin nombre';
+    const nombreElem = document.getElementById('formNombre');
+    const nombreVal = nombreElem ? nombreElem.value : 'Sin nombre';
 
-            const whatsappElem = document.getElementById('formWhatsApp');
-            const whatsappVal = whatsappElem ? whatsappElem.value : 'Sin WhatsApp';
+    const whatsappElem = document.getElementById('formWhatsApp');
+    const whatsappVal = whatsappElem ? whatsappElem.value : 'Sin WhatsApp';
 
-            const calculoElem = document.getElementById('calcEstimadoHidden') || document.getElementById('calcHidden');
-            const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
+    const calculoElem = document.getElementById('calcEstimadoHidden') || document.getElementById('calcHidden');
+    const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
 
-            const payload = {
-                fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
-                nombre: nombreVal,
-                whatsapp: whatsappVal,
-                regimen: regimenVal,
-                objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
-                calculo: calculoVal
-            };
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+    const payload = {
+        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+        nombre: nombreVal,
+        whatsapp: whatsappVal,
+        regimen: regimenVal,
+        origen: 'Página Principal / Index',
+        objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
+        calculo: calculoVal
+    };
 
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(() => {
-                btn.disabled = false;
-                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-            })
-            .catch(error => {
-                console.error('Error al guardar datos:', error);
-                btn.disabled = false;
-                btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
-                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
-            });
-        }
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
+
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(error => {
+        console.error('Error al guardar datos:', error);
+        btn.disabled = false;
+        btn.innerHTML = '<span>Continuar a Seleccionar Horario en Agenda</span> <i class="fa-solid fa-arrow-right"></i>';
+        document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+    });
+}
+
     </script>
 </body>
 </html>
