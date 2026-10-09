@@ -694,18 +694,27 @@
     
     trackConversion('Lead_Form_Submit');
 
-    const form = document.getElementById('leadForm');
-    const formData = new FormData(form);
+    const regimenSeleccionado = document.querySelector('input[name="regimen"]:checked');
 
-    // Inyecta la fecha en tiempo real
-    formData.append('fecha', new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }));
+    // Construye el objeto JSON alineado a la estructura de tu Apps Script
+    const payload = {
+        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+        nombre: document.getElementById('formNombre').value || 'Sin nombre',
+        whatsapp: document.getElementById('formWhatsApp').value || 'Sin WhatsApp',
+        regimen: regimenSeleccionado ? regimenSeleccionado.value : 'No especificado',
+        objetivo: 'Deducción ISR / Retiro PPR (Página Principal)',
+        calculo: document.getElementById('calcEstimadoHidden').value || 'No calculado previamente'
+    };
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
 
     fetch(scriptURL, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
     })
     .then(() => {
         btn.disabled = false;
