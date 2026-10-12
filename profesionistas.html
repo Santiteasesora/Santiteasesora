@@ -2,14 +2,14 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-18490645254');
-</script>
+      gtag('config', 'AW-18490645254');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santi te asesora | Estrategia Patrimonial y Devolución SAT</title>
@@ -211,7 +211,7 @@
                         </button>
 
                         <p class="text-[10px] text-center text-santiDark/60 pt-0.5">
-                            <i class="fa-solid fa-lock text-santiEmerald"></i> Información strictly confidencial. Consulta el 
+                            <i class="fa-solid fa-lock text-santiEmerald"></i> Información estrictamente confidencial. Consulta el 
                             <button type="button" onclick="openPrivacyModal()" class="underline hover:text-santiEmerald font-semibold text-santiNavy cursor-pointer">Aviso de Privacidad</button>.
                         </p>
                     </form>
@@ -311,7 +311,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN UNIFICADA DE PRUEBA SOCIAL Y VIDEO -->
+    <!-- SECCIÓN UNIFICADA DE PRUEBA SOCIAL Y VIDEO MÁSCARA -->
     <section class="py-10 px-4 bg-white border-t border-santiCream">
         <div class="max-w-4xl mx-auto space-y-6">
             <div class="text-center space-y-1">
@@ -324,24 +324,22 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 items-stretch">
-                <!-- Video de Presentación Integrado (YouTube Short) -->
-                <div class="bg-[#FAF8F5] p-4 rounded-2xl border border-santiCream shadow-sm flex flex-col justify-between space-y-3">
-                    <div class="relative w-full max-w-[260px] mx-auto rounded-xl overflow-hidden shadow-md border border-santiGold/30" style="aspect-ratio: 9/16;">
-                        <iframe 
-                            src="https://www.youtube.com/embed/oTPHUmFmE7o?rel=0&modestbranding=1" 
-                            title="Santi te asesora - Conóce a Santiago" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen 
-                            class="absolute top-0 left-0 w-full h-full rounded-xl">
-                        </iframe>
+                <!-- Video Corto de Presentación con Máscara + Pop-up Modal -->
+                <div onclick="openVideoModal()" class="bg-[#FAF8F5] p-4 rounded-2xl border border-santiCream shadow-sm flex flex-col justify-between space-y-3 cursor-pointer hover:border-santiGold transition-all group">
+                    <div class="relative w-full h-44 rounded-xl overflow-hidden bg-santiDark border border-santiGold/30">
+                        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" alt="Santiago" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-santiNavy/30 flex items-center justify-center">
+                            <div class="w-12 h-12 bg-santiGold text-santiNavy rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-base ml-0.5"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-left space-y-1">
                         <div class="flex items-center justify-between">
                             <span class="text-[10px] font-extrabold text-santiEmerald uppercase bg-santiCream px-2 py-0.5 rounded">Presentación 40 seg</span>
                             <span class="text-[10px] font-semibold text-santiDark/60">Cédula CNSF C412676</span>
                         </div>
-                        <h3 class="text-sm font-bold text-santiNavy">Santiago (Santi te asesora)</h3>
+                        <h3 class="text-sm font-bold text-santiNavy group-hover:text-santiEmerald transition-colors">Santiago (Santi te asesora)</h3>
                         <p class="text-xs text-santiDark/70 leading-relaxed">Asesor patrimonial independiente en alianza estratégica con MASS Asociados y Seguros Monterrey NY Life.</p>
                     </div>
                 </div>
@@ -375,6 +373,24 @@
             </p>
         </div>
     </footer>
+
+    <!-- MODAL POP-UP DE VIDEO -->
+    <div id="videoModal" class="fixed inset-0 bg-santiDark/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-[320px] rounded-2xl overflow-hidden bg-black shadow-2xl border border-santiGold/50" style="aspect-ratio: 9/16;">
+            <button type="button" onclick="closeVideoModal()" class="absolute top-3 right-3 text-white/90 hover:text-white bg-santiNavy/80 w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            <iframe 
+                id="youtubePlayer"
+                src="" 
+                title="Santi te asesora - Conóce a Santiago" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen 
+                class="w-full h-full rounded-2xl">
+            </iframe>
+        </div>
+    </div>
 
     <!-- MODAL INTEGRADO DE AVISO DE PRIVACIDAD -->
     <div id="privacyModal" class="fixed inset-0 bg-santiDark/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
@@ -418,6 +434,18 @@
                 }
             });
         });
+
+        function openVideoModal() {
+            const player = document.getElementById('youtubePlayer');
+            player.src = "https://www.youtube.com/embed/oTPHUmFmE7o?autoplay=1&rel=0&modestbranding=1";
+            document.getElementById('videoModal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            const player = document.getElementById('youtubePlayer');
+            player.src = "";
+            document.getElementById('videoModal').classList.add('hidden');
+        }
 
         function openPrivacyModal() {
             document.getElementById('privacyModal').classList.remove('hidden');
