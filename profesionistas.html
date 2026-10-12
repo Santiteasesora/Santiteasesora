@@ -102,14 +102,14 @@
         </div>
     </header>
 
-    <!-- HERO SECTION AUDITADO: Formulario Innegociable Above the Fold -->
+    <!-- HERO SECTION: Formulario Innegociable Above the Fold + Video Máscara -->
     <section class="pt-4 pb-10 px-4 max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Columna Izquierda: Copy Universal e Incentivo de Valor -->
+            <!-- Columna Izquierda: Copy Universal, Video Máscara e Incentivo de Valor -->
             <div class="lg:col-span-7 space-y-4 text-left">
                 
-                <!-- GANCHO VISUAL 1: Pill Dinámica de Escasez y Segmento -->
+                <!-- GANCHO VISUAL 1: Pill Dinámica -->
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-santiCream border border-santiGold/50 text-santiEmerald text-xs font-bold shadow-xs">
                     <span class="flex h-2 w-2 relative">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-santiGold opacity-75"></span>
@@ -126,7 +126,24 @@
                     Si eres asalariado de alto ingreso o facturas por tu cuenta, te ayudo a estructurar un plan donde <strong>el SAT te devuelve dinero cada año</strong> en tu declaración anual, sin comprometer tu liquidez y con protección de ingresos blindada.
                 </p>
 
-                <!-- GANCHO VISUAL 2: Banner de Escasez de Agenda -->
+                <!-- MÁSCARA DE VIDEO EN HERO SECTION -->
+                <div onclick="openVideoModal()" class="bg-white p-3.5 rounded-2xl border border-santiCream shadow-sm flex items-center gap-4 cursor-pointer hover:border-santiGold transition-all group">
+                    <div class="relative w-28 h-20 rounded-xl overflow-hidden bg-santiDark flex-shrink-0 border border-santiGold/30">
+                        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" alt="Santiago" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-santiNavy/30 flex items-center justify-center">
+                            <div class="w-8 h-8 bg-santiGold text-santiNavy rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-left space-y-0.5">
+                        <span class="text-[10px] font-extrabold text-santiEmerald uppercase bg-santiCream px-2 py-0.5 rounded">Video 40 seg</span>
+                        <h3 class="text-xs font-bold text-santiNavy group-hover:text-santiEmerald transition-colors">Conoce a Santiago (Santi te asesora)</h3>
+                        <p class="text-[11px] text-santiDark/70">Asesor patrimonial independiente con el respaldo institucional de MASS Asociados y Seguros Monterrey NY Life.</p>
+                    </div>
+                </div>
+
+                <!-- Banner de Escasez de Agenda -->
                 <div class="bg-santiCream/60 border border-santiGold/30 rounded-2xl p-3.5 flex items-center gap-3">
                     <div class="w-9 h-9 bg-santiEmerald text-santiGold rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0">
                         <i class="fa-regular fa-calendar-check"></i>
@@ -197,7 +214,7 @@
                         </div>
 
                         <!-- CAMPOS OCULTOS DE TRAZABILIDAD COMPLETA -->
-                        <input type="hidden" name="origen" id="formOrigen" value="Landing Profesionistas">
+                        <input type="hidden" name="origen" id="formOrigen" value="Página Principal / Index">
                         <input type="hidden" name="calculo_estimado" id="calcEstimadoHidden" value="No calculado previamente">
                         <input type="hidden" name="utm_source" id="utm_source" value="">
                         <input type="hidden" name="utm_medium" id="utm_medium" value="">
@@ -221,7 +238,7 @@
         </div>
     </section>
 
-    <!-- CALCULADORA ESTIMATIVA AUDITADA CON GANCHO INTERACTIVO -->
+    <!-- CALCULADORA ESTIMATIVA AUDITADA -->
     <section id="calculadora" class="py-10 bg-santiNavy text-white px-4">
         <div class="max-w-3xl mx-auto space-y-5 text-center">
             <div class="space-y-1">
@@ -311,50 +328,25 @@
         </div>
     </section>
 
-    <!-- SECCIÓN UNIFICADA DE PRUEBA SOCIAL Y VIDEO MÁSCARA -->
+    <!-- TESTIMONIO DE ITZEL -->
     <section class="py-10 px-4 bg-white border-t border-santiCream">
-        <div class="max-w-4xl mx-auto space-y-6">
-            <div class="text-center space-y-1">
-                <span class="text-[10px] font-extrabold uppercase tracking-wider text-santiEmerald bg-santiCream px-2.5 py-0.5 rounded-full">
-                    Respaldo e Idioma Claro
-                </span>
-                <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-santiNavy">
-                    Estrategias Diseñadas a tu Medida
-                </h2>
-            </div>
+        <div class="max-w-3xl mx-auto space-y-4 text-center">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-santiEmerald bg-santiCream px-2.5 py-0.5 rounded-full">
+                Prueba Social Y Respaldo
+            </span>
+            <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-santiNavy">
+                Casos de Éxito Reales
+            </h2>
 
-            <div class="grid md:grid-cols-2 gap-6 items-stretch">
-                <!-- Video Corto de Presentación con Máscara + Pop-up Modal -->
-                <div onclick="openVideoModal()" class="bg-[#FAF8F5] p-4 rounded-2xl border border-santiCream shadow-sm flex flex-col justify-between space-y-3 cursor-pointer hover:border-santiGold transition-all group">
-                    <div class="relative w-full h-44 rounded-xl overflow-hidden bg-santiDark border border-santiGold/30">
-                        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" alt="Santiago" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-santiNavy/30 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-santiGold text-santiNavy rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-play text-base ml-0.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-left space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="text-[10px] font-extrabold text-santiEmerald uppercase bg-santiCream px-2 py-0.5 rounded">Presentación 40 seg</span>
-                            <span class="text-[10px] font-semibold text-santiDark/60">Cédula CNSF C412676</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-santiNavy group-hover:text-santiEmerald transition-colors">Santiago (Santi te asesora)</h3>
-                        <p class="text-xs text-santiDark/70 leading-relaxed">Asesor patrimonial independiente en alianza estratégica con MASS Asociados y Seguros Monterrey NY Life.</p>
-                    </div>
-                </div>
-
-                <!-- Testimonio de Itzel -->
-                <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-santiCream shadow-sm flex flex-col justify-between space-y-3">
-                    <blockquote class="text-xs text-santiDark/80 italic leading-relaxed text-left">
-                        "Tenía un ahorro para construir un negocio en 3 años, pero me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y una parte conserva la deducción de impuestos para construir ahorro para el retiro."
-                    </blockquote>
-                    
-                    <div class="flex items-center gap-3 pt-2 border-t border-santiCream/80 text-left">
-                        <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" alt="Itzel C." class="w-11 h-11 rounded-full object-cover border-2 border-santiGold flex-shrink-0">
-                        <div>
-                            <div class="text-xs font-bold text-santiNavy">Itzel C.</div>
-                            <div class="text-[11px] text-santiDark/60">Administradora de Marketing</div>
+            <div class="bg-[#FAF8F5] p-6 rounded-2xl border border-santiCream shadow-sm">
+                <div class="flex flex-col sm:flex-row gap-4 items-center text-left">
+                    <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" alt="Itzel C." class="w-16 h-16 rounded-full object-cover border-2 border-santiGold flex-shrink-0">
+                    <div class="space-y-1.5">
+                        <blockquote class="text-xs text-santiDark/80 italic leading-relaxed">
+                            "Tenía un ahorro para construir un negocio en 3 años, pero me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y una parte conserva la deducción de impuestos para construir ahorro para el retiro."
+                        </blockquote>
+                        <div class="text-[11px] font-bold text-santiNavy">
+                            Itzel C. <span class="font-normal text-santiDark/60">· Administradora de Marketing</span>
                         </div>
                     </div>
                 </div>
@@ -511,7 +503,7 @@
             const calculoVal = (calculoElem && calculoElem.value) ? calculoElem.value : 'No calculado previamente';
 
             const origenElem = document.getElementById('formOrigen');
-            const origenVal = (origenElem && origenElem.value) ? origenElem.value : 'Landing Profesionistas';
+            const origenVal = (origenElem && origenElem.value) ? origenElem.value : 'Página Principal / Index';
 
             const payload = {
                 fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
