@@ -133,7 +133,7 @@
                     </div>
                     <div class="text-xs text-santiNavy">
                         <span class="font-bold block text-santiEmerald">Agenda Personalizada Directa (Lun a Vie | 9:00 - 18:00 hrs)</span>
-                        <span class="text-santiDark/70">Sesiones estratégicas privadas de 30 minutos programadas en tu horario preference.</span>
+                        <span class="text-santiDark/70">Sesiones estratégicas privadas de 30 minutos programadas en tu horario preferente.</span>
                     </div>
                 </div>
 
@@ -211,7 +211,7 @@
                         </button>
 
                         <p class="text-[10px] text-center text-santiDark/60 pt-0.5">
-                            <i class="fa-solid fa-lock text-santiEmerald"></i> Información estrictamente confidencial. Consulta el 
+                            <i class="fa-solid fa-lock text-santiEmerald"></i> Información strictly confidencial. Consulta el 
                             <button type="button" onclick="openPrivacyModal()" class="underline hover:text-santiEmerald font-semibold text-santiNavy cursor-pointer">Aviso de Privacidad</button>.
                         </p>
                     </form>
@@ -252,7 +252,7 @@
 
                 <div class="grid sm:grid-cols-2 gap-4 pt-1">
                     <div class="bg-[#FAF8F5] p-3.5 rounded-xl border border-santiCream">
-                        <span class="text-[10px] font-bold text-santiDark/60 uppercase block">Capacidad máxima legal deductible</span>
+                        <span class="text-[10px] font-bold text-santiDark/60 uppercase block">Capacidad máxima legal deducible</span>
                         <div id="deductibleOutput" class="text-lg font-extrabold text-santiNavy">$54,000 MXN / año</div>
                     </div>
 
@@ -324,15 +324,17 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 items-stretch">
-                <!-- Video Corto de Presentación -->
+                <!-- Video de Presentación Integrado (YouTube Short) -->
                 <div class="bg-[#FAF8F5] p-4 rounded-2xl border border-santiCream shadow-sm flex flex-col justify-between space-y-3">
-                    <div class="relative w-full h-44 rounded-xl overflow-hidden bg-santiDark border border-santiGold/30">
-                        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" alt="Santiago" class="w-full h-full object-cover opacity-85">
-                        <div class="absolute inset-0 bg-santiNavy/30 flex items-center justify-center">
-                            <div class="w-12 h-12 bg-santiGold text-santiNavy rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform">
-                                <i class="fa-solid fa-play text-base ml-0.5"></i>
-                            </div>
-                        </div>
+                    <div class="relative w-full max-w-[260px] mx-auto rounded-xl overflow-hidden shadow-md border border-santiGold/30" style="aspect-ratio: 9/16;">
+                        <iframe 
+                            src="https://www.youtube.com/embed/oTPHUmFmE7o?rel=0&modestbranding=1" 
+                            title="Santi te asesora - Conóce a Santiago" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="absolute top-0 left-0 w-full h-full rounded-xl">
+                        </iframe>
                     </div>
                     <div class="text-left space-y-1">
                         <div class="flex items-center justify-between">
@@ -490,11 +492,11 @@
                 regimen: regimenVal,
                 origen: origenVal,
                 calculo_estimado: calculoVal,
-                utm_source: document.getElementById('utm_source').value,
-                utm_medium: document.getElementById('utm_medium').value,
-                utm_campaign: document.getElementById('utm_campaign').value,
-                utm_term: document.getElementById('utm_term').value,
-                utm_content: document.getElementById('utm_content').value
+                utm_source: document.getElementById('utm_source') ? document.getElementById('utm_source').value : '',
+                utm_medium: document.getElementById('utm_medium') ? document.getElementById('utm_medium').value : '',
+                utm_campaign: document.getElementById('utm_campaign') ? document.getElementById('utm_campaign').value : '',
+                utm_term: document.getElementById('utm_term') ? document.getElementById('utm_term').value : '',
+                utm_content: document.getElementById('utm_content') ? document.getElementById('utm_content').value : ''
             };
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec';
