@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
 <title>Santi te asesora | Diagnóstico Fiscal y Estrategia Patrimonial Privada</title>
 <meta name="description" content="Calcula cuánto ISR podrías recuperar este abril ante el SAT y solicita acceso a una sesión ejecutiva de diagnóstico patrimonial con Santiago (Cédula CNSF C412676).">
 <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
@@ -23,7 +23,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.5;font-size:16px;padding-bottom:84px;-webkit-font-smoothing:antialiased}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.5;font-size:16px;padding-bottom:88px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer}
 a{color:var(--emerald)}
@@ -46,10 +46,7 @@ a{color:var(--emerald)}
 .form-wrap{grid-area:form;scroll-margin-top:68px}
 .extras{grid-area:extras;display:grid;gap:12px}
 @media(min-width:920px){
-  body{padding-bottom:0}
   .hero{grid-template-columns:1.05fr 1fr;grid-template-areas:"copy form" "extras form";gap:18px 42px;align-items:start;padding-top:28px}
-  .form-wrap{position:sticky;top:74px}
-  .sticky-bar{display:none!important}
 }
 
 .badge{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1px solid rgba(217,164,65,.6);color:var(--emerald);font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:10px}
@@ -156,16 +153,30 @@ input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;bac
 .tcard-author b{display:block;font-size:14px;color:var(--navy)}
 .tcard-author span{font-size:12px;color:rgba(41,44,43,.68)}
 
+/* Sección de Dudas Frecuentes (Deep Research Objections) */
+.faq{background:#fff;border-top:1px solid var(--cream);padding:38px 16px}
+.faq-in{max-width:820px;margin:0 auto}
+.faq-list{display:grid;gap:12px}
+details.faq-item{background:var(--bg);border:1px solid #eadfca;border-radius:16px;padding:14px 16px;transition:border-color .2s}
+details.faq-item[open]{border-color:var(--emerald);background:#fff;box-shadow:0 8px 20px -12px rgba(15,41,66,.12)}
+details.faq-item summary{font-size:15px;font-weight:800;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;line-height:1.35}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--cream);color:var(--emerald);font-weight:900;font-size:18px;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+details.faq-item[open] summary::after{content:"−";background:var(--emerald);color:#fff}
+.faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--cream);font-size:14px;color:rgba(41,44,43,.88);line-height:1.5;display:grid;gap:8px}
+
 footer{background:var(--navy);color:rgba(255,245,227,.8);padding:30px 16px;text-align:center;font-size:12.5px;line-height:1.5}
 .footer-in{max-width:880px;margin:0 auto;display:grid;gap:10px}
 footer .link-btn{color:var(--gold);font-size:12.5px}
 
-/* Barra pegajosa móvil */
-.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(15,41,66,.97);border-top:1px solid rgba(217,164,65,.45);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;transform:translateY(0);transition:transform .2s}
-.sticky-bar.off{transform:translateY(115%)}
-.sticky-bar small{display:block;font-size:11px;color:rgba(255,245,227,.8);line-height:1.1}
-.sticky-bar b{color:var(--gold);font-size:16px}
-.sticky-bar button{background:var(--gold);color:var(--navy);border:none;border-radius:12px;padding:11px 14px;font-weight:800;font-size:13px;text-transform:uppercase;min-height:44px}
+/* Barra pegajosa inferior (Visible tanto en Móvil como en Desktop cuando el formulario sale de vista) */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(15,41,66,.97);backdrop-filter:blur(8px);border-top:2px solid var(--gold);padding:10px 16px;display:flex;align-items:center;justify-content:center;transform:translateY(0);transition:transform .25s ease,opacity .25s ease;box-shadow:0 -10px 25px rgba(0,0,0,.25)}
+.sticky-bar.off{transform:translateY(120%);opacity:0;pointer-events:none}
+.sticky-in{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-bar small{display:block;font-size:11.5px;color:rgba(255,245,227,.85);line-height:1.1}
+.sticky-bar b{color:var(--gold);font-size:16.5px}
+.sticky-bar button{background:var(--gold);color:var(--navy);border:none;border-radius:12px;padding:11px 16px;font-weight:800;font-size:13.5px;text-transform:uppercase;min-height:44px;white-space:nowrap;box-shadow:0 4px 12px rgba(217,164,65,.4);transition:background .15s}
+.sticky-bar button:hover{background:#e6b14c}
 
 /* Diálogos Nativos */
 dialog{border:none;border-radius:20px;max-width:560px;width:calc(100% - 32px);margin:auto;padding:0;box-shadow:0 30px 60px rgba(0,0,0,.45)}
@@ -206,7 +217,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     <p class="sub">Calcula en 20 segundos cuánto podrías recuperar en tu declaración anual de abril y solicita tu <strong>sesión ejecutiva privada de 30 minutos</strong> para estructurar tu plan en UDIs o Dólares.</p>
   </section>
 
-  <!-- 2) CONSOLA UNIFICADA: SIMULADOR + FORMULARIO (Posicionamiento de Alta Consultoría) -->
+  <!-- 2) CONSOLA UNIFICADA: SIMULADOR + FORMULARIO -->
   <section class="form-wrap" id="formulario">
     <div class="card" id="formCard">
       <div class="card-head">
@@ -278,11 +289,11 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
         <div class="field-grid">
           <div class="field" style="margin-top:0">
             <label for="formNombre">Tu nombre *</label>
-            <input type="text" id="formNombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="name" required>
+            <input type="text" id="formNombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="name" autocapitalize="words" enterkeyhint="next" required>
           </div>
           <div class="field" style="margin-top:0">
             <label for="formWhatsApp">Tu WhatsApp (10 dígitos) *</label>
-            <input type="tel" id="formWhatsApp" name="whatsapp" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" required>
+            <input type="tel" id="formWhatsApp" name="whatsapp" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" enterkeyhint="done" required>
           </div>
         </div>
 
@@ -317,16 +328,16 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     </div>
   </section>
 
-  <!-- 3) Video de Presentación y Puntos Clave -->
+  <!-- 3) Video de Presentación (26 segundos) y Puntos Clave -->
   <section class="extras">
-    <button type="button" class="video" id="openVideo" aria-label="Ver video de 40 segundos">
+    <button type="button" class="video" id="openVideo" aria-label="Ver video de 26 segundos">
       <div class="thumb">
         <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" width="104" height="82" loading="lazy" alt="Santiago - Santi te asesora"
              onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt&sz=w500';">
-        <span class="dur">▶ 0:40s</span>
+        <span class="dur">▶ 0:26s</span>
       </div>
       <div>
-        <span class="video-tag">Video de 40 segundos</span>
+        <span class="video-tag">Video de 26 segundos</span>
         <b>Conoce a Santiago (Santi te asesora)</b>
         <span class="desc">Descubre cómo estructuramos tu plan con el respaldo institucional de Seguros Monterrey NYL y MASS Asociados.</span>
       </div>
@@ -430,6 +441,57 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
   </div>
 </section>
 
+<!-- SECCIÓN DE DUDAS FRECUENTES (DEEP RESEARCH OBJECTIONS) -->
+<section class="faq" id="dudas">
+  <div class="faq-in">
+    <div class="sec-head">
+      <span class="badge">Claridad Total Antes de Agendar</span>
+      <h2>Preguntas Frecuentes de Profesionistas e Independientes</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>1. ¿Mi dinero queda "amarrado" hasta los 65 años o puedo tener liquidez antes?</summary>
+        <div class="faq-ans">
+          <p><strong>No tienes que inmovilizar todo tu capital hasta los 65 años.</strong> El error más común es meter el 100% de tu ahorro a un PPR rígido donde el SAT retiene el 20% si retiras antes de los 65.</p>
+          <p>En nuestro diagnóstico diseñamos una <strong>estructura de doble bolsillo</strong>: destinamos una parte exacta a tu bolsa deducible de retiro (Art. 151) para recuperar impuestos cada abril, y colocamos el resto en un fondo en UDIs o Dólares con <strong>ventanas de liquidez a mediano plazo (3 a 5 años)</strong> para que puedas usarlo en un negocio, enganche o proyecto sin penalización fiscal.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>2. Ya topo mis deducciones con gastos médicos, hipoteca o colegiaturas, ¿aún puedo deducir esto?</summary>
+        <div class="faq-ans">
+          <p><strong>Sí, porque son bolsas fiscales independientes ante el SAT.</strong> Tus deducciones personales tradicionales (honorarios médicos, seguros de gastos médicos, intereses hipotecarios, etc.) tienen su propio límite en el Art. 151 último párrafo.</p>
+          <p>En cambio, las aportaciones a tu Plan Personal de Retiro (Art. 151, Fracción V de la LISR) te otorgan un <strong>cupo exclusivo e independiente de hasta el 10% de tus ingresos acumulables del año</strong> (con tope de 5 UMAs anuales, equivalentes a ~$214,090 MXN en 2026). Puedes aprovechar ambos topes al mismo tiempo.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>3. ¿Qué pasa si en algún año mis ingresos bajan o soy profesionista con flujo variable?</summary>
+        <div class="faq-ans">
+          <p>Sabemos que la vida laboral de un profesionista o independiente no es lineal. Por eso estructuramos una <strong>aportación base cómoda y sostenible</strong> (desde $1,500 a $3,000 MXN mensuales) que nunca ahorque tu flujo de efectivo, y utilizamos las <strong>aportaciones adicionales flexibles</strong> en los meses donde recibas bonos, aguinaldo, PTU o cierres proyectos grandes para maximizar tu deducción antes del 31 de diciembre.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>4. Tributó en RESICO, ¿por qué me conviene esta estrategia si no puedo deducir ISR?</summary>
+        <div class="faq-ans">
+          <p>En RESICO ya tienes el mayor beneficio fiscal inmediato de México (pagas solo entre el 1% y el 2.5% de ISR), pero tienes dos riesgos: <strong>no estás construyendo pensión y la inflación erosiona tu liquidez en el banco</strong>.</p>
+          <p>Para perfiles RESICO utilizamos el <strong>Artículo 93 de la LISR</strong>: acumulamos tu patrimonio en UDIs o Dólares de forma que, al cumplir los requisitos de ley (60 años de edad y al menos 5 años de vigencia), <strong>tus rendimientos reales se entregan exentos de retención de ISR</strong>, además de contar con liquidez a mediano plazo y suma asegurada por invalidez desde el primer día.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>5. ¿Por qué hacerlo en UDIs o Dólares con Seguros Monterrey NYL y no dejarlo en CETES o SOFIPOs?</summary>
+        <div class="faq-ans">
+          <p>CETES y cuentas bancarias son excelentes para tu fondo de emergencias de corto plazo, pero tienen <strong>riesgo de tasa de reinversión</strong> (cuando bajan las tasas del Banco de México, tu rendimiento cae) y <strong>no son deducibles de ISR</strong>.</p>
+          <p>Al estructurar tu plan con el respaldo de <strong>Seguros Monterrey New York Life</strong> en UDIs o Dólares: 1) Blindas tu poder adquisitivo contra la inflación o devaluación del peso, 2) Obtienes un retorno fiscal inmediato del 18% al 35% vía devolución del SAT, y 3) Si sufres una invalidez total y permanente, recibes la suma asegurada contratada y la aseguradora sigue pagando el plan por ti.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-in">
     <p>© 2026 <strong>Santi te asesora</strong>. Santiago, Agente de Seguros autorizado por la Comisión Nacional de Seguros y Fianzas (Cédula CNSF: <strong>C412676</strong>), en alianza estratégica con MASS Asociados y Seguros Monterrey New York Life, S.A. de C.V.</p>
@@ -441,13 +503,15 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
   </div>
 </footer>
 
-<!-- Barra flotante móvil -->
+<!-- Barra flotante inferior (Arrastra la devolución calculada en móvil y escritorio cuando bajas en la página) -->
 <div class="sticky-bar off" id="stickyBar">
-  <div>
-    <small id="stickyLabel">Devolución SAT estimada:</small>
-    <b id="stickyRefund">$12,701 MXN*</b>
+  <div class="sticky-in">
+    <div>
+      <small id="stickyLabel">Devolución SAT estimada:</small>
+      <b id="stickyRefund">$12,701 MXN*</b>
+    </div>
+    <button type="button" id="stickyBtn">Solicitar Diagnóstico ↑</button>
   </div>
-  <button type="button" id="stickyBtn">Solicitar Diagnóstico ↑</button>
 </div>
 
 <!-- Diálogos Nativos -->
@@ -497,8 +561,8 @@ const CONFIG = {
   LEAD_VALUE: 450,
   QUALIFIED_INCOME: 25000,
 
-  // Número de WhatsApp para respaldo en caso de fallo de red (ej. '5215512345678')
-  WHATSAPP_NUMBER: '',
+  // Número de WhatsApp para respaldo en caso de fallo de red (ej. '5215571208740')
+  WHATSAPP_NUMBER: '5215571208740',
   THANKS_PAGE: 'gracias.html',
 
   // Parámetros fiscales vigentes 2026 (Art. 151 y 152 LISR)
@@ -688,7 +752,8 @@ async function handleSubmit(ev){
   $('formError').style.display = 'none';
 
   const nombre = $('formNombre').value.trim();
-  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(521\vert{}52)(?=\d{10}$)/, '');
+  // Expresión regular limpia (corregido el error de copia de barra vertical)
+  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(?:521|52)(?=\d{10}$)/, '');
 
   if (nombre.length < 2){ showError('Por favor escribe tu nombre para personalizar tu diagnóstico.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa tu número de WhatsApp a 10 dígitos (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
@@ -764,7 +829,7 @@ async function handleSubmit(ev){
 }
 
 /* =====================================================================
-   INTERFAZ: DIÁLOGOS Y BARRA FLOTANTE
+   INTERFAZ: DIÁLOGOS Y BARRA FLOTANTE INFALIBLE
    ===================================================================== */
 function setupDialogs(){
   const bindOpen = (btnId, dialogId) => {
@@ -787,16 +852,44 @@ function setupDialogs(){
 }
 
 function setupSticky(){
-  const bar = $('stickyBar'), card =$('formCard');
-  if ('IntersectionObserver' in window && bar && card){
-    new IntersectionObserver(entries => {
-      bar.classList.toggle('off', entries[0].isIntersecting);
-    }, { threshold: 0.15 }).observe(card);
-  }
-  $('stickyBtn').addEventListener('click', () => {
-    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => $('formNombre').focus({ preventScroll: true }), 450);
+  const bar = $('stickyBar'), submitBtn = $('formSubmitBtn');
+  if (!bar || !submitBtn) return;
+  const nombre = $('formNombre'), wa = $('formWhatsApp');
+  let typing = false;   // mientras escribe, la barra flotante se esconde para no tapar los campos
+
+  const checkVisibility = () => {
+    if (typing){ bar.classList.add('off'); return; }
+    const r = submitBtn.getBoundingClientRect();
+    bar.classList.toggle('off', r.top >= 0 && r.bottom <= window.innerHeight);
+  };
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  window.addEventListener('resize', checkVisibility, { passive: true });
+
+  // Deja el campo en el centro de la parte visible, por encima del teclado
+  const reveal = (el) => {
+    const go = () => el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    go();
+    setTimeout(go, 300);   // repite cuando el teclado ya terminó de abrirse
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', go, { once: true });
+  };
+  [nombre, wa].forEach(el => {
+    el.addEventListener('focus', () => { typing = true; checkVisibility(); reveal(el); });
+    el.addEventListener('blur', () => { typing = false; setTimeout(checkVisibility, 150); });
   });
+
+  // Tecla "Siguiente" del nombre -> pasa al WhatsApp (sin enviar el formulario)
+  nombre.addEventListener('keydown', e => {
+    if (e.key === 'Enter'){ e.preventDefault(); wa.focus(); }
+  });
+  // Tecla "Listo" del WhatsApp -> envía
+  wa.addEventListener('keydown', e => {
+    if (e.key === 'Enter'){ e.preventDefault(); wa.blur(); submitBtn.click(); }
+  });
+
+  // Botón flotante: el focus va DENTRO del toque (así el teclado abre) y el campo se centra solo
+  $('stickyBtn').addEventListener('click', () => nombre.focus({ preventScroll: true }));
+
+  checkVisibility();
 }
 
 function setupWhatsAppFallback(){
