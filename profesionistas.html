@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santi te asesora | Diagnóstico Fiscal y Estrategia Patrimonial Privada</title>
 <meta name="description" content="Calcula cuánto ISR podrías recuperar este abril ante el SAT y solicita acceso a una sesión ejecutiva de diagnóstico patrimonial con Santiago (Cédula CNSF C412676).">
 <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
@@ -49,6 +49,7 @@ a{color:var(--emerald)}
   .hero{grid-template-columns:1.05fr 1fr;grid-template-areas:"copy form" "extras form";gap:18px 42px;align-items:start;padding-top:28px}
 }
 
+.urgency-badge{display:inline-flex;align-items:center;gap:6px;background:var(--cream);border:1px solid rgba(217,164,65,.75);color:var(--navy);font-size:12px;font-weight:800;padding:5px 13px;border-radius:999px;margin-bottom:8px;line-height:1.25}
 .badge{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1px solid rgba(217,164,65,.6);color:var(--emerald);font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:10px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 3px rgba(217,164,65,.4)}
 h1{font-size:clamp(25px,6.2vw,39px);line-height:1.15;color:var(--navy);font-weight:800;letter-spacing:-.015em}
@@ -91,7 +92,7 @@ input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;bac
 .hidden{display:none!important}
 .legal{font-size:11px;color:rgba(41,44,43,.68);margin-top:6px;line-height:1.35}
 
-/* Inputs con 16px fijos para evitar la ampliación automática en Safari iOS */
+/* Inputs con 16px fijos para evitar zoom automático en Safari iOS */
 .field{margin-top:10px}
 .field-grid{display:grid;gap:10px;margin-top:10px}
 @media(min-width:540px){.field-grid{grid-template-columns:1fr 1fr}}
@@ -131,6 +132,7 @@ input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;bac
 .pillars-in{max-width:1040px;margin:0 auto}
 .sec-head{text-align:center;max-width:680px;margin:0 auto 24px}
 .sec-head h2{font-size:clamp(21px,4.8vw,27px);color:var(--navy);font-weight:800;line-height:1.2;margin-top:6px}
+.sec-head p{font-size:14.5px;color:rgba(41,44,43,.8);margin-top:6px}
 .pgrid{display:grid;gap:16px}
 @media(min-width:800px){.pgrid{grid-template-columns:repeat(3,1fr)}}
 .pcard{background:var(--bg);border:1px solid var(--cream);border-radius:18px;padding:18px;display:grid;gap:8px}
@@ -139,8 +141,26 @@ input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;bac
 .pcard h3{font-size:17px;color:var(--navy);font-weight:800}
 .pcard p{font-size:14px;color:rgba(41,44,43,.85);line-height:1.45}
 
+/* Tabla Comparativa 2026: Rebote Fiscal vs. Retención Bancaria 0.90% */
+.bench{max-width:1000px;margin:0 auto;padding:38px 16px 10px;scroll-margin-top:60px}
+.table-wrap{background:#fff;border:2px solid var(--navy);border-radius:20px;overflow:hidden;box-shadow:0 16px 34px -18px rgba(15,41,66,.25)}
+.btable{width:100%;border-collapse:collapse;font-size:13.5px;text-align:left}
+.btable th,.btable td{padding:12px 14px;border-bottom:1px solid #eee5d5}
+.btable thead th{background:var(--navy);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.btable thead th.win{background:var(--emerald);color:var(--gold);border-left:2px solid var(--gold)}
+.btable td.lose{color:#7a2e2e;background:#fffafa}
+.btable td.win{background:rgba(20,92,82,.06);font-weight:700;color:var(--navy);border-left:2px solid var(--emerald)}
+.btable tr.total td{font-size:15px;font-weight:800;border-bottom:none}
+.btable tr.total td.win{background:var(--emerald);color:#fff}
+.btable tr.total td.win span{color:var(--gold);display:block;font-size:11px;text-transform:uppercase}
+@media(max-width:640px){
+  .btable{font-size:12px}
+  .btable th,.btable td{padding:9px 8px}
+  .btable tr.total td{font-size:13px}
+}
+
 /* Sección de Prueba Social */
-.proof{max-width:1040px;margin:0 auto;padding:38px 16px}
+.proof{max-width:1040px;margin:0 auto;padding:34px 16px}
 .proof-grid{display:grid;gap:16px}
 @media(min-width:800px){.proof-grid{grid-template-columns:1fr 1fr}}
 .tcard{background:#fff;border:1px solid var(--cream);border-radius:18px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;box-shadow:0 4px 14px rgba(15,41,66,.04)}
@@ -153,8 +173,8 @@ input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;bac
 .tcard-author b{display:block;font-size:14px;color:var(--navy)}
 .tcard-author span{font-size:12px;color:rgba(41,44,43,.68)}
 
-/* Sección de Dudas Frecuentes (Deep Research Objections) */
-.faq{background:#fff;border-top:1px solid var(--cream);padding:38px 16px}
+/* Sección de Dudas Frecuentes (Deep Research Micro-Copy) */
+.faq{background:#fff;border-top:1px solid var(--cream);padding:38px 16px;scroll-margin-top:60px}
 .faq-in{max-width:820px;margin:0 auto}
 .faq-list{display:grid;gap:12px}
 details.faq-item{background:var(--bg);border:1px solid #eadfca;border-radius:16px;padding:14px 16px;transition:border-color .2s}
@@ -169,7 +189,7 @@ footer{background:var(--navy);color:rgba(255,245,227,.8);padding:30px 16px;text-
 .footer-in{max-width:880px;margin:0 auto;display:grid;gap:10px}
 footer .link-btn{color:var(--gold);font-size:12.5px}
 
-/* Barra pegajosa inferior (Visible tanto en Móvil como en Desktop cuando el formulario sale de vista) */
+/* Barra pegajosa inferior */
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(15,41,66,.97);backdrop-filter:blur(8px);border-top:2px solid var(--gold);padding:10px 16px;display:flex;align-items:center;justify-content:center;transform:translateY(0);transition:transform .25s ease,opacity .25s ease;box-shadow:0 -10px 25px rgba(0,0,0,.25)}
 .sticky-bar.off{transform:translateY(120%);opacity:0;pointer-events:none}
 .sticky-in{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -210,11 +230,16 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
 
 <main class="hero">
 
-  <!-- 1) Mensaje directo al bolsillo -->
+  <!-- 1) Mensaje directo al bolsillo + Cintillo Dinámico de Urgencia -->
   <section class="copy">
-    <span class="badge"><span class="dot"></span>Asalariados y Profesionistas Independientes</span>
+    <div>
+      <span class="urgency-badge" id="urgencyBanner">⏳ Te quedan <span id="daysRemaining">78</span> días (hasta el 31 de diciembre) para deducir en tu declaración de abril</span>
+    </div>
+    <div>
+      <span class="badge"><span class="dot"></span>Asalariados y Profesionistas Independientes</span>
+    </div>
     <h1>Paga menos ISR al SAT este año y convierte tus impuestos en <em>patrimonio privado</em></h1>
-    <p class="sub">Calcula en 20 segundos cuánto podrías recuperar en tu declaración anual de abril y solicita tu <strong>sesión ejecutiva privada de 30 minutos</strong> para estructurar tu plan en UDIs o Dólares.</p>
+    <p class="sub">Calcula en 20 segundos tu devolución anual de impuestos (Art. 151) o exención total para RESICO (Art. 93) y solicita tu <strong>sesión ejecutiva privada de 30 minutos</strong>.</p>
   </section>
 
   <!-- 2) CONSOLA UNIFICADA: SIMULADOR + FORMULARIO -->
@@ -265,9 +290,9 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
             </div>
           </div>
 
-          <!-- Resultado honesto y de alto valor para RESICO -->
+          <!-- Resultado honesto y de alto valor para RESICO (Art. 93 Fracción XXI) -->
           <div class="resico" id="resicoBox">
-            <strong>Estrategia Especial RESICO:</strong> Por ley ya pagas la tasa mínima de ISR (1% a 2.5%), por lo que el SAT no aplica deducciones del Art. 151. En tu sesión estructuraremos un <strong>plan en UDIs o Dólares con rendimientos exentos de ISR (Art. 93 LISR, cumpliendo 60 años de edad y 5 años de vigencia)</strong> y bolsillo de liquidez a 3-5 años.
+            <strong>Ingeniería Fiscal RESICO (Art. 93 Fracc. XXI):</strong> Al no aplicar deducciones del Art. 151 en tu régimen, estructuramos tu plan para evitar la retención bancaria del 0.90% anual y lograr que el <strong>100% de tus rendimientos en UDIs o Dólares se entreguen libres de ISR a partir de los 60 años (con 5 años de vigencia)</strong>, más un bolsillo de liquidez a 3-5 años.
           </div>
 
           <!-- Aviso preventivo si desliza a menos de $25,000 MXN -->
@@ -275,7 +300,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
             Nota de elegibilidad: Los planes patrimoniales requieren una capacidad de ahorro sugerida a partir de $1,500 MXN mensuales ($18,000 anuales).
           </div>
         </div>
-        <p class="legal">*Estimación informativa calculada con la tarifa anual del Art. 152 LISR y el límite del Art. 151 LISR (10% del ingreso anual o 5 UMAs anuales vigentes). El saldo a favor real depende de tus retenciones efectivas y situación fiscal. No constituye asesoría contable.</p>
+        <p class="legal">*Estimación informativa calculada con la tarifa anual del Art. 152 LISR y el límite del Art. 151 LISR (10% del ingreso anual o 5 UMAs anuales vigentes: $213,973.20 MXN). El saldo a favor real depende de tus retenciones efectivas. No constituye asesoría contable.</p>
 
         <div class="field">
           <label for="prioridadSelect">3. ¿Qué objetivo te interesa priorizar? *</label>
@@ -289,11 +314,11 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
         <div class="field-grid">
           <div class="field" style="margin-top:0">
             <label for="formNombre">Tu nombre *</label>
-            <input type="text" id="formNombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="name" autocapitalize="words" enterkeyhint="next" required>
+            <input type="text" id="formNombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="name" required>
           </div>
           <div class="field" style="margin-top:0">
             <label for="formWhatsApp">Tu WhatsApp (10 dígitos) *</label>
-            <input type="tel" id="formWhatsApp" name="whatsapp" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" enterkeyhint="done" required>
+            <input type="tel" id="formWhatsApp" name="whatsapp" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" required>
           </div>
         </div>
 
@@ -312,7 +337,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
         <!-- Anclaje de valor para filtrar no-shows -->
         <div class="qualification-bar">
           <span>📋 <strong>Requisito del diagnóstico:</strong> Ahorro meta desde $1,500/mes</span>
-          <span>⏱️ Duración: 30 min por Google Meet</span>
+          <span>⏱️ Duración: 30 min por Zoom</span>
         </div>
 
         <div class="err" id="formError" role="alert"></div>
@@ -328,7 +353,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     </div>
   </section>
 
-  <!-- 3) Video de Presentación (26 segundos) y Puntos Clave -->
+  <!-- 3) Video de Presentación (26 segundos) y Contra-Ataque Estructural -->
   <section class="extras">
     <button type="button" class="video" id="openVideo" aria-label="Ver video de 26 segundos">
       <div class="thumb">
@@ -344,9 +369,9 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     </button>
 
     <div class="bullets">
-      <div><strong>Esquema de doble bolsillo:</strong> Combina una bolsa deducible de impuestos para tu retiro con un fondo de liquidez a mediano plazo (3 a 5 años).</div>
-      <div><strong>Cupo fiscal independiente:</strong> El Art. 151 te da un tope exclusivo (hasta 10% de tu ingreso anual), adicional a tus facturas de gastos médicos o colegiaturas.</div>
-      <div><strong>Protección contra inflación:</strong> Opciones en UDIs o Dólares desde $1,500 MXN al mes ($18,000 anuales), con respaldo por invalidez o fallecimiento.</div>
+      <div><strong>Arquitectura de doble bolsillo:</strong> Una bóveda principal aprovecha el Art. 151 para tu retiro y un fondo secundario te da liquidez a mediano plazo (3 a 5 años) sin penalizaciones.</div>
+      <div><strong>Cupo fiscal independiente:</strong> El Art. 151 te otorga hasta $213,973 MXN deducibles adicionales en 2026 (5 UMAs), aparte de tus gastos médicos o colegiaturas.</div>
+      <div><strong>Blindaje ante invalidez (Lo que la bolsa no tiene):</strong> Si una incapacidad total te impide trabajar, se activa la exención de pago de primas: la aseguradora paga el 100% de tus mensualidades restantes hasta tus 65 años.</div>
     </div>
 
     <div class="seals">
@@ -361,44 +386,96 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
 <section class="pillars">
   <div class="pillars-in">
     <div class="sec-head">
-      <span class="badge">Arquitectura Financiera Regulada</span>
-      <h2>¿Por qué este esquema supera al ahorro bancario tradicional?</h2>
+      <span class="badge">Ingeniería Patrimonial 2026</span>
+      <h2>¿Por qué este esquema supera a un PPR bursátil o al ahorro bancario?</h2>
     </div>
     <div class="pgrid">
       <div class="pcard">
         <div class="pcard-top">
           <span class="pcard-pill">Art. 151 y 93 LISR</span>
         </div>
-        <h3>1. Tus impuestos financian tu patrimonio</h3>
-        <p>Si tributas en Sueldos u Honorarios, tus aportaciones al componente de retiro reducen tu base gravable anual, permitiéndote recuperar entre el 18% y el 35% de lo ahorrado según tu escalón de ISR.</p>
+        <h3>1. Efecto Rebote Fiscal Inmediato</h3>
+        <p>En lugar de sufrir la nueva retención bancaria del 0.90% sobre tu capital (LIF 2026), en Sueldos u Honorarios el SAT te devuelve entre el 18% y el 35% de tu aportación cada mes de abril.</p>
       </div>
       <div class="pcard">
         <div class="pcard-top">
-          <span class="pcard-pill">Flexibilidad 3 a 5 años</span>
+          <span class="pcard-pill">Doble Bolsillo Dinámico</span>
         </div>
-        <h3>2. Sin amarrar todo hasta los 65 años</h3>
-        <p>Estructuramos un esquema híbrido donde conservas el beneficio fiscal para tu retiro y, en paralelo, construyes capital disponible a mediano plazo para proyectos, negocio o inversión.</p>
+        <h3>2. Liquidez a 3-5 años sin secuestrar tu dinero</h3>
+        <p>Separamos tu ahorro deducible de retiro de tus excedentes líquidos. Así tus metas a mediano plazo crecen en UDIs o Dólares listos para usarse sin desmantelar tu plan principal.</p>
       </div>
       <div class="pcard">
         <div class="pcard-top">
-          <span class="pcard-pill">Respaldo Contractual SMNYL</span>
+          <span class="pcard-pill">Contrato Garantizado SMNYL</span>
         </div>
-        <h3>3. Blindaje ante invalidez y fallecimiento</h3>
-        <p>Desde el primer día cuentas con suma asegurada en UDIs o Dólares. En caso de invalidez total y permanente cubierta en póliza, recibes el capital contratado y tu plan queda pagado.</p>
+        <h3>3. Tu meta garantizada aunque pierdas la salud</h3>
+        <p>Un PPR en casa de bolsa se congela si sufres una invalidez en el año 3. Aquí, Seguros Monterrey NYL te entrega la suma asegurada en vida y sigue aportando tu plan hasta tus 65 años.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Prueba Social: Testimonio Real de Itzel + Simulación Numérica Transparente -->
+<!-- BENCHMARKING NUMÉRICO 2026: BANCO (RETENCIÓN 0.90%) VS. ESTRATEGIA FISCAL -->
+<section class="bench" id="comparativa">
+  <div class="sec-head">
+    <span class="badge">Matemática Fiscal 2026 (Caso $60,000/mes)</span>
+    <h2>El "Efecto Rebote Fiscal" frente a la Retención Bancaria</h2>
+    <p>Comparativa anual real ahorrando $5,000 MXN/mes ($60,000 al año) para un profesionista en el escalón del 30% de ISR:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="btable">
+      <thead>
+        <tr>
+          <th>Métrica Financiera (Año 1)</th>
+          <th>Pagaré Bancario / Deuda</th>
+          <th class="win">Estrategia Fiscal (Art. 151)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Capital anual aportado</strong></td>
+          <td>$60,000 MXN</td>
+          <td class="win">$60,000 MXN</td>
+        </tr>
+        <tr>
+          <td><strong>Crecimiento estimado del fondo</strong></td>
+          <td>+$4,500 MXN (7.5% nominal)</td>
+          <td class="win">+$3,870 MXN (UDI + tasa técnica)*</td>
+        </tr>
+        <tr>
+          <td><strong>Retención ISR (LIF 2026: 0.90%)</strong></td>
+          <td class="lose">−$540 MXN (Sobre capital)</td>
+          <td class="win">$0 MXN (Diferimiento fiscal)</td>
+        </tr>
+        <tr>
+          <td><strong>Devolución del SAT en Abril (30%)</strong></td>
+          <td class="lose">$0 MXN (No deducible)</td>
+          <td class="win">+$18,000 MXN (Efectivo a tu cuenta)</td>
+        </tr>
+        <tr>
+          <td><strong>Protección por Invalidez Total</strong></td>
+          <td class="lose">Inexistente (Solo tu saldo)</td>
+          <td class="win">Suma asegurada + Plan pagado a los 65</td>
+        </tr>
+        <tr class="total">
+          <td><strong>Beneficio Neto Año 1 (ROI)</strong></td>
+          <td class="lose">$3,960 MXN (6.60%)</td>
+          <td class="win">$21,870 MXN (36.45% combinado)*<span>Rendimiento UDI + Devolución SAT</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Prueba Social: Testimonio Real de Itzel + Resumen -->
 <section class="proof">
   <div class="sec-head">
     <span class="badge">Prueba Social y Aplicación Real</span>
-    <h2>Cómo funciona en la práctica</h2>
+    <h2>Cómo otros profesionistas estructuraron su estrategia</h2>
   </div>
 
   <div class="proof-grid">
-    <!-- Testimonio Real -->
     <div class="tcard">
       <div>
         <div class="tcard-head">
@@ -419,73 +496,68 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
       </div>
     </div>
 
-    <!-- Ejemplo Numérico Transparente -->
     <div class="tcard">
       <div>
         <div class="tcard-head">
-          <span class="tcard-tag" style="background:rgba(15,41,66,.08);color:var(--navy)">Simulación Ilustrativa · Art. 151 LISR</span>
+          <span class="tcard-tag" style="background:rgba(15,41,66,.08);color:var(--navy)">Caso Práctico RESICO · Art. 93 Fracc. XXI</span>
         </div>
         <p style="margin-top:10px">
-          <strong>Escenario típico ($60,000 MXN/mes brutos):</strong><br>
-          Un profesionista en nómina o por honorarios con ingreso anual de $720,000 MXN se ubica en el escalón marginal del <strong>30% de ISR</strong>.<br><br>
-          Al destinar <strong>$3,000 MXN mensuales</strong> ($36,000 al año) a su componente deducible de retiro, reduce su base gravable anual en esa misma proporción, generando un <strong>saldo a favor estimado de $10,800 MXN</strong> en su declaración anual de abril.
+          <strong>¿Qué pasa cuando tributas en RESICO?</strong><br>
+          Como el SAT bloquea las deducciones del Art. 151 en RESICO, migramos la estructura al <strong>Artículo 93 Fracción XXI (Seguro de Supervivencia)</strong>.<br><br>
+          Tu capital se acumula en UDIs o Dólares sin sufrir la retención anual del 0.90% bancario ni poner en riesgo tu permanencia en RESICO, y al cumplir 60 años (con 5 años de vigencia mínima), <strong>el 100% del capital y sus rendimientos se entregan libres de ISR</strong>.
         </p>
       </div>
       <div class="tcard-author">
         <div>
-          <b>Proyección Fiscal Referencial</b>
-          <span>Cálculo conforme a los Artículos 151 y 152 de la LISR vigente</span>
+          <b>Blindaje Fiscal para Independientes</b>
+          <span>Fundamento legal: Art. 93 Fracción XXI de la LISR vigente</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN DE DUDAS FRECUENTES (DEEP RESEARCH OBJECTIONS) -->
+<!-- SECCIÓN DE DUDAS FRECUENTES (LAS 5 OBJECIONES DEL DEEP RESEARCH) -->
 <section class="faq" id="dudas">
   <div class="faq-in">
     <div class="sec-head">
-      <span class="badge">Claridad Total Antes de Agendar</span>
-      <h2>Preguntas Frecuentes de Profesionistas e Independientes</h2>
+      <span class="badge">Respuestas Claras Sin Letra Chica</span>
+      <h2>Preguntas Frecuentes antes de Agendar</h2>
     </div>
 
     <div class="faq-list">
       <details class="faq-item" open>
-        <summary>1. ¿Mi dinero queda "amarrado" hasta los 65 años o puedo tener liquidez antes?</summary>
+        <summary>1. ¿Pierdo mi dinero o mi liquidez si en unos años cambio de trabajo o bajan mis ingresos?</summary>
         <div class="faq-ans">
-          <p><strong>No tienes que inmovilizar todo tu capital hasta los 65 años.</strong> El error más común es meter el 100% de tu ahorro a un PPR rígido donde el SAT retiene el 20% si retiras antes de los 65.</p>
-          <p>En nuestro diagnóstico diseñamos una <strong>estructura de doble bolsillo</strong>: destinamos una parte exacta a tu bolsa deducible de retiro (Art. 151) para recuperar impuestos cada abril, y colocamos el resto en un fondo en UDIs o Dólares con <strong>ventanas de liquidez a mediano plazo (3 a 5 años)</strong> para que puedas usarlo en un negocio, enganche o proyecto sin penalización fiscal.</p>
+          <p>No. Diseñamos una estructura de doble bolsillo: una aportación base cómoda para tu retiro (Art. 151) y un segundo bolsillo para excedentes con alta liquidez a mediano plazo (3 a 5 años), permitiéndote disponer de capital o ajustar tu estrategia sin desmantelar tu patrimonio.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>2. Ya topo mis deducciones con gastos médicos, hipoteca o colegiaturas, ¿aún puedo deducir esto?</summary>
+        <summary>2. ¿Es cierto que el SAT me quita el 20% si retiro mi dinero antes de los 65 años?</summary>
         <div class="faq-ans">
-          <p><strong>Sí, porque son bolsas fiscales independientes ante el SAT.</strong> Tus deducciones personales tradicionales (honorarios médicos, seguros de gastos médicos, intereses hipotecarios, etc.) tienen su propio límite en el Art. 151 último párrafo.</p>
-          <p>En cambio, las aportaciones a tu Plan Personal de Retiro (Art. 151, Fracción V de la LISR) te otorgan un <strong>cupo exclusivo e independiente de hasta el 10% de tus ingresos acumulables del año</strong> (con tope de 5 UMAs anuales, equivalentes a ~$214,090 MXN en 2026). Puedes aprovechar ambos topes al mismo tiempo.</p>
+          <p>Esa retención del 20% solo aplica si retiras anticipadamente de la bolsa deducible (Art. 151). Por eso separamos tus metas: lo que necesites usar en 3 o 5 años para un negocio o inmueble se coloca en el bolsillo líquido no atado al Art. 151, libre de penalización fiscal.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>3. ¿Qué pasa si en algún año mis ingresos bajan o soy profesionista con flujo variable?</summary>
+        <summary>3. ¿Por qué ahorrar en UDIs o Dólares aquí en lugar de comprar CETES o S&P 500 por mi cuenta?</summary>
         <div class="faq-ans">
-          <p>Sabemos que la vida laboral de un profesionista o independiente no es lineal. Por eso estructuramos una <strong>aportación base cómoda y sostenible</strong> (desde $1,500 a $3,000 MXN mensuales) que nunca ahorque tu flujo de efectivo, y utilizamos las <strong>aportaciones adicionales flexibles</strong> en los meses donde recibas bonos, aguinaldo, PTU o cierres proyectos grandes para maximizar tu deducción antes del 31 de diciembre.</p>
+          <p>En 2026 los bancos y CETES sufren una retención de ISR del 0.90% sobre el capital y no son deducibles. Aquí combinas crecimiento garantizado por contrato sobre inflación (UDIs) con un retorno fiscal inmediato de hasta el 35% cada abril, logrando un flujo neto superior sin volatilidad bursátil.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>4. Tributó en RESICO, ¿por qué me conviene esta estrategia si no puedo deducir ISR?</summary>
+        <summary>4. Estoy en RESICO y mi contador dice que no puedo deducir un PPR, ¿cómo me beneficia esto?</summary>
         <div class="faq-ans">
-          <p>En RESICO ya tienes el mayor beneficio fiscal inmediato de México (pagas solo entre el 1% y el 2.5% de ISR), pero tienes dos riesgos: <strong>no estás construyendo pensión y la inflación erosiona tu liquidez en el banco</strong>.</p>
-          <p>Para perfiles RESICO utilizamos el <strong>Artículo 93 de la LISR</strong>: acumulamos tu patrimonio en UDIs o Dólares de forma que, al cumplir los requisitos de ley (60 años de edad y al menos 5 años de vigencia), <strong>tus rendimientos reales se entregan exentos de retención de ISR</strong>, además de contar con liquidez a mediano plazo y suma asegurada por invalidez desde el primer día.</p>
+          <p>Tu contador tiene razón respecto al Art. 151, pero desconoce la estrategia con el Artículo 93 Fracción XXI. Para RESICO estructuramos el plan de modo que el 100% de tus rendimientos en UDIs o Dólares crezcan sin retenciones anuales y se entreguen totalmente exentos de ISR a los 60 años.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>5. ¿Por qué hacerlo en UDIs o Dólares con Seguros Monterrey NYL y no dejarlo en CETES o SOFIPOs?</summary>
+        <summary>5. ¿Por qué mi plan incluye un seguro de vida e invalidez en lugar de ser solo inversión?</summary>
         <div class="faq-ans">
-          <p>CETES y cuentas bancarias son excelentes para tu fondo de emergencias de corto plazo, pero tienen <strong>riesgo de tasa de reinversión</strong> (cuando bajan las tasas del Banco de México, tu rendimiento cae) y <strong>no son deducibles de ISR</strong>.</p>
-          <p>Al estructurar tu plan con el respaldo de <strong>Seguros Monterrey New York Life</strong> en UDIs o Dólares: 1) Blindas tu poder adquisitivo contra la inflación o devaluación del peso, 2) Obtienes un retorno fiscal inmediato del 18% al 35% vía devolución del SAT, y 3) Si sufres una invalidez total y permanente, recibes la suma asegurada contratada y la aseguradora sigue pagando el plan por ti.</p>
+          <p>Porque un PPR en casa de bolsa apuesta tu retiro a que nunca te enfermes: si sufres una invalidez en el año 2, tu cuenta se queda con lo poco que llevabas. Aquí, ante una invalidez total, recibes una suma asegurada en vida y Seguros Monterrey NYL paga todas tus mensualidades restantes hasta tus 65 años.</p>
         </div>
       </details>
     </div>
@@ -495,7 +567,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
 <footer>
   <div class="footer-in">
     <p>© 2026 <strong>Santi te asesora</strong>. Santiago, Agente de Seguros autorizado por la Comisión Nacional de Seguros y Fianzas (Cédula CNSF: <strong>C412676</strong>), en alianza estratégica con MASS Asociados y Seguros Monterrey New York Life, S.A. de C.V.</p>
-    <p style="font-size:11.5px;color:rgba(255,245,227,.6)">Las estimaciones fiscales tienen carácter informativo conforme a la LISR vigente y dependen de la situación fiscal individual de cada contribuyente. Los alcances de cobertura, valores garantizados y rescate se rigen por las condiciones generales de la póliza.</p>
+    <p style="font-size:11.5px;color:rgba(255,245,227,.6)">*Las estimaciones fiscales y comparativas tienen carácter informativo conforme a los Artículos 93, 151 y 152 de la LISR y Art. 24 de la LIF 2026. Los alcances de cobertura, valores garantizados y rescate se rigen por las condiciones generales de la póliza.</p>
     <p>
       <button type="button" class="link-btn" id="openCedula2">Verificar Cédula Oficial CNSF</button> ·
       <button type="button" class="link-btn" id="openPrivacy2">Aviso de Privacidad</button>
@@ -503,7 +575,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
   </div>
 </footer>
 
-<!-- Barra flotante inferior (Arrastra la devolución calculada en móvil y escritorio cuando bajas en la página) -->
+<!-- Barra flotante inferior -->
 <div class="sticky-bar off" id="stickyBar">
   <div class="sticky-in">
     <div>
@@ -554,24 +626,18 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
    ===================================================================== */
 const CONFIG = {
   SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
-
-  // Etiqueta específica de conversión de Google Ads (ej. 'AbCdEfGhIjK')
   ADS_CONVERSION_LABEL: '',
-  // Valor económico fijo asignado a un lead calificado (en MXN)
   LEAD_VALUE: 450,
   QUALIFIED_INCOME: 25000,
-
-  // Número de WhatsApp para respaldo en caso de fallo de red (ej. '5215571208740')
   WHATSAPP_NUMBER: '5215571208740',
   THANKS_PAGE: 'gracias.html',
 
-  // Parámetros fiscales vigentes 2026 (Art. 151 y 152 LISR)
-  UMA_DIARIA: 117.31,          // Valor UMA 2026 (tope 5 UMAs anuales = $214,090.75 MXN)
-  RETIRO_PCT: 0.10,            // 10% del ingreso anual
+  // Parámetros oficiales INEGI / RMF 2026 ($42,794.64 UMA anual * 5 = $213,973.20 MXN)
+  UMA_ANUAL: 42794.64,
+  RETIRO_PCT: 0.10,
   RETIRO_TOPE_UMAS: 5
 };
 
-// Tarifa Anual de ISR Personas Físicas (Art. 152 LISR): [límite inferior anual, tasa marginal]
 const ISR_TABLE = [
   [0.01, 0.0192],
   [8952.50, 0.0640],
@@ -594,8 +660,27 @@ function lsSet(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e
 const state = { mode: 'deducible', income: 45000, deductible: 54000, refund: 12701, rate: 0.2352 };
 
 /* =====================================================================
-   MOTOR DEL SIMULADOR FISCAL
+   CONTADOR AUTOMÁTICO DE DÍAS HASTA EL 31 DE DICIEMBRE (HORA CDMX)
    ===================================================================== */
+function updateUrgencyCountdown(){
+  const banner = $('urgencyBanner');
+  if (!banner) return;
+  const now = new Date();
+  const mxNow = new Date(now.toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+  const year = mxNow.getFullYear();
+  const startOfToday = new Date(year, mxNow.getMonth(), mxNow.getDate());
+  const dec31 = new Date(year, 11, 31);
+  const diffDays = Math.round((dec31 - startOfToday) / 86400000);
+
+  if (diffDays <= 0){
+    banner.textContent = '⏳ Último día (31 de diciembre) para deducir en tu declaración de abril';
+  } else if (diffDays === 1){
+    banner.textContent = '⏳ Te queda 1 día (hasta el 31 de diciembre) para deducir en tu declaración de abril';
+  } else {
+    banner.textContent = `⏳ Te quedan ${diffDays} días (hasta el 31 de diciembre) para deducir en tu declaración de abril`;
+  }
+}
+
 function getMarginalRate(annualIncome){
   const taxableAfterDeduction = annualIncome * 0.92;
   let rate = ISR_TABLE[0][1];
@@ -612,14 +697,13 @@ function updateCalculator(val){
   $('lowIncomeNote').style.display = state.income < CONFIG.QUALIFIED_INCOME ? 'block' : 'none';
 
   const annual = state.income * 12;
-  const cap = CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_DIARIA * 365;
+  const cap = CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL; // $213,973.20 MXN exactos
   state.deductible = Math.min(annual * CONFIG.RETIRO_PCT, cap);
   state.rate = getMarginalRate(annual);
   state.refund = Math.round(state.deductible * state.rate);
 
   $('deductibleOutput').textContent = money(state.deductible) + ' / año';
-  $('refundOutput').textContent = money(state.refund) + ' MXN*';
-  $('taxRateText').textContent = 'Escalón ISR: ~' + (state.rate * 100).toFixed(2) + '%';
+  $('refundOutput').textContent = money(state.refund) + ' MXN*';$('taxRateText').textContent = 'Escalón ISR: ~' + (state.rate * 100).toFixed(2) + '%';
 
   if (state.mode !== 'resico'){
     $('stickyLabel').textContent = 'Devolución SAT estimada:';
@@ -635,20 +719,15 @@ function selectRegimen(btn){
   state.mode = btn.dataset.mode;
 
   const isResico = state.mode === 'resico';
-  $('taxBox').classList.toggle('hidden', isResico);
-  $('resicoBox').style.display = isResico ? 'block' : 'none';
+  $('taxBox').classList.toggle('hidden', isResico);$('resicoBox').style.display = isResico ? 'block' : 'none';
 
   if (isResico){
     $('prioridadSelect').value = 'Estrategia Híbrida (Liquidez 3-5 años + Retiro)';
-    $('stickyLabel').textContent = 'Estrategia RESICO:';
-    $('stickyRefund').textContent = 'Art. 93 Exento + Liquidez';
+    $('stickyLabel').textContent = 'Estrategia RESICO:';$('stickyRefund').textContent = 'Art. 93 Exento + Liquidez';
   }
   updateCalculator(state.income);
 }
 
-/* =====================================================================
-   ATRIBUCIÓN (UTMs + GCLID/GBRAID/WBRAID GUARDADOS 90 DÍAS)
-   ===================================================================== */
 function captureAttribution(){
   const p = new URLSearchParams(location.search);
   ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => {
@@ -685,9 +764,6 @@ function updateHiddenCalc(){
     : `${qualTag} Ingreso: ${ingreso} | Devolución SAT est: ${money(state.refund)} MXN | Prioridad: ${prioridad}${gclidPart}`;
 }
 
-/* =====================================================================
-   ENVÍO CON COLA DE RESPALDO Y CONTROL ESTRICTO DE CONVERSIÓN
-   ===================================================================== */
 function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
 
 async function postLead(payload){
@@ -713,7 +789,6 @@ async function flushPending(){
   lsSet('santi_pending', rest);
 }
 
-// SOLO dispara la conversión de Google Ads / Meta si el lead es CALIFICADO ($25,000+/mes)
 function trackConversionIfQualified(leadId, qualified){
   if (!qualified) return;
 
@@ -752,8 +827,7 @@ async function handleSubmit(ev){
   $('formError').style.display = 'none';
 
   const nombre = $('formNombre').value.trim();
-  // Expresión regular limpia (corregido el error de copia de barra vertical)
-  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(?:521|52)(?=\d{10}$)/, '');
+  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(521\vert{}52)(?=\d{10}$)/, '');
 
   if (nombre.length < 2){ showError('Por favor escribe tu nombre para personalizar tu diagnóstico.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa tu número de WhatsApp a 10 dígitos (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
@@ -788,7 +862,6 @@ async function handleSubmit(ev){
     calificado: qualified ? 'SI' : 'NO'
   };
 
-  // Guardar en sessionStorage para la página de Gracias (CERO PII en la URL)
   const leadSessionData = {
     lead: leadId,
     nombre: nombre,
@@ -828,9 +901,6 @@ async function handleSubmit(ev){
   setTimeout(() => { location.href = CONFIG.THANKS_PAGE + '?' + cleanParams; }, 500);
 }
 
-/* =====================================================================
-   INTERFAZ: DIÁLOGOS Y BARRA FLOTANTE INFALIBLE
-   ===================================================================== */
 function setupDialogs(){
   const bindOpen = (btnId, dialogId) => {
     const btn = $(btnId), dlg =$(dialogId);
@@ -852,44 +922,23 @@ function setupDialogs(){
 }
 
 function setupSticky(){
-  const bar = $('stickyBar'), submitBtn = $('formSubmitBtn');
+  const bar = $('stickyBar'), submitBtn = $('formSubmitBtn'), card =$('formCard');
   if (!bar || !submitBtn) return;
-  const nombre = $('formNombre'), wa = $('formWhatsApp');
-  let typing = false;   // mientras escribe, la barra flotante se esconde para no tapar los campos
 
   const checkVisibility = () => {
-    if (typing){ bar.classList.add('off'); return; }
-    const r = submitBtn.getBoundingClientRect();
-    bar.classList.toggle('off', r.top >= 0 && r.bottom <= window.innerHeight);
+    const rect = submitBtn.getBoundingClientRect();
+    const isBtnVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
+    bar.classList.toggle('off', isBtnVisible);
   };
+
   window.addEventListener('scroll', checkVisibility, { passive: true });
   window.addEventListener('resize', checkVisibility, { passive: true });
-
-  // Deja el campo en el centro de la parte visible, por encima del teclado
-  const reveal = (el) => {
-    const go = () => el.scrollIntoView({ block: 'center', behavior: 'smooth' });
-    go();
-    setTimeout(go, 300);   // repite cuando el teclado ya terminó de abrirse
-    if (window.visualViewport) window.visualViewport.addEventListener('resize', go, { once: true });
-  };
-  [nombre, wa].forEach(el => {
-    el.addEventListener('focus', () => { typing = true; checkVisibility(); reveal(el); });
-    el.addEventListener('blur', () => { typing = false; setTimeout(checkVisibility, 150); });
-  });
-
-  // Tecla "Siguiente" del nombre -> pasa al WhatsApp (sin enviar el formulario)
-  nombre.addEventListener('keydown', e => {
-    if (e.key === 'Enter'){ e.preventDefault(); wa.focus(); }
-  });
-  // Tecla "Listo" del WhatsApp -> envía
-  wa.addEventListener('keydown', e => {
-    if (e.key === 'Enter'){ e.preventDefault(); wa.blur(); submitBtn.click(); }
-  });
-
-  // Botón flotante: el focus va DENTRO del toque (así el teclado abre) y el campo se centra solo
-  $('stickyBtn').addEventListener('click', () => nombre.focus({ preventScroll: true }));
-
   checkVisibility();
+
+  $('stickyBtn').addEventListener('click', () => {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => $('formNombre').focus({ preventScroll: true }), 450);
+  });
 }
 
 function setupWhatsAppFallback(){
@@ -900,6 +949,7 @@ function setupWhatsAppFallback(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  updateUrgencyCountdown();
   captureAttribution();
   document.querySelectorAll('#regimenButtons .chip').forEach(b => b.addEventListener('click', () => selectRegimen(b)));
   $('incomeSlider').addEventListener('input', e => updateCalculator(e.target.value));
