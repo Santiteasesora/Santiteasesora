@@ -1,292 +1,491 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Paso 2 de 2: Confirma tu Horario | Santi te asesora</title>
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18490645254');
 </script>
-    <!-- Event snippet for Reservar cita conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18490645254/CNXeCIOHtY4dEIa2g_FE',
-      'value': 1.0,
-      'currency': 'MXN'
-  });
-</script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selecciona tu Horario | Santi te asesora</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
-    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+<style>
+:root{
+  --emerald:#145C52; --gold:#D9A441; --cream:#FFF5E3; --navy:#0F2942; --dark:#292C2B; --bg:#FAF8F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{color:var(--emerald)}
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        santiEmerald: '#145C52',
-                        santiGold: '#D9A441',
-                        santiCream: '#FFF5E3',
-                        santiDark: '#292C2B',
-                        santiMint: '#A8C4B5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+/* Header Institucional */
+.header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--cream);padding:10px 16px}
+.header-in{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15px}
+.brand img{height:34px;width:auto}
+.status-pill{background:rgba(20,92,82,.1);border:1px solid rgba(20,92,82,.3);color:var(--emerald);font-size:11.5px;font-weight:800;padding:5px 11px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.25)}
 
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+/* Layout Principal */
+.wrap{max-width:940px;margin:0 auto;padding:18px 16px 44px;display:grid;gap:20px}
+@media(min-width:860px){
+  .wrap{grid-template-columns:1fr 1.1fr;align-items:start;padding-top:28px;gap:28px}
+}
+
+/* Barra de Progreso */
+.progress-box{background:var(--bg);border:1px solid #eadfca;border-radius:14px;padding:10px 14px}
+.progress-top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase;margin-bottom:6px}
+.progress-top span.alert{color:var(--emerald)}
+.bar-bg{height:7px;background:#eadfca;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;width:85%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:999px}
+
+/* Columna 1: Expediente y Proyección */
+.dossier{background:var(--navy);color:#fff;border-radius:22px;padding:20px;box-shadow:0 18px 36px -18px rgba(15,41,66,.45);display:grid;gap:14px}
+.dossier-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px}
+.dossier-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);background:rgba(217,164,65,.15);padding:3px 10px;border-radius:999px}
+.folio{font-size:12px;color:rgba(255,245,227,.7);font-family:monospace}
+.dossier h1{font-size:clamp(21px,5vw,25px);line-height:1.2;font-weight:800;color:#fff}
+.dossier h1 span{color:var(--gold)}
+.dossier-sub{font-size:13.5px;color:rgba(255,245,227,.85);line-height:1.4}
+
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px}
+.metric.highlight{background:var(--emerald);border-color:var(--gold)}
+.metric small{display:block;font-size:11px;color:rgba(255,245,227,.8);line-height:1.2}
+.metric.highlight small{color:var(--gold);font-weight:800;text-transform:uppercase}
+.metric b{display:block;font-size:18px;margin-top:4px;color:#fff}
+.metric span{display:block;font-size:10.5px;color:rgba(255,245,227,.75);margin-top:2px}
+
+.profile-summary{background:rgba(255,255,255,.06);border-radius:12px;padding:11px 13px;font-size:12.5px;display:grid;gap:5px;color:rgba(255,245,227,.9)}
+.profile-summary div{display:flex;justify-content:space-between;gap:8px}
+.profile-summary strong{color:var(--cream);text-align:right}
+
+.advisor-box{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.09);border:1px solid rgba(217,164,65,.35);border-radius:14px;padding:11px}
+.advisor-box img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--gold);flex-shrink:0}
+.advisor-box b{display:block;font-size:13.5px;color:#fff}
+.advisor-box span{display:block;font-size:11.5px;color:rgba(255,245,227,.8);line-height:1.3}
+
+/* Columna 2: Tarjeta de Agendamiento Limpio */
+.action-card{background:#fff;border:2px solid var(--emerald);border-radius:24px;padding:20px;box-shadow:0 20px 40px -20px rgba(15,41,66,.25);display:grid;gap:14px}
+.action-card h2{font-size:19px;color:var(--navy);font-weight:800;line-height:1.25}
+.action-card p.lead{font-size:14px;color:rgba(41,44,43,.86);line-height:1.45}
+
+/* Caja Destacada del Calendario en Vivo (Sin ensuciar la página con el iframe) */
+.cal-trigger-box{background:linear-gradient(135deg,#0F2942 0%,#145C52 100%);border:2px solid var(--gold);border-radius:18px;padding:16px;color:#fff;display:grid;gap:10px}
+.cal-trigger-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cal-badge{font-size:10.5px;font-weight:800;text-transform:uppercase;background:rgba(217,164,65,.2);color:var(--gold);padding:3px 9px;border-radius:999px;letter-spacing:.03em}
+.cal-trigger-box h3{font-size:16px;font-weight:800;color:#fff;line-height:1.25}
+.cal-trigger-box p{font-size:12.5px;color:rgba(255,245,227,.88);line-height:1.35}
+.btn-open-cal{width:100%;min-height:52px;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-size:14.5px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;box-shadow:0 8px 18px -6px rgba(0,0,0,.35);transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-open-cal:hover{background:#e5b24d;transform:translateY(-1px)}
+
+/* Divisor elegante */
+.divider{display:flex;align-items:center;gap:10px;color:rgba(41,44,43,.55);font-size:11.5px;font-weight:700;text-transform:uppercase}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:#e5dccb}
+
+/* Selector rápido de turno a 1 pulgar */
+.slot-label{display:block;font-size:12px;font-weight:800;color:var(--navy);text-transform:uppercase;margin-bottom:6px}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.slot-btn{min-height:46px;padding:8px 10px;border-radius:11px;border:1px solid #eadfca;background:var(--bg);color:var(--dark);font-size:13.5px;font-weight:600;text-align:left;line-height:1.2;transition:all .15s}
+.slot-btn[aria-pressed="true"]{border:2px solid var(--emerald);background:rgba(20,92,82,.1);color:var(--navy);font-weight:800}
+.day-select{width:100%;min-height:46px;font-size:16px;padding:9px 12px;border-radius:11px;border:1px solid #eadfca;background:var(--bg);color:var(--navy);font-weight:600;margin-top:6px}
+
+.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;background:#16a34a;color:#fff;border:2px solid #15803d;border-radius:13px;font-size:14.5px;font-weight:800;text-transform:uppercase;text-decoration:none;letter-spacing:.02em;box-shadow:0 8px 18px -8px rgba(22,163,74,.6);transition:all .15s;text-align:center;padding:10px 14px;margin-top:10px}
+.cta-wa:hover{background:#15803d}
+
+/* Protocolo Anti No-Show */
+.rules{background:var(--bg);border:1px solid #eadfca;border-radius:14px;padding:13px;display:grid;gap:7px}
+.rules-title{font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
+.rule-item{font-size:12.5px;color:rgba(41,44,43,.88);display:flex;gap:7px;align-items:flex-start;line-height:1.35}
+.rule-item span.icon{color:var(--emerald);font-weight:900;flex-shrink:0}
+
+/* Modal Nativo Limpio para Google Calendar */
+dialog#calDialog{border:none;border-radius:22px;max-width:780px;width:calc(100% - 20px);height:min(88vh,740px);margin:auto;padding:0;box-shadow:0 30px 60px rgba(0,0,0,.5);overflow:hidden;background:#fff}
+dialog#calDialog::backdrop{background:rgba(15,41,66,.82);backdrop-filter:blur(4px)}
+.cal-modal-wrap{display:flex;flex-direction:column;height:100%}
+.cal-modal-head{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:2px solid var(--gold)}
+.cal-modal-head b{font-size:14.5px;display:block}
+.cal-modal-head small{font-size:11.5px;color:var(--cream);opacity:.85}
+.cal-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;line-height:1}
+.cal-iframe-box{flex:1;overflow:auto;background:#fff;-webkit-overflow-scrolling:touch}
+.cal-iframe-box iframe{width:100%;height:100%;min-height:540px;border:0}
+.cal-modal-foot{background:var(--bg);border-top:1px solid #eadfca;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cal-modal-foot span{font-size:12px;color:var(--navy);font-weight:700}
+.cal-done-wa{background:#16a34a;color:#fff;text-decoration:none;font-size:12.5px;font-weight:800;padding:9px 14px;border-radius:10px;text-transform:uppercase}
+
+.hidden{display:none!important}
+footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text-align:center;font-size:12px;margin-top:20px}
+</style>
 </head>
-<body class="bg-slate-50 text-santiDark font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navbar Limpio -->
-    <header class="w-full bg-white border-b border-santiCream shadow-sm py-4 sticky top-0 z-40">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
-                     alt="Santi te asesora Logo" 
-                     class="h-10 w-auto object-contain"
-                     onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
-            </div>
-            <a href="https://wa.me/525571208740?text=Hola%20Santi,%20necesito%20ayuda%20para%20agendar%20mi%20cita." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold bg-santiCream text-santiEmerald px-3.5 py-2 rounded-xl border border-santiMint/40 hover:bg-santiMint/20 transition-colors">
-                <i class="fa-brands fa-whatsapp text-santiEmerald text-sm"></i>
-                <span>Soporte por WhatsApp</span>
-            </a>
-        </div>
-    </header>
+<body>
 
-    <!-- Main Section: Confirmación + Agenda Google + Recomendaciones -->
-    <main class="py-8 sm:py-12 flex-grow">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10">
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="profesionistas.html">
+      <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" width="34" height="34" alt="Santi te asesora"
+           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
+      <span>Santi te asesora</span>
+    </a>
+    <span class="status-pill"><span class="status-dot"></span>Expediente Registrado</span>
+  </div>
+</header>
 
-            <!-- Status Indicator & Header Headline -->
-            <div class="text-center space-y-4">
-                <div class="inline-flex items-center gap-2 bg-santiCream text-santiEmerald font-bold text-xs uppercase px-4 py-2 rounded-full border border-santiGold/30 shadow-xs">
-                    <span class="text-emerald-600 font-extrabold"><i class="fa-solid fa-circle-check"></i> Paso 1 Recibido</span>
-                    <span class="text-santiDark/30">•</span>
-                    <span class="text-santiGold font-extrabold animate-pulse"><i class="fa-regular fa-clock"></i> Paso 2: Elige tu Horario</span>
-                </div>
-                
-                <h1 class="font-heading text-2xl sm:text-4xl font-extrabold text-santiDark leading-tight">
-                    ¡Tus datos fueron registrados! <br class="hidden sm:inline">
-                    <span class="text-santiEmerald">Selecciona el día y hora para tu Diagnóstico Fiscal</span>
-                </h1>
-                
-                <p class="text-sm sm:text-base text-santiDark/80 max-w-2xl mx-auto leading-relaxed">
-                    Elige el espacio que mejor se adapte a tu agenda en el calendario interactivo oficial de abajo para confirmar inmediatamente tu videollamada de 30 minutos.
-                </p>
-            </div>
+<main class="wrap">
 
-            <!-- MÓDULO PRINCIPAL: WIDGET INTERACTIVO DE GOOGLE CALENDAR -->
-            <div id="agendar" class="bg-white rounded-3xl p-3 sm:p-6 shadow-xl border border-santiCream space-y-4">
-                <div class="flex items-center justify-between border-b border-santiCream pb-3 px-2">
-                    <div class="flex items-center gap-2 text-santiEmerald font-bold text-xs sm:text-sm uppercase tracking-wider">
-                        <i class="fa-solid fa-calendar-days text-santiGold text-base"></i>
-                        <span>Agenda Oficial de Santi</span>
-                    </div>
-                    <span class="text-[11px] text-santiDark/60 font-medium hidden sm:inline"><i class="fa-solid fa-lock text-emerald-600"></i> Reserva en tiempo real</span>
-                </div>
-
-                <!-- Google Calendar Appointment Scheduling iFrame Embed -->
-                <div class="w-full bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 min-h-[600px] sm:min-h-[650px] shadow-inner">
-                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true" 
-                            style="border: 0" 
-                            width="100%" 
-                            height="650" 
-                            frameborder="0"
-                            loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <!-- CONTINGENCIA Y FUGA FINANCIERA: Si no agendan en el widget -->
-            <div class="bg-santiCream/80 border border-santiGold/50 rounded-2xl p-5 sm:p-6 text-center space-y-3 max-w-2xl mx-auto shadow-sm">
-                <div class="inline-flex items-center gap-2 text-santiEmerald font-bold text-xs uppercase tracking-wider">
-                    <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
-                    <span>¿Prefieres agendar directamente por mensaje?</span>
-                </div>
-                <p class="text-xs sm:text-sm text-santiDark/90 leading-relaxed">
-                    Si no encuentras un horario disponible en el calendario o estás desde tu celular con poco tiempo, escríbeme para coordinar tu espacio manualmente.
-                </p>
-                <div class="pt-1">
-                    <a href="https://wa.me/525571208740?text=Hola%20Santi,%20acabo%20de%20dejar%20mis%20datos%20en%20el%20formulario%20y%20quiero%20coordinar%20mi%20horario%20de%20diagn%C3%B3stico." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center justify-center gap-2 bg-santiEmerald hover:bg-santiDark text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-                        <span>Confirmar Horario por WhatsApp (+52 55 7120 8740)</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Bloque de Recomendaciones Previas -->
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-santiCream space-y-8">
-                <h2 class="font-heading text-xl font-bold text-santiDark border-b border-santiCream pb-4 flex items-center gap-3">
-                    <i class="fa-solid fa-list-check text-santiGold"></i>
-                    <span>Recomendaciones previas a tu sesión</span>
-                </h2>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <!-- Recomendación 1 -->
-                    <div class="bg-santiCream/30 p-6 rounded-2xl border border-santiCream space-y-3 relative">
-                        <div class="w-8 h-8 rounded-lg bg-santiEmerald text-santiGold font-bold text-xs flex items-center justify-center">
-                            01
-                        </div>
-                        <h3 class="font-heading font-bold text-base text-santiDark">Situación Fiscal</h3>
-                        <p class="text-xs text-santiDark/80 leading-relaxed">
-                            Ten a la mano tu régimen de tributación o actividad actual para determinar de inmediato los incentivos de deducción fiscal aplicables a tu caso.
-                        </p>
-                    </div>
-
-                    <!-- Recomendación 2 -->
-                    <div class="bg-santiCream/30 p-6 rounded-2xl border border-santiCream space-y-3 relative">
-                        <div class="w-8 h-8 rounded-lg bg-santiEmerald text-santiGold font-bold text-xs flex items-center justify-center">
-                            02
-                        </div>
-                        <h3 class="font-heading font-bold text-base text-santiDark">Pólizas Actuales</h3>
-                        <p class="text-xs text-santiDark/80 leading-relaxed">
-                            Si ya cuentas con planes de retiro o seguros contratados, ubica brevemente sus coberturas para auditarlos y detectar posibles vacíos de protección.
-                        </p>
-                    </div>
-
-                    <!-- Recomendación 3 -->
-                    <div class="bg-santiCream/30 p-6 rounded-2xl border border-santiCream space-y-3 relative">
-                        <div class="w-8 h-8 rounded-lg bg-santiEmerald text-santiGold font-bold text-xs flex items-center justify-center">
-                            03
-                        </div>
-                        <h3 class="font-heading font-bold text-base text-santiDark">Conexión y Entorno</h3>
-                        <p class="text-xs text-santiDark/80 leading-relaxed">
-                            Conéctate preferentemente desde una computadora en un espacio tranquilo, ya que proyectaremos cifras y escenarios financieros en tiempo real.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Estructura Transparente de los 30 Minutos -->
-            <div class="bg-santiEmerald text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden space-y-6">
-                <div class="relative z-10 space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-santiGold">Estructura Transparente</span>
-                    <h2 class="font-heading text-2xl font-bold">¿Qué pasará durante nuestra sesión de 30 minutos?</h2>
-                    <p class="text-xs sm:text-sm text-santiCream/90">
-                        Un proceso claro, dinámico y enfocado exclusivamente en tus metas patrimoniales:
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 relative z-10 pt-2">
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-santiGold uppercase tracking-wider">Minutos 0 - 20</span>
-                            <i class="fa-solid fa-chart-pie text-santiGold text-base"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-base text-white">Diagnóstico y Presentación de Estrategia</h3>
-                        <p class="text-xs text-santiCream/80 leading-relaxed">
-                            Analizaremos tu situación actual, identificaremos objetivos clave y diseñaremos el escenario personalizado en retiro, ahorro y protección patrimonial.
-                        </p>
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-santiGold uppercase tracking-wider">Minutos 20 - 30</span>
-                            <i class="fa-solid fa-comments text-santiGold text-base"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-base text-white">Resolución de Dudas y Siguientes Pasos</h3>
-                        <p class="text-xs text-santiCream/80 leading-relaxed">
-                            Atenderemos preguntas específicas y definiremos juntos la ruta más óptima en caso de que decidas implementar la estrategia propuesta.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-santiGold/20 rounded-full blur-3xl pointer-events-none"></div>
-            </div>
-
-            <!-- Certificación e Identidad Legal -->
-            <div class="text-center text-xs text-santiDark/70 pt-2 space-y-1">
-                <p class="font-semibold text-santiDark">Santiago (Santi) | Asesor Financiero Patrimonial</p>
-                <p>Cédula CNSF A1: <strong>C412676</strong> • Respaldado por Seguros Monterrey New York Life</p>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer Limpio con Modal de Aviso de Privacidad -->
-    <footer class="bg-santiDark text-santiCream/80 py-8 text-center text-xs border-t border-santiDark">
-        <div class="max-w-5xl mx-auto px-4 space-y-4">
-            <div class="flex justify-center">
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-santiCream/20 inline-flex items-center">
-                    <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" 
-                         alt="Logo Santi te asesora Footer" 
-                         class="h-8 w-auto object-contain"
-                         onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
-                </div>
-            </div>
-            <p>© 2026 Santi te asesora. Todos los derechos reservados. | <button onclick="toggleModal()" class="text-santiGold underline hover:text-white transition-colors focus:outline-none cursor-pointer">Aviso de Privacidad</button></p>
-        </div>
-    </footer>
-
-    <!-- VENTANA EMERGENTE (MODAL AVISO DE PRIVACIDAD) -->
-    <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-santiDark/75 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-santiCream relative max-h-[85vh] flex flex-col text-santiDark text-left">
-            <div class="flex items-center justify-between pb-4 border-b border-santiCream">
-                <h3 class="font-heading text-2xl font-bold text-santiEmerald">Aviso de Privacidad</h3>
-                <button onclick="toggleModal()" class="text-santiDark/50 hover:text-santiEmerald font-bold text-2xl p-1 transition-colors focus:outline-none">&times;</button>
-            </div>
-            <div class="overflow-y-auto my-4 pr-2 space-y-4 text-sm text-santiDark/80 leading-relaxed">
-                <p>
-                    <strong>Santi te asesora</strong>, con cédula de Agente Autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF) No. <strong>C412676</strong>, pone a su disposición el presente Aviso de Privacidad en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
-                </p>
-                <p>
-                    <strong>1. Datos Recabados:</strong> Los datos personales y financieros recopilados a través de este sitio, el agendamiento de citas o vía WhatsApp serán tratados de forma estrictamente confidencial.
-                </p>
-                <p>
-                    <strong>2. Finalidad del Tratamiento:</strong> Sus datos serán utilizados exclusivamente para agendar, confirmar y llevar a cabo la sesión de asesoría patrimonial, así como para enviar información relativa a sus requerimientos específicos.
-                </p>
-                <p>
-                    <strong>3. Protección y Transferencia:</strong> Sus datos personales no serán vendidos, alquilados ni transferidos a terceros no autorizados sin su consentimiento previo.
-                </p>
-            </div>
-            <div class="pt-4 border-t border-santiCream text-right">
-                <button onclick="toggleModal()" class="px-6 py-2.5 rounded-xl bg-santiEmerald text-white font-bold text-xs uppercase tracking-wider hover:bg-santiDark transition-all shadow-md">
-                    Entendido y Cerrar
-                </button>
-            </div>
-        </div>
+  <!-- COLUMNA 1: RESUMEN EJECUTIVO DEL PROSPECTO -->
+  <section class="dossier" aria-label="Resumen de tu proyección">
+    <div class="dossier-head">
+      <span class="dossier-tag">Diagnóstico Preliminar</span>
+      <span class="folio" id="leadFolio">Folio: #SANTI-2026</span>
     </div>
 
-    <!-- SCRIPT DE CONTROL PARA EL MODAL -->
-    <script>
-        function toggleModal() {
-            const modal = document.getElementById('privacyModal');
-            modal.classList.toggle('hidden');
-        }
+    <div>
+      <h1 id="greetingTitle">Tu proyección fiscal está <span>calculada y registrada</span></h1>
+      <p class="dossier-sub" style="margin-top:6px">
+        Hemos generado tu ficha preliminar para revisarla en pantalla durante tu sesión ejecutiva 1 a 1 con Santiago.
+      </p>
+    </div>
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('privacyModal');
-            if (event.target === modal) {
-                modal.classList.add('hidden');
-            }
-        }
+    <!-- Cifras personalizadas (Modo Deducción Art. 151) -->
+    <div class="metrics" id="deducibleMetrics">
+      <div class="metric">
+        <small>Capacidad anual deducible (Art. 151)</small>
+        <b id="sumDeductible">$54,000 / año</b>
+        <span>Tope personal de ley</span>
+      </div>
+      <div class="metric highlight">
+        <small>Devolución SAT estimada</small>
+        <b id="sumRefund">$12,701 MXN*</b>
+        <span>Saldo a favor proyectado</span>
+      </div>
+    </div>
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.getElementById('privacyModal').classList.add('hidden');
-            }
+    <!-- Vista especial para RESICO -->
+    <div class="metrics hidden" id="resicoMetrics" style="grid-template-columns:1fr">
+      <div class="metric highlight">
+        <small>Estrategia Asignada para RESICO</small>
+        <b style="font-size:17px">Art. 93 LISR (Rendimientos Exentos) + Liquidez 3 a 5 años</b>
+        <span>Estructura en UDIs o Dólares con protección patrimonial</span>
+      </div>
+    </div>
+
+    <div class="profile-summary">
+      <div><span>Régimen reportado:</span> <strong id="sumRegimen">Sueldos y Salarios</strong></div>
+      <div><span>Ingreso base proyectado:</span> <strong id="sumIncome">$45,000 MXN / mes</strong></div>
+      <div><span>Enfoque prioritario:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
+    </div>
+
+    <div class="advisor-box">
+      <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" width="48" height="48" alt="Santiago - Asesor Patrimonial"
+           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt&sz=w500';">
+      <div>
+        <b>Atiende: Santiago (Cédula CNSF C412676)</b>
+        <span>Especialista en Estrategias Patrimoniales · Respaldo Seguros Monterrey NYL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLUMNA 2: PASO 2 DE 2 (AGENDA EN MODAL + WHATSAPP PUENTE) -->
+  <section class="action-card">
+    <div class="progress-box">
+      <div class="progress-top">
+        <span>Paso 2 de 2: Reserva de Horario</span>
+        <span class="alert">Último paso</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+
+    <h2>Elige cómo prefieres bloquear tu sesión de 30 minutos</h2>
+    <p class="lead">
+      Puedes seleccionar el día y hora exacta directamente en mi <strong>Calendario en Vivo</strong> (te enviará invitación de Google Meet en automático) o confirmar tu turno preferido por <strong>WhatsApp</strong>.
+    </p>
+
+    <!-- OPCIÓN A: BOTÓN LIMPIO QUE ABRE EL MODAL DE GOOGLE CALENDAR (Solo se muestra a perfiles calificados >= $25k) -->
+    <div class="cal-trigger-box" id="directCalendarCard">
+      <div class="cal-trigger-top">
+        <span class="cal-badge">⚡ Opción Recomendada · Confirmación Automática</span>
+      </div>
+      <h3>Opción 1: Elegir día y hora exacta en Google Calendar</h3>
+      <p>Consulta mis horarios libres en tiempo real y recibe en tu correo el enlace privado de videollamada al instante.</p>
+      <button type="button" class="btn-open-cal" id="openCalBtn">
+        <span>📅 Abrir Agenda en Vivo y Elegir Hora →</span>
+      </button>
+    </div>
+
+    <div class="divider" id="methodDivider">o si prefieres agendar por mensaje</div>
+
+    <!-- OPCIÓN B: SELECTOR RÁPIDO CON 1 PULGAR VÍA WHATSAPP -->
+    <div id="quickScheduleBox">
+      <span class="slot-label">Selecciona tu turno preferido y confirma por WhatsApp:</span>
+      <div class="slots" id="slotButtons">
+        <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<br><small>9:00 a 12:00 hrs</small></button>
+        <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<br><small>12:00 a 15:00 hrs</small></button>
+        <button type="button" class="slot-btn" aria-pressed="false" data-slot="Tarde (15:00 a 18:00 hrs)">🌤️ Tarde<br><small>15:00 a 18:00 hrs</small></button>
+        <button type="button" class="slot-btn" aria-pressed="false" data-slot="Noche Ejecutiva (18:30 a 20:30 hrs)">🌙 Noche<br><small>18:30 a 20:30 hrs</small></button>
+      </div>
+
+      <select id="daySelect" class="day-select" aria-label="Día de preferencia">
+        <option value="Lo antes posible (Entre hoy y mañana)">⚡ Lo antes posible (Entre hoy y mañana)</option>
+        <option value="Esta misma semana">📅 Esta misma semana</option>
+        <option value="Sábado por la mañana (previa confirmación)">🗓️ Sábado por la mañana</option>
+      </select>
+
+      <a href="#" id="confirmWaBtn" target="_blank" rel="noopener" class="cta-wa">
+        <span>💬 Confirmar mi Turno por WhatsApp →</span>
+      </a>
+    </div>
+
+    <!-- Protocolo Anti No-Show -->
+    <div class="rules">
+      <div class="rules-title">📋 Compromiso de tu Sesión Ejecutiva:</div>
+      <div class="rule-item">
+        <span class="icon">✓</span>
+        <span><strong>Puntualidad y Privacidad:</strong> Es una sesión 1 a 1 de 30 minutos donde proyectaremos tu corrida financiera personalizada en pantalla.</span>
+      </div>
+      <div class="rule-item">
+        <span class="icon">✓</span>
+        <span><strong>Perfil de Estrategia:</strong> Diseñada para profesionistas con capacidad de ahorro sugerida a partir de $1,500 MXN/mes ($18,000 anuales).</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL NATIVO PARA GOOGLE CALENDAR (CERO DISEÑO ROTO EN LA PÁGINA) -->
+<dialog id="calDialog">
+  <div class="cal-modal-wrap">
+    <div class="cal-modal-head">
+      <div>
+        <b>Agenda en Vivo · Santiago (Santi te asesora)</b>
+        <small>Selecciona el día y horario que mejor te acomode</small>
+      </div>
+      <button type="button" class="cal-close" id="closeCalBtn" aria-label="Cerrar calendario">×</button>
+    </div>
+    <div class="cal-iframe-box">
+      <iframe id="googleCalIframe" src="" title="Agenda de Citas de Santiago"></iframe>
+    </div>
+    <div class="cal-modal-foot">
+      <span>¿Ya reservaste tu hora en el calendario?</span>
+      <a href="#" id="bookedWaBtn" target="_blank" rel="noopener" class="cal-done-wa">
+        💬 Avisar a Santi por WhatsApp →
+      </a>
+    </div>
+  </div>
+</dialog>
+
+<footer>
+  <p>© 2026 <strong>Santi te asesora</strong> · Santiago, Agente Autorizado con Cédula CNSF <strong>C412676</strong> en intermediación con Seguros Monterrey New York Life y MASS Asociados.</p>
+</footer>
+
+<script>
+/* =====================================================================
+   CONFIGURACIÓN DEL PASO 2
+   ===================================================================== */
+const CONFIG = {
+  WHATSAPP_NUMBER: '5215571208740',
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
+  GOOGLE_CALENDAR_EMBED_URL: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true'
+};
+
+const $ = id => document.getElementById(id);
+const money = n => '$' + Math.round(n).toLocaleString('es-MX');
+
+let leadData = {
+  lead: 'SANTI-2026',
+  nombre: '',
+  wa: '',
+  regimen: 'Sueldos / Honorarios',
+  ingreso: 45000,
+  deducible: 54000,
+  devolucion: 12701,
+  prioridad: 'Deducción SAT + Retiro (Art. 151)',
+  calificado: true
+};
+
+let selectedSlot = 'Mañana (9:00 a 12:00 hrs)';
+
+/* =====================================================================
+   1. CARGA SEGURA DE DATOS (SIN PII EN URL)
+   ===================================================================== */
+function loadLeadData(){
+  try {
+    const raw = sessionStorage.getItem('santi_lead') || sessionStorage.getItem('santi_lead_data');
+    if (raw){
+      const parsed = JSON.parse(raw);
+      leadData = Object.assign(leadData, parsed);
+    }
+  } catch(e){}
+
+  const params = new URLSearchParams(location.search);
+  if (params.get('lead')) leadData.lead = params.get('lead');
+  if (params.get('modo') === 'resico') leadData.regimen = 'RESICO';
+  if (params.get('calificado') === '0') leadData.calificado = false;
+
+  if (!leadData.deducible && leadData.ingreso){
+    leadData.deducible = Math.min(leadData.ingreso * 12 * 0.10, 5 * 117.31 * 365);
+  }
+}
+
+/* =====================================================================
+   2. RENDERIZADO DEL EXPEDIENTE Y FILTRO DE CALENDARIO
+   ===================================================================== */
+function renderDossier(){
+  $('leadFolio').textContent = 'Folio: #' + leadData.lead;
+
+  if (leadData.nombre){
+    const firstName = leadData.nombre.trim().split(/\s+/)[0];
+    $('greetingTitle').innerHTML = `${firstName}, tu proyección fiscal está <span>calculada y registrada</span>`;
+  }
+
+  $('sumRegimen').textContent = leadData.regimen;
+  $('sumIncome').textContent = money(leadData.ingreso) + ' MXN / mes';
+  $('sumPriority').textContent = leadData.prioridad;
+
+  const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
+
+  if (isResico){
+    $('deducibleMetrics').classList.add('hidden');
+    $('resicoMetrics').classList.remove('hidden');
+  } else {
+    $('deducibleMetrics').classList.remove('hidden');
+    $('resicoMetrics').classList.add('hidden');
+    $('sumDeductible').textContent = money(leadData.deducible) + ' / año';
+    const refNumber = Number(leadData.devolucion) || 12701;
+    $('sumRefund').textContent = money(refNumber) + ' MXN*';
+  }
+
+  // FILTRO DE PROTECCIÓN DE AGENDA: Si gana menos de $25,000/mes, ocultamos el Google Calendar directo
+  // y lo canalizamos únicamente por WhatsApp para que no bloquee huecos de tu agenda sin filtro previo.
+  if (leadData.calificado === false || Number(leadData.ingreso) < 25000){
+    $('directCalendarCard').classList.add('hidden');
+    $('methodDivider').classList.add('hidden');
+  }
+
+  updateWhatsAppLinks();
+}
+
+/* =====================================================================
+   3. GENERADOR DE MENSAJES DE WHATSAPP (PARA TURNO Y POST-CALENDARIO)
+   ===================================================================== */
+function updateWhatsAppLinks(){
+  const dayPref = $('daySelect').value;
+  const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
+  const nombreTxt = leadData.nombre ? `Soy *${leadData.nombre}*` : 'Acabo de registrarme en tu página';
+  const beneficioTxt = isResico
+    ? 'Estrategia RESICO (Art. 93 Exento + Liquidez 3-5 años)'
+    : `Devolución SAT estimada de *${money(Number(leadData.devolucion) || 12701)} MXN*`;
+
+  // Mensaje si elige agendar por WhatsApp
+  const msgSlot = [
+    `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
+    ``,
+    `Solicito confirmar mi Sesión Ejecutiva de Diagnóstico de 30 min con estos datos:`,
+    `• *Régimen:* ${leadData.regimen}`,
+    `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
+    `• *Proyección:* ${beneficioTxt}`,
+    `• *Prioridad:* ${leadData.prioridad}`,
+    `• *Horario preferido:* ${selectedSlot} (${dayPref})`,
+    ``,
+    `¿Qué espacio tienes disponible para nuestra videollamada?`
+  ].join('\n');
+
+  // Mensaje si ya reservó directamente dentro del Modal de Google Calendar
+  const msgBooked = [
+    `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
+    ``,
+    `✅ *Ya seleccioné mi día y hora en tu Google Calendar.*`,
+    `• *Régimen:* ${leadData.regimen}`,
+    `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
+    `• *Proyección:* ${beneficioTxt}`,
+    ``,
+    `Te escribo por aquí para dejar abierto nuestro canal de comunicación previo a la sesión.`
+  ].join('\n');
+
+  $('confirmWaBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msgSlot)}`;
+  $('bookedWaBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msgBooked)}`;
+}
+
+/* =====================================================================
+   4. MODAL DEL CALENDARIO (CARGA BAJO DEMANDA PARA MÁXIMA VELOCIDAD)
+   ===================================================================== */
+function setupCalendarModal(){
+  const dlg = $('calDialog');
+  const iframe = $('googleCalIframe');
+
+  $('openCalBtn').addEventListener('click', () => {
+    if (!iframe.src || !iframe.src.includes('calendar.google.com')){
+      iframe.src = CONFIG.GOOGLE_CALENDAR_EMBED_URL;
+    }
+    dlg.showModal();
+    if (typeof gtag !== 'undefined'){
+      gtag('event', 'open_google_calendar', { event_category: 'Paso2_Agenda', event_label: leadData.lead });
+    }
+  });
+
+  $('closeCalBtn').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+}
+
+/* =====================================================================
+   5. REINTENTO SILENCIOSO SI QUEDÓ ALGÚN LEAD PENDIENTE EN LOCALSTORAGE
+   ===================================================================== */
+async function flushPendingLeads(){
+  try {
+    const raw = localStorage.getItem('santi_pending');
+    if (!raw) return;
+    const queue = JSON.parse(raw);
+    if (!Array.isArray(queue) || !queue.length) return;
+
+    const remaining = [];
+    for (const item of queue){
+      try {
+        await fetch(CONFIG.SCRIPT_URL, {
+          method: 'POST', mode: 'no-cors', keepalive: true,
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(item)
         });
-    </script>
+      } catch(err){
+        remaining.push(item);
+      }
+    }
+    localStorage.setItem('santi_pending', JSON.stringify(remaining));
+  } catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadLeadData();
+  renderDossier();
+  setupCalendarModal();
+  flushPendingLeads();
+
+  document.querySelectorAll('#slotButtons .slot-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#slotButtons .slot-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      selectedSlot = btn.dataset.slot;
+      updateWhatsAppLinks();
+    });
+  });
+
+  $('daySelect').addEventListener('change', updateWhatsAppLinks);
+
+  $('confirmWaBtn').addEventListener('click', () => {
+    if (typeof gtag !== 'undefined'){
+      gtag('event', 'schedule_whatsapp_click', { event_category: 'Paso2_Agenda', event_label: selectedSlot });
+    }
+  });
+});
+</script>
 </body>
 </html>
