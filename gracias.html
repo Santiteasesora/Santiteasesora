@@ -80,7 +80,7 @@ a{color:var(--emerald)}
 .action-card h2{font-size:19px;color:var(--navy);font-weight:800;line-height:1.25}
 .action-card p.lead{font-size:14px;color:rgba(41,44,43,.86);line-height:1.45}
 
-/* Caja Destacada del Calendario en Vivo (Sin ensuciar la página con el iframe) */
+/* Caja Destacada del Calendario en Vivo */
 .cal-trigger-box{background:linear-gradient(135deg,#0F2942 0%,#145C52 100%);border:2px solid var(--gold);border-radius:18px;padding:16px;color:#fff;display:grid;gap:10px}
 .cal-trigger-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .cal-badge{font-size:10.5px;font-weight:800;text-transform:uppercase;background:rgba(217,164,65,.2);color:var(--gold);padding:3px 9px;border-radius:999px;letter-spacing:.03em}
@@ -132,7 +132,7 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
 
 <header class="header">
   <div class="header-in">
-    <a class="brand" href="profesionistas.html">
+    <a class="brand" href="index.html">
       <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" width="34" height="34" alt="Santi te asesora"
            onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
       <span>Santi te asesora</span>
@@ -143,35 +143,35 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
 
 <main class="wrap">
 
-  <!-- COLUMNA 1: RESUMEN EJECUTIVO DEL PROSPECTO -->
+  <!-- COLUMNA 1: RESUMEN EJECUTIVO CAMALEÓNICO DEL PROSPECTO -->
   <section class="dossier" aria-label="Resumen de tu proyección">
     <div class="dossier-head">
-      <span class="dossier-tag">Diagnóstico Preliminar</span>
+      <span class="dossier-tag" id="dossierTag">Diagnóstico Preliminar</span>
       <span class="folio" id="leadFolio">Folio: #SANTI-2026</span>
     </div>
 
     <div>
-      <h1 id="greetingTitle">Tu proyección fiscal está <span>calculada y registrada</span></h1>
-      <p class="dossier-sub" style="margin-top:6px">
+      <h1 id="greetingTitle">Tu proyección patrimonial está <span>calculada y registrada</span></h1>
+      <p class="dossier-sub" id="greetingSub" style="margin-top:6px">
         Hemos generado tu ficha preliminar para revisarla en pantalla durante tu sesión ejecutiva 1 a 1 con Santiago.
       </p>
     </div>
 
-    <!-- Cifras personalizadas (Modo Deducción Art. 151) -->
+    <!-- Cajas dinámicas (Se adaptan automáticamente a Impuestos/Retiro, Ahorro 3-5 años, Alfa Medical $170M o Seguro de Vida) -->
     <div class="metrics" id="deducibleMetrics">
       <div class="metric">
-        <small>Capacidad anual deducible (Art. 151)</small>
+        <small id="metric1Label">Capacidad anual deducible (Art. 151)</small>
         <b id="sumDeductible">$54,000 / año</b>
-        <span>Tope personal de ley</span>
+        <span id="metric1Sub">Tope personal de ley</span>
       </div>
       <div class="metric highlight">
-        <small>Devolución SAT estimada</small>
+        <small id="metric2Label">Devolución SAT estimada</small>
         <b id="sumRefund">$12,701 MXN*</b>
-        <span>Saldo a favor proyectado</span>
+        <span id="metric2Sub">Saldo a favor proyectado</span>
       </div>
     </div>
 
-    <!-- Vista especial para RESICO -->
+    <!-- Vista especial cuando elige RESICO en modo fiscal -->
     <div class="metrics hidden" id="resicoMetrics" style="grid-template-columns:1fr">
       <div class="metric highlight">
         <small>Estrategia Asignada para RESICO</small>
@@ -181,9 +181,9 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
     </div>
 
     <div class="profile-summary">
-      <div><span>Régimen reportado:</span> <strong id="sumRegimen">Sueldos y Salarios</strong></div>
+      <div><span>Esquema / Régimen:</span> <strong id="sumRegimen">Sueldos y Salarios</strong></div>
       <div><span>Ingreso base proyectado:</span> <strong id="sumIncome">$45,000 MXN / mes</strong></div>
-      <div><span>Enfoque prioritario:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
+      <div><span>Meta prioritaria:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
     </div>
 
     <div class="advisor-box">
@@ -251,18 +251,18 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
       <div class="rules-title">📋 Compromiso de tu Sesión Ejecutiva:</div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span><strong>Puntualidad y Privacidad:</strong> Es una sesión 1 a 1 de 30 minutos donde proyectaremos tu corrida financiera personalizada en pantalla.</span>
+        <span id="rule1Text"><strong>Puntualidad y Privacidad:</strong> Es una sesión 1 a 1 de 30 minutos donde proyectaremos tu escenario personalizado en pantalla.</span>
       </div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span><strong>Perfil de Estrategia:</strong> Diseñada para profesionistas con capacidad de ahorro sugerida a partir de $1,500 MXN/mes ($18,000 anuales).</span>
+        <span id="rule2Text"><strong>Perfil de Estrategia:</strong> Diseñada para perfiles con capacidad de aportación o presupuesto sugerido a partir de $1,500 MXN/mes.</span>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- MODAL NATIVO PARA GOOGLE CALENDAR (CERO DISEÑO ROTO EN LA PÁGINA) -->
+<!-- MODAL NATIVO PARA GOOGLE CALENDAR -->
 <dialog id="calDialog">
   <div class="cal-modal-wrap">
     <div class="cal-modal-head">
@@ -310,13 +310,19 @@ let leadData = {
   deducible: 54000,
   devolucion: 12701,
   prioridad: 'Deducción SAT + Retiro (Art. 151)',
-  calificado: true
+  calificado: true,
+  goal: 'fiscal',
+  box1Label: '',
+  box1Value: '',
+  box2Label: '',
+  box2Value: '',
+  summaryMetric: ''
 };
 
 let selectedSlot = 'Mañana (9:00 a 12:00 hrs)';
 
 /* =====================================================================
-   1. CARGA SEGURA DE DATOS (SIN PII EN URL)
+   1. CARGA SEGURA DE DATOS (COMPATIBLE CON INDEX, PROFESIONISTAS Y EMPRESARIO)
    ===================================================================== */
 function loadLeadData(){
   try {
@@ -330,43 +336,96 @@ function loadLeadData(){
   const params = new URLSearchParams(location.search);
   if (params.get('lead')) leadData.lead = params.get('lead');
   if (params.get('modo') === 'resico') leadData.regimen = 'RESICO';
+  if (params.get('goal')) leadData.goal = params.get('goal');
   if (params.get('calificado') === '0') leadData.calificado = false;
 
   if (!leadData.deducible && leadData.ingreso){
-    leadData.deducible = Math.min(leadData.ingreso * 12 * 0.10, 5 * 117.31 * 365);
+    leadData.deducible = Math.min(leadData.ingreso * 12 * 0.10, 5 * 42794.64);
   }
 }
 
 /* =====================================================================
-   2. RENDERIZADO DEL EXPEDIENTE Y FILTRO DE CALENDARIO
+   2. RENDERIZADO CAMALEÓNICO DEL EXPEDIENTE Y FILTRO DE CALENDARIO
    ===================================================================== */
 function renderDossier(){
   $('leadFolio').textContent = 'Folio: #' + leadData.lead;
 
-  if (leadData.nombre){
-    const firstName = leadData.nombre.trim().split(/\s+/)[0];
-    $('greetingTitle').innerHTML = `${firstName}, tu proyección fiscal está <span>calculada y registrada</span>`;
-  }
+  const firstName = leadData.nombre ? leadData.nombre.trim().split(/\s+/)[0] : '';
+  const namePrefix = firstName ? `${firstName}, tu ` : 'Tu ';
 
   $('sumRegimen').textContent = leadData.regimen;
   $('sumIncome').textContent = money(leadData.ingreso) + ' MXN / mes';
   $('sumPriority').textContent = leadData.prioridad;
 
   const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
+  const goal = leadData.goal || 'fiscal';
 
-  if (isResico){
-    $('deducibleMetrics').classList.add('hidden');
-    $('resicoMetrics').classList.remove('hidden');
-  } else {
+  // Caso A: Viene de index.html y eligió Gastos Médicos, Ahorro 3-5 años o Seguro de Vida
+  if (goal === 'gmm' || goal === 'ahorro' || goal === 'vida'){
     $('deducibleMetrics').classList.remove('hidden');
     $('resicoMetrics').classList.add('hidden');
-    $('sumDeductible').textContent = money(leadData.deducible) + ' / año';
-    const refNumber = Number(leadData.devolucion) || 12701;
-    $('sumRefund').textContent = money(refNumber) + ' MXN*';
+
+    if (goal === 'gmm'){
+      $('dossierTag').textContent = 'Diagnóstico Blindaje Médico';
+      $('greetingTitle').innerHTML = `${namePrefix}estrategia de salud está <span>pre-configurada y registrada</span>`;
+      $('metric1Label').textContent = leadData.box1Label || 'Suma Asegurada Médica';
+      $('sumDeductible').textContent = leadData.box1Value || 'Hasta $170M MXN';
+      $('metric1Sub').textContent = 'Cobertura Alfa Medical SMNYL';
+
+      $('metric2Label').textContent = leadData.box2Label || 'Beneficio Fiscal (Art. 151 VI)';
+      $('sumRefund').textContent = leadData.box2Value || 'Prima 100% Deducible*';
+      $('metric2Sub').textContent = 'Deducción personal en declaración anual';
+
+    } else if (goal === 'ahorro'){
+      const monthlySave = Math.max(1500, Math.round((leadData.ingreso * 0.12) / 500) * 500);
+      const capital5Years = Math.round(monthlySave * 60 * 1.18);
+
+      $('dossierTag').textContent = 'Proyección de Capital a Mediano Plazo';
+      $('greetingTitle').innerHTML = `${namePrefix}meta de capitalización está <span>calculada y registrada</span>`;
+      $('metric1Label').textContent = leadData.box1Label || 'Aportación mensual sugerida';
+      $('sumDeductible').textContent = leadData.box1Value || (money(monthlySave) + ' / mes');
+      $('metric1Sub').textContent = 'En UDIs o Dólares (Inflación protegida)';
+
+      $('metric2Label').textContent = leadData.box2Label || 'Capital estimado a 5 años';
+      $('sumRefund').textContent = leadData.box2Value || (money(capital5Years) + ' MXN*');
+      $('metric2Sub').textContent = 'Bolsillo con liquidez para proyectos';
+
+    } else if (goal === 'vida'){
+      const lifeCover = leadData.ingreso * 12 * 10;
+
+      $('dossierTag').textContent = 'Diagnóstico de Protección Vital';
+      $('greetingTitle').innerHTML = `${namePrefix}blindaje familiar está <span>calculado y registrado</span>`;
+      $('metric1Label').textContent = leadData.box1Label || 'Respaldo por Invalidez Total';
+      $('sumDeductible').textContent = leadData.box1Value || (money(lifeCover) + '*');
+      $('metric1Sub').textContent = 'Suma entregada libre de impuestos';
+
+      $('metric2Label').textContent = leadData.box2Label || 'Protección Familiar (10 años)';
+      $('sumRefund').textContent = leadData.box2Value || (money(lifeCover) + ' MXN*');
+      $('metric2Sub').textContent = 'En UDIs o Dólares desde el día 1';
+    }
+
+  } else {
+    // Caso B: Modo Fiscal / Retiro (Profesionistas, Empresarios o pestaña Fiscal en Index)
+    $('greetingTitle').innerHTML = `${namePrefix}proyección fiscal está <span>calculada y registrada</span>`;
+
+    if (isResico){
+      $('deducibleMetrics').classList.add('hidden');
+      $('resicoMetrics').classList.remove('hidden');
+    } else {
+      $('deducibleMetrics').classList.remove('hidden');
+      $('resicoMetrics').classList.add('hidden');
+      $('metric1Label').textContent = 'Capacidad anual deducible (Art. 151)';
+      $('sumDeductible').textContent = money(leadData.deducible) + ' / año';
+      $('metric1Sub').textContent = 'Tope personal de ley';
+
+      $('metric2Label').textContent = 'Devolución SAT estimada';
+      const refNumber = Number(leadData.devolucion) || 12701;
+      $('sumRefund').textContent = money(refNumber) + ' MXN*';
+      $('metric2Sub').textContent = 'Saldo a favor proyectado';
+    }
   }
 
   // FILTRO DE PROTECCIÓN DE AGENDA: Si gana menos de $25,000/mes, ocultamos el Google Calendar directo
-  // y lo canalizamos únicamente por WhatsApp para que no bloquee huecos de tu agenda sin filtro previo.
   if (leadData.calificado === false || Number(leadData.ingreso) < 25000){
     $('directCalendarCard').classList.add('hidden');
     $('methodDivider').classList.add('hidden');
@@ -376,38 +435,43 @@ function renderDossier(){
 }
 
 /* =====================================================================
-   3. GENERADOR DE MENSAJES DE WHATSAPP (PARA TURNO Y POST-CALENDARIO)
+   3. GENERADOR DE MENSAJES DE WHATSAPP (ADAPTADO AL OBJETIVO ELEGIDO)
    ===================================================================== */
 function updateWhatsAppLinks(){
   const dayPref = $('daySelect').value;
   const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
   const nombreTxt = leadData.nombre ? `Soy *${leadData.nombre}*` : 'Acabo de registrarme en tu página';
-  const beneficioTxt = isResico
-    ? 'Estrategia RESICO (Art. 93 Exento + Liquidez 3-5 años)'
-    : `Devolución SAT estimada de *${money(Number(leadData.devolucion) || 12701)} MXN*`;
 
-  // Mensaje si elige agendar por WhatsApp
+  let beneficioTxt = '';
+  if (leadData.summaryMetric){
+    beneficioTxt = leadData.summaryMetric;
+  } else if (isResico){
+    beneficioTxt = 'Estrategia RESICO (Art. 93 Exento + Liquidez 3-5 años)';
+  } else {
+    beneficioTxt = `Devolución SAT estimada de *${money(Number(leadData.devolucion) || 12701)} MXN*`;
+  }
+
   const msgSlot = [
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
     `Solicito confirmar mi Sesión Ejecutiva de Diagnóstico de 30 min con estos datos:`,
-    `• *Régimen:* ${leadData.regimen}`,
+    `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
     `• *Proyección:* ${beneficioTxt}`,
-    `• *Prioridad:* ${leadData.prioridad}`,
+    `• *Meta:* ${leadData.prioridad}`,
     `• *Horario preferido:* ${selectedSlot} (${dayPref})`,
     ``,
     `¿Qué espacio tienes disponible para nuestra videollamada?`
   ].join('\n');
 
-  // Mensaje si ya reservó directamente dentro del Modal de Google Calendar
   const msgBooked = [
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
     `✅ *Ya seleccioné mi día y hora en tu Google Calendar.*`,
-    `• *Régimen:* ${leadData.regimen}`,
+    `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
     `• *Proyección:* ${beneficioTxt}`,
+    `• *Meta:* ${leadData.prioridad}`,
     ``,
     `Te escribo por aquí para dejar abierto nuestro canal de comunicación previo a la sesión.`
   ].join('\n');
@@ -417,7 +481,7 @@ function updateWhatsAppLinks(){
 }
 
 /* =====================================================================
-   4. MODAL DEL CALENDARIO (CARGA BAJO DEMANDA PARA MÁXIMA VELOCIDAD)
+   4. MODAL DEL CALENDARIO (CARGA BAJO DEMANDA)
    ===================================================================== */
 function setupCalendarModal(){
   const dlg = $('calDialog');
