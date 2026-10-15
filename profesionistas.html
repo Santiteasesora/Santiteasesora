@@ -626,8 +626,8 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
    ===================================================================== */
 const CONFIG = {
   SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
-  ADS_CONVERSION_LABEL: '',
-  LEAD_VALUE: 450,
+  ADS_CONVERSION_LABEL: 'g3_8CJTvpZ0dEIa2g_FE',
+  LEAD_VALUE: 900,
   QUALIFIED_INCOME: 25000,
   WHATSAPP_NUMBER: '5215571208740',
   THANKS_PAGE: 'gracias.html',
@@ -638,18 +638,19 @@ const CONFIG = {
   RETIRO_TOPE_UMAS: 5
 };
 
+/* Tarifa anual ISR 2026, art. 152 LISR: [limite inferior, cuota fija, % sobre excedente] */
 const ISR_TABLE = [
-  [0.01, 0.0192],
-  [8952.50, 0.0640],
-  [75984.56, 0.1088],
-  [133536.08, 0.1600],
-  [155229.81, 0.1792],
-  [185852.58, 0.2136],
-  [374837.89, 0.2352],
-  [590796.00, 0.3000],
-  [1127926.85, 0.3200],
-  [1503902.47, 0.3400],
-  [4511707.38, 0.3500]
+  [0.01,          0.00,       0.0192],
+  [10135.12,      194.59,     0.0640],
+  [86022.12,      5051.37,    0.1088],
+  [151176.20,     12140.13,   0.1600],
+  [175735.67,     16069.64,   0.1792],
+  [210403.70,     22282.14,   0.2136],
+  [424353.98,     67981.92,   0.2352],
+  [668840.15,     125485.07,  0.3000],
+  [1276925.99,    307910.81,  0.3200],
+  [1702567.98,    444116.23,  0.3400],
+  [5107703.93,    1601862.46, 0.3500]
 ];
 
 const $ = id => document.getElementById(id);
@@ -681,13 +682,11 @@ function updateUrgencyCountdown(){
   }
 }
 
-function getMarginalRate(annualIncome){
-  const taxableAfterDeduction = annualIncome * 0.92;
-  let rate = ISR_TABLE[0][1];
-  for (const [lower, r] of ISR_TABLE){
-    if (taxableAfterDeduction >= lower) rate = r;
-  }
-  return rate;
+function isrAnual(base){
+  if (base <= 0) return 0;
+  let row = ISR_TABLE[0];
+  for (const r of ISR_TABLE){ if (base >= r[0]) row = r; }
+  return row[1] + (base - row[0]) * row[2];
 }
 
 function updateCalculator(val){
@@ -699,11 +698,11 @@ function updateCalculator(val){
   const annual = state.income * 12;
   const cap = CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL; // $213,973.20 MXN exactos
   state.deductible = Math.min(annual * CONFIG.RETIRO_PCT, cap);
-  state.rate = getMarginalRate(annual);
-  state.refund = Math.round(state.deductible * state.rate);
+  state.refund = Math.round(isrAnual(annual) - isrAnual(annual - state.deductible));
+  state.rate = state.deductible ? state.refund / state.deductible : 0;
 
   $('deductibleOutput').textContent = money(state.deductible) + ' / año';
-  $('refundOutput').textContent = money(state.refund) + ' MXN*';$('taxRateText').textContent = 'Escalón ISR: ~' + (state.rate * 100).toFixed(2) + '%';
+  $('refundOutput').textContent = money(state.refund) + ' MXN*';$('taxRateText').textContent = 'Ahorro de ISR: ~' + (state.rate * 100).toFixed(1) + '% de tu aportación';
 
   if (state.mode !== 'resico'){
     $('stickyLabel').textContent = 'Devolución SAT estimada:';
@@ -789,10 +788,11 @@ async function flushPending(){
   lsSet('santi_pending', rest);
 }
 
-function trackConversionIfQualified(leadId, qualified){
-  if (!qualified) return;
+function trackConversionIfQualified(leadId, qualified, onSent){
+  if (!qualified) return false;
+  let waitsForGoogle = false;
 
-  const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 450 };
+  const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 900 };
 
   if (typeof gtag !== 'undefined'){
     gtag('event', 'generate_lead', Object.assign({
@@ -802,18 +802,21 @@ function trackConversionIfQualified(leadId, qualified){
 
     if (CONFIG.ADS_CONVERSION_LABEL){
       gtag('event', 'conversion', Object.assign({
-        send_to: 'AW-18490645254/' + CONFIG.ADS_CONVERSION_LABEL
+        send_to: 'AW-18490645254/' + CONFIG.ADS_CONVERSION_LABEL,
+        event_callback: onSent
       }, base));
+      waitsForGoogle = true;
     }
   }
 
   if (typeof fbq !== 'undefined'){
     fbq('track', 'Lead', {
       content_name: 'Lead_Calificado_' + state.mode,
-      value: CONFIG.LEAD_VALUE || 450,
+      value: CONFIG.LEAD_VALUE || 900,
       currency: 'MXN'
     });
   }
+  return waitsForGoogle;
 }
 
 function showError(msg){
@@ -827,7 +830,7 @@ async function handleSubmit(ev){
   $('formError').style.display = 'none';
 
   const nombre = $('formNombre').value.trim();
-  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(521\vert{}52)(?=\d{10}$)/, '');
+  const wa = $('formWhatsApp').value.replace(/\D/g, '').replace(/^(?:521|52)(?=\d{10}$)/, '');
 
   if (nombre.length < 2){ showError('Por favor escribe tu nombre para personalizar tu diagnóstico.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa tu número de WhatsApp a 10 dígitos (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
@@ -890,15 +893,21 @@ async function handleSubmit(ev){
     return;
   }
 
-  trackConversionIfQualified(leadId, qualified);
-
   const cleanParams = new URLSearchParams({
     lead: leadId,
     modo: state.mode,
     calificado: qualified ? '1' : '0'
   }).toString();
 
-  setTimeout(() => { location.href = CONFIG.THANKS_PAGE + '?' + cleanParams; }, 500);
+  let wentToThanks = false;
+  const goToThanks = () => {
+    if (wentToThanks) return;
+    wentToThanks = true;
+    location.href = CONFIG.THANKS_PAGE + '?' + cleanParams;
+  };
+
+  const waitsForGoogle = trackConversionIfQualified(leadId, qualified, goToThanks);
+  setTimeout(goToThanks, waitsForGoogle ? 1500 : 500);
 }
 
 function setupDialogs(){
