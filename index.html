@@ -236,7 +236,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
 
 <main class="hero">
 
-  <!-- 1) Propuesta de Valor Integral (Más allá de solo PPR) -->
+  <!-- 1) Propuesta de Valor Integral -->
   <section class="copy">
     <div>
       <span class="badge"><span class="dot"></span>Arquitectura Patrimonial · Retiro · Ahorro · Salud</span>
@@ -371,7 +371,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     </button>
 
     <div class="bullets">
-      <div><strong>Un solo asesor para todo tu blindaje:</strong> Desde deducción de impuestos y retiro (Imagina Ser), hasta Gastos Médicos Mayores y protección familiar en UDIs o Dólares.</div>
+      <div><strong>Un solo asesor para todo tu blindaje:</strong> Desde deducción de impuestos y retiro (Imagina Ser), hasta Gastos Médicos Mayores ($170M MXN) y protección familiar en UDIs o Dólares.</div>
       <div><strong>Liquidez inteligente sin amarrar todo a los 65 años:</strong> Diseñamos esquemas híbridos con fondos disponibles a 3 o 5 años para proyectos, enganches o expansión de negocio.</div>
       <div><strong>Trato humano y acompañamiento en siniestros:</strong> No eres un número de póliza en un banco; tienes asesoría directa para ajustar tu plan o respaldarte cuando más lo necesites.</div>
     </div>
@@ -477,7 +477,7 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
 <section class="proof">
   <div class="sec-head">
     <span class="badge">Prueba Social y Respaldo</span>
-    <h2>Historias reales de planeación patrimonial</h2>
+    <h2>Historias reales y alcance de protección</h2>
   </div>
 
   <div class="proof-grid">
@@ -504,12 +504,12 @@ dialog::backdrop{background:rgba(15,41,66,.75);backdrop-filter:blur(3px)}
     <div class="tcard">
       <div>
         <div class="tcard-head">
-          <span class="tcard-tag" style="background:rgba(15,41,66,.08);color:var(--navy)">Arquitectura Integral · Vida + Salud + Retiro</span>
+          <span class="tcard-tag" style="background:rgba(15,41,66,.08);color:var(--navy)">Blindaje Médico y Patrimonial · Alfa Medical $170M</span>
         </div>
         <p style="margin-top:10px">
-          <strong>¿Por qué centralizar tu estrategia con un Agente Certificado?</strong><br>
-          Contratar pólizas aisladas en bancos suele dejarte con coberturas duplicadas, deducciones desaprovechadas y cero acompañamiento cuando ocurre una urgencia médica.<br><br>
-          En una sola sesión de 30 minutos auditamos qué tienes hoy, cuánto puedes <strong>deducir legalmente ante el SAT (tanto en Gastos Médicos como en Retiro)</strong> y cómo blindar tu patrimonio sin afectar tu liquidez mensual.
+          <strong>¿Por qué blindar primero tu salud y tu ingreso?</strong><br>
+          En México, una sola intervención quirúrgica o terapia intensiva en hospital privado supera fácilmente los $800,000 a $3,000,000 MXN, obligando a las familias a liquidar sus ahorros o endeudarse.<br><br>
+          Al estructurar tu <strong>Alfa Medical (hasta $170M MXN de cobertura)</strong> junto con tu estrategia patrimonial, garantizas atención médica de primer nivel, <strong>deduces el 100% de tu prima anual ante el SAT (Art. 151 Fracc. VI)</strong> y mantienes intocable tu capital de retiro.
         </p>
       </div>
       <div class="tcard-author">
@@ -660,7 +660,7 @@ const state = {
   income: 45000,
   deductible: 54000,
   refund: 12701,
-  summaryMetric: '$12,701 MXN*'
+  summaryMetric: 'Devolución SAT est: $12,701 MXN'
 };
 
 function isrAnual(base){
@@ -683,20 +683,36 @@ function updateCalculator(val){
   state.deductible = Math.min(annual * CONFIG.RETIRO_PCT, cap);
   state.refund = Math.round(isrAnual(annual) - isrAnual(annual - state.deductible));
   const ratePct = state.deductible ? ((state.refund / state.deductible) * 100).toFixed(1) : '23.5';
+  const isResicoSelected = ($('regimenSelect').value || '').toUpperCase().includes('RESICO');
 
   if (state.goal === 'fiscal'){
-    $('box1Label').textContent = 'Tope anual deducible (Art. 151)';
-    $('box1Value').textContent = money(state.deductible) + ' / año';
-    $('box1Sub').textContent = 'Ahorro de ISR: ~' + ratePct + '%';
+    if (isResicoSelected){
+      $('box1Label').textContent = 'Fundamento Fiscal RESICO';
+      $('box1Value').textContent = 'Art. 93 Fracc. XXI';
+      $('box1Sub').textContent = 'Sin retención anual 0.90%';
 
-    $('box2Label').textContent = 'Devolución SAT estimada';
-    $('box2Value').textContent = money(state.refund) + ' MXN*';
-    $('box2Sub').textContent = 'Saldo a favor cada abril';
+      $('box2Label').textContent = 'Beneficio al Retiro (60 años)';
+      $('box2Value').textContent = '100% Exento ISR*';
+      $('box2Sub').textContent = 'En UDIs o Dólares + Liquidez';
 
-    $('goalContextNote').innerHTML = '<strong>Estrategia Fiscal (Art. 151 / 93):</strong> Recupera hasta el 35% de tu aportación en tu declaración anual mientras tu dinero crece protegido contra la inflación en UDIs o Dólares.';
-    $('stickyLabel').textContent = 'Devolución SAT estimada:';
-    $('stickyRefund').textContent = money(state.refund) + ' MXN*';
-    state.summaryMetric = 'Devolución SAT est: ' + money(state.refund) + ' MXN';
+      $('goalContextNote').innerHTML = '<strong>Estrategia Especial RESICO:</strong> Como en RESICO no aplican deducciones del Art. 151, estructuramos tu plan bajo el Art. 93 para entregar tus rendimientos 100% libres de ISR a los 60 años y darte liquidez a 3-5 años.';
+      $('stickyLabel').textContent = 'Estrategia RESICO:';
+      $('stickyRefund').textContent = 'Art. 93 Exento + Liquidez';
+      state.summaryMetric = 'Estrategia RESICO (Art. 93 Exento + Liquidez 3-5 años)';
+    } else {
+      $('box1Label').textContent = 'Tope anual deducible (Art. 151)';
+      $('box1Value').textContent = money(state.deductible) + ' / año';
+      $('box1Sub').textContent = 'Ahorro de ISR: ~' + ratePct + '%';
+
+      $('box2Label').textContent = 'Devolución SAT estimada';
+      $('box2Value').textContent = money(state.refund) + ' MXN*';
+      $('box2Sub').textContent = 'Saldo a favor cada abril';
+
+      $('goalContextNote').innerHTML = '<strong>Estrategia Fiscal (Art. 151 / 93):</strong> Recupera hasta el 35% de tu aportación en tu declaración anual mientras tu dinero crece protegido contra la inflación en UDIs o Dólares.';
+      $('stickyLabel').textContent = 'Devolución SAT estimada:';
+      $('stickyRefund').textContent = money(state.refund) + ' MXN*';
+      state.summaryMetric = 'Devolución SAT est: ' + money(state.refund) + ' MXN';
+    }
 
   } else if (state.goal === 'ahorro'){
     const monthlySave = Math.max(1500, Math.round((state.income * 0.12) / 500) * 500);
@@ -902,6 +918,7 @@ async function handleSubmit(ev){
   };
 
   const isResico = regimenVal.toUpperCase().includes('RESICO');
+  // AQUÍ ESTÁN LAS PROPIEDADES CAMALEÓNICAS QUE VIAJAN A GRACIAS.HTML
   const leadSessionData = {
     lead: leadId,
     nombre: nombre,
@@ -911,7 +928,13 @@ async function handleSubmit(ev){
     deducible: Math.round(state.deductible),
     devolucion: isResico ? 'RESICO_Art93' : state.refund,
     prioridad: $('prioridadInput').value,
-    calificado: qualified
+    calificado: qualified,
+    goal: state.goal,
+    box1Label: $('box1Label').textContent,
+    box1Value: $('box1Value').textContent,
+    box2Label: $('box2Label').textContent,
+    box2Value: $('box2Value').textContent,
+    summaryMetric: state.summaryMetric
   };
   try {
     sessionStorage.setItem('santi_lead', JSON.stringify(leadSessionData));
@@ -933,6 +956,7 @@ async function handleSubmit(ev){
   const cleanParams = new URLSearchParams({
     lead: leadId,
     modo: isResico ? 'resico' : 'deducible',
+    goal: state.goal,
     calificado: qualified ? '1' : '0'
   }).toString();
 
@@ -998,7 +1022,8 @@ document.addEventListener('DOMContentLoaded', () => {
   captureAttribution();
   document.querySelectorAll('#goalButtons .chip').forEach(b => b.addEventListener('click', () => selectGoal(b)));
   $('incomeSlider').addEventListener('input', e => updateCalculator(e.target.value));
-  $('regimenSelect').addEventListener('change', updateHiddenCalc);$('leadForm').addEventListener('submit', handleSubmit);
+  // Al cambiar el régimen (ej. a RESICO), recalculamos las cajas en tiempo real
+  $('regimenSelect').addEventListener('change', () => updateCalculator(state.income));$('leadForm').addEventListener('submit', handleSubmit);
   setupDialogs();
   setupSticky();
   setupWhatsAppFallback();
