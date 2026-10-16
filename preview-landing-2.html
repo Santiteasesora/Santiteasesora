@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0F2942">
+<title>Santi te asesora | Recupera Impuestos del SAT y Construye tu Retiro</title>
+<meta name="description" content="Descubre cuánto dinero te puede devolver el SAT este abril y agenda tu videollamada privada por Google Meet con Santiago (Cédula CNSF C412676).">
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18490645254');
+</script>
+
+<style>
+:root{
+  --emerald:#145C52; --gold:#D9A441; --cream:#FFF5E3; --navy:#0F2942; --dark:#292C2B; --bg:#FAF8F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.5;font-size:16px;padding-bottom:88px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{color:var(--emerald)}
+.hidden{display:none!important}
+
+/* Header de Fuga Cero */
+.header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--cream);padding:8px 16px}
+.header-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15px}
+.brand img{height:34px;width:auto}
+.brand-sub{display:none;font-size:11px;color:var(--emerald);font-weight:700;border-left:1px solid #e5dccb;padding-left:10px;line-height:1.2}
+@media(min-width:640px){.brand-sub{display:block}}
+.cnsf-btn{text-decoration:none;background:var(--bg);border:1px solid rgba(217,164,65,.55);border-radius:12px;padding:7px 11px;font-size:12px;font-weight:700;color:var(--navy);transition:background .2s}
+.cnsf-btn:hover{background:var(--cream)}
+.cnsf-btn strong{text-decoration:underline;text-decoration-color:var(--gold)}
+
+/* Hero Layout: Móvil = Copy corto -> Formulario -> Video/Extras | Desktop = 2 Columnas */
+.hero{max-width:1100px;margin:0 auto;padding:12px 16px 32px;display:grid;gap:14px;
+  grid-template-areas:"copy" "form" "extras"}
+.copy{grid-area:copy}
+.form-wrap{grid-area:form;scroll-margin-top:68px}
+.extras{grid-area:extras;display:grid;gap:12px}
+@media(min-width:920px){
+  .hero{grid-template-columns:1.05fr 1fr;grid-template-rows:auto 1fr;grid-template-areas:"copy form" "extras form";gap:18px 42px;align-items:start;padding-top:26px}
+  .form-wrap{position:sticky;top:72px}
+}
+
+.urgency-badge{display:inline-flex;align-items:center;gap:6px;background:var(--cream);border:1px solid rgba(217,164,65,.75);color:var(--navy);font-size:12px;font-weight:800;padding:5px 13px;border-radius:999px;margin-bottom:8px;line-height:1.25}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1px solid rgba(217,164,65,.6);color:var(--emerald);font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 3px rgba(217,164,65,.4)}
+.sim h1{font-size:clamp(30px,8vw,38px);line-height:1.12;color:#fff;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.sim h1 em{font-style:normal;color:var(--gold);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
+.sub{margin-top:8px;font-size:14.5px;color:rgba(255,245,227,.86);line-height:1.4}
+.sub strong{color:#fff}
+
+/* Consola Unificada Ultra-Ligera: Abre directo con el Simulador */
+.card{background:#fff;border:2px solid var(--emerald);border-radius:24px;padding:0;overflow:hidden;box-shadow:0 20px 40px -20px rgba(15,41,66,.35)}
+.fields{padding:14px 14px 16px}
+@media(min-width:640px){.fields{padding:16px 20px 20px}}
+
+/* Paso 1: Simulador Protagonista Compacto */
+.sim{background:var(--navy);color:#fff;border-radius:0;padding:18px 16px 14px}
+@media(min-width:640px){.sim{padding:22px 22px 16px}}
+.sim-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,245,227,.16)}
+.sim-top label{font-size:12px;font-weight:800;color:var(--cream);text-transform:uppercase;letter-spacing:.02em}
+#incomeDisplay{background:var(--gold);color:var(--navy);font-weight:800;font-size:17px;padding:2px 11px;border-radius:9px}
+input[type=range]{width:100%;height:32px;background:transparent;-webkit-appearance:none;appearance:none;margin:5px 0 2px;touch-action:manipulation}
+input[type=range]::-webkit-slider-runnable-track{height:9px;background:rgba(255,255,255,.22);border-radius:8px}
+input[type=range]::-moz-range-track{height:9px;background:rgba(255,255,255,.22);border-radius:8px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;height:28px;width:28px;margin-top:-9.5px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+input[type=range]::-moz-range-thumb{height:28px;width:28px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.scale-marks{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,245,227,.6);margin-bottom:6px}
+
+.res-hero{background:var(--emerald);border:1.5px solid rgba(217,164,65,.8);border-radius:13px;padding:11px 13px;margin-top:6px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.res-hero.pulse{transform:scale(1.02);border-color:#fff;box-shadow:0 0 0 3px rgba(217,164,65,.5)}
+.res-hero small{display:block;font-size:11px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.03em}
+.res-hero b{display:block;font-size:27px;line-height:1.12;color:#fff;margin:2px 0 3px;font-weight:900}
+.res-hero span{display:block;font-size:12px;color:rgba(255,245,227,.92);line-height:1.3}
+.res-hero span strong{color:var(--gold)}
+
+.resico-note{margin-top:7px;font-size:11.5px;color:rgba(255,245,227,.88);line-height:1.35}
+.low-income-note{display:none;margin-top:6px;background:rgba(217,164,65,.18);border:1px solid rgba(217,164,65,.5);border-radius:10px;padding:7px 10px;font-size:11px;color:var(--cream);line-height:1.3}
+
+/* Paso 2: Inputs de 16px (Cero auto-zoom en iPhone) */
+.field-grid{display:grid;gap:8px;margin-top:0}
+@media(min-width:540px){.field-grid{grid-template-columns:1fr 1fr}}
+.field label{display:block;font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase;margin-bottom:3px}
+.field input{width:100%;min-height:46px;font-size:16px;padding:9px 12px;border-radius:11px;border:1px solid #eadfca;background:var(--bg);color:var(--navy);font-weight:600;font-family:inherit;transition:border-color .2s,background .2s}
+.field input:focus{outline:2px solid var(--emerald);border-color:var(--emerald);background:#fff}
+.field input.valid{border-color:#16a34a;background:#f4fbf7}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* Cintilla Ligera de Cero Presión + CTA */
+.ease-note{margin-top:10px;text-align:center;font-size:12px;color:var(--navy);font-weight:700;background:var(--bg);border:1px solid #eadfca;border-radius:10px;padding:7px 10px}
+.cta{width:100%;min-height:54px;margin-top:9px;background:var(--gold);color:var(--navy);border:2px solid var(--gold);border-radius:14px;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;box-shadow:0 8px 18px -8px rgba(217,164,65,.8);transition:all .2s}
+.cta:hover{background:var(--emerald);color:#fff;border-color:var(--emerald)}
+.cta.ready-pulse{animation:ctaPulse .9s ease 2;background:#e5ae43;box-shadow:0 10px 24px -6px rgba(20,92,82,.45)}
+@keyframes ctaPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025)}
+}
+.cta:disabled{opacity:.7}
+.wa{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;margin-top:8px;border:2px solid #25D366;border-radius:14px;color:#0b6b32;font-weight:800;text-decoration:none;font-size:14px;background:#fff}
+.micro{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:11.5px;color:rgba(41,44,43,.72);margin-top:8px}
+.link-btn{background:none;border:none;color:var(--navy);text-decoration:underline;font-weight:700;font-size:11.5px;padding:2px 0;cursor:pointer}
+.legal{font-size:10.5px;color:rgba(41,44,43,.62);margin-top:6px;line-height:1.3}
+.err{display:none;margin-top:8px;background:#fff0f0;border:1px solid #e8a3a3;color:#7a1f1f;border-radius:11px;padding:9px 11px;font-size:13px;font-weight:600}
+
+/* Extras: Video Destapado + Bullets de Alto Valor */
+.video{display:flex;gap:14px;align-items:center;background:#fff;border:2px solid rgba(217,164,65,.45);border-radius:18px;padding:11px;width:100%;text-align:left;text-decoration:none;transition:border-color .2s}
+.video:hover{border-color:var(--emerald)}
+.video .thumb{position:relative;flex:0 0 104px;height:82px;border-radius:12px;overflow:hidden;background:var(--navy)}
+.video .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.video .dur{position:absolute;right:6px;bottom:6px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:800;padding:2px 7px;border-radius:7px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.video-tag{display:inline-block;background:var(--cream);color:var(--emerald);font-size:10px;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-bottom:3px}
+.video b{display:block;font-size:15px;color:var(--navy);line-height:1.25}
+.video span.desc{display:block;font-size:12.5px;color:rgba(41,44,43,.75);margin-top:2px;line-height:1.3}
+.bullets{background:#fff;border:1px solid var(--cream);border-radius:18px;padding:14px;display:grid;gap:9px;font-size:14px;line-height:1.4}
+.bullets div::before{content:"✓ ";color:var(--emerald);font-weight:900}
+.seals{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;font-weight:700;color:var(--navy)}
+.seals span{background:#fff;border:1px solid var(--cream);border-radius:10px;padding:5px 10px}
+
+/* Sección de 3 Pilares */
+.pillars{background:#fff;border-top:1px solid var(--cream);border-bottom:1px solid var(--cream);padding:38px 16px}
+.pillars-in{max-width:1040px;margin:0 auto}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 24px}
+.sec-head h2{font-size:clamp(21px,4.8vw,27px);color:var(--navy);font-weight:800;line-height:1.2;margin-top:6px}
+.sec-head p{font-size:14.5px;color:rgba(41,44,43,.8);margin-top:6px}
+.pgrid{display:grid;gap:16px}
+@media(min-width:800px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+.pcard{background:var(--bg);border:1px solid var(--cream);border-radius:18px;padding:18px;display:grid;gap:8px}
+.pcard-top{display:flex;justify-content:space-between;align-items:center}
+.pcard-pill{font-size:11px;font-weight:800;background:rgba(20,92,82,.1);color:var(--emerald);padding:3px 9px;border-radius:999px}
+.pcard h3{font-size:17px;color:var(--navy);font-weight:800}
+.pcard p{font-size:14px;color:rgba(41,44,43,.85);line-height:1.45}
+
+/* Tabla Comparativa 2026: Rebote Fiscal vs. Banco */
+.bench{max-width:1000px;margin:0 auto;padding:38px 16px 10px;scroll-margin-top:60px}
+.table-wrap{background:#fff;border:2px solid var(--navy);border-radius:20px;overflow:hidden;box-shadow:0 16px 34px -18px rgba(15,41,66,.25)}
+.btable{width:100%;border-collapse:collapse;font-size:13.5px;text-align:left}
+.btable th,.btable td{padding:12px 14px;border-bottom:1px solid #eee5d5}
+.btable thead th{background:var(--navy);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.btable thead th.win{background:var(--emerald);color:var(--gold);border-left:2px solid var(--gold)}
+.btable td.lose{color:#7a2e2e;background:#fffafa}
+.btable td.win{background:rgba(20,92,82,.06);font-weight:700;color:var(--navy);border-left:2px solid var(--emerald)}
+.btable tr.total td{font-size:15px;font-weight:800;border-bottom:none}
+.btable tr.total td.win{background:var(--emerald);color:#fff}
+.btable tr.total td.win span{color:var(--gold);display:block;font-size:11px;text-transform:uppercase}
+@media(max-width:640px){
+  .btable{font-size:12px}
+  .btable th,.btable td{padding:9px 8px}
+  .btable tr.total td{font-size:13px}
+}
+
+/* Sección de Prueba Social */
+.proof{max-width:1040px;margin:0 auto;padding:34px 16px}
+.proof-grid{display:grid;gap:16px}
+@media(min-width:800px){.proof-grid{grid-template-columns:1fr 1fr}}
+.tcard{background:#fff;border:1px solid var(--cream);border-radius:18px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;box-shadow:0 4px 14px rgba(15,41,66,.04)}
+.tcard-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tcard-tag{font-size:11px;font-weight:800;background:var(--cream);color:var(--emerald);padding:3px 10px;border-radius:8px}
+.stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.tcard p{font-size:14px;color:rgba(41,44,43,.9);line-height:1.5}
+.tcard-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--cream);padding-top:12px}
+.tcard-author img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.tcard-author b{display:block;font-size:14px;color:var(--navy)}
+.tcard-author span{font-size:12px;color:rgba(41,44,43,.68)}
+
+/* Sección de Dudas Frecuentes */
+.faq{background:#fff;border-top:1px solid var(--cream);padding:38px 16px;scroll-margin-top:60px}
+.faq-in{max-width:820px;margin:0 auto}
+.faq-list{display:grid;gap:12px}
+details.faq-item{background:var(--bg);border:1px solid #eadfca;border-radius:16px;padding:14px 16px;transition:border-color .2s}
+details.faq-item[open]{border-color:var(--emerald);background:#fff;box-shadow:0 8px 20px -12px rgba(15,41,66,.12)}
+details.faq-item summary{font-size:15px;font-weight:800;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;line-height:1.35}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--cream);color:var(--emerald);font-weight:900;font-size:18px;display:inline-flex;align-items:center;justify-content:center}
+details.faq-item[open] summary::after{content:"−";background:var(--emerald);color:#fff}
+.faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--cream);font-size:14px;color:rgba(41,44,43,.88);line-height:1.5;display:grid;gap:8px}
+
+footer{background:var(--navy);color:rgba(255,245,227,.8);padding:30px 16px;text-align:center;font-size:12.5px;line-height:1.5}
+.footer-in{max-width:880px;margin:0 auto;display:grid;gap:10px}
+footer .link-btn{color:var(--gold);font-size:12.5px}
+
+/* Barra pegajosa inferior */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(15,41,66,.97);backdrop-filter:blur(8px);border-top:2px solid var(--gold);padding:10px 16px;display:flex;align-items:center;justify-content:center;transform:translateY(0);transition:transform .25s ease,opacity .25s ease;box-shadow:0 -10px 25px rgba(0,0,0,.25)}
+.sticky-bar.off{transform:translateY(120%);opacity:0;pointer-events:none}
+.sticky-in{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-bar small{display:block;font-size:11.5px;color:rgba(255,245,227,.85);line-height:1.1}
+.sticky-bar b{color:var(--gold);font-size:18px;white-space:nowrap}
+.sticky-bar button{background:var(--gold);color:var(--navy);border:none;border-radius:12px;padding:11px 16px;font-weight:800;font-size:13.5px;text-transform:uppercase;min-height:44px;white-space:nowrap;box-shadow:0 4px 12px rgba(217,164,65,.4);transition:background .15s}
+.sticky-bar button:hover{background:#e6b14c}
+
+/* Modales Infalibles CSS (:target) + Cierre Limpio */
+.modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,41,66,.78);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:16px}
+.modal:target{display:flex}
+.mbox{background:#fff;border-radius:20px;max-width:560px;width:100%;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.mbox.v{max-width:340px;background:#000}
+.d-head{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800;font-size:15px}
+.d-head a{color:#fff;font-size:26px;line-height:1;padding:2px 8px;text-decoration:none}
+.d-body{padding:18px;font-size:14px;display:grid;gap:10px;max-height:70vh;overflow:auto;line-height:1.45;color:var(--dark);text-align:left}
+.d-body ul{padding-left:20px;display:grid;gap:4px}
+.d-foot{padding:12px 16px;background:var(--bg);text-align:right;border-top:1px solid var(--cream)}
+.d-foot a{display:inline-block;background:var(--emerald);color:#fff;border-radius:12px;padding:10px 18px;font-weight:800;font-size:13px;text-decoration:none}
+.vbox{aspect-ratio:9/16;position:relative}
+.vbox iframe{width:100%;height:100%;border:0}
+.vbox .x{position:absolute;top:10px;right:10px;z-index:2;background:rgba(15,41,66,.85);color:#fff;border:1px solid var(--gold);border-radius:50%;width:40px;height:40px;font-size:22px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="#formulario">
+      <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" width="34" height="34" alt="Santi te asesora"
+           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
+      <span>Santi te asesora</span>
+      <span class="brand-sub">Agente Autorizado · Seguros Monterrey NYL</span>
+    </a>
+    <a href="#cedulaModal" class="cnsf-btn" id="openCedula">Cédula CNSF: <strong>C412676</strong></a>
+  </div>
+</header>
+
+<main class="hero">
+
+  <!-- 1) Mensaje directo al bolsillo + Cintillo Dinámico de Urgencia -->
+  <section class="copy">
+    <div>
+      <span class="urgency-badge" id="urgencyBanner">⏳ Te quedan <span id="daysRemaining">76</span> días (hasta el 31 de diciembre) para deducir en tu declaración de abril</span>
+    </div>
+  </section>
+
+  <!-- 2) CONSOLA ULTRA-LIGERA EN 3 TOQUES: 1º CÁLCULO -> 2º CÓMO RECIBES TU DINERO -> 3º CONTACTO -->
+  <section class="form-wrap" id="formulario">
+    <div class="card" id="formCard">
+      <form id="leadForm" novalidate>
+
+        <!-- 1. PRIMERO EL CÁLCULO (Abre directo, sin encabezados estorbosos) -->
+        <div class="sim">
+          <h1>Calcula cuánto ISR <em>podrías recuperar</em> en abril</h1>
+          <p class="sub">Luego revísalo con Santiago en una <strong>videollamada privada por Google Meet</strong>.</p>
+          <div class="sim-top">
+            <label for="incomeSlider">Mueve tu ingreso mensual (antes de impuestos)</label>
+            <span id="incomeDisplay">$45,000 MXN</span>
+          </div>
+          <input type="range" id="incomeSlider" min="15000" max="200000" step="5000" value="45000" aria-label="Ingreso mensual aproximado">
+          <div class="scale-marks">
+            <span>$15,000</span>
+            <span>$60,000</span>
+            <span>$120,000</span>
+            <span>$200,000+</span>
+          </div>
+
+          <!-- Barra Protagonista Única (Sueldos / Honorarios / Mixto / No estoy seguro) -->
+          <div class="res-hero" id="taxBox">
+            <small>ISR QUE PODRÍAS RECUPERAR EN ABRIL</small>
+            <b id="refundOutput">$12,701 MXN*</b>
+            <span>Aportando a tu retiro hasta <strong id="monthlyCapOutput">$4,500/mes</strong> (o la parte que puedas, <strong>desde $1,500/mes</strong>).</span>
+          </div>
+
+          <!-- Aviso para quien está en RESICO (no aplica la devolución de abril) -->
+          <div class="resico-note">¿Estás en RESICO? Tu beneficio es otro (Art. 93) y lo vemos en la llamada.</div>
+
+          <!-- Aviso preventivo si desliza a menos de $25,000 MXN -->
+          <div class="low-income-note" id="lowIncomeNote">
+            Nota: Puedes iniciar tu plan con una aportación cómoda desde $1,500 MXN al mes ($18,000 al año).
+          </div>
+        </div>
+
+        <div class="fields">
+        <!-- El régimen ya no se pregunta aquí: se confirma en la llamada -->
+        <input type="hidden" id="regimenInput" value="No especificado (se confirma en la llamada)">
+
+        <!-- 2. CAJAS PARA NOMBRE Y WHATSAPP -->
+        <div class="field-grid" id="contactFieldsBox">
+          <div class="field">
+            <label for="formNombre">Tu nombre *</label>
+            <input type="text" id="formNombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="name" enterkeyhint="next" required>
+          </div>
+          <div class="field">
+            <label for="formWhatsApp">Tu WhatsApp (10 dígitos) *</label>
+            <input type="tel" id="formWhatsApp" name="whatsapp" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" enterkeyhint="done" maxlength="14" required>
+          </div>
+        </div>
+
+        <!-- Anti-bots invisible -->
+        <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <!-- Campos ocultos compatibles con tu Google Sheets actual -->
+        <input type="hidden" id="formOrigen" value="Landing Profesionistas CRO">
+        <input type="hidden" id="prioridadHidden" value="Deducción SAT + Retiro (Art. 151)">
+        <input type="hidden" id="calcEstimadoHidden" value="">
+        <input type="hidden" id="utm_source" value="">
+        <input type="hidden" id="utm_medium" value="">
+        <input type="hidden" id="utm_campaign" value="">
+        <input type="hidden" id="utm_term" value="">
+        <input type="hidden" id="utm_content" value="">
+
+        <div class="ease-note">
+          💻 Videollamada privada por Google Meet · Cero presión, solo vemos tus números
+        </div>
+
+        <div class="err" id="formError" role="alert"></div>
+
+        <button type="submit" class="cta" id="formSubmitBtn">Ver mi plan personalizado y elegir hora →</button>
+        <a class="wa hidden" id="waBtn" target="_blank" rel="noopener">💬 Prefiero escribir directo por WhatsApp</a>
+
+        <div class="micro">
+          <span>🔒 Tus datos están seguros · Trato directo con Santiago</span>
+          <a href="#privacyModal" class="link-btn" id="openPrivacy">Aviso de Privacidad</a>
+        </div>
+        <p class="legal">*Estimación con las tablas oficiales del SAT 2026 (Art. 151 y 152 LISR). Tu devolución real depende de tus retenciones del año. No es asesoría contable.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 3) Video de Presentación (26 segundos) y Beneficios en Lenguaje Claro -->
+  <section class="extras">
+    <a href="#videoModal" class="video" id="openVideo" aria-label="Ver video de 26 segundos">
+      <div class="thumb">
+        <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" width="104" height="82" loading="lazy" alt="Santiago - Santi te asesora"
+             onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt&sz=w500';">
+        <span class="dur">▶ 0:26s</span>
+      </div>
+      <div>
+        <span class="video-tag">Video de 26 segundos</span>
+        <b>Conoce a Santiago (Santi te asesora)</b>
+        <span class="desc">Mira cómo armamos tu estrategia con el respaldo de Seguros Monterrey NYL y MASS Asociados.</span>
+      </div>
+    </a>
+
+    <div class="bullets">
+      <div><strong>Dos cuentas en un mismo plan:</strong> Una parte te sirve para recuperar impuestos del SAT para tu retiro y otra queda libre para que uses tu dinero en 3 a 5 años sin castigos.</div>
+      <div><strong>Deduce más aunque ya metas facturas:</strong> La ley te da una bolsa exclusiva para tu retiro (de hasta $213,973 MXN al año), aparte de lo que ya deduces por gastos médicos, hipoteca o colegiaturas.</div>
+      <div><strong>Si un accidente o enfermedad te impide trabajar:</strong> Recibes una suma millonaria libre de impuestos para mantener tu calidad de vida y <strong>Seguros Monterrey sigue pagando tu plan por ti</strong> hasta tus 65 años.</div>
+    </div>
+
+    <div class="seals">
+      <span>🛡️ Cédula CNSF C412676</span>
+      <span>🏛️ Respaldo Seguros Monterrey NYL</span>
+      <span>💻 Videollamada 1 a 1 por Google Meet</span>
+    </div>
+  </section>
+</main>
+
+<!-- Los 3 Pilares en Lenguaje Claro -->
+<section class="pillars">
+  <div class="pillars-in">
+    <div class="sec-head">
+      <span class="badge">Claridad Financiera 2026</span>
+      <h2>¿Por qué te conviene más que dejar tu dinero en el banco o en una casa de bolsa?</h2>
+    </div>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="pcard-top">
+          <span class="pcard-pill">Efectivo en Abril</span>
+        </div>
+        <h3>1. El SAT te regresa dinero cada año</h3>
+        <p>Mientras los bancos te descuentan impuestos sobre tus ahorros (0.90% anual), aquí el SAT te devuelve en tu cuenta bancaria entre el 18% y el 35% de lo que ahorraste para tu retiro.</p>
+      </div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <span class="pcard-pill">Cuenta Libre 3 a 5 años</span>
+        </div>
+        <h3>2. No amarras todo hasta los 65 años</h3>
+        <p>Dividimos tu ahorro para que tengas una cuenta disponible a mediano plazo en UDIs o Dólares. Si quieres poner un negocio, dar un enganche o viajar en 3 o 5 años, tienes liquidez.</p>
+      </div>
+      <div class="pcard">
+        <div class="pcard-top">
+          <span class="pcard-pill">Respaldo Seguros Monterrey</span>
+        </div>
+        <h3>3. Tu meta se cumple aunque pierdas la salud</h3>
+        <p>Si ahorras solo en una app de inversión y te incapacitas en el año 3, nadie ahorra por ti. Aquí recibes dinero en vida para tus gastos y la aseguradora paga todo lo que falte de tu plan hasta tus 65 años.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLA COMPARATIVA EN LENGUAJE CLARO (Auditada al 30% exacto con $65,000/mes) -->
+<section class="bench" id="comparativa">
+  <div class="sec-head">
+    <span class="badge">Ejemplo con Números Reales (Ganando $65,000/mes)</span>
+    <h2>Dejar tu ahorro en el Banco vs. Estrategia con Devolución del SAT</h2>
+    <p>Mira la diferencia real ahorrando $5,000 MXN al mes ($60,000 al año) durante tu primer año:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="btable">
+      <thead>
+        <tr>
+          <th>¿Qué pasa con tu dinero? (Año 1)</th>
+          <th>Banco / CETES</th>
+          <th class="win">Estrategia con Devolución SAT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lo que tú ahorras en el año</strong></td>
+          <td>$60,000 MXN</td>
+          <td class="win">$60,000 MXN</td>
+        </tr>
+        <tr>
+          <td><strong>Lo que crece tu dinero en el año</strong></td>
+          <td>+$4,500 MXN (7.5% estimado)</td>
+          <td class="win">+$3,870 MXN (Crece con las UDIs)*</td>
+        </tr>
+        <tr>
+          <td><strong>Impuesto que te quita el banco (0.90%)</strong></td>
+          <td class="lose">−$540 MXN (Te descuentan en automático)</td>
+          <td class="win">$0 MXN (No te descuentan nada)</td>
+        </tr>
+        <tr>
+          <td><strong>Dinero que te regresa el SAT en Abril</strong></td>
+          <td class="lose">$0 MXN (El banco no es deducible)</td>
+          <td class="win">+$18,000 MXN (30% directo a tu cuenta)</td>
+        </tr>
+        <tr>
+          <td><strong>Si un accidente te impide trabajar</strong></td>
+          <td class="lose">Nadie te ayuda (Solo tienes tu saldo)</td>
+          <td class="win">Recibes suma millonaria + Plan pagado</td>
+        </tr>
+        <tr class="total">
+          <td><strong>Dinero total que ganas el Año 1</strong></td>
+          <td class="lose">$3,960 MXN (+6.6%)</td>
+          <td class="win">$21,870 MXN (+36.4% sumando el SAT)*<span>Crecimiento en UDIs + Dinero del SAT</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Prueba Social: Testimonio Real de Itzel + Caso RESICO en palabras simples -->
+<section class="proof">
+  <div class="sec-head">
+    <span class="badge">Casos Reales</span>
+    <h2>Cómo les ha funcionado a otros profesionistas</h2>
+  </div>
+
+  <div class="proof-grid">
+    <div class="tcard">
+      <div>
+        <div class="tcard-head">
+          <span class="tcard-tag">Caso Real · Ahorro a 3 Años + Retiro</span>
+          <span class="stars" aria-label="5 estrellas">★★★★★</span>
+        </div>
+        <p style="margin-top:10px">
+          "Tenía un ahorro para construir un negocio en 3 años, pero <strong>me daba miedo dejar el dinero en el banco estancado o meterlo en un seguro que lo amarrara hasta los 65 años</strong>. Con Santi armamos un esquema donde ese dinero crece para usarlo cuando empiece la construcción, conservando la parte de protección ante invalidez, fallecimiento y <strong>una parte conserva la deducción de impuestos</strong> para construir ahorro para el retiro."
+        </p>
+      </div>
+      <div class="tcard-author">
+        <img src="https://lh3.googleusercontent.com/d/1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6" width="44" height="44" loading="lazy" alt="Itzel C."
+             onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1fvZTxudkeNu0ovaq21frYNDkoFGqEAn6&sz=w200';">
+        <div>
+          <b>Itzel C.</b>
+          <span>Administradora de Marketing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tcard">
+      <div>
+        <div class="tcard-head">
+          <span class="tcard-tag" style="background:rgba(15,41,66,.08);color:var(--navy)">¿Y si estoy en RESICO? · Ahorro Libre de Impuestos</span>
+        </div>
+        <p style="margin-top:10px">
+          <strong>Cómo ganar si estás en RESICO:</strong><br>
+          En RESICO ya pagas muy poquito impuesto cada mes, por eso el SAT no te deja meter facturas para devolución en abril.<br><br>
+          Lo que hacemos contigo es activar el <strong>beneficio del Artículo 93</strong>: guardamos tu ahorro en UDIs o Dólares para que la inflación no se lo coma, tienes una cuenta disponible a 3–5 años y, al llegar a los 60 años, <strong>recibes todo tu dinero y tus ganancias sin que el SAT te quite un solo peso de impuestos</strong>.
+        </p>
+      </div>
+      <div class="tcard-author">
+        <div>
+          <b>Estrategia Especial para Independientes</b>
+          <span>Respaldada por el Art. 93 de la Ley del ISR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN DE DUDAS FRECUENTES -->
+<section class="faq" id="dudas">
+  <div class="faq-in">
+    <div class="sec-head">
+      <span class="badge">Todo Claro Antes de Platicar</span>
+      <h2>Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>1. ¿Qué pasa si en unos años cambio de trabajo, bajan mis ingresos o necesito usar mi dinero?</summary>
+        <div class="faq-ans">
+          <p>No pierdes tu dinero. Desde el día uno dividimos tu plan en dos cuentas: una mensualidad base muy cómoda para tu retiro (que es la que te da devolución del SAT) y otra cuenta libre para tus metas de 3 a 5 años. Si un año necesitas bajarle al ahorro o retirar dinero de tu cuenta libre, puedes hacerlo sin perder lo que ya construiste.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>2. ¿Es verdad que el SAT me quita el 20% si saco mi dinero antes de los 65 años?</summary>
+        <div class="faq-ans">
+          <p>El SAT solo te retiene ese 20% si sacas antes de los 65 años el dinero de la bolsa por la que ya te dio devolución de impuestos. Por eso separamos tus cuentas: todo lo que planees usar en 3 o 5 años para un negocio, enganche o proyecto va en tu cuenta libre, y de ahí lo sacas cuando quieras sin que el SAT te quite un peso.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>3. ¿Por qué me conviene más ahorrar aquí en UDIs o Dólares que meterlo directo a CETES o al banco?</summary>
+        <div class="faq-ans">
+          <p>En el banco o CETES hoy te descuentan impuestos en automático cada año (0.90% sobre tu ahorro) y el SAT no te regresa nada en abril. Aquí tu dinero nunca pierde valor frente a la inflación porque crece en UDIs o Dólares, y además el SAT te deposita de vuelta hasta el 35% de lo que ahorraste cada mes de abril.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>4. Estoy en RESICO y mi contador me dijo que no puedo deducir nada, ¿a mí cómo me sirve?</summary>
+        <div class="faq-ans">
+          <p>Tu contador tiene razón en que no recibes devolución en abril, pero en RESICO tenemos otra ventaja legal para ti (el Artículo 93). Con ella hacemos que todo tu ahorro crezca en UDIs o Dólares sin que el banco te quite impuestos cada año y, al llegar a tus 60 años, te entregamos todas tus ganancias 100% libres de impuestos.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>5. ¿Por qué el plan incluye protección por invalidez y fallecimiento en vez de ser pura inversión?</summary>
+        <div class="faq-ans">
+          <p>Porque si inviertes por tu cuenta en una casa de bolsa y en dos años un accidente o enfermedad te impide volver a trabajar, te quedas solo con lo poquito que habías juntado. Aquí, si eso llega a pasar, Seguros Monterrey te entrega de inmediato una suma millonaria libre de impuestos para vivir tranquilo, y además ellos siguen pagando tu plan de retiro por ti hasta tus 65 años.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-in">
+    <p>© 2026 <strong>Santi te asesora</strong>. Santiago, Agente de Seguros autorizado por la Comisión Nacional de Seguros y Fianzas (Cédula CNSF: <strong>C412676</strong>), en alianza con MASS Asociados y Seguros Monterrey New York Life, S.A. de C.V.</p>
+    <p style="font-size:11.5px;color:rgba(255,245,227,.6)">*Los cálculos mostrados son ejemplos informativos basados en la Ley del ISR vigente en 2026. Tu devolución real depende de los impuestos que te hayan retenido en el año, y los beneficios de cada plan se respaldan por escrito en las condiciones de tu póliza.</p>
+    <p>
+      <a href="#cedulaModal" class="link-btn" id="openCedula2">Verificar Cédula Oficial CNSF</a> ·
+      <a href="#privacyModal" class="link-btn" id="openPrivacy2">Aviso de Privacidad</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Barra flotante inferior -->
+<div class="sticky-bar off" id="stickyBar">
+  <div class="sticky-in">
+    <div>
+      <small id="stickyLabel">Podrías recuperar:</small>
+      <b id="stickyRefund">$12,701*</b>
+    </div>
+    <button type="button" id="stickyBtn">Ver mi plan personalizado</button>
+  </div>
+</div>
+
+<!-- MODALES INFALIBLES (:target + Cierre sin salto) -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video de presentación">
+  <div class="mbox v">
+    <div class="vbox">
+      <a href="#formulario" class="x" data-close-modal aria-label="Cerrar video">×</a>
+      <iframe id="youtubePlayer" title="Santi te asesora - Conoce a Santiago" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="cedulaModal" role="dialog" aria-modal="true" aria-labelledby="cedulaTitle">
+  <div class="mbox">
+    <div class="d-head"><span id="cedulaTitle">Acreditación Oficial CNSF: C412676</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
+    <div class="d-body">
+      <p><strong>Santiago (Santi te asesora)</strong> cuenta con autorización oficial vigente ante la <strong>Comisión Nacional de Seguros y Fianzas (CNSF)</strong> bajo la cédula <strong>C412676</strong> para asesorarte en planes de retiro, ahorro, vida y gastos médicos mayores.</p>
+      <p><strong>Institución que respalda tu plan:</strong> Seguros Monterrey New York Life, S.A. de C.V. y MASS Asociados.</p>
+      <p><a href="https://drive.google.com/file/d/1QEseqvY2tKNBnICNNVL4c8OwnUgj1Yj6/view?usp=sharing" target="_blank" rel="noopener"><strong>Ver documento PDF de la Cédula Oficial (en pestaña nueva) ↗</strong></a></p>
+    </div>
+    <div class="d-foot"><a href="#formulario" data-close-modal>Volver a mi cálculo</a></div>
+  </div>
+</div>
+
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+  <div class="mbox">
+    <div class="d-head"><span id="privacyTitle">Aviso de Privacidad Simplificado</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
+    <div class="d-body">
+      <p><strong>Santi te asesora</strong> (Santiago, Agente de Seguros autorizado con Cédula CNSF C412676) cuida y protege los datos que compartes en esta página.</p>
+      <p><strong>¿Para qué usamos tus datos?</strong> Tu nombre, WhatsApp, régimen e ingreso aproximado se usan únicamente para:</p>
+      <ul>
+        <li>Preparar tu cálculo personalizado de devolución de impuestos o ahorro patrimonial.</li>
+        <li>Escribirte por WhatsApp para confirmar tu videollamada privada por Google Meet.</li>
+        <li>Mostrarte opciones diseñadas a tu medida con el respaldo de MASS Asociados y Seguros Monterrey New York Life.</li>
+      </ul>
+      <p>Jamás vendemos ni compartimos tus datos con terceros. Para medir nuestros anuncios en Google, el sitio guarda el código del clic publicitario sin mostrar tus datos personales en la dirección web.</p>
+      <p><strong>Tus derechos (ARCO):</strong> En cualquier momento puedes pedirnos revisar o borrar tus datos enviando un mensaje directo a nuestro WhatsApp.</p>
+    </div>
+    <div class="d-foot"><a href="#formulario" data-close-modal>Entendido</a></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIGURACIÓN CENTRAL
+   ===================================================================== */
+const CONFIG = {
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
+  ADS_CONVERSION_LABEL: 'g3_8CJTvpZ0dEIa2g_FE',
+  LEAD_VALUE: 900,
+  QUALIFIED_INCOME: 25000,
+  WHATSAPP_NUMBER: '5215571208740',
+  THANKS_PAGE: 'gracias.html',
+  VIDEO_URL: 'https://www.youtube.com/embed/oTPHUmFmE7o?autoplay=1&rel=0&modestbranding=1',
+
+  // Parámetros oficiales INEGI / RMF 2026 ($42,794.64 UMA anual * 5 = $213,973.20 MXN)
+  UMA_ANUAL: 42794.64,
+  RETIRO_PCT: 0.10,
+  RETIRO_TOPE_UMAS: 5
+};
+
+/* Tarifa anual ISR 2026, art. 152 LISR: [limite inferior, cuota fija, % sobre excedente] */
+const ISR_TABLE = [
+  [0.01,        0.00,       0.0192],
+  [10135.12,    194.59,     0.0640],
+  [86022.12,    5051.37,    0.1088],
+  [151176.20,   12140.13,   0.1600],
+  [175735.67,   16069.64,   0.1792],
+  [210403.70,   22282.14,   0.2136],
+  [424353.98,   67981.92,   0.2352],
+  [668840.15,   125485.07,  0.3000],
+  [1276925.99,  307910.81,  0.3200],
+  [1702567.98,  444116.23,  0.3400],
+  [5107703.93,  1601862.46, 0.3500]
+];
+
+const $ = id => document.getElementById(id);
+const money = n => '$' + Math.round(n).toLocaleString('es-MX');
+function lsGet(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }
+function lsSet(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+
+const state = { mode: 'deducible', income: 45000, deductible: 54000, refund: 12701, rate: 0.2352 };
+let pulseTimer = null;
+let currentLeadId = null; // Evita duplicar folios si el usuario reintenta por fallo de red
+
+/* =====================================================================
+   CONTADOR AUTOMÁTICO DE DÍAS HASTA EL 31 DE DICIEMBRE (HORA CDMX)
+   ===================================================================== */
+function updateUrgencyCountdown(){
+  const banner = $('urgencyBanner');
+  if (!banner) return;
+  const now = new Date();
+  const mxNow = new Date(now.toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+  const year = mxNow.getFullYear();
+  const startOfToday = new Date(year, mxNow.getMonth(), mxNow.getDate());
+  const dec31 = new Date(year, 11, 31);
+  const diffDays = Math.round((dec31 - startOfToday) / 86400000);
+
+  if (diffDays <= 0){
+    banner.textContent = '⏳ Último día (31 de diciembre) para deducir en tu declaración de abril';
+  } else if (diffDays === 1){
+    banner.textContent = '⏳ Te queda 1 día (hasta el 31 de diciembre) para deducir en tu declaración de abril';
+  } else {
+    banner.textContent = `⏳ Te quedan ${diffDays} días (hasta el 31 de diciembre) para deducir en tu declaración de abril`;
+  }
+}
+
+function isrAnual(base){
+  if (base <= 0) return 0;
+  let row = ISR_TABLE[0];
+  for (const r of ISR_TABLE){ if (base >= r[0]) row = r; }
+  return row[1] + (base - row[0]) * row[2];
+}
+
+function updateCalculator(val, triggerPulse){
+  state.income = parseFloat(val);
+  $('incomeDisplay').textContent = money(state.income) + ' MXN';
+
+  $('lowIncomeNote').style.display = state.income < CONFIG.QUALIFIED_INCOME ? 'block' : 'none';
+
+  const annual = state.income * 12;
+  const cap = CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL; // $213,973.20 MXN exactos
+  state.deductible = Math.min(annual * CONFIG.RETIRO_PCT, cap);
+  state.refund = Math.round(isrAnual(annual) - isrAnual(annual - state.deductible));
+  state.rate = state.deductible ? state.refund / state.deductible : 0;
+
+  $('refundOutput').textContent = money(state.refund) + ' MXN*';$('monthlyCapOutput').textContent = money(state.deductible / 12) + '/mes';
+
+  if (triggerPulse && $('taxBox')){
+    const tb = $('taxBox');
+    tb.classList.add('pulse');
+    clearTimeout(pulseTimer);
+    pulseTimer = setTimeout(() => tb.classList.remove('pulse'), 320);
+  }
+
+  $('stickyLabel').textContent = 'Podrías recuperar:';
+  $('stickyRefund').textContent = money(state.refund) + '*';
+  updateHiddenCalc();
+}
+
+/* =====================================================================
+   FLUJO AUTOMÁTICO MÓVIL ("1 PULGAR")
+   ===================================================================== */
+function cleanTenDigits(raw){
+  return String(raw || '').replace(/\D/g, '').replace(/^(?:521|52)(?=\d{10}$)/, '').slice(0, 10);
+}
+
+function formatPhoneVisual(digits){
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 6) return digits.slice(0, 2) + ' ' + digits.slice(2);
+  return digits.slice(0, 2) + ' ' + digits.slice(2, 6) + ' ' + digits.slice(6, 10);
+}
+
+function setupMobileFormFlow(){
+  const nameIn = $('formNombre');
+  const waIn = $('formWhatsApp');
+  const submitBtn = $('formSubmitBtn');
+
+  nameIn.addEventListener('input', () => {
+    const ok = nameIn.value.trim().length >= 2;
+    nameIn.classList.toggle('valid', ok);
+  });
+
+  nameIn.addEventListener('keydown', e => {
+    if (e.key === 'Enter'){
+      e.preventDefault();
+      if (nameIn.value.trim().length >= 2){
+        waIn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        waIn.focus({ preventScroll: true });
+      }
+    }
+  });
+
+  waIn.addEventListener('input', () => {
+    const digits = cleanTenDigits(waIn.value);
+    const formatted = formatPhoneVisual(digits);
+    if (waIn.value !== formatted) waIn.value = formatted;
+
+    const complete = digits.length === 10 && !/^(\d)\1{9}$/.test(digits);
+    waIn.classList.toggle('valid', complete);
+
+    if (complete){
+      $('formError').style.display = 'none';
+      if (nameIn.value.trim().length >= 2){
+        setTimeout(() => {
+          waIn.blur();
+          submitBtn.classList.remove('ready-pulse');
+          void submitBtn.offsetWidth;
+          submitBtn.classList.add('ready-pulse');
+          submitBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 120);
+      }
+    }
+  });
+
+  waIn.addEventListener('keydown', e => {
+    if (e.key === 'Enter'){
+      e.preventDefault();
+      $('leadForm').requestSubmit ? $('leadForm').requestSubmit() : handleSubmit(e);
+    }
+  });
+}
+
+function captureAttribution(){
+  const p = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => {
+    const v = p.get(k);
+    if (v) { $(k).value = v; lsSet('santi_' + k, v); }
+    else { const savedUtm = lsGet('santi_' + k); if (savedUtm) $(k).value = savedUtm; }
+  });
+  const saved = lsGet('santi_click') || {};
+  const now = Date.now();
+  let changed = false;
+  ['gclid','gbraid','wbraid'].forEach(k => {
+    const v = p.get(k);
+    if (v){ saved[k] = v; saved.ts = now; changed = true; }
+  });
+  if (changed) lsSet('santi_click', saved);
+}
+
+function getClickIds(){
+  const s = lsGet('santi_click');
+  if (!s || !s.ts || Date.now() - s.ts > 90*24*3600*1000) return { gclid:'', gbraid:'', wbraid:'' };
+  return { gclid: s.gclid || '', gbraid: s.gbraid || '', wbraid: s.wbraid || '' };
+}
+
+function updateHiddenCalc(){
+  const prioridad = $('prioridadHidden').value;
+  const ingreso = money(state.income) + '/mes';
+  const qualTag = state.income >= CONFIG.QUALIFIED_INCOME ? '[CALIFICADO $25k+]' : '[NO CALIFICADO <$25k]';
+  const ids = getClickIds();
+  const clickId = ids.gclid || ids.wbraid || ids.gbraid;
+  const gclidPart = clickId ? ` | GCLID: ${clickId}` : '';
+
+  $('calcEstimadoHidden').value = `${qualTag} Ingreso: ${ingreso} | Devolución SAT est: ${money(state.refund)} MXN | Prioridad: ${prioridad}${gclidPart}`;
+}
+
+function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
+
+async function postLead(payload){
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 7000);
+  try {
+    await fetch(CONFIG.SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors', keepalive: true, signal: ctrl.signal,
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    return true;
+  } catch(e){
+    return false;
+  } finally { clearTimeout(t); }
+}
+
+function queueLead(payload){
+  const q = (lsGet('santi_pending') || []).filter(p => p.id_lead !== payload.id_lead);
+  q.push(payload);
+  lsSet('santi_pending', q);
+}
+
+function unqueueLead(id){
+  lsSet('santi_pending', (lsGet('santi_pending') || []).filter(p => p.id_lead !== id));
+}
+
+async function flushPending(){
+  const q = lsGet('santi_pending') || [];
+  for (const p of q){
+    if (await postLead(p)) unqueueLead(p.id_lead);
+  }
+}
+
+function trackConversionIfQualified(leadId, qualified, onSent){
+  if (!qualified) return false;
+  let waitsForGoogle = false;
+
+  const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 900 };
+
+  if (typeof gtag !== 'undefined'){
+    gtag('event', 'generate_lead', Object.assign({
+      event_category: 'Formulario_Diagnostico',
+      event_label: 'Lead_Calificado_' + state.mode
+    }, base));
+
+    if (CONFIG.ADS_CONVERSION_LABEL){
+      gtag('event', 'conversion', Object.assign({
+        send_to: 'AW-18490645254/' + CONFIG.ADS_CONVERSION_LABEL,
+        event_callback: onSent
+      }, base));
+      waitsForGoogle = true;
+    }
+  }
+
+  if (typeof fbq !== 'undefined'){
+    fbq('track', 'Lead', {
+      content_name: 'Lead_Calificado_' + state.mode,
+      value: CONFIG.LEAD_VALUE || 900,
+      currency: 'MXN'
+    });
+  }
+  return waitsForGoogle;
+}
+
+function showError(msg){
+  const e = $('formError');
+  e.textContent = msg;
+  e.style.display = 'block';
+}
+
+async function handleSubmit(ev){
+  ev.preventDefault();
+  $('formError').style.display = 'none';
+
+  const nombre = $('formNombre').value.trim();
+  const wa = cleanTenDigits($('formWhatsApp').value);
+
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para personalizar tu plan.'); $('formNombre').focus(); return; }
+  if (wa.length !== 10 || /^(\d)\1{9}$/.test(wa)){ showError('Ingresa un número de WhatsApp válido a 10 dígitos (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
+  if ($('website').value){ return; }
+
+  const btn = $('formSubmitBtn');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = 'Generando tu plan personalizado…';
+
+  updateHiddenCalc();
+  if (!currentLeadId) currentLeadId = newLeadId();
+  const leadId = currentLeadId;
+  const ids = getClickIds();
+  const qualified = state.income >= CONFIG.QUALIFIED_INCOME;
+
+  const payload = {
+    fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+    nombre: nombre,
+    whatsapp: wa,
+    regimen: $('regimenInput').value || 'No especificado',
+    origen: $('formOrigen').value,
+    calculo_estimado: $('calcEstimadoHidden').value,
+    utm_source: $('utm_source').value,
+    utm_medium: $('utm_medium').value,
+    utm_campaign: $('utm_campaign').value,
+    utm_term: $('utm_term').value,
+    utm_content: $('utm_content').value,
+    id_lead: leadId,
+    gclid: ids.gclid,
+    gbraid: ids.gbraid,
+    wbraid: ids.wbraid,
+    calificado: qualified ? 'SI' : 'NO'
+  };
+
+  const leadSessionData = {
+    lead: leadId,
+    nombre: nombre,
+    wa: wa,
+    regimen: payload.regimen,
+    ingreso: state.income,
+    deducible: Math.round(state.deductible),
+    devolucion: state.refund,
+    prioridad: $('prioridadHidden').value,
+    calificado: qualified,
+    modo: state.mode,
+    goal: 'fiscal',
+    box1Label: 'Máximo que puedes deducir al año',
+    box1Value: money(state.deductible) + ' / año',
+    box2Label: 'Dinero que te devuelve el SAT',
+    box2Value: money(state.refund) + ' MXN*',
+    summaryMetric: 'Devolución del SAT estimada de *' + money(state.refund) + ' MXN*'
+  };
+  try {
+    sessionStorage.setItem('santi_lead', JSON.stringify(leadSessionData));
+    sessionStorage.setItem('santi_lead_data', JSON.stringify(leadSessionData));
+  } catch(e){}
+
+  let ok = await postLead(payload);
+  if (!ok) ok = await postLead(payload);
+
+  if (!ok){
+    queueLead(payload);
+    btn.disabled = false;
+    btn.textContent = 'Ver mi plan personalizado y elegir hora →';
+    if (CONFIG.WHATSAPP_NUMBER) $('waBtn').classList.remove('hidden');
+    showError('Hubo una intermitencia en tu red. Tus datos están guardados; toca el botón de nuevo.');
+    return;
+  }
+
+  unqueueLead(leadId);
+
+  const cleanParams = new URLSearchParams({
+    lead: leadId,
+    modo: state.mode,
+    goal: 'fiscal',
+    calificado: qualified ? '1' : '0'
+  }).toString();
+
+  let wentToThanks = false;
+  const goToThanks = () => {
+    if (wentToThanks) return;
+    wentToThanks = true;
+    location.href = CONFIG.THANKS_PAGE + '?' + cleanParams;
+  };
+
+  const waitsForGoogle = trackConversionIfQualified(leadId, qualified, goToThanks);
+  setTimeout(goToThanks, waitsForGoogle ? 1400 : 500);
+}
+
+/* =====================================================================
+   MODALES CON :target Y CIERRE SIN SALTO DE PANTALLA
+   ===================================================================== */
+function setupModals(){
+  const syncVideo = () => {
+    const f = $('youtubePlayer');
+    const open = location.hash === '#videoModal';
+    if (open && !f.getAttribute('src')) f.setAttribute('src', CONFIG.VIDEO_URL);
+    if (!open && f.getAttribute('src')) f.removeAttribute('src');
+  };
+  const closeModalClean = ev => {
+    if (ev) ev.preventDefault();
+    if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    else location.hash = '';
+    syncVideo();
+  };
+  window.addEventListener('hashchange', syncVideo);
+  syncVideo();
+  document.querySelectorAll('[data-close-modal]').forEach(btn => btn.addEventListener('click', closeModalClean));
+  document.querySelectorAll('.modal').forEach(m => {
+    m.addEventListener('click', ev => { if (ev.target === m) closeModalClean(ev); });
+  });
+}
+
+function setupSticky(){
+  const bar = $('stickyBar'), card = $('formCard'), nameIn = $('formNombre'), submitBtn = $('formSubmitBtn');
+  if (!bar || !card || !nameIn || !submitBtn) return;
+
+  // La barra se ve siempre que el botón principal no esté en pantalla
+  // y se esconde mientras la persona escribe (el teclado ya ocupa la pantalla).
+  const checkVisibility = () => {
+    const r = submitBtn.getBoundingClientRect();
+    const btnVisible = r.top >= 0 && r.bottom <= window.innerHeight;
+    const a = document.activeElement;
+    const typing = !!a && a.tagName === 'INPUT' && card.contains(a);
+    bar.classList.toggle('off', btnVisible || typing);
+  };
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  window.addEventListener('resize', checkVisibility, { passive: true });
+  card.addEventListener('focusin', checkVisibility);
+  card.addEventListener('focusout', () => setTimeout(checkVisibility, 0));
+  checkVisibility();
+
+  // Lleva directo al campo de nombre y deja WhatsApp y el botón a la vista, arriba del teclado
+  $('stickyBtn').addEventListener('click', () => {
+    const top = nameIn.getBoundingClientRect().top + window.scrollY - 130;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    setTimeout(() => nameIn.focus({ preventScroll: true }), 450);
+  });
+}
+
+function setupWhatsAppFallback(){
+  if (!CONFIG.WHATSAPP_NUMBER) return;
+  const msg = encodeURIComponent('Hola Santi, acabo de usar tu calculadora fiscal y quiero revisar mi plan personalizado.');
+  const a = $('waBtn');
+  a.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + msg;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateUrgencyCountdown();
+  captureAttribution();
+  $('incomeSlider').addEventListener('input', e => updateCalculator(e.target.value, true));$('incomeSlider').addEventListener('change', e => updateCalculator(e.target.value, true));
+  setupMobileFormFlow();
+  $('leadForm').addEventListener('submit', handleSubmit);
+  setupModals();
+  setupSticky();
+  setupWhatsAppFallback();
+  updateCalculator(45000, false);
+  flushPending();
+});
+</script>
+</body>
+</html>
