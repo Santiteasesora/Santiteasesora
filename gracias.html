@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1F33">
 <title>Paso 2 de 2: Confirma tu Horario | Santi te asesora</title>
-<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
-<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+
+<link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
+<link rel="apple-touch-icon" href="https://www.santiteasesora.com/logo-santi.png">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
@@ -17,222 +19,608 @@
   gtag('config', 'AW-18490645254');
 </script>
 
+<!-- Misma familia tipográfica que profesionistas.html e index.html -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --emerald:#145C52; --gold:#D9A441; --cream:#FFF5E3; --navy:#0F2942; --dark:#292C2B; --bg:#FAF8F5;
+/* =====================================================================
+   SISTEMA DE DISEÑO: UNIFICADO CON PROFESIONISTAS E INDEX
+   ===================================================================== */
+:root {
+  --navy: #0B1F33;
+  --navy-mid: #0F2942;
+  --emerald: #145C52;
+  --emerald-dark: #0E443C;
+  --gold: #D9A441;
+  --gold-hover: #E5B352;
+  --bg: #F8F7F4;
+  --surface: #FFFFFF;
+  --ink: #0F172A;
+  --muted: #475569;
+  --subtle: #64748B;
+  --line: #E2E8F0;
+  --r-lg: 18px;
+  --r-md: 12px;
+  --r-sm: 8px;
+  --shadow-sm: 0 2px 8px rgba(11, 31, 51, 0.05);
+  --shadow-xl: 0 20px 40px -15px rgba(11, 31, 51, 0.20);
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-button{font-family:inherit;cursor:pointer}
-a{color:var(--emerald)}
 
-/* Header Institucional */
-.header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--cream);padding:10px 16px}
-.header-in{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15px}
-.brand img{height:34px;width:auto}
-.status-pill{background:rgba(20,92,82,.1);border:1px solid rgba(20,92,82,.3);color:var(--emerald);font-size:11.5px;font-weight:800;padding:5px 11px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
-.status-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.25)}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+button, select { font-family: inherit; cursor: pointer; }
+a { color: var(--emerald); text-decoration: none; }
+.hidden { display: none !important; }
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
-/* Layout Principal */
-.wrap{max-width:940px;margin:0 auto;padding:18px 16px 44px;display:grid;gap:20px}
-@media(min-width:860px){
-  .wrap{grid-template-columns:1fr 1.1fr;align-items:start;padding-top:28px;gap:28px}
+/* ===================== HEADER ===================== */
+.topbar {
+  background: rgba(248, 247, 244, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 16px;
+}
+.topbar-in {
+  max-width: 1040px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  object-fit: contain;
+}
+.status-pill {
+  background: rgba(20, 92, 82, 0.1);
+  border: 1px solid rgba(20, 92, 82, 0.28);
+  color: var(--emerald);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 11px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16A34A;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.22);
 }
 
-/* Barra de Progreso */
-.progress-box{background:var(--bg);border:1px solid #eadfca;border-radius:14px;padding:10px 14px}
-.progress-top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase;margin-bottom:6px}
-.progress-top span.alert{color:var(--emerald)}
-.bar-bg{height:7px;background:#eadfca;border-radius:999px;overflow:hidden}
-.bar-fill{height:100%;width:85%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:999px}
+/* ===================== LAYOUT PRINCIPAL ===================== */
+/* En móvil: primero la tarjeta de acción (agendar) y debajo el expediente detallado.
+   En escritorio: 2 columnas lado a lado (Expediente a la izquierda, Agenda a la derecha). */
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "action"
+    "dossier";
+}
+.action-card { grid-area: action; }
+.dossier { grid-area: dossier; }
 
-/* Columna 1: Expediente y Proyección */
-.dossier{background:var(--navy);color:#fff;border-radius:22px;padding:20px;box-shadow:0 18px 36px -18px rgba(15,41,66,.45);display:grid;gap:14px}
-.dossier-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px}
-.dossier-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);background:rgba(217,164,65,.15);padding:3px 10px;border-radius:999px}
-.folio{font-size:12px;color:rgba(255,245,227,.7);font-family:monospace}
-.dossier h1{font-size:clamp(21px,5vw,25px);line-height:1.2;font-weight:800;color:#fff}
-.dossier h1 span{color:var(--gold)}
-.dossier-sub{font-size:13.5px;color:rgba(255,245,227,.85);line-height:1.4}
+@media (min-width: 880px) {
+  .wrap {
+    grid-template-columns: 1fr 1.12fr;
+    grid-template-areas: "dossier action";
+    align-items: start;
+    padding-top: 28px;
+    gap: 28px;
+  }
+}
 
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.metric{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px}
-.metric.highlight{background:var(--emerald);border-color:var(--gold)}
-.metric small{display:block;font-size:11px;color:rgba(255,245,227,.8);line-height:1.2}
-.metric.highlight small{color:var(--gold);font-weight:800;text-transform:uppercase}
-.metric b{display:block;font-size:18px;margin-top:4px;color:#fff}
-.metric span{display:block;font-size:10.5px;color:rgba(255,245,227,.75);margin-top:2px}
+/* ===================== TARJETA DE ACCIÓN (PASO 2: AGENDAR) ===================== */
+.action-card {
+  background: var(--surface);
+  border: 2px solid var(--emerald);
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 640px) { .action-card { padding: 24px 22px; } }
 
-.profile-summary{background:rgba(255,255,255,.06);border-radius:12px;padding:11px 13px;font-size:12.5px;display:grid;gap:5px;color:rgba(255,245,227,.9)}
-.profile-summary div{display:flex;justify-content:space-between;gap:8px}
-.profile-summary strong{color:var(--cream);text-align:right}
+.progress-box {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+}
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.progress-top span.alert { color: var(--emerald); }
+.bar-bg {
+  height: 7px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  width: 88%;
+  background: linear-gradient(90deg, var(--emerald), var(--gold));
+  border-radius: 999px;
+}
 
-.advisor-box{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.09);border:1px solid rgba(217,164,65,.35);border-radius:14px;padding:11px}
-.advisor-box img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--gold);flex-shrink:0}
-.advisor-box b{display:block;font-size:13.5px;color:#fff}
-.advisor-box span{display:block;font-size:11.5px;color:rgba(255,245,227,.8);line-height:1.3}
-
-/* Columna 2: Tarjeta de Agendamiento Limpio */
-.action-card{background:#fff;border:2px solid var(--emerald);border-radius:24px;padding:20px;box-shadow:0 20px 40px -20px rgba(15,41,66,.25);display:grid;gap:14px}
-.action-card h2{font-size:19px;color:var(--navy);font-weight:800;line-height:1.25}
-.action-card p.lead{font-size:14px;color:rgba(41,44,43,.86);line-height:1.45}
+.action-card h1 {
+  font-size: clamp(20px, 4.5vw, 24px);
+  color: var(--navy);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.action-card p.lead {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.action-card p.lead strong { color: var(--navy); }
 
 /* Caja Destacada del Calendario en Vivo */
-.cal-trigger-box{background:linear-gradient(135deg,#0F2942 0%,#145C52 100%);border:2px solid var(--gold);border-radius:18px;padding:16px;color:#fff;display:grid;gap:10px}
-.cal-trigger-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.cal-badge{font-size:10.5px;font-weight:800;text-transform:uppercase;background:rgba(217,164,65,.2);color:var(--gold);padding:3px 9px;border-radius:999px;letter-spacing:.03em}
-.cal-trigger-box h3{font-size:16px;font-weight:800;color:#fff;line-height:1.25}
-.cal-trigger-box p{font-size:12.5px;color:rgba(255,245,227,.88);line-height:1.35}
-.btn-open-cal{width:100%;min-height:52px;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-size:14.5px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;box-shadow:0 8px 18px -6px rgba(0,0,0,.35);transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-open-cal:hover{background:#e5b24d;transform:translateY(-1px)}
+.cal-trigger-box {
+  background: linear-gradient(135deg, #0B1F33 0%, #145C52 100%);
+  border: 2px solid var(--gold);
+  border-radius: var(--r-md);
+  padding: 16px;
+  color: #fff;
+  display: grid;
+  gap: 10px;
+}
+.cal-badge {
+  display: inline-block;
+  width: fit-content;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: rgba(217, 164, 65, 0.2);
+  color: var(--gold);
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+.cal-trigger-box h2 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+}
+.cal-trigger-box p {
+  font-size: 12.5px;
+  color: #E2E8F0;
+  line-height: 1.4;
+}
+.btn-open-cal {
+  width: 100%;
+  min-height: 52px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.35);
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-open-cal:hover { background: var(--gold-hover); transform: translateY(-1px); }
 
-/* Divisor elegante */
-.divider{display:flex;align-items:center;gap:10px;color:rgba(41,44,43,.55);font-size:11.5px;font-weight:700;text-transform:uppercase}
-.divider::before,.divider::after{content:"";flex:1;height:1px;background:#e5dccb}
+/* Divisor */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--subtle);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
 
-/* Selector rápido de turno a 1 pulgar */
-.slot-label{display:block;font-size:12px;font-weight:800;color:var(--navy);text-transform:uppercase;margin-bottom:6px}
-.slots{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.slot-btn{min-height:46px;padding:8px 10px;border-radius:11px;border:1px solid #eadfca;background:var(--bg);color:var(--dark);font-size:13.5px;font-weight:600;text-align:left;line-height:1.2;transition:all .15s}
-.slot-btn[aria-pressed="true"]{border:2px solid var(--emerald);background:rgba(20,92,82,.1);color:var(--navy);font-weight:800}
-.day-select{width:100%;min-height:46px;font-size:16px;padding:9px 12px;border-radius:11px;border:1px solid #eadfca;background:var(--bg);color:var(--navy);font-weight:600;margin-top:6px}
+/* Selector rápido de turno vía WhatsApp */
+.slot-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.slot-btn {
+  min-height: 48px;
+  padding: 8px 10px;
+  border-radius: var(--r-md);
+  border: 1px solid #CBD5E1;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.25;
+  transition: all 0.15s;
+}
+.slot-btn small { color: var(--subtle); font-size: 11px; }
+.slot-btn[aria-pressed="true"] {
+  border: 2px solid var(--emerald);
+  background: rgba(20, 92, 82, 0.08);
+  color: var(--navy);
+  font-weight: 800;
+}
+.day-select {
+  width: 100%;
+  min-height: 46px;
+  font-size: 16px;
+  padding: 9px 12px;
+  border-radius: var(--r-md);
+  border: 1px solid #CBD5E1;
+  background: var(--bg);
+  color: var(--navy);
+  font-weight: 600;
+  margin-top: 8px;
+}
 
-.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;background:#16a34a;color:#fff;border:2px solid #15803d;border-radius:13px;font-size:14.5px;font-weight:800;text-transform:uppercase;text-decoration:none;letter-spacing:.02em;box-shadow:0 8px 18px -8px rgba(22,163,74,.6);transition:all .15s;text-align:center;padding:10px 14px;margin-top:10px}
-.cta-wa:hover{background:#15803d}
+.cta-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  background: #16A34A;
+  color: #fff;
+  border: 1px solid #15803D;
+  border-radius: var(--r-md);
+  font-size: 14.5px;
+  font-weight: 800;
+  box-shadow: 0 8px 18px -8px rgba(22, 163, 74, 0.55);
+  transition: background 0.15s;
+  text-align: center;
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+.cta-wa:hover { background: #15803D; }
 
-/* Protocolo Anti No-Show */
-.rules{background:var(--bg);border:1px solid #eadfca;border-radius:14px;padding:13px;display:grid;gap:7px}
-.rules-title{font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
-.rule-item{font-size:12.5px;color:rgba(41,44,43,.88);display:flex;gap:7px;align-items:flex-start;line-height:1.35}
-.rule-item span.icon{color:var(--emerald);font-weight:900;flex-shrink:0}
+/* Compromiso de la Sesión */
+.rules {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  display: grid;
+  gap: 6px;
+}
+.rules-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.rule-item {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+.rule-item span.icon { color: var(--emerald); font-weight: 900; flex-shrink: 0; }
+.rule-item strong { color: var(--navy); }
 
-/* Modal Nativo Limpio para Google Calendar */
-dialog#calDialog{border:none;border-radius:22px;max-width:780px;width:calc(100% - 20px);height:min(88vh,740px);margin:auto;padding:0;box-shadow:0 30px 60px rgba(0,0,0,.5);overflow:hidden;background:#fff}
-dialog#calDialog::backdrop{background:rgba(15,41,66,.82);backdrop-filter:blur(4px)}
-.cal-modal-wrap{display:flex;flex-direction:column;height:100%}
-.cal-modal-head{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:2px solid var(--gold)}
-.cal-modal-head b{font-size:14.5px;display:block}
-.cal-modal-head small{font-size:11.5px;color:var(--cream);opacity:.85}
-.cal-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;line-height:1}
-.cal-iframe-box{flex:1;overflow:auto;background:#fff;-webkit-overflow-scrolling:touch}
-.cal-iframe-box iframe{width:100%;height:100%;min-height:540px;border:0}
-.cal-modal-foot{background:var(--bg);border-top:1px solid #eadfca;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.cal-modal-foot span{font-size:12px;color:var(--navy);font-weight:700}
-.cal-done-wa{background:#16a34a;color:#fff;text-decoration:none;font-size:12.5px;font-weight:800;padding:9px 14px;border-radius:10px;text-transform:uppercase}
+/* ===================== COLUMNA EXPEDIENTE (DOSSIER) ===================== */
+.dossier {
+  background: linear-gradient(170deg, #0B1F33 0%, #0F2942 70%, #123E42 100%);
+  color: #fff;
+  border-radius: var(--r-lg);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 640px) { .dossier { padding: 22px 20px; } }
 
-.hidden{display:none!important}
-footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text-align:center;font-size:12px;margin-top:20px}
+.dossier-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 10px;
+  gap: 8px;
+}
+.dossier-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  background: rgba(217, 164, 65, 0.16);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.folio {
+  font-size: 12px;
+  color: #CBD5E1;
+  font-family: var(--font-mono);
+}
+.dossier h2 {
+  font-size: clamp(19px, 4.2vw, 23px);
+  line-height: 1.25;
+  font-weight: 800;
+  color: #fff;
+}
+.dossier h2 span { color: var(--gold); }
+.dossier-sub {
+  font-size: 13px;
+  color: #CBD5E1;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.metric {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--r-md);
+  padding: 12px;
+}
+.metric.highlight {
+  background: var(--emerald);
+  border-color: rgba(217, 164, 65, 0.7);
+}
+.metric small {
+  display: block;
+  font-size: 11px;
+  color: #E2E8F0;
+  line-height: 1.2;
+}
+.metric.highlight small {
+  color: var(--gold);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.metric b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(16px, 4vw, 19px);
+  margin-top: 4px;
+  color: #fff;
+  line-height: 1.2;
+}
+.metric span {
+  display: block;
+  font-size: 10.5px;
+  color: #CBD5E1;
+  margin-top: 3px;
+}
+
+.profile-summary {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--r-md);
+  padding: 11px 13px;
+  font-size: 12.5px;
+  display: grid;
+  gap: 6px;
+  color: #CBD5E1;
+}
+.profile-summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.profile-summary strong {
+  color: #fff;
+  text-align: right;
+}
+
+.advisor-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(217, 164, 65, 0.35);
+  border-radius: var(--r-md);
+  padding: 11px 12px;
+}
+.advisor-box img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+.advisor-box b { display: block; font-size: 13.5px; color: #fff; }
+.advisor-box span { display: block; font-size: 11.5px; color: #CBD5E1; line-height: 1.35; }
+
+/* ===================== MODAL PARA GOOGLE CALENDAR ===================== */
+dialog#calDialog {
+  border: none;
+  border-radius: var(--r-lg);
+  max-width: 780px;
+  width: calc(100% - 20px);
+  height: min(88vh, 740px);
+  margin: auto;
+  padding: 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  background: #fff;
+}
+dialog#calDialog::backdrop {
+  background: rgba(11, 31, 51, 0.82);
+  backdrop-filter: blur(4px);
+}
+.cal-modal-wrap { display: flex; flex-direction: column; height: 100%; }
+.cal-modal-head {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--gold);
+}
+.cal-modal-head b { font-size: 14.5px; display: block; }
+.cal-modal-head small { font-size: 11.5px; color: #CBD5E1; }
+.cal-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+}
+.cal-iframe-box {
+  flex: 1;
+  overflow: auto;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+.cal-iframe-box iframe { width: 100%; height: 100%; min-height: 540px; border: 0; }
+.cal-modal-foot {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cal-modal-foot span { font-size: 12px; color: var(--navy); font-weight: 700; }
+.cal-done-wa {
+  background: #16A34A;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 9px 14px;
+  border-radius: var(--r-sm);
+}
+
+footer {
+  background: var(--navy);
+  color: #CBD5E1;
+  padding: 26px 16px;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="header-in">
+<header class="topbar">
+  <div class="topbar-in">
     <a class="brand" href="index.html">
-      <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" width="34" height="34" alt="Santi te asesora"
-           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
+      <img src="logo-santi.png" width="32" height="32" alt="Santi te asesora"
+           onerror="this.onerror=null;this.src='https://www.santiteasesora.com/logo-santi.png';">
       <span>Santi te asesora</span>
     </a>
-    <span class="status-pill"><span class="status-dot"></span>Expediente Registrado</span>
+    <span class="status-pill"><span class="status-dot"></span>Cálculo Guardado</span>
   </div>
 </header>
 
 <main class="wrap">
 
-  <!-- COLUMNA 1: RESUMEN EJECUTIVO CAMALEÓNICO DEL PROSPECTO -->
-  <section class="dossier" aria-label="Resumen de tu proyección">
-    <div class="dossier-head">
-      <span class="dossier-tag" id="dossierTag">Diagnóstico Preliminar</span>
-      <span class="folio" id="leadFolio">Folio: #SANTI-2026</span>
-    </div>
-
-    <div>
-      <h1 id="greetingTitle">Tu proyección patrimonial está <span>calculada y registrada</span></h1>
-      <p class="dossier-sub" id="greetingSub" style="margin-top:6px">
-        Hemos generado tu ficha preliminar para revisarla en pantalla durante tu sesión ejecutiva 1 a 1 con Santiago.
-      </p>
-    </div>
-
-    <!-- Cajas dinámicas (Se adaptan automáticamente a Impuestos/Retiro, Ahorro 3-5 años, Alfa Medical $170M o Seguro de Vida) -->
-    <div class="metrics" id="deducibleMetrics">
-      <div class="metric">
-        <small id="metric1Label">Capacidad anual deducible (Art. 151)</small>
-        <b id="sumDeductible">$54,000 / año</b>
-        <span id="metric1Sub">Tope personal de ley</span>
-      </div>
-      <div class="metric highlight">
-        <small id="metric2Label">Devolución SAT estimada</small>
-        <b id="sumRefund">$12,701 MXN*</b>
-        <span id="metric2Sub">Saldo a favor proyectado</span>
-      </div>
-    </div>
-
-    <!-- Vista especial cuando elige RESICO en modo fiscal -->
-    <div class="metrics hidden" id="resicoMetrics" style="grid-template-columns:1fr">
-      <div class="metric highlight">
-        <small>Estrategia Asignada para RESICO</small>
-        <b style="font-size:17px">Art. 93 LISR (Rendimientos Exentos) + Liquidez 3 a 5 años</b>
-        <span>Estructura en UDIs o Dólares con protección patrimonial</span>
-      </div>
-    </div>
-
-    <div class="profile-summary">
-      <div><span>Esquema / Régimen:</span> <strong id="sumRegimen">Sueldos y Salarios</strong></div>
-      <div><span>Ingreso base proyectado:</span> <strong id="sumIncome">$45,000 MXN / mes</strong></div>
-      <div><span>Meta prioritaria:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
-    </div>
-
-    <div class="advisor-box">
-      <img src="https://lh3.googleusercontent.com/d/1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt" width="48" height="48" alt="Santiago - Asesor Patrimonial"
-           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1Rp3yy6IRCA8JQBfX30HM_SCXouqK1bPt&sz=w500';">
-      <div>
-        <b>Atiende: Santiago (Cédula CNSF C412676)</b>
-        <span>Especialista en Estrategias Patrimoniales · Respaldo Seguros Monterrey NYL</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- COLUMNA 2: PASO 2 DE 2 (AGENDA EN MODAL + WHATSAPP PUENTE) -->
-  <section class="action-card">
+  <!-- TARJETA 1 EN MÓVIL (DERECHA EN DESKTOP): PASO 2 DE 2 — AGENDAR HORARIO -->
+  <section class="action-card" aria-label="Confirmación de horario">
     <div class="progress-box">
       <div class="progress-top">
-        <span>Paso 2 de 2: Reserva de Horario</span>
-        <span class="alert">Último paso</span>
+        <span>Paso 2 de 2: Coordina tu sesión</span>
+        <span class="alert" id="topFolioBadge">Último paso</span>
       </div>
       <div class="bar-bg"><div class="bar-fill"></div></div>
     </div>
 
-    <h2>Elige cómo prefieres bloquear tu sesión de 30 minutos</h2>
+    <h1 id="actionMainTitle">Elige cómo prefieres agendar tu sesión por Google Meet</h1>
     <p class="lead">
-      Puedes seleccionar el día y hora exacta directamente en mi <strong>Calendario en Vivo</strong> (te enviará invitación de Google Meet en automático) o confirmar tu turno preferido por <strong>WhatsApp</strong>.
+      Selecciona el día y hora que mejor te acomode directamente en mi <strong>Calendario en Vivo</strong> (te enviará tu acceso de Google Meet en automático) o coordina tu turno por <strong>WhatsApp</strong>.
     </p>
 
-    <!-- OPCIÓN A: BOTÓN LIMPIO QUE ABRE EL MODAL DE GOOGLE CALENDAR (Solo se muestra a perfiles calificados >= $25k) -->
+    <!-- OPCIÓN 1: MODAL DE GOOGLE CALENDAR (Se muestra a perfiles calificados >= $25k) -->
     <div class="cal-trigger-box" id="directCalendarCard">
-      <div class="cal-trigger-top">
-        <span class="cal-badge">⚡ Opción Recomendada · Confirmación Automática</span>
-      </div>
-      <h3>Opción 1: Elegir día y hora exacta en Google Calendar</h3>
-      <p>Consulta mis horarios libres en tiempo real y recibe en tu correo el enlace privado de videollamada al instante.</p>
+      <span class="cal-badge">⚡ Opción Recomendada · Confirmación Inmediata</span>
+      <h2>Opción 1: Elegir día y hora en Google Calendar</h2>
+      <p>Consulta mis espacios disponibles en tiempo real y recibe en tu correo la invitación privada de Google Meet al instante.</p>
       <button type="button" class="btn-open-cal" id="openCalBtn">
         <span>📅 Abrir Agenda en Vivo y Elegir Hora →</span>
       </button>
     </div>
 
-    <div class="divider" id="methodDivider">o si prefieres agendar por mensaje</div>
+    <div class="divider" id="methodDivider">o si prefieres coordinar por mensaje</div>
 
-    <!-- OPCIÓN B: SELECTOR RÁPIDO CON 1 PULGAR VÍA WHATSAPP -->
+    <!-- OPCIÓN 2: SELECTOR RÁPIDO VÍA WHATSAPP -->
     <div id="quickScheduleBox">
-      <span class="slot-label">Selecciona tu turno preferido y confirma por WhatsApp:</span>
+      <span class="slot-label">Selecciona tu horario preferido y confirma por WhatsApp:</span>
       <div class="slots" id="slotButtons">
         <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<br><small>9:00 a 12:00 hrs</small></button>
         <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<br><small>12:00 a 15:00 hrs</small></button>
         <button type="button" class="slot-btn" aria-pressed="false" data-slot="Tarde (15:00 a 18:00 hrs)">🌤️ Tarde<br><small>15:00 a 18:00 hrs</small></button>
-        <button type="button" class="slot-btn" aria-pressed="false" data-slot="Noche Ejecutiva (18:30 a 20:30 hrs)">🌙 Noche<br><small>18:30 a 20:30 hrs</small></button>
+        <button type="button" class="slot-btn" aria-pressed="false" data-slot="Noche (18:30 a 20:30 hrs)">🌙 Noche<br><small>18:30 a 20:30 hrs</small></button>
       </div>
 
       <select id="daySelect" class="day-select" aria-label="Día de preferencia">
@@ -242,20 +630,64 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
       </select>
 
       <a href="#" id="confirmWaBtn" target="_blank" rel="noopener" class="cta-wa">
-        <span>💬 Confirmar mi Turno por WhatsApp →</span>
+        <span>💬 Confirmar mi sesión por WhatsApp →</span>
       </a>
     </div>
 
-    <!-- Protocolo Anti No-Show -->
+    <!-- Qué haremos en la sesión (Sin mencionar 30 minutos ni prometer coberturas sin evaluación) -->
     <div class="rules">
-      <div class="rules-title">📋 Compromiso de tu Sesión Ejecutiva:</div>
+      <div class="rules-title">📋 ¿Qué haremos en nuestra sesión por Google Meet?</div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span id="rule1Text"><strong>Puntualidad y Privacidad:</strong> Es una sesión 1 a 1 de 30 minutos donde proyectaremos tu escenario personalizado en pantalla.</span>
+        <span><strong>Conversación a tu medida:</strong> Platicaremos sobre tus metas personales y tu situación actual para diseñar la estrategia exacta que necesitas.</span>
       </div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span id="rule2Text"><strong>Perfil de Estrategia:</strong> Diseñada para perfiles con capacidad de aportación o presupuesto sugerido a partir de $1,500 MXN/mes.</span>
+        <span><strong>Claridad y viabilidad real:</strong> Revisaremos juntos tu corrida oficial y validaremos tu perfil para ofrecerte únicamente coberturas reales y viables para ti.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARJETA 2 EN MÓVIL (IZQUIERDA EN DESKTOP): EXPEDIENTE PRELIMINAR -->
+  <section class="dossier" aria-label="Resumen de tu simulación">
+    <div class="dossier-head">
+      <span class="dossier-tag" id="dossierTag">Resumen Preliminar</span>
+      <span class="folio" id="leadFolio">Folio: #SANTI-2026</span>
+    </div>
+
+    <div>
+      <h2 id="greetingTitle">Tu simulación está <span>guardada y lista</span></h2>
+      <p class="dossier-sub" id="greetingSub">
+        Hemos registrado estos datos preliminares para tomarlos como punto de partida durante nuestra conversación por Google Meet.
+      </p>
+    </div>
+
+    <!-- Cajas dinámicas (Muestran exactamente lo simulado en Profesionistas, Index o Empresario, sin inventar sumas aseguradas) -->
+    <div class="metrics" id="deducibleMetrics">
+      <div class="metric">
+        <small id="metric1Label">Ahorro anual deducible</small>
+        <b id="sumDeductible">$60,000 / año</b>
+        <span id="metric1Sub">Simulado en tu plan</span>
+      </div>
+      <div class="metric highlight">
+        <small id="metric2Label">Devolución estimada del SAT</small>
+        <b id="sumRefund">$14,112 MXN*</b>
+        <span id="metric2Sub">Beneficio preliminar</span>
+      </div>
+    </div>
+
+    <div class="profile-summary">
+      <div><span>Esquema / Régimen:</span> <strong id="sumRegimen">Sueldo u Honorarios</strong></div>
+      <div><span>Ingreso mensual base:</span> <strong id="sumIncome" class="num">$55,000 MXN / mes</strong></div>
+      <div><span>Meta prioritaria:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
+    </div>
+
+    <div class="advisor-box">
+      <img src="santi-perfil.jpg" width="48" height="48" alt="Santiago - Asesor Patrimonial"
+           onerror="this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';">
+      <div>
+        <b>Te atiende: Santiago (Cédula CNSF C412676)</b>
+        <span>Estrategia Patrimonial · Respaldo Seguros Monterrey NYL y MASS Asociados</span>
       </div>
     </div>
   </section>
@@ -268,7 +700,7 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
     <div class="cal-modal-head">
       <div>
         <b>Agenda en Vivo · Santiago (Santi te asesora)</b>
-        <small>Selecciona el día y horario que mejor te acomode</small>
+        <small>Selecciona el día y horario que mejor te acomode para nuestro Google Meet</small>
       </div>
       <button type="button" class="cal-close" id="closeCalBtn" aria-label="Cerrar calendario">×</button>
     </div>
@@ -285,7 +717,7 @@ footer{background:var(--navy);color:rgba(255,245,227,.75);padding:24px 16px;text
 </dialog>
 
 <footer>
-  <p>© 2026 <strong>Santi te asesora</strong> · Santiago, Agente Autorizado con Cédula CNSF <strong>C412676</strong> en intermediación con Seguros Monterrey New York Life y MASS Asociados.</p>
+  <p>© 2026 <strong>Santi te asesora</strong> · Santiago, Agente Autorizado con Cédula CNSF <strong>C412676</strong> en alianza con Seguros Monterrey New York Life y MASS Asociados.</p>
 </footer>
 
 <script>
@@ -305,10 +737,11 @@ let leadData = {
   lead: 'SANTI-2026',
   nombre: '',
   wa: '',
-  regimen: 'Sueldos / Honorarios',
-  ingreso: 45000,
-  deducible: 54000,
-  devolucion: 12701,
+  regimen: 'Sueldo u Honorarios',
+  ingreso: 55000,
+  aportacion_mensual: 5000,
+  deducible: 60000,
+  devolucion: 14112,
   prioridad: 'Deducción SAT + Retiro (Art. 151)',
   calificado: true,
   goal: 'fiscal',
@@ -335,7 +768,7 @@ function loadLeadData(){
 
   const params = new URLSearchParams(location.search);
   if (params.get('lead')) leadData.lead = params.get('lead');
-  if (params.get('modo') === 'resico') leadData.regimen = 'RESICO';
+  if (params.get('modo') === 'resico') leadData.regimen = 'RESICO (Art. 93 Exención)';
   if (params.get('goal')) leadData.goal = params.get('goal');
   if (params.get('calificado') === '0') leadData.calificado = false;
 
@@ -345,13 +778,18 @@ function loadLeadData(){
 }
 
 /* =====================================================================
-   2. RENDERIZADO CAMALEÓNICO DEL EXPEDIENTE Y FILTRO DE CALENDARIO
+   2. RENDERIZADO CAMALEÓNICO DEL EXPEDIENTE (CERO FALSAS PROMESAS EN VIDA)
    ===================================================================== */
 function renderDossier(){
   $('leadFolio').textContent = 'Folio: #' + leadData.lead;
+  $('topFolioBadge').textContent = 'Folio #' + leadData.lead;
 
   const firstName = leadData.nombre ? leadData.nombre.trim().split(/\s+/)[0] : '';
   const namePrefix = firstName ? `${firstName}, tu ` : 'Tu ';
+
+  if (firstName){
+    $('actionMainTitle').textContent = `${firstName}, elige cómo prefieres agendar tu sesión por Google Meet`;
+  }
 
   $('sumRegimen').textContent = leadData.regimen;
   $('sumIncome').textContent = money(leadData.ingreso) + ' MXN / mes';
@@ -359,69 +797,70 @@ function renderDossier(){
 
   const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
   const goal = leadData.goal || 'fiscal';
+  const monthlySave = Number(leadData.aportacion_mensual) || Math.max(1500, Math.round((leadData.ingreso * 0.10) / 500) * 500);
 
-  // Caso A: Viene de index.html y eligió Gastos Médicos, Ahorro 3-5 años o Seguro de Vida
-  if (goal === 'gmm' || goal === 'ahorro' || goal === 'vida'){
-    $('deducibleMetrics').classList.remove('hidden');
-    $('resicoMetrics').classList.add('hidden');
+  if (goal === 'gmm'){
+    $('dossierTag').textContent = 'Resumen Blindaje Médico';
+    $('greetingTitle').innerHTML = `${namePrefix}estrategia de salud está <span>guardada y registrada</span>`;
+    $('metric1Label').textContent = leadData.box1Label || 'Cobertura Alfa Medical';
+    $('sumDeductible').textContent = leadData.box1Value || 'Hasta $170M MXN';
+    $('metric1Sub').textContent = 'Sujeta a valoración en sesión';
 
-    if (goal === 'gmm'){
-      $('dossierTag').textContent = 'Diagnóstico Blindaje Médico';
-      $('greetingTitle').innerHTML = `${namePrefix}estrategia de salud está <span>pre-configurada y registrada</span>`;
-      $('metric1Label').textContent = leadData.box1Label || 'Suma Asegurada Médica';
-      $('sumDeductible').textContent = leadData.box1Value || 'Hasta $170M MXN';
-      $('metric1Sub').textContent = 'Cobertura Alfa Medical SMNYL';
+    $('metric2Label').textContent = leadData.box2Label || 'Presupuesto mensual estimado';
+    $('sumRefund').textContent = leadData.box2Value || (money(monthlySave) + ' / mes*');
+    $('metric2Sub').textContent = 'Prima deducible (Art. 151 VI)';
 
-      $('metric2Label').textContent = leadData.box2Label || 'Beneficio Fiscal (Art. 151 VI)';
-      $('sumRefund').textContent = leadData.box2Value || 'Prima 100% Deducible*';
-      $('metric2Sub').textContent = 'Deducción personal en declaración anual';
+  } else if (goal === 'ahorro'){
+    const capital5Years = Math.round(monthlySave * 12 * (((Math.pow(1 + 0.065, 5) - 1) / 0.065) * (1 + 0.065)));
+    $('dossierTag').textContent = 'Meta de Capital a Mediano Plazo';
+    $('greetingTitle').innerHTML = `${namePrefix}meta de ahorro está <span>calculada y registrada</span>`;
+    $('metric1Label').textContent = leadData.box1Label || 'Aportación mensual sugerida';
+    $('sumDeductible').textContent = leadData.box1Value || (money(monthlySave) + ' / mes');
+    $('metric1Sub').textContent = 'En UDIs o Dólares';
 
-    } else if (goal === 'ahorro'){
-      const monthlySave = Math.max(1500, Math.round((leadData.ingreso * 0.12) / 500) * 500);
-      const capital5Years = Math.round(monthlySave * 60 * 1.18);
+    $('metric2Label').textContent = leadData.box2Label || 'Capital estimado a 5 años';
+    $('sumRefund').textContent = leadData.box2Value || (money(capital5Years) + ' MXN*');
+    $('metric2Sub').textContent = 'Cuenta con liquidez para proyectos';
 
-      $('dossierTag').textContent = 'Proyección de Capital a Mediano Plazo';
-      $('greetingTitle').innerHTML = `${namePrefix}meta de capitalización está <span>calculada y registrada</span>`;
-      $('metric1Label').textContent = leadData.box1Label || 'Aportación mensual sugerida';
-      $('sumDeductible').textContent = leadData.box1Value || (money(monthlySave) + ' / mes');
-      $('metric1Sub').textContent = 'En UDIs o Dólares (Inflación protegida)';
+  } else if (goal === 'vida'){
+    // CERO CÁLCULO DE SUMA ASEGURADA INVENTADA: Todo se remite a la evaluación en Google Meet
+    $('dossierTag').textContent = 'Diseño de Protección Familiar';
+    $('greetingTitle').innerHTML = `${namePrefix}solicitud de protección está <span>registrada</span>`;
+    $('metric1Label').textContent = leadData.box1Label || 'Aportación mensual planeada';
+    $('sumDeductible').textContent = leadData.box1Value || (money(monthlySave) + ' / mes');
+    $('metric1Sub').textContent = 'Base para diseñar tu estrategia';
 
-      $('metric2Label').textContent = leadData.box2Label || 'Capital estimado a 5 años';
-      $('sumRefund').textContent = leadData.box2Value || (money(capital5Years) + ' MXN*');
-      $('metric2Sub').textContent = 'Bolsillo con liquidez para proyectos';
-
-    } else if (goal === 'vida'){
-      const lifeCover = leadData.ingreso * 12 * 10;
-
-      $('dossierTag').textContent = 'Diagnóstico de Protección Vital';
-      $('greetingTitle').innerHTML = `${namePrefix}blindaje familiar está <span>calculado y registrado</span>`;
-      $('metric1Label').textContent = leadData.box1Label || 'Respaldo por Invalidez Total';
-      $('sumDeductible').textContent = leadData.box1Value || (money(lifeCover) + '*');
-      $('metric1Sub').textContent = 'Suma entregada libre de impuestos';
-
-      $('metric2Label').textContent = leadData.box2Label || 'Protección Familiar (10 años)';
-      $('sumRefund').textContent = leadData.box2Value || (money(lifeCover) + ' MXN*');
-      $('metric2Sub').textContent = 'En UDIs o Dólares desde el día 1';
-    }
+    $('metric2Label').textContent = leadData.box2Label || 'Alcance de Protección';
+    $('sumRefund').textContent = leadData.box2Value || 'Diseño 1 a 1 en sesión*';
+    $('metric2Sub').textContent = 'Según tus metas y perfil de salud';
 
   } else {
-    // Caso B: Modo Fiscal / Retiro (Profesionistas, Empresarios o pestaña Fiscal en Index)
-    $('greetingTitle').innerHTML = `${namePrefix}proyección fiscal está <span>calculada y registrada</span>`;
+    // Modo Fiscal / Retiro (Sueldos/Honorarios o RESICO)
+    $('greetingTitle').innerHTML = `${namePrefix}simulación fiscal está <span>calculada y registrada</span>`;
 
     if (isResico){
-      $('deducibleMetrics').classList.add('hidden');
-      $('resicoMetrics').classList.remove('hidden');
-    } else {
-      $('deducibleMetrics').classList.remove('hidden');
-      $('resicoMetrics').classList.add('hidden');
-      $('metric1Label').textContent = 'Capacidad anual deducible (Art. 151)';
-      $('sumDeductible').textContent = money(leadData.deducible) + ' / año';
-      $('metric1Sub').textContent = 'Tope personal de ley';
+      const annualSave = monthlySave * 12;
+      const r = 0.078;
+      const tenYearCap = Math.round(annualSave * (((Math.pow(1 + r, 10) - 1) / r) * (1 + r)));
 
-      $('metric2Label').textContent = 'Devolución SAT estimada';
-      const refNumber = Number(leadData.devolucion) || 12701;
-      $('sumRefund').textContent = money(refNumber) + ' MXN*';
-      $('metric2Sub').textContent = 'Saldo a favor proyectado';
+      $('dossierTag').textContent = 'Estrategia RESICO · Art. 93';
+      $('metric1Label').textContent = leadData.box1Label || 'Ahorro anual a tu plan (Art. 93)';
+      $('sumDeductible').textContent = leadData.box1Value || (money(annualSave) + ' / año');
+      $('metric1Sub').textContent = 'En UDIs o Dólares';
+
+      $('metric2Label').textContent = leadData.box2Label || 'Proyección exenta (10 años)';
+      $('sumRefund').textContent = leadData.box2Value || (money(tenYearCap) + ' MXN*');
+      $('metric2Sub').textContent = 'Rendimientos libres de ISR (Art. 93)';
+    } else {
+      $('dossierTag').textContent = 'Estrategia Fiscal · Art. 151';
+      $('metric1Label').textContent = leadData.box1Label || 'Ahorro anual deducible';
+      $('sumDeductible').textContent = leadData.box1Value || (money(leadData.deducible) + ' / año');
+      $('metric1Sub').textContent = 'Dentro del tope de ley';
+
+      $('metric2Label').textContent = leadData.box2Label || 'Devolución estimada del SAT';
+      const refNumber = Number(leadData.devolucion) || 14112;
+      $('sumRefund').textContent = leadData.box2Value || (money(refNumber) + ' MXN*');
+      $('metric2Sub').textContent = 'Saldo a favor estimado en abril';
     }
   }
 
@@ -435,7 +874,7 @@ function renderDossier(){
 }
 
 /* =====================================================================
-   3. GENERADOR DE MENSAJES DE WHATSAPP (ADAPTADO AL OBJETIVO ELEGIDO)
+   3. GENERADOR DE MENSAJES DE WHATSAPP (SIN MENCIONAR 30 MINUTOS)
    ===================================================================== */
 function updateWhatsAppLinks(){
   const dayPref = $('daySelect').value;
@@ -446,18 +885,18 @@ function updateWhatsAppLinks(){
   if (leadData.summaryMetric){
     beneficioTxt = leadData.summaryMetric;
   } else if (isResico){
-    beneficioTxt = 'Estrategia RESICO (Art. 93 Exento + Liquidez 3-5 años)';
+    beneficioTxt = 'Estrategia RESICO Art. 93 (Rendimientos libres de ISR)';
   } else {
-    beneficioTxt = `Devolución SAT estimada de *${money(Number(leadData.devolucion) || 12701)} MXN*`;
+    beneficioTxt = `Devolución estimada del SAT de *${money(Number(leadData.devolucion) || 14112)} MXN*`;
   }
 
   const msgSlot = [
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
-    `Solicito confirmar mi Sesión Ejecutiva de Diagnóstico de 30 min con estos datos:`,
+    `Me gustaría coordinar mi sesión por Google Meet contigo con estos datos:`,
     `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
-    `• *Proyección:* ${beneficioTxt}`,
+    `• *Simulación:* ${beneficioTxt}`,
     `• *Meta:* ${leadData.prioridad}`,
     `• *Horario preferido:* ${selectedSlot} (${dayPref})`,
     ``,
@@ -467,13 +906,13 @@ function updateWhatsAppLinks(){
   const msgBooked = [
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
-    `✅ *Ya seleccioné mi día y hora en tu Google Calendar.*`,
+    `✅ *Ya seleccioné mi día y hora en tu Google Calendar para nuestra sesión por Google Meet.*`,
     `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
-    `• *Proyección:* ${beneficioTxt}`,
+    `• *Simulación:* ${beneficioTxt}`,
     `• *Meta:* ${leadData.prioridad}`,
     ``,
-    `Te escribo por aquí para dejar abierto nuestro canal de comunicación previo a la sesión.`
+    `Te escribo por aquí para dejar abierto nuestro canal de comunicación previo a la plática.`
   ].join('\n');
 
   $('confirmWaBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msgSlot)}`;
