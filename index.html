@@ -81,7 +81,7 @@ a { color: var(--emerald); text-decoration: none; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .highlight-text { color: var(--emerald); font-weight: 800; }
 
-/* ===================== TOP BAR ===================== */
+/* ===================== TOP BAR DE FUGA CERO ===================== */
 .topbar {
   position: sticky;
   top: 0;
@@ -413,7 +413,7 @@ input[type="range"].santi-range::-moz-range-thumb {
   padding: 0;
 }
 
-/* Selector de Régimen en 3 botones claros */
+/* Selector de Régimen en 3 botones claros (Se oculta cuando no aplica) */
 .regime-block {
   margin-top: 12px;
   padding-top: 10px;
@@ -1050,7 +1050,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
 <body>
 
-<!-- TOP BAR CON LOGO Y ENRUTAMIENTO -->
+<!-- TOP BAR DE FUGA CERO (Solo enlaces ancla internos) -->
 <header class="topbar">
   <div class="topbar-in">
     <a href="#formulario" class="brand-wordmark">
@@ -1059,9 +1059,9 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
       <span>Santi te asesora</span>
     </a>
     <nav class="topnav">
+      <a href="#formulario">Simulador</a>
       <a href="#soluciones">Soluciones</a>
-      <a href="profesionistas.html">Para Profesionistas</a>
-      <a href="empresario.html">Para Dueños de Negocio</a>
+      <a href="#perfiles">Por perfil</a>
       <a href="#casos">Casos reales</a>
       <a href="#dudas">Preguntas frecuentes</a>
     </nav>
@@ -1121,8 +1121,8 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
           </div>
         </div>
 
-        <!-- PASO 4: CÓMO RECIBES TUS INGRESOS -->
-        <div class="regime-block">
+        <!-- PASO 4: CÓMO RECIBES TUS INGRESOS (Se oculta automáticamente en Ahorro 3-5 años y Vida para eliminar fricción) -->
+        <div class="regime-block" id="regimeBlock">
           <label class="step-lbl">4. ¿Cómo recibes tus ingresos actuales?</label>
           <div class="regime-switch" role="group" aria-label="Selecciona cómo recibes tus ingresos">
             <button type="button" class="regime-btn active" id="btnRegime151">💼 Sueldo u Honorarios</button>
@@ -1590,7 +1590,7 @@ function getMarginalRate(base){
 }
 
 /* =====================================================================
-   MOTOR CAMALEÓNICO DE 4 SOLUCIONES (SIN PROMETER SUMA ASEGURADA EN VIDA)
+   MOTOR CAMALEÓNICO DE 4 SOLUCIONES (SIN FRICCIÓN Y SIN FALSAS PROMESAS)
    ===================================================================== */
 function recalculateAll(triggerPulse){
   const annualIncome = state.income * 12;
@@ -1626,6 +1626,10 @@ function recalculateAll(triggerPulse){
   state.tenYearCapital = Math.round(annualSaving * (((Math.pow(1 + r, 10) - 1) / r) * (1 + r)));
   const tenYearGain = Math.max(0, state.tenYearCapital - (annualSaving * 10));
   state.fiveYearCapital = Math.round(annualSaving * (((Math.pow(1 + 0.065, 5) - 1) / 0.065) * (1 + 0.065)));
+
+  // Mostrar el Paso 4 (Régimen) únicamente cuando aporta valor directo (Fiscal y GMM)
+  const needsRegimeStep = (state.goal === 'fiscal' || state.goal === 'gmm');
+  $('regimeBlock').classList.toggle('hidden', !needsRegimeStep);
 
   $('incomeDisplay').textContent = money(state.income) + ' MXN';
   $('savingDisplay').textContent = money(state.monthlySaving) + ' / mes';
@@ -1966,12 +1970,15 @@ async function handleSubmit(ev){
   const leadId = currentLeadId;
   const ids = getClickIds();
   const qualified = state.income >= CONFIG.QUALIFIED_INCOME;
+  const effectiveRegimen = (state.goal === 'ahorro' || state.goal === 'vida')
+    ? 'Se confirma en sesión Google Meet'
+    : ($('regimenInput').value || 'Sueldo u Honorarios (Art. 151)');
 
   const payload = {
     fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
     nombre: nombre,
     whatsapp: wa,
-    regimen: $('regimenInput').value || 'Sueldo u Honorarios (Art. 151)',
+    regimen: effectiveRegimen,
     origen: $('formOrigen').value,
     calculo_estimado: $('calcEstimadoHidden').value,
     utm_source: $('utm_source').value,
@@ -1986,19 +1993,19 @@ async function handleSubmit(ev){
     calificado: qualified ? 'SI' : 'NO'
   };
 
-  const isResico = state.mode === 'resico';
+  const isResico = state.mode === 'resico' && (state.goal === 'fiscal' || state.goal === 'gmm');
   const leadSessionData = {
     lead: leadId,
     nombre: nombre,
     wa: wa,
-    regimen: payload.regimen,
+    regimen: effectiveRegimen,
     ingreso: state.income,
     aportacion_mensual: state.monthlySaving,
     deducible: Math.round(isResico ? state.monthlySaving * 12 : state.effectiveDeductible),
     devolucion: isResico ? 'RESICO_Art93' : state.refund,
     prioridad: $('prioridadHidden').value,
     calificado: qualified,
-    modo: state.mode,
+    modo: isResico ? 'resico' : 'deducible',
     goal: state.goal,
     box1Label: state.box1Label,
     box1Value: state.box1Value,
@@ -2028,7 +2035,7 @@ async function handleSubmit(ev){
 
   const cleanParams = new URLSearchParams({
     lead: leadId,
-    modo: state.mode,
+    modo: isResico ? 'resico' : 'deducible',
     goal: state.goal,
     calificado: qualified ? '1' : '0'
   }).toString();
