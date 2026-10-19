@@ -1,209 +1,711 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Tu Diagnóstico Patrimonial y Fiscal | Santi te asesora</title>
-<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
-<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr">
+<meta name="theme-color" content="#0B1F33">
+<title>Mesa de Diseño Patrimonial en Vivo | Santi te asesora</title>
+
+<link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
+<link rel="apple-touch-icon" href="https://www.santiteasesora.com/logo-santi.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --em:#145C52; --em-light:#1b7a6d; --gold:#D9A441; --cream:#FFF5E3;
-  --navy:#0F2942; --dark:#292C2B; --bg:#FAF8F5;
+/* =====================================================================
+   SISTEMA DE DISEÑO: HOMOLOGADO 100% CON EL ECOSISTEMA SANTI TE ASESORA
+   ===================================================================== */
+:root {
+  --em: #145C52;
+  --em-light: #1b7a6d;
+  --gold: #D9A441;
+  --gold-hover: #E5B352;
+  --cream: #FFF5E3;
+  --navy: #0B1F33;
+  --navy-mid: #0F2942;
+  --dark: #0F172A;
+  --muted: #475569;
+  --bg: #F8F7F4;
+  --line: #E2E8F0;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--dark);background:var(--bg);line-height:1.45;font-size:16px;-webkit-font-smoothing:antialiased}
-button,input,select{font-family:inherit}
-button{cursor:pointer}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  color: var(--dark);
+  background: var(--bg);
+  line-height: 1.48;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font-family: inherit; }
+button { cursor: pointer; }
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.hidden { display: none !important; }
 
-/* Header Ejecutivo Minimalista */
-.header{background:rgba(255,255,255,.97);border-bottom:1px solid #e5dccb;padding:10px 16px;position:sticky;top:0;z-index:50;backdrop-filter:blur(6px)}
-.header-in{max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15.5px}
-.brand img{height:34px;width:auto}
-.badge-top{font-size:11.5px;font-weight:700;color:var(--em);background:rgba(20,92,82,.09);padding:4px 10px;border-radius:999px;border:1px solid rgba(20,92,82,.2)}
-
-.header-tools{display:flex;align-items:center;gap:8px}
-.phase-pill{font-size:11.5px;font-weight:700;color:var(--navy);background:var(--cream);border:1px solid rgba(217,164,65,.45);padding:5px 11px;border-radius:999px;display:none}
-@media(min-width:640px){.phase-pill{display:inline-block}}
-.timer-btn{background:var(--navy);color:#fff;font-size:12.5px;font-weight:800;padding:7px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--gold);min-height:36px}
-.timer-dot{width:8px;height:8px;border-radius:50%;background:#22c55e}
-.timer-btn.paused .timer-dot{background:#94a3b8}
-.timer-btn.warn .timer-dot{background:var(--gold)}
-.reset-btn{background:var(--bg);color:var(--navy);border:1px solid #d8cbb8;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;min-height:36px}
-
-/* Arquitectura Mobile-First: En celular los resultados se ven arriba o a 1 toque; en escritorio 2 columnas */
-.dashboard{max-width:1260px;margin:0 auto;padding:14px 14px 44px;display:grid;gap:18px}
-@media(min-width:980px){
-  .dashboard{grid-template-columns:405px 1fr;align-items:start;gap:22px;padding-top:18px}
+/* ===================== HEADER EJECUTIVO SIN RELOJ DE PRESIÓN ===================== */
+.header {
+  background: rgba(248, 247, 244, 0.96);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+.header-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  object-fit: contain;
+}
+.badge-top {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--em);
+  background: rgba(20, 92, 82, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 92, 82, 0.22);
 }
 
-/* Panel de Configuración (16px en inputs para evitar auto-zoom en iPhone/Android) */
-.panel{background:#fff;border:1.5px solid #e2d7c5;border-radius:22px;padding:16px;display:grid;gap:12px;box-shadow:0 12px 28px -18px rgba(15,41,66,.14)}
-.panel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0e8da;padding-bottom:9px;gap:6px;flex-wrap:wrap}
-.panel-tag{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--em);background:rgba(20,92,82,.09);padding:4px 9px;border-radius:999px;letter-spacing:.02em}
-.folio-box{display:flex;gap:5px;align-items:center}
-.folio-input{width:124px;height:36px;padding:4px 8px;border-radius:8px;border:1px solid #cbbba2;font-size:14px;font-family:monospace;font-weight:700;color:var(--navy);text-transform:uppercase;background:var(--bg)}
-.btn-load{background:var(--em);color:#fff;border:none;height:36px;padding:0 11px;border-radius:8px;font-size:12px;font-weight:800}
-.btn-clear{background:var(--bg);color:var(--navy);border:1px solid #d8cbb8;height:36px;padding:0 9px;border-radius:8px;font-size:12px;font-weight:700}
-.folio-msg{font-size:12px;font-weight:700;color:var(--em);background:rgba(20,92,82,.08);padding:7px 10px;border-radius:8px;display:none}
+.header-tools { display: flex; align-items: center; gap: 8px; }
+.cnsf-pill {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.cnsf-pill strong { color: var(--em); }
+.reset-btn {
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 34px;
+  transition: background 0.15s;
+}
+.reset-btn:hover { background: var(--cream); }
 
-/* Selector de Pilar a 1 Pulgar (Touch-friendly 48px) */
-.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.mode-btn{min-height:50px;padding:8px 10px;border-radius:12px;border:1px solid #d8cbb8;background:var(--bg);color:var(--dark);font-size:12.5px;font-weight:800;text-align:left;line-height:1.2;transition:all .15s}
-.mode-btn small{display:block;font-size:10.5px;font-weight:600;color:#64748b;margin-top:2px}
-.mode-btn.active{background:var(--navy);color:#fff;border:1.5px solid var(--gold);box-shadow:0 6px 14px -6px rgba(15,41,66,.35)}
-.mode-btn.active small{color:var(--cream);opacity:.92}
+/* ===================== LAYOUT PRINCIPAL ===================== */
+.dashboard {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 14px 48px;
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 980px) {
+  .dashboard {
+    grid-template-columns: 420px 1fr;
+    align-items: start;
+    gap: 22px;
+    padding-top: 20px;
+  }
+}
 
-/* Sliders de Alto Impacto (Visibles de inmediato) */
-.scard{background:var(--bg);border:1px solid #e2d7c5;border-radius:14px;padding:12px;display:grid;gap:7px}
-.stop{display:flex;justify-content:space-between;align-items:baseline}
-.stop span{font-size:11.5px;font-weight:800;color:var(--navy);text-transform:uppercase}
-.sval{font-size:19px;font-weight:900;color:var(--em)}
-input[type="range"]{width:100%;accent-color:var(--em);height:8px;cursor:pointer}
-.ssub{display:flex;justify-content:space-between;font-size:11.5px;color:#52606d;font-weight:600}
+/* ===================== PANEL IZQUIERDO: PARÁMETROS CONVERSACIONALES ===================== */
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 12px 28px -18px rgba(11, 31, 51, 0.14);
+}
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.panel-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--em);
+  background: rgba(20, 92, 82, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+.folio-box { display: flex; gap: 5px; align-items: center; }
+.folio-input {
+  width: 130px;
+  height: 36px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  background: var(--bg);
+}
+.btn-load {
+  background: var(--em);
+  color: #fff;
+  border: none;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.folio-msg {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--em);
+  background: rgba(20, 92, 82, 0.08);
+  padding: 7px 10px;
+  border-radius: 8px;
+  display: none;
+}
 
-.prow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:2px}
-.pbtn{min-height:42px;padding:6px 4px;border-radius:9px;border:1px solid rgba(20,92,82,.28);background:#fff;color:var(--em);font-size:11px;font-weight:800;line-height:1.15;transition:all .15s}
-.pbtn.active,.pbtn:hover{background:var(--em);color:#fff;border-color:var(--em)}
+/* Selector de Escenario (4 Botones) */
+.mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.mode-btn {
+  min-height: 52px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid #CBD5E1;
+  background: var(--bg);
+  color: var(--dark);
+  font-size: 12.5px;
+  font-weight: 800;
+  text-align: left;
+  line-height: 1.2;
+  transition: all 0.15s;
+}
+.mode-btn small {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 2px;
+}
+.mode-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 6px 14px -6px rgba(11, 31, 51, 0.35);
+}
+.mode-btn.active small { color: var(--gold); }
 
-.fgroup{display:grid;gap:4px}
-.flabel{font-size:11px;font-weight:800;color:var(--navy);text-transform:uppercase;display:flex;justify-content:space-between;letter-spacing:.02em}
-.flabel small{font-weight:600;color:#64748b;text-transform:none}
-.finput{width:100%;min-height:42px;padding:7px 10px;border-radius:10px;border:1px solid #d8cbb8;background:var(--bg);color:var(--navy);font-size:16px;font-weight:700;transition:border-color .15s,background .15s}
-.finput:focus{outline:none;border-color:var(--em);background:#fff}
-.finput::placeholder{color:#94a3b8;font-weight:500}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+/* Sliders */
+.scard {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  gap: 7px;
+}
+.scard.hybrid-split-card {
+  background: rgba(20, 92, 82, 0.06);
+  border: 1.5px solid rgba(20, 92, 82, 0.38);
+}
+.stop { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.stop span { font-size: 11px; font-weight: 800; color: var(--navy); text-transform: uppercase; }
+.sval { font-size: 18px; font-weight: 800; color: var(--em); font-family: var(--font-mono); }
+input[type="range"] { width: 100%; accent-color: var(--em); height: 8px; cursor: pointer; }
+.ssub { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); font-weight: 600; gap: 6px; flex-wrap: wrap; }
 
-/* Módulo Consultivo Alfa Medical (Sin precios que abrumen) */
-.gmm-discovery{display:none;background:rgba(20,92,82,.05);border:1.5px solid rgba(20,92,82,.35);border-radius:14px;padding:12px;gap:10px}
-.gmm-discovery.open{display:grid}
-.gmm-disc-head{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:800;color:var(--em);text-transform:uppercase}
-.gmm-note{font-size:12px;color:var(--navy);line-height:1.4;background:#fff;padding:9px 11px;border-radius:9px;border:1px solid #e2d7c5}
+.prow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 2px; }
+.pbtn {
+  min-height: 42px;
+  padding: 6px 4px;
+  border-radius: 9px;
+  border: 1px solid rgba(20, 92, 82, 0.28);
+  background: #fff;
+  color: var(--em);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.15;
+  transition: all 0.15s;
+}
+.pbtn.active, .pbtn:hover { background: var(--em); color: #fff; border-color: var(--em); }
 
-/* Acordeón limpio para datos complementarios (Edad Exacta, Nacimiento, Tabaco) para no saturar la vista */
-.extra-details{background:var(--bg);border:1px solid #e2d7c5;border-radius:12px;padding:9px 12px}
-.extra-details summary{font-size:12px;font-weight:800;color:var(--navy);cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center}
-.extra-details summary::after{content:"Ajustar edad / plazo ▾";font-size:11px;color:var(--em);font-weight:700}
-.extra-details[open] summary::after{content:"Ocultar ▴"}
-.extra-body{display:grid;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid #e5dccb}
+/* Botones rápidos para partir la Estrategia Híbrida */
+.split-presets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 3px;
+}
+.sp-btn {
+  background: #fff;
+  border: 1px solid #CBD5E1;
+  color: var(--navy);
+  border-radius: 7px;
+  padding: 4px 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+.sp-btn:hover { border-color: var(--em); color: var(--em); }
 
-/* Panel Derecho: Jerarquía 60-30-10 en Navy, Esmeralda y Dorado */
-.stage{display:grid;gap:16px}
-.board{background:var(--navy);color:#fff;border-radius:24px;padding:22px;display:grid;gap:16px;border:1px solid rgba(217,164,65,.28);box-shadow:0 20px 42px -18px rgba(15,41,66,.4)}
-.bhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid rgba(255,245,227,.12);padding-bottom:12px;flex-wrap:wrap}
-.bhead h1{font-size:clamp(19px,2.8vw,23px);font-weight:900;line-height:1.2;color:#fff}
-.bhead h1 span{color:var(--gold)}
-.bhead p{font-size:13px;color:rgba(255,245,227,.9);margin-top:4px}
-.tbadge{background:rgba(255,245,227,.08);border:1px solid rgba(217,164,65,.55);color:var(--gold);font-size:11.5px;font-weight:800;padding:5px 12px;border-radius:999px}
+.fgroup { display: grid; gap: 4px; }
+.flabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.02em;
+}
+.finput {
+  width: 100%;
+  min-height: 42px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  background: var(--bg);
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+}
+.finput:focus { outline: none; border-color: var(--em); background: #fff; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+/* Módulo Consultivo Alfa Medical */
+.gmm-discovery {
+  display: none;
+  background: rgba(20, 92, 82, 0.05);
+  border: 1.5px solid rgba(20, 92, 82, 0.35);
+  border-radius: 14px;
+  padding: 12px;
+  gap: 10px;
+}
+.gmm-discovery.open { display: grid; }
+.gmm-disc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--em);
+  text-transform: uppercase;
+}
+.gmm-note {
+  font-size: 12px;
+  color: var(--navy);
+  line-height: 1.4;
+  background: #fff;
+  padding: 9px 11px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+}
+
+/* Acordeón de Suscripción Médica y Plazo */
+.extra-details {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.extra-details summary {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.extra-details summary::after {
+  content: "Edad, Plazo y Salud ▾";
+  font-size: 11px;
+  color: var(--em);
+  font-weight: 700;
+}
+.extra-details[open] summary::after { content: "Ocultar ▴"; }
+.extra-body {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+/* ===================== PANEL DERECHO: PIZARRA CONSULTIVA ===================== */
+.stage { display: grid; gap: 16px; }
+.board {
+  background: linear-gradient(170deg, #0B1F33 0%, #0F2942 70%, #123E42 100%);
+  color: #fff;
+  border-radius: 22px;
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+  border: 1px solid rgba(217, 164, 65, 0.3);
+  box-shadow: 0 20px 42px -18px rgba(11, 31, 51, 0.4);
+}
+.bhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+.bhead h1 {
+  font-size: clamp(19px, 2.8vw, 24px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+}
+.bhead h1 span { color: var(--gold); }
+.bhead p { font-size: 13.5px; color: #E2E8F0; margin-top: 4px; max-width: 68ch; }
+.tbadge {
+  background: rgba(217, 164, 65, 0.15);
+  border: 1px solid rgba(217, 164, 65, 0.55);
+  color: var(--gold);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
 
 /* Barra de Herramientas Oficiales MNYL */
-.gmm-links-bar{display:none;background:rgba(20,92,82,.55);border:1px solid rgba(217,164,65,.6);border-radius:14px;padding:11px 14px;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.gmm-links-bar.open{display:flex}
-.gmm-links-bar span{font-size:12.5px;font-weight:800;color:var(--cream)}
-.gmm-btn-group{display:flex;gap:8px;flex-wrap:wrap}
-.gmm-ext-link{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);text-decoration:none;padding:8px 13px;border-radius:9px;font-size:12px;font-weight:800;text-transform:uppercase;transition:transform .15s}
-.gmm-ext-link.alt{background:var(--cream);color:var(--navy)}
-.gmm-ext-link:hover{transform:translateY(-1px)}
+.gmm-links-bar {
+  display: none;
+  background: rgba(20, 92, 82, 0.55);
+  border: 1px solid rgba(217, 164, 65, 0.6);
+  border-radius: 14px;
+  padding: 11px 14px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.gmm-links-bar.open { display: flex; }
+.gmm-links-bar span { font-size: 12.5px; font-weight: 700; color: #fff; }
+.gmm-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.gmm-ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.gmm-ext-link.alt { background: #fff; color: var(--navy); }
 
-/* Mapa Integral 360° */
-.compass{display:none;background:rgba(255,245,227,.05);border:1px solid rgba(217,164,65,.45);border-radius:18px;padding:15px;gap:12px}
-.compass.open{display:grid}
-.cgrid{display:grid;gap:10px}
-@media(min-width:740px){.cgrid{grid-template-columns:repeat(3,1fr)}}
-.ccard{background:rgba(15,41,66,.85);border:1px solid rgba(255,245,227,.18);border-radius:14px;padding:14px;display:grid;gap:6px;cursor:pointer;transition:all .15s}
-.ccard:hover{border-color:var(--gold);background:rgba(20,92,82,.5)}
-.ccard small{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:.03em}
-.ccard h4{font-size:14px;color:#fff}
-.ccard p{font-size:12px;color:rgba(255,245,227,.9);line-height:1.38}
-.ccard b{font-size:11.5px;color:var(--gold);text-decoration:underline;margin-top:2px}
-
-/* 4 KPIs Traducidos a Beneficios Directos */
-.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(min-width:720px){.kgrid{grid-template-columns:repeat(4,1fr)}}
-.kcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,245,227,.15);border-radius:16px;padding:14px;display:grid;gap:4px}
-.kcard.base-state{background:rgba(255,245,227,.08);border-color:rgba(255,245,227,.22)}
-.kcard.gain{background:var(--em);border:1.5px solid rgba(217,164,65,.7);box-shadow:0 10px 22px -12px rgba(0,0,0,.45)}
-.kcard.net{background:linear-gradient(145deg,rgba(217,164,65,.22),rgba(217,164,65,.1));border:1.5px solid var(--gold)}
-
-.kcard small{font-size:11px;font-weight:800;text-transform:uppercase;color:rgba(255,245,227,.88);letter-spacing:.02em}
-.kcard.gain small{color:var(--cream)}
-.kcard.net small{color:var(--gold)}
-.kcard b{font-size:clamp(18px,2.4vw,22px);font-weight:900;color:#fff}
-.kcard.net b{color:var(--gold)}
-.kcard span{font-size:11.5px;color:rgba(255,245,227,.88);line-height:1.25}
+/* 4 KPIs */
+.kgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (min-width: 720px) { .kgrid { grid-template-columns: repeat(4, 1fr); } }
+.kcard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 15px;
+  padding: 14px;
+  display: grid;
+  gap: 4px;
+}
+.kcard.base-state { background: rgba(255, 255, 255, 0.08); }
+.kcard.gain {
+  background: var(--em);
+  border: 1.5px solid rgba(217, 164, 65, 0.7);
+  box-shadow: 0 10px 22px -12px rgba(0, 0, 0, 0.45);
+}
+.kcard.net {
+  background: linear-gradient(145deg, rgba(217, 164, 65, 0.22), rgba(217, 164, 65, 0.08));
+  border: 1.5px solid var(--gold);
+}
+.kcard small {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #CBD5E1;
+  letter-spacing: 0.02em;
+}
+.kcard.gain small { color: var(--gold); }
+.kcard.net small { color: var(--gold); }
+.kcard b {
+  font-family: var(--font-mono);
+  font-size: clamp(18px, 2.3vw, 22px);
+  font-weight: 800;
+  color: #fff;
+}
+.kcard.net b { color: var(--gold); }
+.kcard span { font-size: 11.5px; color: #E2E8F0; line-height: 1.3; }
 
 /* Gráficos Comparativos */
-.vgrid{display:grid;gap:14px}
-@media(min-width:760px){.vgrid{grid-template-columns:1.15fr 1fr}}
-.cbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,245,227,.13);border-radius:16px;padding:15px;display:grid;gap:11px}
-.ctitle{font-size:11.5px;font-weight:800;text-transform:uppercase;color:var(--cream);display:flex;justify-content:space-between;letter-spacing:.03em}
-.ctitle span:last-child{color:var(--gold)}
-.bgroup{display:grid;gap:5px}
-.blabel{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--cream)}
-.btrack{height:14px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;display:flex}
-.bfill-base{background:rgba(255,245,227,.38);height:100%;transition:width .25s ease}
-.bfill-em{background:var(--em-light);height:100%;transition:width .25s ease}
-.bfill-gold{background:var(--gold);height:100%;transition:width .25s ease}
+.vgrid { display: grid; gap: 14px; }
+@media (min-width: 760px) { .vgrid { grid-template-columns: 1.15fr 1fr; } }
+.cbox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  padding: 15px;
+  display: grid;
+  gap: 11px;
+}
+.ctitle {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  letter-spacing: 0.03em;
+}
+.ctitle span:last-child { color: var(--gold); }
+.bgroup { display: grid; gap: 5px; }
+.blabel { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; color: #F1F5F9; gap: 8px; }
+.btrack {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+}
+.bfill-base { background: rgba(255, 255, 255, 0.35); height: 100%; transition: width 0.25s ease; }
+.bfill-em { background: var(--em-light); height: 100%; transition: width 0.25s ease; }
+.bfill-gold { background: var(--gold); height: 100%; transition: width 0.25s ease; }
 
-.rbanner{background:rgba(20,92,82,.42);border:1px solid rgba(217,164,65,.4);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;color:var(--cream);flex-wrap:wrap}
-.rbanner strong{color:var(--gold);font-size:14px}
-.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mile{background:rgba(255,255,255,.06);border:1px solid rgba(255,245,227,.14);border-radius:12px;padding:11px}
-.mile small{display:block;font-size:10.5px;color:rgba(255,245,227,.85);text-transform:uppercase;font-weight:700}
-.mile b{display:block;font-size:16px;color:var(--gold);margin-top:3px}
-.mile span{display:block;font-size:11px;color:rgba(255,245,227,.9);margin-top:2px}
+.rbanner {
+  background: rgba(20, 92, 82, 0.45);
+  border: 1px solid rgba(217, 164, 65, 0.4);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #F1F5F9;
+  flex-wrap: wrap;
+}
+.rbanner strong { color: var(--gold); font-size: 13.5px; }
+.mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 11px;
+}
+.mile small { display: block; font-size: 10.5px; color: #CBD5E1; text-transform: uppercase; font-weight: 700; }
+.mile b { display: block; font-family: var(--font-mono); font-size: 16px; color: var(--gold); margin-top: 3px; }
+.mile span { display: block; font-size: 11px; color: #E2E8F0; margin-top: 2px; }
 
-.srow{display:grid;gap:10px}
-@media(min-width:720px){.srow{grid-template-columns:repeat(3,1fr)}}
-.shcard{background:rgba(255,255,255,.05);border-left:3px solid var(--em-light);border-radius:12px;padding:11px 12px;display:grid;gap:3px}
-.shcard b{font-size:12.5px;color:var(--cream)}
-.shcard p{font-size:11.5px;color:rgba(255,245,227,.88);line-height:1.38}
+.srow { display: grid; gap: 10px; }
+@media (min-width: 720px) { .srow { grid-template-columns: repeat(3, 1fr); } }
+.shcard {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 11px 12px;
+  display: grid;
+  gap: 3px;
+}
+.shcard b { font-size: 12.5px; color: #fff; }
+.shcard p { font-size: 11.5px; color: #CBD5E1; line-height: 1.4; }
 
-/* Tarjetas Inferiores de Conversión (2ª Cita + Pases de Cortesía a 1 Clic) */
-.cgrid-bot{display:grid;gap:16px}
-@media(min-width:760px){.cgrid-bot{grid-template-columns:1fr 1.12fr}}
-.clcard{background:#fff;border:1.5px solid rgba(20,92,82,.35);border-radius:20px;padding:18px;display:grid;gap:11px;align-content:start;box-shadow:0 12px 26px -18px rgba(15,41,66,.15)}
-.clcard.gold{border-color:rgba(217,164,65,.65)}
-.clhead{display:flex;justify-content:space-between;align-items:center}
-.clbadge{font-size:10.5px;font-weight:800;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:rgba(20,92,82,.1);color:var(--em)}
-.clbadge.gold{background:var(--cream);color:var(--navy);border:1px solid rgba(217,164,65,.45)}
-.clcard h3{font-size:16px;font-weight:800;color:var(--navy);line-height:1.25}
-.clcard p{font-size:13px;color:#475569;line-height:1.42}
+/* ===================== TARJETAS DE CIERRE UNIFICADO (2ª SESIÓN + PASES NOMINALES) ===================== */
+.cgrid-bot { display: grid; gap: 16px; }
+@media (min-width: 780px) { .cgrid-bot { grid-template-columns: 1.05fr 1fr; } }
+.clcard {
+  background: #fff;
+  border: 1.5px solid rgba(20, 92, 82, 0.35);
+  border-radius: 20px;
+  padding: 18px;
+  display: grid;
+  gap: 11px;
+  align-content: start;
+  box-shadow: 0 12px 26px -18px rgba(11, 31, 51, 0.15);
+}
+.clcard.gold { border-color: rgba(217, 164, 65, 0.65); }
+.clhead { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.clbadge {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(20, 92, 82, 0.1);
+  color: var(--em);
+}
+.clbadge.gold {
+  background: var(--cream);
+  color: var(--navy);
+  border: 1px solid rgba(217, 164, 65, 0.45);
+}
+.clcard h3 { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.25; }
+.clcard p { font-size: 13px; color: var(--muted); line-height: 1.45; }
 
-.brow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.btn-gold{min-height:46px;background:var(--gold);color:var(--navy);border:none;border-radius:11px;font-size:12.5px;font-weight:800;text-transform:uppercase;padding:8px 12px;box-shadow:0 6px 14px -6px rgba(217,164,65,.6);transition:transform .15s}
-.btn-gold:hover{transform:translateY(-1px)}
-.btn-em{min-height:46px;background:var(--em);color:#fff;border:none;border-radius:11px;font-size:12.5px;font-weight:800;text-transform:uppercase;padding:8px 12px;display:flex;align-items:center;justify-content:center;text-decoration:none;text-align:center;transition:background .15s}
-.btn-em:hover{background:var(--em-light)}
-.btn-master-pass{width:100%;min-height:46px;background:var(--navy);color:#fff;border:1.5px solid var(--gold);border-radius:11px;font-size:13px;font-weight:800;text-transform:uppercase;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .15s}
-.btn-master-pass:hover{background:var(--em);border-color:var(--em)}
+.brow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn-gold {
+  min-height: 48px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 8px 12px;
+  box-shadow: 0 6px 14px -6px rgba(217, 164, 65, 0.6);
+  transition: background 0.15s;
+}
+.btn-gold:hover { background: var(--gold-hover); }
+.btn-em {
+  min-height: 48px;
+  background: var(--em);
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s;
+}
+.btn-em:hover { background: var(--em-light); }
 
-.rlist{display:grid;gap:8px}
-.rrow{display:grid;grid-template-columns:1.1fr 1fr;gap:8px}
-.rinput{width:100%;min-height:42px;padding:7px 10px;border-radius:9px;border:1px solid #d8cbb8;background:var(--bg);font-size:16px;font-weight:600;color:var(--navy)}
-.rinput:focus{outline:none;border-color:var(--em);background:#fff}
-.rstatus{font-size:12px;font-weight:700;color:var(--em);background:rgba(20,92,82,.08);padding:8px 11px;border-radius:9px;display:none}
+/* Pases de Cortesía Nominales (Sin pedir teléfono del amigo para eliminar fricción) */
+.rlist { display: grid; gap: 8px; }
+.rrow { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }
+.rinput {
+  width: 100%;
+  min-height: 42px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  border: 1px solid #CBD5E1;
+  background: var(--bg);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.rinput:focus { outline: none; border-color: var(--em); background: #fff; }
+.rstatus {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--em);
+  background: rgba(20, 92, 82, 0.08);
+  padding: 8px 11px;
+  border-radius: 9px;
+  display: none;
+}
+.btn-master-pass {
+  width: 100%;
+  min-height: 46px;
+  background: var(--navy);
+  color: #fff;
+  border: 1.5px solid var(--gold);
+  border-radius: 11px;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s;
+}
+.btn-master-pass:hover { background: var(--em); border-color: var(--em); }
 
-.cmodal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,41,66,.82);align-items:center;justify-content:center;padding:14px}
-.cmodal.open{display:flex}
-.cmbox{background:#fff;border-radius:20px;max-width:780px;width:100%;height:min(88vh,720px);display:flex;flex-direction:column;overflow:hidden}
-.cmhead{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--gold)}
-.cmclose{background:rgba(255,255,255,.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px}
-.cmbody{flex:1;overflow:auto}
-.cmbody iframe{width:100%;height:100%;min-height:540px;border:0}
-.hidden{display:none!important}
-footer{background:var(--navy);color:rgba(255,245,227,.8);padding:18px 16px;text-align:center;font-size:12px}
+/* Modal del Calendario */
+.cmodal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(11, 31, 51, 0.82);
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.cmodal.open { display: flex; }
+.cmbox {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 780px;
+  width: 100%;
+  height: min(88vh, 720px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cmhead {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--gold);
+}
+.cmclose {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.cmbody { flex: 1; overflow: auto; }
+.cmbody iframe { width: 100%; height: 100%; min-height: 540px; border: 0; }
+footer {
+  background: var(--navy);
+  color: #CBD5E1;
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 12px;
+}
 </style>
 
-<!-- MOTOR CENTRAL EN EL HEAD -->
 <script>
 window.CONFIG = {
-  WHATSAPP_SANTI: '525571208740',
-  LANDING_URL: 'https://santiteasesora.com/profesionistas.html',
+  WHATSAPP_SANTI: '5215571208740',
+  LANDING_URL: 'https://www.santiteasesora.com/profesionistas.html',
   CALENDAR_URL: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true',
   APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
   MEDICOS_A_TU_LADO_URL: 'https://www.mnyl.com.mx/seguros-individuales/medicos-a-tu-lado/medicos-a-tu-lado.aspx',
@@ -234,33 +736,22 @@ window.GMM_HOSPITAL_LEVELS = {
   }
 };
 
-window.SHEET_CACHE = {
-  "LMV8QR3G19W84": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"honorarios", ingreso:100000, prioridad:"Estrategia Híbrida (Liquidez 3-5 años + Retiro)" },
-  "LMV8TJXN6JG97": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"sueldos",    ingreso:45000,  prioridad:"Protección Familiar o Gastos Médicos Mayores" },
-  "LMV8U3DMCMI6S": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"sueldos",    ingreso:25000,  prioridad:"Protección Familiar o Gastos Médicos Mayores" },
-  "LMV8UBMA0I63U": { nombre:"Santi",           whatsapp:"5571208740", regimen:"sueldos",    ingreso:45000,  prioridad:"Deducción SAT + Retiro (Art. 151)" },
-  "LMV8UF6VMICZN": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"sueldos",    ingreso:45000,  prioridad:"Deducción SAT + Retiro (Art. 151)" },
-  "LMV8UJ7T8QMXF": { nombre:"Santi",           whatsapp:"5571208740", regimen:"honorarios", ingreso:65000,  prioridad:"Estrategia Híbrida (Liquidez 3-5 años + Retiro)" },
-  "LMV8UKVTVV8OO": { nombre:"Santi",           whatsapp:"5571208740", regimen:"sueldos",    ingreso:45000,  prioridad:"Deducción SAT + Retiro (Art. 151)" },
-  "LMV8UN2EMQP3C": { nombre:"Santi",           whatsapp:"5571208740", regimen:"honorarios", ingreso:45000,  prioridad:"Deducción SAT + Retiro (Art. 151)" },
-  "LMV8URRTWNM4A": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"sueldos",    ingreso:45000,  prioridad:"Deducción SAT + Retiro (Art. 151)" },
-  "EMV9SNQPVDNH6": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"resico",     ingreso:20000,  prioridad:"Blindaje de Hombre Clave / Invalidez y Salud (GMM)" },
-  "EMV9SP0AZ7114": { nombre:"Martin Santiago", whatsapp:"5571208740", regimen:"honorarios", ingreso:35000,  prioridad:"Blindaje de Hombre Clave / Invalidez y Salud (GMM)" }
-};
-
 window.S = {
   folio: '', nombre: '', phone: '',
-  regimen: 'sueldos', edad: 35, birth: '', smoker: 'no',
-  mode: '65', paymentTerm: 'todos', ingresoMensual: 65000, ahorroMensual: 6500,
+  regimen: 'sueldos', edad: 32, birth: '', smoker: 'no', healthNote: 'Salud general sin antecedentes relevantes',
+  mode: 'hibrido', // 'hibrido', '65', '60', 'gmm'
+  hybridPct151: 70, // % que va a la Cuenta 1 (Deducible SAT Art. 151); el resto va a la Cuenta 2 (Liquidez 3-5 años)
+  paymentTerm: 'todos',
+  ingresoMensual: 55000,
+  ahorroMensual: 5500,
   gmmWho: 'Individual (Personal)',
   gmmStatus: 'Busco mi primera póliza privada',
-  gmmHosp: 'integro',
-  timerSec: 1800, timerRun: true, timerInt: null
+  gmmHosp: 'integro'
 };
 
 function $id(id){ return document.getElementById(id); }
 function fmt(n){ return '$' + Math.round(Number(n)||0).toLocaleString('es-MX'); }
-function cleanTel(r){ return String(r||'').replace(/\D/g,'').replace(/^(?:521|52)(?=\d{10}$)/,''); }
+function cleanTel(r){ return String(r||'').replace(/\D/g,'').replace(/^(?:521|52)(?=\d{10}$)/,'').slice(0, 10); }
 
 function calcISR(base){
   if (base <= 0) return { isr:0, tasa:0.0192 };
@@ -271,67 +762,35 @@ function calcISR(base){
   return { isr: r[1] + ((base - r[0]) * r[2]), tasa: r[2] };
 }
 
-/* ---- CRONÓMETRO EJECUTIVO ---- */
-window.tickTimer = function(){
-  if (!window.S.timerRun) return;
-  if (window.S.timerSec > 0) window.S.timerSec--;
-  window.renderTimerUI();
-};
-
-window.renderTimerUI = function(){
-  var disp = $id('timerDisplay'), btn = $id('sessionTimerBtn'), ph = $id('phaseText');
-  if (!disp || !btn) return;
-  var m = Math.floor(window.S.timerSec / 60), s = window.S.timerSec % 60;
-  disp.textContent = (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
-  btn.classList.toggle('paused', !window.S.timerRun);
-  btn.classList.toggle('warn', window.S.timerSec <= 480);
-  if (ph){
-    if (m >= 25) ph.textContent = 'Etapa 1: Conociendo tus Objetivos';
-    else if (m >= 8) ph.textContent = 'Etapa 2: Tu Escenario en Pantalla';
-    else ph.textContent = 'Etapa 3: Siguientes Pasos';
-  }
-};
-
-window.toggleTimer = function(){
-  window.S.timerRun = !window.S.timerRun;
-  window.renderTimerUI();
-};
-
-window.resetTimer = function(){
-  window.S.timerSec = 1800;
-  window.S.timerRun = true;
-  window.renderTimerUI();
-};
-
 /* ---- LIMPIAR DATOS ---- */
 window.clearClientForm = function(){
   window.S.folio = '';
   window.S.nombre = '';
   window.S.phone = '';
   window.S.birth = '';
-  window.S.edad = 35;
+  window.S.edad = 32;
   if ($id('folioInput')) $id('folioInput').value = '';
   if ($id('clientName')) $id('clientName').value = '';
   if ($id('clientPhone')) $id('clientPhone').value = '';
   if ($id('birthDate')) $id('birthDate').value = '';
-  if ($id('clientAge')) $id('clientAge').value = '';
+  if ($id('clientAge')) $id('clientAge').value = '32';
   if ($id('refName1')) $id('refName1').value = '';
-  if ($id('refPhone1')) $id('refPhone1').value = '';
+  if ($id('refRel1')) $id('refRel1').value = '';
   if ($id('refName2')) $id('refName2').value = '';
-  if ($id('refPhone2')) $id('refPhone2').value = '';
+  if ($id('refRel2')) $id('refRel2').value = '';
   if ($id('folioStatusMsg')) $id('folioStatusMsg').style.display = 'none';
   if ($id('refSaveStatus')) $id('refSaveStatus').style.display = 'none';
   window.syncAll();
 };
 
-/* ---- CAMBIO DE ENFOQUE ---- */
+/* ---- CAMBIO DE ESCENARIO EN PANTALLA ---- */
 window.selectMode = function(m){
   window.S.mode = m;
   var btns = document.querySelectorAll('#modeButtons .mode-btn');
   for (var i=0; i<btns.length; i++){
     btns[i].classList.toggle('active', btns[i].getAttribute('data-mode') === m);
   }
-  if ($id('compassModule')) $id('compassModule').classList.toggle('open', m === '360');
+  if ($id('hybridSplitCard')) $id('hybridSplitCard').classList.toggle('hidden', m !== 'hibrido');
   if ($id('gmmLinksBar')) $id('gmmLinksBar').classList.toggle('open', m === 'gmm');
   if ($id('gmmDiscoveryBox')) $id('gmmDiscoveryBox').classList.toggle('open', m === 'gmm');
   if ($id('saveSliderCard')) $id('saveSliderCard').classList.toggle('hidden', m === 'gmm');
@@ -339,13 +798,21 @@ window.selectMode = function(m){
   window.syncAll();
 };
 
+window.setSplitPreset = function(pct){
+  window.S.hybridPct151 = pct;
+  if ($id('hybridSplitSlider')) $id('hybridSplitSlider').value = String(pct);
+  window.syncAll();
+};
+
 window.applyPreset = function(slot){
   var S = window.S;
   var t151 = Math.min(S.ingresoMensual * 12 * 0.10, window.CONFIG.TOPE_5_UMAS);
-  if (slot === 1) S.ahorroMensual = Math.max(1500, Math.round((S.ingresoMensual * 0.10) / 500) * 500);
+  if (slot === 1) S.ahorroMensual = Math.max(1500, Math.round((S.ingresoMensual * 0.07) / 500) * 500);
   if (slot === 2) S.ahorroMensual = Math.max(1500, Math.round((t151 / 12) / 500) * 500);
   if (slot === 3) S.ahorroMensual = Math.min(35000, Math.round(((t151 + window.CONFIG.TOPE_ART_185) / 12) / 500) * 500);
   if ($id('saveSlider')) $id('saveSlider').value = S.ahorroMensual;
+  var pbtns = document.querySelectorAll('.prow .pbtn');
+  for (var i=0; i<pbtns.length; i++) pbtns[i].classList.toggle('active', i === (slot - 1));
   window.syncAll();
 };
 
@@ -365,27 +832,29 @@ window.onBirthChange = function(val){
 
 window.onRegimenChange = function(val){
   window.S.regimen = val;
-  if (val === 'resico' && window.S.mode === '65'){
+  if (val === 'resico' && (window.S.mode === '65' || window.S.mode === 'hibrido')){
     window.selectMode('60');
     return;
   }
   window.syncAll();
 };
 
-/* ---- MOTOR CENTRAL TRADUCIDO A BENEFICIOS CLAROS ---- */
+/* ---- MOTOR CENTRAL SINCRONIZADO CON LAS TASAS DE PROFESIONISTAS.HTML ---- */
 window.syncAll = function(){
   var S = window.S;
   if ($id('clientName')) S.nombre = $id('clientName').value;
   if ($id('clientPhone')) S.phone = $id('clientPhone').value;
   var rawAge = $id('clientAge') ? Number($id('clientAge').value) : 0;
-  S.edad = (rawAge >= 18 && rawAge <= 75) ? rawAge : 35;
+  S.edad = (rawAge >= 18 && rawAge <= 75) ? rawAge : 32;
   if ($id('smokerSelect')) S.smoker = $id('smokerSelect').value;
+  if ($id('healthSelect')) S.healthNote = $id('healthSelect').value;
   if ($id('paymentTerm')) S.paymentTerm = $id('paymentTerm').value;
   if ($id('gmmWhoSelect')) S.gmmWho = $id('gmmWhoSelect').value;
   if ($id('gmmStatusSelect')) S.gmmStatus = $id('gmmStatusSelect').value;
   if ($id('gmmHospSelect')) S.gmmHosp = $id('gmmHospSelect').value;
-  if ($id('incomeSlider')) S.ingresoMensual = Number($id('incomeSlider').value)||65000;
-  if ($id('saveSlider')) S.ahorroMensual = Number($id('saveSlider').value)||6500;
+  if ($id('incomeSlider')) S.ingresoMensual = Number($id('incomeSlider').value)||55000;
+  if ($id('saveSlider')) S.ahorroMensual = Number($id('saveSlider').value)||5500;
+  if ($id('hybridSplitSlider')) S.hybridPct151 = Number($id('hybridSplitSlider').value)||70;
 
   var ingAnual = S.ingresoMensual * 12;
   var ahoAnual = S.ahorroMensual * 12;
@@ -402,17 +871,21 @@ window.syncAll = function(){
   $id('annualSaveLabel').textContent = fmt(ahoAnual) + ' al año';
   $id('capPercentLabel').textContent = ((S.ahorroMensual / S.ingresoMensual) * 100).toFixed(1) + '% de tu ingreso';
 
-  var idMes = Math.max(1500, Math.round((S.ingresoMensual * 0.10) / 500) * 500);
+  var baseComodaM = Math.max(1500, Math.round((S.ingresoMensual * 0.07) / 500) * 500);
   var t151A = Math.min(ingAnual * 0.10, window.CONFIG.TOPE_5_UMAS);
   var t151M = Math.max(1500, Math.round((t151A / 12) / 500) * 500);
   var tMaxM = Math.min(35000, Math.round(((t151A + window.CONFIG.TOPE_ART_185) / 12) / 500) * 500);
-  $id('lblPreset10').textContent = fmt(idMes) + '/mes';
+  $id('lblPreset10').textContent = fmt(baseComodaM) + '/mes';
   $id('lblPreset151').textContent = fmt(t151M) + '/mes';
   $id('lblPresetMax').textContent = fmt(tMaxM) + '/mes';
 
   var pref = S.nombre && S.nombre.trim() ? (S.nombre.trim().split(/\s+/)[0] + ', tu ') : 'Tu ';
 
-  // 1) MODO ALFA MEDICAL (BENEFICIOS CLAROS E INTENCIÓN, CERO COTIZACIÓN PRELIMINAR)
+  // Misma fórmula exacta a 10 años que profesionistas.html (r = 0.078 -> Con $5,500/mes da exactamente $1,020,952 MXN)
+  var r10 = 0.078;
+  var fondo10AnosTotal = Math.round(ahoAnual * (((Math.pow(1 + r10, 10) - 1) / r10) * (1 + r10)));
+
+  // 1) MODO ALFA MEDICAL ($170M)
   if (S.mode === 'gmm'){
     var hospObj = window.GMM_HOSPITAL_LEVELS[S.gmmHosp] || window.GMM_HOSPITAL_LEVELS.integro;
     if ($id('gmmHospNote')){
@@ -421,7 +894,7 @@ window.syncAll = function(){
 
     $id('legalBadge').textContent = 'Póliza en Pesos Mexicanos · Respaldo SMNYL';
     $id('mainBoardTitle').innerHTML = pref + 'Protección Médica Privada <span>Alfa Medical ($170 Millones)</span>';
-    $id('mainBoardSub').textContent = 'Atención privada garantizada en Pesos Mexicanos, acompañamiento médico personal 24/7 y devolución de impuestos en abril.';
+    $id('mainBoardSub').textContent = 'Atención privada en Pesos Mexicanos, acompañamiento médico personal 24/7 y deducción de impuestos en tu declaración anual.';
 
     $id('kpi1Title').textContent = '1. Tranquilidad Financiera';
     $id('kpi1Value').textContent = 'Pago Directo';
@@ -429,15 +902,15 @@ window.syncAll = function(){
 
     $id('kpi2Title').textContent = '2. Respaldo por Enfermedad';
     $id('kpi2Value').textContent = '$170 Millones';
-    $id('kpi2Sub').textContent = 'En Pesos Mexicanos por cada diagnóstico';
+    $id('kpi2Sub').textContent = 'En Pesos Mexicanos por diagnóstico';
 
     $id('kpi3Title').textContent = isResico ? '3. Moneda Estable' : '3. Beneficio en el SAT';
     $id('kpi3Value').textContent = isResico ? 'Pesos MXN' : '100% Deducible';
-    $id('kpi3Sub').textContent = isResico ? 'Sin cambios por tipo de cambio' : 'Aplica para ti, tu pareja, hijos y padres';
+    $id('kpi3Sub').textContent = isResico ? 'Sin cambios por tipo de cambio' : 'Para ti, tu pareja, hijos y padres';
 
-    $id('kpi4Title').textContent = isResico ? '4. Acompañamiento' : '4. Dinero que Recuperas';
+    $id('kpi4Title').textContent = isResico ? '4. Acompañamiento' : '4. Retorno Fiscal en Abril';
     $id('kpi4Value').textContent = isResico ? 'Médicos 24/7' : ('Hasta el ' + tasaPct + '%');
-    $id('kpi4Sub').textContent = isResico ? 'Programa Médicos a tu Lado' : 'Te lo devuelve el SAT en abril';
+    $id('kpi4Sub').textContent = isResico ? 'Programa Médicos a tu Lado' : 'Recuperas parte de tu prima anual';
 
     $id('chartLeftTitle').textContent = 'Por qué Blindar tu Salud y tu Patrimonio';
     $id('efficiencyPct').textContent = 'Cobertura en Pesos Mexicanos';
@@ -446,104 +919,180 @@ window.syncAll = function(){
     $id('bar1Fill').style.width = '100%';
 
     $id('bar2Label').textContent = 'Con Alfa Medical: Seguros Monterrey paga al hospital + Deduces impuestos';
-    $id('bar2Val').textContent = 'Respaldo de $170,000,000 MXN';
+    $id('bar2Val').textContent = 'Hasta $170,000,000 MXN';
     $id('bar2Fill').style.width = isResico ? '100%' : (100 - tasaPct) + '%';
     $id('bar2Gold').style.width = isResico ? '0%' : tasaPct + '%';
 
     $id('bannerExplain').innerHTML = isResico
-      ? 'Proteges la liquidez de tu negocio y de tu familia en los mejores hospitales:'
-      : ('Por tu nivel de ingresos, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> que inviertes en tu seguro médico:');
-    $id('bannerNet').textContent = 'Opciones exactas en tu 2ª Sesión';
+      ? 'Proteges la liquidez de tu familia en los mejores hospitales privados:'
+      : ('Por tu escalón de ISR, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> de tu póliza médica:');
+    $id('bannerNet').textContent = 'Propuesta exacta en nuestra 2ª Sesión';
 
-    $id('chartRightTitle').textContent = 'Resumen de tus Preferencias de Protección';
+    $id('chartRightTitle').textContent = 'Resumen de tus Preferencias Médicas';
     $id('mile1Label').textContent = 'A quiénes protegemos';
     $id('mile1Val').textContent = S.gmmWho;
     $id('mile1Sub').textContent = S.gmmStatus;
     $id('mile2Label').textContent = 'Nivel de Hospitales en CDMX';
     $id('mile2Val').textContent = hospObj.titulo.split('(')[0].trim();
-    $id('mile2Sub').textContent = 'Contratación en Pesos Mexicanos';
-    $id('protectionSumLabel').textContent = hospObj.ejemplos;
+    $id('mile2Sub').textContent = 'Sujeto a valoración médica en solicitud';
+    $id('protectionSumLabel').textContent = S.healthNote;
 
     $id('sh1Title').textContent = '🩺 1. Programa "Médicos a tu Lado"';
-    $id('sh1Desc').textContent = 'Un médico te acompaña de principio a fin: orientación 24/7, segunda opinión en diagnósticos importantes y recuperación en casa.';
+    $id('sh1Desc').textContent = 'Un médico te acompaña de principio a fin: orientación 24/7, segunda opinión médica y seguimiento en casa.';
     $id('sh2Title').textContent = '🏥 2. Pago Directo al Hospital';
-    $id('sh2Desc').textContent = 'En estancias mayores a 24 horas dentro de la red en convenio, la aseguradora liquida directamente al hospital y médicos.';
-    $id('sh3Title').textContent = '🧾 3. El SAT te Ayuda a Pagarlo';
-    $id('sh3Desc').textContent = 'Lo que inviertes en tu póliza médica (y la de tu pareja, hijos o padres dependientes) se deduce de tus impuestos cada año.';
+    $id('sh2Desc').textContent = 'En estancias mayores a 24 horas dentro de la red en convenio, la aseguradora liquida directamente al hospital.';
+    $id('sh3Title').textContent = '🧾 3. Deducción Personal (Art. 151 VI)';
+    $id('sh3Desc').textContent = 'Las primas de tu póliza médica entran en tus deducciones personales de abril.';
 
-    window.updateLinks(0, window.CONFIG.SUMA_ASEGURADA_GMM, window.CONFIG.SUMA_ASEGURADA_GMM, 1);
+    window.buildCombinedWhatsApp(0, 0, 0, 1);
     return;
   }
 
-  // Pilares explicados en lenguaje 100% claro (Cero tecnicismos)
-  $id('sh1Title').textContent = '🛡️ Plan Autopagable por Invalidez';
-  $id('sh1Desc').textContent = 'Si un accidente o enfermedad te impide trabajar, recibes un capital libre de impuestos y Seguros Monterrey sigue pagando tu plan por ti.';
+  // Pilares sin prometer sumas aseguradas sin evaluación médica
+  $id('sh1Title').textContent = '⚖️ Compromiso Base Ligero + Excedente Flexible';
+  $id('sh1Desc').textContent = 'Si un año tus gastos cambian, puedes ajustar tu Cuenta 2 de liquidez sin poner en riesgo tu plan base ni tu devolución del SAT.';
   $id('sh2Title').textContent = '📈 Tu Dinero Crece Arriba de la Inflación';
-  $id('sh2Desc').textContent = 'Tu ahorro se guarda en UDIs para que nunca pierda poder de compra y sin que el banco te descuente el 0.90% de impuesto cada año.';
-  $id('sh3Title').textContent = '🏛️ Respaldo Seguros Monterrey NYL';
-  $id('sh3Desc').textContent = 'Institución líder en México regulada oficialmente por la CNSF (Cédula C412676) en alianza con MASS Asociados.';
+  $id('sh2Desc').textContent = 'Tus aportaciones se guardan en UDIs o Dólares para que tu poder adquisitivo crezca año con año.';
+  $id('sh3Title').textContent = '🩺 Coberturas Evaluadas según tu Perfil';
+  $id('sh3Desc').textContent = 'Con los datos de salud que platicamos hoy, confirmaremos las coberturas de protección e invalidez aplicables en tu estudio oficial.';
 
   var edadMeta = (S.mode === '60' || isResico) ? 60 : 65;
   var anosRest = Math.max(5, edadMeta - S.edad);
-  var r = S.smoker === 'si' ? 0.064 : 0.069;
+  var r = S.smoker === 'si' ? 0.068 : 0.072;
   var anosPago = S.paymentTerm === 'todos' ? anosRest : Math.min(Number(S.paymentTerm)||anosRest, anosRest);
   var anosPost = Math.max(0, anosRest - anosPago);
   var acumPagos = ahoAnual * ((Math.pow(1 + r, anosPago) - 1) / r) * (1 + r);
   var fondoFinal = Math.round(acumPagos * Math.pow(1 + r, anosPost));
   var totalAportado = ahoAnual * anosPago;
-  var sumaAseg = Math.max(ingAnual * 3, ahoAnual * 15);
 
-  // 2) MODO IMAGINA SER 60 / RESICO / PROYECTOS
+  // 2) MODO ESTRATEGIA HÍBRIDA (MÉTODO DE 2 CUENTAS: CUENTA 1 SAT + CUENTA 2 LIQUIDEZ 3-5 AÑOS)
+  if (S.mode === 'hibrido' && !isResico){
+    var pct1 = S.hybridPct151 / 100;
+    var mesCuenta1 = Math.round(S.ahorroMensual * pct1);
+    var mesCuenta2 = S.ahorroMensual - mesCuenta1;
+
+    var anualCuenta1 = mesCuenta1 * 12;
+    var anualCuenta2 = mesCuenta2 * 12;
+
+    $id('hybridSplitLabel').textContent = S.hybridPct151 + '% Retiro SAT / ' + (100 - S.hybridPct151) + '% Liquidez';
+    $id('hybridPocket1Text').textContent = 'Cuenta 1 (Base Fija SAT): ' + fmt(mesCuenta1) + '/mes';
+    $id('hybridPocket2Text').textContent = 'Cuenta 2 (Flexible): ' + fmt(mesCuenta2) + '/mes';
+
+    var tope151H = Math.min(ingAnual * 0.10, window.CONFIG.TOPE_5_UMAS);
+    var dedRealH = Math.min(anualCuenta1, tope151H + window.CONFIG.TOPE_ART_185);
+    var nuevoISRH = calcISR(Math.max(0, ingAnual - dedRealH)).isr;
+    var devSATH = Math.round(Math.max(0, isrActual - nuevoISRH));
+    var devMesH = devSATH / 12;
+    var costoNetoH = Math.max(0, S.ahorroMensual - devMesH);
+
+    // Proyección de la Cuenta 2 (Disponible en 5 años en UDIs/USD)
+    var rCorto = 0.068;
+    var fondo5AnosCuenta2 = Math.round(anualCuenta2 * (((Math.pow(1 + rCorto, 5) - 1) / rCorto) * (1 + rCorto)));
+
+    // Proyección de la Cuenta 1 a los 65 años
+    var acumCuenta1 = anualCuenta1 * ((Math.pow(1 + r, anosPago) - 1) / r) * (1 + r);
+    var fondo65Cuenta1 = Math.round(acumCuenta1 * Math.pow(1 + r, anosPost));
+
+    $id('legalBadge').textContent = 'Estrategia Híbrida · 2 Cuentas en Seguros Monterrey';
+    $id('mainBoardTitle').innerHTML = pref + 'Estrategia Híbrida: <span>Devolución SAT + Liquidez a Mediano Plazo</span>';
+    $id('mainBoardSub').textContent = 'Dividimos tus ' + fmt(S.ahorroMensual) + '/mes en dos bolsillos: una base cómoda que te da devolución del SAT en abril y una cuenta flexible disponible en 3 a 5 años.';
+
+    $id('kpi1Title').textContent = '1. Cuenta 1: Base Fija SAT';
+    $id('kpi1Value').textContent = fmt(mesCuenta1) + '/mes';
+    $id('kpi1Sub').textContent = fmt(anualCuenta1) + '/año deducibles (Art. 151)';
+
+    $id('kpi2Title').textContent = '2. Cuenta 2: Bolsillo Flexible';
+    $id('kpi2Value').textContent = fmt(mesCuenta2) + '/mes';
+    $id('kpi2Sub').textContent = 'Sin candado fiscal de 65 años';
+
+    $id('kpi3Title').textContent = '3. Devolución SAT en Abril';
+    $id('kpi3Value').textContent = '+' + fmt(devSATH);
+    $id('kpi3Sub').textContent = 'Efectivo anual por tu Cuenta 1';
+
+    $id('kpi4Title').textContent = '4. Desembolso Neto Total';
+    $id('kpi4Value').textContent = fmt(costoNetoH) + '/mes';
+    $id('kpi4Sub').textContent = 'Descontando tu devolución del SAT';
+
+    $id('chartLeftTitle').textContent = 'Distribución de tus ' + fmt(S.ahorroMensual) + '/mes (Ambas Cuentas)';
+    $id('efficiencyPct').textContent = 'Fondo combinado a 10 años: ~' + fmt(fondo10AnosTotal);
+    $id('bar1Label').textContent = 'Cuenta 1 (Base Deducible Art. 151) + Cuenta 2 (Bolsillo Disponible)';
+    $id('bar1Val').textContent = S.hybridPct151 + '% Retiro / ' + (100 - S.hybridPct151) + '% Liquidez';
+    $id('bar1Fill').style.width = '100%';
+
+    $id('bar2Label').textContent = 'Devolución anual del SAT que impulsa tu estrategia';
+    $id('bar2Val').textContent = 'Recuperas +' + fmt(devSATH) + ' cada abril';
+    $id('bar2Fill').style.width = S.hybridPct151 + '%';
+    $id('bar2Gold').style.width = (100 - S.hybridPct151) + '%';
+
+    $id('bannerExplain').innerHTML = 'Tu compromiso base obligatorio es de solo <b>' + fmt(mesCuenta1) + '/mes</b> y el SAT te devuelve <b>' + fmt(devSATH) + '/año</b>:';
+    $id('bannerNet').textContent = 'Esfuerzo neto total: ' + fmt(costoNetoH) + '/mes';
+
+    $id('chartRightTitle').textContent = 'Lo que Logras en Cada Bolsillo';
+    $id('mile1Label').textContent = 'Cuenta 2 Disponible (Año 5)';
+    $id('mile1Val').textContent = fmt(fondo5AnosCuenta2);
+    $id('mile1Sub').textContent = 'Libre de retención para proyectos';
+
+    $id('mile2Label').textContent = 'Cuenta 1 Retiro (Edad 65)*';
+    $id('mile2Val').textContent = fmt(fondo65Cuenta1);
+    $id('mile2Sub').textContent = 'Más lo que conserves en tu Cuenta 2';
+
+    $id('protectionSumLabel').textContent = S.healthNote + ' (Se valida en estudio oficial)';
+
+    window.buildCombinedWhatsApp(devSATH, fondo65Cuenta1, fondo5AnosCuenta2, anosPago);
+    return;
+  }
+
+  // 3) MODO IMAGINA SER 60 / RESICO / PROYECTOS
   if (S.mode === '60' || isResico){
     var plusvalia = Math.max(0, fondoFinal - totalAportado);
-    var liq5 = Math.round((ahoAnual * 0.40) * 5 * 1.18);
+    var liq5 = Math.round(ahoAnual * (((Math.pow(1 + 0.068, 5) - 1) / 0.068) * (1 + 0.068)));
 
     $id('legalBadge').textContent = 'Ganancias 100% Libres de Impuestos (Art. 93)';
     $id('mainBoardTitle').innerHTML = pref + 'Plan de Crecimiento y Liquidez <span>Imagina Ser 60</span>';
     $id('mainBoardSub').textContent = isResico
       ? 'Especial para RESICO: Tu dinero crece por encima de la inflación sin retenciones bancarias y lo recibes libre de impuestos a los 60 años.'
-      : 'Combina un fondo disponible para tus proyectos a mediano plazo (3 a 5 años) con un patrimonio libre de impuestos a los 60 años.';
+      : 'Construye capital en UDIs o Dólares para tus proyectos de mediano plazo y recibe tus rendimientos libres de ISR a los 60 años.';
 
     $id('kpi1Title').textContent = '1. Lo que Tú Ahorras (' + anosPago + ' años)';
     $id('kpi1Value').textContent = fmt(totalAportado);
     $id('kpi1Sub').textContent = 'Acumulado paso a paso';
-    $id('kpi2Title').textContent = '2. Dinero Disponible (Año 5)';
+    $id('kpi2Title').textContent = '2. Capital Estimado (Año 5)';
     $id('kpi2Value').textContent = fmt(liq5);
-    $id('kpi2Sub').textContent = 'Para proyectos o oportunidades';
-    $id('kpi3Title').textContent = '3. Ganancia Adicional Estimada';
-    $id('kpi3Value').textContent = '+' + fmt(plusvalia);
-    $id('kpi3Sub').textContent = 'Crecimiento libre de impuestos';
-    $id('kpi4Title').textContent = '4. Total que Recibes (Edad 60)';
+    $id('kpi2Sub').textContent = 'En UDIs o Dólares';
+    $id('kpi3Title').textContent = '3. Proyección a 10 Años';
+    $id('kpi3Value').textContent = fmt(fondo10AnosTotal);
+    $id('kpi3Sub').textContent = 'Protegido contra inflación';
+    $id('kpi4Title').textContent = '4. Total Estimado (Edad 60)';
     $id('kpi4Value').textContent = fmt(fondoFinal);
-    $id('kpi4Sub').textContent = 'Íntegro a tu cuenta sin retenciones';
+    $id('kpi4Sub').textContent = 'Íntegro sin retención fiscal';
 
     var pctB = fondoFinal > 0 ? Math.min(85, Math.max(25, Math.round((totalAportado / fondoFinal) * 100))) : 50;
     $id('chartLeftTitle').textContent = 'Lo que Tú Aportas vs. Lo que Recibes con Rendimientos';
-    $id('efficiencyPct').textContent = 'Sin Retención Bancaria Anual';
+    $id('efficiencyPct').textContent = 'Ganancia libre de ISR: +' + fmt(plusvalia);
     $id('bar1Label').textContent = 'Total de tus aportaciones';
     $id('bar1Val').textContent = fmt(totalAportado) + ' MXN';
     $id('bar1Fill').style.width = pctB + '%';
-    $id('bar2Label').textContent = 'Patrimonio total que recibes (Ahorro + Ganancias)';
+    $id('bar2Label').textContent = 'Patrimonio proyectado (Ahorro + Rendimientos en UDIs)';
     $id('bar2Val').textContent = fmt(fondoFinal) + ' MXN';
     $id('bar2Fill').style.width = pctB + '%';
     $id('bar2Gold').style.width = (100 - pctB) + '%';
     $id('bannerExplain').innerHTML = 'Con un ahorro mensual de <b>' + fmt(S.ahorroMensual) + '/mes</b> durante <b>' + anosPago + ' años</b>:';
-    $id('bannerNet').textContent = 'Recibes libre de impuestos: ' + fmt(fondoFinal);
+    $id('bannerNet').textContent = 'Proyección libre de ISR: ' + fmt(fondoFinal);
 
     $id('chartRightTitle').textContent = 'Tu Meta Patrimonial (Edad 60)';
-    $id('mile1Label').textContent = 'Tiempo de Aportación';
-    $id('mile1Val').textContent = anosPago + ' Años';
-    $id('mile1Sub').textContent = 'Total ahorrado por ti: ' + fmt(totalAportado);
+    $id('mile1Label').textContent = 'Fondo Proyectado (Año 10)';
+    $id('mile1Val').textContent = fmt(fondo10AnosTotal);
+    $id('mile1Sub').textContent = 'Ahorrado por ti en 10a: ' + fmt(ahoAnual * 10);
     $id('mile2Label').textContent = 'Capital Estimado a tus 60 Años*';
     $id('mile2Val').textContent = fmt(fondoFinal);
     $id('mile2Sub').textContent = 'Protegido contra la inflación (UDIs)';
-    $id('protectionSumLabel').textContent = fmt(sumaAseg) + ' MXN desde el día 1';
+    $id('protectionSumLabel').textContent = S.healthNote + ' (Se valida en estudio oficial)';
 
-    window.updateLinks(0, fondoFinal, sumaAseg, anosPago);
+    window.buildCombinedWhatsApp(0, fondoFinal, liq5, anosPago);
     return;
   }
 
-  // 3) MODO IMAGINA SER 65 (DEVOLUCIÓN ANUAL DEL SAT + RETIRO)
+  // 4) MODO 100% DEDUCCIÓN SAT + RETIRO (IMAGINA SER 65) — Coincide al 100% con los números que simuló en la Landing
   var tope151 = Math.min(ingAnual * 0.10, window.CONFIG.TOPE_5_UMAS);
   var dedReal = Math.min(ahoAnual, tope151 + window.CONFIG.TOPE_ART_185);
   var nuevoISR = calcISR(Math.max(0, ingAnual - dedReal)).isr;
@@ -551,31 +1100,28 @@ window.syncAll = function(){
   var devMes = devSAT / 12;
   var costoNeto = Math.max(0, S.ahorroMensual - devMes);
   var pctFin = ahoAnual > 0 ? Math.round((devSAT / ahoAnual) * 100) : 0;
-  var dev10Anos = devSAT * 10;
 
-  $id('legalBadge').textContent = 'Plan Deducible de Impuestos · Art. 151';
-  $id('mainBoardTitle').innerHTML = S.mode === '360'
-    ? (pref + 'Mapa Patrimonial 360° <span>Tus 3 Pilares</span>')
-    : (pref + 'Rescate de Impuestos y Retiro <span>Imagina Ser 65</span>');
-  $id('mainBoardSub').textContent = 'En vez de dejar todo tu impuesto en el SAT, conviertes una parte en patrimonio propio y recibes dinero de vuelta cada mes de abril.';
+  $id('legalBadge').textContent = '100% Deducible de Impuestos · Art. 151';
+  $id('mainBoardTitle').innerHTML = pref + 'Optimización Fiscal Máxima <span>Imagina Ser 65</span>';
+  $id('mainBoardSub').textContent = 'Destinando el 100% de tu aportación a tu cuenta deducible para maximizar el efectivo que te devuelve el SAT cada mes de abril.';
 
   $id('kpi1Title').textContent = '1. Impuesto Anual que Hoy Pagas';
   $id('kpi1Value').textContent = fmt(isrActual);
-  $id('kpi1Sub').textContent = 'Lo que retiene el SAT sin estrategia';
-  $id('kpi2Title').textContent = '2. Ahorro que el SAT te Acepta';
+  $id('kpi1Sub').textContent = 'ISR estimado sin estrategia';
+  $id('kpi2Title').textContent = '2. Ahorro Anual Deducible';
   $id('kpi2Value').textContent = fmt(dedReal);
-  $id('kpi2Sub').textContent = 'Se guarda en tu cuenta personal';
+  $id('kpi2Sub').textContent = 'En tu cuenta personal de retiro';
   $id('kpi3Title').textContent = '3. Dinero que el SAT te Devuelve';
   $id('kpi3Value').textContent = '+' + fmt(devSAT);
-  $id('kpi3Sub').textContent = 'Depositado a tu banco cada abril';
-  $id('kpi4Title').textContent = '4. Lo que Realmente Pones al Mes';
+  $id('kpi3Sub').textContent = 'A favor cada declaración de abril';
+  $id('kpi4Title').textContent = '4. Desembolso Neto Mensual';
   $id('kpi4Value').textContent = fmt(costoNeto);
-  $id('kpi4Sub').textContent = 'El SAT te pone el ' + pctFin + '% restante';
+  $id('kpi4Sub').textContent = 'El SAT financia el ' + pctFin + '%';
 
   var pctN = isrActual > 0 ? Math.max(15, Math.round((nuevoISR / isrActual) * 100)) : 70;
   $id('chartLeftTitle').textContent = 'Cuánto Recuperas del SAT Cada Año';
-  $id('efficiencyPct').textContent = 'En 10 años recuperas +' + fmt(dev10Anos) + ' del SAT';
-  $id('bar1Label').textContent = 'Impuesto anual actual (Si no haces nada antes de diciembre)';
+  $id('efficiencyPct').textContent = 'Fondo proyectado a 10 años: ~' + fmt(fondo10AnosTotal);
+  $id('bar1Label').textContent = 'Impuesto anual actual (Si no deduces antes del 31 de diciembre)';
   $id('bar1Val').textContent = fmt(isrActual) + ' MXN';
   $id('bar1Fill').style.width = '100%';
   $id('bar2Label').textContent = 'Nuevo impuesto reducido + Efectivo que regresa a tu cuenta';
@@ -585,79 +1131,94 @@ window.syncAll = function(){
   $id('bannerExplain').innerHTML = 'Tú apartas <b>' + fmt(S.ahorroMensual) + '/mes</b>, pero como el SAT te regresa <b>' + fmt(devMes) + '/mes</b>:';
   $id('bannerNet').textContent = 'Tu desembolso real es de ' + fmt(costoNeto) + '/mes';
 
-  $id('chartRightTitle').textContent = 'Lo que Construyes para tu Retiro (Edad 65)';
-  $id('mile1Label').textContent = 'Tiempo de Aportación';
-  $id('mile1Val').textContent = anosPago + ' Años';
-  $id('mile1Sub').textContent = 'Aportado por ti: ' + fmt(totalAportado);
-  $id('mile2Label').textContent = 'Patrimonio Estimado a tus 65 Años*';
+  $id('chartRightTitle').textContent = 'Lo que Construyes en UDIs (10 Años y Edad 65)';
+  $id('mile1Label').textContent = 'Fondo Proyectado (Año 10)';
+  $id('mile1Val').textContent = fmt(fondo10AnosTotal);
+  $id('mile1Sub').textContent = 'Coincide con tu simulación inicial';
+  $id('mile2Label').textContent = 'Patrimonio Estimado (Edad 65)*';
   $id('mile2Val').textContent = fmt(fondoFinal);
   $id('mile2Sub').textContent = 'Protegido contra la inflación (UDIs)';
-  $id('protectionSumLabel').textContent = fmt(sumaAseg) + ' MXN desde el día 1';
+  $id('protectionSumLabel').textContent = S.healthNote + ' (Se valida en estudio oficial)';
 
-  window.updateLinks(devSAT, fondoFinal, sumaAseg, anosPago);
+  window.buildCombinedWhatsApp(devSAT, fondoFinal, fondo10AnosTotal, anosPago);
 };
 
-/* ---- ACTUALIZAR ENLACES DE WHATSAPP ---- */
-window.updateLinks = function(devSAT, fondo, suma, anosPago){
+/* ---- GENERADOR UNIFICADO DE WHATSAPP (RESUMEN + PASES DE CORTESÍA NOMINALES) ---- */
+window.buildCombinedWhatsApp = function(devSAT, fondoPrincipal, fondoIntermedio, anosPago){
   var S = window.S;
   var cli = S.nombre && S.nombre.trim() ? S.nombre.trim() : '';
   var pNom = cli ? cli.split(/\s+/)[0] : '';
   var saludo = pNom ? ('Hola *' + pNom + '*,') : '¡Hola!';
   var tel = cleanTel($id('clientPhone') ? $id('clientPhone').value : S.phone);
-  var waDest = tel.length === 10 ? ('52' + tel) : '';
+  var waBase = tel.length === 10 ? ('https://wa.me/52' + tel + '?text=') : 'https://wa.me/?text=';
+
+  var r1 = $id('refName1') ? $id('refName1').value.trim() : '';
+  var r2 = $id('refName2') ? $id('refName2').value.trim() : '';
+  var rNames = [r1, r2].filter(Boolean).join(' y ');
 
   var ficha = '';
   if (S.mode === 'gmm'){
     var hospObj = window.GMM_HOSPITAL_LEVELS[S.gmmHosp] || window.GMM_HOSPITAL_LEVELS.integro;
-    ficha = saludo + ' fue un gusto platicar contigo hoy. Te comparto el resumen de tu diagnóstico de protección *Alfa Medical en Pesos Mexicanos (Seguros Monterrey)*:\n\n' +
+    ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de nuestro diagnóstico de protección *Alfa Medical (Seguros Monterrey)*:\n\n' +
       '• A quiénes protegemos: *' + S.gmmWho + '*\n' +
       '• Situación actual: *' + S.gmmStatus + '*\n' +
       '• Hospitales de preferencia: *' + hospObj.titulo + '*\n' +
-      '• Respaldo por enfermedad: *$170,000,000 MXN ($170 Millones de Pesos)*\n' +
-      '• Beneficio en el SAT: *100% Deducible de impuestos en abril*\n' +
-      '• Incluye: *Programa Médicos a tu Lado* y pago directo en Red Hospitalaria.\n\n' +
-      '🔗 Conoce Médicos a tu Lado: ' + window.CONFIG.MEDICOS_A_TU_LADO_URL + '\n' +
-      '🏥 Directorio de Hospitales CDMX: ' + window.CONFIG.RED_MEDICA_CDMX_URL + '\n\n' +
-      'Nos vemos en nuestra 2ª Sesión para entregarte tus opciones exactas emitidas en el portal oficial de Seguros Monterrey.';
+      '• Suma asegurada objetivo: *Hasta $170,000,000 MXN*\n' +
+      '• Beneficio en el SAT: *Prima deducible en tu declaración anual*\n\n' +
+      'Nos vemos en nuestra 2ª Sesión por Google Meet para revisar tus opciones oficiales.';
+  } else if (S.mode === 'hibrido' && S.regimen !== 'resico'){
+    var m1 = Math.round(S.ahorroMensual * (S.hybridPct151 / 100));
+    var m2 = S.ahorroMensual - m1;
+    ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de la *Estrategia Híbrida (Método de 2 Cuentas)* que diseñamos en pantalla:\n\n' +
+      '• Ahorro mensual total planeado: *' + fmt(S.ahorroMensual) + '/mes*\n' +
+      '• *Cuenta 1 (Base Deducible SAT):* ' + fmt(m1) + '/mes → Te genera una devolución estimada de *+' + fmt(devSAT) + ' MXN cada abril*\n' +
+      '• *Cuenta 2 (Bolsillo Flexible 3–5 años):* ' + fmt(m2) + '/mes → Proyecta *~' + fmt(fondoIntermedio) + ' MXN* en el año 5 disponibles para tus proyectos\n' +
+      '• *Fondo de retiro estimado (Edad 65):* ~' + fmt(fondoPrincipal) + ' MXN en UDIs\n\n' +
+      'Con lo que platicamos hoy prepararé tus corridas oficiales en Seguros Monterrey para revisarlas juntos en nuestra 2ª Sesión por Google Meet.';
   } else {
-    var pName = (S.mode === '60' || S.regimen === 'resico') ? 'Imagina Ser 60 (Libre de Impuestos)' : 'Imagina Ser 65 (Deducible en el SAT)';
+    var pName = (S.mode === '60' || S.regimen === 'resico') ? 'Imagina Ser 60 (Art. 93 Libre de ISR)' : 'Imagina Ser 65 (100% Deducible Art. 151)';
     var lFisc = (S.mode === '60' || S.regimen === 'resico')
-      ? '• Beneficio Fiscal: *Rendimientos 100% libres de impuestos al retiro*'
-      : ('• Devolución del SAT estimada en abril: *+' + fmt(devSAT) + ' MXN cada año* (Tu desembolso neto real es de ' + fmt(S.ahorroMensual - (devSAT/12)) + '/mes)');
-    ficha = saludo + ' fue un gusto platicar contigo hoy. Te comparto el resumen de lo que proyectamos en tu sesión (*' + pName + '*):\n\n' +
-      '• Ahorro mensual considerado: *' + fmt(S.ahorroMensual) + '/mes* (' + anosPago + ' años)\n' + lFisc + '\n' +
-      '• Patrimonio estimado en UDIs: *' + fmt(fondo) + ' MXN*\n' +
-      '• Respaldo por Invalidez / Vida desde el día 1: *' + fmt(suma) + ' MXN*\n\nNos vemos en nuestra 2ª Sesión para revisar tu estudio oficial emitido en Seguros Monterrey.';
+      ? '• Beneficio Fiscal: *Rendimientos libres de impuestos al retiro (Art. 93)*'
+      : ('• Devolución del SAT estimada en abril: *+' + fmt(devSAT) + ' MXN cada año* (Desembolso neto real: ' + fmt(S.ahorroMensual - (devSAT/12)) + '/mes)');
+    ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de lo que proyectamos en tu sesión (*' + pName + '*):\n\n' +
+      '• Ahorro mensual considerado: *' + fmt(S.ahorroMensual) + '/mes*\n' + lFisc + '\n' +
+      '• Fondo proyectado a 10 años: *~' + fmt(fondoIntermedio) + ' MXN*\n' +
+      '• Patrimonio proyectado al retiro: *~' + fmt(fondoPrincipal) + ' MXN*\n\n' +
+      'Nos vemos en nuestra 2ª Sesión por Google Meet para revisar tu corrida oficial emitida en Seguros Monterrey.';
   }
-  if ($id('sendSummaryWaBtn')) $id('sendSummaryWaBtn').href = 'https://wa.me/' + waDest + '?text=' + encodeURIComponent(ficha);
 
-  var r1 = $id('refName1') ? $id('refName1').value.trim() : '';
-  var r2 = $id('refName2') ? $id('refName2').value.trim() : '';
-  var rNames = [r1, r2].filter(Boolean).join(' y ') || 'tus invitados';
+  // Si anotaste los nombres de sus 2 invitados, los incluye elegantemente al final del mismo resumen
+  if (rNames){
+    ficha += '\n\n🎁 *Tus 2 Pases de Cortesía registrados para ' + rNames + ':*\n' +
+      'Si gustas, puedes reenviarles este texto cuando platiques con ellos:\n' +
+      '_"¡Hola! Tuve una sesión muy clara con Santiago, mi asesor patrimonial, sobre cómo recuperar impuestos del SAT en abril y ahorrar en UDIs sin amarrar todo el dinero hasta los 65 años. Me dio un pase sin costo para ti; avísame si te late para pasarte su contacto."_';
+  }
 
-  var paseLigero = saludo + ' muchas gracias por pensar en *' + rNames + '*.\n\n' +
-    'Te dejo este mensaje corto por si gustas compartírselo por WhatsApp:\n\n' +
-    '*"¡Hola! Acabo de tener una asesoría muy clara con Santiago, mi asesor patrimonial y fiscal, sobre cómo recuperar impuestos ante el SAT y proteger el patrimonio. Me incluyó 2 pases sin costo para personas cercanas y pensé en ti. Te comparto su contacto porque te va a escribir para agendar tus 30 minutos."*';
-  window.__currentPassUrl = 'https://wa.me/' + waDest + '?text=' + encodeURIComponent(paseLigero);
+  if ($id('sendSummaryWaBtn')) $id('sendSummaryWaBtn').href = waBase + encodeURIComponent(ficha);
+
+  var paseSolo = saludo + ' dejé registrados tus *2 Pases de Cortesía* para *' + (rNames || 'tus invitados') + '*.\n\n' +
+    'Aquí tienes el mensaje listo por si gustas reenviárselo por WhatsApp:\n\n' +
+    '*"¡Hola! Acabo de tener una sesión muy clara con Santiago, mi asesor patrimonial, sobre cómo recuperar impuestos ante el SAT y armar un plan de ahorro en UDIs con dos cuentas (una para el retiro y otra disponible a mediano plazo). Me incluyó 2 pases sin costo para personas cercanas y pensé en ti. Avísame si te interesa para pasarte su contacto."*';
+  window.__currentPassUrl = waBase + encodeURIComponent(paseSolo);
 };
 
-/* ---- CONEXIÓN AUTOMÁTICA END-TO-END (Lee URL, SessionStorage o Google Sheets) ---- */
+/* ---- CARGA AUTOMÁTICA DE FOLIO ---- */
 window.applyFolioData = function(d, code){
   var S = window.S;
   S.folio = code || S.folio;
   S.nombre = d.nombre || S.nombre;
   S.phone = cleanTel(d.whatsapp || d.wa || d.phone || S.phone);
   var regStr = String(d.regimen || '').toLowerCase();
-  S.regimen = (regStr.indexOf('resico') >= 0 || regStr.indexOf('dueño') >= 0) ? 'resico'
+  S.regimen = (regStr.indexOf('resico') >= 0) ? 'resico'
             : (regStr.indexOf('mixto') >= 0 ? 'mixto'
             : ((regStr.indexOf('honorarios') >= 0 || regStr.indexOf('empresarial') >= 0 || regStr.indexOf('pfae') >= 0) ? 'honorarios' : 'sueldos'));
-  if (d.ingreso) S.ingresoMensual = Math.min(250000, Math.max(20000, Number(d.ingreso)||65000));
+  if (d.ingreso) S.ingresoMensual = Math.min(250000, Math.max(20000, Number(d.ingreso)||55000));
 
   var pr = String(d.prioridad || d.goal || d.calculo_estimado || '').toLowerCase();
   var targetM = (pr.indexOf('médicos') >= 0 || pr.indexOf('medicos') >= 0 || pr.indexOf('salud') >= 0 || pr.indexOf('gmm') >= 0) ? 'gmm'
-              : ((S.regimen === 'resico' || pr.indexOf('híbrida') >= 0 || pr.indexOf('liquidez') >= 0 || pr.indexOf('ahorro') >= 0) ? '60' : '65');
+              : (S.regimen === 'resico' ? '60' : 'hibrido');
 
-  S.ahorroMensual = Math.max(1500, Math.round((S.ingresoMensual * 0.10) / 500) * 500);
+  S.ahorroMensual = Number(d.aportacion_mensual) || Math.max(1500, Math.round((S.ingresoMensual * 0.10) / 500) * 500);
 
   if ($id('folioInput') && S.folio) $id('folioInput').value = S.folio;
   if ($id('clientName')) $id('clientName').value = S.nombre;
@@ -669,7 +1230,7 @@ window.applyFolioData = function(d, code){
   window.selectMode(targetM);
   var msg = $id('folioStatusMsg');
   if (msg && S.nombre){
-    msg.textContent = '✓ Datos de ' + S.nombre + ' listos en pantalla.';
+    msg.textContent = '✓ Datos de ' + S.nombre + ' cargados.';
     msg.style.display = 'block';
   }
 };
@@ -680,15 +1241,6 @@ window.searchFolio = function(){
   var btn = $id('loadFolioBtn');
   if (btn) btn.textContent = '...';
 
-  var keys = Object.keys(window.SHEET_CACHE);
-  for (var i=0; i<keys.length; i++){
-    if (keys[i] === q || keys[i].indexOf(q) === 0){
-      window.applyFolioData(window.SHEET_CACHE[keys[i]], keys[i]);
-      if (btn) btn.textContent = 'Cargar';
-      return;
-    }
-  }
-
   window.__onFolioLoaded = function(res){
     if (btn) btn.textContent = 'Cargar';
     if (res && res.found){
@@ -696,45 +1248,46 @@ window.searchFolio = function(){
     } else {
       var msg = $id('folioStatusMsg');
       if (msg){
-        msg.textContent = 'ℹ️ Puedes ajustar los datos directamente abajo.';
+        msg.textContent = 'ℹ️ Ajusta los parámetros manualmente abajo.';
         msg.style.display = 'block';
       }
     }
   };
   var s = document.createElement('script');
   s.src = window.CONFIG.APPS_SCRIPT_URL + '?folio=' + encodeURIComponent(q) + '&callback=__onFolioLoaded&_=' + Date.now();
-  s.onerror = function(){
-    if (btn) btn.textContent = 'Cargar';
-  };
+  s.onerror = function(){ if (btn) btn.textContent = 'Cargar'; };
   document.body.appendChild(s);
 };
 
-/* ---- ACCIÓN UNIFICADA DE PASES DE CORTESÍA (1 Solo Clic = Guarda en Sheets + Abre WhatsApp) ---- */
-window.activateAndSharePasses = async function(){
-  var r1N = $id('refName1').value.trim(), r1P = cleanTel($id('refPhone1').value);
-  var r2N = $id('refName2').value.trim(), r2P = cleanTel($id('refPhone2').value);
-  if (!r1N && !r2N){ $id('refName1').focus(); return; }
+/* ---- GUARDADO SILENCIOSO DE PASES DE CORTESÍA EN SHEETS ---- */
+window.savePassesToSheets = async function(openPassWa){
+  var r1N = $id('refName1').value.trim(), r1Rel = $id('refRel1').value.trim();
+  var r2N = $id('refName2').value.trim(), r2Rel = $id('refRel2').value.trim();
+  if (!r1N && !r2N){
+    if (openPassWa) $id('refName1').focus();
+    return;
+  }
 
   window.syncAll();
-  if (window.__currentPassUrl){
+  if (openPassWa && window.__currentPassUrl){
     window.open(window.__currentPassUrl, '_blank', 'noopener');
   }
 
   var btn = $id('saveReferralsBtn'), st = $id('refSaveStatus');
-  btn.disabled = true; btn.textContent = 'Activando Pases...';
+  if (btn){ btn.disabled = true; btn.textContent = 'Registrando pases...'; }
   var anfitrion = (window.S.nombre && window.S.nombre.trim()) ? window.S.nombre.trim() : 'Cliente en Sesión';
   var telAnf = cleanTel(window.S.phone) || 'Sin teléfono';
   var folioOrigen = window.S.folio || ('SESION-' + Date.now().toString(36).toUpperCase());
-  var list = [{n:r1N, p:r1P}, {n:r2N, p:r2P}].filter(function(x){ return x.n.length > 1; });
+  var list = [{n:r1N, rel:r1Rel}, {n:r2N, rel:r2Rel}].filter(function(x){ return x.n.length > 1; });
 
   for (var i=0; i<list.length; i++){
     var payload = {
       fecha: new Date().toLocaleString('es-MX', { timeZone:'America/Mexico_City' }),
-      nombre: list[i].n + ' (Invitado de ' + anfitrion + ')',
-      whatsapp: list[i].p || telAnf,
-      regimen: 'Invitado de Cortesía',
+      nombre: list[i].n + ' (Pase de ' + anfitrion + ')',
+      whatsapp: telAnf,
+      regimen: list[i].rel || 'Invitado de Cortesía',
       origen: 'Sesión Diagnóstico 1 a 1',
-      calculo_estimado: '[PASE DE CORTESÍA] Invitado por: ' + anfitrion + ' (' + telAnf + ') | Folio: ' + folioOrigen,
+      calculo_estimado: '[PASE NOMINAL] Invitado por: ' + anfitrion + ' (' + telAnf + ') | Relación/Nota: ' + (list[i].rel || 'Cercano') + ' | Folio: ' + folioOrigen,
       id_lead: 'INV' + Date.now().toString(36).toUpperCase() + (i+1),
       calificado: 'SI'
     };
@@ -746,7 +1299,7 @@ window.activateAndSharePasses = async function(){
       });
     } catch(e){}
   }
-  btn.disabled = false; btn.textContent = '✨ Activar Pases y Compartir por WhatsApp →';
+  if (btn){ btn.disabled = false; btn.textContent = '✨ Registrar Pases y Enviar Invitación →'; }
   if (st) st.style.display = 'block';
 };
 
@@ -762,7 +1315,6 @@ window.closeCalModal = function(){
 };
 
 window.addEventListener('DOMContentLoaded', function(){
-  // Conexión End-to-End con gracias.html / index.html o parámetro ?folio=
   try {
     var raw = sessionStorage.getItem('santi_lead') || sessionStorage.getItem('santi_lead_data');
     if (raw) window.applyFolioData(JSON.parse(raw), JSON.parse(raw).lead || '');
@@ -775,8 +1327,6 @@ window.addEventListener('DOMContentLoaded', function(){
   } else {
     window.syncAll();
   }
-  window.renderTimerUI();
-  if (!window.S.timerInt) window.S.timerInt = setInterval(window.tickTimer, 1000);
 });
 </script>
 </head>
@@ -785,54 +1335,49 @@ window.addEventListener('DOMContentLoaded', function(){
 
 <header class="header">
   <div class="header-in">
-    <a class="brand" href="profesionistas.html">
-      <img src="https://lh3.googleusercontent.com/d/1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr" width="34" height="34" alt="Santi te asesora"
-           onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1dU-eav7Hf5Nct4BLRjvHl9GkSa0RfCUr&sz=w500';">
+    <a class="brand" href="index.html">
+      <img src="logo-santi.png" width="32" height="32" alt="Santi te asesora"
+           onerror="this.onerror=null;this.src='https://www.santiteasesora.com/logo-santi.png';">
       <span>Santi te asesora</span>
-      <span class="badge-top">Diagnóstico Personalizado</span>
+      <span class="badge-top">Mesa de Diseño Patrimonial</span>
     </a>
 
     <div class="header-tools">
-      <span class="phase-pill" id="phaseText">Etapa 1: Conociendo tus Objetivos</span>
-      <button type="button" class="timer-btn" id="sessionTimerBtn" onclick="window.toggleTimer()" title="Pausar o Reanudar tiempo">
-        <span class="timer-dot"></span>
-        <span>Sesión 1 a 1: <strong id="timerDisplay">30:00</strong></span>
-      </button>
-      <button type="button" class="reset-btn" onclick="window.resetTimer()" title="Reiniciar a 30:00">↺</button>
+      <span class="cnsf-pill">Agente Autorizado CNSF: <strong>C412676</strong></span>
+      <button type="button" class="reset-btn" onclick="window.clearClientForm()" title="Reiniciar datos">↺ Limpiar</button>
     </div>
   </div>
 </header>
 
 <main class="dashboard">
 
-  <!-- PANEL IZQUIERDO: PARÁMETROS RÁPIDOS A 1 PULGAR -->
+  <!-- PANEL IZQUIERDO: CONTROLES EN VIVO -->
   <aside class="panel">
     <div class="panel-head">
-      <span class="panel-tag">1. Tus Datos Base</span>
+      <span class="panel-tag">1. Datos de tu Sesión</span>
       <div class="folio-box">
         <input type="text" id="folioInput" class="folio-input" placeholder="Folio (Opcional)" onkeydown="if(event.key==='Enter'){event.preventDefault();window.searchFolio();}">
         <button type="button" class="btn-load" id="loadFolioBtn" onclick="window.searchFolio()">Cargar</button>
-        <button type="button" class="btn-clear" onclick="window.clearClientForm()" title="Limpiar campos">↺</button>
       </div>
     </div>
 
     <div class="folio-msg" id="folioStatusMsg"></div>
 
-    <!-- Lo primero es elegir el objetivo de la conversación -->
+    <!-- Selector de Escenario -->
     <div class="fgroup">
-      <span class="flabel">¿Qué objetivo revisamos primero hoy?</span>
+      <span class="flabel">¿Qué estructura comparamos en pantalla?</span>
       <div class="mode-grid" id="modeButtons">
-        <button type="button" class="mode-btn" data-mode="360" onclick="window.selectMode('360')">
-          🧭 Panorama 360°
-          <small>Ver los 3 pilares juntos</small>
+        <button type="button" class="mode-btn active" data-mode="hibrido" onclick="window.selectMode('hibrido')">
+          ⚖️ Estrategia Híbrida
+          <small>2 Cuentas: SAT + Liquidez</small>
         </button>
-        <button type="button" class="mode-btn active" data-mode="65" onclick="window.selectMode('65')">
-          🏛️ Impuestos + Retiro
-          <small>Imagina Ser 65 (SAT)</small>
+        <button type="button" class="mode-btn" data-mode="65" onclick="window.selectMode('65')">
+          🏛️ 100% Retiro SAT
+          <small>Máxima devolución Art. 151</small>
         </button>
         <button type="button" class="mode-btn" data-mode="60" onclick="window.selectMode('60')">
-          ⚡ Proyectos + Liquidez
-          <small>Imagina Ser 60 (Libre ISR)</small>
+          ⚡ Proyectos / RESICO
+          <small>Exención Art. 93 + Liquidez</small>
         </button>
         <button type="button" class="mode-btn" data-mode="gmm" onclick="window.selectMode('gmm')">
           🏥 Salud Privada
@@ -841,42 +1386,60 @@ window.addEventListener('DOMContentLoaded', function(){
       </div>
     </div>
 
-    <!-- Sliders principales arriba para interacción inmediata sin scroll -->
+    <!-- Slider 1: Ingreso Mensual (Inicia en $55,000 como tu prospecto del sábado) -->
     <div class="scard">
       <div class="stop">
         <span>Ingreso Mensual Aproximado</span>
-        <strong class="sval" id="incomeLabel">$65,000</strong>
+        <strong class="sval" id="incomeLabel">$55,000</strong>
       </div>
-      <input type="range" id="incomeSlider" min="20000" max="250000" step="2500" value="65000" oninput="window.syncAll()" onchange="window.syncAll()">
+      <input type="range" id="incomeSlider" min="20000" max="250000" step="2500" value="55000" oninput="window.syncAll()" onchange="window.syncAll()">
       <div class="ssub">
-        <span>Ingreso anual: <strong id="annualIncomeLabel">$780,000 al año</strong></span>
-        <span>Retención SAT: <strong id="marginalRateLabel">30.0%</strong></span>
+        <span>Ingreso anual: <strong id="annualIncomeLabel">$660,000 al año</strong></span>
+        <span>Escalón ISR: <strong id="marginalRateLabel">23.5%</strong></span>
       </div>
     </div>
 
-    <!-- Slider de Ahorro (Se oculta en modo Salud Privada para no abrumar con precios) -->
+    <!-- Slider 2: Ahorro Mensual Total (Inicia en $5,500 como tu prospecto del sábado) -->
     <div class="scard" id="saveSliderCard">
       <div class="stop">
-        <span id="saveSliderTitle">Monto Mensual a Simular</span>
-        <strong class="sval" id="saveLabel">$6,500</strong>
+        <span id="saveSliderTitle">Ahorro Mensual Total</span>
+        <strong class="sval" id="saveLabel">$5,500</strong>
       </div>
-      <input type="range" id="saveSlider" min="1500" max="35000" step="500" value="6500" oninput="window.syncAll()" onchange="window.syncAll()">
+      <input type="range" id="saveSlider" min="1500" max="35000" step="500" value="5500" oninput="window.syncAll()" onchange="window.syncAll()">
       <div class="ssub">
-        <span>Acumulado anual: <strong id="annualSaveLabel">$78,000 al año</strong></span>
+        <span>Anual: <strong id="annualSaveLabel">$66,000 al año</strong></span>
         <span id="capPercentLabel">10.0% de tu ingreso</span>
       </div>
 
       <div class="prow">
-        <button type="button" class="pbtn active" onclick="window.applyPreset(1)"><span>10% Cómodo</span><br><small id="lblPreset10">$6,500/mes</small></button>
-        <button type="button" class="pbtn" onclick="window.applyPreset(2)"><span>Tope Personal</span><br><small id="lblPreset151">$6,500/mes</small></button>
-        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Máximo Fiscal</span><br><small id="lblPresetMax">$19,167/mes</small></button>
+        <button type="button" class="pbtn" onclick="window.applyPreset(1)"><span>Base Cómoda (7%)</span><br><small id="lblPreset10">$4,000/mes</small></button>
+        <button type="button" class="pbtn active" onclick="window.applyPreset(2)"><span>Tope Anual SAT</span><br><small id="lblPreset151">$5,500/mes</small></button>
+        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Doble Estímulo</span><br><small id="lblPresetMax">$18,000/mes</small></button>
+      </div>
+    </div>
+
+    <!-- Slider 3: DISTRIBUCIÓN DE LAS 2 CUENTAS EN LA ESTRATEGIA HÍBRIDA -->
+    <div class="scard hybrid-split-card" id="hybridSplitCard">
+      <div class="stop">
+        <span>Distribución entre tus 2 Cuentas</span>
+        <strong class="sval" id="hybridSplitLabel" style="font-size:13.5px">70% Retiro SAT / 30% Liquidez</strong>
+      </div>
+      <input type="range" id="hybridSplitSlider" min="20" max="80" step="10" value="70" oninput="window.syncAll()" onchange="window.syncAll()">
+      <div class="ssub">
+        <span id="hybridPocket1Text" style="color:var(--em);font-weight:800">Cuenta 1 (Base Fija SAT): $3,850/mes</span>
+        <span id="hybridPocket2Text" style="color:var(--navy);font-weight:800">Cuenta 2 (Flexible): $1,650/mes</span>
+      </div>
+      <div class="split-presets">
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(50)">50% / 50% Equilibrado</button>
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(60)">60% / 40% Flexible</button>
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(70)">70% / 30% Fiscal</button>
       </div>
     </div>
 
     <!-- MÓDULO CONVERSACIONAL DE PREFERENCIAS ALFA MEDICAL -->
     <div class="gmm-discovery" id="gmmDiscoveryBox">
       <div class="gmm-disc-head">
-        <span>🩺 Tus Preferencias de Protección Médica</span>
+        <span>🩺 Preferencias de Protección Médica</span>
         <span>En Pesos MXN</span>
       </div>
 
@@ -915,28 +1478,28 @@ window.addEventListener('DOMContentLoaded', function(){
 
     <div class="g2">
       <div class="fgroup">
-        <label class="flabel" for="clientName">Tu Nombre</label>
+        <label class="flabel" for="clientName">Nombre del Cliente</label>
         <input type="text" id="clientName" class="finput" value="" placeholder="Nombre..." autocomplete="off" oninput="window.syncAll()">
       </div>
       <div class="fgroup">
-        <label class="flabel" for="clientPhone">WhatsApp (Para enviarte ficha)</label>
-        <input type="tel" id="clientPhone" class="finput" value="" placeholder="10 dígitos" autocomplete="off" oninput="window.syncAll()">
+        <label class="flabel" for="clientPhone">WhatsApp (10 dígitos)</label>
+        <input type="tel" id="clientPhone" class="finput num" value="" placeholder="55 1234 5678" autocomplete="off" oninput="window.syncAll()">
       </div>
     </div>
 
     <div class="fgroup">
-      <label class="flabel" for="regimenSelect">Cómo tributas hoy ante el SAT</label>
+      <label class="flabel" for="regimenSelect">Régimen Fiscal ante el SAT</label>
       <select id="regimenSelect" class="finput" onchange="window.onRegimenChange(this.value)">
-        <option value="sueldos" selected>💼 Sueldos y Salarios (Asalariado)</option>
+        <option value="sueldos" selected>💼 Sueldos y Salarios (Nómina)</option>
         <option value="honorarios">🧾 Honorarios / Actividad Empresarial</option>
         <option value="mixto">⚖️ Esquema Mixto (Sueldos + Facturación)</option>
-        <option value="resico">⚡ RESICO (Régimen Simplificado de Confianza)</option>
+        <option value="resico">⚡ RESICO (Régimen Simplificado)</option>
       </select>
     </div>
 
-    <!-- Datos finos para cotización agrupados limpiamente -->
-    <details class="extra-details">
-      <summary>Parámetros para tu cotización exacta</summary>
+    <!-- Datos de Edad, Plazo y Pre-evaluación Médica -->
+    <details class="extra-details" open>
+      <summary>Perfil Personal y Pre-evaluación Médica</summary>
       <div class="extra-body">
         <div class="g2">
           <div class="fgroup">
@@ -945,40 +1508,48 @@ window.addEventListener('DOMContentLoaded', function(){
           </div>
           <div class="fgroup">
             <label class="flabel" for="clientAge">Edad Actual</label>
-            <input type="number" id="clientAge" class="finput" value="" placeholder="Ej. 35" min="18" max="70" oninput="window.syncAll()">
+            <input type="number" id="clientAge" class="finput num" value="32" placeholder="Ej. 32" min="18" max="70" oninput="window.syncAll()">
           </div>
         </div>
         <div class="g2">
           <div class="fgroup">
-            <label class="flabel" for="smokerSelect">¿Fumas actualmente?</label>
+            <label class="flabel" for="smokerSelect">¿Fuma actualmente?</label>
             <select id="smokerSelect" class="finput" onchange="window.syncAll()">
-              <option value="no">No Fumo (Tarifa Preferente)</option>
-              <option value="si">Sí Fumo</option>
+              <option value="no">No Fuma</option>
+              <option value="si">Sí Fuma</option>
             </select>
           </div>
           <div class="fgroup">
             <label class="flabel" for="paymentTerm">Plazo de Aportación</label>
             <select id="paymentTerm" class="finput" onchange="window.syncAll()">
-              <option value="todos" selected>Durante el plazo del plan</option>
+              <option value="todos" selected>Todo el plazo del plan</option>
               <option value="15">Plazo compacto de 15 años</option>
               <option value="10">Plazo compacto de 10 años</option>
             </select>
           </div>
         </div>
+        <div class="fgroup">
+          <label class="flabel" for="healthSelect">Notas de Salud para Selección de Riesgos</label>
+          <select id="healthSelect" class="finput" onchange="window.syncAll()">
+            <option value="Salud general sin antecedentes relevantes" selected>✓ Salud general sin antecedentes relevantes</option>
+            <option value="Revisar relación peso/estatura (IMC) en suscripción">⚖️ Revisar relación peso/estatura (IMC) en suscripción</option>
+            <option value="Antecedente médico o cirugía (Requiere valoración)">🩺 Antecedente médico o cirugía (Requiere valoración)</option>
+          </select>
+        </div>
       </div>
     </details>
   </aside>
 
-  <!-- PANEL DERECHO: RESULTADOS CLAROS Y CIERRE DE SEGUNDA SESIÓN -->
+  <!-- PANEL DERECHO: PIZARRA VISUAL EN VIVO -->
   <section class="stage">
 
     <div class="board">
       <div class="bhead">
         <div>
-          <h1 id="mainBoardTitle">Tu Rescate de Impuestos y Retiro <span>Imagina Ser 65</span></h1>
-          <p id="mainBoardSub">En vez de dejar todo tu impuesto en el SAT, conviertes una parte en patrimonio propio y recibes dinero de vuelta cada mes de abril.</p>
+          <h1 id="mainBoardTitle">Tu Estrategia Híbrida: <span>Devolución SAT + Liquidez a Mediano Plazo</span></h1>
+          <p id="mainBoardSub">Dividimos tus $5,500/mes en dos bolsillos: una base cómoda que te da devolución del SAT en abril y una cuenta flexible disponible en 3 a 5 años.</p>
         </div>
-        <span class="tbadge" id="legalBadge">Plan Deducible de Impuestos · Art. 151</span>
+        <span class="tbadge" id="legalBadge">Estrategia Híbrida · 2 Cuentas en Seguros Monterrey</span>
       </div>
 
       <!-- ACCESOS DIRECTOS OFICIALES PARA DEMOSTRACIÓN EN VIVO DE ALFA MEDICAL -->
@@ -994,159 +1565,134 @@ window.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
 
-      <!-- MAPA INTEGRAL 360° -->
-      <div class="compass" id="compassModule">
-        <div style="font-size:13px;color:var(--gold);font-weight:800">🧭 TUS 3 PILARES PATRIMONIALES (Haz clic en el que quieras explorar primero):</div>
-        <div class="cgrid">
-          <div class="ccard" onclick="window.selectMode('gmm')">
-            <small>PILAR 1 · SALUD Y TRANQUILIDAD FAMILIAR</small>
-            <h4>🏥 1. Alfa Medical ($170 Millones MXN)</h4>
-            <p>Atención privada en los mejores hospitales con $170 Millones de respaldo, Médicos a tu Lado y deducción de impuestos.</p>
-            <b>Explorar Salud Privada →</b>
-          </div>
-          <div class="ccard" onclick="window.selectMode('65')">
-            <small>PILAR 2 · IMPUESTOS Y RETIRO</small>
-            <h4>🏛️ 2. Recuperar Impuestos en Abril + Retiro</h4>
-            <p>Recibe un depósito anual del SAT en tu cuenta bancaria mientras construyes tu retiro protegido contra la inflación.</p>
-            <b>Explorar Devolución del SAT →</b>
-          </div>
-          <div class="ccard" onclick="window.selectMode('60')">
-            <small>PILAR 3 · PROYECTOS Y LIQUIDEZ</small>
-            <h4>⚡ 3. Metas a Mediano Plazo Libres de ISR</h4>
-            <p>Construye capital para proyectos de 3 a 5 años y recibe todas tus ganancias 100% libres de impuestos a los 60 años.</p>
-            <b>Explorar Liquidez y Proyectos →</b>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4 TARJETAS KPI EN LENGUAJE DIRECTO AL BOLSILLO -->
+      <!-- 4 TARJETAS KPI -->
       <div class="kgrid">
         <div class="kcard base-state">
-          <small id="kpi1Title">1. Impuesto Anual que Hoy Pagas</small>
-          <b id="kpi1Value">$158,833</b>
-          <span id="kpi1Sub">Lo que retiene el SAT sin estrategia</span>
+          <small id="kpi1Title">1. Cuenta 1: Base Fija SAT</small>
+          <b id="kpi1Value">$3,850/mes</b>
+          <span id="kpi1Sub">$46,200/año deducibles (Art. 151)</span>
         </div>
         <div class="kcard">
-          <small id="kpi2Title">2. Ahorro que el SAT te Acepta</small>
-          <b id="kpi2Value">$78,000</b>
-          <span id="kpi2Sub">Se guarda en tu cuenta personal</span>
+          <small id="kpi2Title">2. Cuenta 2: Bolsillo Flexible</small>
+          <b id="kpi2Value">$1,650/mes</b>
+          <span id="kpi2Sub">Sin candado fiscal de 65 años</span>
         </div>
         <div class="kcard gain">
-          <small id="kpi3Title">3. Dinero que el SAT te Devuelve</small>
-          <b id="kpi3Value">+$23,400</b>
-          <span id="kpi3Sub">Depositado a tu banco cada abril</span>
+          <small id="kpi3Title">3. Devolución SAT en Abril</small>
+          <b id="kpi3Value">+$10,866</b>
+          <span id="kpi3Sub">Efectivo anual por tu Cuenta 1</span>
         </div>
         <div class="kcard net">
-          <small id="kpi4Title">4. Lo que Realmente Pones al Mes</small>
-          <b id="kpi4Value">$4,550</b>
-          <span id="kpi4Sub">El SAT te pone el 30% restante</span>
+          <small id="kpi4Title">4. Desembolso Neto Total</small>
+          <b id="kpi4Value">$4,595/mes</b>
+          <span id="kpi4Sub">Descontando tu devolución del SAT</span>
         </div>
       </div>
 
       <div class="vgrid">
         <div class="cbox">
           <div class="ctitle">
-            <span id="chartLeftTitle">Cuánto Recuperas del SAT Cada Año</span>
-            <span id="efficiencyPct">En 10 años recuperas +$234,000 del SAT</span>
+            <span id="chartLeftTitle">Distribución de tus $5,500/mes (Ambas Cuentas)</span>
+            <span id="efficiencyPct">Fondo combinado a 10 años: ~$1,020,952</span>
           </div>
           <div class="bgroup">
             <div class="blabel">
-              <span id="bar1Label">Impuesto anual actual (Si no haces nada antes de diciembre)</span>
-              <strong id="bar1Val" style="color:var(--cream)">$158,833 MXN</strong>
+              <span id="bar1Label">Cuenta 1 (Base Deducible Art. 151) + Cuenta 2 (Bolsillo Disponible)</span>
+              <strong id="bar1Val" style="color:var(--cream)">70% Retiro / 30% Liquidez</strong>
             </div>
             <div class="btrack"><div class="bfill-base" id="bar1Fill" style="width:100%"></div></div>
           </div>
           <div class="bgroup">
             <div class="blabel">
-              <span id="bar2Label">Nuevo impuesto reducido + Efectivo que regresa a tu cuenta</span>
-              <strong id="bar2Val" style="color:var(--gold)">Recuperas +$23,400 al año</strong>
+              <span id="bar2Label">Devolución anual del SAT que impulsa tu estrategia</span>
+              <strong id="bar2Val" style="color:var(--gold)">Recuperas +$10,866 cada abril</strong>
             </div>
             <div class="btrack">
-              <div class="bfill-em" id="bar2Fill" style="width:85%"></div>
-              <div class="bfill-gold" id="bar2Gold" style="width:15%"></div>
+              <div class="bfill-em" id="bar2Fill" style="width:70%"></div>
+              <div class="bfill-gold" id="bar2Gold" style="width:30%"></div>
             </div>
           </div>
           <div class="rbanner">
-            <span id="bannerExplain">Tú apartas <b>$6,500/mes</b>, pero como el SAT te regresa <b>$1,950/mes</b>:</span>
-            <strong id="bannerNet">Tu desembolso real es de $4,550/mes</strong>
+            <span id="bannerExplain">Tu compromiso base obligatorio es de solo <b>$3,850/mes</b> y el SAT te devuelve <b>$10,866/año</b>:</span>
+            <strong id="bannerNet">Esfuerzo neto total: $4,595/mes</strong>
           </div>
         </div>
 
         <div class="cbox">
           <div class="ctitle">
-            <span id="chartRightTitle">Lo que Construyes para tu Retiro (Edad 65)</span>
+            <span id="chartRightTitle">Lo que Logras en Cada Bolsillo</span>
             <span>Seguros Monterrey NYL</span>
           </div>
           <div class="mgrid">
             <div class="mile">
-              <small id="mile1Label">Tiempo de Aportación</small>
-              <b id="mile1Val">30 Años</b>
-              <span id="mile1Sub">Aportado por ti: $2,340,000</span>
+              <small id="mile1Label">Cuenta 2 Disponible (Año 5)</small>
+              <b id="mile1Val">$118,200</b>
+              <span id="mile1Sub">Libre de retención para proyectos</span>
             </div>
             <div class="mile">
-              <small id="mile2Label">Patrimonio Estimado a tus 65 Años*</small>
-              <b id="mile2Val">$8,120,000</b>
-              <span id="mile2Sub">Protegido contra la inflación (UDIs)</span>
+              <small id="mile2Label">Cuenta 1 Retiro (Edad 65)*</small>
+              <b id="mile2Val">$5,890,000</b>
+              <span id="mile2Sub">Más lo que conserves en tu Cuenta 2</span>
             </div>
           </div>
-          <div class="rbanner" style="background:rgba(255,255,255,.06);border-color:rgba(255,245,227,.18)">
-            <span>Respaldo Familiar / Hospitales:</span>
-            <strong id="protectionSumLabel">$2,340,000 MXN desde el día 1</strong>
+          <div class="rbanner" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)">
+            <span>Coberturas de Protección / Salud:</span>
+            <strong id="protectionSumLabel">Salud general sin antecedentes (Se valida en estudio oficial)</strong>
           </div>
         </div>
       </div>
 
       <div class="srow">
         <div class="shcard">
-          <b id="sh1Title">🛡️ Plan Autopagable por Invalidez</b>
-          <p id="sh1Desc">Si un accidente o enfermedad te impide trabajar, recibes un capital libre de impuestos y Seguros Monterrey sigue pagando tu plan por ti.</p>
+          <b id="sh1Title">⚖️ Compromiso Base Ligero + Excedente Flexible</b>
+          <p id="sh1Desc">Si un año tus gastos cambian, puedes ajustar tu Cuenta 2 de liquidez sin poner en riesgo tu plan base ni tu devolución del SAT.</p>
         </div>
         <div class="shcard">
           <b id="sh2Title">📈 Tu Dinero Crece Arriba de la Inflación</b>
-          <p id="sh2Desc">Tu ahorro se guarda en UDIs para que nunca pierda poder de compra y sin que el banco te descuente el 0.90% de impuesto cada año.</p>
+          <p id="sh2Desc">Tus aportaciones se guardan en UDIs o Dólares para que tu poder adquisitivo crezca año con año.</p>
         </div>
         <div class="shcard">
-          <b id="sh3Title">🏛️ Respaldo Seguros Monterrey NYL</b>
-          <p id="sh3Desc">Institución líder en México regulada oficialmente por la CNSF (Cédula C412676) en alianza con MASS Asociados.</p>
+          <b id="sh3Title">🩺 Coberturas Evaluadas según tu Perfil</b>
+          <p id="sh3Desc">Con los datos de salud que platicamos hoy, confirmaremos las coberturas de protección e invalidez aplicables en tu estudio oficial.</p>
         </div>
       </div>
     </div>
 
-    <!-- TARJETAS INFERIORES DE CONVERSIÓN (2ª SESIÓN + PASES DE CORTESÍA UNIFICADOS) -->
+    <!-- TARJETAS INFERIORES DE CIERRE (2ª SESIÓN + PASES NOMINALES SIN FRICCIÓN) -->
     <div class="cgrid-bot">
       <div class="clcard">
         <div class="clhead">
-          <span class="clbadge">Siguiente Paso · Sin Compromiso Hoy</span>
-          <small style="font-size:11px;font-weight:700;color:#64748b">Sesión de 25 min</small>
+          <span class="clbadge">Paso 1 de Cierre · Siguiente Sesión</span>
+          <small style="font-size:11px;font-weight:700;color:#64748b">Google Meet 1 a 1</small>
         </div>
-        <h3>Agendar 2ª Sesión: Entrega de tu Estudio Oficial SMNYL</h3>
-        <p>Con lo que vimos hoy, emitiré tu estudio personalizado en el sistema oficial de Seguros Monterrey New York Life para que revisemos juntos tu tabla de valores garantizados.</p>
+        <h3>Agendar 2ª Sesión y Enviar Resumen a tu WhatsApp</h3>
+        <p>Elegimos el día y hora para revisar tus tablas oficiales emitidas en Seguros Monterrey y te envío ahora mismo a tu WhatsApp el resumen de lo que armamos hoy.</p>
         <div class="brow">
-          <button type="button" class="btn-gold" onclick="window.openCalModal()">📅 Elegir Día y Hora →</button>
-          <a href="#" target="_blank" rel="noopener" class="btn-em" id="sendSummaryWaBtn">📲 Enviarme este Resumen por WhatsApp</a>
+          <button type="button" class="btn-gold" onclick="window.openCalModal()">📅 1. Agendar 2ª Sesión →</button>
+          <a href="#" target="_blank" rel="noopener" class="btn-em" id="sendSummaryWaBtn" onclick="window.savePassesToSheets(false)">📲 2. Enviar Resumen por WhatsApp</a>
         </div>
       </div>
 
       <div class="clcard gold">
         <div class="clhead">
           <span class="clbadge gold">Pases de Cortesía · Beneficio Incluido</span>
-          <small style="font-size:11px;font-weight:700;color:#64748b">Sin costo para ellos</small>
+          <small style="font-size:11px;font-weight:700;color:#64748b">Solo nombre de pila</small>
         </div>
-        <h3>Regalar este Diagnóstico a 2 Personas Cercanas</h3>
-        <p>Tu sesión incluye 2 pases sin costo para que amigos, familiares o colegas cercanos también descubran cuánto pueden recuperar del SAT o cómo proteger a su familia:</p>
+        <h3>Reservar 2 Pases de Cortesía para Personas Cercanas</h3>
+        <p>Sin necesidad de compartir sus teléfonos hoy: anota el nombre de 2 personas cercanas (amigos, hermanos o colegas) para dejarles reservados sus pases sin costo bajo tu folio:</p>
         <div class="rlist">
           <div class="rrow">
-            <input type="text" id="refName1" class="rinput" placeholder="1. Nombre de tu invitado(a)" oninput="window.syncAll()">
-            <input type="tel" id="refPhone1" class="rinput" placeholder="WhatsApp (Opcional)" oninput="window.syncAll()">
+            <input type="text" id="refName1" class="rinput" placeholder="1. Nombre (Ej. Laura)" oninput="window.syncAll()">
+            <input type="text" id="refRel1" class="rinput" placeholder="Relación (Ej. Oficina / Hermana)" oninput="window.syncAll()">
           </div>
           <div class="rrow">
-            <input type="text" id="refName2" class="rinput" placeholder="2. Nombre de tu invitado(a)" oninput="window.syncAll()">
-            <input type="tel" id="refPhone2" class="rinput" placeholder="WhatsApp (Opcional)" oninput="window.syncAll()">
+            <input type="text" id="refName2" class="rinput" placeholder="2. Nombre (Ej. Carlos)" oninput="window.syncAll()">
+            <input type="text" id="refRel2" class="rinput" placeholder="Relación (Ej. Amigo / Socio)" oninput="window.syncAll()">
           </div>
         </div>
-        <div class="rstatus" id="refSaveStatus">✓ Pases de cortesía activados y mensaje listo en WhatsApp.</div>
-        <button type="button" class="btn-master-pass" id="saveReferralsBtn" onclick="window.activateAndSharePasses()">
-          <span>✨ Activar Pases y Compartir Invitación por WhatsApp →</span>
+        <div class="rstatus" id="refSaveStatus">✓ Pases registrados bajo este folio y añadidos al resumen de WhatsApp.</div>
+        <button type="button" class="btn-master-pass" id="saveReferralsBtn" onclick="window.savePassesToSheets(true)">
+          <span>✨ Registrar Pases y Enviar Tarjeta de Invitación →</span>
         </button>
       </div>
     </div>
@@ -1159,7 +1705,7 @@ window.addEventListener('DOMContentLoaded', function(){
   <div class="cmbox">
     <div class="cmhead">
       <div>
-        <b>Agenda en Vivo · Entrega de tu Estudio Personalizado (Google Meet)</b>
+        <b>Agenda en Vivo · Revisión de tu Corrida Oficial (Google Meet)</b>
       </div>
       <button type="button" class="cmclose" onclick="window.closeCalModal()">×</button>
     </div>
@@ -1175,8 +1721,6 @@ window.addEventListener('DOMContentLoaded', function(){
 
 <script>
 window.syncAll();
-window.renderTimerUI();
-if (!window.S.timerInt) window.S.timerInt = setInterval(window.tickTimer, 1000);
 </script>
 </body>
 </html>
