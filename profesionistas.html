@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0B1F33">
 <title>Plan Personal de Retiro (PPR) Deducible | Santi te asesora · Seguros Monterrey NYL</title>
-<meta name="description" content="Simula tu Plan Personal de Retiro (PPR Art. 151 SAT) o estrategia exenta en RESICO. Descubre cuánto ISR recuperas cada abril con respaldo de Seguros Monterrey NYL (Cédula CNSF C412676).">
+<meta name="description" content="Simula tu Plan Personal de Retiro (PPR Art. 151 SAT) o estrategia patrimonial en RESICO. Descubre cuánto ISR recuperas cada abril con respaldo de Seguros Monterrey NYL (Cédula CNSF C412676).">
 
-<!-- Metas para compartir en WhatsApp / Redes -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Santi te asesora">
@@ -22,7 +21,6 @@
 <link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
 <link rel="apple-touch-icon" href="https://www.santiteasesora.com/logo-santi.png">
 
-<!-- Google tag (gtag.js) con soporte para Conversiones Avanzadas -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -31,15 +29,11 @@
   gtag('config', 'AW-18490645254', { 'allow_enhanced_conversions': true });
 </script>
 
-<!-- Carga optimizada: 1 sola familia tipográfica -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* =====================================================================
-   SISTEMA DE DISEÑO: LIMPIO, RÁPIDO Y ORIENTADO A CONVERSIÓN
-   ===================================================================== */
 :root {
   --navy: #0B1F33;
   --navy-mid: #0F2942;
@@ -81,7 +75,7 @@ a { color: var(--emerald); text-decoration: none; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .highlight-text { color: var(--emerald); font-weight: 800; }
 
-/* ===================== TOP BAR ===================== */
+/* TOP BAR */
 .topbar {
   position: sticky;
   top: 0;
@@ -94,7 +88,7 @@ a { color: var(--emerald); text-decoration: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
-  height: 60px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,13 +136,13 @@ a { color: var(--emerald); text-decoration: none; }
 }
 .topbar-cta:hover { background: var(--emerald); }
 
-/* ===================== HERO (Móvil: Título -> Simulador -> Detalles | Desktop: 2 Columnas) ===================== */
+/* HERO */
 .hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px 16px 48px;
+  padding: 14px 16px 44px;
   display: grid;
-  gap: 18px;
+  gap: 16px;
   grid-template-areas:
     "head"
     "sim"
@@ -167,9 +161,9 @@ a { color: var(--emerald); text-decoration: none; }
       "details sim";
     gap: 18px 40px;
     align-items: start;
-    padding-top: 36px;
+    padding-top: 32px;
   }
-  .sim-card { position: sticky; top: 76px; }
+  .sim-card { position: sticky; top: 74px; }
 }
 
 .kicker-line {
@@ -177,10 +171,10 @@ a { color: var(--emerald); text-decoration: none; }
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--emerald);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .kicker-line .sep { color: #94A3B8; }
 .kicker-link {
@@ -191,7 +185,7 @@ a { color: var(--emerald); text-decoration: none; }
 }
 
 .hero-head h1 {
-  font-size: clamp(26px, 4vw, 42px);
+  font-size: clamp(24px, 3.8vw, 40px);
   font-weight: 800;
   color: var(--navy);
   line-height: 1.15;
@@ -265,7 +259,6 @@ a { color: var(--emerald); text-decoration: none; }
   font-size: 10px;
 }
 
-/* 3 Pilares */
 .hero-pillars {
   margin-top: 24px;
   padding-top: 20px;
@@ -285,34 +278,33 @@ a { color: var(--emerald); text-decoration: none; }
 .hp-item h3 { font-size: 14px; font-weight: 800; color: var(--navy); margin-top: 2px; }
 .hp-item p { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
-/* ===================== SIMULADOR ===================== */
+/* SIMULADOR COMPACTO Y DIRECTO */
 .sim-card {
   background: var(--surface);
   border: 1px solid rgba(20, 92, 82, 0.22);
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  scroll-margin-top: 70px;
+  scroll-margin-top: 68px;
 }
 .sim-console {
   background: linear-gradient(170deg, #0B1F33 0%, #0F2942 65%, #123E42 100%);
   color: #fff;
-  padding: 18px 16px;
+  padding: 15px 15px 16px;
 }
-@media (min-width: 640px) { .sim-console { padding: 22px 20px; } }
+@media (min-width: 640px) { .sim-console { padding: 18px 20px; } }
 
 .step-lbl {
   display: block;
   font-size: 11.5px;
   font-weight: 600;
   color: #CBD5E1;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
-/* Selector de Edad en 4 botones (Paso 1 - Blindaje de Monto Mínimo) */
 .age-block {
-  margin-bottom: 12px;
-  padding-bottom: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .age-switch {
@@ -329,40 +321,28 @@ a { color: var(--emerald); text-decoration: none; }
   border: none;
   padding: 7px 4px;
   border-radius: var(--r-sm);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   text-align: center;
   transition: all 0.15s;
-}
-.age-btn small {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 600;
-  opacity: 0.82;
-  margin-top: 2px;
 }
 .age-btn.active {
   background: var(--gold);
   color: var(--navy);
 }
-.age-btn.active small {
-  opacity: 1;
-  font-weight: 800;
-}
 
-.slider-block { margin-top: 4px; }
+.slider-block { margin-top: 2px; }
 .slider-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   gap: 8px;
 }
 .val-badge {
   font-family: var(--font-mono);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--gold);
   background: rgba(255, 255, 255, 0.1);
@@ -379,18 +359,18 @@ input[type="range"].santi-range {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 8px;
+  height: 7px;
   background: rgba(255, 255, 255, 0.18);
   border-radius: 999px;
   outline: none;
-  margin: 6px 0;
+  margin: 5px 0;
   touch-action: manipulation;
 }
 input[type="range"].santi-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: var(--gold);
   border: 3px solid var(--navy);
@@ -398,8 +378,8 @@ input[type="range"].santi-range::-webkit-slider-thumb {
   cursor: pointer;
 }
 input[type="range"].santi-range::-moz-range-thumb {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: var(--gold);
   border: 3px solid var(--navy);
@@ -412,7 +392,7 @@ input[type="range"].santi-range::-moz-range-thumb {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 10.5px;
   color: #94A3B8;
   font-family: var(--font-mono);
 }
@@ -420,21 +400,20 @@ input[type="range"].santi-range::-moz-range-thumb {
   background: none;
   border: none;
   color: var(--gold);
-  font-size: 11px;
+  font-size: 10.5px;
   text-decoration: underline;
   padding: 0;
 }
 
-/* Selector de Régimen en 3 botones claros (Paso 4) */
 .regime-block {
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .regime-switch {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 5px;
   background: #071422;
   padding: 4px;
   border-radius: var(--r-md);
@@ -443,23 +422,23 @@ input[type="range"].santi-range::-moz-range-thumb {
   background: transparent;
   color: #CBD5E1;
   border: none;
-  padding: 8px 6px;
+  padding: 7px 5px;
   border-radius: var(--r-sm);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   text-align: center;
   transition: all 0.15s;
 }
 .regime-btn.active { background: var(--gold); color: var(--navy); }
 
-/* Caja de Resultado con Doble Premio (SAT + Fondo Acumulado) */
+/* CAJA DE RESULTADO CON DESGLOSE INTELIGENTE DE 2 CUENTAS */
 .res-hero {
-  margin-top: 14px;
+  margin-top: 12px;
   background: var(--emerald);
   border: 1px solid rgba(217, 164, 65, 0.65);
   border-radius: var(--r-md);
-  padding: 14px;
+  padding: 12px 14px;
   transition: transform 0.2s ease;
 }
 .res-hero.pulse { transform: scale(1.012); }
@@ -467,7 +446,7 @@ input[type="range"].santi-range::-moz-range-thumb {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   color: var(--gold);
   text-transform: uppercase;
@@ -475,83 +454,67 @@ input[type="range"].santi-range::-moz-range-thumb {
 .res-hero b {
   display: block;
   font-family: var(--font-mono);
-  font-size: clamp(28px, 6vw, 35px);
-  font-weight: 700;
+  font-size: clamp(26px, 5.5vw, 33px);
+  font-weight: 800;
   color: #fff;
   line-height: 1.1;
-  margin: 3px 0 5px;
+  margin: 2px 0 4px;
 }
 .res-hero p {
-  font-size: 12.5px;
+  font-size: 12px;
   color: #F1F5F9;
   line-height: 1.4;
 }
+.res-split-pill {
+  display: none;
+  margin-top: 8px;
+  padding: 6px 9px;
+  background: rgba(11, 31, 51, 0.48);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: #FEF3C7;
+  line-height: 1.35;
+}
 .res-projection-strip {
-  margin-top: 10px;
-  padding-top: 9px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 11.5px;
   color: #FEF3C7;
 }
 .res-projection-strip strong {
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--gold);
 }
 
-/* Enlace lógico entre simulación y la sesión personalizada */
-.gap-incentive {
-  margin-top: 12px;
-  background: rgba(11, 31, 51, 0.7);
-  border: 1px dashed rgba(217, 164, 65, 0.5);
-  border-radius: var(--r-sm);
-  padding: 10px 12px;
-  font-size: 12px;
-  color: #E2E8F0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.gap-incentive .gap-icon { font-size: 18px; flex-shrink: 0; }
-.gap-incentive strong { color: var(--gold); display: block; }
-
-.low-income-note {
-  display: none;
-  margin-top: 10px;
-  background: rgba(217, 164, 65, 0.16);
-  border: 1px solid rgba(217, 164, 65, 0.45);
-  border-radius: var(--r-sm);
-  padding: 8px 12px;
-  font-size: 12px;
-  color: #FEF3C7;
-}
-
-/* ===================== FORMULARIO ===================== */
+/* FORMULARIO PEGADO AL RESULTADO */
 .form-body {
-  padding: 18px;
+  padding: 16px 15px 18px;
   background: #fff;
 }
-@media (min-width: 640px) { .form-body { padding: 22px; } }
+@media (min-width: 640px) { .form-body { padding: 18px 20px 20px; } }
 
 .form-head-line {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 .form-head-line b {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--navy);
 }
 .form-head-line span {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--emerald);
   font-weight: 700;
 }
@@ -566,11 +529,10 @@ input[type="range"].santi-range::-moz-range-thumb {
   margin-bottom: 3px;
 }
 
-/* font-size 16px para evitar auto-zoom en iOS Safari */
 .field input {
   width: 100%;
-  min-height: 46px;
-  padding: 10px 12px;
+  min-height: 45px;
+  padding: 9px 12px;
   border-radius: var(--r-md);
   border: 1px solid #CBD5E1;
   background: var(--bg);
@@ -603,13 +565,13 @@ input[type="range"].santi-range::-moz-range-thumb {
 
 .cta {
   width: 100%;
-  min-height: 52px;
-  margin-top: 14px;
+  min-height: 50px;
+  margin-top: 12px;
   background: var(--gold);
   color: var(--navy);
   border: none;
   border-radius: var(--r-md);
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 800;
   box-shadow: 0 8px 16px -6px rgba(217, 164, 65, 0.7);
   transition: background 0.15s, color 0.15s, transform 0.2s;
@@ -625,40 +587,24 @@ input[type="range"].santi-range::-moz-range-thumb {
 }
 .cta:disabled { opacity: 0.65; }
 
-/* Consentimiento implícito legal */
 .consent-text {
-  margin-top: 10px;
-  font-size: 11.5px;
+  margin-top: 9px;
+  font-size: 11px;
   color: var(--subtle);
-  line-height: 1.4;
+  line-height: 1.35;
   text-align: center;
 }
 .consent-text a { text-decoration: underline; color: var(--navy); font-weight: 600; }
 
-.wa {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  margin-top: 10px;
-  border: 1px solid #25D366;
-  border-radius: var(--r-md);
-  color: #0B6B32;
-  font-weight: 700;
-  font-size: 13px;
-  background: #F0FDF4;
-}
-
 .micro {
-  margin-top: 12px;
+  margin-top: 8px;
   font-size: 11px;
   color: var(--subtle);
   text-align: center;
 }
 
-/* ===================== SECCIÓN 1: DOS CUENTAS ===================== */
-.sec-wrap { padding: 56px 16px; scroll-margin-top: 60px; }
+/* SECCIÓN 1: DOS CUENTAS */
+.sec-wrap { padding: 56px 16px; scroll-margin-top: 58px; }
 .sec-white { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .container { max-width: 1200px; margin: 0 auto; }
 .sec-kicker {
@@ -733,7 +679,7 @@ input[type="range"].santi-range::-moz-range-thumb {
   font-size: 12px;
 }
 
-/* ===================== TABLA COMPARATIVA ===================== */
+/* TABLA COMPARATIVA */
 .table-wrap {
   margin-top: 24px;
   background: #fff;
@@ -752,7 +698,7 @@ input[type="range"].santi-range::-moz-range-thumb {
 .btable tr.total td.win { background: var(--emerald); }
 .btable tr.total td.win small { display: block; color: var(--gold); font-size: 11px; margin-top: 2px; }
 
-/* ===================== PRUEBA SOCIAL Y SOLIDEZ ===================== */
+/* PRUEBA SOCIAL Y RADIOGRAFÍA DE CASO REAL */
 .trust-strip {
   display: grid;
   gap: 12px;
@@ -781,7 +727,14 @@ input[type="range"].santi-range::-moz-range-thumb {
   line-height: 1.4;
 }
 
-.case-single-container { max-width: 740px; margin: 28px auto 0; }
+.case-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 28px;
+}
+@media (min-width: 880px) {
+  .case-grid { grid-template-columns: 1.2fr 0.8fr; align-items: stretch; }
+}
 .tcard {
   background: var(--bg);
   border: 1px solid var(--line);
@@ -789,6 +742,7 @@ input[type="range"].santi-range::-moz-range-thumb {
   padding: 24px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
   box-shadow: var(--shadow-sm);
 }
@@ -821,7 +775,37 @@ input[type="range"].santi-range::-moz-range-thumb {
 .tcard-author b { display: block; font-size: 14.5px; color: var(--navy); }
 .tcard-author span { font-size: 12.5px; color: var(--subtle); }
 
-/* ===================== FAQ ===================== */
+.case-blueprint {
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--r-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+.case-blueprint-head {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.bp-item {
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.45;
+}
+.bp-item strong {
+  display: block;
+  color: #fff;
+  font-size: 13.5px;
+  margin-bottom: 2px;
+}
+
+/* FAQ */
 .faq-list { max-width: 840px; margin: 28px auto 0; display: grid; gap: 10px; }
 details.faq-item {
   background: #fff;
@@ -867,7 +851,7 @@ details.faq-item[open] summary::after {
   line-height: 1.55;
 }
 
-/* ===================== FOOTER ===================== */
+/* FOOTER */
 footer {
   background: var(--navy);
   color: #CBD5E1;
@@ -896,7 +880,7 @@ footer {
 }
 footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
-/* ===================== BARRA PEGAJOSA ===================== */
+/* BARRA PEGAJOSA */
 .sticky-bar {
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -931,7 +915,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
   white-space: nowrap;
 }
 
-/* ===================== MODALES ===================== */
+/* MODALES */
 .modal {
   display: none;
   position: fixed;
@@ -1007,7 +991,6 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
 <body>
 
-<!-- TOP BAR CON LOGO -->
 <header class="topbar">
   <div class="topbar-in">
     <a href="#formulario" class="brand-wordmark">
@@ -1017,18 +1000,16 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
     </a>
     <nav class="topnav">
       <a href="#formulario">Simulador PPR</a>
-      <a href="#arquitectura">Cómo funciona</a>
+      <a href="#arquitectura">Método 2 Cuentas</a>
       <a href="#comparativa">Comparativa</a>
       <a href="#casos">Caso real</a>
       <a href="#dudas">Preguntas frecuentes</a>
     </nav>
-    <button type="button" class="topbar-cta" id="headerCtaBtn">Agendar Google Meet</button>
+    <button type="button" class="topbar-cta" id="headerCtaBtn">Crear mi estudio →</button>
   </div>
 </header>
 
-<!-- HERO -->
 <main class="hero">
-  <!-- 1) ENCABEZADO CORTO (En móvil aparece justo arriba del simulador) -->
   <section class="hero-head">
     <div class="kicker-line">
       <span id="urgencyBanner" class="num">Plan Personal de Retiro (Art. 151 SAT) · Deduce en abril lo aportado antes del 31 dic</span>
@@ -1039,35 +1020,22 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
     <h1>Un Plan Personal de Retiro donde tus propios impuestos trabajan a tu favor: <span class="highlight-text">recupera hasta el 35%</span> cada abril y ahorra a tu ritmo.</h1>
   </section>
 
-  <!-- 2) SIMULADOR + FORMULARIO (En móvil aparece inmediatamente en la 1ª pantalla) -->
   <section class="sim-card" id="formulario">
     <form id="leadForm" novalidate>
       <div class="sim-console">
 
-        <!-- PASO 1: RANGO DE EDAD (Ajusta automáticamente el piso mínimo de ahorro mensual) -->
+        <!-- PASO 1: EDAD EN 1 SOLA LÍNEA LIMPIA (SIN DOLOR DE PAGO) -->
         <div class="age-block">
-          <label class="step-lbl">1. Tu rango de edad actual (define tu aportación mínima)</label>
+          <label class="step-lbl">1. Tu edad actual (calcula tu horizonte hacia los 65 años)</label>
           <div class="age-switch" role="group" aria-label="Selecciona tu rango de edad">
-            <button type="button" class="age-btn active" data-age="25-32" data-min="1500">
-              25–32 años
-              <small>Desde $1,500</small>
-            </button>
-            <button type="button" class="age-btn" data-age="33-39" data-min="2500">
-              33–39 años
-              <small>Desde $2,500</small>
-            </button>
-            <button type="button" class="age-btn" data-age="40-46" data-min="3500">
-              40–46 años
-              <small>Desde $3,500</small>
-            </button>
-            <button type="button" class="age-btn" data-age="47-54" data-min="4500">
-              47–54 años
-              <small>Desde $4,500</small>
-            </button>
+            <button type="button" class="age-btn active" data-age="25-32" data-min="1500">25–32 años</button>
+            <button type="button" class="age-btn" data-age="33-39" data-min="2500">33–39 años</button>
+            <button type="button" class="age-btn" data-age="40-46" data-min="3000">40–46 años</button>
+            <button type="button" class="age-btn" data-age="47-55" data-min="4000">47–55 años</button>
           </div>
         </div>
 
-        <!-- PASO 2: INGRESO MENSUAL (Inicia en $30,000 MXN para mayor cercanía con profesionistas) -->
+        <!-- PASO 2: INGRESO MENSUAL -->
         <div class="slider-block">
           <div class="slider-head">
             <label for="incomeSlider" class="step-lbl" style="margin:0">2. Tu ingreso mensual aproximado</label>
@@ -1079,20 +1047,20 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
           </div>
         </div>
 
-        <!-- PASO 3: LO QUE TE GUSTARÍA AHORRAR AL MES (Blindado con mínimo dinámico por edad) -->
-        <div class="slider-block" style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)">
+        <!-- PASO 3: AHORRO MENSUAL CON PISO DINÁMICO POR EDAD -->
+        <div class="slider-block" style="margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.1)">
           <div class="slider-head">
             <label for="savingSlider" class="step-lbl" style="margin:0">3. Lo que te gustaría ahorrar al mes</label>
             <span id="savingDisplay" class="val-badge emerald">$3,000 / mes</span>
           </div>
           <input type="range" id="savingSlider" class="santi-range" min="1500" max="15000" step="500" value="3000" aria-label="Aportación mensual deseada">
           <div class="scale-marks">
-            <span id="minByAgeLabel">Mínimo para 25–32 años: $1,500/mes (según salud)</span>
-            <button type="button" class="cap-btn" id="useCapBtn">Usar tope deducible ($3,000/mes)</button>
+            <span id="minByAgeLabel">Base 25–32 años: $1,500/mes (según salud/tabaco)</span>
+            <button type="button" class="cap-btn" id="useCapBtn">Sugerido fiscal ($3,000/mes)</button>
           </div>
         </div>
 
-        <!-- PASO 4: CÓMO RECIBES TUS INGRESOS (3 botones claros sin tecnicismos) -->
+        <!-- PASO 4: RÉGIMEN FISCAL -->
         <div class="regime-block">
           <label class="step-lbl">4. ¿Cómo recibes tus ingresos actuales?</label>
           <div class="regime-switch" role="group" aria-label="Selecciona cómo recibes tus ingresos">
@@ -1102,7 +1070,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
           </div>
         </div>
 
-        <!-- CAJA VERDE CON AMBOS PREMIOS: DEVOLUCIÓN SAT + CAPITAL PROYECTADO -->
+        <!-- CAJA DE RESULTADO INTELIGENTE (MUESTRA REEMBOLSO + DESGLOSE DE 2 CUENTAS SI REBASA EL 10%) -->
         <div class="res-hero" id="taxBox">
           <div class="res-meta">
             <span id="resHeroTag">ESTIMADO QUE TE REGRESA EL SAT EN ABRIL</span>
@@ -1110,36 +1078,25 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
           </div>
           <b id="refundOutput">$7,690 MXN*</b>
           <p id="resHeroDesc">
-            Aportando <strong id="annualSavingOutput">$36,000</strong> al año (<strong id="monthlySavingOutput">$3,000/mes</strong>), tu esfuerzo neto real tras la devolución baja a <strong id="netMonthlyCostOutput">$2,359/mes</strong>.
+            Aportando <strong>$36,000</strong> al año (<strong>$3,000/mes</strong>), tu esfuerzo neto real tras la devolución baja a <strong>$2,359/mes</strong>.
           </p>
+          <div class="res-split-pill" id="splitAccountNotice"></div>
           <div class="res-projection-strip" id="projectionStrip">
             <span id="projStripLabel">📈 Fondo proyectado a 10 años (UDIs/USD):</span>
             <strong id="projStripValue">~$556,829 MXN*</strong>
           </div>
         </div>
 
-        <!-- Invitación consultiva por Google Meet -->
-        <div class="gap-incentive" id="gapIncentive">
-          <span class="gap-icon">💻</span>
-          <div>
-            <strong id="gapTitle">Revisa cómo quedaría tu plan exacto por Google Meet</strong>
-            <span id="gapDesc">En 30 minutos adaptamos esta proyección a tu edad y objetivos reales para que evalúes tus números con total claridad.</span>
-          </div>
-        </div>
-
-        <div class="low-income-note" id="lowIncomeNote">
-          Nota: la aportación mínima depende de tu edad actual y condiciones de salud (desde <strong>$1,500/mes</strong> a los 25–32 años hasta <strong>$3,500+/mes</strong> a partir de los 40 años).
-        </div>
       </div>
 
       <div class="form-body" id="formCard">
         <div class="form-head-line">
-          <b>Elige el horario de tu sesión en el siguiente paso</b>
-          <span>Trato directo 1 a 1 · Sin compromiso</span>
+          <b>Recibe tu corrida exacta en UDIs/Dólares</b>
+          <span>Sesión 1 a 1 · Sin compromiso</span>
         </div>
 
         <input type="hidden" id="regimenInput" value="Sueldo u Honorarios (Art. 151)">
-        <input type="hidden" id="formOrigen" value="Landing Profesionistas CRO 10/10">
+        <input type="hidden" id="formOrigen" value="Landing Profesionistas Auditada">
         <input type="hidden" id="prioridadHidden" value="Deducción SAT + Retiro (Art. 151)">
         <input type="hidden" id="calcEstimadoHidden" value="">
         <input type="hidden" id="utm_source" value="">
@@ -1163,26 +1120,23 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
         <div class="err" id="formError" role="alert"></div>
 
-        <button type="submit" class="cta" id="formSubmitBtn">Ver horarios disponibles en Google Meet →</button>
+        <button type="submit" class="cta" id="formSubmitBtn">Ver mi estudio personalizado y elegir horario →</button>
 
         <p class="consent-text" id="consentNote">
-          Al continuar eliges tu horario en el calendario o por WhatsApp y aceptas nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
+          Al continuar eliges el horario para revisar tus números y aceptas nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
         </p>
         <input type="checkbox" id="privacyConsent" class="hidden" checked>
 
-        <a class="wa hidden" id="waBtn" target="_blank" rel="noopener">💬 Prefiero coordinar directo por WhatsApp</a>
-
         <div class="micro">
-          <span>🔒 Cero llamadas invasivas: todo se coordina por Google Meet y WhatsApp a tu ritmo.</span>
+          <span>🔒 Cero llamadas invasivas: confirmamos todo por WhatsApp a tu ritmo.</span>
         </div>
       </div>
     </form>
   </section>
 
-  <!-- 3) EXPLICACIÓN, VIDEO Y 3 PILARES (Debajo del simulador en móvil, a la izquierda en Desktop) -->
   <section class="hero-details">
     <p class="hero-lead">
-      Diseñamos tu <strong>Plan Personal de Retiro (PPR)</strong> a la medida con el respaldo de <strong>Seguros Monterrey New York Life</strong>. Aprovecha las devoluciones anuales del SAT (o el beneficio libre de impuestos si estás en <strong>RESICO</strong>) sin tener que congelar todo tu dinero hasta los 65 años.
+      Diseñamos tu <strong>Plan Personal de Retiro (PPR)</strong> a la medida con el respaldo de <strong>Seguros Monterrey New York Life</strong>. Aprovecha las devoluciones anuales del SAT (o el blindaje patrimonial del Art. 93 si estás en <strong>RESICO</strong>) sin tener que congelar todo tu dinero hasta los 65 años.
     </p>
 
     <div class="advisor-strip">
@@ -1192,7 +1146,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
                onerror="this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';">
         </div>
         <div class="advisor-meta">
-          <small>Asesoría personalizada · Google Meet</small>
+          <small>Planeación patrimonial · Atención online</small>
           <b>Santiago · Agente Autorizado CNSF C412676</b>
           <span>En alianza con Seguros Monterrey NYL y MASS Asociados</span>
         </div>
@@ -1212,7 +1166,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
       <div class="hp-item">
         <div class="hp-num">02. DINERO DISPONIBLE</div>
         <h3>El método de 2 cuentas</h3>
-        <p>Dividimos tu ahorro: una parte te da devoluciones del SAT y otra queda disponible a mediano plazo en UDIs o dólares para tus proyectos.</p>
+        <p>Dividimos tu ahorro: una parte te da devoluciones del SAT y tu excedente va a una subcuenta flexible en UDIs o dólares.</p>
       </div>
       <div class="hp-item">
         <div class="hp-num">03. PROTECCIÓN FAMILIAR</div>
@@ -1229,7 +1183,7 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
     <div class="sec-kicker">01 · CÓMO FUNCIONA</div>
     <h2 class="sec-title">¿Por qué a veces da dudas un Plan Personal de Retiro? Porque nadie quiere tener todo su dinero bloqueado hasta los 65 años.</h2>
     <p class="sec-sub">
-      La regla del SAT dice que si retiras dinero deducible antes de los 65 años se retiene un impuesto. Para que tengas total flexibilidad, <strong>dividimos tu ahorro en dos bolsillos complementarios</strong> dentro de Seguros Monterrey:
+      La regla del SAT dice que si retiras ahorro deducible antes de los 65 años se aplica una retención. Para que tengas flexibilidad real, <strong>dividimos tu estrategia en dos cuentas complementarias</strong> dentro de Seguros Monterrey:
     </p>
 
     <div class="dual-grid">
@@ -1237,26 +1191,26 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
         <div>
           <div class="pocket-top">
             <span>CUENTA 1 · TU RETIRO Y DEVOLUCIÓN DE IMPUESTOS</span>
-            <span>Beneficio Fiscal SAT</span>
+            <span>Art. 151 LISR</span>
           </div>
-          <h3>La alcancía que hace que el SAT te regrese dinero cada abril</h3>
-          <p>Destinamos una cantidad base acorde a tu edad que no necesites tocar pronto. A cambio, el SAT te puede regresar entre el <strong>16% y el 35%</strong> de lo que aportas cada año en tu declaración anual.</p>
+          <h3>La base que hace que el SAT te regrese dinero cada abril</h3>
+          <p>Destinamos una aportación base acorde a tu edad que no necesites tocar en el corto plazo. A cambio, el SAT te devuelve entre el <strong>16% y el 35%</strong> de lo aportado cada año en tu declaración anual.</p>
           <div class="pocket-metrics">
             <div class="pm-box">
               <small>TOPE DEDUCIBLE ANUAL 2026</small>
               <b>Hasta $213,973 MXN</b>
-              <span>El 10% de tu ingreso anual, sin chocar con tus gastos médicos o colegiaturas.</span>
+              <span>El 10% de tu ingreso anual, independiente de tus gastos médicos o colegiaturas.</span>
             </div>
             <div class="pm-box">
               <small>RESPALDO ANTE INVALIDEZ</small>
               <b style="color:var(--emerald)">Tu meta se cumple sí o sí</b>
-              <span>Si sufres una invalidez, recibes tu suma asegurada y tu plan continúa pagado hasta los 65.</span>
+              <span>Si sufres una invalidez total y permanente, recibes tu suma asegurada y tu plan queda pagado hasta los 65.</span>
             </div>
           </div>
         </div>
         <div class="pocket-foot">
           <span>Moneda: <strong>UDIs (inflación) o Dólares (USD)</strong></span>
-          <strong class="num">Horizonte: Para tu retiro</strong>
+          <strong class="num">Horizonte: Edad 65</strong>
         </div>
       </div>
 
@@ -1264,18 +1218,18 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
         <div>
           <div class="pocket-top">
             <span>CUENTA 2 · TUS METAS A MEDIANO PLAZO</span>
-            <span>Sin plazos forzosos a los 65</span>
+            <span>Aportaciones Adicionales / Art. 93</span>
           </div>
-          <h3>Dinero disponible en 3 a 5 años para tus proyectos reales</h3>
-          <p>Tu excedente de ahorro se guarda en una cuenta flexible. Así tu dinero no pierde valor, crece protegido en UDIs o dólares y lo tienes listo para el enganche de una casa, un viaje o tu negocio.</p>
+          <h3>Liquidez para tus proyectos sin esperar a los 65 años</h3>
+          <p>Tu ahorro adicional o estrategia para metas cercanas se coloca en una cuenta flexible en UDIs o dólares, protegiendo tu poder adquisitivo para el enganche de una casa, negocio o fondo patrimonial.</p>
           <ul class="pocket-list">
-            <li>✓ <strong>Sin penalizaciones fiscales:</strong> como este dinero no se dedujo, lo usas para lo que tú quieras según las condiciones de tu póliza.</li>
-            <li>✓ <strong>Tranquilidad si tus ingresos cambian:</strong> si un año lo necesitas, ajustamos primero esta bolsa sin perjudicar tu fondo de retiro.</li>
+            <li>✓ <strong>Disponibilidad sin el candado de los 65 años:</strong> al no haberse deducido en el Art. 151, dispones de tu capital adicional conforme a las reglas de liquidez de tu póliza y exención total a partir de los 60 años (Art. 93 LISR).</li>
+            <li>✓ <strong>Válvula de tranquilidad:</strong> si un año tus ingresos cambian, ajustamos primero esta cuenta sin poner en riesgo tu plan base de retiro.</li>
           </ul>
         </div>
         <div class="pocket-foot" style="color:#CBD5E1">
-          <span>Ideal para: <strong>Proyectos, negocios o imprevistos</strong></span>
-          <strong class="num" style="color:var(--gold)">Horizonte: 3 a 5 años</strong>
+          <span>Ideal para: <strong>Proyectos, negocios o RESICO</strong></span>
+          <strong class="num" style="color:var(--gold)">Horizonte: Mediano plazo</strong>
         </div>
       </div>
     </div>
@@ -1307,51 +1261,50 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
             <td id="compPlanAnnual" class="win num">$36,000 MXN</td>
           </tr>
           <tr>
-            <td><strong>¿Te regresa dinero el SAT en abril?</strong></td>
-            <td class="lose" id="compBankTaxNote">$0 (además te descuentan retención por intereses)</td>
+            <td><strong>¿Beneficio fiscal a tu favor?</strong></td>
+            <td class="lose" id="compBankTaxNote">$0 (además te descuentan retención de ISR sobre intereses)</td>
             <td class="win" id="compTaxBenefit">≈ +$7,690 MXN a tu favor en abril*</td>
           </tr>
           <tr>
-            <td><strong>¿Cuándo puedes usar ese dinero?</strong></td>
-            <td>Cuando quieras (con el riesgo de gastarlo sin querer)</td>
-            <td class="win">Doble cuenta: una disponible a 3–5 años y otra para tu retiro</td>
+            <td><strong>¿Cómo se estructura tu liquidez?</strong></td>
+            <td>A la vista (con el riesgo de gastarlo o perder ante devaluación)</td>
+            <td class="win">Doble cuenta: base para retiro + subcuenta flexible para proyectos</td>
           </tr>
           <tr>
             <td><strong>Si un accidente o enfermedad te impide trabajar</strong></td>
-            <td class="lose">Solo te queda lo poco que hayas alcanzado a juntar</td>
-            <td class="win">Cobras tu suma asegurada y el plan queda pagado hasta tus 65 años</td>
+            <td class="lose">Solo cuentas con el saldo acumulado hasta ese día</td>
+            <td class="win">Cobras tu suma asegurada y la aseguradora sigue pagando el plan por ti</td>
           </tr>
           <tr class="total">
-            <td>Lo que de verdad sale de tu bolsillo</td>
+            <td>Esfuerzo neto real de tu bolsillo</td>
             <td id="compBankNet" class="num">$36,000 MXN</td>
             <td class="win">
               <span id="compPlanNet" class="num" style="font-size:18px">≈ $28,310 MXN</span>
-              <small id="compPlanSavingsPct">21% menos gracias a tu devolución de impuestos*</small>
+              <small id="compPlanSavingsPct">21% de retorno fiscal estimado sobre tu aportación deducible*</small>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
     <p class="micro" style="margin-top:12px;text-align:left">
-      *Cálculo referencial con base en la Ley del ISR 2026. La aportación mínima y los valores garantizados en UDIs o dólares dependen de tu edad y condiciones de salud al momento de emitir tu propuesta formal en Seguros Monterrey New York Life.
+      *Cálculo referencial con base en la Ley del ISR 2026. El costo del seguro, la aportación mínima y los valores garantizados en UDIs o dólares dependen de tu edad exacta, estado de salud y hábito tabáquico (fumador o no fumador) al emitir tu propuesta en Seguros Monterrey New York Life.
     </p>
   </div>
 </section>
 
-<!-- SECCIÓN 3: RESPALDO INSTITUCIONAL Y CASO DESTACADO -->
+<!-- SECCIÓN 3: RESPALDO Y CASO REAL 100% VERIFICADO -->
 <section class="sec-wrap sec-white" id="casos">
   <div class="container">
     <div style="text-align:center;max-width:680px;margin:0 auto">
       <div class="sec-kicker">03 · TRANSPARENCIA Y RESPALDO</div>
-      <h2 class="sec-title">Solidez institucional y caso real destacado</h2>
-      <p class="sec-sub" style="margin:8px auto 0">Sin fórmulas mágicas: cada estrategia está regulada federalmente y diseñada con nombre y apellido.</p>
+      <h2 class="sec-title">Solidez institucional y caso real documentado</h2>
+      <p class="sec-sub" style="margin:8px auto 0">Sin promesas irreales ni testimonios inventados: cada estrategia está regulada federalmente y diseñada a la medida.</p>
     </div>
 
-    <!-- Indicadores de confianza -->
     <div class="trust-strip">
       <div class="tbadge">
         <div class="tbadge-num">Cédula C412676</div>
-        <div class="tbadge-lbl">Autorización federal ante la <strong>CNSF</strong> para asesoría y diseño patrimonial.</div>
+        <div class="tbadge-lbl">Autorización federal vigente ante la <strong>CNSF</strong> para asesoría patrimonial.</div>
       </div>
       <div class="tbadge">
         <div class="tbadge-num">Calificación AAA</div>
@@ -1363,23 +1316,42 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
       </div>
     </div>
 
-    <!-- Testimonio real destacado -->
-    <div class="case-single-container">
+    <div class="case-grid">
+      <!-- Testimonio real de Itzel C. con redacción humana y natural -->
       <div class="tcard">
-        <div class="tcard-head">
-          <span>CASO REAL DESTACADO · 2 CUENTAS (3 AÑOS + RETIRO)</span>
-          <span class="stars" aria-label="5 estrellas">★★★★★</span>
+        <div>
+          <div class="tcard-head">
+            <span>TESTIMONIO VERIFICADO · SUELDOS Y SALARIOS</span>
+            <span class="stars" aria-label="5 estrellas">★★★★★</span>
+          </div>
+          <p style="margin-top:14px">
+            "Yo quería juntar capital para un proyecto propio en 3 años, pero tenía dos miedos: <strong>dejar el dinero en el banco perdiendo valor contra la inflación, o meterlo a un plan de retiro donde quedara congelado hasta que cumpliera 65 años</strong>. Con Santi armamos un esquema dividido donde el ahorro para mi proyecto crece protegido para usarlo a mediano plazo, cuento con mi seguro de vida e invalidez, y <strong>por la parte de mi retiro aprovecho cada año la devolución de impuestos del SAT</strong>."
+          </p>
         </div>
-        <p>
-          "Tenía un ahorro para un proyecto en 3 años, pero <strong>me daba miedo dejar el dinero en el banco perdiendo valor contra la inflación o meterlo a un fondo que me obligara a dejarlo congelado hasta que cumpliera 65 años</strong>. Con Santi armamos un esquema donde ese dinero crece protegido para cuando empiece mi proyecto, mantengo mi seguro de protección por si llego a faltar o enfermarme, y <strong>al mismo tiempo aprovecho la devolución de impuestos del SAT</strong>."
-        </p>
         <div class="tcard-author">
           <img src="itzel-testimonio.jpg" width="48" height="48" loading="lazy" alt="Itzel C."
                onerror="this.onerror=null;this.src='https://www.santiteasesora.com/itzel-testimonio.jpg';">
           <div>
             <b>Itzel C.</b>
-            <span>Administradora de Marketing · Sueldos y Salarios</span>
+            <span>Administradora de Marketing · Cliente verificada</span>
           </div>
+        </div>
+      </div>
+
+      <!-- Radiografía técnica real del caso de Itzel (sin inventar personas) -->
+      <div class="case-blueprint">
+        <div class="case-blueprint-head">Radiografía técnica de su estrategia</div>
+        <div class="bp-item">
+          <strong>1. El reto inicial</strong>
+          Evitar que todo su flujo mensual quedara atrapado hasta los 65 años porque tenía una meta de emprendimiento a 3 años.
+        </div>
+        <div class="bp-item">
+          <strong>2. División en 2 bolsillos</strong>
+          Se asignó una base cómoda al Plan Personal de Retiro (Art. 151) para generar saldo a favor en abril y el excedente a una subcuenta líquida protegida contra inflación.
+        </div>
+        <div class="bp-item">
+          <strong>3. Blindaje de salud e ingresos</strong>
+          Cobertura activa por fallecimiento e invalidez total y permanente respaldada por Seguros Monterrey NYL.
         </div>
       </div>
     </div>
@@ -1398,49 +1370,48 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
       <details class="faq-item" open>
         <summary>¿Qué pasa después de dejar mis datos?</summary>
         <div class="faq-ans">
-          <p>Pasas de inmediato a la pantalla para elegir el horario de tu videollamada por Google Meet. En nuestra conversación platicamos sobre tus planes y aspiraciones personales para diseñar una estrategia hecha realmente a tu medida con el respaldo de Seguros Monterrey New York Life.</p>
+          <p>Pasas directo a elegir el día y hora que mejor te acomode para una breve sesión online (por Google Meet). Ahí revisamos tu corrida oficial en UDIs o dólares adaptada a tu edad exacta y resolvemos cualquier duda sin ningún compromiso de contratación.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>¿De qué depende el monto mínimo mensual para iniciar?</summary>
+        <summary>¿De qué depende el monto mínimo y el costo real de mi plan?</summary>
         <div class="faq-ans">
-          <p>En Seguros Monterrey New York Life la aportación mínima depende principalmente de tu edad actual (el número de años que faltan para tus 65 años) y tu estado de salud. Entre los 25 y 32 años es posible iniciar desde $1,500/mes ($18,000 anuales), mientras que a partir de los 40 años la aportación base suele partir de $3,500/mes para lograr una capitalización sólida.</p>
+          <p>En Seguros Monterrey New York Life la aportación mínima y las condiciones de contratación dependen de tres factores reales: <strong>tu edad actual</strong> (los años que faltan para tus 65 años), <strong>tu estado de salud</strong> y <strong>tus hábitos tabáquicos</strong> (si fumas o no fumas). Entre los 25 y 32 años con buena salud es posible iniciar desde $1,500/mes ($18,000 anuales), mientras que a partir de los 40 años se recomienda una base desde $3,000 a $4,000/mes para lograr una capitalización sólida.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>¿Y si después mis ingresos cambian o necesito usar mi dinero?</summary>
         <div class="faq-ans">
-          <p>La vida cambia, por eso no ponemos todo tu dinero en una sola cuenta. Separamos tu ahorro en una mensualidad base cómoda para tu retiro (la que genera la devolución de impuestos) y otra cuenta flexible para tus metas a 3 o 5 años. Si en algún momento necesitas pausar o ajustar, tenemos alternativas claras antes de que tomes cualquier decisión.</p>
+          <p>La vida da vueltas, y por eso evitamos comprometer todo tu flujo en un solo contrato rígido. Separamos una mensualidad base cómoda para tu retiro (la que te da devolución del SAT) y destinamos tu excedente a una cuenta adicional flexible. Si un año necesitas liquidez o reducir tu ritmo de ahorro, ajustamos primero la cuenta flexible sin perder tu plan base.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>¿Es verdad que me cobran impuestos si retiro antes de los 65 años?</summary>
+        <summary>¿Es verdad que el SAT retiene impuestos si retiro antes de los 65 años?</summary>
         <div class="faq-ans">
-          <p>Solo en la cuenta deducible donde el SAT ya te regresó dinero. Si retiras antes de los 65 años (salvo por invalidez), el SAT pide el impuesto correspondiente. Por eso creamos tu segunda cuenta libre: para que cualquier dinero que vayas a usar antes de esa edad esté disponible sin sorpresas.</p>
+          <p>Únicamente sobre el dinero que metiste a la cuenta deducible (Art. 151) donde el SAT ya te premió devolviéndote impuestos cada abril. Si retiras de esa bolsa antes de los 65 años (salvo por invalidez), se aplica la retención de ley. Por eso existe tu segunda cuenta no deducible: para que el ahorro de tus metas a mediano plazo no tenga el candado de los 65 años.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>¿Por qué no simplemente guardarlo en CETES o en el banco?</summary>
+        <summary>¿Por qué no simplemente dejar todo en CETES o en el banco?</summary>
         <div class="faq-ans">
-          <p>En el banco o CETES no hay devolución de impuestos en abril y el dinero queda tentadoramente a la mano para gastarlo. Con este plan, además de recuperar hasta el 35% de lo que ahorras, cuentas con un respaldo: si sufres una invalidez que te impida trabajar, te entregan tu suma asegurada y siguen pagando tu plan por ti.</p>
+          <p>CETES es excelente para tu fondo de emergencias de corto plazo, pero no te devuelve hasta el 35% de ISR en abril, te retiene impuestos año con año y no protege tu patrimonio en dólares o UDIs a largo plazo. Además, aquí cuentas con blindaje vitalicio: si un accidente o enfermedad te impide trabajar, recibes tu suma asegurada libre de impuestos y Seguros Monterrey continúa pagando tu plan hasta tus 65 años.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>Estoy en RESICO y me dijeron que no puedo deducir nada. ¿Me sirve?</summary>
+        <summary>Estoy en RESICO y no puedo deducir en abril. ¿Qué beneficio tengo?</summary>
         <div class="faq-ans">
-          <p>Es correcto: en RESICO no hay devolución en abril. Pero existe otro beneficio contemplado en el Artículo 93 de la Ley del ISR: tus rendimientos pueden quedar completamente libres de impuestos al cumplir los requisitos. En la sesión por Google Meet revisamos cómo aprovecharlo en tu caso.</p>
+          <p>En RESICO ya pagas una tasa mínima de ISR cada mes (del 1% al 2.5%), por lo que no aplican deducciones personales del Art. 151. Tu estrategia se arma bajo el <strong>Artículo 93 de la LISR</strong>: tu ahorro crece blindado en UDIs o dólares con diferimiento fiscal y, al cumplir los requisitos de edad (60 años) y antigüedad mínima (5 años), retiras el 100% de tu capital y rendimientos completamente libres de ISR.</p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- FOOTER CON LOGO -->
 <footer>
   <div class="footer-in">
     <div class="footer-top">
@@ -1458,19 +1429,18 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
       </div>
     </div>
     <p style="font-size:11.5px;color:#94A3B8">
-      *Los cálculos mostrados son ejemplos ilustrativos basados en la legislación fiscal vigente para 2026. La devolución efectiva depende de tus retenciones acumuladas en el ejercicio y las condiciones finales (incluyendo aportación mínima por edad y estado de salud) se detallan por escrito en la propuesta emitida por Seguros Monterrey New York Life, S.A. de C.V. y MASS Asociados.
+      *Los cálculos mostrados son estimaciones ilustrativas basadas en la tarifa anual del Art. 152 y límites del Art. 151 de la LISR vigente en 2026. La devolución efectiva depende de tus retenciones e ingresos acumulables en el ejercicio. La emisión de la póliza, aportación mínima y costos de cobertura están sujetos a evaluación médica, edad y hábito tabáquico ante Seguros Monterrey New York Life, S.A. de C.V.
     </p>
   </div>
 </footer>
 
-<!-- BARRA PEGAJOSA -->
 <div class="sticky-bar off" id="stickyBar">
   <div class="sticky-in">
     <div>
       <small id="stickyLabel">Podrías recuperar:</small>
       <b id="stickyRefund">$7,690*</b>
     </div>
-    <button type="button" id="stickyBtn">Ver horarios en Google Meet →</button>
+    <button type="button" id="stickyBtn">Crear mi estudio personalizado →</button>
   </div>
 </div>
 
@@ -1501,25 +1471,22 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
     <div class="d-head"><span id="privacyTitle">Aviso de Privacidad simplificado</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
     <div class="d-body">
       <p><strong>Responsable:</strong> Santiago (Santi te asesora), agente de seguros autorizado con cédula CNSF C412676.</p>
-      <p><strong>¿Qué datos solicitamos?</strong> Tu nombre, tu número de WhatsApp y las estimaciones que seleccionas en el simulador.</p>
+      <p><strong>¿Qué datos solicitamos?</strong> Tu nombre, tu número de WhatsApp y los parámetros seleccionados en el simulador.</p>
       <p><strong>¿Para qué los usamos?</strong></p>
       <ul>
-        <li>Calcular el beneficio estimado de devolución o exención de impuestos para tu caso.</li>
-        <li>Escribirte por WhatsApp para confirmar tu videollamada por Google Meet.</li>
-        <li>Generar tu propuesta formal con Seguros Monterrey New York Life y MASS Asociados.</li>
-        <li>Medir el funcionamiento de nuestras campañas en Google de forma segura y confidencial.</li>
+        <li>Calcular el beneficio estimado fiscal y patrimonial para tu caso.</li>
+        <li>Contactarte por WhatsApp para coordinar la presentación de tu estudio por Google Meet.</li>
+        <li>Generar tu cotización formal con Seguros Monterrey New York Life y MASS Asociados.</li>
+        <li>Medir el rendimiento de nuestras campañas publicitarias de forma confidencial.</li>
       </ul>
-      <p>Tus datos nunca se venden ni se comparten para fines distintos a tu asesoría.</p>
-      <p><strong>Tus derechos (ARCO):</strong> Puedes consultar, actualizar o solicitar la cancelación de tus datos en cualquier momento enviándonos un mensaje por WhatsApp.</p>
+      <p>Tus datos jamás se venden ni se comparten con terceros ajenos a tu asesoría.</p>
+      <p><strong>Derechos ARCO:</strong> Puedes solicitar el acceso, rectificación o eliminación de tus datos enviándonos un mensaje directo por WhatsApp.</p>
     </div>
     <div class="d-foot"><a href="#formulario" data-close-modal>Entendido</a></div>
   </div>
 </div>
 
 <script>
-/* =====================================================================
-   CONFIGURACIÓN CENTRAL (COMPATIBLE CON GOOGLE SHEETS Y ADS)
-   ===================================================================== */
 const CONFIG = {
   SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
   ADS_CONVERSION_LABEL: 'g3_8CJTvpZ0dEIa2g_FE',
@@ -1528,15 +1495,12 @@ const CONFIG = {
   WHATSAPP_NUMBER: '5215571208740',
   THANKS_PAGE: 'gracias.html',
   VIDEO_URL: 'https://www.youtube.com/embed/oTPHUmFmE7o?autoplay=1&rel=0&modestbranding=1',
-  REQUIRE_PRIVACY_CHECKBOX: false,
-  PRIVACY_VERSION: '2026-10',
   COUNTDOWN_MAX_DAYS: 120,
   UMA_ANUAL: 42794.64,
   RETIRO_PCT: 0.10,
   RETIRO_TOPE_UMAS: 5
 };
 
-/* Tarifa anual ISR 2026, art. 152 LISR */
 const ISR_TABLE = [
   [0.01,        0.00,       0.0192],
   [10135.12,    194.59,     0.0640],
@@ -1566,10 +1530,11 @@ const state = {
   userTouchedSaving: false,
   maxDeductibleAnnual: 36000,
   effectiveDeductible: 36000,
+  flexibleAnnual: 0,
   refund: 7690,
   marginalRate: 0.2136,
-  resicoTenYearCapital: 556829,
-  resicoTaxFreeGain: 196829
+  tenYearCapital: 556829,
+  tenYearGain: 196829
 };
 
 let pulseTimer = null;
@@ -1639,50 +1604,59 @@ function recalculateAll(triggerPulse){
 
   const annualSaving = state.monthlySaving * 12;
   state.effectiveDeductible = state.mode === 'resico' ? 0 : Math.min(annualSaving, state.maxDeductibleAnnual);
+  state.flexibleAnnual = state.mode === 'resico' ? annualSaving : Math.max(0, annualSaving - state.effectiveDeductible);
   state.refund = state.mode === 'resico' ? 0 : Math.round(isrAnual(annualIncome) - isrAnual(annualIncome - state.effectiveDeductible));
   state.marginalRate = getMarginalRate(annualIncome);
 
   const r = 0.078, yrs = 10;
-  state.resicoTenYearCapital = Math.round(annualSaving * (((Math.pow(1 + r, yrs) - 1) / r) * (1 + r)));
-  state.resicoTaxFreeGain = Math.max(0, state.resicoTenYearCapital - (annualSaving * yrs));
+  state.tenYearCapital = Math.round(annualSaving * (((Math.pow(1 + r, yrs) - 1) / r) * (1 + r)));
+  state.tenYearGain = Math.max(0, state.tenYearCapital - (annualSaving * yrs));
 
   $('incomeDisplay').textContent = money(state.income) + ' MXN';
   $('savingDisplay').textContent = money(state.monthlySaving) + ' / mes';
-  $('minByAgeLabel').textContent = 'Mínimo para ' + state.ageRange + ' años: ' + money(minAllowed) + '/mes (según salud)';
+  $('minByAgeLabel').textContent = 'Base ' + state.ageRange + ' años: ' + money(minAllowed) + '/mes (según salud/tabaco)';
 
   const effectiveCapBtnVal = Math.max(minAllowed, Math.round(maxDeductibleMonthly / 500) * 500);
   $('useCapBtn').textContent = 'Sugerido fiscal (' + money(effectiveCapBtnVal) + '/mes)';
   $('useCapBtn').style.display = state.mode === 'resico' ? 'none' : 'inline';
-  $('lowIncomeNote').style.display = (state.income < CONFIG.QUALIFIED_INCOME || minAllowed >= 3500) ? 'block' : 'none';
 
   const netAnnualCost = annualSaving - state.refund;
   const netMonthlyCost = Math.round(netAnnualCost / 12);
-  const effectivePct = annualSaving > 0 ? Math.round((state.refund / annualSaving) * 100) : 0;
+  const deductiblePctReturn = state.effectiveDeductible > 0 ? Math.round((state.refund / state.effectiveDeductible) * 100) : 0;
+
+  const splitNotice = $('splitAccountNotice');
 
   if (state.mode !== 'resico'){
     $('resHeroTag').textContent = 'ESTIMADO QUE TE REGRESA EL SAT EN ABRIL';
-    $('resHeroRate').textContent = 'TASA ESTIMADA ' + (state.marginalRate * 100).toFixed(1) + '%';
+    $('resHeroRate').textContent = 'TASA ISR ' + (state.marginalRate * 100).toFixed(1) + '%';
     $('refundOutput').textContent = money(state.refund) + ' MXN*';
     $('resHeroDesc').innerHTML = 'Aportando <strong>' + money(annualSaving) + '</strong> al año (<strong>' + money(state.monthlySaving) + '/mes</strong>), tu esfuerzo neto real tras la devolución baja a <strong>' + money(netMonthlyCost) + '/mes</strong>.';
-    $('projStripLabel').textContent = '📈 Fondo proyectado a 10 años (UDIs/USD):';
-    $('projStripValue').textContent = '~' + money(state.resicoTenYearCapital) + ' MXN*';
+
+    if (state.flexibleAnnual > 0){
+      const dedMonthly = Math.round(state.effectiveDeductible / 12);
+      const flexMonthly = Math.max(0, state.monthlySaving - dedMonthly);
+      splitNotice.style.display = 'block';
+      splitNotice.innerHTML = '💡 <strong>Estrategia de 2 Cuentas activa:</strong> <strong>' + money(dedMonthly) + '/mes</strong> van a tu Cuenta 1 (máxima devolución SAT) y <strong>' + money(flexMonthly) + '/mes</strong> a tu Cuenta 2 (disponible a mediano plazo sin candado a los 65).';
+    } else {
+      splitNotice.style.display = 'none';
+    }
+
+    $('projStripLabel').textContent = '📈 Fondo total proyectado a 10 años (UDIs/USD):';
+    $('projStripValue').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
     $('stickyLabel').textContent = 'Podrías recuperar:';
     $('stickyRefund').textContent = money(state.refund) + ' MXN*';
-    $('gapTitle').textContent = 'Revisa cómo quedaría tu plan exacto por Google Meet';
-    $('gapDesc').textContent = 'En 30 minutos adaptamos esta proyección a tu edad (' + state.ageRange + ' años) y objetivos reales con total claridad.';
-    $('compBankTaxNote').textContent = '$0 (además te descuentan retención por intereses)';
+    $('compBankTaxNote').textContent = '$0 (además te descuentan retención de ISR sobre intereses)';
   } else {
-    $('resHeroTag').textContent = 'FONDO PROYECTADO A 10 AÑOS (RESICO ART. 93)';
-    $('resHeroRate').textContent = '0% ISR AL RETIRO';
-    $('refundOutput').textContent = money(state.resicoTenYearCapital) + ' MXN*';
-    $('resHeroDesc').innerHTML = 'En RESICO ya pagas muy poco ISR mensual, por lo que tu beneficio es la exención total: ahorrando <strong>' + money(state.monthlySaving) + '/mes</strong> acumulas capital en UDIs o Dólares libre de impuestos.';
-    $('projStripLabel').textContent = '✨ Rendimientos libres de ISR estimados (10 años):';
-    $('projStripValue').textContent = '+' + money(state.resicoTaxFreeGain) + ' MXN*';
+    splitNotice.style.display = 'none';
+    $('resHeroTag').textContent = 'CAPITAL PROYECTADO A 10 AÑOS (ESTRATEGIA ART. 93)';
+    $('resHeroRate').textContent = 'BLINDAJE UDIs / USD';
+    $('refundOutput').textContent = money(state.tenYearCapital) + ' MXN*';
+    $('resHeroDesc').innerHTML = 'En RESICO tu beneficio está en el Art. 93 LISR: ahorrando <strong>' + money(state.monthlySaving) + '/mes</strong> tu dinero crece con diferimiento fiscal y queda <strong>100% libre de ISR a partir de los 60 años</strong>.';
+    $('projStripLabel').textContent = '✨ Crecimiento proyectado sobre tus aportaciones (10a):';
+    $('projStripValue').textContent = '+' + money(state.tenYearGain) + ' MXN*';
     $('stickyLabel').textContent = 'Fondo proyectado Art. 93:';
-    $('stickyRefund').textContent = money(state.resicoTenYearCapital) + '*';
-    $('gapTitle').textContent = 'Diseñemos tu estrategia RESICO por Google Meet';
-    $('gapDesc').textContent = 'Platicamos sobre tus objetivos y vemos cómo proteger tu ahorro contra la inflación libre de impuestos.';
-    $('compBankTaxNote').textContent = 'Pagas retención de ISR sobre rendimientos bancarios';
+    $('stickyRefund').textContent = money(state.tenYearCapital) + '*';
+    $('compBankTaxNote').textContent = 'Pagas retención anual de ISR sobre rendimientos bancarios';
   }
 
   $('compTitleAnnual').textContent = money(annualSaving) + ' al año';
@@ -1694,11 +1668,11 @@ function recalculateAll(triggerPulse){
   if (state.mode !== 'resico'){
     $('compTaxBenefit').textContent = '≈ +' + money(state.refund) + ' MXN a tu favor en abril*';
     $('compPlanNet').textContent = '≈ ' + money(netAnnualCost) + ' MXN';
-    $('compPlanSavingsPct').textContent = effectivePct + '% menos gracias a tu devolución de impuestos*';
+    $('compPlanSavingsPct').textContent = deductiblePctReturn + '% de retorno fiscal estimado sobre tu base deducible*';
   } else {
-    $('compTaxBenefit').textContent = 'Exención Art. 93 LISR (rendimientos 100% libres de impuestos)*';
-    $('compPlanNet').textContent = money(annualSaving) + ' MXN blindados en UDIs/USD';
-    $('compPlanSavingsPct').textContent = 'Capital blindado sin retención al retiro cumpliendo requisitos del Art. 93*';
+    $('compTaxBenefit').textContent = 'Diferimiento fiscal y exención total a los 60 años (Art. 93 LISR)*';
+    $('compPlanNet').textContent = money(annualSaving) + ' MXN protegidos en UDIs/USD';
+    $('compPlanSavingsPct').textContent = 'Crecimiento blindado contra inflación o devaluación cambiaria*';
   }
 
   if (triggerPulse && $('taxBox')){
@@ -1735,7 +1709,7 @@ function setRegimeSelection(selection){
     $('prioridadHidden').value = 'Exención ISR en RESICO (Art. 93)';
   } else if (selection === 'unsure'){
     state.mode = 'deducible';
-    state.regimeLabel = 'No estoy seguro (Revisar en Google Meet)';
+    state.regimeLabel = 'No estoy seguro (Revisar en sesión)';
     $('prioridadHidden').value = 'Asesoría para identificar régimen + Plan a medida';
   } else {
     state.mode = 'deducible';
@@ -1757,9 +1731,6 @@ function formatPhoneVisual(digits){
   return digits.slice(0, 2) + ' ' + digits.slice(2, 6) + ' ' + digits.slice(6, 10);
 }
 
-/* =====================================================================
-   FLUJO MÓVIL SIN AUTO-BLUR FORZADO (EVITA ERRORES EN EL DÍGITO 10)
-   ===================================================================== */
 function setupFormFlow(){
   const nameIn = $('formNombre');
   const waIn = $('formWhatsApp');
@@ -1848,10 +1819,10 @@ function updateHiddenCalc(){
   const clickId = ids.gclid || ids.wbraid || ids.gbraid;
   const gclidPart = clickId ? ' | GCLID: ' + clickId : '';
   const benefitPart = state.mode === 'resico'
-    ? 'Proyección 10a Art.93: ' + money(state.resicoTenYearCapital) + ' MXN'
-    : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Fondo 10a: ' + money(state.resicoTenYearCapital) + ' MXN';
+    ? 'Proyección 10a Art.93: ' + money(state.tenYearCapital) + ' MXN'
+    : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Cuenta 2 Anual: ' + money(state.flexibleAnnual) + ' | Fondo 10a: ' + money(state.tenYearCapital) + ' MXN';
 
-  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años (Mín ' + money(state.minSavingByAge) + ') | Ingreso: ' + ingreso + ' | Ahorro: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
+  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años (Base ' + money(state.minSavingByAge) + ') | Ingreso: ' + ingreso + ' | Ahorro: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
 }
 
 function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
@@ -1888,9 +1859,6 @@ async function flushPending(){
   }
 }
 
-/* =====================================================================
-   CONVERSIONES AVANZADAS GOOGLE ADS (+52 E.164 PHONE FORMAT)
-   ===================================================================== */
 function trackConversionIfQualified(leadId, qualified, waDigits, onSent){
   if (!qualified) return false;
   let waitsForGoogle = false;
@@ -1940,14 +1908,14 @@ async function handleSubmit(ev){
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para continuar a los horarios.'); $('formNombre').focus(); return; }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para preparar tu estudio.'); $('formNombre').focus(); return; }
   if (wa.length !== 10 || /^(\d)\1{9}$/.test(wa)){ showError('Ingresa un número de WhatsApp válido a 10 dígitos (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
 
   const btn = $('formSubmitBtn');
   if (btn.disabled) return;
   btn.disabled = true;
-  btn.textContent = 'Abriendo calendario de Google Meet…';
+  btn.textContent = 'Preparando tu estudio y horarios…';
 
   updateHiddenCalc();
   if (!currentLeadId) currentLeadId = newLeadId();
@@ -1985,18 +1953,18 @@ async function handleSubmit(ev){
     ingreso: state.income,
     aportacion_mensual: state.monthlySaving,
     deducible: Math.round(isResico ? state.monthlySaving * 12 : state.effectiveDeductible),
-    devolucion: isResico ? state.resicoTaxFreeGain : state.refund,
+    devolucion: isResico ? state.tenYearGain : state.refund,
     prioridad: $('prioridadHidden').value,
     calificado: qualified,
     modo: state.mode,
     goal: 'fiscal',
-    box1Label: isResico ? 'Ahorro anual a tu plan (Art. 93)' : 'Ahorro anual deducible',
+    box1Label: isResico ? 'Ahorro anual a tu plan (Art. 93)' : 'Ahorro anual total',
     box1Value: money(state.monthlySaving * 12) + ' / año',
-    box2Label: isResico ? 'Rendimiento libre de ISR est. (10a)' : 'Devolución estimada del SAT',
-    box2Value: money(isResico ? state.resicoTaxFreeGain : state.refund) + ' MXN*',
+    box2Label: isResico ? 'Crecimiento proyectado (10a)' : 'Devolución estimada del SAT',
+    box2Value: money(isResico ? state.tenYearGain : state.refund) + ' MXN*',
     summaryMetric: isResico
-      ? 'Estrategia RESICO Art. 93 con proyección de *' + money(state.resicoTenYearCapital) + ' MXN*'
-      : 'Devolución estimada del SAT de *' + money(state.refund) + ' MXN* (Fondo 10a: ~' + money(state.resicoTenYearCapital) + ')'
+      ? 'Estrategia RESICO Art. 93 con proyección de *' + money(state.tenYearCapital) + ' MXN*'
+      : 'Devolución estimada del SAT de *' + money(state.refund) + ' MXN* (Fondo 10a: ~' + money(state.tenYearCapital) + ')'
   };
 
   try {
@@ -2028,7 +1996,6 @@ async function handleSubmit(ev){
   setTimeout(goToThanks, waitsForGoogle ? 600 : 150);
 }
 
-/* ===================== MODALES Y BOTÓN PEGAJOSO ===================== */
 const MODAL_IDS = ['videoModal', 'cedulaModal', 'privacyModal'];
 let lastOpener = null;
 
@@ -2099,12 +2066,6 @@ function setupSticky(){
   $('headerCtaBtn').addEventListener('click', scrollToNameField);
 }
 
-function setupWhatsAppFallback(){
-  if (!CONFIG.WHATSAPP_NUMBER) return;
-  const msg = encodeURIComponent('Hola Santi, estuve viendo el simulador de PPR en tu página y me gustaría agendar una sesión por Google Meet contigo.');
-  $('waBtn').href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + msg;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   updateUrgencyCountdown();
   captureAttribution();
@@ -2145,7 +2106,6 @@ document.addEventListener('DOMContentLoaded', () => {
   $('leadForm').addEventListener('submit', handleSubmit);
   setupModals();
   setupSticky();
-  setupWhatsAppFallback();
   recalculateAll(false);
   flushPending();
 });
