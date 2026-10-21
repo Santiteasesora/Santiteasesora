@@ -10,23 +10,26 @@
 <link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
 <link rel="apple-touch-icon" href="https://www.santiteasesora.com/logo-santi.png">
 
+<!-- Preconexión para que Google Calendar abra sin demora en móvil -->
+<link rel="preconnect" href="https://calendar.google.com">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18490645254');
+  gtag('config', 'AW-18490645254', { 'allow_enhanced_conversions': true });
 </script>
 
-<!-- Misma familia tipográfica que profesionistas.html e index.html -->
+<!-- Misma familia tipográfica que profesionistas.html, index.html y empresario.html -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* =====================================================================
-   SISTEMA DE DISEÑO: UNIFICADO CON PROFESIONISTAS E INDEX
+   SISTEMA DE DISEÑO: UNIFICADO CON PROFESIONISTAS, INDEX Y EMPRESARIO
    ===================================================================== */
 :root {
   --navy: #0B1F33;
@@ -118,8 +121,6 @@ a { color: var(--emerald); text-decoration: none; }
 }
 
 /* ===================== LAYOUT PRINCIPAL ===================== */
-/* En móvil: primero la tarjeta de acción (agendar) y debajo el expediente detallado.
-   En escritorio: 2 columnas lado a lado (Expediente a la izquierda, Agenda a la derecha). */
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
@@ -634,16 +635,16 @@ footer {
       </a>
     </div>
 
-    <!-- Qué haremos en la sesión (Sin mencionar 30 minutos ni prometer coberturas sin evaluación) -->
+    <!-- Qué haremos en la sesión (Enfoque de Diagnóstico Cita 1 sin prometer corrida oficial aún) -->
     <div class="rules">
       <div class="rules-title">📋 ¿Qué haremos en nuestra sesión por Google Meet?</div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span><strong>Conversación a tu medida:</strong> Platicaremos sobre tus metas personales y tu situación actual para diseñar la estrategia exacta que necesitas.</span>
+        <span><strong>Metas y oportunidades financieras:</strong> Conversaremos sobre tus objetivos a mediano y largo plazo para detectar qué beneficios fiscales o de rendimiento podemos aprovechar a tu favor.</span>
       </div>
       <div class="rule-item">
         <span class="icon">✓</span>
-        <span><strong>Claridad y viabilidad real:</strong> Revisaremos juntos tu corrida oficial y validaremos tu perfil para ofrecerte únicamente coberturas reales y viables para ti.</span>
+        <span><strong>Desempeño de tu ahorro y blindaje:</strong> Verás un diagnóstico interactivo de cómo evolucionará tu ahorro a través del tiempo y la protección que obtienes mientras ahorras, sentando las bases reales para tu estrategia.</span>
       </div>
     </div>
   </section>
@@ -662,23 +663,24 @@ footer {
       </p>
     </div>
 
-    <!-- Cajas dinámicas (Muestran exactamente lo simulado en Profesionistas, Index o Empresario, sin inventar sumas aseguradas) -->
+    <!-- Cajas dinámicas (Homologadas en $30,000/año y $6,408 MXN* por defecto) -->
     <div class="metrics" id="deducibleMetrics">
       <div class="metric">
         <small id="metric1Label">Ahorro anual deducible</small>
-        <b id="sumDeductible">$60,000 / año</b>
+        <b id="sumDeductible">$30,000 / año</b>
         <span id="metric1Sub">Simulado en tu plan</span>
       </div>
       <div class="metric highlight">
         <small id="metric2Label">Devolución estimada del SAT</small>
-        <b id="sumRefund">$14,112 MXN*</b>
+        <b id="sumRefund">$6,408 MXN*</b>
         <span id="metric2Sub">Beneficio preliminar</span>
       </div>
     </div>
 
     <div class="profile-summary">
       <div><span>Esquema / Régimen:</span> <strong id="sumRegimen">Sueldo u Honorarios</strong></div>
-      <div><span>Ingreso mensual base:</span> <strong id="sumIncome" class="num">$55,000 MXN / mes</strong></div>
+      <div><span>Ingreso mensual base:</span> <strong id="sumIncome" class="num">$30,000 MXN / mes</strong></div>
+      <div><span>Edad y aportación planeada:</span> <strong id="sumAgeAndSaving" class="num">22–34 años · $2,500/mes</strong></div>
       <div><span>Meta prioritaria:</span> <strong id="sumPriority">Deducción SAT + Retiro</strong></div>
     </div>
 
@@ -737,13 +739,15 @@ let leadData = {
   lead: 'SANTI-2026',
   nombre: '',
   wa: '',
-  regimen: 'Sueldo u Honorarios',
-  ingreso: 55000,
-  aportacion_mensual: 5000,
-  deducible: 60000,
-  devolucion: 14112,
+  edad: '22-34',
+  regimen: 'Sueldo u Honorarios (Art. 151)',
+  ingreso: 30000,
+  aportacion_mensual: 2500,
+  deducible: 30000,
+  devolucion: 6408,
   prioridad: 'Deducción SAT + Retiro (Art. 151)',
   calificado: true,
+  modo: 'deducible',
   goal: 'fiscal',
   box1Label: '',
   box1Value: '',
@@ -768,7 +772,12 @@ function loadLeadData(){
 
   const params = new URLSearchParams(location.search);
   if (params.get('lead')) leadData.lead = params.get('lead');
-  if (params.get('modo') === 'resico') leadData.regimen = 'RESICO (Art. 93 Exención)';
+  if (params.get('modo') === 'resico'){
+    leadData.modo = 'resico';
+    if (!String(leadData.regimen).toUpperCase().includes('RESICO')){
+      leadData.regimen = 'RESICO (Art. 93 Exención)';
+    }
+  }
   if (params.get('goal')) leadData.goal = params.get('goal');
   if (params.get('calificado') === '0') leadData.calificado = false;
 
@@ -778,7 +787,7 @@ function loadLeadData(){
 }
 
 /* =====================================================================
-   2. RENDERIZADO CAMALEÓNICO DEL EXPEDIENTE (CERO FALSAS PROMESAS EN VIDA)
+   2. RENDERIZADO CAMALEÓNICO DEL EXPEDIENTE
    ===================================================================== */
 function renderDossier(){
   $('leadFolio').textContent = 'Folio: #' + leadData.lead;
@@ -791,13 +800,17 @@ function renderDossier(){
     $('actionMainTitle').textContent = `${firstName}, elige cómo prefieres agendar tu sesión por Google Meet`;
   }
 
+  const isResico = leadData.modo === 'resico' || String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
+  const goal = leadData.goal || 'fiscal';
+  const monthlySave = Number(leadData.aportacion_mensual) || Math.max(1500, Math.round((leadData.ingreso * 0.085) / 500) * 500);
+  const cleanEdad = String(leadData.edad || '22-34').replace(/\s*años/i, '') + ' años';
+
   $('sumRegimen').textContent = leadData.regimen;
   $('sumIncome').textContent = money(leadData.ingreso) + ' MXN / mes';
+  if ($('sumAgeAndSaving')){
+    $('sumAgeAndSaving').textContent = cleanEdad + ' · ' + money(monthlySave) + '/mes';
+  }
   $('sumPriority').textContent = leadData.prioridad;
-
-  const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
-  const goal = leadData.goal || 'fiscal';
-  const monthlySave = Number(leadData.aportacion_mensual) || Math.max(1500, Math.round((leadData.ingreso * 0.10) / 500) * 500);
 
   if (goal === 'gmm'){
     $('dossierTag').textContent = 'Resumen Blindaje Médico';
@@ -823,7 +836,6 @@ function renderDossier(){
     $('metric2Sub').textContent = 'Cuenta con liquidez para proyectos';
 
   } else if (goal === 'vida'){
-    // CERO CÁLCULO DE SUMA ASEGURADA INVENTADA: Todo se remite a la evaluación en Google Meet
     $('dossierTag').textContent = 'Diseño de Protección Familiar';
     $('greetingTitle').innerHTML = `${namePrefix}solicitud de protección está <span>registrada</span>`;
     $('metric1Label').textContent = leadData.box1Label || 'Aportación mensual planeada';
@@ -835,7 +847,6 @@ function renderDossier(){
     $('metric2Sub').textContent = 'Según tus metas y perfil de salud';
 
   } else {
-    // Modo Fiscal / Retiro (Sueldos/Honorarios o RESICO)
     $('greetingTitle').innerHTML = `${namePrefix}simulación fiscal está <span>calculada y registrada</span>`;
 
     if (isResico){
@@ -858,28 +869,36 @@ function renderDossier(){
       $('metric1Sub').textContent = 'Dentro del tope de ley';
 
       $('metric2Label').textContent = leadData.box2Label || 'Devolución estimada del SAT';
-      const refNumber = Number(leadData.devolucion) || 14112;
+      const refNumber = Number(leadData.devolucion) || 6408;
       $('sumRefund').textContent = leadData.box2Value || (money(refNumber) + ' MXN*');
       $('metric2Sub').textContent = 'Saldo a favor estimado en abril';
     }
   }
 
-  // FILTRO DE PROTECCIÓN DE AGENDA: Si gana menos de $25,000/mes, ocultamos el Google Calendar directo
+  // FILTRO DE PROTECCIÓN DE AGENDA: Si gana menos de $25,000/mes o no calificó, ocultamos Google Calendar directo
   if (leadData.calificado === false || Number(leadData.ingreso) < 25000){
     $('directCalendarCard').classList.add('hidden');
     $('methodDivider').classList.add('hidden');
+  } else {
+    // Precarga silenciosa del calendario en segundo plano para que abra al instante en móvil
+    setTimeout(() => {
+      const iframe = $('googleCalIframe');
+      if (iframe && !iframe.src) iframe.src = CONFIG.GOOGLE_CALENDAR_EMBED_URL;
+    }, 400);
   }
 
   updateWhatsAppLinks();
 }
 
 /* =====================================================================
-   3. GENERADOR DE MENSAJES DE WHATSAPP (SIN MENCIONAR 30 MINUTOS)
+   3. GENERADOR DE MENSAJES DE WHATSAPP (CON EDAD Y APORTACIÓN INCLUIDAS)
    ===================================================================== */
 function updateWhatsAppLinks(){
   const dayPref = $('daySelect').value;
-  const isResico = String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
+  const isResico = leadData.modo === 'resico' || String(leadData.regimen).toUpperCase().includes('RESICO') || String(leadData.devolucion).includes('RESICO');
   const nombreTxt = leadData.nombre ? `Soy *${leadData.nombre}*` : 'Acabo de registrarme en tu página';
+  const monthlySave = Number(leadData.aportacion_mensual) || Math.max(1500, Math.round((leadData.ingreso * 0.085) / 500) * 500);
+  const cleanEdad = String(leadData.edad || '22-34').replace(/\s*años/i, '') + ' años';
 
   let beneficioTxt = '';
   if (leadData.summaryMetric){
@@ -887,15 +906,17 @@ function updateWhatsAppLinks(){
   } else if (isResico){
     beneficioTxt = 'Estrategia RESICO Art. 93 (Rendimientos libres de ISR)';
   } else {
-    beneficioTxt = `Devolución estimada del SAT de *${money(Number(leadData.devolucion) || 14112)} MXN*`;
+    beneficioTxt = `Devolución estimada del SAT de *${money(Number(leadData.devolucion) || 6408)} MXN*`;
   }
 
   const msgSlot = [
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
     `Me gustaría coordinar mi sesión por Google Meet contigo con estos datos:`,
+    `• *Edad:* ${cleanEdad}`,
     `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
+    `• *Aportación planeada:* ${money(monthlySave)}/mes`,
     `• *Simulación:* ${beneficioTxt}`,
     `• *Meta:* ${leadData.prioridad}`,
     `• *Horario preferido:* ${selectedSlot} (${dayPref})`,
@@ -907,8 +928,10 @@ function updateWhatsAppLinks(){
     `Hola Santi, ${nombreTxt} (Folio *#${leadData.lead}*).`,
     ``,
     `✅ *Ya seleccioné mi día y hora en tu Google Calendar para nuestra sesión por Google Meet.*`,
+    `• *Edad:* ${cleanEdad}`,
     `• *Esquema:* ${leadData.regimen}`,
     `• *Ingreso aprox:* ${money(leadData.ingreso)}/mes`,
+    `• *Aportación planeada:* ${money(monthlySave)}/mes`,
     `• *Simulación:* ${beneficioTxt}`,
     `• *Meta:* ${leadData.prioridad}`,
     ``,
@@ -920,7 +943,7 @@ function updateWhatsAppLinks(){
 }
 
 /* =====================================================================
-   4. MODAL DEL CALENDARIO (CARGA BAJO DEMANDA)
+   4. MODAL DEL CALENDARIO
    ===================================================================== */
 function setupCalendarModal(){
   const dlg = $('calDialog');
