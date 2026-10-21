@@ -28,7 +28,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18490645254');
+  gtag('config', 'AW-18490645254', { 'allow_enhanced_conversions': true });
 </script>
 
 <!-- Carga optimizada: 1 sola familia tipográfica -->
@@ -380,6 +380,32 @@ input[type="range"].santi-range::-moz-range-thumb {
   font-size: 11px;
   text-decoration: underline;
   padding: 0;
+}
+
+/* Selector discreto de Rango de Edad (Filtro de Prima Mínima Viable) */
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: #071422;
+  padding: 4px;
+  border-radius: var(--r-md);
+}
+.age-btn {
+  background: transparent;
+  color: #CBD5E1;
+  border: none;
+  padding: 7px 4px;
+  border-radius: var(--r-sm);
+  font-size: 11.5px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  text-align: center;
+  transition: all 0.15s;
+}
+.age-btn.active {
+  background: var(--gold);
+  color: var(--navy);
 }
 
 /* Selector de Régimen / Esquema de Negocio (4 botones claros) */
@@ -1012,34 +1038,45 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
     <form id="leadForm" novalidate>
       <div class="sim-console">
 
-        <!-- PASO 1: UTILIDAD O INGRESO MENSUAL LIBRE -->
+        <!-- PASO 1: UTILIDAD O INGRESO MENSUAL LIBRE (Anclado en $30,000 MXN) -->
         <div class="slider-block">
           <div class="slider-head">
             <label for="incomeSlider" class="step-lbl" style="margin:0">1. Tu utilidad o ingreso mensual libre aprox:</label>
-            <span id="incomeDisplay" class="val-badge">$60,000 MXN</span>
+            <span id="incomeDisplay" class="val-badge">$30,000 MXN</span>
           </div>
-          <input type="range" id="incomeSlider" class="santi-range" min="15000" max="250000" step="5000" value="60000" aria-label="Utilidad o ingreso mensual aproximado">
+          <input type="range" id="incomeSlider" class="santi-range" min="15000" max="250000" step="5000" value="30000" aria-label="Utilidad o ingreso mensual aproximado">
           <div class="scale-marks">
             <span>$15,000</span><span>$80,000</span><span>$160,000</span><span>$250,000+</span>
           </div>
         </div>
 
-        <!-- PASO 2: LO QUE QUIERES SEPARAR AL MES PARA TU RESERVA -->
+        <!-- PASO 2: RANGO DE EDAD (Candado de Prima Mínima Viable) -->
         <div class="slider-block" style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)">
-          <div class="slider-head">
-            <label for="savingSlider" class="step-lbl" style="margin:0">2. Utilidad mensual a separar en tu reserva:</label>
-            <span id="savingDisplay" class="val-badge emerald">$6,000 / mes</span>
-          </div>
-          <input type="range" id="savingSlider" class="santi-range" min="1500" max="25000" step="500" value="6000" aria-label="Utilidad mensual a separar">
-          <div class="scale-marks">
-            <span>Desde $1,500–$2,500/mes (según tu edad)</span>
-            <button type="button" class="cap-btn" id="useCapBtn">Usar tope deducible ($6,000/mes)</button>
+          <label class="step-lbl">2. Tu rango de edad actual:</label>
+          <div class="age-grid" role="group" aria-label="Selecciona tu rango de edad">
+            <button type="button" class="age-btn active" data-age="22-34" data-min="1500">22–34</button>
+            <button type="button" class="age-btn" data-age="35-40" data-min="2000">35–40</button>
+            <button type="button" class="age-btn" data-age="41-45" data-min="3000">41–45</button>
+            <button type="button" class="age-btn" data-age="46-50+" data-min="3500">46–50+</button>
           </div>
         </div>
 
-        <!-- PASO 3: CÓMO OPERAS O DECLARAS TU NEGOCIO -->
+        <!-- PASO 3: LO QUE QUIERES SEPARAR AL MES PARA TU RESERVA (Anclado en $2,500/mes) -->
+        <div class="slider-block" style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)">
+          <div class="slider-head">
+            <label for="savingSlider" class="step-lbl" style="margin:0">3. Utilidad mensual a separar en tu reserva:</label>
+            <span id="savingDisplay" class="val-badge emerald">$2,500 / mes</span>
+          </div>
+          <input type="range" id="savingSlider" class="santi-range" min="1500" max="25000" step="500" value="2500" aria-label="Utilidad mensual a separar">
+          <div class="scale-marks">
+            <span id="minSavingHint">Mínimo para tu edad (22–34 años): $1,500/mes</span>
+            <button type="button" class="cap-btn" id="useCapBtn">Usar tope deducible ($2,500/mes)</button>
+          </div>
+        </div>
+
+        <!-- PASO 4: CÓMO OPERAS O DECLARAS TU NEGOCIO -->
         <div class="regime-block">
-          <label class="step-lbl">3. ¿Cómo operas o declaras tu negocio hoy?</label>
+          <label class="step-lbl">4. ¿Cómo operas o declaras tu negocio hoy?</label>
           <div class="regime-switch" role="group" aria-label="Selecciona cómo operas tu negocio">
             <button type="button" class="regime-btn active" id="btnRegimePfae">🧾 Actividad Empresarial</button>
             <button type="button" class="regime-btn" id="btnRegimeResico">⚡ Estoy en RESICO</button>
@@ -1052,39 +1089,40 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
         <div class="res-hero" id="taxBox">
           <div class="res-meta">
             <span id="resHeroTag">ISR ESTIMADO QUE RECUPERAS EN ABRIL</span>
-            <span id="resHeroRate">TASA 30.0%</span>
+            <span id="resHeroRate">TASA ESTIMADA 21.4%</span>
           </div>
-          <b id="refundOutput">$20,599 MXN*</b>
+          <b id="refundOutput">$6,408 MXN*</b>
           <p id="resHeroDesc">
-            Separando <strong>$72,000</strong> al año (<strong>$6,000/mes</strong>) fuera de tu negocio, tu desembolso real tras la devolución del SAT baja a <strong>$4,283/mes</strong>.
+            Separando <strong>$30,000</strong> al año (<strong>$2,500/mes</strong>) fuera de tu negocio, tu desembolso real tras la devolución del SAT baja a <strong>$1,966/mes</strong>.
           </p>
           <div class="res-projection-strip">
             <span id="projStripLabel">🏦 Reserva proyectada a 10 años (UDIs/USD):</span>
-            <strong id="projStripValue">~$1,113,600 MXN*</strong>
+            <strong id="projStripValue">~$464,000 MXN*</strong>
           </div>
         </div>
 
-        <!-- Invitación consultiva por Google Meet -->
+        <!-- Invitación consultiva dinámica por Google Meet -->
         <div class="gap-incentive">
           <span class="gap-icon">💻</span>
           <div>
-            <strong id="gapTitle">Diseñemos la reserva de tu negocio por Google Meet</strong>
-            <span id="gapDesc">Conversamos sobre la realidad de tu negocio, tus metas familiares y cómo blindar tu capital paso a paso.</span>
+            <strong id="gapTitle">Tu simulación es la base de tu estrategia</strong>
+            <span id="gapDesc">En tu sesión privada por Google Meet definimos cómo dividir tu reserva (entre liquidez a 3–5 años y deducción fiscal) sin comprometer el flujo de tu negocio.</span>
           </div>
         </div>
 
         <div class="low-income-note" id="lowIncomeNote">
-          Nota: las estrategias patrimoniales para dueños de negocio inician habitualmente desde <strong>$1,500 a $3,500 MXN al mes</strong> según tu edad.
+          Nota: el monto mínimo sugerido para iniciar en tu rango de edad es de <strong id="lowIncomeMinText">$1,500 MXN al mes</strong>.
         </div>
       </div>
 
       <div class="form-body" id="formCard">
         <div class="form-head-line">
-          <b>Agenda tu sesión por Google Meet conmigo</b>
-          <span>Trato directo 1 a 1</span>
+          <b>Personaliza tu estrategia en vivo por Google Meet</b>
+          <span>Sesión privada 1 a 1 · Cédula C412676</span>
         </div>
 
         <input type="hidden" id="regimenInput" value="Actividad Empresarial (PFAE)">
+        <input type="hidden" id="edadInput" value="22-34 años">
         <input type="hidden" id="formOrigen" value="Landing Empresarios CRO 10/10">
         <input type="hidden" id="prioridadHidden" value="Separar Patrimonio Personal + Deducción Fiscal">
         <input type="hidden" id="calcEstimadoHidden" value="">
@@ -1109,17 +1147,17 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
         <div class="err" id="formError" role="alert"></div>
 
-        <button type="submit" class="cta" id="formSubmitBtn">Agendar mi sesión por Google Meet →</button>
+        <button type="submit" class="cta" id="formSubmitBtn">Personalizar mi estrategia por Google Meet →</button>
 
         <p class="consent-text" id="consentNote">
-          Al tocar el botón aceptas nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a> y que Santiago te escriba por WhatsApp para coordinar tu sesión por Google Meet.
+          Al continuar aceptas nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
         </p>
         <input type="checkbox" id="privacyConsent" class="hidden" checked>
 
         <a class="wa hidden" id="waBtn" target="_blank" rel="noopener">💬 Prefiero escribir directo por WhatsApp</a>
 
         <div class="micro">
-          <span>🔒 Cuidamos tus datos. Atención personal por Santiago.</span>
+          <span>🔒 Sin llamadas invasivas: te escribo personalmente por WhatsApp para confirmar el horario de tu sesión.</span>
         </div>
       </div>
     </form>
@@ -1232,9 +1270,9 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 <section class="sec-wrap" id="comparativa">
   <div class="container" style="max-width:1040px">
     <div class="sec-kicker">02 · MATEMÁTICA PARA EL DUEÑO</div>
-    <h2 class="sec-title">Dejar tus utilidades en la cuenta del banco vs. separar <span id="compTitleAnnual" class="num" style="color:var(--emerald)">$72,000 al año</span></h2>
+    <h2 class="sec-title">Dejar tus utilidades en la cuenta del banco vs. separar <span id="compTitleAnnual" class="num" style="color:var(--emerald)">$30,000 al año</span></h2>
     <p class="sec-sub" id="compSubtitle">
-      Esta tabla se actualiza en vivo con la utilidad ($60,000/mes) y la reserva ($6,000/mes) que elegiste en el simulador.
+      Esta tabla se actualiza en vivo con la utilidad ($30,000/mes) y la reserva ($2,500/mes) que elegiste en el simulador.
     </p>
 
     <div class="table-wrap">
@@ -1249,13 +1287,13 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
         <tbody>
           <tr>
             <td><strong>Utilidad anual que separas para ti</strong></td>
-            <td id="compBankAnnual" class="num">$72,000 MXN</td>
-            <td id="compPlanAnnual" class="win num">$72,000 MXN</td>
+            <td id="compBankAnnual" class="num">$30,000 MXN</td>
+            <td id="compPlanAnnual" class="win num">$30,000 MXN</td>
           </tr>
           <tr>
             <td><strong>Beneficio fiscal ante el SAT</strong></td>
             <td class="lose" id="compBankTaxNote">$0 (además el banco te retiene ISR sobre intereses)</td>
-            <td class="win" id="compTaxBenefit">≈ +$20,599 MXN de devolución en abril*</td>
+            <td class="win" id="compTaxBenefit">≈ +$6,408 MXN de devolución en abril*</td>
           </tr>
           <tr>
             <td><strong>¿Está separado del riesgo del negocio?</strong></td>
@@ -1269,10 +1307,10 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
           </tr>
           <tr class="total">
             <td>Lo que realmente te cuesta crear tu reserva</td>
-            <td id="compBankNet" class="num">$72,000 MXN</td>
+            <td id="compBankNet" class="num">$30,000 MXN</td>
             <td class="win">
-              <span id="compPlanNet" class="num" style="font-size:18px">≈ $51,401 MXN</span>
-              <small id="compPlanSavingsPct">29% menos gracias al retorno fiscal de abril*</small>
+              <span id="compPlanNet" class="num" style="font-size:18px">≈ $23,592 MXN</span>
+              <small id="compPlanSavingsPct">21% menos gracias al retorno fiscal de abril*</small>
             </td>
           </tr>
         </tbody>
@@ -1419,9 +1457,9 @@ footer a { color: var(--gold); font-weight: 700; text-decoration: underline; }
   <div class="sticky-in">
     <div>
       <small id="stickyLabel">Recuperación SAT estimada:</small>
-      <b id="stickyRefund">$20,599 MXN*</b>
+      <b id="stickyRefund">$6,408 MXN*</b>
     </div>
-    <button type="button" id="stickyBtn">Agendar sesión por Google Meet →</button>
+    <button type="button" id="stickyBtn">Personalizar por Google Meet →</button>
   </div>
 </div>
 
@@ -1507,16 +1545,19 @@ function lsSet(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e
 
 const state = {
   mode: 'deducible',
+  regimeKey: 'pfae',
   regimeLabel: 'Actividad Empresarial (PFAE)',
-  income: 60000,
-  monthlySaving: 6000,
+  income: 30000,
+  ageRange: '22-34',
+  minSavingByAge: 1500,
+  monthlySaving: 2500,
   userTouchedSaving: false,
-  maxDeductibleAnnual: 72000,
-  effectiveDeductible: 72000,
-  refund: 20599,
-  marginalRate: 0.30,
-  resicoTenYearCapital: 1113600,
-  resicoTaxFreeGain: 393600
+  maxDeductibleAnnual: 36000,
+  effectiveDeductible: 30000,
+  refund: 6408,
+  marginalRate: 0.2136,
+  resicoTenYearCapital: 464000,
+  resicoTaxFreeGain: 164000
 };
 
 let pulseTimer = null;
@@ -1564,14 +1605,21 @@ function recalculateAll(triggerPulse){
   const maxDeductibleMonthly = Math.round(state.maxDeductibleAnnual / 12);
 
   const savingSlider = $('savingSlider');
+  const minFloor = state.minSavingByAge || 1500;
   const maxSliderVal = Math.max(15000, Math.min(30000, Math.round((state.income * 0.25) / 500) * 500));
+  savingSlider.min = String(minFloor);
   savingSlider.max = String(maxSliderVal);
 
   if (!state.userTouchedSaving){
-    state.monthlySaving = Math.max(1500, Math.min(maxDeductibleMonthly, Math.round((state.income * 0.10) / 500) * 500));
+    const targetPct = Math.round((state.income * 0.085) / 500) * 500;
+    state.monthlySaving = Math.max(minFloor, Math.min(maxDeductibleMonthly, targetPct));
     savingSlider.value = String(state.monthlySaving);
-  } else if (state.monthlySaving > maxSliderVal){
-    state.monthlySaving = maxSliderVal;
+  } else {
+    if (state.monthlySaving < minFloor){
+      state.monthlySaving = minFloor;
+    } else if (state.monthlySaving > maxSliderVal){
+      state.monthlySaving = maxSliderVal;
+    }
     savingSlider.value = String(state.monthlySaving);
   }
 
@@ -1586,7 +1634,14 @@ function recalculateAll(triggerPulse){
 
   $('incomeDisplay').textContent = money(state.income) + ' MXN';
   $('savingDisplay').textContent = money(state.monthlySaving) + ' / mes';
-  $('useCapBtn').textContent = 'Usar tope deducible (' + money(maxDeductibleMonthly) + '/mes)';
+  if ($('minSavingHint')){
+    $('minSavingHint').textContent = 'Mínimo para tu edad (' + state.ageRange + ' años): ' + money(minFloor) + '/mes';
+  }
+  if ($('lowIncomeMinText')){
+    $('lowIncomeMinText').textContent = money(minFloor) + ' MXN al mes';
+  }
+  const effectiveCapBtnVal = Math.max(minFloor, maxDeductibleMonthly);
+  $('useCapBtn').textContent = 'Usar tope deducible (' + money(effectiveCapBtnVal) + '/mes)';
   $('useCapBtn').style.display = state.mode === 'resico' ? 'none' : 'inline';
   $('lowIncomeNote').style.display = state.income < CONFIG.QUALIFIED_INCOME ? 'block' : 'none';
 
@@ -1603,9 +1658,15 @@ function recalculateAll(triggerPulse){
     $('projStripValue').textContent = '~' + money(state.resicoTenYearCapital) + ' MXN*';
     $('stickyLabel').textContent = 'Recuperación SAT estimada:';
     $('stickyRefund').textContent = money(state.refund) + ' MXN*';
-    $('gapTitle').textContent = 'Diseñemos la reserva de tu negocio por Google Meet';
-    $('gapDesc').textContent = 'Conversamos sobre la realidad de tu negocio, tus metas familiares y cómo blindar tu capital paso a paso.';
     $('compBankTaxNote').textContent = '$0 (además el banco te retiene ISR sobre intereses)';
+
+    if (state.regimeKey === 'moral'){
+      $('gapTitle').textContent = '¿A título personal o a través de tu Sociedad?';
+      $('gapDesc').textContent = 'En tu sesión privada por Google Meet evaluamos cómo te conviene más estructurarlo: deduciendo a título personal (Art. 151) o mediante un esquema para Socios / Hombre Clave.';
+    } else {
+      $('gapTitle').textContent = 'Tu simulación es la base de tu estrategia';
+      $('gapDesc').textContent = 'En tu sesión privada por Google Meet definimos cómo dividir tu reserva (entre liquidez a 3–5 años y deducción fiscal) sin comprometer el flujo de tu negocio.';
+    }
   } else {
     $('resHeroTag').textContent = 'RESERVA PROYECTADA A 10 AÑOS (RESICO ART. 93)';
     $('resHeroRate').textContent = '0% ISR AL RETIRO';
@@ -1615,8 +1676,8 @@ function recalculateAll(triggerPulse){
     $('projStripValue').textContent = '+' + money(state.resicoTaxFreeGain) + ' MXN*';
     $('stickyLabel').textContent = 'Reserva proyectada Art. 93:';
     $('stickyRefund').textContent = money(state.resicoTenYearCapital) + '*';
-    $('gapTitle').textContent = 'Diseñemos tu reserva RESICO por Google Meet';
-    $('gapDesc').textContent = 'Platicamos sobre tus proyectos de negocio y cómo acumular patrimonio fuera de la operación libre de ISR.';
+    $('gapTitle').textContent = 'Tu simulación es la base de tu estrategia';
+    $('gapDesc').textContent = 'En tu sesión privada por Google Meet estructuramos tu reserva exenta de ISR (Art. 93) en UDIs o Dólares con liquidez para tus proyectos.';
     $('compBankTaxNote').textContent = 'Pagas retención de ISR anual sobre tus ahorros en el banco';
   }
 
@@ -1646,7 +1707,21 @@ function recalculateAll(triggerPulse){
   updateHiddenCalc();
 }
 
+function setAgeSelection(ageRange, minAmount){
+  state.ageRange = ageRange;
+  state.minSavingByAge = parseInt(minAmount, 10) || 1500;
+  document.querySelectorAll('.age-grid .age-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.age === ageRange);
+  });
+  if ($('edadInput')) $('edadInput').value = ageRange + ' años';
+  if (state.monthlySaving < state.minSavingByAge){
+    state.monthlySaving = state.minSavingByAge;
+  }
+  recalculateAll(true);
+}
+
 function setRegimeSelection(selection){
+  state.regimeKey = selection;
   $('btnRegimePfae').classList.toggle('active', selection === 'pfae');
   $('btnRegimeResico').classList.toggle('active', selection === 'resico');
   $('btnRegimeMoral').classList.toggle('active', selection === 'moral');
@@ -1714,13 +1789,9 @@ function setupFormFlow(){
     if (complete){
       $('formError').style.display = 'none';
       if (nameIn.value.trim().length >= 2){
-        setTimeout(() => {
-          waIn.blur();
-          submitBtn.classList.remove('ready-pulse');
-          void submitBtn.offsetWidth;
-          submitBtn.classList.add('ready-pulse');
-          submitBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 120);
+        submitBtn.classList.remove('ready-pulse');
+        void submitBtn.offsetWidth;
+        submitBtn.classList.add('ready-pulse');
       }
     }
   });
@@ -1760,6 +1831,7 @@ function updateHiddenCalc(){
   const prioridad = $('prioridadHidden').value;
   const ingreso = money(state.income) + '/mes';
   const ahorro = money(state.monthlySaving) + '/mes';
+  const edad = state.ageRange + ' años';
   const qualTag = state.income >= CONFIG.QUALIFIED_INCOME ? '[EMPRESARIO CALIFICADO $25k+]' : '[NO CALIFICADO <$25k]';
   const ids = getClickIds();
   const clickId = ids.gclid || ids.wbraid || ids.gbraid;
@@ -1768,7 +1840,7 @@ function updateHiddenCalc(){
     ? 'Reserva 10a Art.93: ' + money(state.resicoTenYearCapital) + ' MXN'
     : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Reserva 10a: ' + money(state.resicoTenYearCapital) + ' MXN';
 
-  $('calcEstimadoHidden').value = qualTag + ' Utilidad: ' + ingreso + ' | Reserva: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
+  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + edad + ' | Utilidad: ' + ingreso + ' | Reserva: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
 }
 
 function newLeadId(){ return 'E' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
@@ -1805,12 +1877,22 @@ async function flushPending(){
   }
 }
 
-function trackConversionIfQualified(leadId, qualified, onSent){
+function trackConversionIfQualified(leadId, qualified, userData, onSent){
   if (!qualified) return false;
   let waitsForGoogle = false;
   const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 900 };
 
   if (typeof gtag !== 'undefined'){
+    if (userData && userData.wa){
+      gtag('set', 'user_data', {
+        phone_number: '+52' + userData.wa,
+        address: {
+          first_name: (userData.nombre || '').split(' ')[0] || '',
+          country: 'MX'
+        }
+      });
+    }
+
     gtag('event', 'generate_lead', Object.assign({
       event_category: 'Formulario_Empresarios',
       event_label: 'Empresario_Calificado_' + state.mode
@@ -1861,12 +1943,13 @@ async function handleSubmit(ev){
   if (!currentLeadId) currentLeadId = newLeadId();
   const leadId = currentLeadId;
   const ids = getClickIds();
-  const qualified = state.income >= CONFIG.QUALIFIED_INCOME;
+  const qualified = state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= state.minSavingByAge;
 
   const payload = {
     fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
     nombre: nombre,
     whatsapp: wa,
+    edad: state.ageRange + ' años',
     regimen: $('regimenInput').value || 'Actividad Empresarial (PFAE)',
     origen: $('formOrigen').value,
     calculo_estimado: $('calcEstimadoHidden').value,
@@ -1887,6 +1970,7 @@ async function handleSubmit(ev){
     lead: leadId,
     nombre: nombre,
     wa: wa,
+    edad: state.ageRange,
     regimen: payload.regimen,
     ingreso: state.income,
     aportacion_mensual: state.monthlySaving,
@@ -1916,7 +2000,7 @@ async function handleSubmit(ev){
   if (!ok){
     queueLead(payload);
     btn.disabled = false;
-    btn.textContent = 'Agendar mi sesión por Google Meet →';
+    btn.textContent = 'Personalizar mi estrategia por Google Meet →';
     if (CONFIG.WHATSAPP_NUMBER) $('waBtn').classList.remove('hidden');
     showError('Hubo una pequeña intermitencia de red. Tus datos están a salvo; toca el botón de nuevo.');
     return;
@@ -1938,7 +2022,7 @@ async function handleSubmit(ev){
     location.href = CONFIG.THANKS_PAGE + '?' + cleanParams;
   };
 
-  const waitsForGoogle = trackConversionIfQualified(leadId, qualified, goToThanks);
+  const waitsForGoogle = trackConversionIfQualified(leadId, qualified, { nombre: nombre, wa: wa }, goToThanks);
   setTimeout(goToThanks, waitsForGoogle ? 1400 : 500);
 }
 
@@ -2023,6 +2107,10 @@ document.addEventListener('DOMContentLoaded', () => {
   updateUrgencyCountdown();
   captureAttribution();
 
+  document.querySelectorAll('.age-grid .age-btn').forEach(btn => {
+    btn.addEventListener('click', () => setAgeSelection(btn.dataset.age, btn.dataset.min));
+  });
+
   $('btnRegimePfae').addEventListener('click', () => setRegimeSelection('pfae'));
   $('btnRegimeResico').addEventListener('click', () => setRegimeSelection('resico'));
   $('btnRegimeMoral').addEventListener('click', () => setRegimeSelection('moral'));
@@ -2042,8 +2130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   $('useCapBtn').addEventListener('click', () => {
     state.userTouchedSaving = true;
     const capMonthly = Math.round(Math.min(state.income * 12 * CONFIG.RETIRO_PCT, CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL) / 12);
-    state.monthlySaving = capMonthly;
-    $('savingSlider').value = String(capMonthly);
+    state.monthlySaving = Math.max(state.minSavingByAge, capMonthly);
+    $('savingSlider').value = String(state.monthlySaving);
     recalculateAll(true);
   });
 
