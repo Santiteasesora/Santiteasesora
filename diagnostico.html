@@ -6,824 +6,623 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#145C52">
 <title>Mesa de Diseño Patrimonial en Vivo | Santi te asesora</title>
-
 <link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
-<link rel="apple-touch-icon" href="https://www.santiteasesora.com/logo-santi.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* PALETA OFICIAL DE MARCA: SANTI TE ASESORA */
-:root {
-  --em: #145C52;          /* Verde profundo — Color insignia */
-  --em-dark: #0E443C;     /* Verde profundo intenso para pizarra */
-  --gold: #D9A441;        /* Dorado — Chispa especial */
-  --gold-hover: #E5B352;
-  --ivory: #FFF5E3;       /* Marfil — Calidez y respiración */
-  --charcoal: #292C2B;    /* Carbón — Amable y profesional */
-  --sage: #A8C4B5;        /* Salvia — Cercanía y tarjetas */
-  --sage-soft: #E6F0EC;   /* Salvia suave */
-  --bg: #FBF7F0;          /* Fondo general marfil luminoso */
-  --surface: #FFFFFF;
-  --muted: #555B59;
-  --line: #E4DDD0;
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-serif: "Newsreader", Georgia, serif;
+:root{
+  --em:#145C52;--em-dark:#0E443C;--gold:#D9A441;--gold-hover:#E5B352;
+  --ivory:#FFF5E3;--charcoal:#292C2B;--sage:#A8C4B5;--sage-soft:#E6F0EC;
+  --bg:#FBF7F0;--surface:#FFFFFF;--muted:#555B59;--line:#E4DDD0;
+  --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --font-serif:"Newsreader",Georgia,serif;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: var(--font-sans);
-  color: var(--charcoal);
-  background: linear-gradient(180deg, var(--sage-soft) 0%, var(--bg) 260px);
-  line-height: 1.5;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-}
-button, input, select { font-family: inherit; }
-button, select { cursor: pointer; }
-.num { font-variant-numeric: tabular-nums; }
-.serif-it { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-.hidden { display: none !important; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans);color:var(--charcoal);background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 260px);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+button,input,select{font-family:inherit}
+button,select{cursor:pointer}
+.num{font-variant-numeric:tabular-nums}
+.hidden{display:none!important}
 
-/* HEADER LIMPIO EN MARFIL Y SALVIA */
-.header {
-  background: rgba(255, 245, 227, 0.94);
-  border-bottom: 1px solid var(--line);
-  padding: 10px 18px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-}
-.header-in {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--em);
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: -0.02em;
-}
-.brand img { width: 30px; height: 30px; border-radius: 7px; object-fit: contain; }
-.badge-top {
-  font-size: 11.5px;
-  font-weight: 800;
-  color: var(--em);
-  background: var(--sage-soft);
-  padding: 4px 11px;
-  border-radius: 999px;
-  border: 1px solid var(--sage);
-}
-.header-tools { display: flex; align-items: center; gap: 8px; }
-.cnsf-pill {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--charcoal);
-  background: #fff;
-  border: 1px solid var(--sage);
-  padding: 6px 12px;
-  border-radius: 999px;
-}
-.cnsf-pill strong { color: var(--em); }
-.reset-btn {
-  background: #fff;
-  color: var(--charcoal);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 13px;
-  font-size: 12px;
-  font-weight: 700;
-  min-height: 34px;
-  transition: background 0.15s;
-}
-.reset-btn:hover { background: var(--ivory); border-color: var(--gold); }
+.header{background:rgba(255,245,227,.95);border-bottom:1px solid var(--line);padding:10px 18px;position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
+.header-in{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--em);font-weight:800;font-size:16px;letter-spacing:-.02em}
+.brand img{width:30px;height:30px;border-radius:7px;object-fit:contain}
+.badge-top{font-size:11.5px;font-weight:800;color:var(--em);background:var(--sage-soft);padding:4px 11px;border-radius:999px;border:1px solid var(--sage)}
+.header-tools{display:flex;align-items:center;gap:8px}
+.cnsf-pill{font-size:12px;font-weight:700;color:var(--charcoal);background:#fff;border:1px solid var(--sage);padding:6px 12px;border-radius:999px}
+.cnsf-pill strong{color:var(--em)}
+.reset-btn{background:#fff;color:var(--charcoal);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:12px;font-weight:700;min-height:34px}
+.reset-btn:hover{background:var(--ivory);border-color:var(--gold)}
 
-/* LAYOUT PRINCIPAL */
-.dashboard {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 16px 14px 48px;
-  display: grid;
-  gap: 18px;
-}
-@media (min-width: 980px) {
-  .dashboard {
-    grid-template-columns: 425px 1fr;
-    align-items: start;
-    gap: 24px;
-    padding-top: 20px;
-  }
-}
+.dashboard{max-width:1300px;margin:0 auto;padding:16px 14px 48px;display:grid;gap:18px}
+@media(min-width:980px){.dashboard{grid-template-columns:425px 1fr;align-items:start;gap:24px;padding-top:20px}}
 
-/* PANEL IZQUIERDO: PARÁMETROS RELAX Y CONVERSACIONALES */
-.panel {
-  background: var(--surface);
-  border: 1.5px solid var(--sage);
-  border-radius: 24px;
-  padding: 18px;
-  display: grid;
-  gap: 13px;
-  box-shadow: 0 18px 38px -18px rgba(20, 92, 82, 0.14);
-}
-.panel-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 10px;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.panel-tag {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--em);
-  background: var(--sage-soft);
-  padding: 4px 11px;
-  border-radius: 999px;
-  letter-spacing: 0.03em;
-}
-.folio-box { display: flex; gap: 6px; align-items: center; }
-.folio-input {
-  width: 128px;
-  height: 36px;
-  padding: 4px 10px;
-  border-radius: 9px;
-  border: 1.5px solid var(--line);
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--charcoal);
-  text-transform: uppercase;
-  background: var(--bg);
-}
-.btn-load {
-  background: var(--em);
-  color: #fff;
-  border: none;
-  height: 36px;
-  padding: 0 13px;
-  border-radius: 9px;
-  font-size: 12px;
-  font-weight: 800;
-}
-.folio-msg {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--em);
-  background: var(--sage-soft);
-  border: 1px solid var(--sage);
-  padding: 8px 11px;
-  border-radius: 10px;
-  display: none;
-}
+.panel{background:var(--surface);border:1.5px solid var(--sage);border-radius:24px;padding:18px;display:grid;gap:13px;box-shadow:0 18px 38px -18px rgba(20,92,82,.14)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;gap:6px;flex-wrap:wrap}
+.panel-tag{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--em);background:var(--sage-soft);padding:4px 11px;border-radius:999px}
+.folio-box{display:flex;gap:6px;align-items:center}
+.folio-input{width:128px;height:36px;padding:4px 10px;border-radius:9px;border:1.5px solid var(--line);font-size:12.5px;font-weight:700;color:var(--charcoal);text-transform:uppercase;background:var(--bg)}
+.btn-load{background:var(--em);color:#fff;border:none;height:36px;padding:0 13px;border-radius:9px;font-size:12px;font-weight:800}
+.folio-msg{font-size:12px;font-weight:700;color:var(--em);background:var(--sage-soft);border:1px solid var(--sage);padding:8px 11px;border-radius:10px;display:none}
 
-/* Selector de Escenario (4 Botones) */
-.mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.mode-btn {
-  min-height: 54px;
-  padding: 9px 11px;
-  border-radius: 14px;
-  border: 1.5px solid var(--line);
-  background: var(--bg);
-  color: var(--charcoal);
-  font-size: 12.5px;
-  font-weight: 800;
-  text-align: left;
-  line-height: 1.2;
-  transition: all 0.15s;
-}
-.mode-btn small {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--muted);
-  margin-top: 2px;
-}
-.mode-btn.active {
-  background: var(--em);
-  color: #fff;
-  border: 1.5px solid var(--gold);
-  box-shadow: 0 8px 18px -8px rgba(20, 92, 82, 0.4);
-}
-.mode-btn.active small { color: var(--ivory); }
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mode-btn{min-height:54px;padding:9px 11px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--charcoal);font-size:12.5px;font-weight:800;text-align:left;line-height:1.2;transition:all .15s}
+.mode-btn small{display:block;font-size:10.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.mode-btn.active{background:var(--em);color:#fff;border:1.5px solid var(--gold);box-shadow:0 8px 18px -8px rgba(20,92,82,.4)}
+.mode-btn.active small{color:var(--ivory)}
 
-/* Tarjeta de Metas del Cliente */
-.identity-card {
-  background: var(--ivory);
-  border: 1.5px solid var(--sage);
-  border-radius: 16px;
-  padding: 12px 13px;
-  display: grid;
-  gap: 9px;
-}
-.identity-head {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--em);
-  letter-spacing: 0.03em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.identity-card{background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:12px 13px;display:grid;gap:9px}
+.identity-head{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--em);display:flex;justify-content:space-between;align-items:center}
 
-/* CONTROLES DE BARRA "RELAX" (FINOS, SEDOSOS Y AGRADABLES) */
-.scard {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 14px;
-  display: grid;
-  gap: 8px;
-}
-.scard.hybrid-split-card {
-  background: var(--sage-soft);
-  border: 1.5px solid var(--sage);
-}
-.stop { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.stop span { font-size: 12px; font-weight: 700; color: var(--muted); }
-.sval { font-size: 20px; font-weight: 800; color: var(--em); letter-spacing: -0.02em; }
+.scard{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px}
+.scard.hybrid-split-card{background:var(--sage-soft);border:1.5px solid var(--sage)}
+.stop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.stop span{font-size:12px;font-weight:700;color:var(--muted)}
+.sval{font-size:20px;font-weight:800;color:var(--em);letter-spacing:-.02em}
 
-input[type="range"].relax-range {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 5px;
-  background: #E2DBD0;
-  border-radius: 999px;
-  outline: none;
-  margin: 6px 0 8px;
-  touch-action: manipulation;
-}
-input[type="range"].relax-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 2.5px solid var(--em);
-  box-shadow: 0 3px 10px rgba(20, 92, 82, 0.22);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-input[type="range"].relax-range::-webkit-slider-thumb:active {
-  transform: scale(1.12);
-  background: var(--ivory);
-}
-input[type="range"].relax-range::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 2.5px solid var(--em);
-  box-shadow: 0 3px 10px rgba(20, 92, 82, 0.22);
-  cursor: pointer;
-}
+input[type="range"].relax-range{-webkit-appearance:none;appearance:none;width:100%;height:5px;background:#E2DBD0;border-radius:999px;outline:none;margin:6px 0 8px;touch-action:manipulation}
+input[type="range"].relax-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--em);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer;transition:transform .15s}
+input[type="range"].relax-range::-webkit-slider-thumb:active{transform:scale(1.12);background:var(--ivory)}
+input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--em);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer}
 
-.ssub { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); font-weight: 600; gap: 6px; flex-wrap: wrap; }
-.ssub strong { color: var(--charcoal); }
+.ssub{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:600;gap:6px;flex-wrap:wrap}
+.ssub strong{color:var(--charcoal)}
 
-/* Switch interactivo de Aguinaldo / Bonos (Revelador de Escalón SAT) */
-.bonus-toggle {
-  margin-top: 2px;
-  background: var(--ivory);
-  border: 1px solid rgba(217, 164, 65, 0.55);
-  border-radius: 10px;
-  padding: 7px 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--charcoal);
-  cursor: pointer;
-  user-select: none;
-}
-.bonus-toggle input { width: 16px; height: 16px; accent-color: var(--em); cursor: pointer; }
-.bonus-toggle span strong { color: var(--em); }
+.bonus-toggle{margin-top:2px;background:var(--ivory);border:1px solid rgba(217,164,65,.55);border-radius:10px;padding:7px 10px;display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;color:var(--charcoal);cursor:pointer;user-select:none}
+.bonus-toggle input{width:16px;height:16px;accent-color:var(--em);cursor:pointer}
+.bonus-toggle span strong{color:var(--em)}
 
-.age-floor-hint {
-  font-size: 11px;
-  color: var(--em);
-  font-weight: 700;
-  background: var(--sage-soft);
-  padding: 5px 9px;
-  border-radius: 8px;
-}
+.age-floor-hint{font-size:11px;color:var(--em);font-weight:700;background:var(--sage-soft);padding:5px 9px;border-radius:8px}
 
-.prow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 2px; }
-.pbtn {
-  min-height: 42px;
-  padding: 6px 4px;
-  border-radius: 10px;
-  border: 1px solid var(--sage);
-  background: #fff;
-  color: var(--em);
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1.15;
-  transition: all 0.15s;
-}
-.pbtn.active, .pbtn:hover { background: var(--em); color: #fff; border-color: var(--em); }
+.prow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:2px}
+.pbtn{min-height:42px;padding:6px 4px;border-radius:10px;border:1px solid var(--sage);background:#fff;color:var(--em);font-size:11px;font-weight:800;line-height:1.15;transition:all .15s}
+.pbtn.active,.pbtn:hover{background:var(--em);color:#fff;border-color:var(--em)}
 
-.split-presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 3px; }
-.sp-btn {
-  background: #fff;
-  border: 1px solid var(--sage);
-  color: var(--charcoal);
-  border-radius: 8px;
-  padding: 5px 6px;
-  font-size: 10.5px;
-  font-weight: 700;
-}
-.sp-btn:hover { border-color: var(--em); color: var(--em); }
+.split-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:3px}
+.sp-btn{background:#fff;border:1px solid var(--sage);color:var(--charcoal);border-radius:8px;padding:5px 6px;font-size:10.5px;font-weight:700}
+.sp-btn:hover{border-color:var(--em);color:var(--em)}
 
-.fgroup { display: grid; gap: 4px; }
-.flabel {
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--charcoal);
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.02em;
-}
-.finput {
-  width: 100%;
-  min-height: 40px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--charcoal);
-  font-size: 14px;
-  font-weight: 700;
-}
-.finput:focus { outline: none; border-color: var(--em); }
-.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fgroup{display:grid;gap:4px}
+.flabel{font-size:11px;font-weight:800;color:var(--charcoal);text-transform:uppercase;display:flex;justify-content:space-between}
+.finput{width:100%;min-height:40px;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--charcoal);font-size:14px;font-weight:700}
+.finput:focus{outline:none;border-color:var(--em)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
-/* Módulo Consultivo Alfa Medical */
-.gmm-discovery {
-  display: none;
-  background: var(--sage-soft);
-  border: 1.5px solid var(--sage);
-  border-radius: 16px;
-  padding: 13px;
-  gap: 10px;
-}
-.gmm-discovery.open { display: grid; }
-.gmm-disc-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11.5px;
-  font-weight: 800;
-  color: var(--em);
-  text-transform: uppercase;
-}
-.gmm-note {
-  font-size: 12px;
-  color: var(--charcoal);
-  line-height: 1.4;
-  background: #fff;
-  padding: 9px 11px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-}
+.gmm-discovery{display:none;background:var(--sage-soft);border:1.5px solid var(--sage);border-radius:16px;padding:13px;gap:10px}
+.gmm-discovery.open{display:grid}
+.gmm-disc-head{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:800;color:var(--em);text-transform:uppercase}
+.gmm-note{font-size:12px;color:var(--charcoal);line-height:1.4;background:#fff;padding:9px 11px;border-radius:10px;border:1px solid var(--line)}
 
-.extra-details {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 10px 12px;
-}
-.extra-details summary {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--charcoal);
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.extra-details summary::after { content: "Edad, Plazo y Salud ▾"; font-size: 11px; color: var(--em); font-weight: 700; }
-.extra-details[open] summary::after { content: "Ocultar ▴"; }
-.extra-body { display: grid; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.extra-details{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.extra-details summary{font-size:12px;font-weight:800;color:var(--charcoal);cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center}
+.extra-details summary::after{content:"Edad, Plazo y Salud ▾";font-size:11px;color:var(--em);font-weight:700}
+.extra-details[open] summary::after{content:"Ocultar ▴"}
+.extra-body{display:grid;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
 
-/* PANEL DERECHO: PIZARRA CONSULTIVA EN VERDE PROFUNDO, MARFIL Y DORADO */
-.stage { display: grid; gap: 16px; }
-.board {
-  background: linear-gradient(165deg, #145C52 0%, #0E443C 65%, #1D2B28 100%);
-  color: #fff;
-  border-radius: 24px;
-  padding: 22px;
-  display: grid;
-  gap: 16px;
-  border: 2px solid var(--sage);
-  box-shadow: 0 22px 44px -18px rgba(20, 92, 82, 0.35);
-}
-.bhead {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  border-bottom: 1px solid rgba(255, 245, 227, 0.16);
-  padding-bottom: 13px;
-  flex-wrap: wrap;
-}
-.bhead h1 {
-  font-size: clamp(20px, 2.8vw, 25px);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #fff;
-}
-.bhead h1 span { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1.08em; }
-.bhead p { font-size: 13.5px; color: var(--ivory); opacity: 0.92; margin-top: 4px; max-width: 68ch; }
-.tbadge {
-  background: rgba(217, 164, 65, 0.2);
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-size: 11.5px;
-  font-weight: 800;
-  padding: 5px 13px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
+/* PIZARRA DERECHA */
+.stage{display:grid;gap:16px}
+.board{background:linear-gradient(165deg,#145C52 0%,#0E443C 65%,#1D2B28 100%);color:#fff;border-radius:24px;padding:22px;display:grid;gap:16px;border:2px solid var(--sage);box-shadow:0 22px 44px -18px rgba(20,92,82,.35)}
+.bhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid rgba(255,245,227,.16);padding-bottom:13px;flex-wrap:wrap}
+.bhead h1{font-size:clamp(20px,2.8vw,25px);font-weight:800;line-height:1.2;color:#fff}
+.bhead h1 span{color:var(--gold);font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:1.08em}
+.bhead p{font-size:13.5px;color:var(--ivory);opacity:.92;margin-top:4px;max-width:68ch}
+.tbadge{background:rgba(217,164,65,.2);border:1px solid var(--gold);color:var(--gold);font-size:11.5px;font-weight:800;padding:5px 13px;border-radius:999px;white-space:nowrap}
 
-.gmm-links-bar {
-  display: none;
-  background: rgba(255, 245, 227, 0.1);
-  border: 1px solid var(--gold);
-  border-radius: 14px;
-  padding: 11px 14px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.gmm-links-bar.open { display: flex; }
-.gmm-links-bar span { font-size: 12.5px; font-weight: 700; color: var(--ivory); }
-.gmm-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
-.gmm-ext-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--gold);
-  color: var(--charcoal);
-  text-decoration: none;
-  padding: 8px 13px;
-  border-radius: 9px;
-  font-size: 12px;
-  font-weight: 800;
-}
-.gmm-ext-link.alt { background: var(--ivory); color: var(--charcoal); }
+.gmm-links-bar{display:none;background:rgba(255,245,227,.1);border:1px solid var(--gold);border-radius:14px;padding:11px 14px;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.gmm-links-bar.open{display:flex}
+.gmm-links-bar span{font-size:12.5px;font-weight:700;color:var(--ivory)}
+.gmm-btn-group{display:flex;gap:8px;flex-wrap:wrap}
+.gmm-ext-link{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--charcoal);text-decoration:none;padding:8px 13px;border-radius:9px;font-size:12px;font-weight:800}
+.gmm-ext-link.alt{background:var(--ivory);color:var(--charcoal)}
 
-/* 4 KPIs */
-.kgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media (min-width: 720px) { .kgrid { grid-template-columns: repeat(4, 1fr); } }
-.kcard {
-  background: rgba(255, 245, 227, 0.08);
-  border: 1px solid rgba(255, 245, 227, 0.18);
-  border-radius: 16px;
-  padding: 14px;
-  display: grid;
-  gap: 4px;
-}
-.kcard.gain {
-  background: rgba(255, 245, 227, 0.14);
-  border: 1.5px solid var(--gold);
-}
-.kcard.net {
-  background: linear-gradient(145deg, rgba(217, 164, 65, 0.26), rgba(217, 164, 65, 0.1));
-  border: 1.5px solid var(--gold);
-}
-.kcard small {
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--sage);
-  letter-spacing: 0.02em;
-}
-.kcard.gain small, .kcard.net small { color: var(--gold); }
-.kcard b {
-  font-size: clamp(19px, 2.3vw, 23px);
-  font-weight: 800;
-  color: #fff;
-}
-.kcard.net b { color: var(--gold); }
-.kcard span { font-size: 11.5px; color: var(--ivory); opacity: 0.9; line-height: 1.3; }
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:720px){.kgrid{grid-template-columns:repeat(4,1fr)}}
+.kcard{background:rgba(255,245,227,.08);border:1px solid rgba(255,245,227,.18);border-radius:16px;padding:14px;display:grid;gap:4px}
+.kcard.gain{background:rgba(255,245,227,.14);border:1.5px solid var(--gold)}
+.kcard.net{background:linear-gradient(145deg,rgba(217,164,65,.26),rgba(217,164,65,.1));border:1.5px solid var(--gold)}
+.kcard small{font-size:10.5px;font-weight:800;text-transform:uppercase;color:var(--sage)}
+.kcard.gain small,.kcard.net small{color:var(--gold)}
+.kcard b{font-size:clamp(19px,2.3vw,23px);font-weight:800;color:#fff}
+.kcard.net b{color:var(--gold)}
+.kcard span{font-size:11.5px;color:var(--ivory);opacity:.9;line-height:1.3}
 
-/* Gráficos Comparativos */
-.vgrid { display: grid; gap: 14px; }
-@media (min-width: 760px) { .vgrid { grid-template-columns: 1.12fr 1fr; } }
-.cbox {
-  background: rgba(255, 245, 227, 0.06);
-  border: 1px solid rgba(255, 245, 227, 0.16);
-  border-radius: 18px;
-  padding: 16px;
-  display: grid;
-  gap: 11px;
-}
-.ctitle {
-  font-size: 11.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--ivory);
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  letter-spacing: 0.03em;
-}
-.ctitle span:last-child { color: var(--gold); }
-.bgroup { display: grid; gap: 5px; }
-.blabel { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; color: var(--ivory); gap: 8px; }
-.btrack {
-  height: 12px;
-  background: rgba(255, 245, 227, 0.12);
-  border-radius: 999px;
-  overflow: hidden;
-  display: flex;
-}
-.bfill-base { background: rgba(255, 245, 227, 0.38); height: 100%; transition: width 0.25s ease; }
-.bfill-em { background: var(--sage); height: 100%; transition: width 0.25s ease; }
-.bfill-gold { background: var(--gold); height: 100%; transition: width 0.25s ease; }
+.vgrid{display:grid;gap:14px}
+@media(min-width:760px){.vgrid{grid-template-columns:1.12fr 1fr}}
+.cbox{background:rgba(255,245,227,.06);border:1px solid rgba(255,245,227,.16);border-radius:18px;padding:16px;display:grid;gap:11px}
+.ctitle{font-size:11.5px;font-weight:800;text-transform:uppercase;color:var(--ivory);display:flex;justify-content:space-between;gap:8px}
+.ctitle span:last-child{color:var(--gold)}
+.bgroup{display:grid;gap:5px}
+.blabel{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--ivory);gap:8px}
+.btrack{height:12px;background:rgba(255,245,227,.12);border-radius:999px;overflow:hidden;display:flex}
+.bfill-base{background:rgba(255,245,227,.38);height:100%;transition:width .25s ease}
+.bfill-em{background:var(--sage);height:100%;transition:width .25s ease}
+.bfill-gold{background:var(--gold);height:100%;transition:width .25s ease}
 
-.rbanner {
-  background: rgba(41, 44, 43, 0.35);
-  border: 1px solid rgba(217, 164, 65, 0.45);
-  border-radius: 12px;
-  padding: 10px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  color: var(--ivory);
-  flex-wrap: wrap;
-}
-.rbanner strong { color: var(--gold); font-size: 13.5px; }
+.rbanner{background:rgba(41,44,43,.35);border:1px solid rgba(217,164,65,.45);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;color:var(--ivory);flex-wrap:wrap}
+.rbanner strong{color:var(--gold);font-size:13.5px}
 
-.urgency-bar {
-  background: rgba(217, 164, 65, 0.16);
-  border: 1px solid rgba(217, 164, 65, 0.5);
-  border-radius: 12px;
-  padding: 9px 12px;
-  font-size: 12px;
-  color: var(--ivory);
-  line-height: 1.4;
-}
-.urgency-bar b { color: var(--gold); }
+.urgency-bar{background:rgba(217,164,65,.16);border:1px solid rgba(217,164,65,.5);border-radius:12px;padding:9px 12px;font-size:12px;color:var(--ivory);line-height:1.4}
+.urgency-bar b{color:var(--gold)}
 
-.mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.mile {
-  background: rgba(255, 245, 227, 0.08);
-  border: 1px solid rgba(255, 245, 227, 0.16);
-  border-radius: 14px;
-  padding: 12px;
-}
-.mile small { display: block; font-size: 10.5px; color: var(--sage); text-transform: uppercase; font-weight: 800; }
-.mile b { display: block; font-size: 17px; color: var(--gold); margin-top: 3px; font-weight: 800; }
-.mile span { display: block; font-size: 11px; color: var(--ivory); margin-top: 2px; line-height: 1.35; }
-.mile .pension-tag {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: rgba(217, 164, 65, 0.2);
-  border: 1px solid rgba(217, 164, 65, 0.45);
-  color: var(--ivory);
-  font-size: 10.5px;
-  font-weight: 700;
-}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mile{background:rgba(255,245,227,.08);border:1px solid rgba(255,245,227,.16);border-radius:14px;padding:12px}
+.mile small{display:block;font-size:10.5px;color:var(--sage);text-transform:uppercase;font-weight:800}
+.mile b{display:block;font-size:17px;color:var(--gold);margin-top:3px;font-weight:800}
+.mile span{display:block;font-size:11px;color:var(--ivory);margin-top:2px;line-height:1.35}
+.mile .pension-tag{display:inline-block;margin-top:6px;padding:3px 8px;border-radius:6px;background:rgba(217,164,65,.2);border:1px solid rgba(217,164,65,.45);color:var(--ivory);font-size:10.5px;font-weight:700}
 
-.srow { display: grid; gap: 10px; }
-@media (min-width: 720px) { .srow { grid-template-columns: repeat(3, 1fr); } }
-.shcard {
-  background: rgba(255, 245, 227, 0.06);
-  border-left: 3px solid var(--gold);
-  border-radius: 12px;
-  padding: 11px 13px;
-  display: grid;
-  gap: 3px;
-}
-.shcard b { font-size: 12.5px; color: #fff; }
-.shcard p { font-size: 11.5px; color: var(--ivory); opacity: 0.88; line-height: 1.4; }
+.srow{display:grid;gap:10px}
+@media(min-width:720px){.srow{grid-template-columns:repeat(3,1fr)}}
+.shcard{background:rgba(255,245,227,.06);border-left:3px solid var(--gold);border-radius:12px;padding:11px 13px;display:grid;gap:3px}
+.shcard b{font-size:12.5px;color:#fff}
+.shcard p{font-size:11.5px;color:var(--ivory);opacity:.88;line-height:1.4}
 
-.prelim-note {
-  background: rgba(255, 245, 227, 0.05);
-  border: 1px dashed rgba(217, 164, 65, 0.5);
-  border-radius: 12px;
-  padding: 10px 14px;
-  font-size: 11.5px;
-  color: var(--ivory);
-  line-height: 1.45;
-}
-.prelim-note strong { color: var(--gold); }
+.prelim-note{background:rgba(255,245,227,.05);border:1px dashed rgba(217,164,65,.5);border-radius:12px;padding:10px 14px;font-size:11.5px;color:var(--ivory);line-height:1.45}
+.prelim-note strong{color:var(--gold)}
 
-/* TARJETAS DE CIERRE UNIFICADO */
-.cgrid-bot { display: grid; gap: 16px; }
-@media (min-width: 780px) { .cgrid-bot { grid-template-columns: 1.12fr 1fr; } }
-.clcard {
-  background: var(--surface);
-  border: 1.5px solid var(--sage);
-  border-radius: 22px;
-  padding: 18px;
-  display: grid;
-  gap: 11px;
-  align-content: start;
-  box-shadow: 0 14px 28px -18px rgba(20, 92, 82, 0.14);
-}
-.clcard.gold { background: var(--ivory); border-color: var(--gold); }
-.clhead { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.clbadge {
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--sage-soft);
-  color: var(--em);
-}
-.clbadge.gold {
-  background: #fff;
-  color: var(--charcoal);
-  border: 1px solid var(--gold);
-}
-.clcard h3 { font-size: 16.5px; font-weight: 800; color: var(--charcoal); line-height: 1.25; }
-.clcard p { font-size: 13px; color: var(--muted); line-height: 1.45; }
+.cgrid-bot{display:grid;gap:16px}
+@media(min-width:780px){.cgrid-bot{grid-template-columns:1.12fr 1fr}}
+.clcard{background:var(--surface);border:1.5px solid var(--sage);border-radius:22px;padding:18px;display:grid;gap:11px;align-content:start;box-shadow:0 14px 28px -18px rgba(20,92,82,.14)}
+.clcard.gold{background:var(--ivory);border-color:var(--gold)}
+.clhead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.clbadge{font-size:10.5px;font-weight:800;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--sage-soft);color:var(--em)}
+.clbadge.gold{background:#fff;color:var(--charcoal);border:1px solid var(--gold)}
+.clcard h3{font-size:16.5px;font-weight:800;color:var(--charcoal);line-height:1.25}
+.clcard p{font-size:13px;color:var(--muted);line-height:1.45}
 
-.codesign-box {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 11px;
-  display: grid;
-  gap: 8px;
-}
-.codesign-label { font-size: 11px; font-weight: 800; color: var(--charcoal); text-transform: uppercase; }
-.codesign-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.cd-btn {
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--charcoal);
-  border-radius: 9px;
-  padding: 7px 5px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.15;
-  transition: all 0.15s;
-}
-.cd-btn.active {
-  background: var(--em);
-  color: #fff;
-  border-color: var(--gold);
-}
-.unlock-list {
-  display: grid;
-  gap: 5px;
-  background: var(--sage-soft);
-  border: 1px solid var(--sage);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-size: 12px;
-  color: var(--charcoal);
-  line-height: 1.4;
-}
-.unlock-list div strong { color: var(--em); }
+.codesign-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:11px;display:grid;gap:8px}
+.codesign-label{font-size:11px;font-weight:800;color:var(--charcoal);text-transform:uppercase}
+.codesign-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.cd-btn{background:#fff;border:1px solid var(--line);color:var(--charcoal);border-radius:9px;padding:7px 5px;font-size:11px;font-weight:700;line-height:1.15}
+.cd-btn.active{background:var(--em);color:#fff;border-color:var(--gold)}
+.unlock-list{display:grid;gap:5px;background:var(--sage-soft);border:1px solid var(--sage);border-radius:12px;padding:10px 12px;font-size:12px;color:var(--charcoal);line-height:1.4}
+.unlock-list div strong{color:var(--em)}
 
-.brow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.btn-gold {
-  min-height: 48px;
-  background: var(--gold);
-  color: var(--charcoal);
-  border: none;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 8px 12px;
-  box-shadow: 0 6px 14px -6px rgba(217, 164, 65, 0.6);
-}
-.btn-gold:hover { background: var(--gold-hover); }
-.btn-em {
-  min-height: 48px;
-  background: var(--em);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  text-align: center;
-}
+.brow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn-gold{min-height:48px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:13px;font-weight:800;padding:8px 12px;box-shadow:0 6px 14px -6px rgba(217,164,65,.6)}
+.btn-gold:hover{background:var(--gold-hover)}
+.btn-em{min-height:48px;background:var(--em);color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:800;padding:8px 12px;display:flex;align-items:center;justify-content:center;text-decoration:none;text-align:center}
 
-.rlist { display: grid; gap: 8px; }
-.rrow { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }
-.rinput {
-  width: 100%;
-  min-height: 42px;
-  padding: 7px 10px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--charcoal);
-}
-.rinput:focus { outline: none; border-color: var(--em); }
-.rstatus {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--em);
-  background: var(--sage-soft);
-  padding: 8px 11px;
-  border-radius: 9px;
-  display: none;
-}
-.btn-master-pass {
-  width: 100%;
-  min-height: 48px;
-  background: var(--em);
-  color: #fff;
-  border: 1.5px solid var(--gold);
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
+.rlist{display:grid;gap:8px}
+.rrow{display:grid;grid-template-columns:1.2fr 1fr;gap:8px}
+.rinput{width:100%;min-height:42px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:600;color:var(--charcoal)}
+.rinput:focus{outline:none;border-color:var(--em)}
+.rstatus{font-size:12px;font-weight:700;color:var(--em);background:var(--sage-soft);padding:8px 11px;border-radius:9px;display:none}
+.btn-master-pass{width:100%;min-height:48px;background:var(--em);color:#fff;border:1.5px solid var(--gold);border-radius:12px;font-size:13px;font-weight:800;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px}
 
-.cmodal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(41, 44, 43, 0.82);
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-}
-.cmodal.open { display: flex; }
-.cmbox {
-  background: #fff;
-  border-radius: 20px;
-  max-width: 780px;
-  width: 100%;
-  height: min(88vh, 720px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.cmhead {
-  background: var(--em);
-  color: #fff;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--gold);
-}
-.cmclose {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  color: #fff;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 20px;
-}
-.cmbody { flex: 1; overflow: auto; }
-.cmbody iframe { width: 100%; height: 100%; min-height: 540px; border: 0; }
-footer {
-  background: var(--charcoal);
-  color: var(--ivory);
-  padding: 22px 16px;
-  text-align: center;
-  font-size: 12px;
-}
+.cmodal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(41,44,43,.82);align-items:center;justify-content:center;padding:14px}
+.cmodal.open{display:flex}
+.cmbox{background:#fff;border-radius:20px;max-width:780px;width:100%;height:min(88vh,720px);display:flex;flex-direction:column;overflow:hidden}
+.cmhead{background:var(--em);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--gold)}
+.cmclose{background:rgba(255,255,255,.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px}
+.cmbody{flex:1;overflow:auto}
+.cmbody iframe{width:100%;height:100%;min-height:540px;border:0}
+footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-align:center;font-size:12px}
 </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="profesionistas.html">
+      <img src="logo-santi.png" width="30" height="30" alt="Santi te asesora"
+           onerror="this.onerror=null;this.src='https://www.santiteasesora.com/logo-santi.png';">
+      <span>Santi te asesora</span>
+      <span class="badge-top">Mesa de Diseño Patrimonial</span>
+    </a>
+    <div class="header-tools">
+      <span class="cnsf-pill">Agente Autorizado CNSF: <strong>C412676</strong></span>
+      <button type="button" class="reset-btn" onclick="window.clearClientForm()">↺ Limpiar</button>
+    </div>
+  </div>
+</header>
+
+<main class="dashboard">
+
+  <!-- PANEL IZQUIERDO: CONTROLES MANUALES Y POR FOLIO -->
+  <aside class="panel">
+    <div class="panel-head">
+      <span class="panel-tag">1. Datos de tu Sesión</span>
+      <div class="folio-box">
+        <input type="text" id="folioInput" class="folio-input" placeholder="Folio (Opcional)" onkeydown="if(event.key==='Enter'){event.preventDefault();window.searchFolio();}">
+        <button type="button" class="btn-load" id="loadFolioBtn" onclick="window.searchFolio()">Cargar</button>
+      </div>
+    </div>
+
+    <div class="folio-msg" id="folioStatusMsg"></div>
+
+    <div class="fgroup">
+      <span class="flabel">¿Qué opción vemos en pantalla?</span>
+      <div class="mode-grid" id="modeButtons">
+        <button type="button" class="mode-btn active" data-mode="hibrido" onclick="window.selectMode('hibrido')">
+          ⚖️ Plan en 2 Bolsillos
+          <small>Devolución SAT + Cuenta Libre</small>
+        </button>
+        <button type="button" class="mode-btn" data-mode="65" onclick="window.selectMode('65')">
+          💰 100% Devolución SAT
+          <small>Máximo reembolso en abril</small>
+        </button>
+        <button type="button" class="mode-btn" data-mode="60" onclick="window.selectMode('60')">
+          ✨ Retiro a los 60 / RESICO
+          <small>0% Impuestos desde los 60</small>
+        </button>
+        <button type="button" class="mode-btn" data-mode="gmm" onclick="window.selectMode('gmm')">
+          🏥 Salud Privada
+          <small>Alfa Medical ($170 MDP)</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="identity-card" id="identityCardBox">
+      <div class="identity-head">
+        <span>🎯 Tus Prioridades Personales</span>
+        <span>A tu medida</span>
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="goalProjectSelect">1. ¿Para qué te gustaría tener tu Bolsillo Libre?</label>
+        <select id="goalProjectSelect" class="finput" onchange="window.syncAll()">
+          <option value="reserva" selected>🛡️ Fondo disponible en 3 a 5 años (Sin multas)</option>
+          <option value="libertad">✨ Retirarme antes (a los 60 años) con 0% impuestos</option>
+          <option value="depa">🏠 Enganche o compra de depa / casa</option>
+          <option value="negocio">🚀 Capital para negocio o proyecto propio</option>
+          <option value="educacion">🎓 Fondo educativo para mis hijos</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="protectWhoSelect">2. ¿A quién protegemos desde el día 1?</label>
+        <select id="protectWhoSelect" class="finput" onchange="window.syncAll()">
+          <option value="👤 Mi propia independencia financiera" selected>👤 Mi propia tranquilidad e independencia</option>
+          <option value="❤️ Mi pareja y nuestro patrimonio">❤️ A mi pareja y nuestro patrimonio</option>
+          <option value="👨‍👩‍👧‍👦 El futuro y bienestar de mis hijos">👨‍👩‍👧‍👦 El futuro y bienestar de mis hijos</option>
+          <option value="🤍 La tranquilidad de mis padres">🤍 La tranquilidad de mis padres</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="stop">
+        <span>Tu ingreso mensual aproximado</span>
+        <strong class="sval num" id="incomeLabel">$40,000</strong>
+      </div>
+      <input type="range" id="incomeSlider" class="relax-range" min="15000" max="250000" step="2500" value="40000" oninput="window.syncAll()" onchange="window.syncAll()">
+      <div class="ssub num">
+        <span>Anual: <strong id="annualIncomeLabel">$480,000 al año</strong></span>
+        <span>Tu escalón SAT: <strong id="marginalRateLabel">23.5%</strong></span>
+      </div>
+      <label class="bonus-toggle">
+        <input type="checkbox" id="bonusCheck" onchange="window.syncAll()">
+        <span>✨ Sumar <strong>Aguinaldo / Bonos</strong> (+1 mes al año)</span>
+      </label>
+    </div>
+
+    <div class="scard" id="saveSliderCard">
+      <div class="stop">
+        <span id="saveSliderTitle">Lo que te gustaría ahorrar al mes</span>
+        <strong class="sval num" id="saveLabel">$4,000</strong>
+      </div>
+      <input type="range" id="saveSlider" class="relax-range" min="2500" max="35000" step="500" value="4000" oninput="window.onSaveSliderManual()" onchange="window.onSaveSliderManual()">
+      <div class="ssub num">
+        <span>Anual: <strong id="annualSaveLabel">$48,000 al año</strong></span>
+        <span id="capPercentLabel">10.0% de tu ingreso</span>
+      </div>
+      <div class="age-floor-hint" id="ageFloorHint">Mínimo recomendado para 36 años: $2,500/mes</div>
+
+      <div class="prow">
+        <button type="button" class="pbtn" onclick="window.applyPreset(1)"><span>Base Cómoda</span><br><small id="lblPreset10">$3,000/mes</small></button>
+        <button type="button" class="pbtn active" onclick="window.applyPreset(2)"><span>10% Ideal SAT</span><br><small id="lblPreset151">$4,000/mes</small></button>
+        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Doble Bolsa Fiscal</span><br><small id="lblPresetMax">$16,500/mes</small></button>
+      </div>
+    </div>
+
+    <div class="scard hybrid-split-card" id="hybridSplitCard">
+      <div class="stop">
+        <span>Cómo dividimos tus 2 Bolsillos</span>
+        <strong class="sval" id="hybridSplitLabel" style="font-size:12.5px">70% Bolsillo SAT / 30% Bolsillo Libre</strong>
+      </div>
+      <input type="range" id="hybridSplitSlider" class="relax-range" min="20" max="80" step="10" value="70" oninput="window.syncAll()" onchange="window.syncAll()">
+      <div class="ssub">
+        <span id="hybridPocket1Text" style="color:var(--em);font-weight:800">Bolsillo 1 (Con devolución SAT): $2,800/mes</span>
+        <span id="hybridPocket2Text" style="color:var(--charcoal);font-weight:800">Bolsillo 2 (Disponible / Retiro a los 60): $1,200/mes</span>
+      </div>
+      <div class="split-presets">
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(50)">50% / 50% Mitad y Mitad</button>
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(60)">60% / 40% Equilibrado</button>
+        <button type="button" class="sp-btn" onclick="window.setSplitPreset(70)">70% / 30% Más Devolución</button>
+      </div>
+    </div>
+
+    <div class="gmm-discovery" id="gmmDiscoveryBox">
+      <div class="gmm-disc-head">
+        <span>🩺 Preferencias de Protección Médica</span>
+        <span>En Pesos MXN</span>
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="gmmWhoSelect">1. ¿A quiénes te gustaría proteger?</label>
+        <select id="gmmWhoSelect" class="finput" onchange="window.syncAll()">
+          <option value="Individual (Personal)" selected>👤 Protección Personal (Individual)</option>
+          <option value="Pareja (Titular y Cónyuge)">👫 A mi pareja y a mí</option>
+          <option value="Familiar (Con Hijos)">👨‍👩‍👧‍👦 Familia completa (Con hijos)</option>
+          <option value="Padres / Ascendientes">🤍 Proteger a mis padres</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="gmmStatusSelect">2. ¿Cómo estás protegido(a) actualmente?</label>
+        <select id="gmmStatusSelect" class="finput" onchange="window.syncAll()">
+          <option value="Busco mi primera póliza privada" selected>🛡️ Busco iniciar mi primera póliza privada</option>
+          <option value="Cuento con prestación laboral (Busco respaldo propio)">💼 Tengo seguro en mi empresa (Quiero respaldo propio)</option>
+          <option value="Ya tengo póliza individual (Busco conservar antigüedad)">🔄 Ya tengo póliza privada (Conservar antigüedad)</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="gmmHospSelect">3. ¿Qué hospitales de CDMX prefieres?</label>
+        <select id="gmmHospSelect" class="finput" onchange="window.syncAll()">
+          <option value="integro" selected>⭐ Español, Ángeles Metropolitano/Mocel/Acoxpa, San Ángel Inn</option>
+          <option value="pleno">💎 ABC Santa Fe/Observatorio, Médica Sur, Ángeles Pedregal/Lomas</option>
+          <option value="practico">🏥 Dalinde, Star Médica, San Ángel Inn Chapultepec</option>
+        </select>
+      </div>
+      <div class="gmm-note" id="gmmHospNote"></div>
+    </div>
+
+    <div class="g2">
+      <div class="fgroup">
+        <label class="flabel" for="clientName">Nombre</label>
+        <input type="text" id="clientName" class="finput" value="" placeholder="Nombre..." autocomplete="off" oninput="window.syncAll()">
+      </div>
+      <div class="fgroup">
+        <label class="flabel" for="clientPhone">WhatsApp (10 dígitos)</label>
+        <input type="tel" id="clientPhone" class="finput num" value="" placeholder="55 1234 5678" autocomplete="off" oninput="window.syncAll()">
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <label class="flabel" for="regimenSelect">Cómo recibes tus ingresos</label>
+      <select id="regimenSelect" class="finput" onchange="window.onRegimenChange(this.value)">
+        <option value="sueldos" selected>💼 Por Sueldo (Nómina)</option>
+        <option value="honorarios">🧾 Honorarios / Actividad Empresarial</option>
+        <option value="mixto">⚖️ Esquema Mixto (Sueldos + Facturación)</option>
+        <option value="resico">⚡ Estoy en RESICO</option>
+      </select>
+    </div>
+
+    <details class="extra-details" open>
+      <summary>Edad Exacta y Tarifa Preferencial</summary>
+      <div class="extra-body">
+        <div class="g2">
+          <div class="fgroup">
+            <label class="flabel" for="birthDate">Fecha de Nacimiento</label>
+            <input type="date" id="birthDate" class="finput" value="" onchange="window.onBirthChange(this.value)">
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="clientAge">Edad Actual</label>
+            <input type="number" id="clientAge" class="finput num" value="36" min="18" max="70" oninput="window.syncAll()" onchange="window.syncAll()">
+          </div>
+        </div>
+        <div class="g2">
+          <div class="fgroup">
+            <label class="flabel" for="smokerSelect">¿Fuma actualmente?</label>
+            <select id="smokerSelect" class="finput" onchange="window.syncAll()">
+              <option value="no">No Fuma (Tarifa Preferencial)</option>
+              <option value="si">Sí Fuma</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="paymentTerm">Plazo de Ahorro</label>
+            <select id="paymentTerm" class="finput" onchange="window.syncAll()">
+              <option value="todos" selected>A mi ritmo durante el plan</option>
+              <option value="15">Plazo corto de 15 años</option>
+              <option value="10">Plazo corto de 10 años</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label class="flabel" for="healthSelect">Estado de Salud</label>
+          <select id="healthSelect" class="finput" onchange="window.syncAll()">
+            <option value="Salud general sin antecedentes relevantes" selected>✓ Salud general sin antecedentes relevantes</option>
+            <option value="Revisar relación peso/estatura (IMC) en suscripción">⚖️ Revisar relación peso/estatura (IMC)</option>
+            <option value="Antecedente médico o cirugía (Requiere valoración)">🩺 Antecedente médico o cirugía</option>
+          </select>
+        </div>
+      </div>
+    </details>
+  </aside>
+
+  <!-- PANEL DERECHO: PIZARRA VISUAL EN VIVO -->
+  <section class="stage">
+    <div class="board">
+      <div class="bhead">
+        <div>
+          <h1 id="mainBoardTitle">Tu Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span></h1>
+          <p id="mainBoardSub">Dividimos tus $4,000/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.</p>
+        </div>
+        <span class="tbadge" id="legalBadge">Método de 2 Bolsillos · Devolución SAT + Liquidez</span>
+      </div>
+
+      <div class="gmm-links-bar" id="gmmLinksBar">
+        <span>🏥 Explora tus beneficios directamente en el portal oficial de Seguros Monterrey:</span>
+        <div class="gmm-btn-group">
+          <a href="https://www.mnyl.com.mx/seguros-individuales/medicos-a-tu-lado/medicos-a-tu-lado.aspx" target="_blank" rel="noopener" class="gmm-ext-link">🩺 Programa "Médicos a tu Lado" ↗</a>
+          <a href="https://www.mnyl.com.mx/medical-directory-search.aspx?plan=3&associatedplan=&estadosrepublica=CIUDAD%20DE%20M%c3%89XICO&text=" target="_blank" rel="noopener" class="gmm-ext-link alt">🏥 Buscador de Hospitales CDMX ↗</a>
+        </div>
+      </div>
+
+      <div class="kgrid">
+        <div class="kcard">
+          <small id="kpi1Title">1. Bolsillo 1 (Con devolución SAT)</small>
+          <b id="kpi1Value" class="num">$2,800/mes</b>
+          <span id="kpi1Sub">$33,600/año que deduces en abril</span>
+        </div>
+        <div class="kcard">
+          <small id="kpi2Title">2. Bolsillo 2 (Libre / Edad 60)</small>
+          <b id="kpi2Value" class="num">$1,200/mes</b>
+          <span id="kpi2Sub">Sin el candado de los 65 años</span>
+        </div>
+        <div class="kcard gain">
+          <small id="kpi3Title">3. Te regresa el SAT en abril</small>
+          <b id="kpi3Value" class="num">+$7,903</b>
+          <span id="kpi3Sub">Efectivo anual a tu favor</span>
+        </div>
+        <div class="kcard net">
+          <small id="kpi4Title">4. Lo que realmente te cuesta</small>
+          <b id="kpi4Value" class="num">$3,341/mes</b>
+          <span id="kpi4Sub">Descontando tu devolución del SAT</span>
+        </div>
+      </div>
+
+      <div class="vgrid">
+        <div class="cbox">
+          <div class="ctitle">
+            <span id="chartLeftTitle">Cómo se dividen tus $4,000/mes ($48,000/año)</span>
+            <span id="efficiencyPct" class="num">Juntas en 10 años aprox: ~$742,439</span>
+          </div>
+          <div class="bgroup">
+            <div class="blabel">
+              <span id="bar1Label">Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)</span>
+              <strong id="bar1Val" style="color:var(--ivory)">70% SAT / 30% Libre</strong>
+            </div>
+            <div class="btrack"><div class="bfill-base" id="bar1Fill" style="width:100%"></div></div>
+          </div>
+          <div class="bgroup">
+            <div class="blabel">
+              <span id="bar2Label">Efectivo que el SAT te devuelve cada mes de abril</span>
+              <strong id="bar2Val" style="color:var(--gold)">Recuperas +$7,903 cada año</strong>
+            </div>
+            <div class="btrack">
+              <div class="bfill-em" id="bar2Fill" style="width:70%"></div>
+              <div class="bfill-gold" id="bar2Gold" style="width:30%"></div>
+            </div>
+          </div>
+          <div class="rbanner">
+            <span id="bannerExplain">Ahorras <b>$4,000/mes</b>, el SAT te regresa <b>+$7,903/año</b> y tienes <b>$14,400/año</b> en tu cuenta libre:</span>
+            <strong id="bannerNet">Esfuerzo neto real: $3,341/mes</strong>
+          </div>
+        </div>
+
+        <div class="cbox">
+          <div class="ctitle">
+            <span id="chartRightTitle">Cómo crece tu dinero en el tiempo</span>
+            <span>Seguros Monterrey NYL</span>
+          </div>
+          <div class="mgrid">
+            <div class="mile">
+              <small id="mile1Label">Disponible en Bolsillo 2 (Año 5)</small>
+              <b id="mile1Val" class="num">$88,708</b>
+              <span id="mile1Sub">Para tus proyectos o libre a tus 60 años</span>
+            </div>
+            <div class="mile">
+              <small id="mile2Label">Tu Fondo de Retiro (Edad 65)*</small>
+              <b id="mile2Val" class="num">$3,189,420</b>
+              <span id="mile2Sub">Más lo que conserves en tu Bolsillo 2</span>
+              <div class="pension-tag" id="mile2PensionTag">≈ $20,731/mes para vivir tranquilo(a)</div>
+            </div>
+          </div>
+          <div class="urgency-bar" id="urgencyBar">
+            ⚡ <b>Ventaja de empezar a tus 36 años (vs. esperar 1 año):</b> Sumas <b>+$234,000 MXN más</b> de ganancia acumulada + tu devolución SAT de este año.
+          </div>
+          <div class="rbanner" style="background:rgba(255,245,227,.06);border-color:rgba(255,245,227,.18)">
+            <span>Respaldo Patrimonial Integrado:</span>
+            <strong id="protectionSumLabel">👤 Mi propia independencia financiera (Salud general sin antecedentes relevantes)</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="srow">
+        <div class="shcard">
+          <b id="sh1Title">⚖️ Dos Bolsillos a tu Favor</b>
+          <p id="sh1Desc">Una parte hace que el SAT te regrese dinero cada abril (para tus 65 años) y la otra queda libre para tus metas o para retirarte a los 60 años con 0% de impuestos.</p>
+        </div>
+        <div class="shcard">
+          <b id="sh2Title">📈 Tu Dinero no Pierde Valor</b>
+          <p id="sh2Desc">Tus ahorros crecen en UDIs (siempre arriba de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.</p>
+        </div>
+        <div class="shcard">
+          <b id="sh3Title">🛡️ Tarifa Preferencial y Protección</b>
+          <p id="sh3Desc">Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey sigue pagando el plan por ti.</p>
+        </div>
+      </div>
+
+      <div class="prelim-note">
+        <strong>*Nota de nuestra 1ª Sesión:</strong> Esta pizarra muestra el comportamiento matemático preliminar de tu ahorro y tus devoluciones del SAT. Con lo que definimos hoy, armaré tu cotización exacta en el <strong>sistema oficial de Seguros Monterrey New York Life</strong> para mostrarte en nuestra <strong>2ª Sesión</strong> tus valores garantizados por contrato.
+      </div>
+    </div>
+
+    <div class="cgrid-bot">
+      <div class="clcard">
+        <div class="clhead">
+          <span class="clbadge">Paso 1 de Cierre · Co-Diseño para tu 2ª Sesión</span>
+          <small style="font-size:11px;font-weight:700;color:var(--muted)">Sesión Privada por Google Meet</small>
+        </div>
+        <h3>Acordar tu Estudio Oficial SMNYL y Agendar 2ª Sesión</h3>
+
+        <div class="codesign-box">
+          <span class="codesign-label">¿En qué moneda quieres que prepare tu cotización oficial para nuestra 2ª cita?</span>
+          <div class="codesign-opts">
+            <button type="button" class="cd-btn" onclick="window.selectDeliverable(0)">🇲🇽 Solo en UDIs (Inflación)</button>
+            <button type="button" class="cd-btn active" onclick="window.selectDeliverable(1)">⚖️ Comparativa UDIs vs. Dólares</button>
+            <button type="button" class="cd-btn" onclick="window.selectDeliverable(2)">🇺🇸 Solo en Dólares (USD)</button>
+          </div>
+        </div>
+
+        <div class="unlock-list">
+          <div>🔓 <strong>Lo que veremos juntos en tu 2ª Sesión (15 min):</strong></div>
+          <div>1. Tu <strong id="unlockCurrencyText">Comparativa oficial UDIs vs. Dólares (Lado a Lado)</strong> emitida en Seguros Monterrey.</div>
+          <div>2. Tu <strong>Suma Asegurada Exacta con Tarifa Preferencial</strong> para tu edad (<span id="unlockAgeSpan">36 años</span>).</div>
+          <div>3. Tu <strong>Tabla de Valores Garantizados por Contrato</strong> año por año.</div>
+        </div>
+
+        <div class="brow">
+          <button type="button" class="btn-gold" onclick="window.openCalModal()">📅 1. Agendar 2ª Sesión →</button>
+          <a href="#" target="_blank" rel="noopener" class="btn-em" id="sendSummaryWaBtn" onclick="window.savePassesToSheets(false)">📲 2. Enviar Resumen por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="clcard gold">
+        <div class="clhead">
+          <span class="clbadge gold">Pases de Diagnóstico Preferenciales · Cédula C412676</span>
+          <small style="font-size:11px;font-weight:700;color:var(--muted)">Solo nombre de pila</small>
+        </div>
+        <h3>Reservar 2 Pases de Diagnóstico para Personas Cercanas</h3>
+        <p>Sin necesidad de compartir sus teléfonos hoy: anota el nombre de 2 personas cercanas (amigos, hermanos o colegas) para dejarles reservados sus 2 lugares preferenciales de diagnóstico:</p>
+        <div class="rlist">
+          <div class="rrow">
+            <input type="text" id="refName1" class="rinput" placeholder="1. Nombre (Ej. Laura)" oninput="window.syncAll()">
+            <input type="text" id="refRel1" class="rinput" placeholder="Relación (Ej. Oficina / Hermana)" oninput="window.syncAll()">
+          </div>
+          <div class="rrow">
+            <input type="text" id="refName2" class="rinput" placeholder="2. Nombre (Ej. Carlos)" oninput="window.syncAll()">
+            <input type="text" id="refRel2" class="rinput" placeholder="Relación (Ej. Amigo / Socio)" oninput="window.syncAll()">
+          </div>
+        </div>
+        <div class="rstatus" id="refSaveStatus">✓ Pases preferenciales registrados y añadidos al resumen de WhatsApp.</div>
+        <button type="button" class="btn-master-pass" id="saveReferralsBtn" onclick="window.savePassesToSheets(true)">
+          <span>✨ Registrar Pases y Enviar Tarjeta de Invitación →</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<div class="cmodal" id="calModal" onclick="if(event.target===this)window.closeCalModal()">
+  <div class="cmbox">
+    <div class="cmhead">
+      <div><b>Agenda en Vivo · Revisión de tu Estudio Oficial SMNYL (Google Meet)</b></div>
+      <button type="button" class="cmclose" onclick="window.closeCalModal()">×</button>
+    </div>
+    <div class="cmbody">
+      <iframe id="googleCalIframe" title="Agenda Oficial de Santiago"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <strong>Santi te asesora</strong> · Santiago, Agente Autorizado CNSF Cédula <strong>C412676</strong> · Seguros Monterrey New York Life y MASS Asociados.</p>
+</footer>
 
 <script>
 window.CONFIG = {
@@ -831,8 +630,6 @@ window.CONFIG = {
   LANDING_URL: 'https://www.santiteasesora.com/profesionistas.html',
   CALENDAR_URL: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ36p0G-J2v5i4M51eESbjVZSQuF1QrZTgpXG1aPjcsjeLa4uiosGyw-7UwhVYF4EH2CD2zn61q9?gv=true',
   APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
-  MEDICOS_A_TU_LADO_URL: 'https://www.mnyl.com.mx/seguros-individuales/medicos-a-tu-lado/medicos-a-tu-lado.aspx',
-  RED_MEDICA_CDMX_URL: 'https://www.mnyl.com.mx/medical-directory-search.aspx?plan=3&associatedplan=&estadosrepublica=CIUDAD%20DE%20M%c3%89XICO&text=',
   SUMA_ASEGURADA_GMM: 170000000,
   TOPE_5_UMAS: 213973.20,
   TOPE_ART_185: 152000.00
@@ -845,18 +642,9 @@ window.ISR_2026 = [
 ];
 
 window.GMM_HOSPITAL_LEVELS = {
-  integro: {
-    titulo: 'Alta Especialidad (Equilibrio Ideal CDMX)',
-    ejemplos: 'Hospital Español, Ángeles Metropolitano, Ángeles Mocel, Ángeles Acoxpa, Ángeles Lindavista, San Ángel Inn Universidad, Dalinde, HMG Coyoacán'
-  },
-  pleno: {
-    titulo: 'Acceso Abierto Nacional (Todos los Hospitales)',
-    ejemplos: 'Hospital ABC Santa Fe, ABC Observatorio, Médica Sur, Ángeles Pedregal, Ángeles Lomas + toda la red nacional'
-  },
-  practico: {
-    titulo: 'Esencial Privado (Optimización de Mensualidad)',
-    ejemplos: 'San Ángel Inn Chapultepec, San Ángel Inn Sur, Dalinde, Star Médica Centro/Roma/Infantil Privado'
-  }
+  integro: { titulo: 'Alta Especialidad (Equilibrio Ideal CDMX)', ejemplos: 'Hospital Español, Ángeles Metropolitano, Ángeles Mocel, Ángeles Acoxpa, Ángeles Lindavista, San Ángel Inn Universidad, Dalinde, HMG Coyoacán' },
+  pleno: { titulo: 'Acceso Abierto Nacional (Todos los Hospitales)', ejemplos: 'Hospital ABC Santa Fe, ABC Observatorio, Médica Sur, Ángeles Pedregal, Ángeles Lomas + toda la red nacional' },
+  practico: { titulo: 'Esencial Privado (Optimización de Mensualidad)', ejemplos: 'San Ángel Inn Chapultepec, San Ángel Inn Sur, Dalinde, Star Médica Centro/Roma/Infantil Privado' }
 };
 
 window.GOAL_PROJECTS = {
@@ -870,35 +658,27 @@ window.GOAL_PROJECTS = {
 window.S = {
   folio: '', nombre: '', phone: '',
   regimen: 'sueldos', edad: 36, birth: '', smoker: 'no', healthNote: 'Salud general sin antecedentes relevantes',
-  mode: 'hibrido',
-  hybridPct151: 70,
-  paymentTerm: 'todos',
-  ingresoMensual: 40000,
-  includeAguinaldo: false,
-  ahorroMensual: 4000,
-  activePreset: 2,
-  goalProject: 'reserva',
-  protectWho: '👤 Mi propia independencia financiera',
+  mode: 'hibrido', hybridPct151: 70, paymentTerm: 'todos',
+  ingresoMensual: 40000, includeAguinaldo: false, ahorroMensual: 4000,
+  activePreset: 2, goalProject: 'reserva', protectWho: '👤 Mi propia independencia financiera',
   session2Deliverable: 'Comparativa oficial UDIs vs. Dólares (Lado a Lado)',
-  gmmWho: 'Individual (Personal)',
-  gmmStatus: 'Busco mi primera póliza privada',
-  gmmHosp: 'integro'
+  gmmWho: 'Individual (Personal)', gmmStatus: 'Busco mi primera póliza privada', gmmHosp: 'integro'
 };
 
 function $id(id){ return document.getElementById(id); }
+function setTxt(id, v){ var el = $id(id); if (el) el.textContent = v; }
+function setHtml(id, v){ var el = $id(id); if (el) el.innerHTML = v; }
+function setW(id, w){ var el = $id(id); if (el) el.style.width = w; }
 function fmt(n){ return '$' + Math.round(Number(n)||0).toLocaleString('es-MX'); }
 function cleanTel(r){ return String(r||'').replace(/\D/g,'').replace(/^(?:521|52)(?=\d{10}$)/,'').slice(0, 10); }
 
 function paintSliderTrack(slider){
   if (!slider) return;
-  var min = parseFloat(slider.min) || 0;
-  var max = parseFloat(slider.max) || 100;
-  var val = parseFloat(slider.value) || 0;
+  var min = parseFloat(slider.min) || 0, max = parseFloat(slider.max) || 100, val = parseFloat(slider.value) || 0;
   var pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
   slider.style.background = 'linear-gradient(90deg, #145C52 0%, #A8C4B5 ' + pct + '%, #E2DBD0 ' + pct + '%, #E2DBD0 100%)';
 }
 
-/* Piso mínimo homologado al 100% con profesionistas.html */
 function getMinSaveByAge(age){
   var a = Number(age) || 36;
   if (a >= 47) return 4000;
@@ -907,7 +687,6 @@ function getMinSaveByAge(age){
   return 1500;
 }
 
-/* Reconoce tanto los rangos nuevos ("25-32", "33-39", "40-46", "47-55", "35-44") como números exactos */
 function parseAgeFromFolio(rawEdad, rawCalc){
   var str = String(rawEdad || '').trim();
   if (!str && rawCalc){
@@ -934,22 +713,13 @@ function calcISR(base){
 }
 
 window.clearClientForm = function(){
-  window.S.folio = '';
-  window.S.nombre = '';
-  window.S.phone = '';
-  window.S.birth = '';
-  window.S.edad = 36;
-  window.S.regimen = 'sueldos';
-  window.S.ingresoMensual = 40000;
-  window.S.includeAguinaldo = false;
-  window.S.ahorroMensual = 4000;
-  window.S.hybridPct151 = 70;
-  window.S.activePreset = 2;
-  window.S.goalProject = 'reserva';
+  window.S.folio = ''; window.S.nombre = ''; window.S.phone = ''; window.S.birth = '';
+  window.S.edad = 36; window.S.regimen = 'sueldos'; window.S.ingresoMensual = 40000;
+  window.S.includeAguinaldo = false; window.S.ahorroMensual = 4000; window.S.hybridPct151 = 70;
+  window.S.activePreset = 2; window.S.goalProject = 'reserva';
   window.S.protectWho = '👤 Mi propia independencia financiera';
   window.S.session2Deliverable = 'Comparativa oficial UDIs vs. Dólares (Lado a Lado)';
-  window.S.paymentTerm = 'todos';
-  window.S.smoker = 'no';
+  window.S.paymentTerm = 'todos'; window.S.smoker = 'no';
   window.S.healthNote = 'Salud general sin antecedentes relevantes';
 
   if ($id('folioInput')) $id('folioInput').value = '';
@@ -962,10 +732,7 @@ window.clearClientForm = function(){
   if ($id('goalProjectSelect')) $id('goalProjectSelect').value = 'reserva';
   if ($id('protectWhoSelect')) $id('protectWhoSelect').value = '👤 Mi propia independencia financiera';
   if ($id('incomeSlider')) $id('incomeSlider').value = '40000';
-  if ($id('saveSlider')){
-    $id('saveSlider').min = '2500';
-    $id('saveSlider').value = '4000';
-  }
+  if ($id('saveSlider')){ $id('saveSlider').min = '2500'; $id('saveSlider').value = '4000'; }
   if ($id('hybridSplitSlider')) $id('hybridSplitSlider').value = '70';
   if ($id('smokerSelect')) $id('smokerSelect').value = 'no';
   if ($id('paymentTerm')) $id('paymentTerm').value = 'todos';
@@ -979,7 +746,6 @@ window.clearClientForm = function(){
 
   var pbtns = document.querySelectorAll('.prow .pbtn');
   for (var i=0; i<pbtns.length; i++) pbtns[i].classList.toggle('active', i === 1);
-
   window.selectDeliverable(1);
   window.selectMode('hibrido');
 };
@@ -987,15 +753,12 @@ window.clearClientForm = function(){
 window.selectMode = function(m){
   window.S.mode = m;
   var btns = document.querySelectorAll('#modeButtons .mode-btn');
-  for (var i=0; i<btns.length; i++){
-    btns[i].classList.toggle('active', btns[i].getAttribute('data-mode') === m);
-  }
+  for (var i=0; i<btns.length; i++) btns[i].classList.toggle('active', btns[i].getAttribute('data-mode') === m);
   if ($id('hybridSplitCard')) $id('hybridSplitCard').classList.toggle('hidden', m !== 'hibrido');
   if ($id('identityCardBox')) $id('identityCardBox').classList.toggle('hidden', m === 'gmm');
   if ($id('gmmLinksBar')) $id('gmmLinksBar').classList.toggle('open', m === 'gmm');
   if ($id('gmmDiscoveryBox')) $id('gmmDiscoveryBox').classList.toggle('open', m === 'gmm');
   if ($id('saveSliderCard')) $id('saveSliderCard').classList.toggle('hidden', m === 'gmm');
-
   window.syncAll();
 };
 
@@ -1007,12 +770,8 @@ window.selectDeliverable = function(idx){
   ];
   window.S.session2Deliverable = map[idx] || map[1];
   var cbtns = document.querySelectorAll('.codesign-opts .cd-btn');
-  for (var i=0; i<cbtns.length; i++){
-    cbtns[i].classList.toggle('active', i === idx);
-  }
-  if ($id('unlockCurrencyText')){
-    $id('unlockCurrencyText').textContent = window.S.session2Deliverable;
-  }
+  for (var i=0; i<cbtns.length; i++) cbtns[i].classList.toggle('active', i === idx);
+  setTxt('unlockCurrencyText', window.S.session2Deliverable);
   window.syncAll();
 };
 
@@ -1095,12 +854,8 @@ window.syncAll = function(){
     }
     S.ahorroMensual = currentVal;
   }
-  if ($id('ageFloorHint')){
-    $id('ageFloorHint').textContent = 'Mínimo recomendado para ' + S.edad + ' años: ' + fmt(minSave) + '/mes';
-  }
-  if ($id('unlockAgeSpan')){
-    $id('unlockAgeSpan').textContent = S.edad + ' años';
-  }
+  setTxt('ageFloorHint', 'Mínimo recomendado para ' + S.edad + ' años: ' + fmt(minSave) + '/mes');
+  setTxt('unlockAgeSpan', S.edad + ' años');
 
   if ($id('hybridSplitSlider')) S.hybridPct151 = Number($id('hybridSplitSlider').value)||70;
 
@@ -1117,97 +872,71 @@ window.syncAll = function(){
   var tasaM = isResico ? 0.02 : baseObj.tasa;
   var tasaPct = Math.round(tasaM * 100);
 
-  $id('incomeLabel').textContent = fmt(S.ingresoMensual);
-  $id('annualIncomeLabel').textContent = fmt(ingAnual) + (S.includeAguinaldo ? ' (con aguinaldo/bono)' : ' al año');
-  $id('marginalRateLabel').textContent = isResico ? '1% a 2.5%' : (tasaM * 100).toFixed(1) + '%';
-  $id('saveLabel').textContent = fmt(S.ahorroMensual);
-  $id('annualSaveLabel').textContent = fmt(ahoAnual) + ' al año';
-  $id('capPercentLabel').textContent = ((S.ahorroMensual / S.ingresoMensual) * 100).toFixed(1) + '% de tu ingreso';
+  setTxt('incomeLabel', fmt(S.ingresoMensual));
+  setTxt('annualIncomeLabel', fmt(ingAnual) + (S.includeAguinaldo ? ' (c/aguinaldo)' : ' al año'));
+  setTxt('marginalRateLabel', isResico ? '1% a 2.5%' : (tasaM * 100).toFixed(1) + '%');
+  setTxt('saveLabel', fmt(S.ahorroMensual));
+  setTxt('annualSaveLabel', fmt(ahoAnual) + ' al año');
+  setTxt('capPercentLabel', ((S.ahorroMensual / S.ingresoMensual) * 100).toFixed(1) + '% de tu ingreso');
 
   var baseComodaM = Math.max(minSave, Math.round((S.ingresoMensual * 0.07) / 500) * 500);
   var t151A = Math.min(ingAnual * 0.10, window.CONFIG.TOPE_5_UMAS);
   var t151M = Math.max(minSave, Math.round((t151A / 12) / 500) * 500);
   var tMaxM = Math.min(35000, Math.max(minSave, Math.round(((t151A + window.CONFIG.TOPE_ART_185) / 12) / 500) * 500));
-  $id('lblPreset10').textContent = fmt(baseComodaM) + '/mes';
-  $id('lblPreset151').textContent = fmt(t151M) + '/mes';
-  $id('lblPresetMax').textContent = fmt(tMaxM) + '/mes';
+  setTxt('lblPreset10', fmt(baseComodaM) + '/mes');
+  setTxt('lblPreset151', fmt(t151M) + '/mes');
+  setTxt('lblPresetMax', fmt(tMaxM) + '/mes');
 
   var pref = S.nombre && S.nombre.trim() ? (S.nombre.trim().split(/\s+/)[0] + ', tu ') : 'Tu ';
   var goalObj = window.GOAL_PROJECTS[S.goalProject] || window.GOAL_PROJECTS.reserva;
 
   var r10 = 0.078;
   var fondo10AnosTotal = Math.round(ahoAnual * (((Math.pow(1 + r10, 10) - 1) / r10) * (1 + r10)));
-
   var usaArt185 = (S.activePreset === 3);
   var topeFiscalActivo = usaArt185 ? (t151A + window.CONFIG.TOPE_ART_185) : t151A;
 
-  // 1) MODO SALUD PRIVADA ALFA MEDICAL
   if (S.mode === 'gmm'){
     var hospObj = window.GMM_HOSPITAL_LEVELS[S.gmmHosp] || window.GMM_HOSPITAL_LEVELS.integro;
-    if ($id('gmmHospNote')){
-      $id('gmmHospNote').innerHTML = '🏥 <b>Hospitales incluidos en este nivel:</b> ' + hospObj.ejemplos + '.';
-    }
+    setHtml('gmmHospNote', '🏥 <b>Hospitales incluidos en este nivel:</b> ' + hospObj.ejemplos + '.');
+    setTxt('legalBadge', 'Póliza en Pesos Mexicanos · Respaldo SMNYL');
+    setHtml('mainBoardTitle', pref + 'Protección Médica Privada <span>Alfa Medical ($170 Millones)</span>');
+    setTxt('mainBoardSub', 'Atención privada en Pesos Mexicanos, acompañamiento médico personal 24/7 y deducción de impuestos en tu declaración anual.');
 
-    $id('legalBadge').textContent = 'Póliza en Pesos Mexicanos · Respaldo SMNYL';
-    $id('mainBoardTitle').innerHTML = pref + 'Protección Médica Privada <span>Alfa Medical ($170 Millones)</span>';
-    $id('mainBoardSub').textContent = 'Atención privada en Pesos Mexicanos, acompañamiento médico personal 24/7 y deducción de impuestos en tu declaración anual.';
+    setTxt('kpi1Title', '1. Tranquilidad Financiera'); setTxt('kpi1Value', 'Pago Directo'); setTxt('kpi1Sub', 'Protegemos tu patrimonio ante emergencias');
+    setTxt('kpi2Title', '2. Respaldo por Enfermedad'); setTxt('kpi2Value', '$170 Millones'); setTxt('kpi2Sub', 'En Pesos Mexicanos por diagnóstico');
+    setTxt('kpi3Title', isResico ? '3. Moneda Estable' : '3. Beneficio en el SAT'); setTxt('kpi3Value', isResico ? 'Pesos MXN' : '100% Deducible'); setTxt('kpi3Sub', isResico ? 'Sin cambios por tipo de cambio' : 'Para ti, tu pareja, hijos y padres');
+    setTxt('kpi4Title', isResico ? '4. Acompañamiento' : '4. Retorno Fiscal en Abril'); setTxt('kpi4Value', isResico ? 'Médicos 24/7' : ('Hasta el ' + tasaPct + '%')); setTxt('kpi4Sub', isResico ? 'Programa Médicos a tu Lado' : 'Recuperas parte de tu prima anual');
 
-    $id('kpi1Title').textContent = '1. Tranquilidad Financiera';
-    $id('kpi1Value').textContent = 'Pago Directo';
-    $id('kpi1Sub').textContent = 'Protegemos tu patrimonio ante emergencias';
-    $id('kpi2Title').textContent = '2. Respaldo por Enfermedad';
-    $id('kpi2Value').textContent = '$170 Millones';
-    $id('kpi2Sub').textContent = 'En Pesos Mexicanos por diagnóstico';
-    $id('kpi3Title').textContent = isResico ? '3. Moneda Estable' : '3. Beneficio en el SAT';
-    $id('kpi3Value').textContent = isResico ? 'Pesos MXN' : '100% Deducible';
-    $id('kpi3Sub').textContent = isResico ? 'Sin cambios por tipo de cambio' : 'Para ti, tu pareja, hijos y padres';
-    $id('kpi4Title').textContent = isResico ? '4. Acompañamiento' : '4. Retorno Fiscal en Abril';
-    $id('kpi4Value').textContent = isResico ? 'Médicos 24/7' : ('Hasta el ' + tasaPct + '%');
-    $id('kpi4Sub').textContent = isResico ? 'Programa Médicos a tu Lado' : 'Recuperas parte de tu prima anual';
+    setTxt('chartLeftTitle', 'Por qué Blindar tu Salud y tu Patrimonio');
+    setTxt('efficiencyPct', 'Cobertura en Pesos Mexicanos');
+    setTxt('bar1Label', 'Sin Póliza: Afrontar una urgencia privada con tus propios ahorros'); setTxt('bar1Val', 'Riesgo patrimonial'); setW('bar1Fill', '100%');
+    setTxt('bar2Label', 'Con Alfa Medical: Seguros Monterrey paga al hospital + Deduces impuestos'); setTxt('bar2Val', 'Hasta $170,000,000 MXN');
+    setW('bar2Fill', isResico ? '100%' : (100 - tasaPct) + '%'); setW('bar2Gold', isResico ? '0%' : tasaPct + '%');
 
-    $id('chartLeftTitle').textContent = 'Por qué Blindar tu Salud y tu Patrimonio';
-    $id('efficiencyPct').textContent = 'Cobertura en Pesos Mexicanos';
-    $id('bar1Label').textContent = 'Sin Póliza: Afrontar una urgencia privada con tus propios ahorros';
-    $id('bar1Val').textContent = 'Riesgo patrimonial';
-    $id('bar1Fill').style.width = '100%';
-    $id('bar2Label').textContent = 'Con Alfa Medical: Seguros Monterrey paga al hospital + Deduces impuestos';
-    $id('bar2Val').textContent = 'Hasta $170,000,000 MXN';
-    $id('bar2Fill').style.width = isResico ? '100%' : (100 - tasaPct) + '%';
-    $id('bar2Gold').style.width = isResico ? '0%' : tasaPct + '%';
+    setHtml('bannerExplain', isResico ? 'Proteges la liquidez de tu familia en los mejores hospitales privados:' : ('Por tu escalón de ISR, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> de tu póliza médica:'));
+    setTxt('bannerNet', 'Propuesta oficial en nuestra 2ª Sesión');
 
-    $id('bannerExplain').innerHTML = isResico
-      ? 'Proteges la liquidez de tu familia en los mejores hospitales privados:'
-      : ('Por tu escalón de ISR, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> de tu póliza médica:');
-    $id('bannerNet').textContent = 'Propuesta oficial en nuestra 2ª Sesión';
-
-    $id('chartRightTitle').textContent = 'Resumen de tus Preferencias Médicas';
-    $id('mile1Label').textContent = 'A quiénes protegemos';
-    $id('mile1Val').textContent = S.gmmWho;
-    $id('mile1Sub').textContent = S.gmmStatus;
+    setTxt('chartRightTitle', 'Resumen de tus Preferencias Médicas');
+    setTxt('mile1Label', 'A quiénes protegemos'); setTxt('mile1Val', S.gmmWho); setTxt('mile1Sub', S.gmmStatus);
     if ($id('mile2PensionTag')) $id('mile2PensionTag').style.display = 'none';
-    $id('mile2Label').textContent = 'Nivel de Hospitales en CDMX';
-    $id('mile2Val').textContent = hospObj.titulo.split('(')[0].trim();
-    $id('mile2Sub').textContent = 'Sujeto a valoración médica en solicitud';
-    $id('protectionSumLabel').textContent = S.healthNote;
-    if ($id('urgencyBar')) $id('urgencyBar').innerHTML = '🩺 <b>Ventaja de asegurar tu salud a tus ' + S.edad + ' años:</b> Fijas tu antigüedad hoy con tu estado de salud actual.';
+    setTxt('mile2Label', 'Nivel de Hospitales en CDMX'); setTxt('mile2Val', hospObj.titulo.split('(')[0].trim()); setTxt('mile2Sub', 'Sujeto a valoración médica en solicitud');
+    setTxt('protectionSumLabel', S.healthNote);
+    setHtml('urgencyBar', '🩺 <b>Ventaja de asegurar tu salud a tus ' + S.edad + ' años:</b> Fijas tu antigüedad hoy con tu estado de salud actual.');
 
-    $id('sh1Title').textContent = '🩺 1. Programa "Médicos a tu Lado"';
-    $id('sh1Desc').textContent = 'Un médico te acompaña de principio a fin: orientación 24/7, segunda opinión médica y seguimiento en casa.';
-    $id('sh2Title').textContent = '🏥 2. Pago Directo al Hospital';
-    $id('sh2Desc').textContent = 'En estancias mayores a 24 horas dentro de la red en convenio, la aseguradora liquida directamente al hospital.';
-    $id('sh3Title').textContent = '🧾 3. Deducción en Abril';
-    $id('sh3Desc').textContent = 'Las primas de tu póliza médica entran en tus deducciones personales de abril.';
+    setTxt('sh1Title', '🩺 1. Programa "Médicos a tu Lado"'); setTxt('sh1Desc', 'Un médico te acompaña de principio a fin: orientación 24/7, segunda opinión médica y seguimiento en casa.');
+    setTxt('sh2Title', '🏥 2. Pago Directo al Hospital'); setTxt('sh2Desc', 'En estancias mayores a 24 horas dentro de la red en convenio, la aseguradora liquida directamente al hospital.');
+    setTxt('sh3Title', '🧾 3. Deducción en Abril'); setTxt('sh3Desc', 'Las primas de tu póliza médica entran en tus deducciones personales de abril.');
 
     window.buildCombinedWhatsApp(0, 0, 0, 1, 0);
     return;
   }
 
-  $id('sh1Title').textContent = '⚖️ Dos Bolsillos a tu Favor';
-  $id('sh1Desc').textContent = 'Una parte hace que el SAT te regrese dinero cada abril (para tus 65 años) y la otra queda libre para tus metas o para retirarte a los 60 años con 0% de impuestos.';
-  $id('sh2Title').textContent = '📈 Tu Dinero no Pierde Valor';
-  $id('sh2Desc').textContent = 'Tus ahorros crecen en UDIs (siempre arriba de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.';
-  $id('sh3Title').textContent = '🛡️ Tarifa Preferencial y Protección';
-  $id('sh3Desc').textContent = 'Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey sigue pagando el plan por ti.';
+  setTxt('sh1Title', '⚖️ Dos Bolsillos a tu Favor');
+  setTxt('sh1Desc', 'Una parte hace que el SAT te regrese dinero cada abril (para tus 65 años) y la otra queda libre para tus metas o para retirarte a los 60 años con 0% de impuestos.');
+  setTxt('sh2Title', '📈 Tu Dinero no Pierde Valor');
+  setTxt('sh2Desc', 'Tus ahorros crecen en UDIs (siempre arriba de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.');
+  setTxt('sh3Title', '🛡️ Tarifa Preferencial y Protección');
+  setTxt('sh3Desc', 'Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey sigue pagando el plan por ti.');
 
   var edadMeta = (S.mode === '60' || isResico) ? 60 : 65;
   var anosRest = Math.max(5, edadMeta - S.edad);
@@ -1227,18 +956,16 @@ window.syncAll = function(){
 
   if ($id('mile2PensionTag')) $id('mile2PensionTag').style.display = 'inline-block';
 
-  // 2) MODO ESTRATEGIA DE 2 BOLSILLOS (DEVOLUCIÓN SAT + CUENTA LIBRE / RETIRO A LOS 60)
   if (S.mode === 'hibrido' && !isResico){
     var pct1 = S.hybridPct151 / 100;
     var mesCuenta1 = Math.round(S.ahorroMensual * pct1);
     var mesCuenta2 = S.ahorroMensual - mesCuenta1;
-
     var anualCuenta1 = mesCuenta1 * 12;
     var anualCuenta2 = mesCuenta2 * 12;
 
-    $id('hybridSplitLabel').textContent = S.hybridPct151 + '% Bolsillo SAT / ' + (100 - S.hybridPct151) + '% Bolsillo Libre';
-    $id('hybridPocket1Text').textContent = 'Bolsillo 1 (Con devolución SAT): ' + fmt(mesCuenta1) + '/mes';
-    $id('hybridPocket2Text').textContent = 'Bolsillo 2 (Disponible / Retiro a los 60): ' + fmt(mesCuenta2) + '/mes';
+    setTxt('hybridSplitLabel', S.hybridPct151 + '% Bolsillo SAT / ' + (100 - S.hybridPct151) + '% Bolsillo Libre');
+    setTxt('hybridPocket1Text', 'Bolsillo 1 (Con devolución SAT): ' + fmt(mesCuenta1) + '/mes');
+    setTxt('hybridPocket2Text', 'Bolsillo 2 (Disponible / Retiro a los 60): ' + fmt(mesCuenta2) + '/mes');
 
     var dedRealH = Math.min(anualCuenta1, topeFiscalActivo);
     var nuevoISRH = calcISR(Math.max(0, ingAnual - dedRealH)).isr;
@@ -1248,7 +975,6 @@ window.syncAll = function(){
 
     var rCorto = 0.068;
     var fondo5AnosCuenta2 = Math.round(anualCuenta2 * (((Math.pow(1 + rCorto, 5) - 1) / rCorto) * (1 + rCorto)));
-
     var acumCuenta1 = anualCuenta1 * ((Math.pow(1 + r, anosPago) - 1) / r) * (1 + r);
     var fondo65Cuenta1 = Math.round(acumCuenta1 * Math.pow(1 + r, anosPost));
     var rentaMensualH = Math.round(fondo65Cuenta1 * 0.0065);
@@ -1257,116 +983,76 @@ window.syncAll = function(){
     var fondo65Menos1 = Math.round(acumCuenta1Menos1 * Math.pow(1 + r, anosPostMenos1));
     var ventajaH = Math.max(anualCuenta1, fondo65Cuenta1 - fondo65Menos1);
 
-    $id('legalBadge').textContent = 'Método de 2 Bolsillos · Devolución SAT + Liquidez';
-    $id('mainBoardTitle').innerHTML = pref + 'Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span>';
-    $id('mainBoardSub').textContent = 'Dividimos tus ' + fmt(S.ahorroMensual) + '/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.';
+    setTxt('legalBadge', 'Método de 2 Bolsillos · Devolución SAT + Liquidez');
+    setHtml('mainBoardTitle', pref + 'Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span>');
+    setTxt('mainBoardSub', 'Dividimos tus ' + fmt(S.ahorroMensual) + '/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.');
 
-    $id('kpi1Title').textContent = '1. Bolsillo 1 (Con devolución SAT)';
-    $id('kpi1Value').textContent = fmt(mesCuenta1) + '/mes';
-    $id('kpi1Sub').textContent = fmt(dedRealH) + '/año que deduces en abril';
+    setTxt('kpi1Title', '1. Bolsillo 1 (Con devolución SAT)'); setTxt('kpi1Value', fmt(mesCuenta1) + '/mes'); setTxt('kpi1Sub', fmt(dedRealH) + '/año que deduces en abril');
+    setTxt('kpi2Title', '2. Bolsillo 2 (Libre / Edad 60)'); setTxt('kpi2Value', fmt(mesCuenta2) + '/mes'); setTxt('kpi2Sub', 'Sin el candado de los 65 años');
+    setTxt('kpi3Title', '3. Te regresa el SAT en abril'); setTxt('kpi3Value', '+' + fmt(devSATH)); setTxt('kpi3Sub', 'Efectivo anual a tu favor (Escala ' + tasaPct + '%)');
+    setTxt('kpi4Title', '4. Lo que realmente te cuesta'); setTxt('kpi4Value', fmt(invNetaH) + '/mes'); setTxt('kpi4Sub', 'Descontando tu devolución del SAT');
 
-    $id('kpi2Title').textContent = '2. Bolsillo 2 (Libre / Edad 60)';
-    $id('kpi2Value').textContent = fmt(mesCuenta2) + '/mes';
-    $id('kpi2Sub').textContent = 'Sin el candado de los 65 años';
+    setTxt('chartLeftTitle', 'Cómo se dividen tus ' + fmt(S.ahorroMensual) + '/mes (' + fmt(ahoAnual) + '/año)');
+    setTxt('efficiencyPct', 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal));
+    setTxt('bar1Label', 'Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)');
+    setTxt('bar1Val', S.hybridPct151 + '% SAT / ' + (100 - S.hybridPct151) + '% Libre');
+    setW('bar1Fill', '100%');
 
-    $id('kpi3Title').textContent = '3. Te regresa el SAT en abril';
-    $id('kpi3Value').textContent = '+' + fmt(devSATH);
-    $id('kpi3Sub').textContent = 'Efectivo anual a tu favor (Escala ' + tasaPct + '%)';
+    setTxt('bar2Label', 'Efectivo que el SAT te devuelve cada mes de abril');
+    setTxt('bar2Val', 'Recuperas +' + fmt(devSATH) + ' cada año');
+    setW('bar2Fill', S.hybridPct151 + '%');
+    setW('bar2Gold', (100 - S.hybridPct151) + '%');
 
-    $id('kpi4Title').textContent = '4. Lo que realmente te cuesta';
-    $id('kpi4Value').textContent = fmt(invNetaH) + '/mes';
-    $id('kpi4Sub').textContent = 'Descontando tu devolución del SAT';
+    setHtml('bannerExplain', 'Ahorras <b>' + fmt(S.ahorroMensual) + '/mes</b>, el SAT te regresa <b>+' + fmt(devSATH) + '/año</b> y tienes <b>' + fmt(anualCuenta2) + '/año</b> en tu cuenta libre:');
+    setTxt('bannerNet', 'Esfuerzo neto real: ' + fmt(invNetaH) + '/mes');
 
-    $id('chartLeftTitle').textContent = 'Cómo se dividen tus ' + fmt(S.ahorroMensual) + '/mes (' + fmt(ahoAnual) + '/año)';
-    $id('efficiencyPct').textContent = 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal);
-    $id('bar1Label').textContent = 'Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)';
-    $id('bar1Val').textContent = S.hybridPct151 + '% SAT / ' + (100 - S.hybridPct151) + '% Libre';
-    $id('bar1Fill').style.width = '100%';
+    setTxt('chartRightTitle', 'Cómo crece tu dinero en el tiempo');
+    setTxt('mile1Label', 'Disponible en Bolsillo 2 (Año 5)'); setTxt('mile1Val', fmt(fondo5AnosCuenta2)); setTxt('mile1Sub', 'Para tus proyectos o libre a tus 60 años');
+    setTxt('mile2Label', 'Tu Fondo de Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondo65Cuenta1)); setTxt('mile2Sub', 'Más lo que conserves en tu Bolsillo 2');
+    setTxt('mile2PensionTag', '≈ ' + fmt(rentaMensualH) + '/mes para vivir tranquilo(a)');
 
-    $id('bar2Label').textContent = 'Efectivo que el SAT te devuelve cada mes de abril';
-    $id('bar2Val').textContent = 'Recuperas +' + fmt(devSATH) + ' cada año';
-    $id('bar2Fill').style.width = S.hybridPct151 + '%';
-    $id('bar2Gold').style.width = (100 - S.hybridPct151) + '%';
-
-    $id('bannerExplain').innerHTML = 'Ahorras <b>' + fmt(S.ahorroMensual) + '/mes</b>, el SAT te regresa <b>+' + fmt(devSATH) + '/año</b> y tienes <b>' + fmt(anualCuenta2) + '/año</b> en tu cuenta libre:';
-    $id('bannerNet').textContent = 'Esfuerzo neto real: ' + fmt(invNetaH) + '/mes';
-
-    $id('chartRightTitle').textContent = 'Cómo crece tu dinero en el tiempo';
-    $id('mile1Label').textContent = 'Disponible en Bolsillo 2 (Año 5)';
-    $id('mile1Val').textContent = fmt(fondo5AnosCuenta2);
-    $id('mile1Sub').textContent = 'Para tus proyectos o libre a tus 60 años';
-
-    $id('mile2Label').textContent = 'Tu Fondo de Retiro (Edad 65)*';
-    $id('mile2Val').textContent = fmt(fondo65Cuenta1);
-    $id('mile2Sub').textContent = 'Más lo que conserves en tu Bolsillo 2';
-    if ($id('mile2PensionTag')) $id('mile2PensionTag').textContent = '≈ ' + fmt(rentaMensualH) + '/mes para vivir tranquilo(a)';
-
-    if ($id('urgencyBar')){
-      $id('urgencyBar').innerHTML = '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaH) + ' MXN más</b> de ganancia acumulada + tu devolución SAT de este año.';
-    }
-
-    $id('protectionSumLabel').textContent = S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')';
+    setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaH) + ' MXN más</b> de ganancia acumulada + tu devolución SAT de este año.');
+    setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
 
     window.buildCombinedWhatsApp(devSATH, fondo65Cuenta1, fondo5AnosCuenta2, anosPago, rentaMensualH);
     return;
   }
 
-  // 3) MODO RETIRO A LOS 60 AÑOS (0% IMPUESTOS) / PROYECTOS / RESICO
   if (S.mode === '60' || isResico){
     var plusvalia = Math.max(0, fondoFinal - totalAportado);
     var liq5 = Math.round(ahoAnual * (((Math.pow(1 + 0.068, 5) - 1) / 0.068) * (1 + 0.068)));
     var renta60 = Math.round(fondoFinal * 0.0065);
 
-    $id('legalBadge').textContent = 'Retiro a los 60 Años · 0% de Impuestos';
-    $id('mainBoardTitle').innerHTML = pref + 'Estrategia de Libertad: <span>Retiro a los 60 Años sin Impuestos</span>';
-    $id('mainBoardSub').textContent = 'Tu dinero crece protegido contra la inflación con disponibilidad a mediano plazo y a los 60 años recibes todo tu ahorro y ganancias con 0% de impuestos.';
+    setTxt('legalBadge', 'Retiro a los 60 Años · 0% de Impuestos');
+    setHtml('mainBoardTitle', pref + 'Estrategia de Libertad: <span>Retiro a los 60 Años sin Impuestos</span>');
+    setTxt('mainBoardSub', 'Tu dinero crece protegido contra la inflación con disponibilidad a mediano plazo y a los 60 años recibes todo tu ahorro y ganancias con 0% de impuestos.');
 
-    $id('kpi1Title').textContent = '1. Lo que tú guardas (' + anosPago + ' años)';
-    $id('kpi1Value').textContent = fmt(totalAportado);
-    $id('kpi1Sub').textContent = 'Ahorrando paso a paso';
-    $id('kpi2Title').textContent = '2. Disponible al Año 5';
-    $id('kpi2Value').textContent = fmt(liq5);
-    $id('kpi2Sub').textContent = 'En UDIs o Dólares';
-    $id('kpi3Title').textContent = '3. Juntas en 10 Años aprox';
-    $id('kpi3Value').textContent = fmt(fondo10AnosTotal);
-    $id('kpi3Sub').textContent = 'Protegido contra inflación';
-    $id('kpi4Title').textContent = '4. Total a tus 60 Años';
-    $id('kpi4Value').textContent = fmt(fondoFinal);
-    $id('kpi4Sub').textContent = '100% libre de impuestos';
+    setTxt('kpi1Title', '1. Lo que tú guardas (' + anosPago + ' años)'); setTxt('kpi1Value', fmt(totalAportado)); setTxt('kpi1Sub', 'Ahorrando paso a paso');
+    setTxt('kpi2Title', '2. Disponible al Año 5'); setTxt('kpi2Value', fmt(liq5)); setTxt('kpi2Sub', 'En UDIs o Dólares');
+    setTxt('kpi3Title', '3. Juntas en 10 Años aprox'); setTxt('kpi3Value', fmt(fondo10AnosTotal)); setTxt('kpi3Sub', 'Protegido contra inflación');
+    setTxt('kpi4Title', '4. Total a tus 60 Años'); setTxt('kpi4Value', fmt(fondoFinal)); setTxt('kpi4Sub', '100% libre de impuestos');
 
     var pctB = fondoFinal > 0 ? Math.min(85, Math.max(25, Math.round((totalAportado / fondoFinal) * 100))) : 50;
-    $id('chartLeftTitle').textContent = 'Lo que tú pones vs. lo que gana tu dinero';
-    $id('efficiencyPct').textContent = 'Ganancia libre de impuestos: +' + fmt(plusvalia);
-    $id('bar1Label').textContent = 'Total de tus aportaciones';
-    $id('bar1Val').textContent = fmt(totalAportado) + ' MXN';
-    $id('bar1Fill').style.width = pctB + '%';
-    $id('bar2Label').textContent = 'Patrimonio total a tus 60 años (Ahorro + Ganancias)';
-    $id('bar2Val').textContent = fmt(fondoFinal) + ' MXN';
-    $id('bar2Fill').style.width = pctB + '%';
-    $id('bar2Gold').style.width = (100 - pctB) + '%';
-    $id('bannerExplain').innerHTML = 'Ahorrando <b>' + fmt(S.ahorroMensual) + '/mes</b> durante <b>' + anosPago + ' años</b>:';
-    $id('bannerNet').textContent = 'Recibes libre de impuestos: ' + fmt(fondoFinal);
+    setTxt('chartLeftTitle', 'Lo que tú pones vs. lo que gana tu dinero');
+    setTxt('efficiencyPct', 'Ganancia libre de impuestos: +' + fmt(plusvalia));
+    setTxt('bar1Label', 'Total de tus aportaciones'); setTxt('bar1Val', fmt(totalAportado) + ' MXN'); setW('bar1Fill', pctB + '%');
+    setTxt('bar2Label', 'Patrimonio total a tus 60 años (Ahorro + Ganancias)'); setTxt('bar2Val', fmt(fondoFinal) + ' MXN');
+    setW('bar2Fill', pctB + '%'); setW('bar2Gold', (100 - pctB) + '%');
+    setHtml('bannerExplain', 'Ahorrando <b>' + fmt(S.ahorroMensual) + '/mes</b> durante <b>' + anosPago + ' años</b>:');
+    setTxt('bannerNet', 'Recibes libre de impuestos: ' + fmt(fondoFinal));
 
-    $id('chartRightTitle').textContent = 'Tus Metas en el Tiempo (Año 10 y Edad 60)';
-    $id('mile1Label').textContent = 'Capital al Año 10';
-    $id('mile1Val').textContent = fmt(fondo10AnosTotal);
-    $id('mile1Sub').textContent = 'Puesto por ti en 10 años: ' + fmt(ahoAnual * 10);
-    $id('mile2Label').textContent = 'Retiro Anticipado (Edad 60)*';
-    $id('mile2Val').textContent = fmt(fondoFinal);
-    $id('mile2Sub').textContent = '0% de retención de impuestos';
-    if ($id('mile2PensionTag')) $id('mile2PensionTag').textContent = '≈ ' + fmt(renta60) + '/mes a partir de tus 60 años';
+    setTxt('chartRightTitle', 'Tus Metas en el Tiempo (Año 10 y Edad 60)');
+    setTxt('mile1Label', 'Capital al Año 10'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Puesto por ti en 10 años: ' + fmt(ahoAnual * 10));
+    setTxt('mile2Label', 'Retiro Anticipado (Edad 60)*'); setTxt('mile2Val', fmt(fondoFinal)); setTxt('mile2Sub', '0% de retención de impuestos');
+    setTxt('mile2PensionTag', '≈ ' + fmt(renta60) + '/mes a partir de tus 60 años');
 
-    if ($id('urgencyBar')){
-      $id('urgencyBar').innerHTML = '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Tu dinero genera <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> libres de impuestos.';
-    }
-
-    $id('protectionSumLabel').textContent = S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')';
+    setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Tu dinero genera <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> libres de impuestos.');
+    setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
 
     window.buildCombinedWhatsApp(0, fondoFinal, liq5, anosPago, renta60);
     return;
   }
 
-  // 4) MODO 100% DEVOLUCIÓN MÁXIMA DEL SAT (EDAD 65) — Coincide al peso con lo que vio en profesionistas.html
   var dedReal = Math.min(ahoAnual, topeFiscalActivo);
   var nuevoISR = calcISR(Math.max(0, ingAnual - dedReal)).isr;
   var devSAT = Math.round(Math.max(0, isrActual - nuevoISR));
@@ -1375,50 +1061,31 @@ window.syncAll = function(){
   var pctFin = ahoAnual > 0 ? Math.round((devSAT / ahoAnual) * 100) : 0;
   var renta65 = Math.round(fondoFinal * 0.0065);
 
-  $id('legalBadge').textContent = 'Máxima Devolución Anual del SAT (Escala ' + tasaPct + '%)';
-  $id('mainBoardTitle').innerHTML = pref + 'Estrategia Fiscal: <span>Máxima Devolución del SAT cada Abril</span>';
-  $id('mainBoardSub').textContent = 'Destinando el 100% de tus ' + fmt(S.ahorroMensual) + '/mes a la bolsa deducible para que el SAT te deposite el máximo efectivo posible cada abril.';
+  setTxt('legalBadge', 'Máxima Devolución Anual del SAT (Escala ' + tasaPct + '%)');
+  setHtml('mainBoardTitle', pref + 'Estrategia Fiscal: <span>Máxima Devolución del SAT cada Abril</span>');
+  setTxt('mainBoardSub', 'Destinando el 100% de tus ' + fmt(S.ahorroMensual) + '/mes a la bolsa deducible para que el SAT te deposite el máximo efectivo posible cada abril.');
 
-  $id('kpi1Title').textContent = '1. Impuesto anual que hoy pagas';
-  $id('kpi1Value').textContent = fmt(isrActual);
-  $id('kpi1Sub').textContent = 'Lo que se queda el SAT sin plan';
-  $id('kpi2Title').textContent = '2. Ahorro anual que deduces';
-  $id('kpi2Value').textContent = fmt(dedReal);
-  $id('kpi2Sub').textContent = 'Registrado a tu favor ante el SAT';
-  $id('kpi3Title').textContent = '3. Te regresa el SAT en abril';
-  $id('kpi3Value').textContent = '+' + fmt(devSAT);
-  $id('kpi3Sub').textContent = 'Efectivo anual en tu cuenta';
-  $id('kpi4Title').textContent = '4. Lo que realmente te cuesta';
-  $id('kpi4Value').textContent = fmt(invNeta) + '/mes';
-  $id('kpi4Sub').textContent = 'El SAT pone el ' + pctFin + '% de tu ahorro';
+  setTxt('kpi1Title', '1. Impuesto anual que hoy pagas'); setTxt('kpi1Value', fmt(isrActual)); setTxt('kpi1Sub', 'Lo que se queda el SAT sin plan');
+  setTxt('kpi2Title', '2. Ahorro anual que deduces'); setTxt('kpi2Value', fmt(dedReal)); setTxt('kpi2Sub', 'Registrado a tu favor ante el SAT');
+  setTxt('kpi3Title', '3. Te regresa el SAT en abril'); setTxt('kpi3Value', '+' + fmt(devSAT)); setTxt('kpi3Sub', 'Efectivo anual en tu cuenta');
+  setTxt('kpi4Title', '4. Lo que realmente te cuesta'); setTxt('kpi4Value', fmt(invNeta) + '/mes'); setTxt('kpi4Sub', 'El SAT pone el ' + pctFin + '% de tu ahorro');
 
   var pctN = isrActual > 0 ? Math.max(15, Math.round((nuevoISR / isrActual) * 100)) : 70;
-  $id('chartLeftTitle').textContent = 'Cuánto dinero recuperas del SAT cada año';
-  $id('efficiencyPct').textContent = 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal);
-  $id('bar1Label').textContent = 'Impuestos anuales si no haces nada antes del 31 de diciembre';
-  $id('bar1Val').textContent = fmt(isrActual) + ' MXN';
-  $id('bar1Fill').style.width = '100%';
-  $id('bar2Label').textContent = 'Impuesto reducido + Dinero que el SAT te deposita de vuelta';
-  $id('bar2Val').textContent = 'Recuperas +' + fmt(devSAT) + ' cada abril';
-  $id('bar2Fill').style.width = pctN + '%';
-  $id('bar2Gold').style.width = (100 - pctN) + '%';
-  $id('bannerExplain').innerHTML = 'Tú apartas <b>' + fmt(S.ahorroMensual) + '/mes</b>, y como el SAT te regresa <b>' + fmt(devMes) + '/mes</b>:';
-  $id('bannerNet').textContent = 'Tu esfuerzo neto real es de ' + fmt(invNeta) + '/mes';
+  setTxt('chartLeftTitle', 'Cuánto dinero recuperas del SAT cada año');
+  setTxt('efficiencyPct', 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal));
+  setTxt('bar1Label', 'Impuestos anuales si no haces nada antes del 31 de diciembre'); setTxt('bar1Val', fmt(isrActual) + ' MXN'); setW('bar1Fill', '100%');
+  setTxt('bar2Label', 'Impuesto reducido + Dinero que el SAT te deposita de vuelta'); setTxt('bar2Val', 'Recuperas +' + fmt(devSAT) + ' cada abril');
+  setW('bar2Fill', pctN + '%'); setW('bar2Gold', (100 - pctN) + '%');
+  setHtml('bannerExplain', 'Tú apartas <b>' + fmt(S.ahorroMensual) + '/mes</b>, y como el SAT te regresa <b>' + fmt(devMes) + '/mes</b>:');
+  setTxt('bannerNet', 'Tu esfuerzo neto real es de ' + fmt(invNeta) + '/mes');
 
-  $id('chartRightTitle').textContent = 'Tu Patrimonio Protegido (10 Años y Edad 65)';
-  $id('mile1Label').textContent = 'Juntas en 10 Años aprox';
-  $id('mile1Val').textContent = fmt(fondo10AnosTotal);
-  $id('mile1Sub').textContent = 'Tal como viste en tu cálculo inicial';
-  $id('mile2Label').textContent = 'Tu Fondo de Retiro (Edad 65)*';
-  $id('mile2Val').textContent = fmt(fondoFinal);
-  $id('mile2Sub').textContent = 'Creciendo arriba de la inflación';
-  if ($id('mile2PensionTag')) $id('mile2PensionTag').textContent = '≈ ' + fmt(renta65) + '/mes para tu retiro';
+  setTxt('chartRightTitle', 'Tu Patrimonio Protegido (10 Años y Edad 65)');
+  setTxt('mile1Label', 'Juntas en 10 Años aprox'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Tal como viste en tu cálculo inicial');
+  setTxt('mile2Label', 'Tu Fondo de Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondoFinal)); setTxt('mile2Sub', 'Creciendo arriba de la inflación');
+  setTxt('mile2PensionTag', '≈ ' + fmt(renta65) + '/mes para tu retiro');
 
-  if ($id('urgencyBar')){
-    $id('urgencyBar').innerHTML = '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> en tu retiro + tu devolución del SAT de este año.';
-  }
-
-  $id('protectionSumLabel').textContent = S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')';
+  setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> en tu retiro + tu devolución del SAT de este año.');
+  setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
 
   window.buildCombinedWhatsApp(devSAT, fondoFinal, fondo10AnosTotal, anosPago, renta65);
 };
@@ -1543,7 +1210,7 @@ window.searchFolio = function(){
     } else {
       var msg = $id('folioStatusMsg');
       if (msg){
-        msg.textContent = 'ℹ️ Ajusta los parámetros manualmente abajo.';
+        msg.textContent = 'ℹ️ Folio no encontrado; puedes mover las barras manualmente.';
         msg.style.display = 'block';
       }
     }
@@ -1593,7 +1260,7 @@ window.savePassesToSheets = async function(openPassWa){
       });
     } catch(e){}
   }
-  if (btn){ btn.disabled = false; btn.textContent = '✨ Registrar Pases y Enviar Invitación →'; }
+  if (btn){ btn.disabled = false; btn.textContent = '✨ Registrar Pases y Enviar Tarjeta de Invitación →'; }
   if (st) st.style.display = 'block';
 };
 
@@ -1607,14 +1274,8 @@ window.closeCalModal = function(){
   if (m) m.classList.remove('open');
 };
 
-window.addEventListener('DOMContentLoaded', function(){
-  try {
-    var raw = sessionStorage.getItem('santi_lead') || sessionStorage.getItem('santi_lead_data');
-    if (raw){
-      var parsed = JSON.parse(raw);
-      window.applyFolioData(parsed, parsed.lead || parsed.folio || '');
-    }
-  } catch(e){}
+/* Inicialización 100% limpia (funciona sin folio de inmediato) */
+(function initDashboard(){
   var params = new URLSearchParams(location.search);
   var fParam = params.get('folio') || params.get('lead');
   if (fParam){
@@ -1623,305 +1284,7 @@ window.addEventListener('DOMContentLoaded', function(){
   } else {
     window.syncAll();
   }
-});
+})();
 </script>
-</head>
-
-<body>
-
-<header class="header">
-  <div class="header-in">
-    <a class="brand" href="profesionistas.html">
-      <img src="logo-santi.png" width="30" height="30" alt="Santi te asesora"
-           onerror="this.onerror=null;this.src='https://www.santiteasesora.com/logo-santi.png';">
-      <span>Santi te asesora</span>
-      <span class="badge-top">Mesa de Diseño Patrimonial</span>
-    </a>
-
-    <div class="header-tools">
-      <span class="cnsf-pill">Agente Autorizado CNSF: <strong>C412676</strong></span>
-      <button type="button" class="reset-btn" onclick="window.clearClientForm()" title="Reiniciar datos">↺ Limpiar</button>
-    </div>
-  </div>
-</header>
-
-<main class="dashboard">
-
-  <!-- PANEL IZQUIERDO: CONTROLES EN VIVO -->
-  <aside class="panel">
-    <div class="panel-head">
-      <span class="panel-tag">1. Datos de tu Sesión</span>
-      <div class="folio-box">
-        <input type="text" id="folioInput" class="folio-input" placeholder="Folio (Opcional)" onkeydown="if(event.key==='Enter'){event.preventDefault();window.searchFolio();}">
-        <button type="button" class="btn-load" id="loadFolioBtn" onclick="window.searchFolio()">Cargar</button>
-      </div>
-    </div>
-
-    <div class="folio-msg" id="folioStatusMsg"></div>
-
-    <!-- Selector de Escenario -->
-    <div class="fgroup">
-      <span class="flabel">¿Qué opción vemos en pantalla?</span>
-      <div class="mode-grid" id="modeButtons">
-        <button type="button" class="mode-btn active" data-mode="hibrido" onclick="window.selectMode('hibrido')">
-          ⚖️ Plan en 2 Bolsillos
-          <small>Devolución SAT + Cuenta Libre</small>
-        </button>
-        <button type="button" class="mode-btn" data-mode="65" onclick="window.selectMode('65')">
-          💰 100% Devolución SAT
-          <small>Máximo reembolso en abril</small>
-        </button>
-        <button type="button" class="mode-btn" data-mode="60" onclick="window.selectMode('60')">
-          ✨ Retiro a los 60 / RESICO
-          <small>0% Impuestos desde los 60</small>
-        </button>
-        <button type="button" class="mode-btn" data-mode="gmm" onclick="window.selectMode('gmm')">
-          🏥 Salud Privada
-          <small>Alfa Medical ($170 MDP)</small>
-        </button>
-      </div>
-    </div>
-
-    <!-- Tarjeta de Metas del Cliente -->
-    <div class="identity-card" id="identityCardBox">
-      <div class="identity-head">
-        <span>🎯 Tus Prioridades Personales</span>
-        <span>A tu medida</span>
-      </div>
-      <div class="fgroup">
-        <label class="flabel" for="goalProjectSelect">1. ¿Para qué te gustaría tener tu Bolsillo Libre?</label>
-        <select id="goalProjectSelect" class="finput" onchange="window.syncAll()">
-          <option value="reserva" selected>🛡️ Fondo disponible en 3 a 5 años (Sin multas)</option>
-          <option value="libertad">✨ Retirarme antes (a los 60 años) con 0% impuestos</option>
-          <option value="depa">🏠 Enganche o compra de depa / casa</option>
-          <option value="negocio">🚀 Capital para negocio o proyecto propio</option>
-          <option value="educacion">🎓 Fondo educativo para mis hijos</option>
-        </select>
-      </div>
-      <div class="fgroup">
-        <label class="flabel" for="protectWhoSelect">2. ¿A quién protegemos desde el día 1?</label>
-        <select id="protectWhoSelect" class="finput" onchange="window.syncAll()">
-          <option value="👤 Mi propia independencia financiera" selected>👤 Mi propia tranquilidad e independencia</option>
-          <option value="❤️ Mi pareja y nuestro patrimonio">❤️ A mi pareja y nuestro patrimonio</option>
-          <option value="👨‍👩‍👧‍👦 El futuro y bienestar de mis hijos">👨‍👩‍👧‍👦 El futuro y bienestar de mis hijos</option>
-          <option value="🤍 La tranquilidad de mis padres">🤍 La tranquilidad de mis padres</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Slider 1: Ingreso Mensual + Switch de Aguinaldo / Bono -->
-    <div class="scard">
-      <div class="stop">
-        <span>Tu ingreso mensual aproximado</span>
-        <strong class="sval num" id="incomeLabel">$40,000</strong>
-      </div>
-      <input type="range" id="incomeSlider" class="relax-range" min="15000" max="250000" step="2500" value="40000" oninput="window.syncAll()" onchange="window.syncAll()">
-      <div class="ssub num">
-        <span>Anual: <strong id="annualIncomeLabel">$480,000 al año</strong></span>
-        <span>Tu escalón SAT: <strong id="marginalRateLabel">23.5%</strong></span>
-      </div>
-      <label class="bonus-toggle">
-        <input type="checkbox" id="bonusCheck" onchange="window.syncAll()">
-        <span>✨ Sumar <strong>Aguinaldo / Bonos</strong> (+1 mes al año)</span>
-      </label>
-    </div>
-
-    <!-- Slider 2: Ahorro Mensual Total -->
-    <div class="scard" id="saveSliderCard">
-      <div class="stop">
-        <span id="saveSliderTitle">Lo que te gustaría ahorrar al mes</span>
-        <strong class="sval num" id="saveLabel">$4,000</strong>
-      </div>
-      <input type="range" id="saveSlider" class="relax-range" min="2500" max="35000" step="500" value="4000" oninput="window.onSaveSliderManual()" onchange="window.onSaveSliderManual()">
-      <div class="ssub num">
-        <span>Anual: <strong id="annualSaveLabel">$48,000 al año</strong></span>
-        <span id="capPercentLabel">10.0% de tu ingreso</span>
-      </div>
-      <div class="age-floor-hint" id="ageFloorHint">Mínimo recomendado para 36 años: $2,500/mes</div>
-
-      <div class="prow">
-        <button type="button" class="pbtn" onclick="window.applyPreset(1)"><span>Base Cómoda</span><br><small id="lblPreset10">$3,000/mes</small></button>
-        <button type="button" class="pbtn active" onclick="window.applyPreset(2)"><span>10% Ideal SAT</span><br><small id="lblPreset151">$4,000/mes</small></button>
-        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Doble Bolsa Fiscal</span><br><small id="lblPresetMax">$16,500/mes</small></button>
-      </div>
-    </div>
-
-    <!-- Slider 3: DISTRIBUCIÓN DE LOS 2 BOLSILLOS -->
-    <div class="scard hybrid-split-card" id="hybridSplitCard">
-      <div class="stop">
-        <span>Cómo dividimos tus 2 Bolsillos</span>
-        <strong class="sval" id="hybridSplitLabel" style="font-size:12.5px">70% Bolsillo SAT / 30% Bolsillo Libre</strong>
-      </div>
-      <input type="range" id="hybridSplitSlider" class="relax-range" min="20" max="80" step="10" value="70" oninput="window.syncAll()" onchange="window.syncAll()">
-      <div class="ssub">
-        <span id="hybridPocket1Text" style="color:var(--em);font-weight:800">Bolsillo 1 (Con devolución SAT): $2,800/mes</span>
-        <span id="hybridPocket2Text" style="color:var(--charcoal);font-weight:800">Bolsillo 2 (Disponible / Retiro a los 60): $1,200/mes</span>
-      </div>
-      <div class="split-presets">
-        <button type="button" class="sp-btn" onclick="window.setSplitPreset(50)">50% / 50% Mitad y Mitad</button>
-        <button type="button" class="sp-btn" onclick="window.setSplitPreset(60)">60% / 40% Equilibrado</button>
-        <button type="button" class="sp-btn" onclick="window.setSplitPreset(70)">70% / 30% Más Devolución</button>
-      </div>
-    </div>
-
-    <!-- MÓDULO ALFA MEDICAL -->
-    <div class="gmm-discovery" id="gmmDiscoveryBox">
-      <div class="gmm-disc-head">
-        <span>🩺 Preferencias de Protección Médica</span>
-        <span>En Pesos MXN</span>
-      </div>
-
-      <div class="fgroup">
-        <label class="flabel" for="gmmWhoSelect">1. ¿A quiénes te gustaría proteger?</label>
-        <select id="gmmWhoSelect" class="finput" onchange="window.syncAll()">
-          <option value="Individual (Personal)" selected>👤 Protección Personal (Individual)</option>
-          <option value="Pareja (Titular y Cónyuge)">👫 A mi pareja y a mí</option>
-          <option value="Familiar (Con Hijos)">👨‍👩‍👧‍👦 Familia completa (Con hijos)</option>
-          <option value="Padres / Ascendientes">🤍 Proteger a mis padres</option>
-        </select>
-      </div>
-
-      <div class="fgroup">
-        <label class="flabel" for="gmmStatusSelect">2. ¿Cómo estás protegido(a) actualmente?</label>
-        <select id="gmmStatusSelect" class="finput" onchange="window.syncAll()">
-          <option value="Busco mi primera póliza privada" selected>🛡️ Busco iniciar mi primera póliza privada</option>
-          <option value="Cuento con prestación laboral (Busco respaldo propio)">💼 Tengo seguro en mi empresa (Quiero respaldo propio)</option>
-          <option value="Ya tengo póliza individual (Busco conservar antigüedad)">🔄 Ya tengo póliza privada (Conservar antigüedad)</option>
-        </select>
-      </div>
-
-      <div class="fgroup">
-        <label class="flabel" for="gmmHospSelect">3. ¿Qué hospitales de CDMX prefieres?</label>
-        <select id="gmmHospSelect" class="finput" onchange="window.syncAll()">
-          <option value="integro" selected>⭐ Español, Ángeles Metropolitano/Mocel/Acoxpa, San Ángel Inn</option>
-          <option value="pleno">💎 ABC Santa Fe/Observatorio, Médica Sur, Ángeles Pedregal/Lomas</option>
-          <option value="practico">🏥 Dalinde, Star Médica, San Ángel Inn Chapultepec</option>
-        </select>
-      </div>
-
-      <div class="gmm-note" id="gmmHospNote">
-        🏥 <b>Hospitales incluidos en este nivel:</b> Hospital Español, Ángeles Metropolitano, Ángeles Mocel, Ángeles Acoxpa, San Ángel Inn Universidad, Dalinde, HMG Coyoacán.
-      </div>
-    </div>
-
-    <div class="g2">
-      <div class="fgroup">
-        <label class="flabel" for="clientName">Nombre</label>
-        <input type="text" id="clientName" class="finput" value="" placeholder="Nombre..." autocomplete="off" oninput="window.syncAll()">
-      </div>
-      <div class="fgroup">
-        <label class="flabel" for="clientPhone">WhatsApp (10 dígitos)</label>
-        <input type="tel" id="clientPhone" class="finput num" value="" placeholder="55 1234 5678" autocomplete="off" oninput="window.syncAll()">
-      </div>
-    </div>
-
-    <div class="fgroup">
-      <label class="flabel" for="regimenSelect">Cómo recibes tus ingresos</label>
-      <select id="regimenSelect" class="finput" onchange="window.onRegimenChange(this.value)">
-        <option value="sueldos" selected>💼 Por Sueldo (Nómina)</option>
-        <option value="honorarios">🧾 Honorarios / Actividad Empresarial</option>
-        <option value="mixto">⚖️ Esquema Mixto (Sueldos + Facturación)</option>
-        <option value="resico">⚡ Estoy en RESICO</option>
-      </select>
-    </div>
-
-    <details class="extra-details" open>
-      <summary>Edad Exacta y Tarifa Preferencial</summary>
-      <div class="extra-body">
-        <div class="g2">
-          <div class="fgroup">
-            <label class="flabel" for="birthDate">Fecha de Nacimiento</label>
-            <input type="date" id="birthDate" class="finput" value="" onchange="window.onBirthChange(this.value)">
-          </div>
-          <div class="fgroup">
-            <label class="flabel" for="clientAge">Edad Actual</label>
-            <input type="number" id="clientAge" class="finput num" value="36" placeholder="Ej. 36" min="18" max="70" oninput="window.syncAll()" onchange="window.syncAll()">
-          </div>
-        </div>
-        <div class="g2">
-          <div class="fgroup">
-            <label class="flabel" for="smokerSelect">¿Fuma actualmente?</label>
-            <select id="smokerSelect" class="finput" onchange="window.syncAll()">
-              <option value="no">No Fuma (Tarifa Preferencial)</option>
-              <option value="si">Sí Fuma</option>
-            </select>
-          </div>
-          <div class="fgroup">
-            <label class="flabel" for="paymentTerm">Plazo de Ahorro</label>
-            <select id="paymentTerm" class="finput" onchange="window.syncAll()">
-              <option value="todos" selected>A mi ritmo durante el plan</option>
-              <option value="15">Plazo corto de 15 años</option>
-              <option value="10">Plazo corto de 10 años</option>
-            </select>
-          </div>
-        </div>
-        <div class="fgroup">
-          <label class="flabel" for="healthSelect">Estado de Salud</label>
-          <select id="healthSelect" class="finput" onchange="window.syncAll()">
-            <option value="Salud general sin antecedentes relevantes" selected>✓ Salud general sin antecedentes relevantes</option>
-            <option value="Revisar relación peso/estatura (IMC) en suscripción">⚖️ Revisar relación peso/estatura (IMC)</option>
-            <option value="Antecedente médico o cirugía (Requiere valoración)">🩺 Antecedente médico o cirugía</option>
-          </select>
-        </div>
-      </div>
-    </details>
-  </aside>
-
-  <!-- PANEL DERECHO: PIZARRA VISUAL EN VIVO -->
-  <section class="stage">
-
-    <div class="board">
-      <div class="bhead">
-        <div>
-          <h1 id="mainBoardTitle">Tu Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span></h1>
-          <p id="mainBoardSub">Dividimos tus $4,000/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.</p>
-        </div>
-        <span class="tbadge" id="legalBadge">Método de 2 Bolsillos · Devolución SAT + Liquidez</span>
-      </div>
-
-      <div class="gmm-links-bar" id="gmmLinksBar">
-        <span>🏥 Explora tus beneficios directamente en el portal oficial de Seguros Monterrey:</span>
-        <div class="gmm-btn-group">
-          <a href="https://www.mnyl.com.mx/seguros-individuales/medicos-a-tu-lado/medicos-a-tu-lado.aspx" target="_blank" rel="noopener" class="gmm-ext-link">
-            🩺 Programa "Médicos a tu Lado" ↗
-          </a>
-          <a href="https://www.mnyl.com.mx/medical-directory-search.aspx?plan=3&associatedplan=&estadosrepublica=CIUDAD%20DE%20M%c3%89XICO&text=" target="_blank" rel="noopener" class="gmm-ext-link alt">
-            🏥 Buscador de Hospitales CDMX ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- 4 TARJETAS KPI SIMPLES -->
-      <div class="kgrid">
-        <div class="kcard">
-          <small id="kpi1Title">1. Bolsillo 1 (Con devolución SAT)</small>
-          <b id="kpi1Value" class="num">$2,800/mes</b>
-          <span id="kpi1Sub">$33,600/año que deduces en abril</span>
-        </div>
-        <div class="kcard">
-          <small id="kpi2Title">2. Bolsillo 2 (Libre / Edad 60)</small>
-          <b id="kpi2Value" class="num">$1,200/mes</b>
-          <span id="kpi2Sub">Sin el candado de los 65 años</span>
-        </div>
-        <div class="kcard gain">
-          <small id="kpi3Title">3. Te regresa el SAT en abril</small>
-          <b id="kpi3Value" class="num">+$7,903</b>
-          <span id="kpi3Sub">Efectivo anual a tu favor</span>
-        </div>
-        <div class="kcard net">
-          <small id="kpi4Title">4. Lo que realmente te cuesta</small>
-          <b id="kpi4Value" class="num">$3,341/mes</b>
-          <span id="kpi4Sub">Descontando tu devolución del SAT</span>
-        </div>
-      </div>
-
-      <div class="vgrid">
-        <div class="cbox">
-          <div class="ctitle">
-            <span id="chartLeftTitle">Cómo se dividen tus $4,000/mes ($48,000/año)</span>
-            <span id="efficiencyPct" class="num">Juntas en 10 años aprox: ~$742,439</span>
-          </div>
-          <div class="bgroup">
-            <div class="blabel">
-              <span id="bar1Label">Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)</span>
-              <strong id="bar1Val" style="color:var(--ivory)">7
+</body>
+</html>
