@@ -32,22 +32,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* PALETA OFICIAL DE MARCA: SANTI TE ASESORA */
 :root{
-  --emerald:#145C52;      /* Verde profundo — Color insignia */
-  --gold:#D9A441;         /* Dorado — Chispa especial */
-  --ivory:#FFF5E3;        /* Marfil — Calidez y respiración */
-  --charcoal:#292C2B;     /* Carbón — Texto amable y profesional */
-  --sage:#A8C4B5;         /* Salvia — Cercanía y serenidad */
-  --sage-soft:#E6F0EC;    /* Fondo galería salvia suave */
-  --bg:#FBF7F0;           /* Base marfil luminoso */
-  --surface:#FFFFFF;
-  --muted:#555B59;
-  --line:#E4DDD0;
-  --r-2xl:26px;
-  --r-xl:22px;
-  --r-lg:16px;
-  --r-md:12px;
+  --emerald:#145C52;--gold:#D9A441;--ivory:#FFF5E3;--charcoal:#292C2B;
+  --sage:#A8C4B5;--sage-soft:#E6F0EC;--bg:#FBF7F0;--surface:#FFFFFF;
+  --muted:#555B59;--line:#E4DDD0;--r-2xl:26px;--r-xl:22px;--r-lg:16px;--r-md:12px;
   --shadow-soft:0 16px 36px -12px rgba(20,92,82,.14);
   --shadow-card:0 22px 46px -16px rgba(20,92,82,.18);
   --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
@@ -55,15 +43,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--font-sans);
-  color:var(--charcoal);
-  background-color:var(--bg);
-  line-height:1.55;
-  font-size:16px;
-  padding-bottom:84px;
-  -webkit-font-smoothing:antialiased;
-}
+body{font-family:var(--font-sans);color:var(--charcoal);background-color:var(--bg);line-height:1.55;font-size:16px;padding-bottom:84px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 button,input,select{font-family:inherit}
 button,select{cursor:pointer}
@@ -72,219 +52,46 @@ a{color:var(--emerald);text-decoration:none}
 .num{font-variant-numeric:tabular-nums}
 .serif-it{font-family:var(--font-serif);font-style:italic;font-weight:400}
 
-/* PORTADA FUSIÓN 4 (PANTALLA 1 CON ALMA Y AIRE) */
-.hero-cover-sec{
-  background:linear-gradient(180deg, var(--sage-soft) 0%, var(--bg) 100%);
-  padding:10px 14px 36px;
-}
-.topbar-clean{
-  max-width:1120px;
-  margin:0 auto;
-  padding:6px 4px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-.brand-row{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  color:var(--emerald);
-  font-weight:800;
-  font-size:15.5px;
-  letter-spacing:-.01em;
-  white-space:nowrap;
-}
+/* PORTADA FUSIÓN 4 */
+.hero-cover-sec{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 100%);padding:10px 14px 36px}
+.topbar-clean{max-width:1120px;margin:0 auto;padding:6px 4px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand-row{display:flex;align-items:center;gap:9px;color:var(--emerald);font-weight:800;font-size:15.5px;letter-spacing:-.01em;white-space:nowrap}
 .brand-logo{width:28px;height:28px;border-radius:7px;object-fit:contain;flex-shrink:0}
 .topnav{display:none;align-items:center;gap:22px;font-size:13.5px;font-weight:600;color:var(--muted)}
 .topnav a{color:var(--muted);transition:color .15s}
 .topnav a:hover{color:var(--emerald)}
 @media(min-width:880px){.topnav{display:flex}}
-.top-pill{
-  background:var(--gold);
-  color:var(--charcoal);
-  font-size:12px;
-  font-weight:800;
-  padding:8px 14px;
-  border-radius:999px;
-  border:none;
-  white-space:nowrap;
-  box-shadow:0 4px 12px rgba(217,164,65,.3);
-}
+.top-pill{background:var(--gold);color:var(--charcoal);font-size:12px;font-weight:800;padding:8px 14px;border-radius:999px;border:none;white-space:nowrap;box-shadow:0 4px 12px rgba(217,164,65,.3)}
 
-.hero-stage{
-  max-width:1120px;
-  margin:0 auto;
-  display:grid;
-  gap:28px;
-}
-@media(min-width:940px){
-  .hero-stage{
-    grid-template-columns:1fr 1.04fr;
-    align-items:start;
-    gap:38px;
-    padding-top:12px;
-  }
-}
+.hero-stage{max-width:1120px;margin:0 auto;display:grid;gap:28px}
+@media(min-width:940px){.hero-stage{grid-template-columns:1fr 1.04fr;align-items:start;gap:38px;padding-top:12px}}
 
-/* TARJETA PORTADA FUSIÓN 4 */
-.f4-card{
-  background:var(--ivory);
-  border-radius:var(--r-2xl);
-  overflow:hidden;
-  border:2.5px solid #FFFFFF;
-  box-shadow:var(--shadow-soft);
-  display:flex;
-  flex-direction:column;
-  max-width:480px;
-  margin:0 auto;
-  width:100%;
-}
-.f4-img{
-  position:relative;
-  height:clamp(290px, 46vh, 360px);
-  width:100%;
-  background:var(--sage);
-}
-.f4-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:50% 18%;
-}
-.f4-img::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg, transparent 52%, rgba(255,245,227,.82) 84%, var(--ivory) 100%);
-}
-.f4-video-pill{
-  position:absolute;
-  top:14px;
-  right:14px;
-  z-index:2;
-  background:rgba(41,44,43,.72);
-  backdrop-filter:blur(8px);
-  border:1px solid var(--gold);
-  color:var(--ivory);
-  font-size:11.5px;
-  font-weight:700;
-  padding:6px 12px;
-  border-radius:999px;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
+.f4-card{background:var(--ivory);border-radius:var(--r-2xl);overflow:hidden;border:2.5px solid #FFF;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;max-width:480px;margin:0 auto;width:100%}
+.f4-img{position:relative;height:clamp(285px,45vh,355px);width:100%;background:var(--sage)}
+.f4-img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.f4-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(255,245,227,.82) 84%,var(--ivory) 100%)}
+.f4-video-pill{position:absolute;top:14px;right:14px;z-index:2;background:rgba(41,44,43,.72);backdrop-filter:blur(8px);border:1px solid var(--gold);color:var(--ivory);font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
 .f4-video-pill span{color:var(--gold);font-size:10px}
 
-.f4-txt{
-  padding:2px 22px 24px;
-  margin-top:-18px;
-  position:relative;
-  z-index:2;
-}
-.f4-kicker{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--emerald);
-  margin-bottom:6px;
-  display:inline-block;
-}
+.f4-txt{padding:2px 22px 24px;margin-top:-18px;position:relative;z-index:2}
+.f4-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:6px;display:inline-block}
 .f4-kicker-link{color:var(--emerald);text-decoration:underline;text-decoration-color:var(--gold)}
-.f4-txt h1{
-  font-size:clamp(30px, 7.5vw, 36px);
-  line-height:1.06;
-  font-weight:800;
-  color:var(--charcoal);
-  letter-spacing:-.02em;
-}
-.f4-txt h1 .serif-it{
-  color:var(--emerald);
-  font-size:clamp(34px, 8.2vw, 40px);
-}
-.f4-txt p{
-  font-size:14.5px;
-  color:var(--muted);
-  margin:10px 0 18px;
-  line-height:1.48;
-}
-.btn-gold-hero{
-  width:100%;
-  min-height:52px;
-  background:var(--gold);
-  color:var(--charcoal);
-  border:none;
-  border-radius:14px;
-  font-size:15px;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  box-shadow:0 8px 20px -6px rgba(217,164,65,.55);
-  transition:transform .15s, background .15s;
-}
+.f4-txt h1{font-size:clamp(30px,7.5vw,36px);line-height:1.06;font-weight:800;color:var(--charcoal);letter-spacing:-.02em}
+.f4-txt h1 .serif-it{color:var(--emerald);font-size:clamp(34px,8.2vw,40px)}
+.f4-txt p{font-size:14.5px;color:var(--muted);margin:10px 0 18px;line-height:1.48}
+.btn-gold-hero{width:100%;min-height:52px;background:var(--gold);color:var(--charcoal);border:none;border-radius:14px;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px -6px rgba(217,164,65,.55);transition:transform .15s}
 .btn-gold-hero:hover{transform:translateY(-1px)}
-.btn-ghost-hero{
-  width:100%;
-  min-height:46px;
-  background:rgba(20,92,82,.06);
-  color:var(--emerald);
-  border:1.5px solid var(--sage);
-  border-radius:14px;
-  font-size:13.5px;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-top:9px;
-}
+.btn-ghost-hero{width:100%;min-height:46px;background:rgba(20,92,82,.07);color:var(--emerald);border:1.5px solid var(--sage);border-radius:14px;font-size:13.5px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:9px}
+.btn-ghost-hero:hover{background:var(--sage-soft);border-color:var(--emerald)}
 
-/* SIMULADOR RELAX Y AGRADABLE */
-.quiz-card{
-  background:var(--surface);
-  border:1.5px solid var(--sage);
-  border-radius:var(--r-2xl);
-  overflow:hidden;
-  box-shadow:var(--shadow-card);
-  scroll-margin-top:18px;
-  max-width:520px;
-  margin:0 auto;
-  width:100%;
-}
-
-.quiz-top{
-  background:var(--ivory);
-  border-bottom:1px solid var(--line);
-  padding:16px 20px 14px;
-}
-.prog-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:11.5px;
-  font-weight:700;
-  color:var(--muted);
-  margin-bottom:7px;
-}
+/* TARJETA SIMULADOR Y VÍA RÁPIDA */
+.quiz-card{background:var(--surface);border:1.5px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:18px;max-width:520px;margin:0 auto;width:100%}
+.quiz-top{background:var(--ivory);border-bottom:1px solid var(--line);padding:16px 20px 14px}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:7px}
 .prog-meta span:first-child{color:var(--emerald);font-weight:800}
 .prog-meta span:last-child{background:var(--sage-soft);color:var(--emerald);padding:2px 8px;border-radius:999px;font-weight:800}
-.prog-bar{
-  height:5px;
-  background:#E7DFD1;
-  border-radius:999px;
-  overflow:hidden;
-}
-.prog-fill{
-  height:100%;
-  width:25%;
-  background:linear-gradient(90deg, var(--emerald), var(--sage));
-  border-radius:999px;
-  transition:width .35s ease;
-}
+.prog-bar{height:5px;background:#E7DFD1;border-radius:999px;overflow:hidden}
+.prog-fill{height:100%;width:25%;background:linear-gradient(90deg,var(--emerald),var(--sage));border-radius:999px;transition:width .35s ease}
 
 .quiz-body{padding:22px 18px 24px;background:var(--surface)}
 @media(min-width:640px){.quiz-body{padding:26px 24px 28px}}
@@ -298,30 +105,14 @@ a{color:var(--emerald);text-decoration:none}
 
 .opt-grid{display:grid;gap:10px;margin-top:16px}
 .opt-grid.two-col{grid-template-columns:1fr 1fr}
-.opt-btn{
-  width:100%;
-  background:var(--bg);
-  border:1.5px solid var(--line);
-  border-radius:var(--r-lg);
-  padding:15px 14px;
-  text-align:left;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  transition:all .18s ease;
-}
+.opt-btn{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:15px 14px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:8px;transition:all .18s ease}
 .opt-btn:hover,.opt-btn:active{border-color:var(--emerald);background:var(--sage-soft);transform:translateY(-1px)}
 .opt-btn b{display:block;font-size:14.5px;color:var(--charcoal);font-weight:800;line-height:1.2}
 .opt-btn small{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-weight:500}
-.opt-arrow{
-  width:26px;height:26px;border-radius:50%;
-  background:#fff;border:1px solid var(--sage);color:var(--emerald);
-  display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;
-}
+.opt-arrow{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--sage);color:var(--emerald);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
 .opt-btn:hover .opt-arrow{background:var(--emerald);color:#fff;border-color:var(--emerald)}
 
-/* PASO 2: CONTROLES DE BARRA "RELAX" */
+/* CONTROLES DE BARRA "RELAX" */
 .relax-sliders{display:grid;gap:18px;margin-top:16px}
 .r-slider-box{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 16px 14px}
 .r-slider-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}
@@ -329,38 +120,30 @@ a{color:var(--emerald);text-decoration:none}
 .r-val-clean{font-size:21px;font-weight:800;color:var(--emerald);letter-spacing:-.02em}
 .r-val-clean small{font-size:12.5px;font-weight:600;color:var(--muted)}
 
-input[type="range"].relax-range{
-  -webkit-appearance:none;appearance:none;width:100%;height:5px;
-  background:#E2DBD0;border-radius:999px;outline:none;margin:8px 0 10px;touch-action:manipulation;
-}
-input[type="range"].relax-range::-webkit-slider-thumb{
-  -webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
-  background:#FFFFFF;border:2.5px solid var(--emerald);box-shadow:0 3px 10px rgba(20,92,82,.22);
-  cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
-}
-input[type="range"].relax-range::-webkit-slider-thumb:active{
-  transform:scale(1.12);background:var(--ivory);box-shadow:0 4px 14px rgba(20,92,82,.32);
-}
-input[type="range"].relax-range::-moz-range-thumb{
-  width:22px;height:22px;border-radius:50%;background:#FFFFFF;border:2.5px solid var(--emerald);
-  box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer;
-}
+input[type="range"].relax-range{-webkit-appearance:none;appearance:none;width:100%;height:5px;background:#E2DBD0;border-radius:999px;outline:none;margin:8px 0 10px;touch-action:manipulation}
+input[type="range"].relax-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--emerald);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer;transition:transform .15s}
+input[type="range"].relax-range::-webkit-slider-thumb:active{transform:scale(1.12);background:var(--ivory)}
+input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--emerald);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer}
 
 .r-scale{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:#7A827F}
 .cap-link-soft{background:var(--sage-soft);border:none;color:var(--emerald);font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
 
-.step-next-btn{
-  width:100%;min-height:52px;margin-top:16px;background:var(--emerald);color:#fff;
-  border:none;border-radius:14px;font-size:15px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 18px -6px rgba(20,92,82,.35);
-}
+.step-next-btn{width:100%;min-height:52px;margin-top:16px;background:var(--emerald);color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 18px -6px rgba(20,92,82,.35)}
 .back-link{display:inline-block;margin-top:12px;background:none;border:none;color:var(--muted);font-size:12.5px;font-weight:600;text-decoration:underline}
 
-/* PASO 4: DESBLOQUEO */
+/* PASO 4 Y VÍA RÁPIDA DE CONTACTO DIRECTO */
 .ready-banner{background:var(--sage-soft);border:1px solid var(--sage);border-radius:var(--r-lg);padding:13px 15px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .ready-banner span.ico{font-size:20px}
 .ready-banner div{font-size:13px;color:var(--charcoal);line-height:1.4}
 .ready-banner strong{color:var(--emerald)}
+
+.fast-budget-box{display:none;margin-bottom:14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:12px}
+.fast-budget-box.show{display:block}
+.fb-label{display:block;font-size:11.5px;font-weight:800;color:var(--charcoal);margin-bottom:8px}
+.fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fb-btn{background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:8px 8px;font-size:12px;font-weight:700;color:var(--charcoal);text-align:center;line-height:1.2}
+.fb-btn small{display:block;font-size:10px;color:var(--muted);font-weight:500;margin-top:2px}
+.fb-btn.active{border-color:var(--emerald);background:var(--sage-soft);color:var(--emerald);font-weight:800}
 
 .field-stack{display:grid;gap:11px;margin-top:12px}
 .field label{display:block;font-size:12px;font-weight:700;color:var(--charcoal);margin-bottom:4px}
@@ -528,12 +311,12 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <a href="#casos">Caso real</a>
       <a href="#dudas">Dudas</a>
     </nav>
-    <button type="button" class="top-pill" id="headerCtaBtn">Calcular y cotizar →</button>
+    <button type="button" class="top-pill" id="headerCtaBtn">Agendar directo →</button>
   </header>
 
   <div class="hero-stage">
 
-    <!-- PANTALLA 1 EN MÓVIL: PORTADA FUSIÓN 4 -->
+    <!-- PANTALLA 1 EN MÓVIL: PORTADA FUSIÓN 4 CON DOBLE VÍA -->
     <div class="f4-card">
       <div class="f4-img">
         <img src="santi-perfil.jpg" alt="Santiago · Santi te asesora"
@@ -549,11 +332,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         <h1>Construye un retiro libre de <span class="serif-it">impuestos.</span></h1>
         <p>Una cuenta para que el SAT te regrese dinero cada abril y otra disponible para tus metas o retiro a los 60 años.</p>
         <button type="button" class="btn-gold-hero" id="heroCalcBtn">Calcular y cotizar mi plan →</button>
-        <a href="#arquitectura" class="btn-ghost-hero">Ver cómo funciona</a>
+        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">📅 Ya quiero contratar: Agendar directo →</button>
       </div>
     </div>
 
-    <!-- PANTALLA 2 EN MÓVIL: SIMULADOR RELAX DE 3 PASOS -->
+    <!-- PANTALLA 2 EN MÓVIL: SIMULADOR RELAX O PASE DIRECTO A AGENDA -->
     <div class="quiz-card" id="formulario">
       <div class="quiz-top">
         <div class="prog-meta">
@@ -656,12 +439,34 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <button type="button" class="back-link" data-go-back="2">← Ajustar mi ingreso o ahorro</button>
           </div>
 
-          <!-- PASO 4: NOMBRE Y WHATSAPP PARA DESTAPAR -->
+          <!-- PASO 4: CAPTURA DE NOMBRE Y WHATSAPP (SIN AUTO-ABRIR EL TECLADO EN CELULAR) -->
           <div class="q-step" id="step4">
             <div class="ready-banner">
-              <span class="ico">✨</span>
+              <span class="ico" id="step4BannerIcon">✨</span>
               <div id="readySummaryText">
                 <strong>¡Tu cálculo para $40,000/mes está listo!</strong> Escribe tu nombre y WhatsApp para ver tu resultado y cotización aquí mismo:
+              </div>
+            </div>
+
+            <div class="fast-budget-box" id="fastTrackBudgetBox">
+              <span class="fb-label">¿Con qué rango mensual planeas iniciar tu Plan de Retiro?</span>
+              <div class="fb-grid" id="fastBudgetBtns">
+                <button type="button" class="fb-btn active" data-fb-save="3500" data-fb-inc="40000" data-fb-age="33-39">
+                  $2,500 a $4,000/mes
+                  <small>Plan estándar</small>
+                </button>
+                <button type="button" class="fb-btn" data-fb-save="6000" data-fb-inc="65000" data-fb-age="33-39">
+                  $4,500 a $10,000+/mes
+                  <small>Máxima deducción</small>
+                </button>
+                <button type="button" class="fb-btn" data-fb-save="2000" data-fb-inc="30000" data-fb-age="25-32">
+                  $1,500 a $2,000/mes
+                  <small>Tengo 25 a 32 años</small>
+                </button>
+                <button type="button" class="fb-btn" data-fb-save="1000" data-fb-inc="18000" data-fb-age="25-32">
+                  Menos de $1,500/mes
+                  <small>Quiero orientación</small>
+                </button>
               </div>
             </div>
 
@@ -694,7 +499,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <p class="consent-mini">
               Tus datos son privados conforme a nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>. Cero llamadas molestas.
             </p>
-            <button type="button" class="back-link" data-go-back="2">← Ajustar mi ingreso o ahorro</button>
+            <button type="button" class="back-link" id="step4BackBtn" data-go-back="2">← Ajustar mi ingreso o ahorro</button>
           </div>
 
           <!-- PASO 5: RESULTADO DESTAPADO + AGENDA INTEGRADA -->
@@ -723,7 +528,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
 
             <div class="sched-box">
-              <span class="sched-lbl">¿En qué horario te acomoda que te explique tu plan en 20 min?</span>
+              <span class="sched-lbl">¿En qué horario te acomoda que revisemos tu cotización (20 min)?</span>
               <div class="slots-grid" id="slotButtons">
                 <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<small>9:00 a 12:00 hrs</small></button>
                 <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<small>12:00 a 15:00 hrs</small></button>
@@ -759,7 +564,6 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
   </div>
 
-  <!-- 3 BENEFICIOS RÁPIDOS -->
   <div class="pillars-wrap">
     <div class="hero-pillars">
       <div class="hp-item">
@@ -773,9 +577,9 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         <p>Una cuenta para deducir impuestos (a los 65) y otra libre de impuestos desde los 60 años o disponible en 3 a 5 años.</p>
       </div>
       <div class="hp-item">
-        <div class="hp-num">03 · Tarifa preferencial</div>
+        <div class="hp-num">03 · Protección incluida</div>
         <h3>Tu futuro garantizado</h3>
-        <p>Las mujeres y no fumadores pagan menos por su protección. Y si una enfermedad te impide trabajar, Seguros Monterrey paga el plan por ti.</p>
+        <p>Tu ahorro crece arriba de la inflación y, si una enfermedad o accidente te impide trabajar, Seguros Monterrey paga el plan por ti.</p>
       </div>
     </div>
   </div>
@@ -964,7 +768,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <details class="faq-item">
         <summary>¿De qué depende el monto mínimo mensual para empezar?</summary>
         <div class="faq-ans">
-          <p>Depende de tu edad actual, tu salud y si fumas o no fumas (las mujeres y personas que no fuman tienen un costo más bajo en Seguros Monterrey). Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
+          <p>Depende de tu edad actual, tu salud y si fumas o no fumas. Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
         </div>
       </details>
 
@@ -1007,7 +811,6 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
   </div>
 </footer>
 
-<!-- BARRA FLOTANTE INFERIOR -->
 <div class="sticky-bar off" id="stickyBar">
   <div class="sticky-in">
     <div>
@@ -1047,7 +850,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <p><strong>Responsable:</strong> Santiago (Santi te asesora), agente de seguros autorizado con cédula CNSF C412676.</p>
       <p><strong>¿Para qué usamos tus datos?</strong> Para mostrarte tu estimación personalizada de devolución de impuestos y ahorro, y compartirte los detalles por WhatsApp sin llamadas invasivas.</p>
     </div>
-    <div class="d-foot"><span></span><a href="#formulario" class="btn-close" data-close-modal>Entendido</a></div>
+    <div class="d-foot"><span></span><a href="#formulario" data-close-modal>Entendido</a></div>
   </div>
 </div>
 
@@ -1092,7 +895,7 @@ const ISR_TABLE = [
   [668840.15,   125485.07,  0.3000],
   [1276925.99,  307910.81,  0.3200],
   [1702567.98,  444116.23,  0.3400],
-  [5107703.93,  1601862.46,  0.3500]
+  [5107703.93,  1601862.46, 0.3500]
 ];
 
 const $ = id => document.getElementById(id);
@@ -1102,6 +905,7 @@ function lsSet(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e
 
 const state = {
   currentStep: 1,
+  fastTrack: false,
   mode: 'deducible',
   regimeLabel: 'Sueldo u Honorarios',
   ageRange: '33-39',
@@ -1159,11 +963,11 @@ function recalculateNumbers(){
   savingSlider.min = String(minAllowed);
   savingSlider.max = String(maxSliderVal);
 
-  if (!state.userTouchedSaving){
+  if (!state.userTouchedSaving && !state.fastTrack){
     const suggested = Math.round((state.income * 0.10) / 500) * 500;
     state.monthlySaving = Math.max(minAllowed, Math.min(maxSliderVal, Math.max(minAllowed, suggested)));
     savingSlider.value = String(state.monthlySaving);
-  } else {
+  } else if (!state.fastTrack){
     if (state.monthlySaving < minAllowed){
       state.monthlySaving = minAllowed;
       savingSlider.value = String(state.monthlySaving);
@@ -1196,21 +1000,25 @@ function recalculateNumbers(){
   updateHiddenCalc();
 }
 
-function goToStep(stepNum){
+function goToStep(stepNum, isDirectBook){
   state.currentStep = stepNum;
+  state.fastTrack = !!isDirectBook;
+
   for (let i = 1; i <= 5; i++){
     const el = $('step' + i);
     if (el) el.classList.toggle('active', i === stepNum);
   }
+
   const pctMap = { 1: 28, 2: 60, 3: 85, 4: 95, 5: 100 };
-  const badgeMap = { 1: 'Paso 1 / 3', 2: 'Paso 2 / 3', 3: 'Paso 3 / 3', 4: 'Último paso', 5: 'Completado' };
+  const badgeMap = { 1: 'Paso 1 / 3', 2: 'Paso 2 / 3', 3: 'Paso 3 / 3', 4: isDirectBook ? 'Pase Directo' : 'Último paso', 5: 'Completado' };
   const txtMap = {
     1: 'Paso 1 de 3 · Tu edad',
     2: 'Paso 2 de 3 · Tus números',
     3: 'Paso 3 de 3 · Cómo te pagan',
-    4: '¡Cálculo listo! · Destapa tus números',
-    5: '✓ Resultado desbloqueado'
+    4: isDirectBook ? '📅 Agendar asesoría y cotización directa' : '¡Cálculo listo! · Destapa tus números',
+    5: '✓ Resultado y Agenda'
   };
+
   $('progFill').style.width = (pctMap[stepNum] || 100) + '%';
   $('progPctText').textContent = badgeMap[stepNum] || '';
   $('progStepText').textContent = txtMap[stepNum] || '';
@@ -1221,13 +1029,29 @@ function goToStep(stepNum){
 
   if (stepNum === 4){
     recalculateNumbers();
-    $('readySummaryText').innerHTML = '<strong>¡Tu cálculo para ' + money(state.income) + '/mes y ' + money(state.monthlySaving) + '/mes de ahorro está listo!</strong> Escribe tu nombre y WhatsApp para ver tu resultado y cotización aquí mismo:';
-    setTimeout(() => { if ($('formNombre')) $('formNombre').focus({ preventScroll: true }); }, 200);
+    if (isDirectBook){
+      $('step4BannerIcon').textContent = '📅';
+      $('readySummaryText').innerHTML = '<strong>Pase directo para cotizar y agendar:</strong> Elige tu rango de ahorro e ingresa tus datos para abrir los horarios disponibles:';
+      $('fastTrackBudgetBox').classList.add('show');
+      $('formSubmitBtn').textContent = 'Continuar a elegir mi horario →';
+      $('step4BackBtn').textContent = '← O prefiero usar primero la calculadora';
+      $('step4BackBtn').setAttribute('data-go-back', '1');
+      $('formOrigen').value = 'Landing Fusion 4 Agenda Directa';
+    } else {
+      $('step4BannerIcon').textContent = '✨';
+      $('readySummaryText').innerHTML = '<strong>¡Tu cálculo para ' + money(state.income) + '/mes y ' + money(state.monthlySaving) + '/mes de ahorro está listo!</strong> Escribe tu nombre y WhatsApp para ver tu resultado y cotización aquí mismo:';
+      $('fastTrackBudgetBox').classList.remove('show');
+      $('formSubmitBtn').textContent = 'Calcular y cotizar mi plan ahora →';
+      $('step4BackBtn').textContent = '← Ajustar mi ingreso o ahorro';
+      $('step4BackBtn').setAttribute('data-go-back', '2');
+      $('formOrigen').value = 'Landing Fusion 4 Simulador';
+    }
+    /* CERO AUTO-FOCUS AQUÍ PARA QUE EL TECLADO NO SALTE SOLO NI TAPE LA PANTALLA EN MÓVIL */
   }
 }
 
 function isLeadQualified(){
-  return state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= state.minSavingByAge;
+  return state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= 1500;
 }
 
 function updateStep5WhatsAppLinks(){
@@ -1242,12 +1066,12 @@ function updateStep5WhatsAppLinks(){
   const msgWa = [
     `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
-    `Acabo de calcular y cotizar mi plan en tu página:`,
+    `Quiero cotizar mi Plan Personal de Retiro contigo:`,
     `• *Edad:* ${state.ageRange} años`,
     `• *Ingreso aprox:* ${money(state.income)}/mes`,
     `• *Ahorro planeado:* ${money(state.monthlySaving)}/mes`,
     `• *Esquema:* ${state.regimeLabel}`,
-    `• *Resultado:* ${beneficioTxt}`,
+    `• *Estimación:* ${beneficioTxt}`,
     `• *Horario preferido:* ${state.selectedSlot} (${dayPref})`,
     ``,
     `¿Qué espacio tienes disponible para revisar mi cotización?`
@@ -1258,9 +1082,8 @@ function updateStep5WhatsAppLinks(){
     ``,
     `✅ *Ya reservé mi día y hora en tu Google Calendar.*`,
     `• *Edad:* ${state.ageRange} años`,
-    `• *Ingreso aprox:* ${money(state.income)}/mes`,
     `• *Ahorro planeado:* ${money(state.monthlySaving)}/mes`,
-    `• *Resultado:* ${beneficioTxt}`,
+    `• *Estimación:* ${beneficioTxt}`,
     ``,
     `Te dejo abierto este chat para nuestra plática.`
   ].join('\n');
@@ -1275,7 +1098,7 @@ function renderStep5Unlocked(nombre){
   recalculateNumbers();
   state.leadName = nombre.trim();
   const firstName = state.leadName.split(/\s+/)[0];
-  $('resGreetingTitle').textContent = `${firstName}, aquí tienes tu resultado`;
+  $('resGreetingTitle').textContent = `${firstName}, aquí tienes tu resumen y horarios`;
   $('resFolioBadge').textContent = 'Folio #' + (currentLeadId || 'SANTI');
 
   const annualSaving = state.monthlySaving * 12;
@@ -1319,7 +1142,7 @@ function renderStep5Unlocked(nombre){
     setTimeout(() => {
       const f = $('googleCalIframe');
       if (f && !f.src) f.src = CONFIG.GOOGLE_CALENDAR_EMBED_URL;
-    }, 300);
+    }, 250);
   }
 
   updateStep5WhatsAppLinks();
@@ -1364,6 +1187,7 @@ function updateHiddenCalc(){
   const ahorro = money(state.monthlySaving) + '/mes';
   const qualified = isLeadQualified();
   const qualTag = qualified ? '[CALIFICADO]' : '[NO CALIFICADO]';
+  const viaTag = state.fastTrack ? '[AGENDA DIRECTA]' : '[SIMULADOR]';
   const ids = getClickIds();
   const clickId = ids.gclid || ids.wbraid || ids.gbraid;
   const gclidPart = clickId ? ' | GCLID: ' + clickId : '';
@@ -1371,7 +1195,7 @@ function updateHiddenCalc(){
     ? 'Proyección 10a (Retiro 60): ' + money(state.tenYearCapital) + ' MXN'
     : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Cuenta 2 Anual: ' + money(state.flexibleAnnual) + ' | Fondo 10a: ' + money(state.tenYearCapital) + ' MXN';
 
-  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años (Base ' + money(state.minSavingByAge) + ') | Ingreso: ' + ingreso + ' | Ahorro: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
+  $('calcEstimadoHidden').value = qualTag + ' ' + viaTag + ' Edad: ' + state.ageRange + ' años | Ingreso: ' + ingreso + ' | Ahorro: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
 }
 
 function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
@@ -1417,7 +1241,7 @@ function trackConversionIfQualified(leadId, qualified, waDigits){
       gtag('set', 'user_data', { phone_number: '+52' + waDigits });
     }
     gtag('event', 'generate_lead', Object.assign({
-      event_category: 'Diagnostico_Fusion4_Relax',
+      event_category: state.fastTrack ? 'Agenda_Directa_Hero' : 'Simulador_3_Pasos',
       event_label: 'Lead_Calificado_' + state.ageRange
     }, base));
 
@@ -1443,7 +1267,7 @@ async function handleSubmit(ev){
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu resultado.'); $('formNombre').focus(); return; }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para continuar.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa los 10 dígitos de tu WhatsApp (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
 
@@ -1474,7 +1298,7 @@ async function handleSubmit(ev){
   };
 
   renderStep5Unlocked(nombre);
-  goToStep(5);
+  goToStep(5, false);
   $('stickyBar').classList.add('off');
 
   queueLead(payload);
@@ -1525,6 +1349,11 @@ function scrollToSimulator(){
   if (quiz) quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function openDirectBookFlow(){
+  goToStep(4, true);
+  scrollToSimulator();
+}
+
 function setupStickyBar(){
   const bar = $('stickyBar'), quiz = $('formulario');
   if (!bar || !quiz) return;
@@ -1544,8 +1373,12 @@ function setupStickyBar(){
   checkScroll();
 
   $('stickyBtn').addEventListener('click', scrollToSimulator);
-  $('headerCtaBtn').addEventListener('click', scrollToSimulator);
-  $('heroCalcBtn').addEventListener('click', scrollToSimulator);
+  $('heroCalcBtn').addEventListener('click', () => {
+    goToStep(1, false);
+    scrollToSimulator();
+  });
+  $('heroDirectBookBtn').addEventListener('click', openDirectBookFlow);
+  $('headerCtaBtn').addEventListener('click', openDirectBookFlow);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1555,7 +1388,18 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       state.ageRange = btn.getAttribute('data-step1-age');
       state.minSavingByAge = parseFloat(btn.getAttribute('data-min')) || 2500;
-      goToStep(2);
+      goToStep(2, false);
+    });
+  });
+
+  document.querySelectorAll('#fastBudgetBtns .fb-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#fastBudgetBtns .fb-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.monthlySaving = parseFloat(btn.getAttribute('data-fb-save')) || 3500;
+      state.income = parseFloat(btn.getAttribute('data-fb-inc')) || 40000;
+      state.ageRange = btn.getAttribute('data-fb-age') || '33-39';
+      recalculateNumbers();
     });
   });
 
@@ -1580,7 +1424,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('toStep3Btn').addEventListener('click', () => {
-    goToStep(3);
+    goToStep(3, false);
   });
 
   document.querySelectorAll('[data-step3-mode]').forEach(btn => {
@@ -1591,13 +1435,13 @@ document.addEventListener('DOMContentLoaded', () => {
       $('prioridadHidden').value = state.mode === 'resico'
         ? 'Retiro a los 60 Libre de Impuestos (RESICO)'
         : 'Devolución SAT + 2 Cuentas';
-      goToStep(4);
+      goToStep(4, false);
     });
   });
 
   document.querySelectorAll('[data-go-back]').forEach(btn => {
     btn.addEventListener('click', () => {
-      goToStep(parseInt(btn.getAttribute('data-go-back'), 10));
+      goToStep(parseInt(btn.getAttribute('data-go-back'), 10), false);
     });
   });
 
