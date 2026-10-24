@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#145C52">
+<meta name="theme-color" content="#A8C4B5">
 <title>Mesa de Diseño Patrimonial en Vivo | Santi te asesora</title>
 <link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +14,20 @@
 <style>
 :root{
   --em:#145C52;--em-dark:#0E443C;--gold:#D9A441;--gold-hover:#E5B352;
-  --ivory:#FFF5E3;--charcoal:#292C2B;--sage:#A8C4B5;--sage-soft:#E6F0EC;
+  --ivory:#FFF5E3;--charcoal:#292C2B;--sage:#A8C4B5;--sage-deep:#8FB2A0;--sage-soft:#E6F0EC;
   --bg:#FBF7F0;--surface:#FFFFFF;--muted:#555B59;--line:#E4DDD0;
   --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
   --font-serif:"Newsreader",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font-sans);color:var(--charcoal);background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 260px);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);color:var(--charcoal);background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 280px);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
 button,input,select{font-family:inherit}
 button,select{cursor:pointer}
 .num{font-variant-numeric:tabular-nums}
 .hidden{display:none!important}
 
+/* HEADER */
 .header{background:rgba(255,245,227,.95);border-bottom:1px solid var(--line);padding:10px 18px;position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
 .header-in{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--em);font-weight:800;font-size:16px;letter-spacing:-.02em}
@@ -39,8 +40,9 @@ button,select{cursor:pointer}
 .reset-btn:hover{background:var(--ivory);border-color:var(--gold)}
 
 .dashboard{max-width:1300px;margin:0 auto;padding:16px 14px 48px;display:grid;gap:18px}
-@media(min-width:980px){.dashboard{grid-template-columns:425px 1fr;align-items:start;gap:24px;padding-top:20px}}
+@media(min-width:980px){.dashboard{grid-template-columns:420px 1fr;align-items:start;gap:24px;padding-top:20px}}
 
+/* PANEL IZQUIERDO DE CONTROLES RELAX */
 .panel{background:var(--surface);border:1.5px solid var(--sage);border-radius:24px;padding:18px;display:grid;gap:13px;box-shadow:0 18px 38px -18px rgba(20,92,82,.14)}
 .panel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;gap:6px;flex-wrap:wrap}
 .panel-tag{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--em);background:var(--sage-soft);padding:4px 11px;border-radius:999px}
@@ -103,67 +105,232 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .extra-details[open] summary::after{content:"Ocultar ▴"}
 .extra-body{display:grid;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
 
-/* PIZARRA DERECHA */
+/* ===================== PIZARRA DERECHA ESTILO 4 (GALERÍA SALVIA + MARFIL + ORO) ===================== */
 .stage{display:grid;gap:16px}
-.board{background:linear-gradient(165deg,#145C52 0%,#0E443C 65%,#1D2B28 100%);color:#fff;border-radius:24px;padding:22px;display:grid;gap:16px;border:2px solid var(--sage);box-shadow:0 22px 44px -18px rgba(20,92,82,.35)}
-.bhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid rgba(255,245,227,.16);padding-bottom:13px;flex-wrap:wrap}
-.bhead h1{font-size:clamp(20px,2.8vw,25px);font-weight:800;line-height:1.2;color:#fff}
-.bhead h1 span{color:var(--gold);font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:1.08em}
-.bhead p{font-size:13.5px;color:var(--ivory);opacity:.92;margin-top:4px;max-width:68ch}
-.tbadge{background:rgba(217,164,65,.2);border:1px solid var(--gold);color:var(--gold);font-size:11.5px;font-weight:800;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.board{
+  background:linear-gradient(165deg, var(--sage) 0%, var(--sage-deep) 100%);
+  border:2.5px solid #FFFFFF;
+  border-radius:26px;
+  padding:22px;
+  display:grid;
+  gap:16px;
+  box-shadow:0 22px 46px -18px rgba(20,92,82,.25);
+}
 
-.gmm-links-bar{display:none;background:rgba(255,245,227,.1);border:1px solid var(--gold);border-radius:14px;padding:11px 14px;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+/* Cabecera flotante en Marfil Cálido (#FFF5E3) */
+.bhead{
+  background:var(--ivory);
+  border:1.5px solid #FFFFFF;
+  border-radius:20px;
+  padding:18px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  box-shadow:0 10px 24px -12px rgba(20,50,45,.15);
+}
+.bhead-kicker{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  color:var(--em);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-bottom:3px;
+}
+.bhead h1{
+  font-size:clamp(21px,2.6vw,26px);
+  font-weight:800;
+  line-height:1.18;
+  color:var(--charcoal);
+}
+.bhead h1 span{
+  color:var(--em);
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.12em;
+}
+.bhead p{font-size:13.5px;color:var(--muted);margin-top:4px;max-width:65ch}
+.tbadge{
+  background:var(--em);
+  color:#FFFFFF;
+  font-size:12px;
+  font-weight:800;
+  padding:8px 16px;
+  border-radius:999px;
+  white-space:nowrap;
+  box-shadow:0 6px 14px -6px rgba(20,92,82,.4);
+}
+
+.gmm-links-bar{
+  display:none;
+  background:var(--ivory);
+  border:1.5px solid var(--gold);
+  border-radius:16px;
+  padding:12px 16px;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
 .gmm-links-bar.open{display:flex}
-.gmm-links-bar span{font-size:12.5px;font-weight:700;color:var(--ivory)}
+.gmm-links-bar span{font-size:12.5px;font-weight:800;color:var(--charcoal)}
 .gmm-btn-group{display:flex;gap:8px;flex-wrap:wrap}
-.gmm-ext-link{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--charcoal);text-decoration:none;padding:8px 13px;border-radius:9px;font-size:12px;font-weight:800}
-.gmm-ext-link.alt{background:var(--ivory);color:var(--charcoal)}
+.gmm-ext-link{display:inline-flex;align-items:center;gap:6px;background:var(--em);color:#fff;text-decoration:none;padding:8px 13px;border-radius:9px;font-size:12px;font-weight:800}
+.gmm-ext-link.alt{background:#fff;color:var(--charcoal);border:1px solid var(--line)}
 
+/* 4 TARJETAS KPI FLOTANTES (CON TARJETA 3 PROTAGONISTA EN MARFIL Y BORDE DORADO) */
 .kgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(min-width:720px){.kgrid{grid-template-columns:repeat(4,1fr)}}
-.kcard{background:rgba(255,245,227,.08);border:1px solid rgba(255,245,227,.18);border-radius:16px;padding:14px;display:grid;gap:4px}
-.kcard.gain{background:rgba(255,245,227,.14);border:1.5px solid var(--gold)}
-.kcard.net{background:linear-gradient(145deg,rgba(217,164,65,.26),rgba(217,164,65,.1));border:1.5px solid var(--gold)}
-.kcard small{font-size:10.5px;font-weight:800;text-transform:uppercase;color:var(--sage)}
-.kcard.gain small,.kcard.net small{color:var(--gold)}
-.kcard b{font-size:clamp(19px,2.3vw,23px);font-weight:800;color:#fff}
-.kcard.net b{color:var(--gold)}
-.kcard span{font-size:11.5px;color:var(--ivory);opacity:.9;line-height:1.3}
+@media(min-width:740px){.kgrid{grid-template-columns:repeat(4,1fr)}}
+.kcard{
+  background:#FFFFFF;
+  border:1.5px solid rgba(255,255,255,.9);
+  border-radius:18px;
+  padding:16px;
+  display:grid;
+  gap:4px;
+  box-shadow:0 10px 20px -12px rgba(20,50,45,.14);
+}
+.kcard small{font-size:10.5px;font-weight:800;text-transform:uppercase;color:var(--muted);letter-spacing:.02em}
+.kcard b{font-size:clamp(20px,2.3vw,24px);font-weight:800;color:var(--charcoal)}
+.kcard.first-k b{color:var(--em)}
+.kcard span{font-size:11.5px;color:var(--muted);line-height:1.3}
 
+/* Tarjeta 3 Ganadora (Estilo 4: Marfil + Borde Dorado + Escala sutil) */
+.kcard.gain{
+  background:var(--ivory);
+  border:2px solid var(--gold);
+  transform:scale(1.02);
+  box-shadow:0 14px 26px -10px rgba(20,50,45,.22);
+}
+.kcard.gain small{color:var(--em)}
+.kcard.gain b{color:var(--em)}
+.kcard.gain span{color:var(--charcoal);font-weight:700}
+
+/* Tarjeta 4 (Inversión Neta Real en Dorado) */
+.kcard.net b{color:#B87D1E}
+
+/* 2 BLOQUES INFERIORES (BLANCO LIMPIO + MARFIL CON BORDE DORADO) */
 .vgrid{display:grid;gap:14px}
-@media(min-width:760px){.vgrid{grid-template-columns:1.12fr 1fr}}
-.cbox{background:rgba(255,245,227,.06);border:1px solid rgba(255,245,227,.16);border-radius:18px;padding:16px;display:grid;gap:11px}
-.ctitle{font-size:11.5px;font-weight:800;text-transform:uppercase;color:var(--ivory);display:flex;justify-content:space-between;gap:8px}
-.ctitle span:last-child{color:var(--gold)}
+@media(min-width:780px){.vgrid{grid-template-columns:1.08fr 1fr}}
+.cbox{
+  background:#FFFFFF;
+  border-radius:20px;
+  padding:18px 20px;
+  display:grid;
+  gap:12px;
+  box-shadow:0 10px 22px -12px rgba(20,50,45,.14);
+}
+.cbox.gold-frame{
+  background:var(--ivory);
+  border:2px solid var(--gold);
+}
+.ctitle{
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  letter-spacing:.03em;
+}
+.ctitle span:first-child{color:var(--em)}
+.ctitle span:last-child{color:var(--charcoal);font-weight:800}
+
 .bgroup{display:grid;gap:5px}
-.blabel{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--ivory);gap:8px}
-.btrack{height:12px;background:rgba(255,245,227,.12);border-radius:999px;overflow:hidden;display:flex}
-.bfill-base{background:rgba(255,245,227,.38);height:100%;transition:width .25s ease}
-.bfill-em{background:var(--sage);height:100%;transition:width .25s ease}
+.blabel{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--charcoal);gap:8px}
+.btrack{height:11px;background:#EAE3D5;border-radius:999px;overflow:hidden;display:flex}
+.bfill-base{background:var(--sage);height:100%;transition:width .25s ease}
+.bfill-em{background:var(--em);height:100%;transition:width .25s ease}
 .bfill-gold{background:var(--gold);height:100%;transition:width .25s ease}
 
-.rbanner{background:rgba(41,44,43,.35);border:1px solid rgba(217,164,65,.45);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;color:var(--ivory);flex-wrap:wrap}
-.rbanner strong{color:var(--gold);font-size:13.5px}
+.rbanner{
+  background:var(--ivory);
+  border:1px solid var(--gold);
+  border-radius:12px;
+  padding:10px 13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  font-size:12.5px;
+  color:var(--charcoal);
+  flex-wrap:wrap;
+}
+.rbanner strong{color:var(--em);font-size:13.5px;font-weight:800}
 
-.urgency-bar{background:rgba(217,164,65,.16);border:1px solid rgba(217,164,65,.5);border-radius:12px;padding:9px 12px;font-size:12px;color:var(--ivory);line-height:1.4}
-.urgency-bar b{color:var(--gold)}
-
+/* Hitos de Crecimiento (Año 5 y Edad 60/65) */
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mile{background:rgba(255,245,227,.08);border:1px solid rgba(255,245,227,.16);border-radius:14px;padding:12px}
-.mile small{display:block;font-size:10.5px;color:var(--sage);text-transform:uppercase;font-weight:800}
-.mile b{display:block;font-size:17px;color:var(--gold);margin-top:3px;font-weight:800}
-.mile span{display:block;font-size:11px;color:var(--ivory);margin-top:2px;line-height:1.35}
-.mile .pension-tag{display:inline-block;margin-top:6px;padding:3px 8px;border-radius:6px;background:rgba(217,164,65,.2);border:1px solid rgba(217,164,65,.45);color:var(--ivory);font-size:10.5px;font-weight:700}
+.mile{
+  background:#FFFFFF;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:13px;
+}
+.mile.main-mile{
+  background:var(--em);
+  border-color:var(--gold);
+  color:#fff;
+}
+.mile small{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;font-weight:800}
+.mile.main-mile small{color:var(--gold)}
+.mile b{display:block;font-size:19px;color:var(--charcoal);margin-top:3px;font-weight:800}
+.mile.main-mile b{color:var(--gold)}
+.mile span{display:block;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.3}
+.mile.main-mile span{color:var(--ivory)}
+.mile .pension-tag{
+  display:inline-block;
+  margin-top:6px;
+  padding:3px 8px;
+  border-radius:7px;
+  background:rgba(217,164,65,.22);
+  border:1px solid var(--gold);
+  color:var(--ivory);
+  font-size:10.5px;
+  font-weight:800;
+}
 
+.urgency-bar{
+  background:#FFFFFF;
+  border:1px solid var(--line);
+  border-left:3.5px solid var(--em);
+  border-radius:11px;
+  padding:9px 12px;
+  font-size:12px;
+  color:var(--charcoal);
+  line-height:1.4;
+}
+.urgency-bar b{color:var(--em)}
+
+/* 3 Tarjetas de Pilares Flotantes */
 .srow{display:grid;gap:10px}
 @media(min-width:720px){.srow{grid-template-columns:repeat(3,1fr)}}
-.shcard{background:rgba(255,245,227,.06);border-left:3px solid var(--gold);border-radius:12px;padding:11px 13px;display:grid;gap:3px}
-.shcard b{font-size:12.5px;color:#fff}
-.shcard p{font-size:11.5px;color:var(--ivory);opacity:.88;line-height:1.4}
+.shcard{
+  background:rgba(255,255,255,.92);
+  border-left:3.5px solid var(--em);
+  border-radius:14px;
+  padding:12px 14px;
+  display:grid;
+  gap:3px;
+}
+.shcard b{font-size:12.5px;color:var(--charcoal)}
+.shcard p{font-size:11.5px;color:var(--muted);line-height:1.4}
 
-.prelim-note{background:rgba(255,245,227,.05);border:1px dashed rgba(217,164,65,.5);border-radius:12px;padding:10px 14px;font-size:11.5px;color:var(--ivory);line-height:1.45}
-.prelim-note strong{color:var(--gold)}
+.prelim-note{
+  background:rgba(255,245,227,.85);
+  border:1px dashed var(--em);
+  border-radius:14px;
+  padding:10px 14px;
+  font-size:11.5px;
+  color:var(--charcoal);
+  line-height:1.45;
+}
+.prelim-note strong{color:var(--em)}
 
+/* TARJETAS DE CIERRE UNIFICADO */
 .cgrid-bot{display:grid;gap:16px}
 @media(min-width:780px){.cgrid-bot{grid-template-columns:1.12fr 1fr}}
 .clcard{background:var(--surface);border:1.5px solid var(--sage);border-radius:22px;padding:18px;display:grid;gap:11px;align-content:start;box-shadow:0 14px 28px -18px rgba(20,92,82,.14)}
@@ -237,11 +404,11 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
     <div class="folio-msg" id="folioStatusMsg"></div>
 
     <div class="fgroup">
-      <span class="flabel">¿Qué opción vemos en pantalla?</span>
+      <span class="flabel">¿Qué estrategia proyectamos?</span>
       <div class="mode-grid" id="modeButtons">
         <button type="button" class="mode-btn active" data-mode="hibrido" onclick="window.selectMode('hibrido')">
           ⚖️ Plan en 2 Bolsillos
-          <small>Devolución SAT + Cuenta Libre</small>
+          <small>Devolución SAT + Bolsillo Libre</small>
         </button>
         <button type="button" class="mode-btn" data-mode="65" onclick="window.selectMode('65')">
           💰 100% Devolución SAT
@@ -260,15 +427,15 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
 
     <div class="identity-card" id="identityCardBox">
       <div class="identity-head">
-        <span>🎯 Tus Prioridades Personales</span>
+        <span>🎯 Tus Prioridades Patrimoniales</span>
         <span>A tu medida</span>
       </div>
       <div class="fgroup">
-        <label class="flabel" for="goalProjectSelect">1. ¿Para qué te gustaría tener tu Bolsillo Libre?</label>
+        <label class="flabel" for="goalProjectSelect">1. ¿Para qué impulsaremos tu Bolsillo Libre?</label>
         <select id="goalProjectSelect" class="finput" onchange="window.syncAll()">
-          <option value="reserva" selected>🛡️ Fondo disponible en 3 a 5 años (Sin multas)</option>
+          <option value="reserva" selected>🛡️ Capital disponible en 3 a 5 años (Sin multas)</option>
           <option value="libertad">✨ Retirarme antes (a los 60 años) con 0% impuestos</option>
-          <option value="depa">🏠 Enganche o compra de depa / casa</option>
+          <option value="depa">🏠 Enganche o inversión en inmueble</option>
           <option value="negocio">🚀 Capital para negocio o proyecto propio</option>
           <option value="educacion">🎓 Fondo educativo para mis hijos</option>
         </select>
@@ -292,7 +459,7 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
       <input type="range" id="incomeSlider" class="relax-range" min="15000" max="250000" step="2500" value="40000" oninput="window.syncAll()" onchange="window.syncAll()">
       <div class="ssub num">
         <span>Anual: <strong id="annualIncomeLabel">$480,000 al año</strong></span>
-        <span>Tu escalón SAT: <strong id="marginalRateLabel">23.5%</strong></span>
+        <span>Escalón SAT: <strong id="marginalRateLabel">23.5%</strong></span>
       </div>
       <label class="bonus-toggle">
         <input type="checkbox" id="bonusCheck" onchange="window.syncAll()">
@@ -302,26 +469,26 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
 
     <div class="scard" id="saveSliderCard">
       <div class="stop">
-        <span id="saveSliderTitle">Lo que te gustaría ahorrar al mes</span>
+        <span id="saveSliderTitle">Inversión mensual planeada</span>
         <strong class="sval num" id="saveLabel">$4,000</strong>
       </div>
       <input type="range" id="saveSlider" class="relax-range" min="2500" max="35000" step="500" value="4000" oninput="window.onSaveSliderManual()" onchange="window.onSaveSliderManual()">
       <div class="ssub num">
-        <span>Anual: <strong id="annualSaveLabel">$48,000 al año</strong></span>
+        <span>Inversión anual: <strong id="annualSaveLabel">$48,000 al año</strong></span>
         <span id="capPercentLabel">10.0% de tu ingreso</span>
       </div>
-      <div class="age-floor-hint" id="ageFloorHint">Mínimo recomendado para 36 años: $2,500/mes</div>
+      <div class="age-floor-hint" id="ageFloorHint">Inversión mínima sugerida para 36 años: $2,500/mes</div>
 
       <div class="prow">
         <button type="button" class="pbtn" onclick="window.applyPreset(1)"><span>Base Cómoda</span><br><small id="lblPreset10">$3,000/mes</small></button>
         <button type="button" class="pbtn active" onclick="window.applyPreset(2)"><span>10% Ideal SAT</span><br><small id="lblPreset151">$4,000/mes</small></button>
-        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Doble Bolsa Fiscal</span><br><small id="lblPresetMax">$16,500/mes</small></button>
+        <button type="button" class="pbtn" onclick="window.applyPreset(3)"><span>Doble Estímulo</span><br><small id="lblPresetMax">$16,500/mes</small></button>
       </div>
     </div>
 
     <div class="scard hybrid-split-card" id="hybridSplitCard">
       <div class="stop">
-        <span>Cómo dividimos tus 2 Bolsillos</span>
+        <span>Distribución de tu Inversión</span>
         <strong class="sval" id="hybridSplitLabel" style="font-size:12.5px">70% Bolsillo SAT / 30% Bolsillo Libre</strong>
       </div>
       <input type="range" id="hybridSplitSlider" class="relax-range" min="20" max="80" step="10" value="70" oninput="window.syncAll()" onchange="window.syncAll()">
@@ -412,11 +579,11 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
             </select>
           </div>
           <div class="fgroup">
-            <label class="flabel" for="paymentTerm">Plazo de Ahorro</label>
+            <label class="flabel" for="paymentTerm">Horizonte de Inversión</label>
             <select id="paymentTerm" class="finput" onchange="window.syncAll()">
               <option value="todos" selected>A mi ritmo durante el plan</option>
-              <option value="15">Plazo corto de 15 años</option>
-              <option value="10">Plazo corto de 10 años</option>
+              <option value="15">Plazo compacto de 15 años</option>
+              <option value="10">Plazo compacto de 10 años</option>
             </select>
           </div>
         </div>
@@ -432,15 +599,18 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
     </details>
   </aside>
 
-  <!-- PANEL DERECHO: PIZARRA VISUAL EN VIVO -->
+  <!-- PANEL DERECHO: PIZARRA ESTILO 4 (GALERÍA SALVIA + MARFIL + TARJETA ORO) -->
   <section class="stage">
     <div class="board">
+
+      <!-- Cabecera en Marfil Cálido -->
       <div class="bhead">
         <div>
-          <h1 id="mainBoardTitle">Tu Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span></h1>
-          <p id="mainBoardSub">Dividimos tus $4,000/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.</p>
+          <span class="bhead-kicker" id="boardKickerText">MÉTODO DE 2 BOLSILLOS · SEGUROS MONTERREY NYL</span>
+          <h1 id="mainBoardTitle">Construye tu retiro <span>sin congelar tu inversión</span></h1>
+          <p id="mainBoardSub">Dividimos tu inversión de $4,000/mes para que el SAT te regrese dinero cada abril mientras creas un fondo disponible a mediano plazo.</p>
         </div>
-        <span class="tbadge" id="legalBadge">Método de 2 Bolsillos · Devolución SAT + Liquidez</span>
+        <span class="tbadge" id="legalBadge">Escalón SAT: 24%</span>
       </div>
 
       <div class="gmm-links-bar" id="gmmLinksBar">
@@ -451,46 +621,48 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
         </div>
       </div>
 
+      <!-- 4 TARJETAS KPI FLOTANTES (TARJETA 3 CON BORDE DORADO EN MARFIL) -->
       <div class="kgrid">
-        <div class="kcard">
-          <small id="kpi1Title">1. Bolsillo 1 (Con devolución SAT)</small>
+        <div class="kcard first-k">
+          <small id="kpi1Title">1. Bolsillo SAT (Retiro)</small>
           <b id="kpi1Value" class="num">$2,800/mes</b>
           <span id="kpi1Sub">$33,600/año que deduces en abril</span>
         </div>
         <div class="kcard">
-          <small id="kpi2Title">2. Bolsillo 2 (Libre / Edad 60)</small>
+          <small id="kpi2Title">2. Bolsillo Libre (60 años)</small>
           <b id="kpi2Value" class="num">$1,200/mes</b>
-          <span id="kpi2Sub">Sin el candado de los 65 años</span>
+          <span id="kpi2Sub">Proyectos / Sin candado a 65</span>
         </div>
         <div class="kcard gain">
-          <small id="kpi3Title">3. Te regresa el SAT en abril</small>
+          <small id="kpi3Title">✨ 3. Devuelve el SAT</small>
           <b id="kpi3Value" class="num">+$7,903</b>
-          <span id="kpi3Sub">Efectivo anual a tu favor</span>
+          <span id="kpi3Sub">Cada mes de abril a tu favor</span>
         </div>
         <div class="kcard net">
-          <small id="kpi4Title">4. Lo que realmente te cuesta</small>
+          <small id="kpi4Title">4. Inversión Neta Real</small>
           <b id="kpi4Value" class="num">$3,341/mes</b>
-          <span id="kpi4Sub">Descontando tu devolución del SAT</span>
+          <span id="kpi4Sub">Con el impulso fiscal del SAT</span>
         </div>
       </div>
 
+      <!-- 2 TARJETAS INFERIORES DE DISTRIBUCIÓN Y PATRIMONIO EN EL TIEMPO -->
       <div class="vgrid">
         <div class="cbox">
           <div class="ctitle">
-            <span id="chartLeftTitle">Cómo se dividen tus $4,000/mes ($48,000/año)</span>
-            <span id="efficiencyPct" class="num">Juntas en 10 años aprox: ~$742,439</span>
+            <span id="chartLeftTitle">Distribución de tu inversión ($48,000/año)</span>
+            <span id="efficiencyPct" class="num">Capital a 10 años: ~$742,439</span>
           </div>
           <div class="bgroup">
             <div class="blabel">
               <span id="bar1Label">Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)</span>
-              <strong id="bar1Val" style="color:var(--ivory)">70% SAT / 30% Libre</strong>
+              <strong id="bar1Val" style="color:var(--em)">70% SAT / 30% Libre</strong>
             </div>
             <div class="btrack"><div class="bfill-base" id="bar1Fill" style="width:100%"></div></div>
           </div>
           <div class="bgroup">
             <div class="blabel">
-              <span id="bar2Label">Efectivo que el SAT te devuelve cada mes de abril</span>
-              <strong id="bar2Val" style="color:var(--gold)">Recuperas +$7,903 cada año</strong>
+              <span id="bar2Label">Efectivo que el SAT te deposita para impulsar tu inversión</span>
+              <strong id="bar2Val" style="color:#B87D1E">Recuperas +$7,903 cada año</strong>
             </div>
             <div class="btrack">
               <div class="bfill-em" id="bar2Fill" style="width:70%"></div>
@@ -498,14 +670,14 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
             </div>
           </div>
           <div class="rbanner">
-            <span id="bannerExplain">Ahorras <b>$4,000/mes</b>, el SAT te regresa <b>+$7,903/año</b> y tienes <b>$14,400/año</b> en tu cuenta libre:</span>
-            <strong id="bannerNet">Esfuerzo neto real: $3,341/mes</strong>
+            <span id="bannerExplain">Inviertes <b>$4,000/mes</b>, el SAT te regresa <b>+$7,903/año</b> y capitalizas <b>$14,400/año</b> en tu cuenta libre:</span>
+            <strong id="bannerNet">Tu inversión neta real: $3,341/mes</strong>
           </div>
         </div>
 
-        <div class="cbox">
+        <div class="cbox gold-frame">
           <div class="ctitle">
-            <span id="chartRightTitle">Cómo crece tu dinero en el tiempo</span>
+            <span id="chartRightTitle">Multiplicación de tu Patrimonio</span>
             <span>Seguros Monterrey NYL</span>
           </div>
           <div class="mgrid">
@@ -514,43 +686,41 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
               <b id="mile1Val" class="num">$88,708</b>
               <span id="mile1Sub">Para tus proyectos o libre a tus 60 años</span>
             </div>
-            <div class="mile">
-              <small id="mile2Label">Tu Fondo de Retiro (Edad 65)*</small>
+            <div class="mile main-mile">
+              <small id="mile2Label">Patrimonio al Retiro (Edad 65)*</small>
               <b id="mile2Val" class="num">$3,189,420</b>
-              <span id="mile2Sub">Más lo que conserves en tu Bolsillo 2</span>
-              <div class="pension-tag" id="mile2PensionTag">≈ $20,731/mes para vivir tranquilo(a)</div>
+              <span id="mile2Sub">Más lo acumulado en tu Bolsillo 2</span>
+              <div class="pension-tag" id="mile2PensionTag">≈ $20,731/mes de renta mensual</div>
             </div>
           </div>
           <div class="urgency-bar" id="urgencyBar">
-            ⚡ <b>Ventaja de empezar a tus 36 años (vs. esperar 1 año):</b> Sumas <b>+$234,000 MXN más</b> de ganancia acumulada + tu devolución SAT de este año.
-          </div>
-          <div class="rbanner" style="background:rgba(255,245,227,.06);border-color:rgba(255,245,227,.18)">
-            <span>Respaldo Patrimonial Integrado:</span>
-            <strong id="protectionSumLabel">👤 Mi propia independencia financiera (Salud general sin antecedentes relevantes)</strong>
+            ⚡ <b>Ventaja de invertir a tus 36 años (vs. esperar 1 año):</b> Generas <b>+$234,000 MXN más</b> de interés compuesto + tu devolución SAT de este año.
           </div>
         </div>
       </div>
 
+      <!-- 3 PILARES FLOTANTES -->
       <div class="srow">
         <div class="shcard">
-          <b id="sh1Title">⚖️ Dos Bolsillos a tu Favor</b>
+          <b id="sh1Title">⚖️ Dos Bolsillos de Inversión</b>
           <p id="sh1Desc">Una parte hace que el SAT te regrese dinero cada abril (para tus 65 años) y la otra queda libre para tus metas o para retirarte a los 60 años con 0% de impuestos.</p>
         </div>
         <div class="shcard">
-          <b id="sh2Title">📈 Tu Dinero no Pierde Valor</b>
-          <p id="sh2Desc">Tus ahorros crecen en UDIs (siempre arriba de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.</p>
+          <b id="sh2Title">📈 Crecimiento Arriba de la Inflación</b>
+          <p id="sh2Desc">Tu inversión se capitaliza en UDIs (siempre por encima de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.</p>
         </div>
         <div class="shcard">
           <b id="sh3Title">🛡️ Respaldo Patrimonial Inmediato</b>
-          <p id="sh3Desc">Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey sigue pagando el plan por ti.</p>
+          <p id="sh3Desc">Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey continúa invirtiendo en el plan por ti.</p>
         </div>
       </div>
 
       <div class="prelim-note">
-        <strong>*Nota de nuestra 1ª Sesión:</strong> Esta pizarra muestra el comportamiento matemático preliminar de tu ahorro y tus devoluciones del SAT. Con lo que definimos hoy, armaré tu cotización exacta en el <strong>sistema oficial de Seguros Monterrey New York Life</strong> para mostrarte en nuestra <strong>2ª Sesión</strong> tus valores garantizados por contrato.
+        <strong>*Nota de nuestra 1ª Sesión:</strong> Esta pizarra muestra la proyección matemática preliminar de tu inversión y tus devoluciones del SAT. Con lo que definimos hoy, prepararé tu estudio exacto en el <strong>cotizador oficial de Seguros Monterrey New York Life</strong> para mostrarte en nuestra <strong>2ª Sesión</strong> tus valores garantizados por contrato.
       </div>
     </div>
 
+    <!-- TARJETAS DE CIERRE UNIFICADO -->
     <div class="cgrid-bot">
       <div class="clcard">
         <div class="clhead">
@@ -560,7 +730,7 @@ footer{background:var(--charcoal);color:var(--ivory);padding:22px 16px;text-alig
         <h3>Acordar tu Estudio Oficial SMNYL y Agendar 2ª Sesión</h3>
 
         <div class="codesign-box">
-          <span class="codesign-label">¿En qué moneda quieres que prepare tu cotización oficial para nuestra 2ª cita?</span>
+          <span class="codesign-label">¿En qué moneda quieres que prepare tu estudio oficial para nuestra 2ª cita?</span>
           <div class="codesign-opts">
             <button type="button" class="cd-btn" onclick="window.selectDeliverable(0)">🇲🇽 Solo en UDIs (Inflación)</button>
             <button type="button" class="cd-btn active" onclick="window.selectDeliverable(1)">⚖️ Comparativa UDIs vs. Dólares</button>
@@ -644,15 +814,15 @@ window.ISR_2026 = [
 window.GMM_HOSPITAL_LEVELS = {
   integro: { titulo: 'Alta Especialidad (Equilibrio Ideal CDMX)', ejemplos: 'Hospital Español, Ángeles Metropolitano, Ángeles Mocel, Ángeles Acoxpa, Ángeles Lindavista, San Ángel Inn Universidad, Dalinde, HMG Coyoacán' },
   pleno: { titulo: 'Acceso Abierto Nacional (Todos los Hospitales)', ejemplos: 'Hospital ABC Santa Fe, ABC Observatorio, Médica Sur, Ángeles Pedregal, Ángeles Lomas + toda la red nacional' },
-  practico: { titulo: 'Esencial Privado (Optimización de Mensualidad)', ejemplos: 'San Ángel Inn Chapultepec, San Ángel Inn Sur, Dalinde, Star Médica Centro/Roma/Infantil Privado' }
+  practico: { titulo: 'Esencial Privado (Optimización de Inversión)', ejemplos: 'San Ángel Inn Chapultepec, San Ángel Inn Sur, Dalinde, Star Médica Centro/Roma/Infantil Privado' }
 };
 
 window.GOAL_PROJECTS = {
-  depa: { short: '🏠 Para tu Depa / Casa', full: 'Enganche o compra de inmueble' },
+  depa: { short: '🏠 Para tu Depa / Casa', full: 'Enganche o inversión en inmueble' },
   negocio: { short: '🚀 Para tu Negocio / Proyecto', full: 'Capital para negocio o proyecto propio' },
   libertad: { short: '✨ Retiro Anticipado (60 años)', full: 'Retirarte antes (a los 60 años) con 0% de impuestos' },
   educacion: { short: '🎓 Fondo Educativo', full: 'Educación garantizada para tus hijos' },
-  reserva: { short: '🛡️ Fondo Disponible (3–5 años)', full: 'Ahorro disponible a mediano plazo sin multas' }
+  reserva: { short: '🛡️ Capital Disponible (3–5 años)', full: 'Capital disponible a mediano plazo sin multas' }
 };
 
 window.S = {
@@ -854,7 +1024,7 @@ window.syncAll = function(){
     }
     S.ahorroMensual = currentVal;
   }
-  setTxt('ageFloorHint', 'Mínimo recomendado para ' + S.edad + ' años: ' + fmt(minSave) + '/mes');
+  setTxt('ageFloorHint', 'Inversión mínima sugerida para ' + S.edad + ' años: ' + fmt(minSave) + '/mes');
   setTxt('unlockAgeSpan', S.edad + ' años');
 
   if ($id('hybridSplitSlider')) S.hybridPct151 = Number($id('hybridSplitSlider').value)||70;
@@ -887,7 +1057,7 @@ window.syncAll = function(){
   setTxt('lblPreset151', fmt(t151M) + '/mes');
   setTxt('lblPresetMax', fmt(tMaxM) + '/mes');
 
-  var pref = S.nombre && S.nombre.trim() ? (S.nombre.trim().split(/\s+/)[0] + ', tu ') : 'Tu ';
+  var pref = S.nombre && S.nombre.trim() ? (S.nombre.trim().split(/\s+/)[0] + ', ') : '';
   var goalObj = window.GOAL_PROJECTS[S.goalProject] || window.GOAL_PROJECTS.reserva;
 
   var r10 = 0.078;
@@ -898,45 +1068,45 @@ window.syncAll = function(){
   if (S.mode === 'gmm'){
     var hospObj = window.GMM_HOSPITAL_LEVELS[S.gmmHosp] || window.GMM_HOSPITAL_LEVELS.integro;
     setHtml('gmmHospNote', '🏥 <b>Hospitales incluidos en este nivel:</b> ' + hospObj.ejemplos + '.');
-    setTxt('legalBadge', 'Póliza en Pesos Mexicanos · Respaldo SMNYL');
+    setTxt('boardKickerText', 'BLINDAJE PATRIMONIAL DE SALUD · SEGUROS MONTERREY NYL');
+    setTxt('legalBadge', 'Póliza en Pesos MXN');
     setHtml('mainBoardTitle', pref + 'Protección Médica Privada <span>Alfa Medical ($170 Millones)</span>');
     setTxt('mainBoardSub', 'Atención privada en Pesos Mexicanos, acompañamiento médico personal 24/7 y deducción de impuestos en tu declaración anual.');
 
-    setTxt('kpi1Title', '1. Tranquilidad Financiera'); setTxt('kpi1Value', 'Pago Directo'); setTxt('kpi1Sub', 'Protegemos tu patrimonio ante emergencias');
+    setTxt('kpi1Title', '1. Tranquilidad Patrimonial'); setTxt('kpi1Value', 'Pago Directo'); setTxt('kpi1Sub', 'Protegemos tu capital ante emergencias');
     setTxt('kpi2Title', '2. Respaldo por Enfermedad'); setTxt('kpi2Value', '$170 Millones'); setTxt('kpi2Sub', 'En Pesos Mexicanos por diagnóstico');
-    setTxt('kpi3Title', isResico ? '3. Moneda Estable' : '3. Beneficio en el SAT'); setTxt('kpi3Value', isResico ? 'Pesos MXN' : '100% Deducible'); setTxt('kpi3Sub', isResico ? 'Sin cambios por tipo de cambio' : 'Para ti, tu pareja, hijos y padres');
-    setTxt('kpi4Title', isResico ? '4. Acompañamiento' : '4. Retorno Fiscal en Abril'); setTxt('kpi4Value', isResico ? 'Médicos 24/7' : ('Hasta el ' + tasaPct + '%')); setTxt('kpi4Sub', isResico ? 'Programa Médicos a tu Lado' : 'Recuperas parte de tu prima anual');
+    setTxt('kpi3Title', isResico ? '✨ 3. Moneda Estable' : '✨ 3. Beneficio en el SAT'); setTxt('kpi3Value', isResico ? 'Pesos MXN' : '100% Deducible'); setTxt('kpi3Sub', isResico ? 'Sin variaciones cambiarias' : 'Para ti, tu pareja, hijos y padres');
+    setTxt('kpi4Title', isResico ? '4. Acompañamiento' : '4. Retorno Fiscal en Abril'); setTxt('kpi4Value', isResico ? 'Médicos 24/7' : ('Hasta el ' + tasaPct + '%')); setTxt('kpi4Sub', isResico ? 'Programa Médicos a tu Lado' : 'El SAT impulsa tu inversión en salud');
 
     setTxt('chartLeftTitle', 'Por qué Blindar tu Salud y tu Patrimonio');
     setTxt('efficiencyPct', 'Cobertura en Pesos Mexicanos');
-    setTxt('bar1Label', 'Sin Póliza: Afrontar una urgencia privada con tus propios ahorros'); setTxt('bar1Val', 'Riesgo patrimonial'); setW('bar1Fill', '100%');
-    setTxt('bar2Label', 'Con Alfa Medical: Seguros Monterrey paga al hospital + Deduces impuestos'); setTxt('bar2Val', 'Hasta $170,000,000 MXN');
+    setTxt('bar1Label', 'Sin Póliza: Afrontar una urgencia privada descapitalizando tu patrimonio'); setTxt('bar1Val', 'Exposición patrimonial'); setW('bar1Fill', '100%');
+    setTxt('bar2Label', 'Con Alfa Medical: Seguros Monterrey liquida al hospital + Deduces impuestos'); setTxt('bar2Val', 'Hasta $170,000,000 MXN');
     setW('bar2Fill', isResico ? '100%' : (100 - tasaPct) + '%'); setW('bar2Gold', isResico ? '0%' : tasaPct + '%');
 
-    setHtml('bannerExplain', isResico ? 'Proteges la liquidez de tu familia en los mejores hospitales privados:' : ('Por tu escalón de ISR, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> de tu póliza médica:'));
-    setTxt('bannerNet', 'Propuesta oficial en nuestra 2ª Sesión');
+    setHtml('bannerExplain', isResico ? 'Proteges la liquidez de tu familia en los mejores hospitales privados:' : ('Por tu escalón de ISR, el SAT te devuelve en abril hasta <b>$' + tasaPct + ' de cada $100</b> invertidos en tu póliza:'));
+    setTxt('bannerNet', 'Estudio oficial en nuestra 2ª Sesión');
 
     setTxt('chartRightTitle', 'Resumen de tus Preferencias Médicas');
     setTxt('mile1Label', 'A quiénes protegemos'); setTxt('mile1Val', S.gmmWho); setTxt('mile1Sub', S.gmmStatus);
     if ($id('mile2PensionTag')) $id('mile2PensionTag').style.display = 'none';
     setTxt('mile2Label', 'Nivel de Hospitales en CDMX'); setTxt('mile2Val', hospObj.titulo.split('(')[0].trim()); setTxt('mile2Sub', 'Sujeto a valoración médica en solicitud');
-    setTxt('protectionSumLabel', S.healthNote);
     setHtml('urgencyBar', '🩺 <b>Ventaja de asegurar tu salud a tus ' + S.edad + ' años:</b> Fijas tu antigüedad hoy con tu estado de salud actual.');
 
     setTxt('sh1Title', '🩺 1. Programa "Médicos a tu Lado"'); setTxt('sh1Desc', 'Un médico te acompaña de principio a fin: orientación 24/7, segunda opinión médica y seguimiento en casa.');
     setTxt('sh2Title', '🏥 2. Pago Directo al Hospital'); setTxt('sh2Desc', 'En estancias mayores a 24 horas dentro de la red en convenio, la aseguradora liquida directamente al hospital.');
-    setTxt('sh3Title', '🧾 3. Deducción en Abril'); setTxt('sh3Desc', 'Las primas de tu póliza médica entran en tus deducciones personales de abril.');
+    setTxt('sh3Title', '🧾 3. Deducción en Abril'); setTxt('sh3Desc', 'La inversión en tu póliza médica entra en tus deducciones personales de abril.');
 
     window.buildCombinedWhatsApp(0, 0, 0, 1, 0);
     return;
   }
 
-  setTxt('sh1Title', '⚖️ Dos Bolsillos a tu Favor');
+  setTxt('sh1Title', '⚖️ Dos Bolsillos de Inversión');
   setTxt('sh1Desc', 'Una parte hace que el SAT te regrese dinero cada abril (para tus 65 años) y la otra queda libre para tus metas o para retirarte a los 60 años con 0% de impuestos.');
-  setTxt('sh2Title', '📈 Tu Dinero no Pierde Valor');
-  setTxt('sh2Desc', 'Tus ahorros crecen en UDIs (siempre arriba de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.');
+  setTxt('sh2Title', '📈 Crecimiento Arriba de la Inflación');
+  setTxt('sh2Desc', 'Tu inversión se capitaliza en UDIs (siempre por encima de la inflación) o en Dólares con el respaldo AAA de Seguros Monterrey.');
   setTxt('sh3Title', '🛡️ Respaldo Patrimonial Inmediato');
-  setTxt('sh3Desc', 'Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey sigue pagando el plan por ti.');
+  setTxt('sh3Desc', 'Si una enfermedad o accidente te impide trabajar, recibes tu suma asegurada y Seguros Monterrey continúa invirtiendo en el plan por ti.');
 
   var edadMeta = (S.mode === '60' || isResico) ? 60 : 65;
   var anosRest = Math.max(5, edadMeta - S.edad);
@@ -983,36 +1153,36 @@ window.syncAll = function(){
     var fondo65Menos1 = Math.round(acumCuenta1Menos1 * Math.pow(1 + r, anosPostMenos1));
     var ventajaH = Math.max(anualCuenta1, fondo65Cuenta1 - fondo65Menos1);
 
-    setTxt('legalBadge', 'Método de 2 Bolsillos · Devolución SAT + Liquidez');
-    setHtml('mainBoardTitle', pref + 'Plan en 2 Bolsillos: <span>Devolución SAT + Dinero Disponible</span>');
-    setTxt('mainBoardSub', 'Dividimos tus ' + fmt(S.ahorroMensual) + '/mes para que el SAT te regrese dinero cada abril sin tener que congelar todo tu ahorro hasta los 65 años.');
+    setTxt('boardKickerText', 'MÉTODO DE 2 BOLSILLOS · SEGUROS MONTERREY NYL');
+    setTxt('legalBadge', 'Escalón SAT: ' + tasaPct + '%');
+    setHtml('mainBoardTitle', pref + 'construye tu retiro <span>sin congelar tu inversión</span>');
+    setTxt('mainBoardSub', 'Dividimos tu inversión de ' + fmt(S.ahorroMensual) + '/mes para que el SAT te regrese dinero cada abril mientras creas un fondo disponible a mediano plazo.');
 
-    setTxt('kpi1Title', '1. Bolsillo 1 (Con devolución SAT)'); setTxt('kpi1Value', fmt(mesCuenta1) + '/mes'); setTxt('kpi1Sub', fmt(dedRealH) + '/año que deduces en abril');
-    setTxt('kpi2Title', '2. Bolsillo 2 (Libre / Edad 60)'); setTxt('kpi2Value', fmt(mesCuenta2) + '/mes'); setTxt('kpi2Sub', 'Sin el candado de los 65 años');
-    setTxt('kpi3Title', '3. Te regresa el SAT en abril'); setTxt('kpi3Value', '+' + fmt(devSATH)); setTxt('kpi3Sub', 'Efectivo anual a tu favor (Escala ' + tasaPct + '%)');
-    setTxt('kpi4Title', '4. Lo que realmente te cuesta'); setTxt('kpi4Value', fmt(invNetaH) + '/mes'); setTxt('kpi4Sub', 'Descontando tu devolución del SAT');
+    setTxt('kpi1Title', '1. Bolsillo SAT (Retiro)'); setTxt('kpi1Value', fmt(mesCuenta1) + '/mes'); setTxt('kpi1Sub', fmt(dedRealH) + '/año que deduces en abril');
+    setTxt('kpi2Title', '2. Bolsillo Libre (60 años)'); setTxt('kpi2Value', fmt(mesCuenta2) + '/mes'); setTxt('kpi2Sub', 'Proyectos / Sin candado a 65');
+    setTxt('kpi3Title', '✨ 3. Devuelve el SAT'); setTxt('kpi3Value', '+' + fmt(devSATH)); setTxt('kpi3Sub', 'Cada mes de abril a tu favor');
+    setTxt('kpi4Title', '4. Inversión Neta Real'); setTxt('kpi4Value', fmt(invNetaH) + '/mes'); setTxt('kpi4Sub', 'Con el impulso fiscal del SAT');
 
-    setTxt('chartLeftTitle', 'Cómo se dividen tus ' + fmt(S.ahorroMensual) + '/mes (' + fmt(ahoAnual) + '/año)');
-    setTxt('efficiencyPct', 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal));
+    setTxt('chartLeftTitle', 'Distribución de tu inversión (' + fmt(ahoAnual) + '/año)');
+    setTxt('efficiencyPct', 'Capital a 10 años: ~' + fmt(fondo10AnosTotal));
     setTxt('bar1Label', 'Bolsillo 1 (Retiro 65 + SAT) y Bolsillo 2 (Disponible / Retiro a los 60)');
     setTxt('bar1Val', S.hybridPct151 + '% SAT / ' + (100 - S.hybridPct151) + '% Libre');
     setW('bar1Fill', '100%');
 
-    setTxt('bar2Label', 'Efectivo que el SAT te devuelve cada mes de abril');
+    setTxt('bar2Label', 'Efectivo que el SAT te deposita para impulsar tu inversión');
     setTxt('bar2Val', 'Recuperas +' + fmt(devSATH) + ' cada año');
     setW('bar2Fill', S.hybridPct151 + '%');
     setW('bar2Gold', (100 - S.hybridPct151) + '%');
 
-    setHtml('bannerExplain', 'Ahorras <b>' + fmt(S.ahorroMensual) + '/mes</b>, el SAT te regresa <b>+' + fmt(devSATH) + '/año</b> y tienes <b>' + fmt(anualCuenta2) + '/año</b> en tu cuenta libre:');
-    setTxt('bannerNet', 'Esfuerzo neto real: ' + fmt(invNetaH) + '/mes');
+    setHtml('bannerExplain', 'Inviertes <b>' + fmt(S.ahorroMensual) + '/mes</b>, el SAT te regresa <b>+' + fmt(devSATH) + '/año</b> y capitalizas <b>' + fmt(anualCuenta2) + '/año</b> en tu cuenta libre:');
+    setTxt('bannerNet', 'Tu inversión neta real: ' + fmt(invNetaH) + '/mes');
 
-    setTxt('chartRightTitle', 'Cómo crece tu dinero en el tiempo');
+    setTxt('chartRightTitle', 'Multiplicación de tu Patrimonio');
     setTxt('mile1Label', 'Disponible en Bolsillo 2 (Año 5)'); setTxt('mile1Val', fmt(fondo5AnosCuenta2)); setTxt('mile1Sub', 'Para tus proyectos o libre a tus 60 años');
-    setTxt('mile2Label', 'Tu Fondo de Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondo65Cuenta1)); setTxt('mile2Sub', 'Más lo que conserves en tu Bolsillo 2');
-    setTxt('mile2PensionTag', '≈ ' + fmt(rentaMensualH) + '/mes para vivir tranquilo(a)');
+    setTxt('mile2Label', 'Patrimonio al Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondo65Cuenta1)); setTxt('mile2Sub', 'Más lo acumulado en tu Bolsillo 2');
+    setTxt('mile2PensionTag', '≈ ' + fmt(rentaMensualH) + '/mes de renta mensual');
 
-    setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaH) + ' MXN más</b> de ganancia acumulada + tu devolución SAT de este año.');
-    setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
+    setHtml('urgencyBar', '⚡ <b>Ventaja de invertir a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Generas <b>+' + fmt(ventajaH) + ' MXN más</b> de interés compuesto + tu devolución SAT de este año.');
 
     window.buildCombinedWhatsApp(devSATH, fondo65Cuenta1, fondo5AnosCuenta2, anosPago, rentaMensualH);
     return;
@@ -1023,31 +1193,31 @@ window.syncAll = function(){
     var liq5 = Math.round(ahoAnual * (((Math.pow(1 + 0.068, 5) - 1) / 0.068) * (1 + 0.068)));
     var renta60 = Math.round(fondoFinal * 0.0065);
 
-    setTxt('legalBadge', 'Retiro a los 60 Años · 0% de Impuestos');
-    setHtml('mainBoardTitle', pref + 'Estrategia de Libertad: <span>Retiro a los 60 Años sin Impuestos</span>');
-    setTxt('mainBoardSub', 'Tu dinero crece protegido contra la inflación con disponibilidad a mediano plazo y a los 60 años recibes todo tu ahorro y ganancias con 0% de impuestos.');
+    setTxt('boardKickerText', 'ESTRATEGIA EXENTA ART. 93 · SEGUROS MONTERREY NYL');
+    setTxt('legalBadge', '0% Impuestos a los 60');
+    setHtml('mainBoardTitle', pref + 'libertad patrimonial: <span>Retiro a los 60 Años sin Impuestos</span>');
+    setTxt('mainBoardSub', 'Tu inversión crece protegida contra la inflación con disponibilidad a mediano plazo y a los 60 años recibes todo tu capital y rendimientos con 0% de impuestos.');
 
-    setTxt('kpi1Title', '1. Lo que tú guardas (' + anosPago + ' años)'); setTxt('kpi1Value', fmt(totalAportado)); setTxt('kpi1Sub', 'Ahorrando paso a paso');
+    setTxt('kpi1Title', '1. Capital que tú inviertes'); setTxt('kpi1Value', fmt(totalAportado)); setTxt('kpi1Sub', 'En ' + anosPago + ' años paso a paso');
     setTxt('kpi2Title', '2. Disponible al Año 5'); setTxt('kpi2Value', fmt(liq5)); setTxt('kpi2Sub', 'En UDIs o Dólares');
-    setTxt('kpi3Title', '3. Juntas en 10 Años aprox'); setTxt('kpi3Value', fmt(fondo10AnosTotal)); setTxt('kpi3Sub', 'Protegido contra inflación');
-    setTxt('kpi4Title', '4. Total a tus 60 Años'); setTxt('kpi4Value', fmt(fondoFinal)); setTxt('kpi4Sub', '100% libre de impuestos');
+    setTxt('kpi3Title', '✨ 3. Rendimiento Libre'); setTxt('kpi3Value', '+' + fmt(plusvalia)); setTxt('kpi3Sub', '0% de retención fiscal a los 60');
+    setTxt('kpi4Title', '4. Patrimonio a tus 60'); setTxt('kpi4Value', fmt(fondoFinal)); setTxt('kpi4Sub', '100% libre de impuestos');
 
     var pctB = fondoFinal > 0 ? Math.min(85, Math.max(25, Math.round((totalAportado / fondoFinal) * 100))) : 50;
-    setTxt('chartLeftTitle', 'Lo que tú pones vs. lo que gana tu dinero');
-    setTxt('efficiencyPct', 'Ganancia libre de impuestos: +' + fmt(plusvalia));
-    setTxt('bar1Label', 'Total de tus aportaciones'); setTxt('bar1Val', fmt(totalAportado) + ' MXN'); setW('bar1Fill', pctB + '%');
-    setTxt('bar2Label', 'Patrimonio total a tus 60 años (Ahorro + Ganancias)'); setTxt('bar2Val', fmt(fondoFinal) + ' MXN');
+    setTxt('chartLeftTitle', 'Tu capital invertido vs. multiplicación compuesta');
+    setTxt('efficiencyPct', 'Capital a 10 años: ~' + fmt(fondo10AnosTotal));
+    setTxt('bar1Label', 'Total de tu inversión acumulada'); setTxt('bar1Val', fmt(totalAportado) + ' MXN'); setW('bar1Fill', pctB + '%');
+    setTxt('bar2Label', 'Patrimonio total a tus 60 años (Capital + Rendimientos)'); setTxt('bar2Val', fmt(fondoFinal) + ' MXN');
     setW('bar2Fill', pctB + '%'); setW('bar2Gold', (100 - pctB) + '%');
-    setHtml('bannerExplain', 'Ahorrando <b>' + fmt(S.ahorroMensual) + '/mes</b> durante <b>' + anosPago + ' años</b>:');
+    setHtml('bannerExplain', 'Invirtiendo <b>' + fmt(S.ahorroMensual) + '/mes</b> durante <b>' + anosPago + ' años</b>:');
     setTxt('bannerNet', 'Recibes libre de impuestos: ' + fmt(fondoFinal));
 
     setTxt('chartRightTitle', 'Tus Metas en el Tiempo (Año 10 y Edad 60)');
-    setTxt('mile1Label', 'Capital al Año 10'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Puesto por ti en 10 años: ' + fmt(ahoAnual * 10));
+    setTxt('mile1Label', 'Capital al Año 10'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Invertido por ti en 10 años: ' + fmt(ahoAnual * 10));
     setTxt('mile2Label', 'Retiro Anticipado (Edad 60)*'); setTxt('mile2Val', fmt(fondoFinal)); setTxt('mile2Sub', '0% de retención de impuestos');
     setTxt('mile2PensionTag', '≈ ' + fmt(renta60) + '/mes a partir de tus 60 años');
 
-    setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Tu dinero genera <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> libres de impuestos.');
-    setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
+    setHtml('urgencyBar', '⚡ <b>Ventaja de invertir a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Tu inversión genera <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> libres de impuestos.');
 
     window.buildCombinedWhatsApp(0, fondoFinal, liq5, anosPago, renta60);
     return;
@@ -1061,31 +1231,31 @@ window.syncAll = function(){
   var pctFin = ahoAnual > 0 ? Math.round((devSAT / ahoAnual) * 100) : 0;
   var renta65 = Math.round(fondoFinal * 0.0065);
 
-  setTxt('legalBadge', 'Máxima Devolución Anual del SAT (Escala ' + tasaPct + '%)');
-  setHtml('mainBoardTitle', pref + 'Estrategia Fiscal: <span>Máxima Devolución del SAT cada Abril</span>');
-  setTxt('mainBoardSub', 'Destinando el 100% de tus ' + fmt(S.ahorroMensual) + '/mes a la bolsa deducible para que el SAT te deposite el máximo efectivo posible cada abril.');
+  setTxt('boardKickerText', 'ESTRATEGIA FISCAL ART. 151 · SEGUROS MONTERREY NYL');
+  setTxt('legalBadge', 'Escalón SAT: ' + tasaPct + '%');
+  setHtml('mainBoardTitle', pref + 'optimización fiscal: <span>Máxima Devolución del SAT cada Abril</span>');
+  setTxt('mainBoardSub', 'Destinando el 100% de tu inversión de ' + fmt(S.ahorroMensual) + '/mes a la bolsa deducible para que el SAT te deposite el máximo efectivo posible cada abril.');
 
-  setTxt('kpi1Title', '1. Impuesto anual que hoy pagas'); setTxt('kpi1Value', fmt(isrActual)); setTxt('kpi1Sub', 'Lo que se queda el SAT sin plan');
-  setTxt('kpi2Title', '2. Ahorro anual que deduces'); setTxt('kpi2Value', fmt(dedReal)); setTxt('kpi2Sub', 'Registrado a tu favor ante el SAT');
-  setTxt('kpi3Title', '3. Te regresa el SAT en abril'); setTxt('kpi3Value', '+' + fmt(devSAT)); setTxt('kpi3Sub', 'Efectivo anual en tu cuenta');
-  setTxt('kpi4Title', '4. Lo que realmente te cuesta'); setTxt('kpi4Value', fmt(invNeta) + '/mes'); setTxt('kpi4Sub', 'El SAT pone el ' + pctFin + '% de tu ahorro');
+  setTxt('kpi1Title', '1. Impuesto anual que hoy pagas'); setTxt('kpi1Value', fmt(isrActual)); setTxt('kpi1Sub', 'Lo que retiene el SAT sin plan');
+  setTxt('kpi2Title', '2. Inversión anual deducible'); setTxt('kpi2Value', fmt(dedReal)); setTxt('kpi2Sub', 'Registrada a tu favor ante el SAT');
+  setTxt('kpi3Title', '✨ 3. Devuelve el SAT'); setTxt('kpi3Value', '+' + fmt(devSAT)); setTxt('kpi3Sub', 'Cada mes de abril en tu cuenta');
+  setTxt('kpi4Title', '4. Inversión Neta Real'); setTxt('kpi4Value', fmt(invNeta) + '/mes'); setTxt('kpi4Sub', 'El SAT impulsa el ' + pctFin + '%');
 
   var pctN = isrActual > 0 ? Math.max(15, Math.round((nuevoISR / isrActual) * 100)) : 70;
-  setTxt('chartLeftTitle', 'Cuánto dinero recuperas del SAT cada año');
-  setTxt('efficiencyPct', 'Juntas en 10 años aprox: ~' + fmt(fondo10AnosTotal));
-  setTxt('bar1Label', 'Impuestos anuales si no haces nada antes del 31 de diciembre'); setTxt('bar1Val', fmt(isrActual) + ' MXN'); setW('bar1Fill', '100%');
-  setTxt('bar2Label', 'Impuesto reducido + Dinero que el SAT te deposita de vuelta'); setTxt('bar2Val', 'Recuperas +' + fmt(devSAT) + ' cada abril');
+  setTxt('chartLeftTitle', 'Cuánto capital recuperas del SAT cada año');
+  setTxt('efficiencyPct', 'Capital a 10 años: ~' + fmt(fondo10AnosTotal));
+  setTxt('bar1Label', 'Impuestos anuales si no inviertes antes del 31 de diciembre'); setTxt('bar1Val', fmt(isrActual) + ' MXN'); setW('bar1Fill', '100%');
+  setTxt('bar2Label', 'Impuesto reducido + Efectivo que el SAT te deposita de vuelta'); setTxt('bar2Val', 'Recuperas +' + fmt(devSAT) + ' cada abril');
   setW('bar2Fill', pctN + '%'); setW('bar2Gold', (100 - pctN) + '%');
-  setHtml('bannerExplain', 'Tú apartas <b>' + fmt(S.ahorroMensual) + '/mes</b>, y como el SAT te regresa <b>' + fmt(devMes) + '/mes</b>:');
-  setTxt('bannerNet', 'Tu esfuerzo neto real es de ' + fmt(invNeta) + '/mes');
+  setHtml('bannerExplain', 'Tú inviertes <b>' + fmt(S.ahorroMensual) + '/mes</b>, y como el SAT te regresa <b>' + fmt(devMes) + '/mes</b>:');
+  setTxt('bannerNet', 'Tu inversión neta real es de ' + fmt(invNeta) + '/mes');
 
-  setTxt('chartRightTitle', 'Tu Patrimonio Protegido (10 Años y Edad 65)');
-  setTxt('mile1Label', 'Juntas en 10 Años aprox'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Tal como viste en tu cálculo inicial');
-  setTxt('mile2Label', 'Tu Fondo de Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondoFinal)); setTxt('mile2Sub', 'Creciendo arriba de la inflación');
-  setTxt('mile2PensionTag', '≈ ' + fmt(renta65) + '/mes para tu retiro');
+  setTxt('chartRightTitle', 'Multiplicación de tu Patrimonio (10 Años y Edad 65)');
+  setTxt('mile1Label', 'Capital al Año 10'); setTxt('mile1Val', fmt(fondo10AnosTotal)); setTxt('mile1Sub', 'Tal como viste en tu cálculo inicial');
+  setTxt('mile2Label', 'Patrimonio al Retiro (Edad 65)*'); setTxt('mile2Val', fmt(fondoFinal)); setTxt('mile2Sub', 'Creciendo arriba de la inflación');
+  setTxt('mile2PensionTag', '≈ ' + fmt(renta65) + '/mes de renta mensual');
 
-  setHtml('urgencyBar', '⚡ <b>Ventaja de empezar a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> en tu retiro + tu devolución del SAT de este año.');
-  setTxt('protectionSumLabel', S.protectWho + ' (' + S.healthNote.split('(')[0].trim() + ')');
+  setHtml('urgencyBar', '⚡ <b>Ventaja de invertir a tus ' + S.edad + ' años (vs. esperar 1 año):</b> Sumas <b>+' + fmt(ventajaIniciarHoy) + ' MXN más</b> en tu retiro + tu devolución del SAT de este año.');
 
   window.buildCombinedWhatsApp(devSAT, fondoFinal, fondo10AnosTotal, anosPago, renta65);
 };
@@ -1111,18 +1281,18 @@ window.buildCombinedWhatsApp = function(devSAT, fondoPrincipal, fondoIntermedio,
       '• Situación actual: *' + S.gmmStatus + '*\n' +
       '• Hospitales de preferencia: *' + hospObj.titulo + '*\n' +
       '• Suma asegurada objetivo: *Hasta $170,000,000 MXN*\n' +
-      '• Beneficio en el SAT: *Prima deducible en abril*\n\n' +
+      '• Beneficio en el SAT: *Inversión deducible en abril*\n\n' +
       '📋 *Acuerdo para nuestra 2ª Sesión por Google Meet:*\n' +
       'Prepararé tu estudio oficial en Seguros Monterrey con tus niveles hospitalarios para revisarlo juntos.';
   } else if (S.mode === 'hibrido' && S.regimen !== 'resico'){
     var m1 = Math.round(S.ahorroMensual * (S.hybridPct151 / 100));
     var m2 = S.ahorroMensual - m1;
-    ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de tu *Plan en 2 Bolsillos* que vimos en pantalla:\n\n' +
+    ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de tu *Plan de Inversión en 2 Bolsillos* que vimos en pantalla:\n\n' +
       '• Meta flexible: *' + goalObj.full + '*\n' +
-      '• Ahorro mensual planeado: *' + fmt(S.ahorroMensual) + '/mes* (Esfuerzo neto real: *' + fmt(Math.max(0, S.ahorroMensual - (devSAT/12))) + '/mes* gracias a tu devolución del SAT)\n' +
+      '• Inversión mensual planeada: *' + fmt(S.ahorroMensual) + '/mes* (Inversión neta real: *' + fmt(Math.max(0, S.ahorroMensual - (devSAT/12))) + '/mes* con el impulso del SAT)\n' +
       '• *Bolsillo 1 (Con devolución del SAT):* ' + fmt(m1) + '/mes → El SAT te regresa aprox. *+' + fmt(devSAT) + ' MXN cada abril*\n' +
-      '• *Bolsillo 2 (Disponible / Retiro a los 60):* ' + fmt(m2) + '/mes → Juntas *~' + fmt(fondoIntermedio) + ' MXN* al año 5 sin el candado de los 65 años\n' +
-      '• *Fondo de retiro estimado (Edad 65):* ~' + fmt(fondoPrincipal) + ' MXN (equivale a *~' + fmt(rentaMensual) + '/mes* en tu retiro)\n\n' +
+      '• *Bolsillo 2 (Disponible / Retiro a los 60):* ' + fmt(m2) + '/mes → Capitalizas *~' + fmt(fondoIntermedio) + ' MXN* al año 5 sin el candado de los 65 años\n' +
+      '• *Patrimonio estimado al retiro (Edad 65):* ~' + fmt(fondoPrincipal) + ' MXN (equivale a *~' + fmt(rentaMensual) + '/mes* de renta en tu retiro)\n\n' +
       '📋 *Lo que veremos en nuestra 2ª Sesión (15 min):*\n' +
       '1. Tu *' + S.session2Deliverable + '* emitida en el cotizador oficial de Seguros Monterrey.\n' +
       '2. Tu Suma Asegurada exacta de respaldo inmediato para tu edad (' + S.edad + ' años).\n' +
@@ -1131,9 +1301,9 @@ window.buildCombinedWhatsApp = function(devSAT, fondoPrincipal, fondoIntermedio,
     var pName = (S.mode === '60' || S.regimen === 'resico') ? 'Retiro Libre de Impuestos a los 60 Años' : 'Máxima Devolución del SAT cada Abril';
     var lFisc = (S.mode === '60' || S.regimen === 'resico')
       ? '• Beneficio Fiscal: *0% de impuestos a partir de tus 60 años*'
-      : ('• Devolución del SAT en abril: *+' + fmt(devSAT) + ' MXN cada año* (Esfuerzo neto real: *' + fmt(Math.max(0, S.ahorroMensual - (devSAT/12))) + '/mes*)');
+      : ('• Devolución del SAT en abril: *+' + fmt(devSAT) + ' MXN cada año* (Inversión neta real: *' + fmt(Math.max(0, S.ahorroMensual - (devSAT/12))) + '/mes*)');
     ficha = saludo + ' qué gusto platicar contigo hoy. Te comparto el resumen de lo que diseñamos en tu sesión (*' + pName + '*):\n\n' +
-      '• Ahorro mensual considerado: *' + fmt(S.ahorroMensual) + '/mes*\n' + lFisc + '\n' +
+      '• Inversión mensual considerada: *' + fmt(S.ahorroMensual) + '/mes*\n' + lFisc + '\n' +
       '• Capital proyectado a 10 años: *~' + fmt(fondoIntermedio) + ' MXN*\n' +
       '• Patrimonio proyectado al retiro: *~' + fmt(fondoPrincipal) + ' MXN* (equivale a *~' + fmt(rentaMensual) + '/mes*)\n\n' +
       '📋 *Lo que veremos en nuestra 2ª Sesión (15 min):*\n' +
@@ -1145,14 +1315,14 @@ window.buildCombinedWhatsApp = function(devSAT, fondoPrincipal, fondoIntermedio,
   if (rNames){
     ficha += '\n\n🎖️ *Tus 2 Pases de Diagnóstico Preferenciales reservados para ' + rNames + ':*\n' +
       'Si gustas, puedes compartirles este mensaje cuando platiques con ellos:\n' +
-      '_"¡Hola! Tuve una sesión muy clara con Santiago, mi asesor patrimonial (Cédula C412676), sobre cómo hacer que el SAT te regrese impuestos en abril y armar un plan de retiro sin congelar tus ahorros hasta los 65 años. Me dio un Pase de Diagnóstico Preferencial para ti; avísame si te late para pasarte su contacto."_';
+      '_"¡Hola! Tuve una sesión muy clara con Santiago, mi asesor patrimonial (Cédula C412676), sobre cómo hacer que el SAT te regrese impuestos en abril y estructurar un plan de inversión sin congelar tu capital hasta los 65 años. Me dio un Pase de Diagnóstico Preferencial para ti; avísame si te late para pasarte su contacto."_';
   }
 
   if ($id('sendSummaryWaBtn')) $id('sendSummaryWaBtn').href = waBase + encodeURIComponent(ficha);
 
   var paseSolo = saludo + ' dejé reservados tus *2 Pases de Diagnóstico Preferenciales* para *' + (rNames || 'tus invitados') + '* bajo tu folio.\n\n' +
     'Aquí tienes el mensaje listo por si gustas reenviárselo por WhatsApp:\n\n' +
-    '*"¡Hola! Acabo de tener una sesión muy clara con Santiago, mi asesor patrimonial (Cédula CNSF C412676), sobre cómo recuperar impuestos ante el SAT cada abril y armar un plan de ahorro sin amarrar el dinero hasta los 65 años. Me dio 2 Pases de Diagnóstico Preferenciales en su agenda para personas cercanas y pensé en ti. Avísame si te late para compartirte su contacto."*';
+    '*"¡Hola! Acabo de tener una sesión muy clara con Santiago, mi asesor patrimonial (Cédula CNSF C412676), sobre cómo recuperar impuestos ante el SAT cada abril y armar un plan de inversión sin amarrar el dinero hasta los 65 años. Me dio 2 Pases de Diagnóstico Preferenciales en su agenda para personas cercanas y pensé en ti. Avísame si te late para compartirte su contacto."*';
   window.__currentPassUrl = waBase + encodeURIComponent(paseSolo);
 };
 
