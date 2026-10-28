@@ -27,6 +27,15 @@
   gtag('config', 'AW-18490645254', { 'allow_enhanced_conversions': true });
 </script>
 
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z4y03hb5p5");
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -115,7 +124,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .r-scale{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:10.5px;color:#7A827F}
 .cap-link-soft{background:var(--sage-soft);border:none;color:var(--emerald);font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px}
 
-/* CAJA DE RESULTADO 100% VISIBLE EN VIVO (COMO CONVIRTIÓ ZAZANILLI) */
+/* CAJA DE RESULTADO 100% VISIBLE EN VIVO */
 .live-result-box{
   background:var(--emerald);
   color:#fff;
@@ -130,6 +139,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .lr-col small{display:block;font-size:10.5px;color:var(--ivory);opacity:.9}
 .lr-col b{display:block;font-size:clamp(20px,5vw,25px);color:var(--gold);font-weight:800;line-height:1.1;margin-top:2px}
 .lr-col span{display:block;font-size:10.5px;color:var(--sage);margin-top:2px}
+.lr-unlock-link{color:var(--gold);font-weight:800;text-decoration:underline;cursor:pointer}
 .lr-split-note{margin-top:9px;background:rgba(41,44,43,.38);border-left:3px solid var(--gold);border-radius:7px;padding:7px 10px;font-size:11.5px;color:var(--ivory);line-height:1.38}
 
 /* FORMULARIO DIRECTO PEGADO AL RESULTADO EN VIVO */
@@ -147,7 +157,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 
 .err{display:none;margin-top:9px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:600}
 
-.cta-main{width:100%;min-height:52px;margin-top:11px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:15px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);transition:transform .15s}
+.cta-main{width:100%;min-height:52px;margin-top:11px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);transition:transform .15s}
 .cta-main:hover{transform:translateY(-1px)}
 .consent-mini{margin-top:8px;font-size:10.5px;color:var(--muted);text-align:center;line-height:1.35}
 .consent-mini a{color:var(--emerald);font-weight:700;text-decoration:underline}
@@ -316,7 +326,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       </div>
     </div>
 
-    <!-- SIMULADOR 100% VISIBLE EN 1 SOLA VISTA (SIN ESCONDER EL NÚMERO, COMO CONVIRTIÓ ZAZANILLI) -->
+    <!-- SIMULADOR 100% VISIBLE EN 1 SOLA VISTA -->
     <div class="open-sim-card" id="formulario">
       <div class="os-top">
         <div class="os-top-title">
@@ -374,11 +384,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- CAJA DE RESULTADO EN VIVO (VISIBLE AL INSTANTE PARA GENERAR CONFIANZA) -->
+          <!-- CAJA DE RESULTADO EN VIVO (SIMPLE + BRECHA DE CURIOSIDAD A LOS 60/65 AÑOS) -->
           <div class="live-result-box" id="taxBox">
             <div class="lr-meta">
               <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
-              <span>2 Cuentas Activas</span>
+              <span>2 Cuentas · Imagina Ser</span>
             </div>
             <div class="lr-grid">
               <div class="lr-col">
@@ -389,7 +399,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
               <div class="lr-col">
                 <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
                 <b id="resCol2Val" class="num">~$742,400 MXN*</b>
-                <span id="resCol2Sub">En UDIs o Dólares</span>
+                <span id="resCol2Sub">Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong></span>
               </div>
             </div>
             <div class="lr-split-note" id="resTwoPocketsText">
@@ -397,11 +407,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- FORMULARIO DIRECTO EN LA MISMA PANTALLA -->
+          <!-- FORMULARIO CORTO (2 CAMPOS) ENFOCADO EN WHATSAPP SIN LLAMADAS -->
           <div class="direct-form-wrap" id="directFormBox">
             <div class="df-head">
-              <b>Recibe tu cotización oficial de Seguros Monterrey</b>
-              <span>Déjame tus datos para enviarte tu estudio y agendar 15 min:</span>
+              <b>Recibe tu estudio a los 60 y 65 años de Seguros Monterrey</b>
+              <span>Déjame tu Nombre y WhatsApp para enviarte tus números y elegir horario (15 min):</span>
             </div>
 
             <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
@@ -428,16 +438,16 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="err" id="formError" role="alert"></div>
 
-            <button type="submit" class="cta-main" id="formSubmitBtn">Recibir mi cotización y elegir horario →</button>
+            <button type="submit" class="cta-main" id="formSubmitBtn">Ver mi estudio por WhatsApp y elegir horario →</button>
 
             <p class="consent-mini">
-              Tus datos son privados conforme a nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>. Cero llamadas invasivas.
+              🔒 Trato directo por mensaje de WhatsApp. <strong>Cero llamadas de spam.</strong> <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
             </p>
           </div>
 
           <!-- PANEL DE CONFIRMACIÓN DE HORARIO QUE APARECE AL ENVIAR -->
           <div class="sched-panel" id="schedPanelBox">
-            <span class="sched-lbl" id="schedGreeting">¡Listo! ¿En qué horario te acomoda que revisemos tu cotización (15 min)?</span>
+            <span class="sched-lbl" id="schedGreeting">¡Listo! ¿En qué horario te acomoda que revisemos tu estudio (15 min)?</span>
             <div class="slots-grid" id="slotButtons">
               <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<small>9:00 a 12:00 hrs</small></button>
               <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<small>12:00 a 15:00 hrs</small></button>
@@ -822,11 +832,19 @@ const state = {
   tenYearCapital: 742439,
   tenYearGain: 262439,
   selectedSlot: 'Mañana (9:00 a 12:00 hrs)',
-  leadName: ''
+  leadName: '',
+  clarityTaggedSim: false
 };
 
 let pulseTimer = null;
 let currentLeadId = null;
+
+function tagClaritySim(){
+  if (!state.clarityTaggedSim && typeof window.clarity === 'function'){
+    state.clarityTaggedSim = true;
+    window.clarity('set', 'interaccion_simulador', 'si');
+  }
+}
 
 function isrAnual(base){
   if (base <= 0) return 0;
@@ -849,6 +867,19 @@ function paintSliderTrack(slider){
   const val = parseFloat(slider.value) || 0;
   const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
   slider.style.background = `linear-gradient(90deg, #145C52 0%, #A8C4B5 ${pct}%, #E2DBD0 ${pct}%, #E2DBD0 100%)`;
+}
+
+function bindUnlockStudyLink(){
+  const link = $('unlockStudyLink');
+  if (link){
+    link.onclick = () => {
+      const nameInput = $('formNombre');
+      if (nameInput){
+        nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => nameInput.focus(), 350);
+      }
+    };
+  }
 }
 
 function recalculateNumbers(triggerPulse){
@@ -910,7 +941,7 @@ function recalculateNumbers(triggerPulse){
 
     $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
     $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').textContent = 'En UDIs o Dólares';
+    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
 
     $('stickySmall').textContent = 'Devolución SAT estimada:';
     $('stickyBig').textContent = '+' + money(state.refund) + ' MXN*';
@@ -930,7 +961,7 @@ function recalculateNumbers(triggerPulse){
 
     $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
     $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').textContent = '0% de impuestos desde tus 60 años';
+    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
 
     $('stickySmall').textContent = 'Patrimonio 10 años (Art. 93):';
     $('stickyBig').textContent = '~' + money(state.tenYearCapital) + '*';
@@ -938,7 +969,10 @@ function recalculateNumbers(triggerPulse){
     $('resTwoPocketsText').innerHTML = '💡 <strong>Estrategia RESICO:</strong> Tu inversión crece protegida en UDIs o Dólares con una cuenta disponible en 3 a 5 años y retiro 100% libre de impuestos desde los 60 años.';
   }
 
+  bindUnlockStudyLink();
+
   if (triggerPulse && $('taxBox')){
+    tagClaritySim();
     const tb = $('taxBox');
     tb.classList.add('pulse');
     clearTimeout(pulseTimer);
@@ -964,7 +998,7 @@ function updateWhatsAppLinks(){
   const msgWa = [
     `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
-    `Acabo de calcular y cotizar mi plan en tu página:`,
+    `Acabo de calcular mi estudio en tu página:`,
     `• *Edad:* ${state.ageRange} años`,
     `• *Ingreso aprox:* ${money(state.income)}/mes`,
     `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
@@ -972,7 +1006,7 @@ function updateWhatsAppLinks(){
     `• *Resultado:* ${beneficioTxt}`,
     `• *Horario preferido:* ${state.selectedSlot} (${dayPref})`,
     ``,
-    `¿Qué espacio tienes disponible para revisar mi cotización?`
+    `¿Qué espacio tienes disponible para revisar mi estudio de 60 y 65 años?`
   ].join('\n');
 
   const msgBooked = [
@@ -1076,6 +1110,9 @@ async function flushPending(){
 }
 
 function trackConversionIfQualified(leadId, qualified, waDigits){
+  if (typeof window.clarity === 'function'){
+    window.clarity('set', 'lead_enviado', qualified ? 'calificado' : 'no_calificado');
+  }
   if (!qualified) return false;
   const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 900 };
 
@@ -1110,7 +1147,7 @@ async function handleSubmit(ev){
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para recibir tu cotización.'); $('formNombre').focus(); return; }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu estudio.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa los 10 dígitos de tu WhatsApp (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
 
@@ -1143,7 +1180,7 @@ async function handleSubmit(ev){
   state.submitted = true;
   state.leadName = nombre;
   const firstName = nombre.split(/\s+/)[0];
-  $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu cotización (15 min)?`;
+  $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu estudio (15 min)?`;
 
   $('directFormBox').classList.add('hidden');
   $('schedPanelBox').classList.add('show');
