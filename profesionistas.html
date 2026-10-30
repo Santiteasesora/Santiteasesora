@@ -150,26 +150,62 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 
 .lr-split-note{margin-top:8px;background:rgba(41,44,43,.32);border-left:3px solid var(--gold);border-radius:7px;padding:6px 10px;font-size:11px;color:var(--ivory);line-height:1.36}
 
-/* FORMULARIO DIRECTO CON EDAD EXACTA + FUMADOR + WHATSAPP */
+/* FORMULARIO DIRECTO CON EDAD EXACTA + SELECTOR LIMPIO DE ¿FUMAS? + WHATSAPP */
 .direct-form-wrap{background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:14px;transition:box-shadow .25s ease,border-color .25s ease}
 .direct-form-wrap.highlight-box{border-color:var(--gold);box-shadow:0 0 0 4px rgba(217,164,65,.28)}
 .df-head{text-align:center;margin-bottom:10px}
 .df-head b{display:block;font-size:14px;color:var(--charcoal);font-weight:800}
 .df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:2px}
 
-/* Fila actuarial: Edad exacta + ¿Fumas? */
-.actuarial-row{display:grid;grid-template-columns:112px 1fr;gap:9px;margin-bottom:9px;align-items:end}
-@media(max-width:380px){.actuarial-row{grid-template-columns:1fr}}
-.field label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:3px}
-.field input{width:100%;min-height:44px;padding:8px 11px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--charcoal);font-size:15.5px;font-weight:700;-webkit-appearance:none}
+/* Fila actuarial limpia y simétrica: Edad exacta + ¿Fumas? */
+.actuarial-row{display:grid;grid-template-columns:108px 1fr;gap:9px;margin-bottom:9px;align-items:end}
+@media(max-width:360px){.actuarial-row{grid-template-columns:1fr}}
+
+.field label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:4px}
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="number"]{
+  width:100%;height:46px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--charcoal);font-size:16px;font-weight:700;-webkit-appearance:none;appearance:none
+}
+.field input[type="number"]{text-align:center}
 .field input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(168,196,181,.3)}
 
-.smoker-check-wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:6px 11px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;user-select:none}
-.smoker-check-wrap:hover{border-color:var(--sage)}
-.smoker-left{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--charcoal)}
-.smoker-left input[type="checkbox"]{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;flex-shrink:0}
-.smoker-status-pill{font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;background:var(--sage-soft);color:var(--emerald);white-space:nowrap}
-.smoker-status-pill.is-smoker{background:#FEF3C7;color:#92400E}
+.smoker-toggle-group{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px;
+  background:#fff;
+  padding:4px;
+  height:46px;
+  border-radius:10px;
+  border:1.5px solid var(--line);
+  align-items:stretch;
+}
+.smoker-opt-btn{
+  border:none;
+  border-radius:7px;
+  background:transparent;
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  transition:all .15s ease;
+  padding:0 6px;
+  white-space:nowrap;
+}
+.smoker-opt-btn.active{
+  background:var(--emerald);
+  color:#fff;
+  font-weight:800;
+  box-shadow:0 2px 6px rgba(20,92,82,.18);
+}
+.smoker-opt-btn[data-smoke="yes"].active{
+  background:var(--charcoal);
+  color:var(--gold);
+}
 
 .field-grid{display:grid;gap:9px}
 @media(min-width:520px){.field-grid{grid-template-columns:1fr 1fr}}
@@ -444,7 +480,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- FORMULARIO CORTO CON EDAD EXACTA + ¿FUMAS? + WHATSAPP -->
+          <!-- FORMULARIO CORTO CON EDAD EXACTA + SELECTOR LIMPIO DE ¿FUMAS? + WHATSAPP -->
           <div class="direct-form-wrap" id="directFormBox">
             <div class="df-head">
               <b>Desbloquea tu corrida exacta de 2 Bolsillos (60 y 65 años)</b>
@@ -467,14 +503,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
                 <input type="number" id="formEdadExacta" name="edad_exacta" class="num" min="18" max="65" value="35" inputmode="numeric" required>
               </div>
               <div class="field">
-                <label for="formFumaCheck">Tarifa médica de seguro</label>
-                <label class="smoker-check-wrap" for="formFumaCheck">
-                  <span class="smoker-left">
-                    <input type="checkbox" id="formFumaCheck" name="fuma">
-                    <span>¿Fumas?</span>
-                  </span>
-                  <span class="smoker-status-pill" id="smokerStatusBadge">🚭 No fumo</span>
-                </label>
+                <label>¿Fumas? *</label>
+                <div class="smoker-toggle-group" id="smokerToggleGroup" role="group" aria-label="¿Fumas?">
+                  <button type="button" class="smoker-opt-btn active" data-smoke="no" aria-pressed="true">🚭 No fumo</button>
+                  <button type="button" class="smoker-opt-btn" data-smoke="yes" aria-pressed="false">🚬 Sí fumo</button>
+                </div>
               </div>
             </div>
 
@@ -1241,7 +1274,6 @@ async function handleSubmit(ev){
   if ($('website').value) return;
 
   state.exactAge = exactAgeVal;
-  state.isSmoker = Boolean($('formFumaCheck').checked);
 
   updateHiddenCalc();
   if (!currentLeadId) currentLeadId = newLeadId();
@@ -1401,17 +1433,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if ($('formFumaCheck')){
-    $('formFumaCheck').addEventListener('change', e => {
-      state.isSmoker = Boolean(e.target.checked);
-      const badge = $('smokerStatusBadge');
-      if (badge){
-        badge.textContent = state.isSmoker ? '🚬 Sí fumo' : '🚭 No fumo';
-        badge.classList.toggle('is-smoker', state.isSmoker);
-      }
+  document.querySelectorAll('#smokerToggleGroup .smoker-opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#smokerToggleGroup .smoker-opt-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      state.isSmoker = (btn.getAttribute('data-smoke') === 'yes');
       updateHiddenCalc();
     });
-  }
+  });
 
   document.querySelectorAll('#regimePills .pill-btn').forEach(btn => {
     btn.addEventListener('click', () => {
