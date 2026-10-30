@@ -94,9 +94,10 @@ a{color:var(--emerald);text-decoration:none}
 
 /* CONSOLA ABIERTA EN 1 SOLA VISTA (RESULTADO EN VIVO + FORMULARIO DIRECTO) */
 .open-sim-card{background:var(--surface);border:2px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:16px;max-width:520px;margin:0 auto;width:100%}
-.os-top{background:var(--ivory);padding:16px 18px 14px;border-bottom:1px solid var(--line)}
+.os-top{background:var(--ivory);padding:15px 18px 13px;border-bottom:1px solid var(--line)}
 .os-top-title{font-size:16px;font-weight:800;color:var(--charcoal);display:flex;justify-content:space-between;align-items:center;gap:8px}
-.os-top-title span{font-size:11px;font-weight:800;background:var(--sage-soft);color:var(--emerald);padding:3px 9px;border-radius:999px;border:1px solid var(--sage)}
+.os-live-btn{font-size:11px;font-weight:800;background:var(--sage-soft);color:var(--emerald);padding:4px 10px;border-radius:999px;border:1px solid var(--sage);display:inline-flex;align-items:center;gap:4px;transition:all .15s}
+.os-live-btn:hover{background:var(--emerald);color:#fff}
 
 .os-body{padding:16px 16px 20px;display:grid;gap:13px}
 @media(min-width:640px){.os-body{padding:20px 22px 24px}}
@@ -124,7 +125,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .r-scale{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:10.5px;color:#7A827F}
 .cap-link-soft{background:var(--sage-soft);border:none;color:var(--emerald);font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px}
 
-/* CAJA DE RESULTADO 100% VISIBLE EN VIVO */
+/* CAJA DE RESULTADO 100% VISIBLE EN VIVO + BOTONES DESGLOSE 2 BOLSILLOS */
 .live-result-box{
   background:var(--emerald);
   color:#fff;
@@ -132,6 +133,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
   border-radius:16px;
   padding:14px 15px;
   transition:transform .2s ease;
+  scroll-margin-top:16px;
 }
 .live-result-box.pulse{transform:scale(1.01)}
 .lr-meta{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10.5px;font-weight:800;color:var(--gold);text-transform:uppercase}
@@ -139,20 +141,38 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .lr-col small{display:block;font-size:10.5px;color:var(--ivory);opacity:.9}
 .lr-col b{display:block;font-size:clamp(20px,5vw,25px);color:var(--gold);font-weight:800;line-height:1.1;margin-top:2px}
 .lr-col span{display:block;font-size:10.5px;color:var(--sage);margin-top:2px}
-.lr-unlock-link{color:var(--gold);font-weight:800;text-decoration:underline;cursor:pointer}
-.lr-split-note{margin-top:9px;background:rgba(41,44,43,.38);border-left:3px solid var(--gold);border-radius:7px;padding:7px 10px;font-size:11.5px;color:var(--ivory);line-height:1.38}
 
-/* FORMULARIO DIRECTO PEGADO AL RESULTADO EN VIVO */
-.direct-form-wrap{background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:14px}
+.lr-pockets-preview{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.lr-pocket-btn{background:rgba(41,44,43,.42);border:1px solid rgba(217,164,65,.55);border-radius:10px;padding:7px 9px;text-align:left;color:var(--ivory);transition:all .15s;display:flex;flex-direction:column;gap:2px}
+.lr-pocket-btn:hover{background:rgba(217,164,65,.18);border-color:var(--gold)}
+.lr-pocket-btn small{font-size:9.5px;font-weight:800;color:var(--sage);text-transform:uppercase;letter-spacing:.02em}
+.lr-pocket-btn strong{font-size:11.5px;color:var(--gold);font-weight:800;display:flex;align-items:center;justify-content:space-between}
+
+.lr-split-note{margin-top:8px;background:rgba(41,44,43,.32);border-left:3px solid var(--gold);border-radius:7px;padding:6px 10px;font-size:11px;color:var(--ivory);line-height:1.36}
+
+/* FORMULARIO DIRECTO CON EDAD EXACTA + FUMADOR + WHATSAPP */
+.direct-form-wrap{background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:14px;transition:box-shadow .25s ease,border-color .25s ease}
+.direct-form-wrap.highlight-box{border-color:var(--gold);box-shadow:0 0 0 4px rgba(217,164,65,.28)}
 .df-head{text-align:center;margin-bottom:10px}
 .df-head b{display:block;font-size:14px;color:var(--charcoal);font-weight:800}
-.df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:1px}
+.df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:2px}
+
+/* Fila actuarial: Edad exacta + ¿Fumas? */
+.actuarial-row{display:grid;grid-template-columns:112px 1fr;gap:9px;margin-bottom:9px;align-items:end}
+@media(max-width:380px){.actuarial-row{grid-template-columns:1fr}}
+.field label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:3px}
+.field input{width:100%;min-height:44px;padding:8px 11px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--charcoal);font-size:15.5px;font-weight:700;-webkit-appearance:none}
+.field input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(168,196,181,.3)}
+
+.smoker-check-wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:6px 11px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;user-select:none}
+.smoker-check-wrap:hover{border-color:var(--sage)}
+.smoker-left{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--charcoal)}
+.smoker-left input[type="checkbox"]{width:18px;height:18px;accent-color:var(--emerald);cursor:pointer;flex-shrink:0}
+.smoker-status-pill{font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;background:var(--sage-soft);color:var(--emerald);white-space:nowrap}
+.smoker-status-pill.is-smoker{background:#FEF3C7;color:#92400E}
 
 .field-grid{display:grid;gap:9px}
 @media(min-width:520px){.field-grid{grid-template-columns:1fr 1fr}}
-.field label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:3px}
-.field input{width:100%;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--charcoal);font-size:16px;font-weight:600;-webkit-appearance:none}
-.field input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(168,196,181,.3)}
 .hp{position:absolute;left:-9999px;opacity:0}
 
 .err{display:none;margin-top:9px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:600}
@@ -253,6 +273,11 @@ details.faq-item summary::after{content:"+";width:26px;height:26px;border-radius
 details.faq-item[open] summary::after{content:"−";background:var(--emerald);color:#fff}
 .faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.55}
 
+.bottom-cta-card{max-width:840px;margin:24px auto 0;background:var(--ivory);border:2px solid var(--sage);border-radius:var(--r-xl);padding:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;box-shadow:var(--shadow-soft)}
+.bottom-cta-card h3{font-size:18px;font-weight:800;color:var(--charcoal)}
+.bottom-cta-card p{font-size:13.5px;color:var(--muted);margin-top:2px}
+.bottom-cta-btn{background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;padding:12px 20px;font-size:14px;font-weight:800;box-shadow:0 6px 16px -4px rgba(217,164,65,.6)}
+
 footer{background:var(--charcoal);color:var(--ivory);padding:38px 16px;font-size:13px;line-height:1.6;margin-top:32px}
 .footer-in{max-width:1080px;margin:0 auto;display:grid;gap:14px}
 .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,245,227,.15)}
@@ -301,7 +326,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <a href="#casos">Caso real</a>
       <a href="#dudas">Dudas</a>
     </nav>
-    <button type="button" class="top-pill" id="headerCtaBtn">Agendar directo →</button>
+    <button type="button" class="top-pill" id="headerCtaBtn">Recibir mi estudio →</button>
   </header>
 
   <div class="hero-stage">
@@ -322,7 +347,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         <h1>Construye un retiro libre de <span class="serif-it">impuestos.</span></h1>
         <p>Una cuenta para que el SAT te regrese dinero cada abril y otra disponible para tus metas o retiro a los 60 años.</p>
         <button type="button" class="btn-gold-hero" id="heroCalcBtn">Calcular y cotizar mi plan →</button>
-        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">📅 Ya quiero contratar: Agendar directo →</button>
+        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">📲 Recibir mi corrida exacta por WhatsApp →</button>
       </div>
     </div>
 
@@ -331,7 +356,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <div class="os-top">
         <div class="os-top-title">
           <b>Calcula y cotiza tu plan a medida</b>
-          <span>Resultado en vivo</span>
+          <button type="button" class="os-live-btn" id="topLiveResultBtn">Resultado en vivo ↓</button>
         </div>
       </div>
 
@@ -342,10 +367,10 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           <div>
             <label class="step-lbl">1. Tu rango de edad actual</label>
             <div class="pills-4" id="agePills">
-              <button type="button" class="pill-btn" data-age="25-32" data-min="1500">25–32</button>
-              <button type="button" class="pill-btn active" data-age="33-39" data-min="2500">33–39</button>
-              <button type="button" class="pill-btn" data-age="40-46" data-min="3000">40–46</button>
-              <button type="button" class="pill-btn" data-age="47-55" data-min="4000">47–55</button>
+              <button type="button" class="pill-btn" data-age="25-32" data-exact="29" data-min="1500">25–32</button>
+              <button type="button" class="pill-btn active" data-age="33-39" data-exact="35" data-min="2500">33–39</button>
+              <button type="button" class="pill-btn" data-age="40-46" data-exact="42" data-min="3000">40–46</button>
+              <button type="button" class="pill-btn" data-age="47-55" data-exact="50" data-min="4000">47–55</button>
             </div>
           </div>
 
@@ -384,7 +409,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- CAJA DE RESULTADO EN VIVO (SIMPLE + BRECHA DE CURIOSIDAD A LOS 60/65 AÑOS) -->
+          <!-- CAJA DE RESULTADO EN VIVO + BOTONES INTERACTIVOS DE 2 BOLSILLOS -->
           <div class="live-result-box" id="taxBox">
             <div class="lr-meta">
               <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
@@ -399,19 +424,31 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
               <div class="lr-col">
                 <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
                 <b id="resCol2Val" class="num">~$742,400 MXN*</b>
-                <span id="resCol2Sub">Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong></span>
+                <span id="resCol2Sub">En UDIs o Dólares protegidos</span>
               </div>
             </div>
+
+            <div class="lr-pockets-preview">
+              <button type="button" class="lr-pocket-btn" id="pocketBtn1">
+                <small>Bolsillo 1 · Retiro 65 años</small>
+                <strong><span>🔒 Ver corrida exacta</span> <span>↓</span></strong>
+              </button>
+              <button type="button" class="lr-pocket-btn" id="pocketBtn2">
+                <small>Bolsillo 2 · Libre 60 / 3-5 años</small>
+                <strong><span>🔒 Ver corrida exacta</span> <span>↓</span></strong>
+              </button>
+            </div>
+
             <div class="lr-split-note" id="resTwoPocketsText">
               💡 <strong>Tus 2 Cuentas:</strong> Una parte te da devolución del SAT cada abril y otra queda libre desde los 60 años o disponible en 3 a 5 años.
             </div>
           </div>
 
-          <!-- FORMULARIO CORTO (2 CAMPOS) ENFOCADO EN WHATSAPP SIN LLAMADAS -->
+          <!-- FORMULARIO CORTO CON EDAD EXACTA + ¿FUMAS? + WHATSAPP -->
           <div class="direct-form-wrap" id="directFormBox">
             <div class="df-head">
-              <b>Recibe tu estudio a los 60 y 65 años de Seguros Monterrey</b>
-              <span>Déjame tu Nombre y WhatsApp para enviarte tus números y elegir horario (15 min):</span>
+              <b>Desbloquea tu corrida exacta de 2 Bolsillos (60 y 65 años)</b>
+              <span>Ajusta tu edad exacta para calcular tu tarifa oficial en Seguros Monterrey y recibirla por WhatsApp:</span>
             </div>
 
             <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
@@ -423,6 +460,23 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <input type="hidden" id="utm_campaign" value="">
             <input type="hidden" id="utm_term" value="">
             <input type="hidden" id="utm_content" value="">
+
+            <div class="actuarial-row">
+              <div class="field">
+                <label for="formEdadExacta">Tu edad exacta *</label>
+                <input type="number" id="formEdadExacta" name="edad_exacta" class="num" min="18" max="65" value="35" inputmode="numeric" required>
+              </div>
+              <div class="field">
+                <label for="formFumaCheck">Tarifa médica de seguro</label>
+                <label class="smoker-check-wrap" for="formFumaCheck">
+                  <span class="smoker-left">
+                    <input type="checkbox" id="formFumaCheck" name="fuma">
+                    <span>¿Fumas?</span>
+                  </span>
+                  <span class="smoker-status-pill" id="smokerStatusBadge">🚭 No fumo</span>
+                </label>
+              </div>
+            </div>
 
             <div class="field-grid">
               <div class="field">
@@ -438,16 +492,16 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="err" id="formError" role="alert"></div>
 
-            <button type="submit" class="cta-main" id="formSubmitBtn">Ver mi estudio por WhatsApp y elegir horario →</button>
+            <button type="submit" class="cta-main" id="formSubmitBtn">Enviarme mi corrida exacta por WhatsApp →</button>
 
             <p class="consent-mini">
-              🔒 Trato directo por mensaje de WhatsApp. <strong>Cero llamadas de spam.</strong> <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
+              🔒 Recibes tu desglose por mensaje de WhatsApp. <strong>Cero llamadas de spam.</strong> <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
             </p>
           </div>
 
           <!-- PANEL DE CONFIRMACIÓN DE HORARIO QUE APARECE AL ENVIAR -->
           <div class="sched-panel" id="schedPanelBox">
-            <span class="sched-lbl" id="schedGreeting">¡Listo! ¿En qué horario te acomoda que revisemos tu estudio (15 min)?</span>
+            <span class="sched-lbl" id="schedGreeting">¡Listo! Ya registré tus datos para armar tu corrida exacta. ¿En qué turno prefieres revisarla?</span>
             <div class="slots-grid" id="slotButtons">
               <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<small>9:00 a 12:00 hrs</small></button>
               <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<small>12:00 a 15:00 hrs</small></button>
@@ -462,7 +516,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </select>
 
             <a href="#" id="waDirectBtn" target="_blank" rel="noopener" class="btn-wa-now">
-              💬 Confirmar mi horario por WhatsApp →
+              💬 Abrir WhatsApp y recibir mi corrida →
             </a>
 
             <button type="button" id="calDirectBtn" class="btn-cal-now">
@@ -680,7 +734,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <details class="faq-item">
         <summary>¿De qué depende el monto mínimo mensual para empezar?</summary>
         <div class="faq-ans">
-          <p>Depende de tu edad actual, tu salud y si fumas o no fumas. Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
+          <p>Depende de tu edad exacta, tu salud y si fumas o no fumas (las aseguradoras dan una tarifa preferencial a no fumadores). Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
         </div>
       </details>
 
@@ -697,6 +751,15 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           <p>En RESICO no aplica la devolución de abril porque ya pagas poquitos impuestos cada mes. Contigo usamos el plan para que tu ahorro crezca en UDIs o Dólares y <strong>puedas retirarlo desde los 60 años sin pagar un solo peso de impuestos</strong>, teniendo además una cuenta disponible a mediano plazo.</p>
         </div>
       </details>
+    </div>
+
+    <!-- CIERRE PARA LECTORES QUE LLEGAN HASTA ABAJO -->
+    <div class="bottom-cta-card">
+      <div>
+        <h3>¿Quieres ver cuánto recibirías a tus 60 y 65 años según tu edad exacta?</h3>
+        <p>Sube al cotizador, indica tu edad y si fumas o no para enviarte tu corrida oficial por WhatsApp.</p>
+      </div>
+      <button type="button" class="bottom-cta-btn" id="faqBottomBtn">Recibir mi corrida exacta →</button>
     </div>
   </div>
 </section>
@@ -729,7 +792,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <small id="stickySmall">Devolución SAT estimada:</small>
       <b id="stickyBig">+$11,290 MXN*</b>
     </div>
-    <button type="button" id="stickyBtn">Cotizar mi plan →</button>
+    <button type="button" id="stickyBtn">Recibir mi corrida →</button>
   </div>
 </div>
 
@@ -820,6 +883,9 @@ const state = {
   mode: 'deducible',
   regimeLabel: 'Sueldo u Honorarios',
   ageRange: '33-39',
+  exactAge: 35,
+  userTouchedExactAge: false,
+  isSmoker: false,
   minSavingByAge: 2500,
   income: 40000,
   monthlySaving: 4000,
@@ -837,6 +903,7 @@ const state = {
 };
 
 let pulseTimer = null;
+let highlightTimer = null;
 let currentLeadId = null;
 
 function tagClaritySim(){
@@ -869,17 +936,33 @@ function paintSliderTrack(slider){
   slider.style.background = `linear-gradient(90deg, #145C52 0%, #A8C4B5 ${pct}%, #E2DBD0 ${pct}%, #E2DBD0 100%)`;
 }
 
-function bindUnlockStudyLink(){
-  const link = $('unlockStudyLink');
-  if (link){
-    link.onclick = () => {
-      const nameInput = $('formNombre');
-      if (nameInput){
-        nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => nameInput.focus(), 350);
-      }
-    };
+function focusFormForUnlock(){
+  const box = $('directFormBox');
+  const nameInput = $('formNombre');
+  if (box){
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    box.classList.add('highlight-box');
+    clearTimeout(highlightTimer);
+    highlightTimer = setTimeout(() => box.classList.remove('highlight-box'), 1400);
   }
+  if (nameInput){
+    setTimeout(() => nameInput.focus(), 380);
+  }
+}
+
+function syncAgeRangeFromExact(exact){
+  let targetRange = '33-39';
+  let targetMin = 2500;
+  if (exact <= 32){ targetRange = '25-32'; targetMin = 1500; }
+  else if (exact <= 39){ targetRange = '33-39'; targetMin = 2500; }
+  else if (exact <= 46){ targetRange = '40-46'; targetMin = 3000; }
+  else { targetRange = '47-55'; targetMin = 4000; }
+
+  state.ageRange = targetRange;
+  state.minSavingByAge = targetMin;
+  document.querySelectorAll('#agePills .pill-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-age') === targetRange);
+  });
 }
 
 function recalculateNumbers(triggerPulse){
@@ -941,7 +1024,7 @@ function recalculateNumbers(triggerPulse){
 
     $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
     $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
+    $('resCol2Sub').textContent = 'En UDIs o Dólares protegidos';
 
     $('stickySmall').textContent = 'Devolución SAT estimada:';
     $('stickyBig').textContent = '+' + money(state.refund) + ' MXN*';
@@ -961,15 +1044,13 @@ function recalculateNumbers(triggerPulse){
 
     $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
     $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
+    $('resCol2Sub').textContent = '100% exento a los 60 años';
 
     $('stickySmall').textContent = 'Patrimonio 10 años (Art. 93):';
     $('stickyBig').textContent = '~' + money(state.tenYearCapital) + '*';
 
     $('resTwoPocketsText').innerHTML = '💡 <strong>Estrategia RESICO:</strong> Tu inversión crece protegida en UDIs o Dólares con una cuenta disponible en 3 a 5 años y retiro 100% libre de impuestos desde los 60 años.';
   }
-
-  bindUnlockStudyLink();
 
   if (triggerPulse && $('taxBox')){
     tagClaritySim();
@@ -990,6 +1071,7 @@ function updateWhatsAppLinks(){
   const leadId = currentLeadId || 'SANTI-2026';
   const nombre = state.leadName || $('formNombre').value.trim() || '';
   const dayPref = $('daySelect') ? $('daySelect').value : 'Lo antes posible';
+  const smokerTxt = state.isSmoker ? 'Sí fumo' : 'No fumo';
 
   const beneficioTxt = state.mode === 'resico'
     ? `Fondo libre de impuestos a los 60 años (Proyección 10a: *${money(state.tenYearCapital)} MXN*)`
@@ -998,26 +1080,26 @@ function updateWhatsAppLinks(){
   const msgWa = [
     `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
-    `Acabo de calcular mi estudio en tu página:`,
-    `• *Edad:* ${state.ageRange} años`,
+    `Acabo de solicitar mi corrida exacta de 2 Bolsillos en tu página:`,
+    `• *Edad exacta:* ${state.exactAge} años (${smokerTxt})`,
     `• *Ingreso aprox:* ${money(state.income)}/mes`,
     `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
     `• *Esquema:* ${state.regimeLabel}`,
-    `• *Resultado:* ${beneficioTxt}`,
+    `• *Estimado preliminar:* ${beneficioTxt}`,
     `• *Horario preferido:* ${state.selectedSlot} (${dayPref})`,
     ``,
-    `¿Qué espacio tienes disponible para revisar mi estudio de 60 y 65 años?`
+    `¿Me compartes mi desglose exacto a los 60 y 65 años?`
   ].join('\n');
 
   const msgBooked = [
     `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
     `✅ *Ya reservé mi día y hora en tu Google Calendar.*`,
-    `• *Edad:* ${state.ageRange} años`,
+    `• *Edad exacta:* ${state.exactAge} años (${smokerTxt})`,
     `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
     `• *Resultado:* ${beneficioTxt}`,
     ``,
-    `Te dejo abierto este chat para nuestra plática.`
+    `Te dejo abierto este chat para ver mi corrida exacta.`
   ].join('\n');
 
   $('waDirectBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msgWa)}`;
@@ -1065,6 +1147,7 @@ function updateHiddenCalc(){
   const ahorro = money(state.monthlySaving) + '/mes';
   const qualified = isLeadQualified();
   const qualTag = qualified ? '[CALIFICADO]' : '[NO CALIFICADO]';
+  const smokerTag = state.isSmoker ? 'Fumador: SI' : 'Fumador: NO';
   const ids = getClickIds();
   const clickId = ids.gclid || ids.wbraid || ids.gbraid;
   const gclidPart = clickId ? ' | GCLID: ' + clickId : '';
@@ -1072,7 +1155,7 @@ function updateHiddenCalc(){
     ? 'Proyección 10a (Retiro 60): ' + money(state.tenYearCapital) + ' MXN'
     : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Cuenta 2 Anual: ' + money(state.flexibleAnnual) + ' | Fondo 10a: ' + money(state.tenYearCapital) + ' MXN';
 
-  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años | Ingreso: ' + ingreso + ' | Inversión: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
+  $('calcEstimadoHidden').value = qualTag + ' Edad exacta: ' + state.exactAge + ' (' + state.ageRange + ') | ' + smokerTag + ' | Ingreso: ' + ingreso + ' | Inversión: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
 }
 
 function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
@@ -1144,12 +1227,21 @@ async function handleSubmit(ev){
   ev.preventDefault();
   $('formError').style.display = 'none';
 
+  const exactAgeVal = parseInt($('formEdadExacta').value, 10);
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu estudio.'); $('formNombre').focus(); return; }
+  if (isNaN(exactAgeVal) || exactAgeVal < 18 || exactAgeVal > 65){
+    showError('Ingresa tu edad exacta (entre 18 y 65 años) para calcular tu corrida.');
+    $('formEdadExacta').focus();
+    return;
+  }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para enviarte tu corrida.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa los 10 dígitos de tu WhatsApp (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
+
+  state.exactAge = exactAgeVal;
+  state.isSmoker = Boolean($('formFumaCheck').checked);
 
   updateHiddenCalc();
   if (!currentLeadId) currentLeadId = newLeadId();
@@ -1161,7 +1253,7 @@ async function handleSubmit(ev){
     fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
     nombre: nombre,
     whatsapp: wa,
-    edad: state.ageRange,
+    edad: state.exactAge + ' años (' + state.ageRange + ' | ' + (state.isSmoker ? 'Fuma' : 'No fuma') + ')',
     regimen: $('regimenInput').value,
     origen: $('formOrigen').value,
     calculo_estimado: $('calcEstimadoHidden').value,
@@ -1180,7 +1272,7 @@ async function handleSubmit(ev){
   state.submitted = true;
   state.leadName = nombre;
   const firstName = nombre.split(/\s+/)[0];
-  $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu estudio (15 min)?`;
+  $('schedGreeting').textContent = `¡Listo, ${firstName}! Ya registré tus datos (${state.exactAge} años, ${state.isSmoker ? 'fumador' : 'no fumador'}). ¿En qué horario te acomoda revisar tu corrida?`;
 
   $('directFormBox').classList.add('hidden');
   $('schedPanelBox').classList.add('show');
@@ -1246,9 +1338,9 @@ function scrollToSimulator(){
   if (quiz) quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function scrollToFormFields(){
-  const box = $('directFormBox');
-  if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+function scrollToLiveResult(){
+  const tb = $('taxBox');
+  if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function setupStickyBar(){
@@ -1269,10 +1361,14 @@ function setupStickyBar(){
   window.addEventListener('resize', checkScroll, { passive: true });
   checkScroll();
 
-  $('stickyBtn').addEventListener('click', scrollToFormFields);
+  $('stickyBtn').addEventListener('click', focusFormForUnlock);
   $('heroCalcBtn').addEventListener('click', scrollToSimulator);
-  $('heroDirectBookBtn').addEventListener('click', scrollToFormFields);
-  $('headerCtaBtn').addEventListener('click', scrollToFormFields);
+  $('heroDirectBookBtn').addEventListener('click', focusFormForUnlock);
+  $('headerCtaBtn').addEventListener('click', focusFormForUnlock);
+  if ($('topLiveResultBtn')) $('topLiveResultBtn').addEventListener('click', scrollToLiveResult);
+  if ($('pocketBtn1')) $('pocketBtn1').addEventListener('click', focusFormForUnlock);
+  if ($('pocketBtn2')) $('pocketBtn2').addEventListener('click', focusFormForUnlock);
+  if ($('faqBottomBtn')) $('faqBottomBtn').addEventListener('click', focusFormForUnlock);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1284,9 +1380,38 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       state.ageRange = btn.getAttribute('data-age');
       state.minSavingByAge = parseFloat(btn.getAttribute('data-min')) || 2500;
+      if (!state.userTouchedExactAge){
+        const defExact = parseInt(btn.getAttribute('data-exact'), 10) || 35;
+        state.exactAge = defExact;
+        if ($('formEdadExacta')) $('formEdadExacta').value = String(defExact);
+      }
       recalculateNumbers(true);
     });
   });
+
+  if ($('formEdadExacta')){
+    $('formEdadExacta').addEventListener('input', e => {
+      const v = parseInt(e.target.value, 10);
+      if (!isNaN(v) && v >= 18 && v <= 65){
+        state.userTouchedExactAge = true;
+        state.exactAge = v;
+        syncAgeRangeFromExact(v);
+        recalculateNumbers(true);
+      }
+    });
+  }
+
+  if ($('formFumaCheck')){
+    $('formFumaCheck').addEventListener('change', e => {
+      state.isSmoker = Boolean(e.target.checked);
+      const badge = $('smokerStatusBadge');
+      if (badge){
+        badge.textContent = state.isSmoker ? '🚬 Sí fumo' : '🚭 No fumo';
+        badge.classList.toggle('is-smoker', state.isSmoker);
+      }
+      updateHiddenCalc();
+    });
+  }
 
   document.querySelectorAll('#regimePills .pill-btn').forEach(btn => {
     btn.addEventListener('click', () => {
