@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#145C52">
+<meta name="theme-color" content="#E6F0EC">
 <title>Plan Personal de Retiro (PPR) | Santi te asesora · Seguros Monterrey NYL</title>
-<meta name="description" content="Descubre cuánto dinero te regresa el SAT cada abril y cómo retirarte a los 60 o 65 años sin congelar todos tus ahorros. Respaldo Seguros Monterrey NYL.">
+<meta name="description" content="Construye un retiro libre de impuestos. Recupera hasta el 35% de ISR cada abril y ten una cuenta disponible desde los 60 años o para tus metas de 3 a 5 años. Seguros Monterrey NYL.">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Santi te asesora">
-<meta property="og:title" content="Plan Personal de Retiro: Haz que el SAT te regrese dinero cada abril">
-<meta property="og:description" content="Calcula en 3 pasos cuánto dinero recuperas de tus impuestos y cómo tener una cuenta disponible para tus metas o retiro desde los 60 años.">
+<meta property="og:title" content="Construye un retiro libre de impuestos | Santi te asesora">
+<meta property="og:description" content="Calcula y cotiza tu Plan Personal de Retiro. Descubre cuánto dinero te regresa el SAT cada abril con respaldo de Seguros Monterrey NYL.">
 <meta property="og:url" content="https://www.santiteasesora.com/profesionistas.html">
 <meta property="og:image" content="https://www.santiteasesora.com/santi-perfil.jpg">
 
@@ -27,212 +27,173 @@
   gtag('config', 'AW-18490645254', { 'allow_enhanced_conversions': true });
 </script>
 
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z4y03hb5p5");
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* PALETA OFICIAL DE MARCA: SANTI TE ASESORA */
 :root{
-  --emerald:#145C52;      /* Verde profundo — Color insignia */
-  --gold:#D9A441;         /* Dorado — Chispa especial en botones y acentos */
-  --ivory:#FFF5E3;        /* Marfil — Calidez y respiración */
-  --charcoal:#292C2B;     /* Carbón — Texto amable y profesional */
-  --sage:#A8C4B5;         /* Salvia — Tarjetas y bordes suaves */
-  --sage-light:#EBF2EE;   /* Salvia claro */
-  --bg:#FBF7F0;           /* Fondo principal marfil suave */
-  --surface:#FFFFFF;
-  --muted:#525856;
-  --line:#E2D9C8;
-  --r-xl:22px;
-  --r-lg:16px;
-  --r-md:12px;
-  --shadow-sm:0 4px 14px rgba(41,44,43,.05);
-  --shadow-card:0 24px 48px -14px rgba(20,92,82,.18);
+  --emerald:#145C52;--gold:#D9A441;--ivory:#FFF5E3;--charcoal:#292C2B;
+  --sage:#A8C4B5;--sage-soft:#E6F0EC;--bg:#FBF7F0;--surface:#FFFFFF;
+  --muted:#555B59;--line:#E4DDD0;--r-2xl:26px;--r-xl:22px;--r-lg:16px;--r-md:12px;
+  --shadow-soft:0 16px 36px -12px rgba(20,92,82,.14);
+  --shadow-card:0 22px 46px -16px rgba(20,92,82,.18);
   --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --font-serif:"Newsreader",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--font-sans);
-  color:var(--charcoal);
-  background-color:var(--bg);
-  line-height:1.55;
-  font-size:16px;
-  padding-bottom:88px;
-  -webkit-font-smoothing:antialiased;
-}
+body{font-family:var(--font-sans);color:var(--charcoal);background-color:var(--bg);line-height:1.55;font-size:16px;padding-bottom:84px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 button,input,select{font-family:inherit}
 button,select{cursor:pointer}
 a{color:var(--emerald);text-decoration:none}
 .hidden{display:none!important}
 .num{font-variant-numeric:tabular-nums}
+.serif-it{font-family:var(--font-serif);font-style:italic;font-weight:400}
 
-/* TOP BAR */
-.topbar{position:sticky;top:0;z-index:40;background:rgba(255,245,227,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.topbar-in{max-width:1140px;margin:0 auto;padding:0 16px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand-wordmark{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--emerald)}
-.brand-logo{width:30px;height:30px;border-radius:8px;object-fit:contain}
-.topnav{display:none;align-items:center;gap:24px;font-size:13.5px;font-weight:600;color:var(--muted)}
-.topnav a{color:var(--muted)}
+/* SECCIÓN PRINCIPAL CON PORTADA FUSIÓN 4 + SIMULADOR TRANSPARENTE EN 1 SOLA VISTA */
+.hero-cover-sec{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 100%);padding:10px 14px 36px}
+.topbar-clean{max-width:1120px;margin:0 auto;padding:6px 4px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand-row{display:flex;align-items:center;gap:9px;color:var(--emerald);font-weight:800;font-size:15.5px;letter-spacing:-.01em;white-space:nowrap}
+.brand-logo{width:28px;height:28px;border-radius:7px;object-fit:contain;flex-shrink:0}
+.topnav{display:none;align-items:center;gap:22px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.topnav a{color:var(--muted);transition:color .15s}
 .topnav a:hover{color:var(--emerald)}
 @media(min-width:880px){.topnav{display:flex}}
-.topbar-cta{background:var(--gold);color:var(--charcoal);font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:999px;border:none;box-shadow:0 4px 12px rgba(217,164,65,.35)}
+.top-pill{background:var(--gold);color:var(--charcoal);font-size:12px;font-weight:800;padding:8px 14px;border-radius:999px;border:none;white-space:nowrap;box-shadow:0 4px 12px rgba(217,164,65,.3)}
 
-/* HERO CLARO, HUMANO Y RESPIRABLE */
-.hero{max-width:1140px;margin:0 auto;padding:16px 16px 44px;display:grid;gap:18px;grid-template-areas:"head" "quiz" "details"}
-.hero-head{grid-area:head}
-.quiz-card{grid-area:quiz}
-.hero-details{grid-area:details}
-@media(min-width:940px){
-  .hero{grid-template-columns:1.04fr .96fr;grid-template-rows:auto 1fr;grid-template-areas:"head quiz" "details quiz";gap:20px 44px;align-items:start;padding-top:30px}
-  .quiz-card{position:sticky;top:72px}
+.hero-stage{max-width:1120px;margin:0 auto;display:grid;gap:24px}
+@media(min-width:940px){.hero-stage{grid-template-columns:1fr 1.06fr;align-items:start;gap:36px;padding-top:10px}}
+
+/* TARJETA PORTADA FUSIÓN 4 */
+.f4-card{background:var(--ivory);border-radius:var(--r-2xl);overflow:hidden;border:2.5px solid #FFF;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;max-width:480px;margin:0 auto;width:100%}
+.f4-img{position:relative;height:clamp(260px,40vh,330px);width:100%;background:var(--sage)}
+.f4-img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.f4-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,245,227,.82) 84%,var(--ivory) 100%)}
+.f4-video-pill{position:absolute;top:14px;right:14px;z-index:2;background:rgba(41,44,43,.72);backdrop-filter:blur(8px);border:1px solid var(--gold);color:var(--ivory);font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.f4-video-pill span{color:var(--gold);font-size:10px}
+
+.f4-txt{padding:2px 22px 22px;margin-top:-18px;position:relative;z-index:2}
+.f4-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:6px;display:inline-block}
+.f4-kicker-link{color:var(--emerald);text-decoration:underline;text-decoration-color:var(--gold)}
+.f4-txt h1{font-size:clamp(28px,7vw,35px);line-height:1.06;font-weight:800;color:var(--charcoal);letter-spacing:-.02em}
+.f4-txt h1 .serif-it{color:var(--emerald);font-size:clamp(32px,7.8vw,39px)}
+.f4-txt p{font-size:14px;color:var(--muted);margin:8px 0 16px;line-height:1.45}
+.btn-gold-hero{width:100%;min-height:50px;background:var(--gold);color:var(--charcoal);border:none;border-radius:14px;font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px -6px rgba(217,164,65,.55)}
+.btn-ghost-hero{width:100%;min-height:44px;background:rgba(20,92,82,.07);color:var(--emerald);border:1.5px solid var(--sage);border-radius:14px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
+
+/* CONSOLA ABIERTA EN 1 SOLA VISTA (RESULTADO EN VIVO + FORMULARIO DIRECTO) */
+.open-sim-card{background:var(--surface);border:2px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:16px;max-width:520px;margin:0 auto;width:100%}
+.os-top{background:var(--ivory);padding:16px 18px 14px;border-bottom:1px solid var(--line)}
+.os-top-title{font-size:16px;font-weight:800;color:var(--charcoal);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.os-top-title span{font-size:11px;font-weight:800;background:var(--sage-soft);color:var(--emerald);padding:3px 9px;border-radius:999px;border:1px solid var(--sage)}
+
+.os-body{padding:16px 16px 20px;display:grid;gap:13px}
+@media(min-width:640px){.os-body{padding:20px 22px 24px}}
+
+.step-lbl{display:block;font-size:11.5px;font-weight:800;color:var(--charcoal);margin-bottom:6px;text-transform:uppercase;letter-spacing:.02em}
+
+/* Botones compactos de edad y régimen */
+.pills-4{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:var(--bg);padding:4px;border-radius:12px;border:1px solid var(--line)}
+.pill-btn{background:transparent;border:none;border-radius:9px;padding:7px 4px;font-size:11.5px;font-weight:700;color:var(--muted);text-align:center;transition:all .15s}
+.pill-btn.active{background:var(--emerald);color:#fff;font-weight:800}
+
+.pills-3{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;background:var(--bg);padding:4px;border-radius:12px;border:1px solid var(--line)}
+
+/* Barras "Relax" */
+.r-slider-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.r-slider-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+.r-slider-top label{font-size:12px;font-weight:700;color:var(--muted)}
+.r-val-clean{font-size:19px;font-weight:800;color:var(--emerald);letter-spacing:-.02em}
+.r-val-clean small{font-size:11.5px;font-weight:600;color:var(--muted)}
+
+input[type="range"].relax-range{-webkit-appearance:none;appearance:none;width:100%;height:5px;background:#E2DBD0;border-radius:999px;outline:none;margin:6px 0 8px;touch-action:manipulation}
+input[type="range"].relax-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--emerald);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer}
+input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#FFF;border:2.5px solid var(--emerald);box-shadow:0 3px 10px rgba(20,92,82,.22);cursor:pointer}
+
+.r-scale{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:10.5px;color:#7A827F}
+.cap-link-soft{background:var(--sage-soft);border:none;color:var(--emerald);font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px}
+
+/* CAJA DE RESULTADO 100% VISIBLE EN VIVO */
+.live-result-box{
+  background:var(--emerald);
+  color:#fff;
+  border:2px solid var(--gold);
+  border-radius:16px;
+  padding:14px 15px;
+  transition:transform .2s ease;
 }
+.live-result-box.pulse{transform:scale(1.01)}
+.lr-meta{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10.5px;font-weight:800;color:var(--gold);text-transform:uppercase}
+.lr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,245,227,.18)}
+.lr-col small{display:block;font-size:10.5px;color:var(--ivory);opacity:.9}
+.lr-col b{display:block;font-size:clamp(20px,5vw,25px);color:var(--gold);font-weight:800;line-height:1.1;margin-top:2px}
+.lr-col span{display:block;font-size:10.5px;color:var(--sage);margin-top:2px}
+.lr-unlock-link{color:var(--gold);font-weight:800;text-decoration:underline;cursor:pointer}
+.lr-split-note{margin-top:9px;background:rgba(41,44,43,.38);border-left:3px solid var(--gold);border-radius:7px;padding:7px 10px;font-size:11.5px;color:var(--ivory);line-height:1.38}
 
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--ivory);border:1px solid var(--sage);padding:4px 12px;border-radius:999px;font-size:11.5px;font-weight:800;color:var(--emerald);margin-bottom:10px}
-.eyebrow a{color:var(--charcoal);text-decoration:underline;text-decoration-color:var(--gold)}
+/* FORMULARIO DIRECTO PEGADO AL RESULTADO EN VIVO */
+.direct-form-wrap{background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:14px}
+.df-head{text-align:center;margin-bottom:10px}
+.df-head b{display:block;font-size:14px;color:var(--charcoal);font-weight:800}
+.df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:1px}
 
-.hero-head h1{font-size:clamp(25px,4vw,41px);font-weight:800;color:var(--charcoal);line-height:1.14;letter-spacing:-.025em;text-wrap:balance}
-.hero-head h1 span{color:var(--emerald);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
-.hero-sub{margin-top:10px;font-size:clamp(15px,1.65vw,17px);color:var(--muted);line-height:1.5;max-width:52ch}
-.hero-sub strong{color:var(--charcoal)}
-
-/* TARJETA PROGRESIVA */
-.quiz-card{background:var(--surface);border:2px solid var(--sage);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:68px}
-
-.quiz-top{background:var(--emerald);color:#fff;padding:14px 18px}
-.who{display:flex;align-items:center;gap:11px}
-.who-img{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);overflow:hidden;background:var(--sage)}
-.who-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.who-txt{flex:1;min-width:0;line-height:1.25}
-.who-txt b{display:block;font-size:13.5px;color:#fff;font-weight:800}
-.who-txt span{display:block;font-size:11.5px;color:var(--ivory);opacity:.92;margin-top:1px}
-.who-play{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;background:rgba(255,245,227,.14);border:1px solid var(--gold);color:var(--ivory);font-size:11.5px;font-weight:800;padding:6px 11px;border-radius:999px;white-space:nowrap}
-
-.prog-wrap{margin-top:12px}
-.prog-meta{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--ivory);margin-bottom:5px}
-.prog-meta span:last-child{color:var(--gold);font-weight:800}
-.prog-bar{height:6px;background:rgba(255,245,227,.2);border-radius:999px;overflow:hidden}
-.prog-fill{height:100%;width:25%;background:var(--gold);border-radius:999px;transition:width .35s ease}
-
-.quiz-body{padding:18px 16px 20px;background:var(--surface)}
-@media(min-width:640px){.quiz-body{padding:22px 22px 24px}}
-
-.q-step{display:none;animation:fadeStep .25s ease}
-.q-step.active{display:block}
-@keyframes fadeStep{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-
-.q-kicker{display:inline-block;background:var(--sage-light);color:var(--emerald);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
-.q-title{font-size:clamp(18px,3.8vw,21px);font-weight:800;color:var(--charcoal);line-height:1.25;margin-top:8px}
-.q-desc{font-size:13px;color:var(--muted);margin-top:4px}
-
-.opt-grid{display:grid;gap:10px;margin-top:14px}
-.opt-grid.two-col{grid-template-columns:1fr 1fr}
-.opt-btn{
-  width:100%;
-  background:var(--ivory);
-  border:1.5px solid var(--line);
-  border-radius:var(--r-md);
-  padding:13px 14px;
-  text-align:left;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  transition:all .15s ease;
-}
-.opt-btn:hover,.opt-btn:active{border-color:var(--emerald);background:var(--sage-light);transform:translateY(-1px)}
-.opt-btn b{display:block;font-size:14.5px;color:var(--charcoal);font-weight:800;line-height:1.2}
-.opt-btn small{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-weight:600}
-.opt-arrow{width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--sage);color:var(--emerald);display:inline-flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
-.opt-btn:hover .opt-arrow{background:var(--emerald);color:#fff;border-color:var(--emerald)}
-
-/* PASO 2: BARRAS EXACTAS */
-.slider-card{background:var(--ivory);border:1px solid var(--line);border-radius:var(--r-md);padding:15px;margin-top:14px}
-.slider-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
-.slider-head label{font-size:12.5px;font-weight:800;color:var(--charcoal)}
-.val-pill{font-size:15px;font-weight:800;color:#fff;background:var(--emerald);padding:3px 11px;border-radius:999px;white-space:nowrap}
-.val-pill.gold{color:var(--charcoal);background:var(--gold)}
-
-input[type="range"].santi-range{-webkit-appearance:none;appearance:none;width:100%;height:8px;background:var(--sage);border-radius:999px;outline:none;margin:8px 0 6px;touch-action:manipulation}
-input[type="range"].santi-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);box-shadow:0 2px 7px rgba(41,44,43,.3);cursor:pointer}
-input[type="range"].santi-range::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);box-shadow:0 2px 7px rgba(41,44,43,.3);cursor:pointer}
-
-.scale-marks{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
-.cap-btn{background:none;border:none;color:var(--emerald);font-size:11px;font-weight:800;text-decoration:underline;padding:0}
-
-.step-next-btn{width:100%;min-height:52px;margin-top:14px;background:var(--gold);color:var(--charcoal);border:none;border-radius:var(--r-md);font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 18px -6px rgba(217,164,65,.65)}
-.step-next-btn:hover{background:var(--emerald);color:#fff}
-
-.back-link{display:inline-block;margin-top:12px;background:none;border:none;color:var(--muted);font-size:12.5px;font-weight:700;text-decoration:underline}
-
-/* PASO 4: DESBLOQUEO */
-.ready-banner{background:var(--ivory);border:1.5px solid var(--gold);border-radius:var(--r-md);padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.ready-banner span.ico{font-size:22px}
-.ready-banner div{font-size:12.5px;color:var(--charcoal);line-height:1.4}
-.ready-banner strong{color:var(--emerald)}
-
-.field-stack{display:grid;gap:11px;margin-top:12px}
-.field label{display:block;font-size:12px;font-weight:700;color:var(--charcoal);margin-bottom:4px}
-.field input{width:100%;min-height:48px;padding:10px 14px;border-radius:var(--r-md);border:1.5px solid var(--sage);background:var(--ivory);color:var(--charcoal);font-size:16px;font-weight:600;-webkit-appearance:none}
-.field input:focus{outline:none;border-color:var(--emerald);background:#fff;box-shadow:0 0 0 3px rgba(168,196,181,.35)}
+.field-grid{display:grid;gap:9px}
+@media(min-width:520px){.field-grid{grid-template-columns:1fr 1fr}}
+.field label{display:block;font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:3px}
+.field input{width:100%;min-height:46px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--charcoal);font-size:16px;font-weight:600;-webkit-appearance:none}
+.field input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(168,196,181,.3)}
 .hp{position:absolute;left:-9999px;opacity:0}
 
-.err{display:none;margin-top:10px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:var(--r-md);padding:9px 12px;font-size:12.5px;font-weight:600}
+.err{display:none;margin-top:9px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:600}
 
-.cta-main{width:100%;min-height:54px;margin-top:14px;background:var(--gold);color:var(--charcoal);border:none;border-radius:var(--r-md);font-size:15.5px;font-weight:800;box-shadow:0 10px 22px -6px rgba(217,164,65,.75);transition:all .15s}
-.cta-main:hover{background:var(--emerald);color:#fff}
-.consent-mini{margin-top:10px;font-size:11px;color:var(--muted);text-align:center;line-height:1.35}
+.cta-main{width:100%;min-height:52px;margin-top:11px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);transition:transform .15s}
+.cta-main:hover{transform:translateY(-1px)}
+.consent-mini{margin-top:8px;font-size:10.5px;color:var(--muted);text-align:center;line-height:1.35}
 .consent-mini a{color:var(--emerald);font-weight:700;text-decoration:underline}
 
-/* PASO 5 COMPLETO (RESULTADO + SELECTOR DE HORARIO + CALENDARIO Y REGLAS DE GRACIAS.HTML) */
-.result-card-in{background:var(--emerald);color:#fff;border-radius:var(--r-lg);padding:15px;margin-top:6px;border:1.5px solid var(--gold)}
-.res-head-row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.res-tag{display:inline-block;background:rgba(217,164,65,.22);color:var(--gold);font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;text-transform:uppercase}
-.res-folio{font-size:11px;color:var(--ivory);font-weight:700}
-.res-big-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,245,227,.2)}
-.rb-item small{display:block;font-size:11px;color:var(--ivory)}
-.rb-item b{display:block;font-size:clamp(19px,4.8vw,24px);color:var(--gold);font-weight:800;margin-top:2px;line-height:1.1}
-.rb-item span{display:block;font-size:10.5px;color:var(--sage);margin-top:2px}
-
-.two-pockets-box{margin-top:11px;background:rgba(41,44,43,.45);border-left:3px solid var(--gold);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--ivory);line-height:1.45}
-.two-pockets-box strong{color:var(--gold)}
-
-/* Selector de horario integrado (Traído de gracias.html) */
-.sched-box{margin-top:14px;background:var(--ivory);border:1.5px solid var(--sage);border-radius:var(--r-md);padding:13px;display:grid;gap:9px}
+/* PANEL DE CONFIRMACIÓN DE HORARIO QUE SE ABRE AL ENVIAR */
+.sched-panel{display:none;background:var(--ivory);border:2px solid var(--emerald);border-radius:16px;padding:15px;gap:10px}
+.sched-panel.show{display:grid}
 .sched-lbl{font-size:11.5px;font-weight:800;color:var(--charcoal);text-transform:uppercase}
 .slots-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .slot-btn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 9px;text-align:left;font-size:12px;font-weight:700;color:var(--charcoal);line-height:1.2}
 .slot-btn small{display:block;font-size:10.5px;color:var(--muted);font-weight:500;margin-top:1px}
-.slot-btn[aria-pressed="true"]{border:2px solid var(--emerald);background:var(--sage-light);color:var(--emerald);font-weight:800}
+.slot-btn[aria-pressed="true"]{border:2px solid var(--emerald);background:var(--sage-soft);color:var(--emerald);font-weight:800}
 .day-select{width:100%;min-height:42px;padding:7px 10px;border-radius:10px;border:1px solid var(--sage);background:#fff;color:var(--charcoal);font-size:14px;font-weight:700}
+.btn-wa-now{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:50px;background:#16A34A;color:#fff;border-radius:12px;font-size:14px;font-weight:800;box-shadow:0 8px 18px -6px rgba(22,163,74,.6);padding:10px 12px;text-align:center}
+.btn-cal-now{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:44px;background:#fff;color:var(--charcoal);border:1.5px solid var(--gold);border-radius:12px;font-size:12.5px;font-weight:800;margin-top:4px}
 
-.btn-wa-now{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:50px;background:#16A34A;color:#fff;border-radius:var(--r-md);font-size:14px;font-weight:800;box-shadow:0 8px 18px -6px rgba(22,163,74,.6);padding:10px 12px;text-align:center}
-.btn-cal-now{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:44px;background:#fff;color:var(--charcoal);border:1.5px solid var(--gold);border-radius:var(--r-md);font-size:12.5px;font-weight:800;margin-top:6px}
-
-.session-rules{margin-top:12px;background:var(--sage-light);border:1px solid var(--sage);border-radius:var(--r-md);padding:10px 12px;font-size:11.5px;color:var(--charcoal);display:grid;gap:5px}
-.session-rules b{color:var(--emerald);font-size:11px;text-transform:uppercase}
-
-/* 3 PILARES SIMPLES */
+/* 3 PILARES BAJO EL SIMULADOR */
+.pillars-wrap{max-width:1120px;margin:28px auto 0;padding:0 16px}
 .hero-pillars{display:grid;gap:12px}
-@media(min-width:640px){.hero-pillars{grid-template-columns:repeat(3,1fr);gap:14px}}
-.hp-item{background:var(--surface);border:1px solid var(--sage);border-radius:var(--r-md);padding:15px;box-shadow:var(--shadow-sm)}
-.hp-item .hp-num{display:inline-block;background:var(--sage-light);color:var(--emerald);padding:2px 8px;border-radius:6px;font-size:10.5px;font-weight:800;text-transform:uppercase}
-.hp-item h3{font-size:14.5px;font-weight:800;color:var(--charcoal);margin-top:6px}
-.hp-item p{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+@media(min-width:680px){.hero-pillars{grid-template-columns:repeat(3,1fr);gap:16px}}
+.hp-item{background:var(--surface);border:1px solid var(--sage);border-radius:var(--r-lg);padding:16px;box-shadow:0 4px 14px rgba(41,44,43,.04)}
+.hp-item .hp-num{display:inline-block;background:var(--sage-soft);color:var(--emerald);padding:3px 9px;border-radius:999px;font-size:10.5px;font-weight:800;text-transform:uppercase}
+.hp-item h3{font-size:15px;font-weight:800;color:var(--charcoal);margin-top:7px}
+.hp-item p{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.48}
 
-/* SECCIÓN 1: DOS BOLSILLOS EXPLICADOS SIN TECNICISMOS */
-.sec-wrap{padding:50px 16px;scroll-margin-top:58px}
+/* SECCIONES DE CONTENIDO */
+.sec-wrap{padding:52px 16px;scroll-margin-top:24px}
 .sec-white{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.container{max-width:1140px;margin:0 auto}
-.sec-kicker{display:inline-block;background:var(--sage-light);color:var(--emerald);padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.container{max-width:1120px;margin:0 auto}
+.sec-kicker{display:inline-block;background:var(--sage-soft);color:var(--emerald);padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
 .sec-title{font-size:clamp(22px,3.2vw,32px);font-weight:800;color:var(--charcoal);line-height:1.2;margin-top:8px}
 .sec-sub{font-size:15.5px;color:var(--muted);margin-top:8px;max-width:66ch}
 
 .dual-grid{display:grid;gap:20px;margin-top:26px}
 @media(min-width:900px){.dual-grid{grid-template-columns:1.1fr 1fr}}
-.pocket-card{border-radius:var(--r-lg);padding:24px 20px;display:flex;flex-direction:column;justify-content:space-between}
+.pocket-card{border-radius:var(--r-xl);padding:24px 20px;display:flex;flex-direction:column;justify-content:space-between}
 .pocket-a{background:var(--ivory);border:1.5px solid var(--sage)}
 .pocket-b{background:var(--emerald);color:#fff}
 .pocket-top{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid rgba(168,196,181,.4);font-size:11.5px;font-weight:800}
@@ -254,16 +215,14 @@ input[type="range"].santi-range::-moz-range-thumb{width:26px;height:26px;border-
 .pocket-list{list-style:none;margin-top:16px;display:grid;gap:10px;font-size:13.5px;color:var(--ivory)}
 .pocket-foot{margin-top:20px;padding-top:12px;border-top:1px solid rgba(168,196,181,.35);display:flex;justify-content:space-between;font-size:12px}
 
-/* TABLA COMPARATIVA */
-.table-wrap{margin-top:24px;background:#fff;border:1.5px solid var(--sage);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+.table-wrap{margin-top:24px;background:#fff;border:1.5px solid var(--sage);border-radius:var(--r-lg);overflow:hidden}
 .btable{width:100%;border-collapse:collapse;font-size:14px;text-align:left}
 .btable th,.btable td{padding:13px 16px;border-bottom:1px solid var(--line)}
 .btable thead th{background:var(--charcoal);color:#fff;font-size:11.5px;text-transform:uppercase}
 .btable thead th.win{background:var(--emerald);color:var(--gold)}
 .btable td.lose{color:#7A2E2E;background:#FFFAFA}
-.btable td.win{background:var(--sage-light);color:var(--charcoal);font-weight:600}
+.btable td.win{background:var(--sage-soft);color:var(--charcoal);font-weight:600}
 
-/* CASO REAL DE ITZEL */
 .trust-strip{display:grid;gap:12px;margin-top:26px}
 @media(min-width:640px){.trust-strip{grid-template-columns:repeat(3,1fr)}}
 .tbadge{background:var(--ivory);border:1px solid var(--sage);border-radius:var(--r-md);padding:15px;text-align:center}
@@ -286,7 +245,6 @@ input[type="range"].santi-range::-moz-range-thumb{width:26px;height:26px;border-
 .bp-item{font-size:13px;color:var(--ivory);line-height:1.45}
 .bp-item strong{display:block;color:var(--gold);font-size:13.5px;margin-bottom:2px}
 
-/* FAQ */
 .faq-list{max-width:840px;margin:26px auto 0;display:grid;gap:10px}
 details.faq-item{background:#fff;border:1px solid var(--sage);border-radius:var(--r-md);padding:14px 18px}
 details.faq-item summary{font-size:15px;font-weight:800;color:var(--charcoal);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -295,23 +253,20 @@ details.faq-item summary::after{content:"+";width:26px;height:26px;border-radius
 details.faq-item[open] summary::after{content:"−";background:var(--emerald);color:#fff}
 .faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.55}
 
-/* FOOTER */
-footer{background:var(--charcoal);color:var(--ivory);padding:38px 16px;font-size:13px;line-height:1.6}
+footer{background:var(--charcoal);color:var(--ivory);padding:38px 16px;font-size:13px;line-height:1.6;margin-top:32px}
 .footer-in{max-width:1080px;margin:0 auto;display:grid;gap:14px}
 .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,245,227,.15)}
 .footer-brand{display:flex;align-items:center;gap:10px}
 .footer-logo{width:32px;height:32px;border-radius:7px;object-fit:contain;background:rgba(255,255,255,.08);padding:2px}
 footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
-/* BARRA PEGAJOSA FLOTANTE (ACTIVA AL HACER SCROLL) */
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(20,92,82,.97);backdrop-filter:blur(8px);border-top:2px solid var(--gold);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;transition:transform .25s ease,opacity .25s ease;box-shadow:0 -8px 24px rgba(41,44,43,.22)}
 .sticky-bar.off{transform:translateY(120%);opacity:0;pointer-events:none}
 .sticky-in{width:100%;max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .sticky-bar small{display:block;font-size:11px;color:var(--ivory)}
 .sticky-bar b{color:var(--gold);font-size:14.5px;font-weight:800}
-.sticky-bar button{background:var(--gold);color:var(--charcoal);border:none;border-radius:var(--r-md);padding:10px 16px;font-weight:800;font-size:13px;white-space:nowrap}
+.sticky-bar button{background:var(--gold);color:var(--charcoal);border:none;border-radius:var(--r-md);padding:10px 15px;font-weight:800;font-size:13px;white-space:nowrap}
 
-/* MODALES + MODAL DE GOOGLE CALENDAR */
 .modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(41,44,43,.82);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
 .modal.open{display:flex}
 .mbox{background:#fff;border-radius:var(--r-lg);max-width:540px;width:100%;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4)}
@@ -332,223 +287,167 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
 <body>
 
-<header class="topbar">
-  <div class="topbar-in">
-    <a href="#formulario" class="brand-wordmark">
-      <img src="logo-santi.png" class="brand-logo" alt="Santi te asesora" width="30" height="30"
+<section class="hero-cover-sec">
+  <header class="topbar-clean">
+    <a href="#formulario" class="brand-row">
+      <img src="logo-santi.png" class="brand-logo" alt="Santi te asesora" width="28" height="28"
            onerror="this.onerror=null;this.src='https://www.santiteasesora.com/logo-santi.png';">
       <span>Santi te asesora</span>
     </a>
     <nav class="topnav">
-      <a href="#formulario">Simulador</a>
-      <a href="#arquitectura">Cómo funciona</a>
+      <a href="#formulario">Cotizador</a>
+      <a href="#arquitectura">Las 2 Cuentas</a>
       <a href="#comparativa">Comparativa</a>
       <a href="#casos">Caso real</a>
       <a href="#dudas">Dudas</a>
     </nav>
-    <button type="button" class="topbar-cta" id="headerCtaBtn">Calcular mi beneficio →</button>
-  </div>
-</header>
+    <button type="button" class="top-pill" id="headerCtaBtn">Agendar directo →</button>
+  </header>
 
-<main class="hero">
-  <section class="hero-head">
-    <div class="eyebrow">
-      <span>Plan Personal de Retiro</span> ·
-      <a href="#cedulaModal" id="openCedula">Cédula Oficial C412676</a>
-    </div>
+  <div class="hero-stage">
 
-    <h1>Haz que el SAT te regrese dinero cada abril <span>sin congelar tus ahorros.</span></h1>
-    <p class="hero-sub">
-      Arma tu retiro con respaldo de <strong>Seguros Monterrey NYL</strong>: recupera hasta el <strong>35% de tus impuestos</strong> y ten una cuenta libre para retirarte desde los <strong>60 años</strong> o usarla en tus proyectos.
-    </p>
-  </section>
-
-  <!-- SIMULADOR PROGRESIVO EN 3 PASOS SENCILLOS -->
-  <section class="quiz-card" id="formulario">
-    <div class="quiz-top">
-      <div class="who">
-        <div class="who-img">
-          <img src="santi-perfil.jpg" width="44" height="44" alt="Santiago, tu asesor"
-               onerror="this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';">
-        </div>
-        <div class="who-txt">
-          <b>Te asesora Santiago · Cédula C412676</b>
-          <span>Seguros Monterrey New York Life</span>
-        </div>
-        <a href="#videoModal" class="who-play" id="openVideo">▶ Video (0:26)</a>
+    <!-- PANTALLA 1: PORTADA FUSIÓN 4 -->
+    <div class="f4-card">
+      <div class="f4-img">
+        <img src="santi-perfil.jpg" alt="Santiago · Santi te asesora"
+             onerror="this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';">
+        <a href="#videoModal" class="f4-video-pill" id="openVideo">
+          <span>▶</span> Conóceme (0:26s)
+        </a>
       </div>
-
-      <div class="prog-wrap">
-        <div class="prog-meta">
-          <span id="progStepText">Paso 1 de 3 · Tu edad</span>
-          <span id="progPctText">25%</span>
-        </div>
-        <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+      <div class="f4-txt">
+        <span class="f4-kicker">
+          SEGUROS MONTERREY NYL · <a href="#cedulaModal" class="f4-kicker-link" id="openCedula">CÉDULA C412676</a>
+        </span>
+        <h1>Construye un retiro libre de <span class="serif-it">impuestos.</span></h1>
+        <p>Una cuenta para que el SAT te regrese dinero cada abril y otra disponible para tus metas o retiro a los 60 años.</p>
+        <button type="button" class="btn-gold-hero" id="heroCalcBtn">Calcular y cotizar mi plan →</button>
+        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">📅 Ya quiero contratar: Agendar directo →</button>
       </div>
     </div>
 
-    <div class="quiz-body" id="formCard">
-      <form id="leadForm" novalidate>
-
-        <!-- PASO 1: EDAD -->
-        <div class="q-step active" id="step1">
-          <span class="q-kicker">Paso 1 de 3 · Muy rápido</span>
-          <h2 class="q-title">¿En qué rango de edad estás hoy?</h2>
-          <p class="q-desc">Toca tu opción para empezar:</p>
-
-          <div class="opt-grid two-col">
-            <button type="button" class="opt-btn" data-step1-age="25-32" data-min="1500">
-              <div><b>25 a 32 años</b><small>Desde $1,500/mes</small></div>
-              <span class="opt-arrow">→</span>
-            </button>
-            <button type="button" class="opt-btn" data-step1-age="33-39" data-min="2500">
-              <div><b>33 a 39 años</b><small>Desde $2,500/mes</small></div>
-              <span class="opt-arrow">→</span>
-            </button>
-            <button type="button" class="opt-btn" data-step1-age="40-46" data-min="3000">
-              <div><b>40 a 46 años</b><small>Desde $3,000/mes</small></div>
-              <span class="opt-arrow">→</span>
-            </button>
-            <button type="button" class="opt-btn" data-step1-age="47-55" data-min="4000">
-              <div><b>47 a 55 años</b><small>Desde $4,000/mes</small></div>
-              <span class="opt-arrow">→</span>
-            </button>
-          </div>
+    <!-- SIMULADOR 100% VISIBLE EN 1 SOLA VISTA -->
+    <div class="open-sim-card" id="formulario">
+      <div class="os-top">
+        <div class="os-top-title">
+          <b>Calcula y cotiza tu plan a medida</b>
+          <span>Resultado en vivo</span>
         </div>
+      </div>
 
-        <!-- PASO 2: BARRAS EXACTAS DE INGRESO Y AHORRO -->
-        <div class="q-step" id="step2">
-          <span class="q-kicker">Paso 2 de 3 · Tus números</span>
-          <h2 class="q-title">¿Cuánto ganas y cuánto te gustaría ahorrar al mes?</h2>
-          <p class="q-desc">Mueve las barras para calcular exactamente cuánto dinero te regresa el SAT:</p>
+      <div class="os-body" id="formCard">
+        <form id="leadForm" novalidate style="display:grid;gap:12px">
 
-          <div class="slider-card">
-            <div class="slider-head">
-              <label for="incomeSlider">Tu ingreso mensual aproximado</label>
-              <span id="incomeDisplay" class="val-pill num">$40,000 MXN</span>
-            </div>
-            <input type="range" id="incomeSlider" class="santi-range" min="15000" max="200000" step="5000" value="40000" aria-label="Ingreso mensual aproximado">
-            <div class="scale-marks num">
-              <span>$15,000</span><span>$65,000</span><span>$130,000</span><span>$200,000+</span>
-            </div>
-
-            <div class="slider-head" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
-              <label for="savingSlider">Lo que te gustaría ahorrar al mes</label>
-              <span id="savingDisplay" class="val-pill gold num">$4,000 / mes</span>
-            </div>
-            <input type="range" id="savingSlider" class="santi-range" min="2500" max="15000" step="500" value="4000" aria-label="Aportación mensual deseada">
-            <div class="scale-marks">
-              <span id="minByAgeLabel">Mínimo para tu edad: $2,500/mes</span>
-              <button type="button" class="cap-btn" id="useCapBtn">Usar mi 10% ideal ($4,000/mes)</button>
+          <!-- 1. EDAD -->
+          <div>
+            <label class="step-lbl">1. Tu rango de edad actual</label>
+            <div class="pills-4" id="agePills">
+              <button type="button" class="pill-btn" data-age="25-32" data-min="1500">25–32</button>
+              <button type="button" class="pill-btn active" data-age="33-39" data-min="2500">33–39</button>
+              <button type="button" class="pill-btn" data-age="40-46" data-min="3000">40–46</button>
+              <button type="button" class="pill-btn" data-age="47-55" data-min="4000">47–55</button>
             </div>
           </div>
 
-          <button type="button" class="step-next-btn" id="toStep3Btn">Siguiente paso →</button>
-          <button type="button" class="back-link" data-go-back="1">← Cambiar mi edad</button>
-        </div>
-
-        <!-- PASO 3: CÓMO TE PAGAN (SIN TECNICISMOS) -->
-        <div class="q-step" id="step3">
-          <span class="q-kicker">Paso 3 de 3 · Última pregunta</span>
-          <h2 class="q-title">¿Cómo recibes tus ingresos hoy?</h2>
-          <p class="q-desc">Elige una opción para ver tu resultado:</p>
-
-          <div class="opt-grid">
-            <button type="button" class="opt-btn" data-step3-mode="deducible" data-regime="Sueldo u Honorarios">
-              <div>
-                <b>💼 Por Sueldo (Nómina) u Honorarios</b>
-                <small>Quiero que el SAT me regrese dinero en abril y tener 2 cuentas</small>
-              </div>
-              <span class="opt-arrow">→</span>
-            </button>
-            <button type="button" class="opt-btn" data-step3-mode="resico" data-regime="RESICO (Retiro libre a los 60)">
-              <div>
-                <b>⚡ Estoy en RESICO</b>
-                <small>Quiero retirarme a los 60 años con 0% de impuestos</small>
-              </div>
-              <span class="opt-arrow">→</span>
-            </button>
-            <button type="button" class="opt-btn" data-step3-mode="deducible" data-regime="No estoy segura/o">
-              <div>
-                <b>🤔 No estoy segura(o)</b>
-                <small>Quiero ver mi cálculo aproximado y que me expliques</small>
-              </div>
-              <span class="opt-arrow">→</span>
-            </button>
-          </div>
-          <button type="button" class="back-link" data-go-back="2">← Ajustar mi ingreso o ahorro</button>
-        </div>
-
-        <!-- PASO 4: NOMBRE Y WHATSAPP PARA DESTAPAR -->
-        <div class="q-step" id="step4">
-          <div class="ready-banner">
-            <span class="ico">🔒</span>
-            <div id="readySummaryText">
-              <strong>¡Tu cálculo para $40,000/mes está listo!</strong> Escribe tu nombre y WhatsApp para ver tus montos exactos aquí mismo:
+          <!-- 2. BARRA RELAX DE INGRESO -->
+          <div class="r-slider-box">
+            <div class="r-slider-top">
+              <label for="incomeSlider">2. Tu ingreso mensual aproximado</label>
+              <span id="incomeDisplay" class="r-val-clean num">$40,000 <small>MXN</small></span>
+            </div>
+            <input type="range" id="incomeSlider" class="relax-range" min="15000" max="200000" step="5000" value="40000">
+            <div class="r-scale num">
+              <span>$15,000</span><span>$100,000</span><span>$200,000+</span>
             </div>
           </div>
 
-          <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
-          <input type="hidden" id="formOrigen" value="Landing Santi Todo En Uno">
-          <input type="hidden" id="prioridadHidden" value="Devolución SAT + 2 Cuentas">
-          <input type="hidden" id="calcEstimadoHidden" value="">
-          <input type="hidden" id="utm_source" value="">
-          <input type="hidden" id="utm_medium" value="">
-          <input type="hidden" id="utm_campaign" value="">
-          <input type="hidden" id="utm_term" value="">
-          <input type="hidden" id="utm_content" value="">
-
-          <div class="field-stack">
-            <div class="field">
-              <label for="formNombre">Tu nombre *</label>
-              <input type="text" id="formNombre" name="nombre" placeholder="Ej. Mariana" autocomplete="name" enterkeyhint="next" required>
+          <!-- 3. BARRA RELAX DE INVERSIÓN MENSUAL -->
+          <div class="r-slider-box">
+            <div class="r-slider-top">
+              <label for="savingSlider">3. Inversión mensual planeada</label>
+              <span id="savingDisplay" class="r-val-clean num">$4,000 <small>/ mes</small></span>
             </div>
-            <div class="field">
-              <label for="formWhatsApp">Tu WhatsApp (10 dígitos) *</label>
-              <input type="tel" id="formWhatsApp" name="whatsapp" class="num" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" enterkeyhint="done" maxlength="14" required>
+            <input type="range" id="savingSlider" class="relax-range" min="2500" max="15000" step="500" value="4000">
+            <div class="r-scale">
+              <span id="minByAgeLabel">Desde $2,500/mes</span>
+              <button type="button" class="cap-link-soft" id="useCapBtn">Sugerido 10%: $4,000/mes</button>
             </div>
           </div>
 
-          <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="err" id="formError" role="alert"></div>
-
-          <button type="submit" class="cta-main" id="formSubmitBtn">🔓 Ver mi resultado ahora →</button>
-
-          <p class="consent-mini">
-            Tus datos son privados conforme a nuestro <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>. Cero llamadas molestas.
-          </p>
-          <button type="button" class="back-link" data-go-back="2">← Ajustar mi ingreso o ahorro</button>
-        </div>
-
-        <!-- PASO 5: RESULTADO DESTAPADO + AGENDA DE GRACIAS.HTML INTEGRADA -->
-        <div class="q-step" id="step5">
-          <span class="q-kicker">✓ Resultado Desbloqueado</span>
-          <h2 class="q-title" id="resGreetingTitle">Aquí tienes tus números</h2>
-
-          <div class="result-card-in">
-            <div class="res-head-row">
-              <span class="res-tag" id="resBadgeTag">Beneficio Anual</span>
-              <span class="res-folio" id="resFolioBadge">Folio #SANTI</span>
+          <!-- 4. RÉGIMEN -->
+          <div>
+            <label class="step-lbl">4. ¿Cómo recibes tus ingresos?</label>
+            <div class="pills-3" id="regimePills">
+              <button type="button" class="pill-btn active" data-mode="deducible" data-reg="Sueldo u Honorarios">💼 Sueldo / Honorarios</button>
+              <button type="button" class="pill-btn" data-mode="resico" data-reg="RESICO (Libre a los 60)">⚡ RESICO</button>
+              <button type="button" class="pill-btn" data-mode="deducible" data-reg="No estoy segura/o">🤔 No sé aún</button>
             </div>
-            <div class="res-big-grid">
-              <div class="rb-item">
+          </div>
+
+          <!-- CAJA DE RESULTADO EN VIVO (SIMPLE + BRECHA DE CURIOSIDAD A LOS 60/65 AÑOS) -->
+          <div class="live-result-box" id="taxBox">
+            <div class="lr-meta">
+              <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
+              <span>2 Cuentas · Imagina Ser</span>
+            </div>
+            <div class="lr-grid">
+              <div class="lr-col">
                 <small id="resCol1Label">Te regresa el SAT cada abril:</small>
-                <b id="resCol1Val" class="num">$11,290 MXN*</b>
-                <span id="resCol1Sub">Efectivo a tu favor cada año</span>
+                <b id="resCol1Val" class="num">+$11,290 MXN*</b>
+                <span id="resCol1Sub">Inversión neta real: $3,059/mes</span>
               </div>
-              <div class="rb-item">
-                <small id="resCol2Label">Juntas en 10 años aprox:</small>
+              <div class="lr-col">
+                <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
                 <b id="resCol2Val" class="num">~$742,400 MXN*</b>
-                <span id="resCol2Sub">Protegido contra la inflación</span>
+                <span id="resCol2Sub">Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong></span>
+              </div>
+            </div>
+            <div class="lr-split-note" id="resTwoPocketsText">
+              💡 <strong>Tus 2 Cuentas:</strong> Una parte te da devolución del SAT cada abril y otra queda libre desde los 60 años o disponible en 3 a 5 años.
+            </div>
+          </div>
+
+          <!-- FORMULARIO CORTO (2 CAMPOS) ENFOCADO EN WHATSAPP SIN LLAMADAS -->
+          <div class="direct-form-wrap" id="directFormBox">
+            <div class="df-head">
+              <b>Recibe tu estudio a los 60 y 65 años de Seguros Monterrey</b>
+              <span>Déjame tu Nombre y WhatsApp para enviarte tus números y elegir horario (15 min):</span>
+            </div>
+
+            <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
+            <input type="hidden" id="formOrigen" value="Landing Fusion 4 Transparente">
+            <input type="hidden" id="prioridadHidden" value="Devolución SAT + 2 Cuentas">
+            <input type="hidden" id="calcEstimadoHidden" value="">
+            <input type="hidden" id="utm_source" value="">
+            <input type="hidden" id="utm_medium" value="">
+            <input type="hidden" id="utm_campaign" value="">
+            <input type="hidden" id="utm_term" value="">
+            <input type="hidden" id="utm_content" value="">
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="formNombre">Tu nombre *</label>
+                <input type="text" id="formNombre" name="nombre" placeholder="Ej. Mariana" autocomplete="name" enterkeyhint="next" required>
+              </div>
+              <div class="field">
+                <label for="formWhatsApp">Tu WhatsApp (10 dígitos) *</label>
+                <input type="tel" id="formWhatsApp" name="whatsapp" class="num" placeholder="Ej. 55 1234 5678" inputmode="numeric" autocomplete="tel-national" enterkeyhint="done" maxlength="14" required>
               </div>
             </div>
 
-            <div class="two-pockets-box" id="resTwoPocketsText"></div>
+            <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="err" id="formError" role="alert"></div>
+
+            <button type="submit" class="cta-main" id="formSubmitBtn">Ver mi estudio por WhatsApp y elegir horario →</button>
+
+            <p class="consent-mini">
+              🔒 Trato directo por mensaje de WhatsApp. <strong>Cero llamadas de spam.</strong> <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
+            </p>
           </div>
 
-          <!-- SELECTOR DE TURNO Y DÍA (LO MEJOR DE GRACIAS.HTML AQUÍ MISMO) -->
-          <div class="sched-box">
-            <span class="sched-lbl">¿En qué horario te acomoda que te explique tu plan en 20 min?</span>
+          <!-- PANEL DE CONFIRMACIÓN DE HORARIO QUE APARECE AL ENVIAR -->
+          <div class="sched-panel" id="schedPanelBox">
+            <span class="sched-lbl" id="schedGreeting">¡Listo! ¿En qué horario te acomoda que revisemos tu estudio (15 min)?</span>
             <div class="slots-grid" id="slotButtons">
               <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<small>9:00 a 12:00 hrs</small></button>
               <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<small>12:00 a 15:00 hrs</small></button>
@@ -571,38 +470,32 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </button>
           </div>
 
-          <div class="session-rules">
-            <b>📋 ¿Qué haremos en nuestra plática de 20 minutos?</b>
-            <div>✓ <strong>Sin compromiso:</strong> Vemos tus números exactos según tu fecha de nacimiento.</div>
-            <div>✓ <strong>Tus 2 cuentas claras:</strong> Te muestro cómo retirar desde los 60 o 65 años y cuánto tienes disponible en 3 a 5 años.</div>
-          </div>
-        </div>
-
-      </form>
+        </form>
+      </div>
     </div>
-  </section>
 
-  <!-- 3 BENEFICIOS EXPLICADOS DE FORMA SIMPLE -->
-  <section class="hero-details">
+  </div>
+
+  <div class="pillars-wrap">
     <div class="hero-pillars">
       <div class="hp-item">
         <div class="hp-num">01 · Dinero en abril</div>
         <h3>El SAT te premia por ahorrar</h3>
-        <p>De cada $100 pesos que guardas para tu retiro, el SAT te devuelve hasta $35 pesos en efectivo cada mes de abril.</p>
+        <p>De cada $100 pesos que inviertes para tu retiro, el SAT te devuelve hasta $35 pesos en efectivo cada mes de abril.</p>
       </div>
       <div class="hp-item">
         <div class="hp-num">02 · Retiro a los 60 o 65</div>
         <h3>Dos cuentas a tu favor</h3>
-        <p>Puedes tener una cuenta para deducir impuestos (a los 65) y otra libre de impuestos desde los 60 años o para usar en 3 a 5 años.</p>
+        <p>Una cuenta para deducir impuestos (a los 65) y otra libre de impuestos desde los 60 años o disponible en 3 a 5 años.</p>
       </div>
       <div class="hp-item">
-        <div class="hp-num">03 · Tarifa preferencial</div>
+        <div class="hp-num">03 · Protección incluida</div>
         <h3>Tu futuro garantizado</h3>
-        <p>Las mujeres y no fumadores pagan menos por su protección. Y si una enfermedad te impide trabajar, Seguros Monterrey paga el plan por ti.</p>
+        <p>Tu inversión crece arriba de la inflación y, si una enfermedad o accidente te impide trabajar, Seguros Monterrey paga el plan por ti.</p>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <!-- SECCIÓN 1: EXPLICACIÓN SIMPLE SIN TECNICISMOS -->
 <section class="sec-wrap sec-white" id="arquitectura">
@@ -768,7 +661,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
   </div>
 </section>
 
-<!-- SECCIÓN 4: PREGUNTAS FRECUENTES SIMPLES -->
+<!-- SECCIÓN 4: PREGUNTAS FRECUENTES -->
 <section class="sec-wrap" id="dudas">
   <div class="container">
     <div style="text-align:center;max-width:680px;margin:0 auto">
@@ -787,7 +680,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <details class="faq-item">
         <summary>¿De qué depende el monto mínimo mensual para empezar?</summary>
         <div class="faq-ans">
-          <p>Depende de tu edad actual, tu salud y si fumas o no fumas (las mujeres y personas que no fuman tienen un costo más bajo en Seguros Monterrey). Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
+          <p>Depende de tu edad actual, tu salud y si fumas o no fumas. Entre los 25 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
         </div>
       </details>
 
@@ -830,14 +723,13 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
   </div>
 </footer>
 
-<!-- BARRA FLOTANTE INFERIOR (SE ACTIVA AUTOMÁTICAMENTE AL HACER SCROLL) -->
 <div class="sticky-bar off" id="stickyBar">
   <div class="sticky-in">
     <div>
-      <small id="stickySmallTxt">Simulador en 3 pasos</small>
-      <b id="stickyBigTxt">Calcula cuánto te regresa el SAT</b>
+      <small id="stickySmall">Devolución SAT estimada:</small>
+      <b id="stickyBig">+$11,290 MXN*</b>
     </div>
-    <button type="button" id="stickyBtn">Hacer mi cálculo →</button>
+    <button type="button" id="stickyBtn">Cotizar mi plan →</button>
   </div>
 </div>
 
@@ -868,13 +760,12 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
     <div class="d-head"><span id="privacyTitle">Aviso de Privacidad simplificado</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
     <div class="d-body">
       <p><strong>Responsable:</strong> Santiago (Santi te asesora), agente de seguros autorizado con cédula CNSF C412676.</p>
-      <p><strong>¿Para qué usamos tus datos?</strong> Para mostrarte tu estimación personalizada de devolución de impuestos y ahorro, y compartirte los detalles por WhatsApp sin llamadas invasivas.</p>
+      <p><strong>¿Para qué usamos tus datos?</strong> Para enviarte tu cotización personalizada de devolución de impuestos y ahorro, y compartirte los detalles por WhatsApp sin llamadas invasivas.</p>
     </div>
     <div class="d-foot"><span></span><a href="#formulario" class="btn-close" data-close-modal>Entendido</a></div>
   </div>
 </div>
 
-<!-- MODAL DEL CALENDARIO EN VIVO DE GOOGLE CALENDAR (INTEGRADO AQUÍ MISMO) -->
 <div class="modal" id="calModal" role="dialog" aria-modal="true" aria-label="Agenda en vivo de Santiago">
   <div class="mbox cal">
     <div class="d-head">
@@ -925,7 +816,7 @@ function lsGet(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){
 function lsSet(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
 
 const state = {
-  currentStep: 1,
+  submitted: false,
   mode: 'deducible',
   regimeLabel: 'Sueldo u Honorarios',
   ageRange: '33-39',
@@ -941,10 +832,19 @@ const state = {
   tenYearCapital: 742439,
   tenYearGain: 262439,
   selectedSlot: 'Mañana (9:00 a 12:00 hrs)',
-  leadName: ''
+  leadName: '',
+  clarityTaggedSim: false
 };
 
+let pulseTimer = null;
 let currentLeadId = null;
+
+function tagClaritySim(){
+  if (!state.clarityTaggedSim && typeof window.clarity === 'function'){
+    state.clarityTaggedSim = true;
+    window.clarity('set', 'interaccion_simulador', 'si');
+  }
+}
 
 function isrAnual(base){
   if (base <= 0) return 0;
@@ -960,12 +860,35 @@ function getMarginalRate(base){
   return row[2];
 }
 
-function recalculateNumbers(){
+function paintSliderTrack(slider){
+  if (!slider) return;
+  const min = parseFloat(slider.min) || 0;
+  const max = parseFloat(slider.max) || 100;
+  const val = parseFloat(slider.value) || 0;
+  const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+  slider.style.background = `linear-gradient(90deg, #145C52 0%, #A8C4B5 ${pct}%, #E2DBD0 ${pct}%, #E2DBD0 100%)`;
+}
+
+function bindUnlockStudyLink(){
+  const link = $('unlockStudyLink');
+  if (link){
+    link.onclick = () => {
+      const nameInput = $('formNombre');
+      if (nameInput){
+        nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => nameInput.focus(), 350);
+      }
+    };
+  }
+}
+
+function recalculateNumbers(triggerPulse){
   const annualIncome = state.income * 12;
   const capAnnual = CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL;
   state.maxDeductibleAnnual = Math.min(annualIncome * CONFIG.RETIRO_PCT, capAnnual);
   const maxDeductibleMonthly = Math.round(state.maxDeductibleAnnual / 12);
 
+  const incomeSlider = $('incomeSlider');
   const savingSlider = $('savingSlider');
   const minAllowed = state.minSavingByAge || 1500;
   const maxSliderVal = Math.max(15000, Math.min(25000, Math.round((state.income * 0.25) / 500) * 500));
@@ -987,6 +910,9 @@ function recalculateNumbers(){
     }
   }
 
+  paintSliderTrack(incomeSlider);
+  paintSliderTrack(savingSlider);
+
   const annualSaving = state.monthlySaving * 12;
   state.effectiveDeductible = state.mode === 'resico' ? 0 : Math.min(annualSaving, state.maxDeductibleAnnual);
   state.flexibleAnnual = state.mode === 'resico' ? annualSaving : Math.max(0, annualSaving - state.effectiveDeductible);
@@ -997,50 +923,70 @@ function recalculateNumbers(){
   state.tenYearCapital = Math.round(annualSaving * (((Math.pow(1 + r, yrs) - 1) / r) * (1 + r)));
   state.tenYearGain = Math.max(0, state.tenYearCapital - (annualSaving * yrs));
 
-  $('incomeDisplay').textContent = money(state.income) + ' MXN';
-  $('savingDisplay').textContent = money(state.monthlySaving) + ' / mes';
+  $('incomeDisplay').innerHTML = money(state.income) + ' <small>MXN</small>';
+  $('savingDisplay').innerHTML = money(state.monthlySaving) + ' <small>/ mes</small>';
   $('minByAgeLabel').textContent = 'Mínimo (' + state.ageRange + ' años): ' + money(minAllowed) + '/mes';
 
   const effectiveCapBtnVal = Math.max(minAllowed, Math.round(maxDeductibleMonthly / 500) * 500);
-  $('useCapBtn').textContent = 'Usar mi 10% ideal (' + money(effectiveCapBtnVal) + '/mes)';
+  $('useCapBtn').textContent = 'Sugerido 10%: ' + money(effectiveCapBtnVal) + '/mes';
+
+  const netAnnual = annualSaving - state.refund;
+  const netMonthly = Math.round(netAnnual / 12);
+
+  if (state.mode !== 'resico'){
+    $('resBadgeTag').textContent = 'EL SAT TE DEVUELVE EL ' + (state.marginalRate * 100).toFixed(1) + '% EN ABRIL';
+    $('resCol1Label').textContent = 'Te regresa el SAT cada abril:';
+    $('resCol1Val').textContent = '+' + money(state.refund) + ' MXN*';
+    $('resCol1Sub').textContent = 'Inversión neta real: ' + money(netMonthly) + '/mes';
+
+    $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
+    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
+    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
+
+    $('stickySmall').textContent = 'Devolución SAT estimada:';
+    $('stickyBig').textContent = '+' + money(state.refund) + ' MXN*';
+
+    if (state.flexibleAnnual > 0){
+      const dedMonthly = Math.round(state.effectiveDeductible / 12);
+      const flexMonthly = Math.max(0, state.monthlySaving - dedMonthly);
+      $('resTwoPocketsText').innerHTML = '💡 <strong>Tus 2 Bolsillos:</strong> <strong>' + money(dedMonthly) + '/mes</strong> van al Bolsillo 1 (máxima devolución del SAT) y <strong>' + money(flexMonthly) + '/mes</strong> al Bolsillo 2 (libre desde los 60 años o disponible en 3 a 5 años).';
+    } else {
+      $('resTwoPocketsText').innerHTML = '💡 <strong>Tus 2 Cuentas:</strong> Una parte te da devolución del SAT cada abril y otra queda libre desde los 60 años o disponible en 3 a 5 años.';
+    }
+  } else {
+    $('resBadgeTag').textContent = 'RETIRO A LOS 60 AÑOS CON 0% IMPUESTOS';
+    $('resCol1Label').textContent = 'Rendimiento libre (10a):';
+    $('resCol1Val').textContent = '+' + money(state.tenYearGain) + ' MXN*';
+    $('resCol1Sub').textContent = 'Invirtiendo ' + money(state.monthlySaving) + '/mes';
+
+    $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
+    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
+    $('resCol2Sub').innerHTML = 'Monto a tus 60 y 65 años: <strong class="lr-unlock-link" id="unlockStudyLink">Ver en tu estudio ↓</strong>';
+
+    $('stickySmall').textContent = 'Patrimonio 10 años (Art. 93):';
+    $('stickyBig').textContent = '~' + money(state.tenYearCapital) + '*';
+
+    $('resTwoPocketsText').innerHTML = '💡 <strong>Estrategia RESICO:</strong> Tu inversión crece protegida en UDIs o Dólares con una cuenta disponible en 3 a 5 años y retiro 100% libre de impuestos desde los 60 años.';
+  }
+
+  bindUnlockStudyLink();
+
+  if (triggerPulse && $('taxBox')){
+    tagClaritySim();
+    const tb = $('taxBox');
+    tb.classList.add('pulse');
+    clearTimeout(pulseTimer);
+    pulseTimer = setTimeout(() => tb.classList.remove('pulse'), 220);
+  }
 
   updateHiddenCalc();
-}
-
-function goToStep(stepNum){
-  state.currentStep = stepNum;
-  for (let i = 1; i <= 5; i++){
-    const el = $('step' + i);
-    if (el) el.classList.toggle('active', i === stepNum);
-  }
-  const pctMap = { 1: 25, 2: 55, 3: 80, 4: 92, 5: 100 };
-  const txtMap = {
-    1: 'Paso 1 de 3 · Tu edad',
-    2: 'Paso 2 de 3 · Ingreso y ahorro',
-    3: 'Paso 3 de 3 · Cómo te pagan',
-    4: '¡Cálculo listo! · Destapa tus números',
-    5: '✓ Resultado desbloqueado'
-  };
-  $('progFill').style.width = (pctMap[stepNum] || 100) + '%';
-  $('progPctText').textContent = (pctMap[stepNum] || 100) + '%';
-  $('progStepText').textContent = txtMap[stepNum] || '';
-
-  if (stepNum === 2){
-    recalculateNumbers();
-  }
-
-  if (stepNum === 4){
-    recalculateNumbers();
-    $('readySummaryText').innerHTML = '<strong>¡Tu cálculo para ' + money(state.income) + '/mes y ' + money(state.monthlySaving) + '/mes de ahorro está listo!</strong> Escribe tu nombre y WhatsApp para ver tus montos exactos aquí mismo:';
-    setTimeout(() => { if ($('formNombre')) $('formNombre').focus({ preventScroll: true }); }, 200);
-  }
 }
 
 function isLeadQualified(){
   return state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= state.minSavingByAge;
 }
 
-function updateStep5WhatsAppLinks(){
+function updateWhatsAppLinks(){
   const leadId = currentLeadId || 'SANTI-2026';
   const nombre = state.leadName || $('formNombre').value.trim() || '';
   const dayPref = $('daySelect') ? $('daySelect').value : 'Lo antes posible';
@@ -1052,15 +998,15 @@ function updateStep5WhatsAppLinks(){
   const msgWa = [
     `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
-    `Acabo de ver mi resultado en tu página:`,
+    `Acabo de calcular mi estudio en tu página:`,
     `• *Edad:* ${state.ageRange} años`,
     `• *Ingreso aprox:* ${money(state.income)}/mes`,
-    `• *Ahorro planeado:* ${money(state.monthlySaving)}/mes`,
+    `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
     `• *Esquema:* ${state.regimeLabel}`,
     `• *Resultado:* ${beneficioTxt}`,
     `• *Horario preferido:* ${state.selectedSlot} (${dayPref})`,
     ``,
-    `¿Qué espacio tienes disponible para que me expliques mi plan de 2 cuentas?`
+    `¿Qué espacio tienes disponible para revisar mi estudio de 60 y 65 años?`
   ].join('\n');
 
   const msgBooked = [
@@ -1068,8 +1014,7 @@ function updateStep5WhatsAppLinks(){
     ``,
     `✅ *Ya reservé mi día y hora en tu Google Calendar.*`,
     `• *Edad:* ${state.ageRange} años`,
-    `• *Ingreso aprox:* ${money(state.income)}/mes`,
-    `• *Ahorro planeado:* ${money(state.monthlySaving)}/mes`,
+    `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
     `• *Resultado:* ${beneficioTxt}`,
     ``,
     `Te dejo abierto este chat para nuestra plática.`
@@ -1079,60 +1024,6 @@ function updateStep5WhatsAppLinks(){
   if ($('bookedWaModalBtn')){
     $('bookedWaModalBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msgBooked)}`;
   }
-}
-
-function renderStep5Unlocked(nombre){
-  recalculateNumbers();
-  state.leadName = nombre.trim();
-  const firstName = state.leadName.split(/\s+/)[0];
-  $('resGreetingTitle').textContent = `${firstName}, aquí tienes tu resultado`;
-  $('resFolioBadge').textContent = 'Folio #' + (currentLeadId || 'SANTI');
-
-  const annualSaving = state.monthlySaving * 12;
-  const netMonthly = Math.round((annualSaving - state.refund) / 12);
-
-  if (state.mode !== 'resico'){
-    $('resBadgeTag').textContent = 'El SAT te devuelve el ' + Math.round(state.marginalRate * 100) + '%';
-    $('resCol1Label').textContent = 'Te regresa el SAT cada abril:';
-    $('resCol1Val').textContent = money(state.refund) + ' MXN*';
-    $('resCol1Sub').textContent = 'Tu ahorro real te cuesta solo ' + money(netMonthly) + '/mes';
-
-    $('resCol2Label').textContent = 'Juntas en 10 años aprox:';
-    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').textContent = 'Protegido contra la inflación';
-
-    if (state.flexibleAnnual > 0){
-      const dedMonthly = Math.round(state.effectiveDeductible / 12);
-      const flexMonthly = Math.max(0, state.monthlySaving - dedMonthly);
-      $('resTwoPocketsText').innerHTML = '💡 <strong>Tus 2 Bolsillos:</strong> <strong>' + money(dedMonthly) + '/mes</strong> van al Bolsillo 1 (el que te da devolución del SAT) y <strong>' + money(flexMonthly) + '/mes</strong> al Bolsillo 2 (para retirarte a los 60 años sin impuestos o usarlo en 3 a 5 años).';
-    } else {
-      $('resTwoPocketsText').innerHTML = '💡 <strong>Tus 2 Bolsillos:</strong> En nuestra plática vemos cómo dividir tus <strong>' + money(state.monthlySaving) + '/mes</strong> para que tengas devolución del SAT en abril y otra parte libre desde los 60 años o a mediano plazo.';
-    }
-  } else {
-    $('resBadgeTag').textContent = 'Retiro Libre de Impuestos a los 60';
-    $('resCol1Label').textContent = 'Ganancia estimada (10 años):';
-    $('resCol1Val').textContent = '+' + money(state.tenYearGain) + ' MXN*';
-    $('resCol1Sub').textContent = 'Ahorrando ' + money(state.monthlySaving) + '/mes';
-
-    $('resCol2Label').textContent = 'Juntas en 10 años aprox:';
-    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('resCol2Sub').textContent = '0% de impuestos desde tus 60 años';
-
-    $('resTwoPocketsText').innerHTML = '💡 <strong>Estrategia RESICO:</strong> Tu dinero crece protegido en UDIs o Dólares con una cuenta disponible en 3 a 5 años y retiro 100% libre de impuestos desde los 60 años.';
-  }
-
-  const qualified = isLeadQualified();
-  if (!qualified){
-    $('calDirectBtn').classList.add('hidden');
-  } else {
-    $('calDirectBtn').classList.remove('hidden');
-    setTimeout(() => {
-      const f = $('googleCalIframe');
-      if (f && !f.src) f.src = CONFIG.GOOGLE_CALENDAR_EMBED_URL;
-    }, 300);
-  }
-
-  updateStep5WhatsAppLinks();
 }
 
 function cleanTenDigits(raw){
@@ -1181,7 +1072,7 @@ function updateHiddenCalc(){
     ? 'Proyección 10a (Retiro 60): ' + money(state.tenYearCapital) + ' MXN'
     : 'Devolución SAT est: ' + money(state.refund) + ' MXN | Cuenta 2 Anual: ' + money(state.flexibleAnnual) + ' | Fondo 10a: ' + money(state.tenYearCapital) + ' MXN';
 
-  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años (Base ' + money(state.minSavingByAge) + ') | Ingreso: ' + ingreso + ' | Ahorro: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
+  $('calcEstimadoHidden').value = qualTag + ' Edad: ' + state.ageRange + ' años | Ingreso: ' + ingreso + ' | Inversión: ' + ahorro + ' | ' + benefitPart + ' | Prioridad: ' + prioridad + gclidPart;
 }
 
 function newLeadId(){ return 'L' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase(); }
@@ -1219,6 +1110,9 @@ async function flushPending(){
 }
 
 function trackConversionIfQualified(leadId, qualified, waDigits){
+  if (typeof window.clarity === 'function'){
+    window.clarity('set', 'lead_enviado', qualified ? 'calificado' : 'no_calificado');
+  }
   if (!qualified) return false;
   const base = { currency: 'MXN', transaction_id: leadId, value: CONFIG.LEAD_VALUE || 900 };
 
@@ -1227,7 +1121,7 @@ function trackConversionIfQualified(leadId, qualified, waDigits){
       gtag('set', 'user_data', { phone_number: '+52' + waDigits });
     }
     gtag('event', 'generate_lead', Object.assign({
-      event_category: 'Diagnostico_Todo_En_Uno',
+      event_category: 'Simulador_Transparente_F4',
       event_label: 'Lead_Calificado_' + state.ageRange
     }, base));
 
@@ -1253,7 +1147,7 @@ async function handleSubmit(ev){
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu resultado.'); $('formNombre').focus(); return; }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu estudio.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa los 10 dígitos de tu WhatsApp (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
 
@@ -1283,9 +1177,26 @@ async function handleSubmit(ev){
     calificado: qualified ? 'SI' : 'NO'
   };
 
-  renderStep5Unlocked(nombre);
-  goToStep(5);
+  state.submitted = true;
+  state.leadName = nombre;
+  const firstName = nombre.split(/\s+/)[0];
+  $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu estudio (15 min)?`;
+
+  $('directFormBox').classList.add('hidden');
+  $('schedPanelBox').classList.add('show');
   $('stickyBar').classList.add('off');
+
+  if (!qualified){
+    $('calDirectBtn').classList.add('hidden');
+  } else {
+    $('calDirectBtn').classList.remove('hidden');
+    setTimeout(() => {
+      const f = $('googleCalIframe');
+      if (f && !f.src) f.src = CONFIG.GOOGLE_CALENDAR_EMBED_URL;
+    }, 200);
+  }
+
+  updateWhatsAppLinks();
 
   queueLead(payload);
   trackConversionIfQualified(leadId, qualified, wa);
@@ -1330,53 +1241,76 @@ function setupModals(){
   });
 }
 
-/* ACTIVACIÓN DEL BOTÓN FLOTANTE INFERIOR AL HACER SCROLL */
+function scrollToSimulator(){
+  const quiz = $('formulario');
+  if (quiz) quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function scrollToFormFields(){
+  const box = $('directFormBox');
+  if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function setupStickyBar(){
-  const bar = $('stickyBar'), quiz = $('formulario');
-  if (!bar || !quiz) return;
+  const bar = $('stickyBar'), formBox = $('directFormBox');
+  if (!bar || !formBox) return;
 
   const checkScroll = () => {
-    if (state.currentStep === 5){
+    if (state.submitted){
       bar.classList.add('off');
       return;
     }
-    const r = quiz.getBoundingClientRect();
-    const quizOutOfView = r.bottom < 120 || r.top > window.innerHeight - 80;
-    bar.classList.toggle('off', !quizOutOfView);
+    const r = formBox.getBoundingClientRect();
+    const formVisible = r.top < window.innerHeight - 60 && r.bottom > 80;
+    bar.classList.toggle('off', formVisible || window.scrollY < 240);
   };
 
   window.addEventListener('scroll', checkScroll, { passive: true });
   window.addEventListener('resize', checkScroll, { passive: true });
   checkScroll();
 
-  $('stickyBtn').addEventListener('click', () => {
-    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-  $('headerCtaBtn').addEventListener('click', () => {
-    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  $('stickyBtn').addEventListener('click', scrollToFormFields);
+  $('heroCalcBtn').addEventListener('click', scrollToSimulator);
+  $('heroDirectBookBtn').addEventListener('click', scrollToFormFields);
+  $('headerCtaBtn').addEventListener('click', scrollToFormFields);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   captureAttribution();
 
-  document.querySelectorAll('[data-step1-age]').forEach(btn => {
+  document.querySelectorAll('#agePills .pill-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      state.ageRange = btn.getAttribute('data-step1-age');
+      document.querySelectorAll('#agePills .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.ageRange = btn.getAttribute('data-age');
       state.minSavingByAge = parseFloat(btn.getAttribute('data-min')) || 2500;
-      goToStep(2);
+      recalculateNumbers(true);
+    });
+  });
+
+  document.querySelectorAll('#regimePills .pill-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#regimePills .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.mode = btn.getAttribute('data-mode');
+      state.regimeLabel = btn.getAttribute('data-reg');
+      $('regimenInput').value = state.regimeLabel;
+      $('prioridadHidden').value = state.mode === 'resico'
+        ? 'Retiro a los 60 Libre de Impuestos (RESICO)'
+        : 'Devolución SAT + 2 Cuentas';
+      recalculateNumbers(true);
     });
   });
 
   $('incomeSlider').addEventListener('input', e => {
     state.income = parseFloat(e.target.value);
-    recalculateNumbers();
+    recalculateNumbers(true);
   });
 
   $('savingSlider').addEventListener('input', e => {
     state.userTouchedSaving = true;
     state.monthlySaving = parseFloat(e.target.value);
-    recalculateNumbers();
+    recalculateNumbers(true);
   });
 
   $('useCapBtn').addEventListener('click', () => {
@@ -1385,42 +1319,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const capMonthly = Math.max(state.minSavingByAge, Math.round(rawCapMonthly / 500) * 500);
     state.monthlySaving = capMonthly;
     $('savingSlider').value = String(capMonthly);
-    recalculateNumbers();
+    recalculateNumbers(true);
   });
 
-  $('toStep3Btn').addEventListener('click', () => {
-    goToStep(3);
-  });
-
-  document.querySelectorAll('[data-step3-mode]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.mode = btn.getAttribute('data-step3-mode');
-      state.regimeLabel = btn.getAttribute('data-regime');
-      $('regimenInput').value = state.regimeLabel;
-      $('prioridadHidden').value = state.mode === 'resico'
-        ? 'Retiro a los 60 Libre de Impuestos (RESICO)'
-        : 'Devolución SAT + 2 Cuentas';
-      goToStep(4);
-    });
-  });
-
-  document.querySelectorAll('[data-go-back]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      goToStep(parseInt(btn.getAttribute('data-go-back'), 10));
-    });
-  });
-
-  /* Botones de horario integrados en el Paso 5 */
   document.querySelectorAll('#slotButtons .slot-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#slotButtons .slot-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
       btn.setAttribute('aria-pressed', 'true');
       state.selectedSlot = btn.getAttribute('data-slot');
-      updateStep5WhatsAppLinks();
+      updateWhatsAppLinks();
     });
   });
 
-  $('daySelect').addEventListener('change', updateStep5WhatsAppLinks);
+  $('daySelect').addEventListener('change', updateWhatsAppLinks);
 
   $('calDirectBtn').addEventListener('click', () => {
     openModal('calModal');
@@ -1437,7 +1348,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('leadForm').addEventListener('submit', handleSubmit);
   setupModals();
   setupStickyBar();
-  recalculateNumbers();
+  recalculateNumbers(false);
   flushPending();
 });
 </script>
