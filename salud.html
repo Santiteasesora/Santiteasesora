@@ -42,11 +42,20 @@ button,select{cursor:pointer}
 .mode-btn{border:none;background:transparent;padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:800;color:var(--muted);transition:all .15s}
 .mode-btn.active{background:var(--emerald);color:#fff}
 
-/* BARRA DE PARÁMETROS EN VIVO (EDITABLE PARA CUALQUIER CLIENTE) */
-.client-bar{background:var(--surface);border:2px solid var(--ivory);border-radius:var(--r-xl);padding:14px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;box-shadow:var(--shadow-card)}
-.cb-field label{display:block;font-size:10.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px}
-.cb-field input,.cb-field select{width:100%;height:38px;padding:4px 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--charcoal);font-size:13.5px;font-weight:800}
+/* BARRA DE PARÁMETROS PERFECTAMENTE ALINEADA + CANDADO DE DEDUCIBLE */
+.client-bar{background:var(--surface);border:2px solid var(--ivory);border-radius:var(--r-xl);padding:14px 18px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:end;box-shadow:var(--shadow-card)}
+@media(min-width:680px){.client-bar{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1040px){.client-bar{grid-template-columns:1.35fr .95fr 1.15fr 1.15fr 1.05fr 1fr}}
+
+.cb-field{display:flex;flex-direction:column;justify-content:flex-end}
+.cb-lbl-row{display:flex;justify-content:space-between;align-items:center;gap:4px;margin-bottom:5px;min-height:18px}
+.cb-field label{font-size:10.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lock-btn{border:1px solid var(--sage);background:var(--sage-soft);color:var(--emerald);font-size:10px;font-weight:800;padding:1px 7px;border-radius:999px;display:inline-flex;align-items:center;gap:3px;transition:all .15s}
+.lock-btn.unlocked{background:#FFFBEB;border-color:var(--gold);color:#92400E}
+
+.cb-field input,.cb-field select{width:100%;height:40px;padding:6px 10px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--charcoal);font-size:13.5px;font-weight:800;transition:all .15s}
 .cb-field input:focus,.cb-field select:focus{outline:none;border-color:var(--emerald);background:#fff}
+.cb-field input[readonly]{background:#EFECE6;color:var(--emerald);border-color:var(--sage);cursor:not-allowed}
 
 /* GRID PRINCIPAL: ARQUITECTURA DE PÓLIZA + INVERSIÓN FISCAL */
 .main-grid{display:grid;gap:18px}
@@ -101,41 +110,42 @@ button,select{cursor:pointer}
 .sn-col small{display:block;font-size:10.5px;color:var(--muted);font-weight:700}
 .sn-col b{display:block;font-size:17px;font-weight:800;color:var(--emerald);margin-top:1px}
 
-/* SIMULADOR DE SINIESTRO EN VIVO (ENFERMEDAD VS ACCIDENTE) */
+/* SIMULADOR DE SINIESTRO EN VIVO DINÁMICO */
 .sim-hospital-sec{background:var(--ivory);border:2px solid #fff;border-radius:var(--r-2xl);padding:22px;box-shadow:var(--shadow-card)}
 .sh-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .sh-controls{display:grid;gap:14px;margin-top:16px}
 @media(min-width:820px){.sh-controls{grid-template-columns:1.1fr .9fr;align-items:center}}
 
 .bill-slider-box{background:#fff;border:1.5px solid var(--sage);border-radius:var(--r-lg);padding:14px 16px}
-.bs-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.bs-top span{font-size:12.5px;font-weight:800;color:var(--muted);text-transform:uppercase}
+.bs-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;gap:8px}
+.bs-top span{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase}
 .bs-top b{font-size:24px;font-weight:800;color:var(--emerald)}
 input[type="range"].hosp-range{-webkit-appearance:none;appearance:none;width:100%;height:7px;background:#E2DBD0;border-radius:999px;outline:none;margin:8px 0}
 input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--gold);border:3px solid var(--emerald);cursor:pointer}
-.preset-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.pr-pill{background:var(--sage-soft);border:1px solid var(--sage);color:var(--emerald);font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
-.pr-pill:hover{background:var(--emerald);color:#fff}
+
+.preset-pills{display:flex;flex-wrap:wrap;gap:6px}
+.pr-pill{background:var(--sage-soft);border:1px solid var(--sage);color:var(--emerald);font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;transition:all .15s}
+.pr-pill:hover,.pr-pill.active{background:var(--emerald);color:#fff}
 
 .compare-cards{display:grid;gap:12px;margin-top:16px}
 @media(min-width:720px){.compare-cards{grid-template-columns:1fr 1fr}}
 .cc-box{background:#fff;border:1.5px solid var(--line);border-radius:var(--r-xl);padding:16px;display:grid;gap:8px}
 .cc-box.win{border:2px solid var(--emerald);background:var(--sage-soft)}
-.cc-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(41,44,43,.1)}
+.cc-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(41,44,43,.1)}
 .cc-line{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
 .cc-line strong{color:var(--charcoal)}
 .cc-total{margin-top:6px;padding-top:8px;border-top:1.5px solid rgba(20,92,82,.2);display:flex;justify-content:space-between;align-items:baseline}
 .cc-total span{font-size:12.5px;font-weight:800;color:var(--emerald)}
 .cc-total b{font-size:22px;font-weight:800;color:var(--emerald)}
 
-/* BENEFICIOS INCLUIDOS CON ICONOS LIMPIOS (CERO LÁPIDAS) */
+/* BENEFICIOS INCLUIDOS CON ICONOS LIMPIOS */
 .benefits-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .ben-card{background:var(--surface);border:1.5px solid var(--ivory);border-radius:var(--r-xl);padding:16px;box-shadow:0 8px 20px -8px rgba(20,92,82,.12);display:grid;gap:6px}
 .ben-icon{width:36px;height:36px;border-radius:10px;background:var(--sage-soft);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;border:1px solid var(--sage)}
 .ben-card h4{font-size:14.5px;font-weight:800;color:var(--charcoal)}
 .ben-card p{font-size:12.5px;color:var(--muted);line-height:1.45}
 
-/* TIEMPOS DE ESPERA Y SINERGIA EJECUTIVA */
+/* TIEMPOS DE ESPERA Y PASES DE CORTESÍA VOLUNTARIOS */
 .bottom-split{display:grid;gap:18px}
 @media(min-width:860px){.bottom-split{grid-template-columns:1fr 1fr}}
 .wait-list{list-style:none;display:grid;gap:8px;margin-top:8px;font-size:12.5px;color:var(--muted)}
@@ -143,7 +153,7 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
 
 .ally-box{background:var(--ivory);border:2px solid var(--gold);border-radius:var(--r-xl);padding:16px;display:grid;gap:10px}
 .ally-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.ally-inputs input{height:38px;padding:6px 10px;border-radius:8px;border:1px solid var(--sage);font-size:13px;font-weight:700}
+.ally-inputs input{height:38px;padding:6px 10px;border-radius:8px;border:1px solid var(--sage);font-size:13px;font-weight:700;background:#fff}
 .btn-gold-full{width:100%;min-height:46px;background:var(--gold);color:var(--charcoal);border:none;border-radius:11px;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 18px -6px rgba(217,164,65,.6)}
 </style>
 </head>
@@ -170,34 +180,37 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
     </div>
   </header>
 
-  <!-- BARRA EDITABLE EN VIVO (PRE-CARGADA CON HEBER JONATHAN MARÍN FLORES) -->
-  <section class="client-bar" aria-label="Datos de la cotización">
+  <!-- BARRA SIMÉTRICA CON BOTÓN DE BLOQUEO DE DEDUCIBLE Y CERO DATOS PRIVADOS EXPUESTOS -->
+  <section class="client-bar" aria-label="Parámetros de la cotización">
     <div class="cb-field">
-      <label for="inName">Asegurado Titular</label>
-      <input type="text" id="inName" value="Heber Jonathan Marín Flores">
+      <div class="cb-lbl-row"><label for="inName">Asegurado Titular</label></div>
+      <input type="text" id="inName" value="" placeholder="Escribe nombre en vivo...">
     </div>
     <div class="cb-field">
-      <label for="inAge">Edad y Riesgo</label>
-      <input type="text" id="inAge" value="25 años · Normal">
+      <div class="cb-lbl-row"><label for="inAge">Edad y Tarifa</label></div>
+      <input type="text" id="inAge" value="25 años · Estándar">
     </div>
     <div class="cb-field">
-      <label for="inPlan">Nivel Hospitalario</label>
+      <div class="cb-lbl-row"><label for="inPlan">Nivel Hospitalario</label></div>
       <select id="inPlan">
-        <option value="Pleno CDMX1 (Tabulador Gamma)" selected>Pleno CDMX1 (Gamma)</option>
+        <option value="Pleno CDMX1" selected>Pleno CDMX1 (Gamma)</option>
         <option value="Íntegro CDMX1">Íntegro CDMX1</option>
         <option value="Práctico CDMX1">Práctico CDMX1</option>
       </select>
     </div>
     <div class="cb-field">
-      <label for="inDed">Deducible Contratado (MXN)</label>
-      <input type="number" id="inDed" class="num" value="5000000" step="5000">
+      <div class="cb-lbl-row">
+        <label for="inDed">Deducible (MXN)</label>
+        <button type="button" class="lock-btn" id="lockDedBtn" title="Bloquear o desbloquear deducible">🔒 Fijo</button>
+      </div>
+      <input type="number" id="inDed" class="num" value="5000000" step="5000" readonly>
     </div>
     <div class="cb-field">
-      <label for="inCoas">Coaseguro / Tope</label>
+      <div class="cb-lbl-row"><label for="inCoas">Coaseguro / Tope</label></div>
       <input type="text" id="inCoas" value="10% (Tope $97,000)">
     </div>
     <div class="cb-field">
-      <label for="inMonthly">Inversión Mensual (IVA inc.)</label>
+      <div class="cb-lbl-row"><label for="inMonthly">Inversión Mensual</label></div>
       <input type="number" id="inMonthly" class="num" value="554.22" step="10">
     </div>
   </section>
@@ -208,29 +221,29 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
     <!-- IZQUIERDA: ARQUITECTURA DE PROTECCIÓN -->
     <div class="card-panel">
       <div>
-        <span class="sec-tag" id="archTag">01 · ESTRATEGIA INTELIGENTE SOBRE TU PRESTACIÓN LABORAL</span>
-        <h2 class="panel-title" id="archTitle">Cómo blindamos tu asegurabilidad futura en el Nivel Pleno sin pagar doble seguro</h2>
+        <span class="sec-tag" id="archTag">01 · ESTRATEGIA INTELIGENTE DE CONTINUIDAD MÉDICA</span>
+        <h2 class="panel-title" id="archTitle">Cómo proteger tu antigüedad y acceso a Hospitales Pleno con una inversión mínima</h2>
 
-        <!-- DIAGRAMA PUENTE (VISIBLE EN MODO EXCESO) -->
+        <!-- DIAGRAMA PUENTE (MODO EXCESO) -->
         <div class="bridge-diagram" id="excesoDiagram">
           <div class="br-box">
             <div>
-              <small>Capa 1 · Tu Empresa Actual</small>
-              <h4>Póliza Colectiva (MetLife)</h4>
+              <small>Capa 1 · Póliza Base / Prestación</small>
+              <h4>Seguro Colectivo Actual</h4>
               <div class="big-num num" id="cap1Val">Primeros $5,000,000</div>
-              <p>Para cirugías o eventos menores mientras estás en nómina, responde primero la póliza de tu empresa.</p>
+              <p>Para atenciones o cirugías dentro de la suma asegurada de tu prestación laboral, utilizas primero el seguro de tu empresa.</p>
             </div>
-            <small style="margin-top:8px;color:#9F1239">⚠️ Riesgo: Si cambias de trabajo, se apaga.</small>
+            <small style="margin-top:8px;color:#9F1239">⚠️ Al cambiar de empleo o independizarte, termina.</small>
           </div>
 
           <div class="br-arrow">➕</div>
 
           <div class="br-box smnyl">
             <div>
-              <small>Capa 2 · Tu Póliza Propia SMNYL</small>
+              <small>Capa 2 · Tu Contrato Propio SMNYL</small>
               <h4 id="planNameCard">Alfa Medical Pleno CDMX1</h4>
               <div class="big-num num">Hasta $170,000,000 MXN</div>
-              <p>Entra al rebasar el deducible en una enfermedad catastrófica y <strong>congela tu antigüedad y salud desde hoy a tus 25 años</strong>. Si mañana sales de la empresa, bajas tu deducible sin volver a pasar por examen médico para padecimientos nuevos.</p>
+              <p>Te respalda si una cuenta mayor rebasa tu primera capa y <strong>resguarda tu antigüedad desde hoy</strong>. Si el día de mañana sales de tu empresa, puedes ajustar tu deducible sin perder la antigüedad que ya generaste.</p>
             </div>
             <small style="margin-top:8px">✓ Hospitales Top (ABC, Ángeles, Médica Sur)</small>
           </div>
@@ -244,9 +257,9 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
           <span>Por padecimiento</span>
         </div>
         <div class="sp-item">
-          <small>Deducible Actual</small>
+          <small>Deducible Contratado</small>
           <b class="num" id="specDed">$5,000,000</b>
-          <span id="specDedSub">Cubierto por tu colectiva</span>
+          <span id="specDedSub">Estrategia en exceso</span>
         </div>
         <div class="sp-item">
           <small>Coaseguro SMNYL</small>
@@ -254,9 +267,9 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
           <span>Topado a $97,000 MXN</span>
         </div>
         <div class="sp-item">
-          <small>Bajar de Nivel Hosp.</small>
+          <small>Red Íntegro / Práctico</small>
           <b class="num">0% Coaseguro</b>
-          <span>En Íntegro o Práctico (-10 pts)</span>
+          <span>10 pts menos a tu favor</span>
         </div>
       </div>
     </div>
@@ -264,8 +277,8 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
     <!-- DERECHA: DESGLOSE OFICIAL DE INVERSIÓN + SAT -->
     <div class="card-panel card-emerald">
       <div>
-        <span class="sec-tag">02 · INVERSIÓN OFICIAL COTIZADOR SMNYL</span>
-        <h2 class="panel-title">Menos de $19 pesos al día por tener un contrato propio en Hospitales Pleno</h2>
+        <span class="sec-tag">02 · INVERSIÓN OFICIAL SEGÚN COTIZADOR</span>
+        <h2 class="panel-title">Un contrato propio en Seguros Monterrey con beneficio fiscal anual</h2>
 
         <div class="price-hero" style="margin-top:12px">
           <div class="ph-row">
@@ -274,15 +287,15 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
           </div>
           <div class="ph-sub">
             <span>Equivalente diario: <strong id="outDaily" style="color:var(--ivory)">$18.47 MXN/día</strong></span>
-            <span>Vigencia desde: <strong>Nov 2026</strong></span>
+            <span>Moneda: <strong>Pesos Mexicanos</strong></span>
           </div>
         </div>
 
         <div class="breakdown-mini" style="margin-top:12px">
-          <div class="bm-line"><span>Prima Base Plan Pleno (Anual):</span><span class="num">$2,675.42</span></div>
-          <div class="bm-line"><span>Cobertura Fallecimiento ($100,000):</span><span class="num">$819.45</span></div>
-          <div class="bm-line"><span>Derecho de Póliza + Fraccionado + IVA:</span><span class="num">$3,155.77</span></div>
-          <div class="bm-line total"><span>Total Anual (en 12 pagos de $554.22):</span><span class="num" id="outAnnualTotal">$6,650.64 MXN</span></div>
+          <div class="bm-line"><span>Prima Base Plan Contratado (Anual):</span><span class="num" id="outBaseAnual">$2,675.42</span></div>
+          <div class="bm-line"><span>Protección por Fallecimiento ($100,000):</span><span class="num">$819.45</span></div>
+          <div class="bm-line"><span>Derecho de Póliza + Fraccionado + IVA:</span><span class="num" id="outFeesAnual">$3,155.77</span></div>
+          <div class="bm-line total"><span>Total Anual (en 12 pagos mensuales):</span><span class="num" id="outAnnualTotal">$6,650.64 MXN</span></div>
         </div>
       </div>
 
@@ -295,7 +308,7 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
             <span>100% Deducible</span>
           </label>
         </div>
-        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Tu prima de Gastos Médicos se deduce en tu declaración anual de abril:</p>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Las primas de Gastos Médicos son deducibles en tu declaración anual de abril:</p>
         <div class="sat-numbers">
           <div class="sn-col">
             <small>El SAT te devuelve en abril aprox:</small>
@@ -311,45 +324,44 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
 
   </div>
 
-  <!-- SECCIÓN 2: SIMULADOR INTERACTIVO DE CUENTA HOSPITALARIA -->
+  <!-- SECCIÓN 2: SIMULADOR INTERACTIVO DE CUENTA HOSPITALARIA (ADAPTABLE AL MODO Y AL SLIDER) -->
   <section class="sim-hospital-sec">
     <div class="sh-head">
       <div>
-        <span class="sec-tag">03 · SIMULADOR DE IMPACTO HOSPITALARIO EN VIVO</span>
-        <h3 style="font-size:19px;font-weight:800;color:var(--charcoal);margin-top:4px">¿Qué pasa ante una cuenta hospitalaria grave o cuando conviertes tu deducible al salir de tu empresa?</h3>
+        <span class="sec-tag">03 · SIMULADOR DE RESPALDO HOSPITALARIO EN VIVO</span>
+        <h3 style="font-size:19px;font-weight:800;color:var(--charcoal);margin-top:4px" id="simTitle">¿Cómo responde tu póliza ante una cuenta hospitalaria?</h3>
       </div>
-      <div class="preset-pills">
-        <button type="button" class="pr-pill" data-ded="5000000" data-bill="7500000">Caso Catastrófico ($7.5M con Exceso $5M)</button>
-        <button type="button" class="pr-pill" data-ded="45000" data-bill="450000">Caso Independiente ($450k con Deducible $45k)</button>
+      <div class="preset-pills" id="dynamicPresets">
+        <!-- Se actualiza dinámicamente según el deducible -->
       </div>
     </div>
 
     <div class="sh-controls">
       <div class="bill-slider-box">
         <div class="bs-top">
-          <span>Cuenta Total del Hospital Privado:</span>
+          <span id="activeScenarioTag">CUENTA TOTAL DEL HOSPITAL PRIVADO:</span>
           <b class="num" id="billDisplay">$7,500,000 MXN</b>
         </div>
         <input type="range" id="billSlider" class="hosp-range" min="100000" max="15000000" step="50000" value="7500000">
         <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)" class="num">
-          <span>$100,000</span><span>$5,000,000</span><span>$15,000,000 MXN</span>
+          <span id="sliderMinLbl">$100,000</span><span id="sliderMidLbl">$5,000,000</span><span id="sliderMaxLbl">$15,000,000 MXN</span>
         </div>
       </div>
 
-      <div style="font-size:13px;color:var(--muted);line-height:1.5;background:#fff;padding:14px;border-radius:var(--r-lg);border:1px solid var(--line)">
-        💡 <strong style="color:var(--charcoal)">Ventaja oculta de tu Plan Pleno (Coaseguro 10%):</strong> Si te atiendes en hospitales de nivel <strong>Pleno</strong> (ej. ABC, Ángeles Pedregal/Lomas, Médica Sur) tu coaseguro es del 10% topado a $97,000. Pero si eliges atenderte en un hospital de red <strong>Íntegro o Práctico</strong> (ej. San Ángel Inn, Dalinde, Star Médica), ¡Seguros Monterrey te premia con <strong>10 puntos menos de coaseguro (pagas 0% de coaseguro)</strong>!
+      <div style="font-size:13px;color:var(--muted);line-height:1.5;background:#fff;padding:14px;border-radius:var(--r-lg);border:1px solid var(--line)" id="simTipBox">
+        💡 <strong style="color:var(--charcoal)">Libertad para elegir hospital:</strong> Tu plan Pleno te abre las puertas de los hospitales más exclusivos del país (ABC, Ángeles, Médica Sur) con 10% de coaseguro topado a $97,000. Y si en un ingreso decides atenderte en un hospital de red <strong>Íntegro o Práctico</strong> (ej. San Ángel Inn, Star Médica, Dalinde), Seguros Monterrey te reduce <strong>10 puntos de coaseguro (pagas $0 de coaseguro)</strong>.
       </div>
     </div>
 
     <div class="compare-cards">
       <div class="cc-box">
         <div class="cc-head">
-          <span>Escenario A · Por Enfermedad</span>
-          <span style="color:var(--emerald)">Coaseguro Topado</span>
+          <span id="cardATitle">Opción A · Atención en Hospital Nivel Pleno</span>
+          <span style="color:var(--emerald)" id="cardABadge">Coaseguro Topado (10%)</span>
         </div>
-        <div class="cc-line"><span>Factura Total Hospitalaria:</span><strong class="num" id="enfBill">$7,500,000</strong></div>
-        <div class="cc-line"><span id="enfDedLbl">Deducible (Cubierto por tu Colectiva / Base):</span><strong class="num" id="enfDed">$5,000,000</strong></div>
-        <div class="cc-line"><span>Coaseguro Asegurado (10% topado a $97,000):</span><strong class="num" id="enfCoas">$97,000</strong></div>
+        <div class="cc-line"><span>Cuenta Total del Hospital:</span><strong class="num" id="enfBill">$7,500,000</strong></div>
+        <div class="cc-line"><span id="enfDedLbl">Deducible Contratado (1ª Capa):</span><strong class="num" id="enfDed">$5,000,000</strong></div>
+        <div class="cc-line"><span id="enfCoasLbl">Coaseguro (10% con tope de $97,000):</span><strong class="num" id="enfCoas">$97,000</strong></div>
         <div class="cc-total">
           <span>Seguros Monterrey paga directo:</span>
           <b class="num" id="enfSmnylPays">$2,403,000 MXN</b>
@@ -358,80 +370,81 @@ input[type="range"].hosp-range::-webkit-slider-thumb{-webkit-appearance:none;wid
 
       <div class="cc-box win">
         <div class="cc-head">
-          <span>Escenario B · Por Accidente (con Eliminación Deducible)</span>
-          <span style="color:var(--emerald)">⚡ Beneficio Destacado</span>
+          <span id="cardBTitle">Opción B · Atención en Red Íntegro / Práctico (-10 pts)</span>
+          <span style="color:var(--emerald)" id="cardBBadge">⚡ 0% Coaseguro</span>
         </div>
-        <div class="cc-line"><span>Factura Total Hospitalaria:</span><strong class="num" id="accBill">$7,500,000</strong></div>
-        <div class="cc-line"><span>Deducible en Accidente:</span><strong style="color:var(--emerald)">$0 MXN (Eliminado)</strong></div>
-        <div class="cc-line"><span>Tu única participación (Coaseguro topado):</span><strong class="num" id="accCoas">$97,000</strong></div>
+        <div class="cc-line"><span>Cuenta Total del Hospital:</span><strong class="num" id="accBill">$7,500,000</strong></div>
+        <div class="cc-line"><span id="accDedLbl">Deducible Contratado (1ª Capa):</span><strong class="num" id="accDed">$5,000,000</strong></div>
+        <div class="cc-line"><span id="accCoasLbl">Tu Coaseguro por bajar 1 nivel hospitalario:</span><strong class="num" style="color:var(--emerald)" id="accCoas">$0 MXN (Exento)</strong></div>
         <div class="cc-total">
           <span>Seguros Monterrey absorbe:</span>
-          <b class="num" id="accSmnylPays">$7,403,000 MXN</b>
+          <b class="num" id="accSmnylPays">$2,500,000 MXN</b>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 3: BENEFICIOS DESDE EL DÍA 1 (USABLES HOY MISMO) -->
+  <!-- SECCIÓN 3: BENEFICIOS DESDE EL DÍA 1 (USABLES SIN TOCAR EL DEDUCIBLE) -->
   <section>
     <div style="margin-bottom:10px">
-      <span class="sec-tag" style="background:var(--ivory)">04 · BENEFICIOS TANGIBLES DESDE EL DÍA 1 (SIN USAR EL DEDUCIBLE)</span>
+      <span class="sec-tag" style="background:var(--ivory)">04 · BENEFICIOS INCLUIDOS DESDE EL DÍA 1 (SIN USAR TU DEDUCIBLE)</span>
     </div>
     <div class="benefits-grid">
       <div class="ben-card">
         <div class="ben-icon">🦷</div>
-        <h4>Cobertura Dental Incluida</h4>
-        <p><strong>2 limpiezas dentales anuales sin costo</strong> + 2 aplicaciones tópicas de flúor al año y descuentos preferenciales en resinas (tan solo usar tus 2 limpiezas al año ya recupera gran parte de tu inversión mensual).</p>
+        <h4>Beneficio Dental Anual</h4>
+        <p>Incluye <strong>2 limpiezas dentales al año sin costo</strong> + 2 aplicaciones tópicas de flúor y precios preferenciales en resinas con la red odontológica.</p>
       </div>
       <div class="ben-card">
         <div class="ben-icon">🚑</div>
         <h4>Asistencia Alfa Medical 24/7</h4>
-        <p>Orientación médica, <strong>nutricional y psicológica telefónica 24/7</strong> los 365 días del año, más <strong>servicios ilimitados de ambulancia terrestre</strong> ante urgencias médicas.</p>
+        <p>Orientación médica, <strong>nutricional y psicológica telefónica 24/7</strong>, además de <strong>ambulancia terrestre sin límite de eventos</strong> en caso de urgencia.</p>
       </div>
       <div class="ben-card">
         <div class="ben-icon">🛡️</div>
-        <h4>Respaldo por Fallecimiento ($100,000)</h4>
-        <p>Suma asegurada inmediata de <strong>$100,000 MXN libre de impuestos</strong> para tus beneficiarios, más apoyo y gestión legal completa.</p>
+        <h4>Protección por Fallecimiento ($100,000)</h4>
+        <p>Suma asegurada de <strong>$100,000 MXN</strong> para respaldar a tus beneficiarios, incluyendo asesoría y gestiones legales.</p>
       </div>
       <div class="ben-card">
         <div class="ben-icon">🏛️</div>
         <h4>Protección Patrimonial Familiar</h4>
-        <p>En caso de invalidez total o fallecimiento del titular, Seguros Monterrey <strong>cubre por 5 años el pago de las primas</strong> de los dependientes dados de alta en la póliza.</p>
+        <p>Si el titular llega a faltar o sufre invalidez total, Seguros Monterrey <strong>cubre durante 5 años las primas</strong> de los dependientes registrados en la póliza.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 4: TRANSPARENCIA MÉDICA (SUSCRIPCIÓN) + PUENTE DE ALIANZA B2B -->
+  <!-- SECCIÓN 4: TRANSPARENCIA DE CONDICIONES + PASES DE CORTESÍA VOLUNTARIOS -->
   <div class="bottom-split">
     <div class="card-panel">
       <div>
-        <span class="sec-tag">05 · TRANSPARENCIA TOTAL CNSF Y TIEMPOS DE ESPERA</span>
-        <h3 style="font-size:17px;font-weight:800;margin-top:6px;color:var(--charcoal)">Reglas claras desde el primer día</h3>
+        <span class="sec-tag">05 · CLARIDAD Y TRANSPARENCIA (CONDICIONES GENERALES)</span>
+        <h3 style="font-size:17px;font-weight:800;margin-top:6px;color:var(--charcoal)">¿Cómo corren los tiempos de cobertura en tu póliza?</h3>
         <ul class="wait-list">
-          <li>✓ <strong>Accidentes y Urgencias Médicas:</strong> Cobertura desde el <strong>Día 1</strong> de inicio de vigencia.</li>
-          <li>✓ <strong>A los 30 días:</strong> Apendicitis aguda, intoxicación alimentaria, gastroenteritis infecciosa, golpe de calor, derrame o trombosis traumática.</li>
-          <li>✓ <strong>Antigüedad continua (10 a 24+ meses):</strong> Padecimientos programables como rodillas, columna, nariz/senos paranasales, vesícula, hernias o litiasis. <em>(Por eso empezar tu antigüedad a los 25 años mientras tienes MetLife en la empresa vale oro).</em></li>
-          <li>✓ <strong>Nota sobre preexistencias (Suscripción Médica):</strong> Cualquier padecimiento o cirugía diagnosticada antes de contratar (ej. antecedente visual) se declara con total honestidad en la solicitud para que el resto de tu organismo quede 100% blindado sin sorpresas.</li>
+          <li>✓ <strong>Desde el Día 1:</strong> Accidentes y urgencias médicas cubiertas de inmediato al iniciar la vigencia.</li>
+          <li>✓ <strong>A partir de los 30 días:</strong> Enfermedades generales, apendicitis aguda, gastroenteritis infecciosa, intoxicación alimentaria o golpe de calor.</li>
+          <li>✓ <strong>Antigüedad continua:</strong> Padecimientos específicos (como rodillas, columna, nariz/senos paranasales, vesícula, hernias o vías urinarias) cumplen su periodo reglamentario mientras tu póliza está activa. <em>Por eso iniciar joven te permite acumular antigüedad antes de necesitarla.</em></li>
+          <li>✓ <strong>Evaluación médica transparente:</strong> Al llenar la solicitud se declaran los antecedentes médicos previos para que la compañía emita tu contrato con total certeza jurídica.</li>
         </ul>
       </div>
     </div>
 
     <div class="card-panel card-emerald">
       <div>
-        <span class="sec-tag">06 · SIGUIENTE PASO Y SINERGIA PROFESIONAL</span>
-        <h3 style="font-size:17px;font-weight:800;margin-top:6px;color:#fff">1. Activar tu blindaje por $554/mes · 2. Alianza en tu Agencia</h3>
+        <span class="sec-tag">06 · RESUMEN DE TU PROPUESTA Y CORTESÍAS</span>
+        <h3 style="font-size:17px;font-weight:800;margin-top:6px;color:#fff">Guarda tu cotización en WhatsApp</h3>
         <p style="font-size:13px;color:var(--ivory);margin-top:4px">
-          Mientras tu antigüedad corre en Seguros Monterrey, recuerda que para los <strong>Directores, Socios o Gerentes de tu agencia de Marketing</strong> (ingresos de $35,000+/mes) tenemos las estrategias de <strong>2 Bolsillos (Art. 151 y Art. 93)</strong> antes del cierre fiscal del 31 de diciembre.
+          Te envío a tu WhatsApp el documento oficial emitido por el sistema de Seguros Monterrey para que lo revises con calma.
         </p>
 
         <div class="ally-box" style="margin-top:12px">
-          <strong style="font-size:12px;color:var(--emerald);text-transform:uppercase">🎟️ Reserva de Pases Preferenciales / Referidos en la Agencia:</strong>
+          <strong style="font-size:12px;color:var(--emerald)">🎟️ 2 Pases de Diagnóstico sin Costo (100% Opcional):</strong>
+          <p style="font-size:11.5px;color:var(--muted);margin-top:-4px">Si tienes algún amigo, familiar o compañero al que le gustaría revisar cómo deducir impuestos o proteger su salud, puedes reservarle un pase gratuito a tu nombre:</p>
           <div class="ally-inputs">
-            <input type="text" id="ref1" placeholder="1. Nombre / Puesto (ej. Director)">
-            <input type="text" id="ref2" placeholder="2. Nombre / Puesto (ej. Gerente)">
+            <input type="text" id="ref1" placeholder="Nombre (Opcional)">
+            <input type="text" id="ref2" placeholder="Nombre (Opcional)">
           </div>
           <button type="button" class="btn-gold-full" id="sendSummaryWaBtn">
-            📲 Enviar resumen de mi cotización ($554/mes) a mi WhatsApp →
+            📲 Enviarme mi cotización por WhatsApp →
           </button>
         </div>
       </div>
@@ -445,6 +458,44 @@ const $ = id => document.getElementById(id);
 const money = n => '$' + Math.round(n).toLocaleString('es-MX');
 const moneyDec = n => '$' + Number(n).toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+let isExcesoMode = true;
+let isDedLocked = true;
+
+function renderDynamicPresets(ded, currentBill){
+  const wrap = $('dynamicPresets');
+  if (!wrap) return;
+
+  let presets = [];
+  if (ded >= 1000000){
+    const p1 = ded + 500000;
+    const p2 = Math.round((ded * 1.5) / 100000) * 100000;
+    const p3 = Math.min(15000000, ded * 2);
+    presets = [
+      { label: `Cuenta de ${money(p1)}`, val: p1 },
+      { label: `Cuenta Mayor de ${money(p2)}`, val: p2 },
+      { label: `Catastrófico de ${money(p3)}`, val: p3 }
+    ];
+  } else {
+    presets = [
+      { label: `Cirugía Media ($180,000)`, val: 180000 },
+      { label: `Hospitalización ($450,000)`, val: 450000 },
+      { label: `Cuenta Mayor ($1,500,000)`, val: 1500000 }
+    ];
+  }
+
+  wrap.innerHTML = presets.map(p => {
+    const activeClass = Math.abs(currentBill - p.val) < 25000 ? 'active' : '';
+    return `<button type="button" class="pr-pill ${activeClass}" data-bill="${p.val}">${p.label}</button>`;
+  }).join('');
+
+  wrap.querySelectorAll('.pr-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $('billSlider').value = btn.getAttribute('data-bill');
+      updateBoard();
+    });
+  });
+}
+
 function updateBoard(){
   const ded = parseFloat($('inDed').value) || 0;
   const monthly = parseFloat($('inMonthly').value) || 0;
@@ -452,7 +503,7 @@ function updateBoard(){
   const daily = monthly / 30;
   const plan = $('inPlan').value;
 
-  $('planNameCard').textContent = 'Alfa Medical ' + plan.split(' ')[0] + ' CDMX1';
+  $('planNameCard').textContent = 'Alfa Medical ' + plan;
   $('cap1Val').textContent = 'Primeros ' + money(ded);
   $('specDed').textContent = money(ded);
   $('outMonthlyBig').innerHTML = moneyDec(monthly) + ' <small style="font-size:13px;font-weight:700">MXN/mes</small>';
@@ -466,24 +517,72 @@ function updateBoard(){
   $('outSatRefund').textContent = satActive ? ('+' + money(refund) + ' MXN/año') : '$0 MXN';
   $('outNetMonthly').textContent = moneyDec(netMonthly) + ' / mes';
 
-  const bill = parseFloat($('billSlider').value) || 0;
+  const slider = $('billSlider');
+  if (ded >= 1000000){
+    slider.min = '1000000';
+    slider.max = '15000000';
+    slider.step = '100000';
+    $('sliderMinLbl').textContent = '$1,000,000';
+    $('sliderMidLbl').textContent = money(ded) + ' (Deducible)';
+    $('sliderMaxLbl').textContent = '$15,000,000 MXN';
+  } else {
+    slider.min = '50000';
+    slider.max = '3000000';
+    slider.step = '25000';
+    $('sliderMinLbl').textContent = '$50,000';
+    $('sliderMidLbl').textContent = '$1,000,000';
+    $('sliderMaxLbl').textContent = '$3,000,000 MXN';
+  }
+
+  const bill = parseFloat(slider.value) || 0;
   $('billDisplay').textContent = money(bill) + ' MXN';
+  renderDynamicPresets(ded, bill);
+
+  if (bill <= ded){
+    $('activeScenarioTag').textContent = 'CUENTA CUBIERTA POR TU 1ª CAPA (DEDUCIBLE):';
+  } else {
+    $('activeScenarioTag').textContent = 'CUENTA REBASA EL DEDUCIBLE · ENTRA SMNYL:';
+  }
 
   const afterDed = Math.max(0, bill - ded);
-  const coasEnf = afterDed > 0 ? Math.min(97000, Math.round(afterDed * 0.10)) : 0;
-  const smnylEnf = Math.max(0, afterDed - coasEnf);
+  const coasPleno = afterDed > 0 ? Math.min(97000, Math.round(afterDed * 0.10)) : 0;
+  const smnylPleno = Math.max(0, afterDed - coasPleno);
 
   $('enfBill').textContent = money(bill);
   $('enfDed').textContent = money(Math.min(bill, ded));
-  $('enfCoas').textContent = money(coasEnf);
-  $('enfSmnylPays').textContent = money(smnylEnf) + ' MXN';
+  $('enfCoas').textContent = money(coasPleno);
+  $('enfSmnylPays').textContent = money(smnylPleno) + ' MXN';
 
-  const coasAcc = Math.min(97000, Math.round(bill * 0.10));
-  const smnylAcc = Math.max(0, bill - coasAcc);
+  if (isExcesoMode){
+    $('cardATitle').textContent = 'Opción A · Atención en Hospital Nivel Pleno';
+    $('cardABadge').textContent = 'Coaseguro Topado (10%)';
+    $('enfDedLbl').textContent = 'Deducible (Cubierto por tu 1ª Capa):';
 
-  $('accBill').textContent = money(bill);
-  $('accCoas').textContent = money(coasAcc);
-  $('accSmnylPays').textContent = money(smnylAcc) + ' MXN';
+    $('cardBTitle').textContent = 'Opción B · En Hospital Nivel Íntegro / Práctico';
+    $('cardBBadge').textContent = '⚡ 0% Coaseguro (-10 pts)';
+    $('accBill').textContent = money(bill);
+    $('accDedLbl').textContent = 'Deducible (Cubierto por tu 1ª Capa):';
+    $('accDed').textContent = money(Math.min(bill, ded));
+    $('accCoasLbl').textContent = 'Tu Coaseguro al elegir red Íntegro/Práctico:';
+    $('accCoas').textContent = '$0 MXN (0% Coaseguro)';
+    $('accSmnylPays').textContent = money(afterDed) + ' MXN';
+  } else {
+    $('cardATitle').textContent = 'Escenario A · Por Enfermedad';
+    $('cardABadge').textContent = 'Deducible + Coaseguro';
+    $('enfDedLbl').textContent = 'Deducible a cargo del asegurado:';
+
+    $('cardBTitle').textContent = 'Escenario B · Por Accidente (Eliminación Deducible)';
+    $('cardBBadge').textContent = '⚡ Deducible $0 en Accidente';
+    const coasAcc = Math.min(97000, Math.round(bill * 0.10));
+    const smnylAcc = Math.max(0, bill - coasAcc);
+
+    $('accBill').textContent = money(bill);
+    $('accDedLbl').textContent = 'Deducible en caso de Accidente:';
+    $('accDed').textContent = '$0 MXN (Eliminado)';
+    $('accCoasLbl').textContent = 'Tu única participación (Coaseguro 10% topado):';
+    $('accCoas').textContent = money(coasAcc);
+    $('accSmnylPays').textContent = money(smnylAcc) + ' MXN';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -493,25 +592,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el) el.addEventListener('change', updateBoard);
   });
 
-  document.querySelectorAll('.pr-pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      $('inDed').value = btn.getAttribute('data-ded');
-      $('billSlider').value = btn.getAttribute('data-bill');
-      updateBoard();
-    });
+  $('lockDedBtn').addEventListener('click', () => {
+    isDedLocked = !isDedLocked;
+    const dedInput = $('inDed');
+    const btn = $('lockDedBtn');
+    if (isDedLocked){
+      dedInput.setAttribute('readonly', 'readonly');
+      btn.textContent = '🔒 Fijo';
+      btn.classList.remove('unlocked');
+    } else {
+      dedInput.removeAttribute('readonly');
+      btn.textContent = '🔓 Editar';
+      btn.classList.add('unlocked');
+      dedInput.focus();
+    }
   });
 
   $('modeExcesoBtn').addEventListener('click', () => {
+    isExcesoMode = true;
     $('modeExcesoBtn').classList.add('active');
     $('modeIndividualBtn').classList.remove('active');
     $('excesoDiagram').style.display = 'grid';
     $('inDed').value = '5000000';
     $('billSlider').value = '7500000';
-    $('specDedSub').textContent = 'Cubierto por tu colectiva';
+    $('specDedSub').textContent = 'Estrategia en exceso';
     updateBoard();
   });
 
   $('modeIndividualBtn').addEventListener('click', () => {
+    isExcesoMode = false;
     $('modeIndividualBtn').classList.add('active');
     $('modeExcesoBtn').classList.remove('active');
     $('excesoDiagram').style.display = 'none';
@@ -522,22 +631,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('sendSummaryWaBtn').addEventListener('click', () => {
-    const name = $('inName').value.trim();
+    const name = $('inName').value.trim() || 'Hola';
     const monthly = moneyDec($('inMonthly').value);
     const ded = money($('inDed').value);
+    const plan = $('inPlan').value;
     const r1 = $('ref1').value.trim();
     const r2 = $('ref2').value.trim();
     const refs = [r1, r2].filter(Boolean).join(', ');
 
     const msg = [
-      `Hola Santi, soy *${name}*.`,
-      `Acabamos de revisar en vivo mi diseño de *Alfa Medical Pleno CDMX1*:`,
+      `Hola Santi, revisamos en vivo mi propuesta de *Alfa Medical (${plan})*:`,
       `• *Suma Asegurada:* $170,000,000 MXN`,
-      `• *Deducible en Exceso:* ${ded} MXN`,
-      `• *Inversión Mensual:* ${monthly} MXN/mes (100% deducible Art. 151)`,
-      refs ? `• *Contactos comentados para diagnóstico fiscal:* ${refs}` : ``,
+      `• *Deducible:* ${ded} MXN`,
+      `• *Inversión Mensual:* ${monthly} MXN/mes (Deducible Art. 151)`,
+      refs ? `• *Pases de diagnóstico reservados para:* ${refs}` : ``,
       ``,
-      `Compárteme por aquí el PDF oficial para revisarlo.`
+      `¿Me compartes por aquí el PDF de la cotización?`
     ].filter(Boolean).join('\n');
 
     window.open(`https://wa.me/5215571208740?text=${encodeURIComponent(msg)}`, '_blank');
