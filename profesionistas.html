@@ -58,7 +58,7 @@ a{color:var(--emerald);text-decoration:none}
 .num{font-variant-numeric:tabular-nums}
 .serif-it{font-family:var(--font-serif);font-style:italic;font-weight:400}
 
-/* CABECERA RATIO DE ATENCIÓN 1:1 (CERO FUGAS DE NAVEGACIÓN - MÓDULO 6 LEY 2) */
+/* CABECERA RATIO DE ATENCIÓN 1:1 (CERO FUGAS DE NAVEGACIÓN) */
 .hero-cover-sec{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 100%);padding:10px 14px 36px}
 .topbar-clean{max-width:1120px;margin:0 auto;padding:6px 4px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .brand-row{display:flex;align-items:center;gap:9px;color:var(--emerald);font-weight:800;font-size:15.5px;letter-spacing:-.01em;white-space:nowrap}
@@ -97,11 +97,11 @@ a{color:var(--emerald);text-decoration:none}
 @media(min-width:940px){.btn-gold-hero{display:none}}
 .btn-ghost-hero{width:100%;min-height:44px;background:rgba(20,92,82,.07);color:var(--emerald);border:1.5px solid var(--sage);border-radius:14px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
 
-/* SIMULADOR CON BARRAS "RELAX" Y FRICCIÓN PROGRESIVA EN 2 PASOS */
+/* SIMULADOR CON BARRAS "RELAX" DESTRABADAS Y SIN BOTÓN DISTRACTOR ARRIBA */
 .open-sim-card{background:var(--surface);border:2px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:16px;width:100%;min-width:0}
 .os-top{background:var(--ivory);padding:15px 18px 13px;border-bottom:1px solid var(--line)}
 .os-top-title{font-size:16px;font-weight:800;color:var(--charcoal);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.os-live-btn{font-size:11px;font-weight:800;background:var(--sage-soft);color:var(--emerald);padding:4px 10px;border-radius:999px;border:1px solid var(--sage)}
+.os-static-badge{font-size:11px;font-weight:800;background:var(--sage-soft);color:var(--emerald);padding:4px 10px;border-radius:999px;border:1px solid var(--sage);user-select:none}
 
 .os-body{padding:16px 16px 20px;display:grid;gap:12px;min-width:0}
 @media(min-width:640px){.os-body{padding:18px 22px 22px}}
@@ -134,7 +134,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .pill-btn{background:transparent;border:none;border-radius:9px;padding:7px 4px;font-size:11.5px;font-weight:700;color:var(--muted);text-align:center;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pill-btn.active{background:var(--emerald);color:#fff;font-weight:800}
 
-/* CAJA VERDE DE RESULTADO EN VIVO + GATILLOS DE DESBLOQUEO A 60 Y 65 AÑOS */
+/* CAJA VERDE DE RESULTADO EN VIVO (SIEMPRE VISIBLE PARA NO FRUSTRAR AL ABRIR PASO 2) */
 .live-result-box{background:var(--emerald);color:#fff;border:2px solid var(--gold);border-radius:16px;padding:13px 14px;transition:transform .2s ease;min-width:0}
 .live-result-box.pulse{transform:scale(1.01)}
 .lr-meta{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10.5px;font-weight:800;color:var(--gold);text-transform:uppercase;flex-wrap:wrap}
@@ -151,17 +151,15 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 
 .lr-split-note{margin-top:8px;background:rgba(41,44,43,.34);border-left:3px solid var(--gold);border-radius:7px;padding:6px 9px;font-size:11px;color:var(--ivory);line-height:1.36}
 
-/* BOTÓN DE APERTURA DEL PASO 2 (WIZARD DE FRICCIÓN PROGRESIVA - LEY 4) */
+/* BOTÓN DE APERTURA DEL PASO 2 (SE REEMPLAZA POR EL FORMULARIO JUSTO DEBAJO DEL CUADRO VERDE) */
 .step1-unlock-wrap{text-align:center}
 .btn-open-step2{width:100%;min-height:52px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s}
 .btn-open-step2:hover{transform:translateY(-1px)}
 .step1-subnote{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
 
-/* PASO 2: FORMULARIO LIMPIO DE 2 CAMPOS */
+/* PASO 2: FORMULARIO LIMPIO DE 2 CAMPOS QUE APARECE DEBAJO DEL CUADRO VERDE */
 .direct-form-wrap{background:var(--ivory);border:2px solid var(--emerald);border-radius:16px;padding:14px;min-width:0;transition:box-shadow .25s ease,border-color .25s ease}
 .direct-form-wrap.focus-glow{border-color:var(--gold);box-shadow:0 0 0 4px rgba(217,164,65,.3)}
-.df-top-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--line)}
-.back-step1-link{background:#fff;border:1px solid var(--sage);color:var(--emerald);font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
 .df-head{text-align:center;margin-bottom:10px}
 .df-head b{display:block;font-size:14.5px;color:var(--charcoal);font-weight:800}
 .df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:2px}
@@ -330,10 +328,10 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
   <div class="hero-stage">
 
-    <!-- IZQUIERDA: PORTADA CON EXACT MESSAGE MATCH EN H1 (MÓDULO 6 LEY 1) -->
+    <!-- IZQUIERDA: PORTADA CON EXACT MESSAGE MATCH EN H1 Y CARGA RÁPIDA -->
     <div class="f4-card">
       <figure class="f4-img">
-        <img src="https://www.santiteasesora.com/trabajoprofesionistas.jpg" class="main-hero-img" alt="Plan Personal de Retiro (PPR) para profesionistas en México"
+        <img src="https://www.santiteasesora.com/trabajoprofesionistas.jpg" class="main-hero-img" fetchpriority="high" decoding="async" alt="Plan Personal de Retiro (PPR) para profesionistas en México"
              onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='trabajoprofesionistas.jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='https://www.santiteasesora.com/ejecutivosfelices.png';}else{this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';}">
         <div class="santi-floating-badge">
           <div class="santi-mini-chip">
@@ -363,133 +361,124 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       </div>
     </div>
 
-    <!-- DERECHA: SIMULADOR RELAX CON FRICCIÓN PROGRESIVA EN 2 PASOS (MÓDULO 6 LEY 4) -->
+    <!-- DERECHA: SIMULADOR RELAX (BARRA 3 DESTRABADA + CUADRO VERDE SIEMPRE VISIBLE) -->
     <div class="open-sim-card" id="formulario">
       <div class="os-top">
         <div class="os-top-title">
           <b>Calcula y cotiza tu plan a medida</b>
-          <button type="button" class="os-live-btn" id="topLiveResultBtn">Resultado en vivo ↓</button>
+          <span class="os-static-badge">🔒 Estudio Oficial SMNYL</span>
         </div>
       </div>
 
       <div class="os-body" id="formCard">
         <form id="leadForm" novalidate style="display:grid;gap:12px;min-width:0">
 
-          <!-- PASO 1 DEL WIZARD: CONTROLES RELAX + RESULTADO EN VIVO -->
-          <div id="wizardStep1" style="display:grid;gap:12px;min-width:0">
-
-            <!-- 1. EDAD EXACTA CON BARRA RELAX (1 DEDO) + ¿FUMAS? -->
-            <div class="r-slider-box">
-              <div class="r-slider-top">
-                <label for="ageSlider">1. Tu edad actual</label>
-                <span id="ageDisplay" class="r-val-clean num">35 <small>años</small></span>
-              </div>
-              <input type="range" id="ageSlider" class="relax-range" min="22" max="60" step="1" value="35">
-              <div class="r-scale num">
-                <span>22 años</span><span>40 años</span><span>60 años</span>
-              </div>
-              <div class="smoke-inline-row">
-                <span>¿Fumas actualmente?</span>
-                <div class="smoke-pills" id="smokerToggleGroup">
-                  <button type="button" class="smk-pill active" data-smoke="no">🚭 No fumo</button>
-                  <button type="button" class="smk-pill" data-smoke="yes">🚬 Sí fumo</button>
-                </div>
+          <!-- 1. EDAD EXACTA CON BARRA RELAX (1 DEDO) + ¿FUMAS? -->
+          <div class="r-slider-box">
+            <div class="r-slider-top">
+              <label for="ageSlider">1. Tu edad actual</label>
+              <span id="ageDisplay" class="r-val-clean num">35 <small>años</small></span>
+            </div>
+            <input type="range" id="ageSlider" class="relax-range" min="22" max="60" step="1" value="35">
+            <div class="r-scale num">
+              <span>22 años</span><span>40 años</span><span>60 años</span>
+            </div>
+            <div class="smoke-inline-row">
+              <span>¿Fumas actualmente?</span>
+              <div class="smoke-pills" id="smokerToggleGroup">
+                <button type="button" class="smk-pill active" data-smoke="no">🚭 No fumo</button>
+                <button type="button" class="smk-pill" data-smoke="yes">🚬 Sí fumo</button>
               </div>
             </div>
-
-            <!-- 2. BARRA RELAX DE INGRESO MENSUAL -->
-            <div class="r-slider-box">
-              <div class="r-slider-top">
-                <label for="incomeSlider">2. Tu ingreso mensual aproximado</label>
-                <span id="incomeDisplay" class="r-val-clean num">$40,000 <small>MXN</small></span>
-              </div>
-              <input type="range" id="incomeSlider" class="relax-range" min="15000" max="200000" step="5000" value="40000">
-              <div class="r-scale num">
-                <span>$15,000</span><span>$100,000</span><span>$200,000+</span>
-              </div>
-            </div>
-
-            <!-- 3. BARRA RELAX DE INVERSIÓN MENSUAL + NOTA Y BOTÓN DE WHATSAPP CON REGISTRO -->
-            <div class="r-slider-box">
-              <div class="r-slider-top">
-                <label for="savingSlider">3. Inversión mensual planeada</label>
-                <span id="savingDisplay" class="r-val-clean num">$4,000 <small>/ mes</small></span>
-              </div>
-              <input type="range" id="savingSlider" class="relax-range" min="2500" max="25000" step="500" value="4000">
-              <div class="r-scale">
-                <span id="minByAgeLabel" class="num">Mínimo (35 años): $2,500/mes</span>
-                <button type="button" class="cap-link-soft num" id="useCapBtn">Sugerido 10%: $4,000/mes</button>
-              </div>
-              <div class="min-doubt-row">
-                <span>El monto mínimo está sujeto a tu edad. ¿Dudas o buscas otro monto?</span>
-                <a href="#" id="waDoubtBtn" target="_blank" rel="noopener" class="wa-mini-btn">💬 Mándame WhatsApp →</a>
-              </div>
-            </div>
-
-            <!-- 4. RÉGIMEN -->
-            <div>
-              <label class="step-lbl">4. ¿Cómo recibes tus ingresos?</label>
-              <div class="pills-3" id="regimePills">
-                <button type="button" class="pill-btn active" data-mode="deducible" data-reg="Sueldo u Honorarios">💼 Sueldo / Honorarios</button>
-                <button type="button" class="pill-btn" data-mode="resico" data-reg="RESICO (Libre a los 60)">⚡ RESICO</button>
-                <button type="button" class="pill-btn" data-mode="duda" data-reg="No sé aún (Por definir con Santi)">🤔 No sé aún</button>
-              </div>
-            </div>
-
-            <!-- CAJA DE RESULTADO EN VIVO + DESBLOQUEO DE PROYECCIÓN A 60 Y 65 AÑOS -->
-            <div class="live-result-box" id="taxBox">
-              <div class="lr-meta">
-                <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
-                <span>2 Cuentas · Imagina Ser</span>
-              </div>
-              <div class="lr-grid">
-                <div class="lr-col">
-                  <small id="resCol1Label">Te regresa el SAT cada abril:</small>
-                  <b id="resCol1Val" class="num">+$11,290 MXN*</b>
-                  <span id="resCol1Sub" class="num">Inversión neta real: $3,059/mes</span>
-                </div>
-                <div class="lr-col">
-                  <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
-                  <b id="resCol2Val" class="num">~$742,400 MXN*</b>
-                  <span id="resCol2Sub">En UDIs o Dólares protegidos</span>
-                </div>
-              </div>
-
-              <div class="lr-unlock-grid">
-                <button type="button" class="lr-unlock-btn" id="unlock60Btn">
-                  <small>Bolsillo 2 · A tus 60 años</small>
-                  <strong><span>🔒 Ver monto libre</span><span>↓</span></strong>
-                </button>
-                <button type="button" class="lr-unlock-btn" id="unlock65Btn">
-                  <small>Bolsillo 1 · A tus 65 años</small>
-                  <strong><span>🔒 Ver retiro total</span><span>↓</span></strong>
-                </button>
-              </div>
-
-              <div class="lr-split-note" id="resTwoPocketsText">
-                💡 <strong>Tus 2 Bolsillos:</strong> Sugerimos <strong>$2,800/mes</strong> al Bolsillo 1 (devolución del SAT) y <strong>$1,200/mes</strong> al Bolsillo 2 (libre desde los 60 años o disponible en 3 a 5 años).
-              </div>
-            </div>
-
-            <div class="step1-unlock-wrap">
-              <button type="button" class="btn-open-step2" id="openStep2Btn">
-                🔓 Desbloquear mi estudio a los 60 y 65 años →
-              </button>
-              <span class="step1-subnote">Recibe tu proyección oficial por WhatsApp · Sin costo ni compromiso</span>
-            </div>
-
           </div>
 
-          <!-- PASO 2 DEL WIZARD: CAPTURA LIMPIA DE 2 CAMPOS (NOMBRE Y WHATSAPP) -->
-          <div class="direct-form-wrap hidden" id="directFormBox">
-            <div class="df-top-bar">
-              <button type="button" class="back-step1-link" id="backStep1Btn">← Ajustar mis números</button>
-              <span style="font-size:11px;font-weight:800;color:var(--emerald)" id="step2SummaryTag">35 años · No fumo · $4,000/mes</span>
+          <!-- 2. BARRA RELAX DE INGRESO MENSUAL -->
+          <div class="r-slider-box">
+            <div class="r-slider-top">
+              <label for="incomeSlider">2. Tu ingreso mensual aproximado</label>
+              <span id="incomeDisplay" class="r-val-clean num">$40,000 <small>MXN</small></span>
+            </div>
+            <input type="range" id="incomeSlider" class="relax-range" min="15000" max="200000" step="5000" value="40000">
+            <div class="r-scale num">
+              <span>$15,000</span><span>$100,000</span><span>$200,000+</span>
+            </div>
+          </div>
+
+          <!-- 3. BARRA RELAX DE INVERSIÓN MENSUAL (DESTRABADA DESDE $1,500 PARA CUALQUIER EDAD) -->
+          <div class="r-slider-box">
+            <div class="r-slider-top">
+              <label for="savingSlider">3. Inversión mensual planeada</label>
+              <span id="savingDisplay" class="r-val-clean num">$4,000 <small>/ mes</small></span>
+            </div>
+            <input type="range" id="savingSlider" class="relax-range" min="1500" max="25000" step="500" value="4000">
+            <div class="r-scale">
+              <span id="minByAgeLabel" class="num">Sugerido (35 años): desde $2,500/mes</span>
+              <button type="button" class="cap-link-soft num" id="useCapBtn">Ideal 10%: $4,000/mes</button>
+            </div>
+            <div class="min-doubt-row">
+              <span>El monto mínimo está sujeto a tu edad. ¿Dudas o buscas otro monto?</span>
+              <a href="#" id="waDoubtBtn" target="_blank" rel="noopener" class="wa-mini-btn">💬 Mándame WhatsApp →</a>
+            </div>
+          </div>
+
+          <!-- 4. RÉGIMEN -->
+          <div>
+            <label class="step-lbl">4. ¿Cómo recibes tus ingresos?</label>
+            <div class="pills-3" id="regimePills">
+              <button type="button" class="pill-btn active" data-mode="deducible" data-reg="Sueldo u Honorarios">💼 Sueldo / Honorarios</button>
+              <button type="button" class="pill-btn" data-mode="resico" data-reg="RESICO (Libre a los 60)">⚡ RESICO</button>
+              <button type="button" class="pill-btn" data-mode="duda" data-reg="No sé aún (Por definir con Santi)">🤔 No sé aún</button>
+            </div>
+          </div>
+
+          <!-- CAJA DE RESULTADO EN VIVO (SIEMPRE VISIBLE) -->
+          <div class="live-result-box" id="taxBox">
+            <div class="lr-meta">
+              <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
+              <span>2 Cuentas · Imagina Ser</span>
+            </div>
+            <div class="lr-grid">
+              <div class="lr-col">
+                <small id="resCol1Label">Te regresa el SAT cada abril:</small>
+                <b id="resCol1Val" class="num">+$11,290 MXN*</b>
+                <span id="resCol1Sub" class="num">Inversión neta real: $3,059/mes</span>
+              </div>
+              <div class="lr-col">
+                <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
+                <b id="resCol2Val" class="num">~$742,400 MXN*</b>
+                <span id="resCol2Sub">En UDIs o Dólares protegidos</span>
+              </div>
             </div>
 
+            <div class="lr-unlock-grid">
+              <button type="button" class="lr-unlock-btn" id="unlock60Btn">
+                <small>Bolsillo 2 · A tus 60 años</small>
+                <strong><span>🔒 Ver monto libre</span><span>↓</span></strong>
+              </button>
+              <button type="button" class="lr-unlock-btn" id="unlock65Btn">
+                <small>Bolsillo 1 · A tus 65 años</small>
+                <strong><span>🔒 Ver retiro total</span><span>↓</span></strong>
+              </button>
+            </div>
+
+            <div class="lr-split-note" id="resTwoPocketsText">
+              💡 <strong>Tus 2 Bolsillos:</strong> Sugerimos <strong>$2,800/mes</strong> al Bolsillo 1 (devolución del SAT) y <strong>$1,200/mes</strong> al Bolsillo 2 (libre desde los 60 años o disponible en 3 a 5 años).
+            </div>
+          </div>
+
+          <!-- BOTÓN PASO 1 QUE DESPLIEGA EL FORMULARIO JUSTO AQUÍ DEBAJO SIN OCULTAR EL CUADRO VERDE -->
+          <div class="step1-unlock-wrap" id="step1BtnWrap">
+            <button type="button" class="btn-open-step2" id="openStep2Btn">
+              🔓 Desbloquear mi estudio a los 60 y 65 años →
+            </button>
+            <span class="step1-subnote">Recibe tu proyección oficial por WhatsApp · Sin costo ni compromiso</span>
+          </div>
+
+          <!-- PASO 2: FORMULARIO LIMPIO DE 2 CAMPOS (SE ABRE DEBAJO DEL CUADRO VERDE) -->
+          <div class="direct-form-wrap hidden" id="directFormBox">
             <div class="df-head">
-              <b>¿A dónde te envío tu estudio personalizado a los 60 y 65 años?</b>
-              <span>Déjame tu Nombre y WhatsApp para mandarte tu proyección de Seguros Monterrey:</span>
+              <b>¿A dónde te envío tu monto exacto a los 60 y 65 años?</b>
+              <span>Déjame tu Nombre y WhatsApp para mandarte tu estudio de Seguros Monterrey:</span>
             </div>
 
             <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
@@ -662,12 +651,12 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
       <div class="ss-photos">
         <figure class="ed-fig">
-          <img src="https://www.santiteasesora.com/colegasfelices.jpg" loading="lazy" alt="Asesoría clara para profesionistas en México"
+          <img src="https://www.santiteasesora.com/colegasfelices.jpg" loading="lazy" decoding="async" alt="Asesoría clara para profesionistas en México"
                onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='colegasfelices.jpg';}else{this.onerror=null;this.src='https://www.santiteasesora.com/ejecutivosfelices.png';}">
           <figcaption><strong>Explicado con manzanas en 15 minutos:</strong> Te envío tu estudio por WhatsApp y lo revisamos juntos sin tecnicismos.</figcaption>
         </figure>
         <figure class="ed-fig">
-          <img src="https://www.santiteasesora.com/retiroprospero.png" loading="lazy" alt="Retiro libre de impuestos desde los 60 años"
+          <img src="https://www.santiteasesora.com/retiroprospero.png" loading="lazy" decoding="async" alt="Retiro libre de impuestos desde los 60 años"
                onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='retiroprospero.png';}else{this.onerror=null;this.src='https://www.santiteasesora.com/oficinistasfelices.png';}">
           <figcaption><strong>Libertad para disfrutar tu vida:</strong> Retírate desde los 60 años con 0% de impuestos (Art. 93) o a los 65 años (Art. 151).</figcaption>
         </figure>
@@ -730,7 +719,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 
     <div class="checks-grid">
       <figure class="check-fig">
-        <img src="https://www.santiteasesora.com/entregadeahorrofamilia.png" loading="lazy" alt="Familia recibiendo cheque de ahorro en Seguros Monterrey"
+        <img src="https://www.santiteasesora.com/entregadeahorrofamilia.png" loading="lazy" decoding="async" alt="Familia recibiendo cheque de ahorro en Seguros Monterrey"
              onerror="this.onerror=null;this.src='entregadeahorrofamilia.png';">
         <figcaption>
           <strong>Metas cumplidas en familia</strong>
@@ -738,7 +727,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         </figcaption>
       </figure>
       <figure class="check-fig">
-        <img src="https://www.santiteasesora.com/entregadeahorro.png" loading="lazy" alt="Entrega de ahorro garantizado Seguros Monterrey"
+        <img src="https://www.santiteasesora.com/entregadeahorro.png" loading="lazy" decoding="async" alt="Entrega de ahorro garantizado Seguros Monterrey"
              onerror="this.onerror=null;this.src='entregadeahorro.png';">
         <figcaption>
           <strong>Tu esfuerzo convertido en patrimonio</strong>
@@ -746,7 +735,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         </figcaption>
       </figure>
       <figure class="check-fig">
-        <img src="https://www.santiteasesora.com/entregadeahorroasesor.png" loading="lazy" alt="Asesor entregando cheque de ahorro en MASS Asociados"
+        <img src="https://www.santiteasesora.com/entregadeahorroasesor.png" loading="lazy" decoding="async" alt="Asesor entregando cheque de ahorro en MASS Asociados"
              onerror="this.onerror=null;this.src='entregadeahorroasesor.png';">
         <figcaption>
           <strong>Acompañamiento de principio a fin</strong>
@@ -767,7 +756,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           </p>
         </div>
         <div class="tcard-author">
-          <img src="https://www.santiteasesora.com/itzel-testimonio.jpg" width="48" height="48" loading="lazy" alt="Itzel C."
+          <img src="https://www.santiteasesora.com/itzel-testimonio.jpg" width="48" height="48" loading="lazy" decoding="async" alt="Itzel C."
                onerror="this.onerror=null;this.src='itzel-testimonio.jpg';">
           <div>
             <b>Itzel C.</b>
@@ -785,9 +774,9 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           </p>
         </div>
         <div class="team-photos-duo">
-          <img src="https://www.santiteasesora.com/capacitacionMASS.png" loading="lazy" alt="Martín Santiago en capacitación MASS Asociados"
+          <img src="https://www.santiteasesora.com/capacitacionMASS.png" loading="lazy" decoding="async" alt="Martín Santiago en capacitación MASS Asociados"
                onerror="this.onerror=null;this.src='capacitacionMASS.png';">
-          <img src="https://www.santiteasesora.com/equipoMASS.png" loading="lazy" alt="Equipo de respaldo MASS Asociados Seguros Monterrey"
+          <img src="https://www.santiteasesora.com/equipoMASS.png" loading="lazy" decoding="async" alt="Equipo de respaldo MASS Asociados Seguros Monterrey"
                onerror="this.onerror=null;this.src='equipoMASS.png';">
         </div>
       </div>
@@ -814,7 +803,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <details class="faq-item">
         <summary>¿De qué depende el monto mínimo mensual para empezar?</summary>
         <div class="faq-ans">
-          <p>Depende de tu edad actual, tu salud y si fumas o no fumas. Entre los 22 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante desde $3,000 a $4,000/mes.</p>
+          <p>Depende de tu edad actual, tu salud y si fumas o no fumas. Entre los 22 y 32 años puedes empezar desde $1,500/mes; entre los 33 y 39 años desde $2,500/mes; y de 40 años en adelante sugerimos desde $3,000 a $4,000/mes (aunque en tu estudio personalizado podemos evaluar alternativas adaptadas a tu presupuesto).</p>
         </div>
       </details>
 
@@ -1032,25 +1021,17 @@ function updateAgeFloor(age){
 
 function openWizardStep2(){
   if (state.submitted) return;
-  $('wizardStep1').classList.add('hidden');
-  $('directFormBox').classList.remove('hidden');
-  const smokerTxt = state.isSmoker ? 'Sí fumo' : 'No fumo';
-  if ($('step2SummaryTag')) $('step2SummaryTag').textContent = `${state.exactAge} años · ${smokerTxt} · ${money(state.monthlySaving)}/mes`;
-  tagClarity('wizard_paso_2', 'abierto');
+  if ($('step1BtnWrap')) $('step1BtnWrap').classList.add('hidden');
   const box = $('directFormBox');
   if (box){
+    box.classList.remove('hidden');
+    tagClarity('wizard_paso_2', 'abierto');
     box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     box.classList.add('focus-glow');
     clearTimeout(glowTimer);
     glowTimer = setTimeout(() => box.classList.remove('focus-glow'), 1300);
     setTimeout(() => { if ($('formNombre')) $('formNombre').focus(); }, 320);
   }
-}
-
-function backToWizardStep1(){
-  if (state.submitted) return;
-  $('directFormBox').classList.add('hidden');
-  $('wizardStep1').classList.remove('hidden');
 }
 
 function recalculateNumbers(triggerPulse){
@@ -1064,24 +1045,20 @@ function recalculateNumbers(triggerPulse){
   const ageSlider = $('ageSlider');
   const incomeSlider = $('incomeSlider');
   const savingSlider = $('savingSlider');
-  const minAllowed = state.minSavingByAge || 1500;
+  const recommendedMin = state.minSavingByAge || 1500;
+  const sliderMin = 1500;
   const maxSliderVal = 25000;
 
-  savingSlider.min = String(minAllowed);
+  savingSlider.min = String(sliderMin);
   savingSlider.max = String(maxSliderVal);
 
   if (!state.userTouchedSaving){
     const suggested = Math.round((state.income * 0.10) / 500) * 500;
-    state.monthlySaving = Math.max(minAllowed, Math.min(maxSliderVal, suggested));
+    state.monthlySaving = Math.max(recommendedMin, Math.min(maxSliderVal, suggested));
     savingSlider.value = String(state.monthlySaving);
   } else {
-    if (state.monthlySaving < minAllowed){
-      state.monthlySaving = minAllowed;
-      savingSlider.value = String(state.monthlySaving);
-    } else if (state.monthlySaving > maxSliderVal){
-      state.monthlySaving = maxSliderVal;
-      savingSlider.value = String(state.monthlySaving);
-    }
+    state.monthlySaving = Math.max(sliderMin, Math.min(maxSliderVal, state.monthlySaving));
+    savingSlider.value = String(state.monthlySaving);
   }
 
   paintSliderTrack(ageSlider);
@@ -1109,10 +1086,10 @@ function recalculateNumbers(triggerPulse){
   $('ageDisplay').innerHTML = state.exactAge + ' <small>años</small>';
   $('incomeDisplay').innerHTML = money(state.income) + ' <small>MXN</small>';
   $('savingDisplay').innerHTML = money(state.monthlySaving) + ' <small>/ mes</small>';
-  $('minByAgeLabel').textContent = 'Mínimo (' + state.exactAge + ' años): ' + money(minAllowed) + '/mes';
+  $('minByAgeLabel').textContent = 'Sugerido (' + state.exactAge + ' años): desde ' + money(recommendedMin) + '/mes';
 
-  const effectiveCapBtnVal = Math.max(minAllowed, Math.round(maxDeductibleMonthly / 500) * 500);
-  $('useCapBtn').textContent = 'Sugerido 10%: ' + money(effectiveCapBtnVal) + '/mes';
+  const effectiveCapBtnVal = Math.max(sliderMin, Math.round(maxDeductibleMonthly / 500) * 500);
+  $('useCapBtn').textContent = 'Ideal 10%: ' + money(effectiveCapBtnVal) + '/mes';
 
   const netAnnual = annualSaving - state.refund;
   const netMonthly = Math.round(netAnnual / 12);
@@ -1154,7 +1131,7 @@ function recalculateNumbers(triggerPulse){
   if ($('matrixWinRefund')) $('matrixWinRefund').textContent = '+' + money(potentialRefund) + ' MXN/año';
   if ($('matrixWinPocket2')) $('matrixWinPocket2').textContent = money(state.pocket2Monthly) + '/mes';
 
-  const doubtMsg = `Hola Santi, tengo ${state.exactAge} años (${state.isSmoker ? 'Sí fumo' : 'No fumo'}), ingreso aprox de ${money(state.income)}/mes y estaba viendo tu simulador. Tengo una duda sobre los montos para empezar mi plan.`;
+  const doubtMsg = `Hola, Santi, tengo ${state.exactAge} años (${state.isSmoker ? 'Sí fumo' : 'No fumo'}), ingreso aprox de ${money(state.income)}/mes y estaba viendo tu simulador con ${money(state.monthlySaving)}/mes. ¿Me ayudas con mi estudio?`;
   if ($('waDoubtBtn')) $('waDoubtBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(doubtMsg)}`;
 
   if (triggerPulse && $('taxBox')){
@@ -1169,7 +1146,7 @@ function recalculateNumbers(triggerPulse){
 }
 
 function isLeadQualified(){
-  return state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= state.minSavingByAge;
+  return state.income >= CONFIG.QUALIFIED_INCOME && state.monthlySaving >= 1500;
 }
 
 function updateWhatsAppLinks(){
@@ -1188,7 +1165,7 @@ function updateWhatsAppLinks(){
   }
 
   const msgWa = [
-    `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
+    `Hola, Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
     `Acabo de calcular mi estudio en tu página:`,
     `• *Edad exacta:* ${state.exactAge} años (${smokerTxt})`,
@@ -1202,7 +1179,7 @@ function updateWhatsAppLinks(){
   ].join('\n');
 
   const msgBooked = [
-    `Hola Santi, soy *${nombre}* (Folio *#${leadId}*).`,
+    `Hola, Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
     `✅ *Ya reservé mi día y hora en tu Google Calendar.*`,
     `• *Edad exacta:* ${state.exactAge} años (${smokerTxt})`,
@@ -1373,7 +1350,7 @@ async function handleSubmit(ev){
   const firstName = nombre.split(/\s+/)[0];
   $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu estudio (15 min)?`;
 
-  $('wizardStep1').classList.add('hidden');
+  if ($('step1BtnWrap')) $('step1BtnWrap').classList.add('hidden');
   $('directFormBox').classList.add('hidden');
   $('schedPanelBox').classList.add('show');
   $('stickyBar').classList.add('off');
@@ -1459,12 +1436,7 @@ function setupStickyBar(){
   if ($('heroCalcBtn')) $('heroCalcBtn').addEventListener('click', scrollToSimulator);
   if ($('heroDirectBookBtn')) $('heroDirectBookBtn').addEventListener('click', openWizardStep2);
   $('headerCtaBtn').addEventListener('click', openWizardStep2);
-  if ($('topLiveResultBtn')) $('topLiveResultBtn').addEventListener('click', () => {
-    const tb = $('taxBox');
-    if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
   if ($('openStep2Btn')) $('openStep2Btn').addEventListener('click', openWizardStep2);
-  if ($('backStep1Btn')) $('backStep1Btn').addEventListener('click', backToWizardStep1);
   if ($('unlock60Btn')) $('unlock60Btn').addEventListener('click', openWizardStep2);
   if ($('unlock65Btn')) $('unlock65Btn').addEventListener('click', openWizardStep2);
   if ($('faqBottomBtn')) $('faqBottomBtn').addEventListener('click', openWizardStep2);
@@ -1515,7 +1487,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('useCapBtn').addEventListener('click', () => {
     state.userTouchedSaving = true;
     const rawCapMonthly = Math.round(Math.min(state.income * 12 * CONFIG.RETIRO_PCT, CONFIG.RETIRO_TOPE_UMAS * CONFIG.UMA_ANUAL) / 12);
-    const capMonthly = Math.max(state.minSavingByAge, Math.round(rawCapMonthly / 500) * 500);
+    const capMonthly = Math.max(1500, Math.round(rawCapMonthly / 500) * 500);
     state.monthlySaving = capMonthly;
     $('savingSlider').value = String(capMonthly);
     recalculateNumbers(true);
