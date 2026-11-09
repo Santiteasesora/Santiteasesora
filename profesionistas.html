@@ -58,7 +58,6 @@ a{color:var(--emerald);text-decoration:none}
 .num{font-variant-numeric:tabular-nums}
 .serif-it{font-family:var(--font-serif);font-style:italic;font-weight:400}
 
-/* CABECERA RATIO DE ATENCIÓN 1:1 (CERO FUGAS DE NAVEGACIÓN) */
 .hero-cover-sec{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 100%);padding:10px 14px 36px}
 .topbar-clean{max-width:1120px;margin:0 auto;padding:6px 4px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .brand-row{display:flex;align-items:center;gap:9px;color:var(--emerald);font-weight:800;font-size:15.5px;letter-spacing:-.01em;white-space:nowrap}
@@ -97,7 +96,7 @@ a{color:var(--emerald);text-decoration:none}
 @media(min-width:940px){.btn-gold-hero{display:none}}
 .btn-ghost-hero{width:100%;min-height:44px;background:rgba(20,92,82,.07);color:var(--emerald);border:1.5px solid var(--sage);border-radius:14px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
 
-/* SIMULADOR CON BARRAS "RELAX" DESTRABADAS Y SIN BOTÓN DISTRACTOR ARRIBA */
+/* SIMULADOR CON BARRAS "RELAX" Y CANDADO DE REVELACIÓN INSTANTÁNEA */
 .open-sim-card{background:var(--surface);border:2px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-card);scroll-margin-top:16px;width:100%;min-width:0}
 .os-top{background:var(--ivory);padding:15px 18px 13px;border-bottom:1px solid var(--line)}
 .os-top-title{font-size:16px;font-weight:800;color:var(--charcoal);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
@@ -134,14 +133,17 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .pill-btn{background:transparent;border:none;border-radius:9px;padding:7px 4px;font-size:11.5px;font-weight:700;color:var(--muted);text-align:center;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pill-btn.active{background:var(--emerald);color:#fff;font-weight:800}
 
-/* CAJA VERDE DE RESULTADO EN VIVO (SIEMPRE VISIBLE PARA NO FRUSTRAR AL ABRIR PASO 2) */
+/* CAJA VERDE DE RESULTADO EN VIVO CON CANDADO INTERACTIVO EN LA COLUMNA DERECHA */
 .live-result-box{background:var(--emerald);color:#fff;border:2px solid var(--gold);border-radius:16px;padding:13px 14px;transition:transform .2s ease;min-width:0}
 .live-result-box.pulse{transform:scale(1.01)}
 .lr-meta{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10.5px;font-weight:800;color:var(--gold);text-transform:uppercase;flex-wrap:wrap}
-.lr-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,245,227,.18)}
+.lr-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,245,227,.18);align-items:center}
 .lr-col small{display:block;font-size:10.5px;color:var(--ivory);opacity:.9}
 .lr-col b{display:block;font-size:clamp(18px,4.6vw,23px);color:var(--gold);font-weight:800;line-height:1.12;margin-top:2px}
 .lr-col span{display:block;font-size:10.5px;color:var(--sage);margin-top:2px;line-height:1.3}
+
+.locked-val-pill{display:inline-flex;align-items:center;gap:5px;margin-top:3px;background:rgba(41,44,43,.52);border:1.5px dashed var(--gold);border-radius:9px;padding:6px 10px;color:var(--gold);font-size:14.5px;font-weight:800;cursor:pointer;transition:background .15s}
+.locked-val-pill:hover{background:rgba(217,164,65,.22)}
 
 .lr-unlock-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px;margin-top:9px}
 .lr-unlock-btn{background:rgba(41,44,43,.42);border:1px solid rgba(217,164,65,.55);border-radius:9px;padding:6px 9px;text-align:left;color:var(--ivory);transition:background .15s}
@@ -149,17 +151,11 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .lr-unlock-btn small{display:block;font-size:9.5px;font-weight:800;color:var(--sage);text-transform:uppercase}
 .lr-unlock-btn strong{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--gold);margin-top:1px}
 
-.lr-split-note{margin-top:8px;background:rgba(41,44,43,.34);border-left:3px solid var(--gold);border-radius:7px;padding:6px 9px;font-size:11px;color:var(--ivory);line-height:1.36}
+.lr-split-note{margin-top:8px;background:rgba(41,44,43,.34);border-left:3px solid var(--gold);border-radius:7px;padding:6px 9px;font-size:11px;color:var(--ivory);line-height:1.36;cursor:pointer}
 
-/* BOTÓN DE APERTURA DEL PASO 2 (SE REEMPLAZA POR EL FORMULARIO JUSTO DEBAJO DEL CUADRO VERDE) */
-.step1-unlock-wrap{text-align:center}
-.btn-open-step2{width:100%;min-height:52px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s}
-.btn-open-step2:hover{transform:translateY(-1px)}
-.step1-subnote{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
-
-/* PASO 2: FORMULARIO LIMPIO DE 2 CAMPOS QUE APARECE DEBAJO DEL CUADRO VERDE */
-.direct-form-wrap{background:var(--ivory);border:2px solid var(--emerald);border-radius:16px;padding:14px;min-width:0;transition:box-shadow .25s ease,border-color .25s ease}
-.direct-form-wrap.focus-glow{border-color:var(--gold);box-shadow:0 0 0 4px rgba(217,164,65,.3)}
+/* FORMULARIO VISIBLE COMO LLAVE DE DESBLOQUEO INSTANTÁNEO EN PANTALLA */
+.direct-form-wrap{background:var(--ivory);border:2px solid var(--gold);border-radius:16px;padding:14px;min-width:0;transition:box-shadow .25s ease,border-color .25s ease}
+.direct-form-wrap.focus-glow{border-color:var(--emerald);box-shadow:0 0 0 4px rgba(217,164,65,.35)}
 .df-head{text-align:center;margin-bottom:10px}
 .df-head b{display:block;font-size:14.5px;color:var(--charcoal);font-weight:800}
 .df-head span{display:block;font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:2px}
@@ -170,7 +166,8 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .field input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(168,196,181,.3)}
 .hp{position:absolute;left:-9999px;opacity:0}
 .err{display:none;margin-top:9px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:600}
-.cta-main{width:100%;min-height:52px;margin-top:11px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);transition:transform .15s}
+.cta-main{width:100%;min-height:52px;margin-top:11px;background:var(--gold);color:var(--charcoal);border:none;border-radius:12px;font-size:14px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7);transition:transform .15s}
+.cta-main:hover{transform:translateY(-1px)}
 .consent-mini{margin-top:8px;font-size:10.5px;color:var(--muted);text-align:center;line-height:1.35}
 .consent-mini a{color:var(--emerald);font-weight:700;text-decoration:underline}
 
@@ -323,16 +320,16 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <span>Santi te asesora</span>
     </a>
     <span class="top-trust-tag">🛡️ Agente Oficial CNSF C412676 · Seguros Monterrey NYL</span>
-    <button type="button" class="top-pill" id="headerCtaBtn">Recibir mi estudio →</button>
+    <button type="button" class="top-pill" id="headerCtaBtn">Revelar mi estudio →</button>
   </header>
 
   <div class="hero-stage">
 
-    <!-- IZQUIERDA: PORTADA CON EXACT MESSAGE MATCH EN H1 Y CARGA RÁPIDA -->
+    <!-- IZQUIERDA: PORTADA CON EXACT MESSAGE MATCH EN H1 -->
     <div class="f4-card">
       <figure class="f4-img">
         <img src="https://www.santiteasesora.com/trabajoprofesionistas.jpg" class="main-hero-img" fetchpriority="high" decoding="async" alt="Plan Personal de Retiro (PPR) para profesionistas en México"
-             onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='trabajoprofesionistas.jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='https://www.santiteasesora.com/ejecutivosfelices.png';}else{this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';}">
+             onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='trabajoprofesionistas.jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='https://www.santiteasesora.com/ejecutivosfelices.avif';}else{this.onerror=null;this.src='https://www.santiteasesora.com/santi-perfil.jpg';}">
         <div class="santi-floating-badge">
           <div class="santi-mini-chip">
             <img src="https://www.santiteasesora.com/santi-perfil.jpg" alt="Martín Santiago" onerror="this.onerror=null;this.src='santi-perfil.jpg';">
@@ -357,11 +354,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
         </div>
 
         <button type="button" class="btn-gold-hero" id="heroCalcBtn">Calcular y cotizar mi plan →</button>
-        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">📲 Desbloquear mi estudio a los 60 y 65 años →</button>
+        <button type="button" class="btn-ghost-hero" id="heroDirectBookBtn">🔓 Revelar mi proyección a los 60 y 65 años →</button>
       </div>
     </div>
 
-    <!-- DERECHA: SIMULADOR RELAX (BARRA 3 DESTRABADA + CUADRO VERDE SIEMPRE VISIBLE) -->
+    <!-- DERECHA: SIMULADOR RELAX CON REVELACIÓN INSTANTÁNEA EN PANTALLA -->
     <div class="open-sim-card" id="formulario">
       <div class="os-top">
         <div class="os-top-title">
@@ -404,7 +401,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- 3. BARRA RELAX DE INVERSIÓN MENSUAL (DESTRABADA DESDE $1,500 PARA CUALQUIER EDAD) -->
+          <!-- 3. BARRA RELAX DE INVERSIÓN MENSUAL -->
           <div class="r-slider-box">
             <div class="r-slider-top">
               <label for="savingSlider">3. Inversión mensual planeada</label>
@@ -431,7 +428,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </div>
           </div>
 
-          <!-- CAJA DE RESULTADO EN VIVO (SIEMPRE VISIBLE) -->
+          <!-- CAJA DE RESULTADO EN VIVO (MITAD IZQUIERDA ABIERTA + MITAD DERECHA CON CANDADO HASTA ENVIAR) -->
           <div class="live-result-box" id="taxBox">
             <div class="lr-meta">
               <span id="resBadgeTag">EL SAT TE DEVUELVE EL 23.5% EN ABRIL</span>
@@ -444,45 +441,39 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
                 <span id="resCol1Sub" class="num">Inversión neta real: $3,059/mes</span>
               </div>
               <div class="lr-col">
-                <small id="resCol2Label">Patrimonio a 10 años aprox:</small>
-                <b id="resCol2Val" class="num">~$742,400 MXN*</b>
-                <span id="resCol2Sub">En UDIs o Dólares protegidos</span>
+                <small id="resCol2Label">Patrimonio proyectado (UDIs):</small>
+                <div id="resCol2Container">
+                  <button type="button" class="locked-val-pill" id="lockedCapitalPill">🔒 $•••,••• MXN*</button>
+                </div>
+                <span id="resCol2Sub">Se revela al instante al poner tus datos ↓</span>
               </div>
             </div>
 
             <div class="lr-unlock-grid">
               <button type="button" class="lr-unlock-btn" id="unlock60Btn">
-                <small>Bolsillo 2 · A tus 60 años</small>
-                <strong><span>🔒 Ver monto libre</span><span>↓</span></strong>
+                <small>Bolsillo 2 · Libre a los 60 años</small>
+                <strong id="pocket2BtnTxt"><span>🔒 Revelar monto</span><span>↓</span></strong>
               </button>
               <button type="button" class="lr-unlock-btn" id="unlock65Btn">
-                <small>Bolsillo 1 · A tus 65 años</small>
-                <strong><span>🔒 Ver retiro total</span><span>↓</span></strong>
+                <small>Bolsillo 1 · Retiro a los 65 años</small>
+                <strong id="pocket1BtnTxt"><span>🔒 Revelar monto</span><span>↓</span></strong>
               </button>
             </div>
 
             <div class="lr-split-note" id="resTwoPocketsText">
-              💡 <strong>Tus 2 Bolsillos:</strong> Sugerimos <strong>$2,800/mes</strong> al Bolsillo 1 (devolución del SAT) y <strong>$1,200/mes</strong> al Bolsillo 2 (libre desde los 60 años o disponible en 3 a 5 años).
+              🔒 <strong>División exacta de tus 2 Bolsillos (60 y 65 años):</strong> Ingresa tu Nombre y WhatsApp aquí abajo para <strong>destapar tu resultado en esta misma pantalla</strong> y guardarlo en tu celular ↓
             </div>
           </div>
 
-          <!-- BOTÓN PASO 1 QUE DESPLIEGA EL FORMULARIO JUSTO AQUÍ DEBAJO SIN OCULTAR EL CUADRO VERDE -->
-          <div class="step1-unlock-wrap" id="step1BtnWrap">
-            <button type="button" class="btn-open-step2" id="openStep2Btn">
-              🔓 Desbloquear mi estudio a los 60 y 65 años →
-            </button>
-            <span class="step1-subnote">Recibe tu proyección oficial por WhatsApp · Sin costo ni compromiso</span>
-          </div>
-
-          <!-- PASO 2: FORMULARIO LIMPIO DE 2 CAMPOS (SE ABRE DEBAJO DEL CUADRO VERDE) -->
-          <div class="direct-form-wrap hidden" id="directFormBox">
+          <!-- LLAVE DE DESBLOQUEO INSTANTÁNEO EN PANTALLA (2 CAMPOS LIMPIOS) -->
+          <div class="direct-form-wrap" id="directFormBox">
             <div class="df-head">
-              <b>¿A dónde te envío tu monto exacto a los 60 y 65 años?</b>
-              <span>Déjame tu Nombre y WhatsApp para mandarte tu estudio de Seguros Monterrey:</span>
+              <b>🔓 Destapa tu patrimonio acumulado y tus 2 Bolsillos en pantalla</b>
+              <span>Escribe tu Nombre y WhatsApp para revelar tus montos aquí arriba al instante y recibir tu estudio:</span>
             </div>
 
             <input type="hidden" id="regimenInput" value="Sueldo u Honorarios">
-            <input type="hidden" id="formOrigen" value="Landing Profesionistas Relax">
+            <input type="hidden" id="formOrigen" value="Landing Profesionistas Candado Instantaneo">
             <input type="hidden" id="prioridadHidden" value="Devolución SAT + 2 Cuentas">
             <input type="hidden" id="calcEstimadoHidden" value="">
             <input type="hidden" id="utm_source" value="">
@@ -505,16 +496,16 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="err" id="formError" role="alert"></div>
 
-            <button type="submit" class="cta-main" id="formSubmitBtn">📲 Enviarme mi estudio por WhatsApp →</button>
+            <button type="submit" class="cta-main" id="formSubmitBtn">🔓 Revelar mi patrimonio en pantalla y guardar en WhatsApp →</button>
 
             <p class="consent-mini">
-              🔒 Trato directo con <strong>Martín Santiago (Cédula C412676)</strong>. Cero llamadas de spam. <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
+              🛡️ Trato personal de <strong>Martín Santiago (<a href="#cedulaModal">Cédula Oficial CNSF C412676</a>)</strong>. Cero llamadas de spam. <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>.
             </p>
           </div>
 
-          <!-- PASO 3: PANEL DE CONFIRMACIÓN DE HORARIO AL ENVIAR -->
+          <!-- PANEL DE CONFIRMACIÓN DE HORARIO QUE SE ABRE AL REVELAR -->
           <div class="sched-panel" id="schedPanelBox">
-            <span class="sched-lbl" id="schedGreeting">¡Listo! ¿En qué horario te acomoda revisar tu estudio (15 min)?</span>
+            <span class="sched-lbl" id="schedGreeting">¡Listo! Ya se destapó tu resultado aquí arriba en el cuadro verde. ¿En qué horario te acomoda revisar tu estudio a los 60 y 65 años?</span>
             <div class="slots-grid" id="slotButtons">
               <button type="button" class="slot-btn" aria-pressed="true" data-slot="Mañana (9:00 a 12:00 hrs)">☀️ Mañana<small>9:00 a 12:00 hrs</small></button>
               <button type="button" class="slot-btn" aria-pressed="false" data-slot="Mediodía (12:00 a 15:00 hrs)">🕛 Mediodía<small>12:00 a 15:00 hrs</small></button>
@@ -529,7 +520,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             </select>
 
             <a href="#" id="waDirectBtn" target="_blank" rel="noopener" class="btn-wa-now">
-              💬 Abrir WhatsApp y recibir mi estudio →
+              💬 enviarme mi estudio completo a mi WhatsApp →
             </a>
 
             <button type="button" id="calDirectBtn" class="btn-cal-now">
@@ -652,12 +643,12 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <div class="ss-photos">
         <figure class="ed-fig">
           <img src="https://www.santiteasesora.com/colegasfelices.jpg" loading="lazy" decoding="async" alt="Asesoría clara para profesionistas en México"
-               onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='colegasfelices.jpg';}else{this.onerror=null;this.src='https://www.santiteasesora.com/ejecutivosfelices.png';}">
+               onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='colegasfelices.jpg';}else{this.onerror=null;this.src='https://www.santiteasesora.com/ejecutivosfelices.avif';}">
           <figcaption><strong>Explicado con manzanas en 15 minutos:</strong> Te envío tu estudio por WhatsApp y lo revisamos juntos sin tecnicismos.</figcaption>
         </figure>
         <figure class="ed-fig">
           <img src="https://www.santiteasesora.com/retiroprospero.png" loading="lazy" decoding="async" alt="Retiro libre de impuestos desde los 60 años"
-               onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='retiroprospero.png';}else{this.onerror=null;this.src='https://www.santiteasesora.com/oficinistasfelices.png';}">
+               onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='retiroprospero.png';}else{this.onerror=null;this.src='https://www.santiteasesora.com/oficinistasfelices.webp';}">
           <figcaption><strong>Libertad para disfrutar tu vida:</strong> Retírate desde los 60 años con 0% de impuestos (Art. 93) o a los 65 años (Art. 151).</figcaption>
         </figure>
       </div>
@@ -692,7 +683,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
             <td><strong>¿Qué pasa si lo necesitas en 3 a 5 años o a los 60?</strong></td>
             <td>Está a la mano (con el riesgo de gastarlo sin querer)</td>
             <td class="lose"><strong>100% atrapado hasta los 65 años</strong> (si retiras antes, el SAT te quita 20%)</td>
-            <td class="win">Cuentas con tu <strong>Bolsillo 2 (<span class="num" id="matrixWinPocket2">$1,200/mes</span>)</strong> disponible o libre a los 60 años</td>
+            <td class="win">Cuentas con tu <strong>Bolsillo 2</strong> disponible a mediano plazo o 100% libre de ISR a los 60 años</td>
           </tr>
           <tr>
             <td><strong>Si una enfermedad te impide volver a trabajar</strong></td>
@@ -825,9 +816,9 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
     <div class="bottom-cta-card">
       <div>
         <h3>¿Quieres ver cuánto recibirías a tus 60 y 65 años según tu edad actual?</h3>
-        <p>Desbloquea tu estudio personalizado de 2 Cuentas y recíbelo en tu WhatsApp sin compromiso.</p>
+        <p>Destapa tu proyección en pantalla y recíbela en tu WhatsApp sin compromiso.</p>
       </div>
-      <button type="button" class="bottom-cta-btn" id="faqBottomBtn">🔓 Desbloquear mi estudio →</button>
+      <button type="button" class="bottom-cta-btn" id="faqBottomBtn">🔓 Revelar mi estudio →</button>
     </div>
   </div>
 </section>
@@ -860,7 +851,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
       <small id="stickySmall">Devolución SAT estimada:</small>
       <b id="stickyBig" class="num">+$11,290 MXN*</b>
     </div>
-    <button type="button" id="stickyBtn">🔓 Desbloquear estudio →</button>
+    <button type="button" id="stickyBtn">🔓 Revelar patrimonio →</button>
   </div>
 </div>
 
@@ -878,11 +869,18 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
   <div class="mbox">
     <div class="d-head"><span id="cedulaTitle">Acreditación oficial CNSF: C412676</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
     <div class="d-body">
-      <p><strong>Martín Santiago (Santi te asesora)</strong> cuenta con autorización oficial vigente emitida por la <strong>Comisión Nacional de Seguros y Fianzas (CNSF)</strong> bajo la cédula <strong>C412676</strong> para asesorarte en planes de ahorro, retiro, vida y protección patrimonial.</p>
-      <p><strong>Institución que respalda tu plan:</strong> Seguros Monterrey New York Life, S.A. de C.V. y MASS Asociados.</p>
-      <p><a href="https://www.santiteasesora.com/cedula-cnsf-c412676.pdf" target="_blank" rel="noopener"><strong>Ver documento de cédula oficial (PDF) ↗</strong></a></p>
+      <div style="background:var(--sage-soft);border:1.5px solid var(--emerald);border-radius:12px;padding:12px;display:flex;align-items:center;gap:12px">
+        <img src="https://www.santiteasesora.com/santi-perfil.jpg" alt="Martín Santiago" style="width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)">
+        <div>
+          <strong style="color:var(--emerald);display:block">Lic. Enrique Martín Santiago González</strong>
+          <span style="font-size:12.5px;color:var(--charcoal);font-weight:700">Cédula Oficial CNSF: C412676 (Vigente)</span>
+        </div>
+      </div>
+      <p>Autorización oficial emitida por la <strong>Comisión Nacional de Seguros y Fianzas (CNSF)</strong> para asesorarte en planes de ahorro, retiro (PPR), vida y gastos médicos mayores.</p>
+      <p><strong>Institución que respalda tu plan:</strong> Seguros Monterrey New York Life, S.A. de C.V. y MASS Asociados (Paseo de la Reforma, CDMX).</p>
+      <p><a href="https://www.santiteasesora.com/cedula-cnsf-c412676.pdf" target="_blank" rel="noopener"><strong>📄 Ver documento oficial de cédula CNSF (PDF) ↗</strong></a></p>
     </div>
-    <div class="d-foot"><span></span><a href="#formulario" class="btn-close" data-close-modal>Volver</a></div>
+    <div class="d-foot"><span></span><a href="#formulario" class="btn-close" data-close-modal>Volver a mi cálculo</a></div>
   </div>
 </div>
 
@@ -891,7 +889,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
     <div class="d-head"><span id="privacyTitle">Aviso de Privacidad simplificado</span><a href="#formulario" data-close-modal aria-label="Cerrar">×</a></div>
     <div class="d-body">
       <p><strong>Responsable:</strong> Martín Santiago (Santi te asesora), agente de seguros autorizado con cédula CNSF C412676.</p>
-      <p><strong>¿Para qué usamos tus datos?</strong> Para enviarte tu cotización personalizada de devolución de impuestos y ahorro, y compartirte los detalles por WhatsApp sin llamadas invasivas.</p>
+      <p><strong>¿Para qué usamos tus datos?</strong> Para revelarte en pantalla tu proyección personalizada de ahorro y devolución de impuestos, y enviarte el detalle por WhatsApp sin llamadas invasivas.</p>
     </div>
     <div class="d-foot"><span></span><a href="#formulario" class="btn-close" data-close-modal>Entendido</a></div>
   </div>
@@ -938,7 +936,7 @@ const ISR_TABLE = [
   [668840.15,   125485.07,  0.3000],
   [1276925.99,  307910.81,  0.3200],
   [1702567.98,  444116.23,  0.3400],
-  [5107703.93,  1601862.46, 0.3500]
+  [5107703.93,  1601862.46,  0.3500]
 ];
 
 const $ = id => document.getElementById(id);
@@ -1019,17 +1017,15 @@ function updateAgeFloor(age){
   else { state.ageRange = '47-55'; state.minSavingByAge = 4000; }
 }
 
-function openWizardStep2(){
+function focusFormBox(){
   if (state.submitted) return;
-  if ($('step1BtnWrap')) $('step1BtnWrap').classList.add('hidden');
   const box = $('directFormBox');
   if (box){
-    box.classList.remove('hidden');
-    tagClarity('wizard_paso_2', 'abierto');
+    tagClarity('clic_desbloquear_candado', 'si');
     box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     box.classList.add('focus-glow');
     clearTimeout(glowTimer);
-    glowTimer = setTimeout(() => box.classList.remove('focus-glow'), 1300);
+    glowTimer = setTimeout(() => box.classList.remove('focus-glow'), 1400);
     setTimeout(() => { if ($('formNombre')) $('formNombre').focus(); }, 320);
   }
 }
@@ -1094,42 +1090,52 @@ function recalculateNumbers(triggerPulse){
   const netAnnual = annualSaving - state.refund;
   const netMonthly = Math.round(netAnnual / 12);
 
+  /* COLUMNA IZQUIERDA (ABIERTA EN VIVO) */
   if (state.mode === 'deducible'){
     $('resBadgeTag').textContent = 'EL SAT TE DEVUELVE EL ' + (state.marginalRate * 100).toFixed(1) + '% EN ABRIL';
     $('resCol1Label').textContent = 'Te regresa el SAT cada abril:';
     $('resCol1Val').textContent = '+' + money(state.refund) + ' MXN*';
     $('resCol1Sub').textContent = 'Inversión neta real: ' + money(netMonthly) + '/mes';
-    $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
-    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
     $('stickySmall').textContent = 'Devolución SAT estimada:';
     $('stickyBig').textContent = '+' + money(state.refund) + ' MXN*';
-    $('resTwoPocketsText').innerHTML = '💡 <strong>Tus 2 Bolsillos:</strong> Sugerimos <strong>' + money(state.pocket1Monthly) + '/mes</strong> al Bolsillo 1 (devolución del SAT) y <strong>' + money(state.pocket2Monthly) + '/mes</strong> al Bolsillo 2 (libre desde los 60 años o disponible en 3 a 5 años).';
   } else if (state.mode === 'resico'){
     $('resBadgeTag').textContent = 'RETIRO A LOS 60 AÑOS CON 0% IMPUESTOS';
-    $('resCol1Label').textContent = 'Rendimiento libre (10a):';
-    $('resCol1Val').textContent = '+' + money(state.tenYearGain) + ' MXN*';
-    $('resCol1Sub').textContent = 'Invirtiendo ' + money(state.monthlySaving) + '/mes';
-    $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
-    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('stickySmall').textContent = 'Patrimonio 10 años (Art. 93):';
-    $('stickyBig').textContent = '~' + money(state.tenYearCapital) + '*';
-    $('resTwoPocketsText').innerHTML = '💡 <strong>Estrategia RESICO:</strong> Tu inversión de <strong>' + money(state.monthlySaving) + '/mes</strong> crece en UDIs o Dólares con disponibilidad en 3 a 5 años y retiro 100% libre de impuestos desde los 60 años.';
+    $('resCol1Label').textContent = 'Beneficio fiscal Art. 93 LISR:';
+    $('resCol1Val').textContent = '0% Impuestos';
+    $('resCol1Sub').textContent = 'Exento de ISR al cumplir 60 años';
+    $('stickySmall').textContent = 'Estrategia RESICO (Art. 93):';
+    $('stickyBig').textContent = '0% ISR a tus 60 años';
   } else {
     $('resBadgeTag').textContent = 'DIAGNÓSTICO PERSONALIZADO CON SANTI';
     $('resCol1Label').textContent = 'Beneficio fiscal a tu medida:';
     $('resCol1Val').textContent = 'Por definir juntos';
-    $('resCol1Sub').textContent = 'Revisamos si te conviene más Art. 151 (devolución SAT) o Art. 93 (0% impuestos a los 60)';
+    $('resCol1Sub').textContent = 'Revisamos si te conviene más Art. 151 o Art. 93';
+    $('stickySmall').textContent = 'Estudio Personalizado:';
+    $('stickyBig').textContent = '2 Cuentas SMNYL';
+  }
+
+  /* COLUMNA DERECHA Y DIVISIÓN DE 2 BOLSILLOS (BLOQUEADAS HASTA QUE ENVÍE NOMBRE Y WHATSAPP) */
+  if (!state.submitted){
     $('resCol2Label').textContent = 'Patrimonio a 10 años aprox:';
-    $('resCol2Val').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-    $('stickySmall').textContent = 'Patrimonio 10 años aprox:';
-    $('stickyBig').textContent = '~' + money(state.tenYearCapital) + '*';
-    $('resTwoPocketsText').innerHTML = '💡 <strong>No te preocupes si no conoces tu régimen:</strong> Antes de prometerte una devolución del SAT, te ayudo a revisar en 2 minutos cómo estás dado de alta para elegir el bolsillo que te dé más dinero libre de impuestos.';
+    $('resCol2Container').innerHTML = '<button type="button" class="locked-val-pill" id="lockedCapitalPill">🔒 $•••,••• MXN*</button>';
+    $('resCol2Sub').textContent = 'Toca para revelar aquí mismo ↓';
+    $('pocket2BtnTxt').innerHTML = '<span>🔒 ' + money(state.pocket2Monthly) + '/mes · Ver monto</span><span>↓</span>';
+    $('pocket1BtnTxt').innerHTML = '<span>🔒 ' + money(state.pocket1Monthly) + '/mes · Ver retiro</span><span>↓</span>';
+    $('resTwoPocketsText').innerHTML = '🔒 <strong>Tu proyección acumulada y desglose a los 60 y 65 años están listos:</strong> Escribe tu Nombre y WhatsApp aquí abajo para <strong>destaparlos al instante en esta pantalla</strong> ↓';
+    const pill = $('lockedCapitalPill');
+    if (pill) pill.onclick = focusFormBox;
+  } else {
+    $('resCol2Label').textContent = '🔓 Patrimonio a 10 años (Destapado):';
+    $('resCol2Container').innerHTML = '<b class="num">~' + money(state.tenYearCapital) + ' MXN*</b>';
+    $('resCol2Sub').textContent = 'Ganancia estimada: +' + money(state.tenYearGain) + ' MXN';
+    $('pocket2BtnTxt').innerHTML = '<span>✓ ' + money(state.pocket2Monthly) + '/mes (Libre 60a)</span><span>🔓</span>';
+    $('pocket1BtnTxt').innerHTML = '<span>✓ ' + money(state.pocket1Monthly) + '/mes (Retiro 65a)</span><span>🔓</span>';
+    $('resTwoPocketsText').innerHTML = '🔓 <strong>¡Resultado desbloqueado!</strong> Sugerimos <strong>' + money(state.pocket1Monthly) + '/mes</strong> al Bolsillo 1 (devolución del SAT) y <strong>' + money(state.pocket2Monthly) + '/mes</strong> al Bolsillo 2 (disponible en 3 a 5 años o libre de impuestos a los 60 años).';
   }
 
   const potentialRefund = Math.round(isrAnual(annualIncome) - isrAnual(annualIncome - Math.min(annualSaving, state.maxDeductibleAnnual)));
   if ($('matrixDecoyRefund')) $('matrixDecoyRefund').textContent = '+' + money(potentialRefund) + '/año';
   if ($('matrixWinRefund')) $('matrixWinRefund').textContent = '+' + money(potentialRefund) + ' MXN/año';
-  if ($('matrixWinPocket2')) $('matrixWinPocket2').textContent = money(state.pocket2Monthly) + '/mes';
 
   const doubtMsg = `Hola, Santi, tengo ${state.exactAge} años (${state.isSmoker ? 'Sí fumo' : 'No fumo'}), ingreso aprox de ${money(state.income)}/mes y estaba viendo tu simulador con ${money(state.monthlySaving)}/mes. ¿Me ayudas con mi estudio?`;
   if ($('waDoubtBtn')) $('waDoubtBtn').href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(doubtMsg)}`;
@@ -1167,12 +1173,12 @@ function updateWhatsAppLinks(){
   const msgWa = [
     `Hola, Santi, soy *${nombre}* (Folio *#${leadId}*).`,
     ``,
-    `Acabo de calcular mi estudio en tu página:`,
+    `Acabo de desbloquear mi estudio en tu página:`,
     `• *Edad exacta:* ${state.exactAge} años (${smokerTxt})`,
     `• *Ingreso aprox:* ${money(state.income)}/mes`,
     `• *Inversión planeada:* ${money(state.monthlySaving)}/mes`,
     `• *Régimen:* ${state.regimeLabel}`,
-    `• *Resultado:* ${beneficioTxt}`,
+    `• *Resultado 10a:* ${beneficioTxt}`,
     `• *Horario preferido:* ${state.selectedSlot} (${dayPref})`,
     ``,
     `¿Me compartes mi monto proyectado a mis 60 y 65 años?`
@@ -1315,7 +1321,7 @@ async function handleSubmit(ev){
   const nombre = $('formNombre').value.trim();
   const wa = cleanTenDigits($('formWhatsApp').value);
 
-  if (nombre.length < 2){ showError('Por favor escribe tu nombre para ver tu estudio.'); $('formNombre').focus(); return; }
+  if (nombre.length < 2){ showError('Por favor escribe tu nombre para revelar tu resultado.'); $('formNombre').focus(); return; }
   if (wa.length !== 10){ showError('Ingresa los 10 dígitos de tu WhatsApp (ej. 55 1234 5678).'); $('formWhatsApp').focus(); return; }
   if ($('website').value) return;
 
@@ -1347,13 +1353,15 @@ async function handleSubmit(ev){
 
   state.submitted = true;
   state.leadName = nombre;
-  const firstName = nombre.split(/\s+/)[0];
-  $('schedGreeting').textContent = `¡Listo, ${firstName}! ¿En qué horario te acomoda revisar tu estudio (15 min)?`;
+  recalculateNumbers(true);
 
-  if ($('step1BtnWrap')) $('step1BtnWrap').classList.add('hidden');
+  const firstName = nombre.split(/\s+/)[0];
+  $('schedGreeting').textContent = `¡Listo, ${firstName}! Ya se destapó tu patrimonio de ~${money(state.tenYearCapital)} arriba en el cuadro verde. ¿En qué horario te acomoda revisar tu estudio a los 60 y 65 años?`;
+
   $('directFormBox').classList.add('hidden');
   $('schedPanelBox').classList.add('show');
   $('stickyBar').classList.add('off');
+  $('taxBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   if (!qualified){
     $('calDirectBtn').classList.add('hidden');
@@ -1432,14 +1440,14 @@ function setupStickyBar(){
   window.addEventListener('resize', checkScroll, { passive: true });
   checkScroll();
 
-  $('stickyBtn').addEventListener('click', openWizardStep2);
+  $('stickyBtn').addEventListener('click', focusFormBox);
   if ($('heroCalcBtn')) $('heroCalcBtn').addEventListener('click', scrollToSimulator);
-  if ($('heroDirectBookBtn')) $('heroDirectBookBtn').addEventListener('click', openWizardStep2);
-  $('headerCtaBtn').addEventListener('click', openWizardStep2);
-  if ($('openStep2Btn')) $('openStep2Btn').addEventListener('click', openWizardStep2);
-  if ($('unlock60Btn')) $('unlock60Btn').addEventListener('click', openWizardStep2);
-  if ($('unlock65Btn')) $('unlock65Btn').addEventListener('click', openWizardStep2);
-  if ($('faqBottomBtn')) $('faqBottomBtn').addEventListener('click', openWizardStep2);
+  if ($('heroDirectBookBtn')) $('heroDirectBookBtn').addEventListener('click', focusFormBox);
+  $('headerCtaBtn').addEventListener('click', focusFormBox);
+  if ($('unlock60Btn')) $('unlock60Btn').addEventListener('click', focusFormBox);
+  if ($('unlock65Btn')) $('unlock65Btn').addEventListener('click', focusFormBox);
+  if ($('resTwoPocketsText')) $('resTwoPocketsText').addEventListener('click', focusFormBox);
+  if ($('faqBottomBtn')) $('faqBottomBtn').addEventListener('click', focusFormBox);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
