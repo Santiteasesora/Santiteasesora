@@ -175,6 +175,7 @@ input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-
 .cta-unlock{width:100%;min-height:48px;margin-top:9px;background:var(--gold);color:var(--charcoal);border:none;border-radius:10px;font-size:13.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7)}
 .anti-spam-shield{margin-top:7px;font-size:11px;color:var(--charcoal);text-align:center;line-height:1.35;background:#fff;border:1px solid var(--sage);border-radius:8px;padding:6px 8px}
 .anti-spam-shield strong{color:var(--emerald)}
+.anti-spam-shield a{color:var(--emerald);font-weight:800;text-decoration:underline}
 .err-box{display:none;margin-top:7px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:8px;padding:6px 9px;font-size:11.5px;font-weight:700}
 
 .sched-box{display:none;background:var(--ivory);color:var(--charcoal);border:2px solid var(--gold);border-radius:14px;padding:14px;gap:9px}
@@ -433,7 +434,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           </div>
         </div>
 
-        <!-- CAJA DE DESBLOQUEO ANTI-FRICCIÓN (SIN MIEDO A LLAMADAS) -->
+        <!-- CAJA DE DESBLOQUEO ANTI-FRICCIÓN CON AVISO DE PRIVACIDAD VISIBLE -->
         <form id="leadForm" class="unlock-card" novalidate>
           <span class="uc-step-badge">ÚLTIMO PASO · REVELACIÓN EN PANTALLA</span>
           <div class="uc-title" id="dynamicFormHook">Ya calculamos tu devolución de <span class="num">+$6,408 MXN</span>. Ahora destapa aquí arriba cuánto suman tus 2 Cuentas:</div>
@@ -455,7 +456,7 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
           <div class="err-box" id="formError"></div>
           <button type="submit" class="cta-unlock" id="mainUnlockBtn">🔓 Destapar mis montos aquí en pantalla (en 1 seg) →</button>
           <div class="anti-spam-shield">
-            🛡️ <strong>Promesa: Cero llamadas telefónicas.</strong> Tus cifras se abren aquí arriba al instante y solo te mando tu tabla por mensaje si tú quieres.
+            🛡️ <strong>Promesa: Cero llamadas telefónicas.</strong> Tus cifras se abren aquí arriba al instante (<a href="#cedulaModal" data-open-modal="cedulaModal">Cédula CNSF C412676</a> · <a href="#privacyModal" data-open-modal="privacyModal">Aviso de Privacidad</a>).
           </div>
         </form>
 
@@ -574,7 +575,11 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
 <footer>
   <div class="footer-in">
     <div><strong>Santi te asesora</strong> · Lic. Enrique Martín Santiago González · Cédula Oficial CNSF: <strong style="color:var(--gold)">C412676</strong> · MASS Asociados · Seguros Monterrey NYL.</div>
-    <div><a href="#cedulaModal" data-open-modal="cedulaModal">Ver Cédula Oficial (PDF)</a> · <a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">Portal Oficial Gobierno CNSF ↗</a></div>
+    <div>
+      <a href="#cedulaModal" data-open-modal="cedulaModal">Ver Cédula Oficial (PDF)</a> ·
+      <a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">Portal Oficial Gobierno CNSF ↗</a> ·
+      <a href="#privacyModal" data-open-modal="privacyModal">Aviso de Privacidad</a>
+    </div>
     <p style="color:var(--sage)">*Cálculos informativos Art. 151, 152 y 93 LISR 2026 (tope 5 UMAs = $213,973.20 MXN).</p>
   </div>
 </footer>
@@ -586,9 +591,10 @@ footer a{color:var(--gold);font-weight:700;text-decoration:underline}
   </div>
 </div>
 
-<!-- MODALES -->
+<!-- MODALES (VIDEO, CÉDULA CNSF, AVISO DE PRIVACIDAD Y CALENDARIO) -->
 <div class="modal" id="videoModal"><div class="mbox v"><div class="vbox"><button type="button" data-close-modal style="position:absolute;top:10px;right:10px;z-index:2;background:#292C2B;color:#fff;border:1px solid #D9A441;border-radius:50%;width:36px;height:36px">×</button><iframe id="youtubePlayer" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></div>
 <div class="modal" id="cedulaModal"><div class="mbox"><div class="d-head"><span>Cédula Oficial CNSF: C412676</span><button type="button" data-close-modal>×</button></div><div class="d-body"><p><strong>Lic. Enrique Martín Santiago González</strong> · Agente autorizado ante la CNSF (Cédula <strong>C412676</strong>).</p><p><a href="https://www.santiteasesora.com/cedula-cnsf-c412676.pdf" target="_blank" rel="noopener">📄 1. Ver documento oficial de Cédula CNSF (PDF) ↗</a></p><p><a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">🏛️ 2. Verificar en el portal oficial de la CNSF ↗</a></p></div></div></div>
+<div class="modal" id="privacyModal"><div class="mbox"><div class="d-head"><span>Aviso de Privacidad Simplificado</span><button type="button" data-close-modal>×</button></div><div class="d-body"><p><strong>Responsable del tratamiento de datos:</strong> Lic. Enrique Martín Santiago González ("Santi te asesora"), Agente de Seguros autorizado por la Comisión Nacional de Seguros y Fianzas con Cédula Oficial <strong>C412676</strong>, con domicilio profesional en Paseo de la Reforma, CDMX (en alianza con MASS Asociados y Seguros Monterrey New York Life, S.A. de C.V.).</p><p><strong>Finalidad del uso de tus datos:</strong> Tu nombre y número de WhatsApp se utilizan exclusivamente para revelarte en pantalla tu cálculo estimado de deducción fiscal y ahorro patrimonial, y compartirte por mensaje tu proyección personalizada sin llamadas invasivas ni transferencia a terceros no autorizados.</p><p><strong>Derechos ARCO:</strong> Puedes solicitar el acceso, rectificación, cancelación u oposición de tus datos en cualquier momento enviando un mensaje directo al WhatsApp oficial +52 55 7120 8740.</p></div></div></div>
 <div class="modal" id="calModal"><div class="mbox cal"><div class="d-head"><span>📅 Agenda con Santiago</span><button type="button" data-close-modal>×</button></div><iframe id="googleCalIframe" style="width:100%;flex:1;border:0"></iframe></div></div>
 
 <script>
