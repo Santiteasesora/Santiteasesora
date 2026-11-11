@@ -58,7 +58,7 @@ a{color:var(--emerald);text-decoration:none}
 .brand img{width:28px;height:28px;border-radius:7px;object-fit:contain}
 .btn-gold-pill{background:var(--gold);color:var(--charcoal);border:none;border-radius:999px;padding:9px 18px;font-size:13px;font-weight:800;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -4px rgba(217,164,65,.5)}
 
-/* 1. HERO CÁLIDO (santi-angel-ventana.jpg ENCUADRE COMPLETO SIN CORTAR BARBILLA) */
+/* 1. HERO CÁLIDO */
 .hero{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--ivory) 65%,var(--bg) 100%);padding:26px 0 42px;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;gap:26px;align-items:center}
 @media(min-width:860px){.hero-grid{grid-template-columns:1.12fr .88fr;gap:40px}}
@@ -125,7 +125,6 @@ input[type="range"].ig-range::-moz-range-thumb{width:22px;height:22px;border-rad
 .m2-grid{display:grid;gap:22px;margin-top:22px;align-items:center}
 @media(min-width:840px){.m2-grid{grid-template-columns:.92fr 1.08fr}}
 .fig-card{background:#fff;border:2px solid var(--sage);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 14px 30px -14px rgba(20,92,82,.14)}
-/* Recorte exacto arriba (aspect-ratio 16/12 + object-position top) que oculta los dedos de la parte inferior */
 .fig-card img.pizarron-crop{width:100%;aspect-ratio:16/12.2;object-fit:cover;object-position:center 8%}
 .fig-cap{padding:11px 14px;font-size:12px;color:var(--charcoal);background:var(--ivory);border-top:1px solid var(--line);line-height:1.4}
 
@@ -155,12 +154,14 @@ input[type="range"].ig-range::-moz-range-thumb{width:22px;height:22px;border-rad
 .c-row b{color:var(--charcoal);text-align:right}
 .comp-card.win .c-row b{color:var(--gold)}
 
-/* 5. ¿QUIÉN ES SANTI? (ENCUADRE CORREGIDO PARA QUE SANTI SE VEA COMPLETO EN AMBAS FOTOS) */
+/* 5. ¿QUIÉN ES SANTI? (ENCUADRE EXACTO MITAD SUPERIOR: SANTI + PANTALLA Y SANTI + EDIFICIO SMNYL) */
 .who-grid{display:grid;gap:18px;margin-top:22px}
 @media(min-width:760px){.who-grid{grid-template-columns:1fr 1fr}}
 .who-fig{background:#fff;border:2px solid var(--sage);border-radius:18px;overflow:hidden;box-shadow:0 12px 28px -14px rgba(20,92,82,.12)}
-.who-fig img.img-reconocimiento{width:100%;aspect-ratio:4/3.2;object-fit:cover;object-position:center 78%}
-.who-fig img.img-edificio{width:100%;aspect-ratio:4/3.2;object-fit:cover;object-position:center 85%}
+/* En reconocimiento: 32% muestra la pantalla completa con "Enrique Martín Santiago González" y a Santi de la cintura hacia arriba con su diploma */
+.who-fig img.img-reconocimiento{width:100%;aspect-ratio:16/11.5;object-fit:cover;object-position:center 32%}
+/* En edificio: 42% muestra la fachada del edificio de Seguros Monterrey y a Santi de la cintura hacia arriba señalándolo */
+.who-fig img.img-edificio{width:100%;aspect-ratio:16/11.5;object-fit:cover;object-position:center 42%}
 .who-fig div{padding:12px 15px;font-size:12.5px;color:var(--charcoal);background:var(--ivory);border-top:1px solid var(--line)}
 
 .verify-box{margin-top:18px;background:var(--ivory);border:1.5px solid var(--sage);border-radius:16px;padding:20px}
@@ -184,7 +185,7 @@ details.ig-faq summary::after{content:"+";color:var(--emerald);font-size:20px;fo
 details.ig-faq[open] summary::after{content:"−"}
 .ig-faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.55}
 
-/* 7. CIERRE CON EL ÁNGEL (santi-angel-cierre.jpg + santi-azul-sonriendo.jpg) */
+/* 7. CIERRE CON EL ÁNGEL */
 .close-card{margin-top:26px;background:var(--emerald);color:var(--ivory);border:2.5px solid var(--gold);border-radius:var(--r-2xl);overflow:hidden;display:grid;box-shadow:0 22px 48px -16px rgba(20,92,82,.25)}
 @media(min-width:860px){.close-card{grid-template-columns:.88fr 1.12fr}}
 .close-img{min-height:320px;background:var(--charcoal)}
@@ -374,7 +375,7 @@ footer strong{color:var(--gold)}
   </div>
 </section>
 
-<!-- 5. ¿QUIÉN ES SANTI? (ENCUADRES CORREGIDOS DONDE SÍ SE VE SANTI COMPLETO) -->
+<!-- 5. ¿QUIÉN ES SANTI? (ENCUADRE EXACTO 32% Y 42%: PANTALLA + SANTI Y EDIFICIO + SANTI) -->
 <section class="sec">
   <div class="wrap">
     <h2 class="sec-h2">¿Quién es <span class="serif-it">Santi</span>?</h2>
@@ -383,11 +384,11 @@ footer strong{color:var(--gold)}
     <div class="who-grid">
       <div class="who-fig">
         <img src="https://www.santiteasesora.com/santi-reconocimiento.jpg" class="img-reconocimiento" loading="lazy" alt="Santi recibiendo un reconocimiento oficial en Seguros Monterrey" onerror="this.onerror=null;this.src='santi-reconocimiento.jpg';">
-        <div><strong>Respaldo verificable:</strong> Martín Santiago recibiendo reconocimiento oficial; en pantalla, su nombre completo.</div>
+        <div><strong>Respaldo verificable:</strong> Martín Santiago recibiendo reconocimiento oficial; en pantalla, su nombre completo: Enrique Martín Santiago González.</div>
       </div>
       <div class="who-fig">
         <img src="https://www.santiteasesora.com/santi-edificio-smnyl.jpg" class="img-edificio" loading="lazy" alt="Santi frente al edificio de Seguros Monterrey en Paseo de la Reforma" onerror="this.onerror=null;this.src='santi-edificio-smnyl.jpg';">
-        <div><strong>Presencia en Reforma, CDMX:</strong> frente a la sede de Seguros Monterrey New York Life y por Google Meet en todo México.</div>
+        <div><strong>Presencia en Reforma, CDMX:</strong> frente al edificio de Seguros Monterrey New York Life en Paseo de la Reforma.</div>
       </div>
     </div>
 
