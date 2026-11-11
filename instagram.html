@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#E6F0EC">
-<title>Calculadora PPR · Método 2 Cuentas | Santi Te Asesora · Seguros Monterrey NYL</title>
-<meta name="description" content="Calcula en 30 segundos tu devolución anual del SAT y cómo dividir tu PPR en 2 Cuentas (Cuenta A deducible Art. 151 + Cuenta B libre a los 60 Art. 93) sin encerrar todo tu dinero hasta los 65.">
+<meta name="theme-color" content="#0D2622">
+<title>Calcula tu devolución en 30 segundos · Método 2 Cuentas | Santi Te Asesora</title>
+<meta name="description" content="¿Facturas por honorarios o estás en sueldos? Calcula tu devolución anual del SAT en 30 segundos sin candados y conoce el Método 2 Cuentas con respaldo de Seguros Monterrey NYL.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Santi Te Asesora">
+<meta property="og:title" content="Calcula tu devolución del SAT en 30 segundos | Santi Te Asesora">
+<meta property="og:description" content="Mueve el monto, mira tu número al instante sin dejar tus datos y descubre cómo no encerrar tu dinero hasta los 65 años.">
+<meta property="og:url" content="https://www.santiteasesora.com/instagram.html">
+<meta property="og:image" content="https://www.santiteasesora.com/santi-angel-ventana.jpg">
 <link rel="icon" type="image/png" href="https://www.santiteasesora.com/logo-santi.png">
-<link rel="preconnect" href="https://calendar.google.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18490645254"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -24,320 +30,438 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--emerald:#145C52;--gold:#D9A441;--ivory:#FFF5E3;--charcoal:#292C2B;--sage:#A8C4B5;--sage-soft:#E6F0EC;--bg:#FBF7F0;--surface:#FFFFFF;--muted:#555B59;--line:#E4DDD0;--r-2xl:22px;--r-xl:18px;--r-lg:14px;--font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;--font-serif:"Newsreader",Georgia,serif}
+:root{
+  --bg-deep:#0B1F1C;--bg-card:#112B26;--bg-card-alt:#15352F;--emerald-win:#145C52;
+  --gold:#D9A441;--ivory:#F5EFE6;--muted:#A9B8B3;--line:#23443D;
+  --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --font-serif:"Newsreader",Georgia,serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font-sans);color:var(--charcoal);background:var(--bg);line-height:1.5;font-size:16px;padding-bottom:78px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--bg-deep);color:var(--ivory);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
-button,input,select{font-family:inherit}
-button,select{cursor:pointer}
-a{color:var(--emerald);text-decoration:none}
-.hidden{display:none!important}
+button,input{font-family:inherit}
+button{cursor:pointer}
+a{color:var(--ivory);text-decoration:none}
 .num{font-variant-numeric:tabular-nums}
-.container{max-width:980px;margin:0 auto;padding:0 14px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
 
-/* TOPBAR COMPACTA PARA NAVEGADOR DE INSTAGRAM */
-.topbar{background:rgba(251,247,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
-.topbar-in{max-width:980px;margin:0 auto;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:var(--charcoal);white-space:nowrap}
-.brand span b{color:var(--emerald);font-family:var(--font-serif);font-weight:600}
-.brand img{width:26px;height:26px;border-radius:6px;object-fit:contain}
-.btn-top{background:var(--gold);color:var(--charcoal);border:none;border-radius:999px;padding:7px 13px;font-size:12px;font-weight:800;white-space:nowrap}
+/* TOPBAR */
+.topbar{background:rgba(17,43,38,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.topbar-in{max-width:1080px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand-title{font-family:var(--font-serif);font-size:20px;font-weight:700;color:#fff;line-height:1.05;display:block}
+.brand-sub{font-size:10px;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;display:block;margin-top:2px}
+.btn-gold-pill{background:var(--gold);color:#1A1C1B;border:none;border-radius:999px;padding:10px 20px;font-size:13.5px;font-weight:800;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
 
-/* HERO COMPACTO IG: DIRECTO A LA CALCULADORA EN 30 SEGUNDOS */
-.ig-hero{background:linear-gradient(180deg,var(--sage-soft) 0%,var(--bg) 100%);padding:14px 0 24px;border-bottom:1px solid var(--line)}
-.santi-header-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--sage);border-radius:999px;padding:5px 12px 5px 6px;margin-bottom:12px;box-shadow:0 6px 16px rgba(20,92,82,.08)}
-.shr-left{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;color:var(--charcoal)}
-.shr-left img{width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--gold)}
-.shr-left small{display:block;font-size:10px;color:var(--emerald);font-weight:700}
-.vid-mini{background:var(--emerald);color:#fff;border:none;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+/* 1. HERO (CON santi-angel-ventana.jpg) */
+.hero{padding:32px 0 48px}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:44px}}
+.hero h1{font-family:var(--font-serif);font-size:clamp(34px,6vw,54px);line-height:1.06;font-weight:700;color:#fff;letter-spacing:-.015em}
+.hero h1 span{color:var(--gold)}
+.hero-p{font-size:16.5px;color:var(--muted);margin-top:18px;line-height:1.6;max-width:54ch}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:24px}
+.link-under{font-size:14.5px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px}
+.ced-pill{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:var(--bg-card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--ivory)}
+.ced-pill i{width:16px;height:16px;border-radius:50%;background:var(--gold);color:#112B26;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;font-weight:900}
+.example-box{margin-top:18px;background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;max-width:520px}
+.ex-row1{font-size:11.5px;font-weight:800;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.ex-row1 b{font-family:var(--font-serif);font-size:20px;color:var(--gold);letter-spacing:0;text-transform:none;margin-left:6px}
+.ex-row2{font-family: monospace, sans-serif;font-size:13px;color:var(--gold);margin-top:4px}
 
-.ig-title{font-family:var(--font-serif);font-size:clamp(24px,5.6vw,36px);line-height:1.1;font-weight:600;color:var(--charcoal)}
-.ig-title em{color:var(--emerald);font-style:italic}
-.ig-sub{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.hero-photo-wrap{border-radius:20px;overflow:hidden;border:1.5px solid var(--line);background:var(--bg-card);max-width:420px;margin:0 auto;width:100%;box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.hero-photo-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top}
 
-/* WORKBENCH DE LA CALCULADORA (ABIERTA Y TRANSPARENTE COMO PIDE EL PLAYBOOK IG) */
-.sim-workbench{margin-top:14px;background:#fff;border:2px solid var(--sage);border-radius:var(--r-2xl);overflow:hidden;box-shadow:0 18px 40px -16px rgba(20,92,82,.16);display:grid}
-@media(min-width:860px){.sim-workbench{grid-template-columns:1fr 1.08fr;align-items:stretch}}
-.sim-left{padding:16px 15px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;background:#fff}
-@media(min-width:640px){.sim-left{padding:22px}}
-.sim-right{background:var(--emerald);color:var(--ivory);padding:18px 15px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;border-top:3px solid var(--gold)}
-@media(min-width:860px){.sim-right{padding:22px;border-top:none;border-left:3px solid var(--gold)}}
+/* 2. CALCULADORA SIN CANDADOS */
+.sec{padding:44px 0}
+.calc-card{background:var(--bg-card);border:1.5px solid var(--line);border-radius:22px;padding:24px 18px;box-shadow:0 20px 44px rgba(0,0,0,.3)}
+@media(min-width:680px){.calc-card{padding:34px 36px}}
+.calc-card h2{font-family:var(--font-serif);font-size:clamp(26px,4vw,34px);color:#fff;font-weight:700}
+.calc-sub{font-size:14.5px;color:var(--muted);margin-top:4px}
+.lbl-kicker{display:block;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
 
-.slider-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
-.sc-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:2px}
-.sc-top label{font-size:13px;font-weight:800;color:var(--charcoal)}
-.sc-val{font-family:var(--font-serif);font-size:24px;font-weight:600;color:var(--emerald)}
-input[type="range"].relax-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;background:#E2DBD0;border-radius:999px;outline:none;margin:8px 0 5px}
-input[type="range"].relax-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--emerald);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.28);cursor:pointer}
-input[type="range"].relax-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--emerald);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.28);cursor:pointer}
-.sc-foot{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}
+.pills-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pills-4{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:560px){.pills-4{grid-template-columns:repeat(4,1fr)}}
+.c-pill{background:transparent;border:1.5px solid var(--line);color:#fff;border-radius:11px;padding:12px 8px;font-size:14px;font-weight:700;text-align:center;transition:all .15s}
+.c-pill.active{background:var(--emerald-win);border-color:#268C7C;color:#fff;font-weight:800}
 
-.quick-amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:7px}
-.qa-btn{background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 2px;font-size:11.5px;font-weight:700;color:var(--charcoal)}
-.qa-btn.active{background:var(--emerald);color:#fff;border-color:var(--emerald);font-weight:800}
+.slider-line{display:grid;gap:12px;align-items:center;margin-top:16px}
+@media(min-width:640px){.slider-line{grid-template-columns:1fr 160px}}
+input[type="range"].ig-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;background:#233D37;border-radius:999px;outline:none}
+input[type="range"].ig-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);border:3px solid #112B26;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+input[type="range"].ig-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--gold);border:3px solid #112B26;cursor:pointer}
+.amt-badge-input{background:var(--bg-deep);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:800;color:#fff}
+.range-limits{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
 
-.smoke-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:7px;padding-top:7px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);font-weight:700}
-.smoke-group{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px;gap:3px}
-.smk-btn{border:none;background:transparent;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:700;color:var(--muted)}
-.smk-btn.active{background:var(--emerald);color:#fff;font-weight:800}
+.res-header{margin-top:18px}
+.res-header small{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block}
+.res-big-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:4px}
+.res-big-num{font-family:var(--font-serif);font-size:clamp(38px,6vw,52px);font-weight:700;color:var(--gold);line-height:1}
+.res-pct-pill{background:var(--gold);color:#1A1C1B;font-size:13px;font-weight:800;padding:5px 12px;border-radius:999px}
+.res-note-resico{font-size:13.5px;color:var(--ivory);margin-top:6px;display:none}
 
-.split-live-card{background:var(--ivory);border:1.5px solid var(--gold);border-radius:12px;padding:11px 13px;display:grid;gap:6px}
-.slc-head{font-size:11px;font-weight:800;color:var(--emerald);text-transform:uppercase;letter-spacing:.03em}
-.slc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.slc-box{background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 9px}
-.slc-box small{display:block;font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase}
-.slc-box b{display:block;font-family:var(--font-serif);font-size:18px;color:var(--emerald);margin-top:1px}
-.slc-box span{display:block;font-size:10.5px;color:var(--charcoal);margin-top:1px;line-height:1.25}
+.res-4-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media(min-width:720px){.res-4-grid{grid-template-columns:repeat(4,1fr)}}
+.r4-box{background:var(--bg-deep);border:1px solid var(--line);border-radius:12px;padding:14px}
+.r4-box b{display:block;font-size:clamp(19px,3vw,23px);color:#fff;font-weight:800}
+.r4-box span{display:block;font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35}
 
-/* PIZARRA DERECHA CON TODOS LOS NÚMEROS REALES VISIBLES */
-.board-top small{font-size:11.5px;color:var(--sage);font-weight:700;display:block}
-.board-big{font-family:var(--font-serif);font-size:clamp(32px,5.5vw,44px);color:var(--gold);font-weight:600;line-height:1.05;margin-top:2px}
-.board-sub{font-size:12px;color:var(--ivory);margin-top:3px;opacity:.94}
+.btn-full-gold{width:100%;min-height:52px;margin-top:20px;background:var(--gold);color:#1A1C1B;border:none;border-radius:999px;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px}
 
-.ledger-table{margin-top:10px;border-top:1px solid rgba(255,245,227,.18);display:grid}
-.lt-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,245,227,.14);font-size:12px}
-.lt-row span{color:var(--ivory);opacity:.92}
-.lt-row strong{color:#fff;font-weight:800}
-.lt-row.hi strong{color:var(--gold);font-size:13.5px}
-.honest-note{font-size:10.5px;color:var(--sage);margin-top:6px;line-height:1.35}
+/* 3. EL MÉTODO 2 CUENTAS (CON santi-pizarron.jpg) */
+.sec-h2{font-family:var(--font-serif);font-size:clamp(28px,4.5vw,38px);color:#fff;font-weight:700;line-height:1.15}
+.sec-lead{font-size:15.5px;color:var(--muted);margin-top:6px;max-width:64ch}
+.m2-grid{display:grid;gap:22px;margin-top:24px;align-items:start}
+@media(min-width:840px){.m2-grid{grid-template-columns:.92fr 1.08fr}}
+.fig-card{background:var(--bg-card);border:1.5px solid var(--line);border-radius:18px;overflow:hidden}
+.fig-card img{width:100%;aspect-ratio:4/4.2;object-fit:cover}
+.fig-cap{padding:12px 15px;font-size:12.5px;color:var(--muted);line-height:1.45;border-top:1px solid var(--line)}
 
-/* CAJA DE ACCIÓN: RECIBIR TABLA OFICIAL Y AGENDAR 15 MIN */
-.action-card{background:var(--ivory);color:var(--charcoal);border:2px solid var(--gold);border-radius:14px;padding:13px;margin-top:4px}
-.ac-title{font-size:13.5px;font-weight:800;color:var(--charcoal)}
-.ac-sub{font-size:11.5px;color:var(--emerald);font-weight:700;margin-top:2px;margin-bottom:8px}
-.day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:7px}
-.day-btn{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 3px;font-size:10.5px;font-weight:700;color:var(--charcoal)}
-.day-btn.active{background:var(--emerald);color:#fff;border-color:var(--emerald);font-weight:800}
-.slot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;margin-bottom:8px}
-.slot-b{background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 7px;font-size:11px;font-weight:700;color:var(--charcoal);text-align:center}
-.slot-b.active{background:var(--sage-soft);border:1.5px solid var(--emerald);color:var(--emerald);font-weight:800}
-.f-grid{display:grid;gap:7px}
-@media(min-width:520px){.f-grid{grid-template-columns:1fr 1fr}}
-.f-field input{width:100%;min-height:42px;padding:7px 10px;border-radius:8px;border:1.5px solid var(--line);font-size:15px;font-weight:700;background:#fff;color:var(--charcoal)}
-.cta-ig{width:100%;min-height:46px;margin-top:8px;background:var(--gold);color:var(--charcoal);border:none;border-radius:10px;font-size:13.5px;font-weight:800;box-shadow:0 8px 18px -6px rgba(217,164,65,.7)}
-.anti-spam{margin-top:6px;font-size:10.5px;color:var(--muted);text-align:center}
-.anti-spam a{color:var(--emerald);font-weight:700;text-decoration:underline}
-.err-box{display:none;margin-top:6px;background:#FFF1F2;border:1px solid #FECDD3;color:#9F1239;border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:700}
+.cuentas-stack{display:grid;gap:14px}
+.cuenta-box{background:var(--bg-card);border:1.5px solid var(--line);border-radius:16px;padding:20px}
+.num-circle{width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1A1C1B;font-weight:800;font-size:13.5px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px}
+.cuenta-box h3{font-family:var(--font-serif);font-size:22px;color:#fff;font-weight:700}
+.cuenta-box p{font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.cuenta-box p strong{color:#fff}
+.m2-foot-quote{font-family:var(--font-serif);font-size:17px;color:var(--ivory);margin-top:14px;line-height:1.45}
 
-/* SECCIÓN CORTA: LAS 2 CUENTAS + COMPARATIVA */
-.sec{padding:34px 0}
-.sec-white{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.kicker{display:inline-block;background:var(--sage-soft);color:var(--emerald);padding:3px 9px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase}
-.sec-h2{font-family:var(--font-serif);font-size:clamp(22px,3.4vw,30px);color:var(--charcoal);font-weight:600;margin-top:5px}
+/* 4. COMPARATIVA 3 COLUMNAS */
+.comp-3-grid{display:grid;gap:14px;margin-top:22px}
+@media(min-width:860px){.comp-3-grid{grid-template-columns:repeat(3,1fr)}}
+.comp-card{background:var(--bg-card);border:1.5px solid var(--line);border-radius:18px;padding:22px}
+.comp-card.win{background:var(--emerald-win);border:2px solid #288E7D}
+.win-tag{display:inline-block;background:var(--gold);color:#1A1C1B;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.comp-card h3{font-family:var(--font-serif);font-size:23px;color:#fff;font-weight:700;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.15)}
+.c-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.12);font-size:13.5px}
+.c-row:last-child{border-bottom:none}
+.c-row span{color:var(--muted)}
+.comp-card.win .c-row span{color:var(--ivory)}
+.c-row b{color:#fff;text-align:right}
 
-.comp-cards-grid{display:grid;gap:12px;margin-top:16px}
-@media(min-width:820px){.comp-cards-grid{grid-template-columns:repeat(3,1fr)}}
-.comp-col{background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-lg);padding:15px;display:grid;gap:8px}
-.comp-col.win{background:var(--ivory);border:2px solid var(--emerald)}
-.comp-col h3{font-size:14.5px;font-weight:800;color:var(--charcoal)}
-.comp-col.win h3{color:var(--emerald)}
-.comp-item{font-size:12px;color:var(--muted);line-height:1.38}
-.comp-item strong{display:block;font-size:10.5px;text-transform:uppercase;color:var(--charcoal)}
-.comp-col.win .comp-item{color:var(--charcoal)}
+/* 5. ¿QUIÉN ES SANTI? (CON santi-reconocimiento.jpg + santi-edificio-smnyl.jpg) */
+.who-grid{display:grid;gap:16px;margin-top:22px}
+@media(min-width:760px){.who-grid{grid-template-columns:1fr 1fr}}
+.who-fig{background:var(--bg-card);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.who-fig img{width:100%;height:260px;object-fit:cover;object-position:center 25%}
+.who-fig div{padding:12px 16px;font-size:13px;color:var(--muted)}
 
-footer{background:var(--charcoal);color:var(--ivory);padding:24px 14px;font-size:11.5px}
-.footer-in{max-width:980px;margin:0 auto;display:grid;gap:8px}
-footer a{color:var(--gold);font-weight:700;text-decoration:underline}
+.verify-box{margin-top:16px;background:var(--bg-card);border:1.5px solid var(--line);border-radius:16px;padding:20px}
+.verify-box h3{font-family:var(--font-serif);font-size:21px;color:#fff}
+.verify-box p{font-size:14px;color:var(--muted);margin-top:4px}
+.verify-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px;font-size:14px;font-weight:700}
+.verify-links a{text-decoration:underline;text-underline-offset:4px}
 
-.modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(41,44,43,.84);align-items:center;justify-content:center;padding:16px}
+/* 6. TESTIMONIO ITZEL + FAQ */
+.itzel-card{margin-top:16px;background:var(--bg-card);border:1.5px solid var(--line);border-radius:16px;padding:20px}
+.itzel-card p{font-size:14.5px;color:var(--ivory);margin-top:8px;line-height:1.55}
+.itzel-meta{font-size:13px;color:var(--muted);margin-top:10px}
+.itzel-meta strong{color:#fff}
+
+.faq-stack{display:grid;gap:10px;margin-top:18px}
+details.ig-faq{background:var(--bg-card);border:1.5px solid var(--line);border-radius:14px;padding:15px 18px}
+details.ig-faq summary{font-size:15.5px;font-weight:700;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.ig-faq summary::-webkit-details-marker{display:none}
+details.ig-faq summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:800}
+details.ig-faq[open] summary::after{content:"−"}
+.ig-faq-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.55}
+
+/* 7. CIERRE CON EL ÁNGEL (santi-angel-cierre.jpg + santi-azul-sonriendo.jpg) */
+.close-card{margin-top:24px;background:var(--bg-card-alt);border:1.5px solid var(--line);border-radius:22px;overflow:hidden;display:grid}
+@media(min-width:860px){.close-card{grid-template-columns:.88fr 1.12fr}}
+.close-img{min-height:320px;background:var(--bg-deep)}
+.close-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.close-body{padding:26px 20px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+@media(min-width:680px){.close-body{padding:36px}}
+.close-body h2{font-family:var(--font-serif);font-size:clamp(26px,4vw,36px);color:#fff;line-height:1.12}
+
+.santi-mini-row{display:flex;align-items:center;gap:12px}
+.santi-mini-row img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
+.santi-mini-row b{display:block;font-size:15.5px;color:#fff}
+.santi-mini-row span{display:block;font-size:12.5px;color:var(--muted)}
+
+.summary-pill-box{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px;color:var(--ivory)}
+.summary-pill-box b{color:var(--gold)}
+
+.ig-form{display:grid;gap:12px;margin-top:4px}
+.ig-field label{display:block;font-size:12.5px;font-weight:700;color:#fff;margin-bottom:5px}
+.ig-field input{width:100%;min-height:48px;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:#1A1C1B;font-size:16px;font-weight:600}
+.err-msg{display:none;background:#3A1D1D;border:1px solid #F0958A;color:#FFDAD6;padding:8px 12px;border-radius:8px;font-size:12.5px;font-weight:700}
+.foot-promise{font-size:12px;color:var(--muted);text-align:center;line-height:1.4}
+.foot-promise a{color:var(--gold);text-decoration:underline}
+
+footer{padding:36px 0 48px;border-top:1px solid var(--line);margin-top:40px;font-size:12.5px;color:var(--muted)}
+footer strong{color:#fff}
+
+.modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.82);align-items:center;justify-content:center;padding:16px}
 .modal.open{display:flex}
-.mbox{background:#fff;border-radius:16px;max-width:500px;width:100%;overflow:hidden}
-.mbox.v{max-width:340px;background:#000}
-.d-head{background:var(--emerald);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:800;border-bottom:2px solid var(--gold)}
-.d-head button{background:none;border:none;color:#fff;font-size:22px}
-.d-body{padding:16px;font-size:13.5px;display:grid;gap:8px;color:var(--charcoal)}
-.vbox{aspect-ratio:9/16;position:relative}
-.vbox iframe{width:100%;height:100%;border:0}
+.mbox{background:var(--bg-card);border:1.5px solid var(--gold);border-radius:16px;max-width:500px;width:100%;padding:20px;color:var(--ivory)}
 </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar-in">
-    <a href="#calculadora" class="brand">
-      <img src="https://www.santiteasesora.com/logo-santi.png" alt="Santi te asesora" onerror="this.onerror=null;this.src='logo-santi.png';">
-      <span>Santi <b>Te Asesora</b></span>
+    <a href="#inicio">
+      <span class="brand-title">Santi Te Asesora</span>
+      <span class="brand-sub">Plan Personal de Retiro</span>
     </a>
-    <a href="#agendarBox" class="btn-top">Recibir mi tabla →</a>
+    <a href="#calculadora" class="btn-gold-pill">Calcular mi devolución</a>
   </div>
 </header>
 
-<!-- CALCULADORA EN PRIMERA PANTALLA (30 SEGUNDOS, SIN CANDADOS COMO PIDE EL PLAYBOOK IG) -->
-<section class="ig-hero" id="calculadora">
-  <div class="container">
-    <div class="santi-header-row">
-      <div class="shr-left">
-        <img src="https://www.santiteasesora.com/santi-perfil.jpg" alt="Martín Santiago" onerror="this.onerror=null;this.src='santi-perfil.jpg';">
+<!-- 1. HERO CON TU FOTO DEL ÁNGEL EN VENTANA -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>¿Facturas por honorarios o estás en sueldos? Calcula tu <span>devolución</span> en 30 segundos</h1>
+        <p class="hero-p">
+          Cada año pagas ISR que podría regresar a ti en tu declaración anual — y quedarse invertido para tu retiro sin encerrar todo hasta los 65. Mueve el monto, mira tu número al instante y sin dejar tus datos.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculadora" class="btn-gold-pill">Calcular mi devolución</a>
+          <a href="#el-metodo" class="link-under">Ver el Método 2 Cuentas ↓</a>
+        </div>
         <div>
-          <span>Lic. Martín Santiago · Seguros Monterrey NYL</span>
-          <small>🛡️ Cédula Oficial CNSF C412676</small>
+          <span class="ced-pill"><i>✓</i> Cédula C412676 · 15 min por Meet</span>
+        </div>
+        <div class="example-box num">
+          <div class="ex-row1">EJEMPLO REAL <b>$2,500/mes → +$6,408 al año</b></div>
+          <div class="ex-row2">≈ 21.4% de lo que aportas regresa vía SAT</div>
         </div>
       </div>
-      <button type="button" class="vid-mini" data-open-modal="videoModal">▶ Video (0:26s)</button>
+
+      <div class="hero-photo-wrap">
+        <img src="https://www.santiteasesora.com/santi-angel-ventana.jpg" fetchpriority="high" alt="Martín Santiago en Paseo de la Reforma frente al Ángel de la Independencia" onerror="this.onerror=null;this.src='santi-angel-ventana.jpg';">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CALCULADORA ABIERTA SIN CANDADOS -->
+<section class="sec" id="calculadora">
+  <div class="wrap">
+    <div class="calc-card">
+      <h2>Tu devolución, sin candados</h2>
+      <p class="calc-sub">Todos los montos se ven desde ya. Nada se bloquea con tus datos: primero tu número, después tú decides si hablamos.</p>
+
+      <span class="lbl-kicker">TU RÉGIMEN FISCAL</span>
+      <div class="pills-row" id="regimeGroup">
+        <button type="button" class="c-pill active" data-reg="Honorarios">Honorarios</button>
+        <button type="button" class="c-pill" data-reg="Asalariado">Asalariado</button>
+        <button type="button" class="c-pill" data-reg="RESICO">RESICO</button>
+      </div>
+
+      <span class="lbl-kicker">¿CUÁNTO PODRÍAS APORTAR AL MES?</span>
+      <div class="pills-4 num" id="amountPills">
+        <button type="button" class="c-pill" data-amt="1500">$1,500</button>
+        <button type="button" class="c-pill active" data-amt="2500">$2,500</button>
+        <button type="button" class="c-pill" data-amt="4000">$4,000</button>
+        <button type="button" class="c-pill" data-amt="6000">$6,000</button>
+      </div>
+
+      <div class="slider-line">
+        <input type="range" id="savingSlider" class="ig-range" min="1500" max="20000" step="500" value="2500">
+        <div class="amt-badge-input num"><span>$</span><span id="sliderValTxt">2,500</span><span>/mes</span></div>
+      </div>
+      <div class="range-limits num"><span>$1,500</span><span>$20,000</span></div>
+
+      <div class="res-header">
+        <small id="resTopLabel">EL SAT TE REGRESARÍA AL AÑO</small>
+        <div class="res-big-row num">
+          <span class="res-big-num" id="resRefundBig">+$6,408</span>
+          <span class="res-pct-pill" id="resPctPill">21.4% de tu aportación</span>
+        </div>
+        <p class="res-note-resico" id="resicoMsg">
+          En RESICO no aplican deducciones anuales del Art. 151 ($0 de devolución en abril), pero tu aportación entra al 100% en la <strong>Cuenta 2 (Art. 93 LISR)</strong>: crece en UDIs/Dólares y la retiras a los 60 años con <strong>0% de impuestos</strong>.
+        </p>
+      </div>
+
+      <div class="res-4-grid num">
+        <div class="r4-box"><b id="r4NetMonthly">$1,966</b><span>Tu inversión neta real al mes</span></div>
+        <div class="r4-box"><b id="r4Annual">$30,000</b><span>Aportas en un año</span></div>
+        <div class="r4-box"><b id="r4TenYrRef">+$64,080</b><span id="r4TenYrLabel">Devoluciones acumuladas en 10 años</span></div>
+        <div class="r4-box"><b id="r4TenYrPaid">$300,000</b><span>Total aportado en 10 años</span></div>
+      </div>
+
+      <a href="#contacto" class="btn-full-gold">Quiero este cálculo en mi WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. EL MÉTODO 2 CUENTAS CON TU FOTO DEL PIZARRÓN -->
+<section class="sec" id="el-metodo">
+  <div class="wrap">
+    <h2 class="sec-h2">El Método 2 Cuentas</h2>
+    <p class="sec-lead">Un PPR normal te encierra todo hasta los 65. Aquí tu dinero se divide en dos, y cada cuenta tiene su momento.</p>
+
+    <div class="m2-grid">
+      <div class="fig-card">
+        <img src="https://www.santiteasesora.com/santi-pizarron.jpg" loading="lazy" alt="Santi explicando el plan en su pizarrón" onerror="this.onerror=null;this.src='santi-pizarron.jpg';">
+        <div class="fig-cap">Santi explicando el plan en su pizarrón: 1 solo pago, rentas mensuales, 65 y 75.</div>
+      </div>
+
+      <div class="cuentas-stack">
+        <div class="cuenta-box">
+          <span class="num-circle">1</span>
+          <h3>Cuenta 1 — La deducible</h3>
+          <p>Es tu PPR de largo plazo: <strong>deducible de impuestos hasta los 65</strong> (Art. 151 LISR). Cada año que aportas, el SAT te regresa una parte en tu declaración anual — como los +$6,408 del ejemplo — y ese dinero sigue invertido para tu retiro, con seguro de invalidez incluido.</p>
+        </div>
+
+        <div class="cuenta-box">
+          <span class="num-circle">2</span>
+          <h3>Cuenta 2 — La líquida</h3>
+          <p>La parte que <strong>no te encierra hasta los 65</strong>: queda disponible a los 60 libre de impuestos (Art. 93 LISR), o en un plazo de 3 a 5 años según cómo la estructuremos. Es tu colchón para metas antes del retiro, sin pelear con la Cuenta 1.</p>
+        </div>
+
+        <p class="m2-foot-quote">Hoy: una sola cuenta que se libera hasta los 65. Con 2 cuentas: una trabaja para tu retiro y la otra queda a tu alcance mucho antes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMPARA ANTES DE DECIDIR -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-h2">Compara antes de decidir</h2>
+    <p class="sec-lead">Las tres opciones, con los mismos criterios. La comparación hace el trabajo.</p>
+
+    <div class="comp-3-grid">
+      <div class="comp-card">
+        <h3>Banco / CETES</h3>
+        <div class="c-row"><span>¿Deduce impuestos?</span><b>No</b></div>
+        <div class="c-row"><span>Devolución del SAT</span><b>$0</b></div>
+        <div class="c-row"><span>Liquidez</span><b>Inmediata</b></div>
+        <div class="c-row"><span>Impuestos</span><b>Pagas ISR sobre los intereses</b></div>
+      </div>
+
+      <div class="comp-card">
+        <h3>PPR tradicional</h3>
+        <div class="c-row"><span>¿Deduce impuestos?</span><b>Sí, Art. 151</b></div>
+        <div class="c-row"><span>Devolución del SAT</span><b>Sí, cada año</b></div>
+        <div class="c-row"><span>Liquidez</span><b>Baja</b></div>
+        <div class="c-row"><span>Tu dinero disponible</span><b>Hasta los 65</b></div>
+      </div>
+
+      <div class="comp-card win">
+        <span class="win-tag">MÉTODO SANTI</span>
+        <h3>Método 2 Cuentas</h3>
+        <div class="c-row"><span>¿Deduce impuestos?</span><b>Sí, Cuenta 1</b></div>
+        <div class="c-row"><span>Devolución del SAT</span><b>Sí, cada año</b></div>
+        <div class="c-row"><span>Liquidez</span><b>Cuenta 2 antes</b></div>
+        <div class="c-row"><span>Tu dinero disponible</span><b>A los 60 o en 3–5 años</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ¿QUIÉN ES SANTI? (RECONOCIMIENTO + EDIFICIO SMNYL) -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-h2">¿Quién es Santi?</h2>
+    <p class="sec-lead">Asesor profesional de seguros, con respaldo de Seguros Monterrey New York Life. Verifícalo tú mismo:</p>
+
+    <div class="who-grid">
+      <div class="who-fig">
+        <img src="https://www.santiteasesora.com/santi-reconocimiento.jpg" loading="lazy" alt="Santi recibiendo un reconocimiento oficial" onerror="this.onerror=null;this.src='santi-reconocimiento.jpg';">
+        <div>Santi recibiendo un reconocimiento; en la pantalla, su nombre completo: Enrique Martín Santiago González.</div>
+      </div>
+      <div class="who-fig">
+        <img src="https://www.santiteasesora.com/santi-edificio-smnyl.jpg" loading="lazy" alt="Santi frente al edificio de Seguros Monterrey en Paseo de la Reforma" onerror="this.onerror=null;this.src='santi-edificio-smnyl.jpg';">
+        <div>Santi frente al edificio de Seguros Monterrey, en Paseo de la Reforma.</div>
+      </div>
     </div>
 
-    <h1 class="ig-title">Tu PPR no tiene que encerrarte hasta los 65: <em>calcula tu devolución y tus 2 Cuentas.</em></h1>
-    <p class="ig-sub">Mueve las 2 barras para ver cuánto te devuelve el SAT cada abril y cómo se reparte tu aporte sin congelar todo tu dinero:</p>
-
-    <div class="sim-workbench">
-      <!-- CONTROLES RÁPIDOS IZQUIERDA -->
-      <div class="sim-left">
-        <div class="slider-card">
-          <div class="sc-top">
-            <label for="ageSlider">1. Tu edad actual</label>
-            <span class="sc-val num" id="ageDisplay">32 años</span>
-          </div>
-          <input type="range" id="ageSlider" class="relax-range" min="22" max="60" step="1" value="32">
-          <div class="sc-foot num"><span>22 años</span><span>40 años</span><span>60 años</span></div>
-          <div class="smoke-row">
-            <span>¿Fumas actualmente?</span>
-            <div class="smoke-group" id="smokerGroup">
-              <button type="button" class="smk-btn active" data-smoke="no">🚭 No fumo</button>
-              <button type="button" class="smk-btn" data-smoke="yes">🚬 Sí fumo</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-card">
-          <div class="sc-top">
-            <label for="savingSlider">2. Aportación mensual al plan</label>
-            <span class="sc-val num" id="savingDisplay">$2,500</span>
-          </div>
-          <input type="range" id="savingSlider" class="relax-range" min="1500" max="20000" step="500" value="2500">
-          <div class="sc-foot">
-            <span>Empieza desde $1,500/mes (22–32a)</span>
-            <span class="num">Hasta $20,000/mes</span>
-          </div>
-          <div class="quick-amounts num" id="quickAmounts">
-            <button type="button" class="qa-btn" data-amt="1500">$1,500</button>
-            <button type="button" class="qa-btn active" data-amt="2500">$2,500</button>
-            <button type="button" class="qa-btn" data-amt="4000">$4,000</button>
-            <button type="button" class="qa-btn" data-amt="6000">$6,000</button>
-          </div>
-        </div>
-
-        <!-- DIVISIÓN EN VIVO DE LAS 2 CUENTAS (ABIERTA) -->
-        <div class="split-live-card">
-          <span class="slc-head">Cómo se reparte tu aporte en el Método 2 Cuentas:</span>
-          <div class="slc-grid num">
-            <div class="slc-box">
-              <small>🟢 Cuenta A · Art. 151</small>
-              <b id="pocket1Val">$1,800/mes</b>
-              <span>Deduce hoy · Retiro a los 65 libre de ISR + Invalidez.</span>
-            </div>
-            <div class="slc-box">
-              <small>🟡 Cuenta B · Art. 93</small>
-              <b id="pocket2Val">$700/mes</b>
-              <span>Disponible en 3–5 años y retiro a los 60 con 0% ISR.</span>
-            </div>
-          </div>
-        </div>
+    <div class="verify-box">
+      <h3>Cédula C412676 — verifica antes de confiar</h3>
+      <p>Santi es agente con cédula vigente ante la Comisión Nacional de Seguros y Fianzas (CNSF). No te quedes con su palabra: revisa el documento.</p>
+      <div class="verify-links">
+        <a href="https://www.santiteasesora.com/cedula-cnsf-c412676.pdf" target="_blank" rel="noopener">Ver la cédula en PDF →</a>
+        <a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">Ir al sitio oficial de la CNSF →</a>
       </div>
+    </div>
 
-      <!-- PIZARRA DE NÚMEROS REALES + AGENDA 15 MIN -->
-      <div class="sim-right">
-        <div>
-          <div class="board-top">
-            <small>El SAT te devolvería cada abril, aprox. (Art. 151):</small>
-            <div class="board-big num" id="boardBigVal">+$6,408 MXN</div>
-            <div class="board-sub" id="boardSubText">Equivale al ~21.4% de lo aportado. Tu inversión neta real: $1,966/mes.</div>
-          </div>
+    <div class="itzel-card">
+      <span class="win-tag">CLIENTE VERIFICADA</span>
+      <p>"Yo quería juntar capital para un proyecto propio en 3 años sin que perdiera valor en el banco ni quedara congelado hasta los 65 años. Con Santi armamos un esquema dividido donde el ahorro para mi proyecto crece protegido a mediano plazo y por mi retiro aprovecho cada año la devolución del SAT."</p>
+      <div class="itzel-meta"><strong>Itzel C.</strong> · Administradora de Marketing</div>
+    </div>
+  </div>
+</section>
 
-          <div class="ledger-table num">
-            <div class="lt-row"><span>Aportas en 1 año:</span><strong id="ltAnnual">$30,000 MXN</strong></div>
-            <div class="lt-row hi"><span>Devoluciones del SAT en 10 años:</span><strong id="ltRef10Val">+$64,080 MXN</strong></div>
-            <div class="lt-row"><span>Total aportado por ti en 10 años:</span><strong id="ltPaid10">$300,000 MXN</strong></div>
-            <div class="lt-row"><span>Crecimiento estimado en UDIs (10a):</span><strong id="ltGain10">+$164,024 MXN*</strong></div>
-            <div class="lt-row hi"><span>Patrimonio estimado a 10 años:</span><strong id="ltTotal10">~$464,024 MXN*</strong></div>
+<!-- 6. PREGUNTAS FRECUENTES + CIERRE CON EL ÁNGEL -->
+<section class="sec" id="contacto">
+  <div class="wrap">
+    <h2 class="sec-h2">Lo que todos preguntan</h2>
+    <div class="faq-stack">
+      <details class="ig-faq"><summary>¿El SAT sí devuelve ese dinero?</summary><div class="ig-faq-ans">Sí. Bajo el Artículo 151 Fracción V de la Ley del ISR, tus aportaciones a la Cuenta 1 reducen tu base gravable anual (hasta el 10% de tu ingreso o 5 UMAs = $213,973.20 MXN) y generan saldo a favor en tu declaración de abril.</div></details>
+      <details class="ig-faq"><summary>¿Necesito ganar mucho para que convenga?</summary><div class="ig-faq-ans">No. Puedes comenzar desde $1,500 a $2,500 al mes según tu edad y recuperar entre el 16% y el 35% de ISR según tu escalón fiscal.</div></details>
+      <details class="ig-faq"><summary>¿Mi dinero queda encerrado hasta los 65?</summary><div class="ig-faq-ans">No con el Método 2 Cuentas: la Cuenta 1 deduce impuestos para tus 65 años y la Cuenta 2 te da liquidez en 3 a 5 años o retiro exento desde los 60 años (Art. 93 LISR).</div></details>
+    </div>
+
+    <div class="close-card">
+      <div class="close-img">
+        <img src="https://www.santiteasesora.com/santi-angel-cierre.jpg" loading="lazy" alt="Santi frente al Ángel de la Independencia en Reforma" onerror="this.onerror=null;this.src='santi-angel-cierre.jpg';">
+      </div>
+      <div class="close-body">
+        <h2>Tu número ya lo tienes. Ahora revísalo con Santi.</h2>
+        <div class="santi-mini-row">
+          <img src="https://www.santiteasesora.com/santi-azul-sonriendo.jpg" alt="Martín Santiago" onerror="this.onerror=null;this.src='santi-perfil.jpg';">
+          <div>
+            <b>Martín Santiago — Santi</b>
+            <span>Asesor profesional de seguros · Cédula C412676 · Respaldo de Seguros Monterrey NYL</span>
           </div>
-          <p class="honest-note">*Nota transparente: El "hasta 35%" que ves en publicidad es la tasa máxima de ley; aquí ves el cálculo realista según tu aportación.</p>
         </div>
 
-        <!-- FORMULARIO DIRECTO A WHATSAPP Y MEET 15 MIN -->
-        <form id="leadForm" class="action-card" id="agendarBox" novalidate>
-          <div class="ac-title" id="formTitle">📲 Recibe tu tabla oficial SMNYL por WhatsApp + Meet de 15 min</div>
-          <div class="ac-sub">Elige día y hora tentativa y déjame tus datos para prepararte tu proyección exacta:</div>
+        <div class="summary-pill-box num" id="bottomSummaryText">
+          Tu cálculo: <b>$2,500/mes</b> · Honorarios · devolución estimada <b>+$6,408/año</b>. Se manda tal cual en tu mensaje.
+        </div>
 
-          <div class="day-grid" id="dayPillsContainer"></div>
-          <div class="slot-grid" id="slotButtons">
-            <button type="button" class="slot-b active" data-slot="Mañana (09:00 a 12:00)">☀️ 09:00 – 12:00</button>
-            <button type="button" class="slot-b" data-slot="Mediodía (12:00 a 15:00)">🕛 12:00 – 15:00</button>
-            <button type="button" class="slot-b" data-slot="Tarde (15:00 a 18:00)">🌤️ 15:00 – 18:00</button>
-            <button type="button" class="slot-b" data-slot="Noche (18:30 a 20:30)">🌙 18:30 – 20:30</button>
+        <form class="ig-form" id="igLeadForm" novalidate>
+          <div class="ig-field">
+            <label for="formNombre">Tu nombre</label>
+            <input type="text" id="formNombre" placeholder="Ej. Ana López" autocomplete="name" required>
           </div>
-
-          <div class="f-grid">
-            <div class="f-field"><input type="text" id="formNombre" placeholder="Tu nombre *" autocomplete="name" required></div>
-            <div class="f-field"><input type="tel" id="formWhatsApp" class="num" placeholder="Tu WhatsApp (10 dígitos) *" inputmode="numeric" maxlength="14" required></div>
+          <div class="ig-field">
+            <label for="formWhatsApp">Tu WhatsApp (10 dígitos)</label>
+            <input type="tel" id="formWhatsApp" class="num" placeholder="Ej. 55 1234 5678" inputmode="numeric" maxlength="14" required>
           </div>
           <input type="text" id="website" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
-          <div class="err-box" id="formError"></div>
-          <button type="submit" class="cta-ig" id="submitBtn">💬 Enviar mis datos y abrir mi estudio en WhatsApp →</button>
-          <div class="anti-spam">
-            🛡️ Cero llamadas de spam · <a href="#cedulaModal" data-open-modal="cedulaModal">Cédula CNSF C412676</a> · <a href="#privacyModal" data-open-modal="privacyModal">Aviso de Privacidad</a>
-          </div>
+          <div class="err-msg" id="formError"></div>
+          <button type="submit" class="btn-full-gold" style="margin-top:4px">💬 Enviar mi cálculo por WhatsApp</button>
+          <p class="foot-promise">
+            Te contesta Santi en persona, normalmente rápido de 8:00 a 19:00. Solo mensajes: sin llamadas · <a href="#privacyModal" id="openPrivacy">Aviso de Privacidad</a>
+          </p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARATIVA RÁPIDA EN 3 TARJETAS (SIN SCROLL HORIZONTAL EN MÓVIL) -->
-<section class="sec sec-white">
-  <div class="container">
-    <span class="kicker">EL RESUMEN QUE PUEDES GUARDAR</span>
-    <h2 class="sec-h2">Banco / CETES vs. PPR Tradicional vs. Método 2 Cuentas</h2>
-
-    <div class="comp-cards-grid">
-      <div class="comp-col">
-        <h3>Banco / CETES</h3>
-        <div class="comp-item"><strong>¿Deduces impuestos?</strong>No. Pagas retención de ISR sobre intereses.</div>
-        <div class="comp-item"><strong>¿Liquidez?</strong>Disponible, pero sin devolución de abril.</div>
-        <div class="comp-item"><strong>¿Si te incapacitas?</strong>Solo tienes lo ahorrado hasta ese día.</div>
-      </div>
-
-      <div class="comp-col">
-        <h3>PPR Tradicional (1 cuenta)</h3>
-        <div class="comp-item"><strong>¿Deduces impuestos?</strong>Sí, Art. 151 (<span class="num" id="tblDecoyRef">+$6,408/año</span>).</div>
-        <div class="comp-item"><strong>¿Liquidez?</strong>100% congelado hasta los 65 años (si retiras antes se grava a tu tasa de ISR).</div>
-        <div class="comp-item"><strong>¿Si te incapacitas?</strong>En fondos bursátiles tu plan se detiene.</div>
-      </div>
-
-      <div class="comp-col win">
-        <h3>Método 2 Cuentas SMNYL</h3>
-        <div class="comp-item"><strong>¿Deduces impuestos?</strong>Sí, Cuenta A Art. 151 (<span class="num" id="tblWinRef">+$6,408 MXN/año</span> de vuelta en abril).</div>
-        <div class="comp-item"><strong>¿Liquidez?</strong>Cuenta B disponible en 3–5 años y retiro a los 60 años libre de ISR (Art. 93).</div>
-        <div class="comp-item"><strong>¿Si te incapacitas?</strong>Recibes suma asegurada libre de ISR y SMNYL paga el resto del plan por ti.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
-  <div class="footer-in">
-    <div><strong>Santi Te Asesora</strong> · Lic. Enrique Martín Santiago González · Cédula Oficial CNSF: <strong style="color:var(--gold)">C412676</strong> · Seguros Monterrey New York Life.</div>
-    <div>
-      <a href="#cedulaModal" data-open-modal="cedulaModal">Ver Cédula Oficial (PDF)</a> ·
-      <a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">Portal Oficial CNSF ↗</a> ·
-      <a href="#privacyModal" data-open-modal="privacyModal">Aviso de Privacidad</a>
-    </div>
-    <p style="color:var(--sage)">*Cálculos informativos con la tarifa anual del Art. 152 LISR 2026 y tope del Art. 151 (5 UMAs = $213,973.20 MXN). Rendimiento ilustrativo en UDIs.</p>
+  <div class="wrap">
+    <strong>Santi Te Asesora — santiteasesora.com</strong>
+    <p style="margin-top:8px">
+      Nota legal: esta página es una estimación informativa, no una promesa de devolución específica. El cálculo usa la tarifa anual del ISR 2026 (Art. 152 de la LISR), la deducción de aportaciones a un Plan Personal de Retiro (Art. 151 de la LISR, con tope de 5 UMA: $213,973.20 MXN al año) y los beneficios al retiro del Art. 93 de la LISR. Tu devolución real depende de tu ingreso gravable, tu régimen fiscal y tu declaración anual ante el SAT. Asesor: Martín Santiago (Enrique Martín Santiago González), cédula C412676 ante la CNSF. Pólizas respaldadas por Seguros Monterrey New York Life.
+    </p>
   </div>
 </footer>
 
-<!-- MODALES -->
-<div class="modal" id="videoModal"><div class="mbox v"><div class="vbox"><button type="button" data-close-modal style="position:absolute;top:10px;right:10px;z-index:2;background:#292C2B;color:#fff;border:1px solid #D9A441;border-radius:50%;width:36px;height:36px">×</button><iframe id="youtubePlayer" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div></div>
-<div class="modal" id="cedulaModal"><div class="mbox"><div class="d-head"><span>Cédula Oficial CNSF: C412676</span><button type="button" data-close-modal>×</button></div><div class="d-body"><p><strong>Lic. Enrique Martín Santiago González</strong> · Agente autorizado ante la CNSF (Cédula <strong>C412676</strong>).</p><p><a href="https://www.santiteasesora.com/cedula-cnsf-c412676.pdf" target="_blank" rel="noopener">📄 1. Ver documento oficial de Cédula CNSF (PDF) ↗</a></p><p><a href="https://www.cnsf.gob.mx/" target="_blank" rel="noopener">🏛️ 2. Verificar en el portal oficial de la CNSF ↗</a></p></div></div></div>
-<div class="modal" id="privacyModal"><div class="mbox"><div class="d-head"><span>Aviso de Privacidad Simplificado</span><button type="button" data-close-modal>×</button></div><div class="d-body"><p><strong>Responsable:</strong> Lic. Enrique Martín Santiago González ("Santi te asesora"), Cédula Oficial CNSF <strong>C412676</strong>.</p><p><strong>Finalidad:</strong> Tus datos se utilizan exclusivamente para enviarte por WhatsApp tu proyección personalizada de Seguros Monterrey NYL sin llamadas invasivas.</p></div></div></div>
+<div class="modal" id="privacyModal">
+  <div class="mbox">
+    <h3 style="font-family:var(--font-serif);color:var(--gold)">Aviso de Privacidad Simplificado</h3>
+    <p style="font-size:13.5px;margin-top:8px"><strong>Responsable:</strong> Lic. Enrique Martín Santiago González ("Santi Te Asesora"), Agente autorizado ante la CNSF con Cédula <strong>C412676</strong>. Tus datos se usan exclusivamente para enviarte por WhatsApp tu cálculo personalizado con respaldo de Seguros Monterrey NYL, sin llamadas de spam.</p>
+    <button type="button" class="btn-gold-pill" style="margin-top:14px;width:100%" id="closePrivacy">Entendido</button>
+  </div>
+</div>
 
 <script>
 const CONFIG = {
   SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxrP3-a3XtgDDbzLiX33UxYPaAhvvGnARNYfUHdnf38cZjbPDyokoujS9bJfxhus_aS/exec',
   WHATSAPP_NUMBER: '5215571208740',
-  VIDEO_URL: 'https://www.youtube.com/embed/oTPHUmFmE7o?autoplay=1&rel=0',
   UMA_ANUAL: 42794.64
 };
 
@@ -351,12 +475,7 @@ const ISR_TABLE = [
 const $ = id => document.getElementById(id);
 const money = n => '$' + Math.round(n).toLocaleString('es-MX');
 
-const state = {
-  exactAge: 32, ageRange: '25-32', isSmoker: false,
-  monthlySaving: 2500, refund: 6408,
-  pocket1Monthly: 1800, pocket2Monthly: 700, tenYearCapital: 464024, tenYearGain: 164024,
-  selectedDay: 'Mañana', selectedSlot: 'Mañana (09:00 a 12:00)'
-};
+const state = { regime: 'Honorarios', monthlySaving: 2500, refund: 6408, pct: '21.4%', draftSaved: false };
 
 function isrAnual(base){
   if (base <= 0) return 0;
@@ -365,149 +484,119 @@ function isrAnual(base){
   return row[1] + (base - row[0]) * row[2];
 }
 
-function paintSlider(s){
-  if (!s) return;
-  const pct = ((s.value - s.min) / (s.max - s.min)) * 100;
-  s.style.background = `linear-gradient(90deg, #145C52 0%, #A8C4B5 ${pct}%, #E2DBD0 ${pct}%, #E2DBD0 100%)`;
-}
-
 function recalculate(){
-  const age = state.exactAge;
-  state.ageRange = age <= 32 ? '25-32' : (age <= 39 ? '33-39' : (age <= 46 ? '40-46' : '47-55'));
+  const s = $('savingSlider');
+  const pctBar = ((s.value - s.min) / (s.max - s.min)) * 100;
+  s.style.background = `linear-gradient(90deg, #D9A441 0%, #D9A441 ${pctBar}%, #233D37 ${pctBar}%, #233D37 100%)`;
 
-  paintSlider($('ageSlider'));
-  paintSlider($('savingSlider'));
-
-  document.querySelectorAll('#quickAmounts .qa-btn').forEach(b => {
+  $('sliderValTxt').textContent = Math.round(state.monthlySaving).toLocaleString('es-MX');
+  document.querySelectorAll('#amountPills .c-pill').forEach(b => {
     b.classList.toggle('active', parseInt(b.getAttribute('data-amt'), 10) === state.monthlySaving);
   });
 
   const annualSav = state.monthlySaving * 12;
   const impliedAnnualInc = Math.max(360000, state.monthlySaving * 10 * 12);
-  const maxDedAnnual = 5 * CONFIG.UMA_ANUAL;
-  const effDed = Math.min(annualSav, maxDedAnnual);
-  state.refund = Math.round(isrAnual(impliedAnnualInc) - isrAnual(impliedAnnualInc - effDed));
+  const effDed = Math.min(annualSav, 5 * CONFIG.UMA_ANUAL);
 
-  state.pocket1Monthly = Math.min(Math.round((state.monthlySaving * 0.7) / 100) * 100, Math.round(maxDedAnnual / 12));
-  state.pocket2Monthly = Math.max(0, state.monthlySaving - state.pocket1Monthly);
+  if (state.regime === 'RESICO'){
+    state.refund = 0;
+    state.pct = '0% ISR a tus 60 años (Art. 93)';
+    $('resRefundBig').textContent = '$0 en abril';
+    $('resPctPill').textContent = 'Exento a los 60 (Art. 93)';
+    $('resicoMsg').style.display = 'block';
+    $('r4NetMonthly').textContent = money(state.monthlySaving);
+    $('r4TenYrRef').textContent = '0% ISR';
+    $('r4TenYrLabel').textContent = 'Retiro libre a tus 60 años (Cuenta 2)';
+    $('bottomSummaryText').innerHTML = `Tu cálculo: <b>${money(state.monthlySaving)}/mes</b> · RESICO · <b>Cuenta 2 libre de ISR a los 60 (Art. 93)</b>. Se manda tal cual en tu mensaje.`;
+  } else {
+    state.refund = Math.round(isrAnual(impliedAnnualInc) - isrAnual(impliedAnnualInc - effDed));
+    const pctNum = ((state.refund / annualSav) * 100).toFixed(1);
+    state.pct = pctNum + '% de tu aportación';
+    const netMo = Math.round((annualSav - state.refund) / 12);
+    $('resRefundBig').textContent = '+' + money(state.refund);
+    $('resPctPill').textContent = state.pct;
+    $('resicoMsg').style.display = 'none';
+    $('r4NetMonthly').textContent = money(netMo);
+    $('r4TenYrRef').textContent = '+' + money(state.refund * 10);
+    $('r4TenYrLabel').textContent = 'Devoluciones acumuladas en 10 años';
+    $('bottomSummaryText').innerHTML = `Tu cálculo: <b>${money(state.monthlySaving)}/mes</b> · ${state.regime} · devolución estimada <b>+${money(state.refund)}/año</b>. Se manda tal cual en tu mensaje.`;
+  }
 
-  const r = state.isSmoker ? 0.074 : 0.078;
-  state.tenYearCapital = Math.round(annualSav * (((Math.pow(1 + r, 10) - 1) / r) * (1 + r)));
-  state.tenYearGain = Math.max(0, state.tenYearCapital - (annualSav * 10));
-
-  const pctRec = annualSav > 0 ? ((state.refund / annualSav) * 100).toFixed(1) : '0.0';
-  const netMo = Math.round((annualSav - state.refund) / 12);
-
-  $('ageDisplay').textContent = age + ' años';
-  $('savingDisplay').textContent = money(state.monthlySaving);
-  $('pocket1Val').textContent = money(state.pocket1Monthly) + '/mes';
-  $('pocket2Val').textContent = money(state.pocket2Monthly) + '/mes';
-
-  $('boardBigVal').textContent = '+' + money(state.refund) + ' MXN';
-  $('boardSubText').textContent = `Equivale al ~${pctRec}% de lo aportado. Tu inversión neta real: ${money(netMo)}/mes.`;
-  $('ltAnnual').textContent = money(annualSav) + ' MXN';
-  $('ltRef10Val').textContent = '+' + money(state.refund * 10) + ' MXN';
-  $('ltPaid10').textContent = money(annualSav * 10) + ' MXN';
-  $('ltGain10').textContent = '+' + money(state.tenYearGain) + ' MXN*';
-  $('ltTotal10').textContent = '~' + money(state.tenYearCapital) + ' MXN*';
-
-  $('tblDecoyRef').textContent = '+' + money(state.refund) + '/año';
-  $('tblWinRef').textContent = '+' + money(state.refund) + ' MXN/año';
+  $('r4Annual').textContent = money(annualSav);
+  $('r4TenYrPaid').textContent = money(annualSav * 10);
 }
 
-function buildDayPills(){
-  const box = $('dayPillsContainer');
-  const days = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'], months = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-  const out = [], d = new Date();
-  while (out.length < 6){
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0) out.push(`${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`);
-  }
-  state.selectedDay = out[0];
-  box.innerHTML = out.map((l, i) => `<button type="button" class="day-btn${i===0?' active':''}" data-day="${l}">${l}</button>`).join('');
-  box.querySelectorAll('.day-btn').forEach(b => b.addEventListener('click', () => {
-    box.querySelectorAll('.day-btn').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    state.selectedDay = b.getAttribute('data-day');
-  }));
+function saveLeadToSheet(nombre, wa, tag){
+  const p = new URLSearchParams(location.search);
+  const utmMed = p.get('utm_medium') || 'bio_ig';
+  const leadId = 'IG-' + Date.now().toString(36).toUpperCase();
+  const qualified = state.monthlySaving >= 2500;
+  fetch(CONFIG.SCRIPT_URL, {
+    method: 'POST', mode: 'no-cors', keepalive: true,
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({
+      fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+      nombre: nombre, whatsapp: wa,
+      edad: 'Instagram Directo',
+      regimen: state.regime + ' (' + utmMed + ')',
+      origen: tag,
+      calculo_estimado: `${qualified?'[CALIFICADO >=2500]':'[NO CALIFICADO <2500]'} Aporte: ${money(state.monthlySaving)}/m | Régimen: ${state.regime} | Devolución: +${money(state.refund)}/año`,
+      utm_source: 'instagram', utm_medium: utmMed,
+      id_lead: leadId, calificado: qualified ? 'SI' : 'NO'
+    })
+  }).catch(() => {});
+  return leadId;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  buildDayPills();
   recalculate();
 
-  $('ageSlider').addEventListener('input', e => { state.exactAge = parseInt(e.target.value, 10); recalculate(); });
-  $('savingSlider').addEventListener('input', e => { state.monthlySaving = parseFloat(e.target.value); recalculate(); });
-
-  document.querySelectorAll('#quickAmounts .qa-btn').forEach(btn => btn.addEventListener('click', () => {
-    const amt = parseFloat(btn.getAttribute('data-amt'));
-    state.monthlySaving = amt;
-    $('savingSlider').value = String(amt);
+  document.querySelectorAll('#regimeGroup .c-pill').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#regimeGroup .c-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.regime = btn.getAttribute('data-reg');
     recalculate();
   }));
 
-  document.querySelectorAll('#smokerGroup .smk-btn').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('#smokerGroup .smk-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    state.isSmoker = btn.getAttribute('data-smoke') === 'yes';
+  document.querySelectorAll('#amountPills .c-pill').forEach(btn => btn.addEventListener('click', () => {
+    state.monthlySaving = parseInt(btn.getAttribute('data-amt'), 10);
+    $('savingSlider').value = String(state.monthlySaving);
     recalculate();
   }));
 
-  document.querySelectorAll('#slotButtons .slot-b').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('#slotButtons .slot-b').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    state.selectedSlot = btn.getAttribute('data-slot');
-  }));
+  $('savingSlider').addEventListener('input', e => {
+    state.monthlySaving = parseInt(e.target.value, 10);
+    recalculate();
+  });
 
   const waIn = $('formWhatsApp');
   waIn.addEventListener('input', () => {
     const d = waIn.value.replace(/\D/g, '').replace(/^(?:521|52)(?=\d{10}$)/, '').slice(0, 10);
     waIn.value = d.length <= 2 ? d : (d.length <= 6 ? d.slice(0,2)+' '+d.slice(2) : d.slice(0,2)+' '+d.slice(2,6)+' '+d.slice(6,10));
-    if (d.length === 10) $('formError').style.display = 'none';
+    if (d.length === 10){
+      $('formError').style.display = 'none';
+      if (!state.draftSaved && $('formNombre').value.trim().length >= 2){
+        state.draftSaved = true;
+        saveLeadToSheet($('formNombre').value.trim(), d, 'AutoRespaldo IG 10 Digitos');
+      }
+    }
   });
 
-  $('leadForm').addEventListener('submit', ev => {
+  $('igLeadForm').addEventListener('submit', ev => {
     ev.preventDefault();
     const nombre = $('formNombre').value.trim();
     const wa = waIn.value.replace(/\D/g, '').slice(0, 10);
-    if (nombre.length < 2){ $('formError').textContent = 'Escribe tu nombre.'; $('formError').style.display = 'block'; return; }
+    if (nombre.length < 2){ $('formError').textContent = 'Por favor escribe tu nombre.'; $('formError').style.display = 'block'; return; }
     if (wa.length !== 10){ $('formError').textContent = 'Ingresa los 10 dígitos de tu WhatsApp.'; $('formError').style.display = 'block'; return; }
     if ($('website').value) return;
 
-    const p = new URLSearchParams(location.search);
-    const utmMed = p.get('utm_medium') || 'bio_ig';
-    const leadId = 'IG-' + Date.now().toString(36).toUpperCase();
-    const qualified = state.monthlySaving >= 2500;
-
-    fetch(CONFIG.SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors', keepalive: true,
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({
-        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
-        nombre: nombre, whatsapp: wa,
-        edad: `${state.exactAge} años (${state.ageRange} | ${state.isSmoker?'Fuma':'No fuma'})`,
-        regimen: 'Instagram Organico (' + utmMed + ')',
-        origen: 'Landing Instagram Directa (instagram.html)',
-        calculo_estimado: `${qualified?'[CALIFICADO >=2500]':'[NO CALIFICADO <2500]'} Aporte: ${money(state.monthlySaving)}/m | Cuenta A: ${money(state.pocket1Monthly)} | Cuenta B: ${money(state.pocket2Monthly)} | Devolución: ${money(state.refund)}/año | Horario: ${state.selectedDay} ${state.selectedSlot}`,
-        utm_source: 'instagram', utm_medium: utmMed,
-        id_lead: leadId, calificado: qualified ? 'SI' : 'NO'
-      })
-    }).catch(() => {});
-
-    const msg = `Hola, Santi, soy *${nombre}* (vengo de tu Instagram · Folio *#${leadId}*).\n\nAcabo de calcular mis 2 Cuentas en tu simulador:\n• *Edad:* ${state.exactAge} años (${state.isSmoker?'Fuma':'No fuma'})\n• *Aportación mensual:* ${money(state.monthlySaving)}/mes (Cuenta A: ${money(state.pocket1Monthly)} | Cuenta B: ${money(state.pocket2Monthly)})\n• *Devolución SAT est:* +${money(state.refund)}/año\n• *Día y hora para Meet (15 min):* ${state.selectedDay} · ${state.selectedSlot}\n\n¿Me compartes mi tabla oficial SMNYL?`;
+    const leadId = saveLeadToSheet(nombre, wa, 'Landing Instagram Oficial (instagram.html)');
+    const msg = `Hola, Santi, soy *${nombre}* (Folio *#${leadId}*).\n\nAcabo de calcular mi devolución en tu página de Instagram:\n• *Régimen:* ${state.regime}\n• *Aportación planeada:* ${money(state.monthlySaving)}/mes\n• *Devolución anual est.:* +${money(state.refund)} MXN (${state.pct})\n\n¿Lo revisamos juntos para ver cómo quedarían mis 2 Cuentas?`;
     window.location.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   });
 
-  document.querySelectorAll('[data-open-modal]').forEach(b => b.addEventListener('click', ev => {
-    ev.preventDefault();
-    const id = b.getAttribute('data-open-modal');
-    $(id).classList.add('open');
-    if (id === 'videoModal') $('youtubePlayer').src = CONFIG.VIDEO_URL;
-  }));
-  document.querySelectorAll('[data-close-modal]').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
-    $('youtubePlayer').removeAttribute('src');
-  }));
+  $('openPrivacy').addEventListener('click', ev => { ev.preventDefault(); $('privacyModal').classList.add('open'); });
+  $('closePrivacy').addEventListener('click', () => $('privacyModal').classList.remove('open'));
 });
 </script>
 </body>
